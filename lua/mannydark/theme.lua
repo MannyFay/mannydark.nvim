@@ -9,8 +9,28 @@ theme.set_highlights = function()
 -- Editor
 ------------------------------------------------------------------------------
 
-  hl(0, "Normal", { fg = c.fg, bg = c.bg })
-  hl(0, "SignColumn", { fg = 'NONE', bg = c.bg })
+  hl(0, "SignColumn", { fg = 'NONE', bg = c.black })
+
+  -- Vertical visual guide line:
+  hl(0, "ColorColumn", { fg = 'NONE', bg = c.gray_dark })
+
+  hl(0, "LineNr", { fg = c.gray, bg = 'NONE' })
+  hl(0, "CursorLineNr", { fg = c.white, bg = 'NONE' })
+  -- Vertical split separator line:
+  hl(0, "VertSplit", { fg = c.gray, bg = c.bg })
+  -- Color of actual line:
+  hl(0, "CursorLine", { fg = 'NONE', bg = c.gray_dark })
+  -- Highlighting of search patterns:
+  hl(0, "Search", { fg = c.black, bg = c.pink })
+  -- Highlighting of first result from search pattern:
+  hl(0, "IncSearch", { fg = c.black, bg = c.white })
+  -- Empty end of buffer:
+  hl(0, "EndOfBuffer", { fg = c.black, bg = 'NONE' })
+  -- Error message:
+  hl(0, "ErrorMsg", { fg = c.white, bg = c.red, bold = true, })
+
+
+
   hl(0, "MsgArea", { fg = c.fg, bg = c.bg })
   hl(0, "ModeMsg", { fg = c.fg, bg = c.alt_bg })
   hl(0, "MsgSeparator", { fg = c.fg, bg = c.bg })
@@ -22,16 +42,14 @@ theme.set_highlights = function()
   hl(0, "Pmenu", { fg = c.light_gray, bg = c.menu_bg })
   hl(0, "PmenuSel", { fg = 'NONE', bg = c.ui2_blue })
   hl(0, "WildMenu", { fg = c.fg, bg = c.ui2_blue })
-  hl(0, "CursorLineNr", { fg = c.light_gray, bg = 'NONE' })
   hl(0, "Folded", { fg = c.gray, bg = c.alt_bg })
   hl(0, "FoldColumn", { fg = c.gray, bg = c.alt_bg })
-  hl(0, "LineNr", { fg = c.gray, bg = 'NONE' })
   hl(0, "FloatBorder", { fg = c.gray, bg = c.alt_bg })
   hl(0, "Whitespace", { fg = c.dark_gray, bg = 'NONE' })
-  hl(0, "VertSplit", { fg = c.gray, bg = c.bg })
-  hl(0, "CursorLine", { fg = 'NONE', bg = c.alt_bg })
-  hl(0, "CursorColumn", { fg = 'NONE', bg = c.alt_bg })
-  hl(0, "ColorColumn", { fg = 'NONE', bg = c.alt_bg })
+
+  hl(0, "CursorColumn", { fg = blue, bg = c.red })
+  --hl(0, "CursorColumn", { fg = 'NONE', bg = c.alt_bg })
+
   hl(0, "NormalFloat", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "Visual", { fg = 'NONE', bg = c.ui_blue })
   hl(0, "VisualNOS", { fg = 'NONE', bg = c.alt_bg })
@@ -44,7 +62,6 @@ theme.set_highlights = function()
   hl(0, "PmenuSbar", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "PmenuThumb", { fg = 'NONE', bg = c.gray })
   hl(0, "MatchWord", { fg = 'NONE', bg = c.reference })
-  hl(0, "MatchParen", { fg = c.hint, bg = c.reference })
   hl(0, "MatchWordCur", { fg = 'NONE', bg = c.reference })
   hl(0, "MatchParenCur", { fg = 'NONE', bg = c.reference })
   hl(0, "Cursor", { fg = c.cursor_fg, bg = c.cursor_bg })
@@ -55,36 +72,48 @@ theme.set_highlights = function()
   hl(0, "Conceal", { fg = c.gray, bg = 'NONE' })
   hl(0, "Directory", { fg = c.folder_blue, bg = 'NONE' })
   hl(0, "SpecialKey", { fg = c.blue, bg = 'NONE', bold = true, })
-  hl(0, "ErrorMsg", { fg = c.error, bg = c.bg, bold = true, })
-  hl(0, "Search", { fg = 'NONE', bg = c.ui5_blue })
-  hl(0, "IncSearch", { fg = 'NONE', bg = c.ui2_orange })
   hl(0, "Substitute", { fg = 'NONE', bg = c.ui2_orange })
   hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
   hl(0, "Question", { fg = c.orange, bg = 'NONE' })
-  hl(0, "EndOfBuffer", { fg = c.bg, bg = 'NONE' })
   hl(0, "NonText", { fg = c.dark_gray, bg = 'NONE' })
   hl(0, "TabLine", { fg = c.light_gray, bg = c.line })
   hl(0, "TabLineSel", { fg = c.fg, bg = c.line })
   hl(0, "TabLineFill", { fg = c.line, bg = c.line })
 
-  -- Code
-  hl(0, "Comment", { fg = c.context, bg = 'NONE' })
-  hl(0, "Variable", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "String", { fg = c.orange, bg = 'NONE' })
-  hl(0, "Character", { fg = c.orange, bg = 'NONE' })
-  hl(0, "Number", { fg = c.light_green, bg = 'NONE' })
-  hl(0, "Float", { fg = c.light_green, bg = 'NONE' })
+
+------------------------------------------------------------------------------
+-- Language Defaults
+------------------------------------------------------------------------------
+
+  hl(0, "Comment", { fg = c.red, bg = 'NONE' })
+  hl(0, "Variable", { fg = c.purple, bg = 'NONE' })
+  hl(0, "String", { fg = c.red_light, bg = 'NONE' })
+  hl(0, "Number", { fg = c.green_light, bg = 'NONE' })
+  hl(0, "Float", { fg = c.green_light, bg = 'NONE' })
   hl(0, "Boolean", { fg = c.blue, bg = 'NONE' })
-  hl(0, "Constant", { fg = c.vivid_blue, bg = 'NONE' })
-  hl(0, "Type", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "Function", { fg = c.yellow, bg = 'NONE' })
+  hl(0, "Constant", { fg = c.purple, bg = 'NONE' })
+  hl(0, "Type", { fg = c.torquoise, bg = 'NONE' })
+  hl(0, "Function", { fg = c.orange, bg = 'NONE' })
   hl(0, "Keyword", { fg = c.blue, bg = 'NONE' })
-  hl(0, "Conditional", { fg = c.purple, bg = 'NONE' })
+  hl(0, "Character", { fg = c.white, bg = 'NONE' })
+  hl(0, "Conditional", { fg = c.blue, bg = 'NONE' })
+  hl(0, "Delimiter", { fg = c.white, bg = 'NONE' })
+  hl(0, "Exception", { fg = c.blue, bg = 'NONE' })
+  hl(0, "Identifier", { fg = c.purple, bg = 'NONE' })
+  hl(0, "Include", { fg = c.blue, bg = 'NONE' })
+  hl(0, "MatchParen", { fg = c.white, bg = c.gray })
+  hl(0, "Normal", { fg = c.white, bg = c.black })
+  hl(0, "Operator", { fg = c.white, bg = 'NONE' })
+  hl(0, "PreProc", { fg = c.blue, bg = 'NONE' })
+  hl(0, "Special", { fg = c.white, bg = 'NONE' })
+  hl(0, "Todo", { fg = c.red, bg = 'NONE', bold = true, })
+
+
+-------------------------------------------------------------
+
+
+
   hl(0, "Repeat", { fg = c.purple, bg = 'NONE' })
-  hl(0, "Operator", { fg = c.fg, bg = 'NONE' })
-  hl(0, "PreProc", { fg = c.purple, bg = 'NONE' })
-  hl(0, "Include", { fg = c.purple, bg = 'NONE' })
-  hl(0, "Exception", { fg = c.purple, bg = 'NONE' })
   hl(0, "StorageClass", { fg = c.cyan, bg = 'NONE' })
   hl(0, "Structure", { fg = c.cyan, bg = 'NONE' })
   hl(0, "Typedef", { fg = c.purple, bg = 'NONE' })
@@ -94,22 +123,24 @@ theme.set_highlights = function()
   hl(0, "Title", { fg = c.blue, bg = 'NONE', bold = true, })
   hl(0, "Label", { fg = c.blue, bg = 'NONE' })
   hl(0, "SpecialChar", { fg = c.yellow_orange, bg = 'NONE' })
-  hl(0, "Delimiter", { fg = c.fg, bg = 'NONE' })
   hl(0, "SpecialComment", { fg = c.fg, bg = 'NONE' })
   hl(0, "Tag", { fg = c.blue, bg = 'NONE' })
   hl(0, "Bold", { fg = 'NONE', bg = 'NONE', bold = true, })
   hl(0, "Italic", { fg = 'NONE', bg = 'NONE', italic = true, })
   hl(0, "Underlined", { fg = 'NONE', bg = 'NONE', underline = true, })
   hl(0, "Ignore", { fg = c.magenta, bg = 'NONE', bold = true, })
-  hl(0, "Todo", { fg = c.magenta, bg = 'NONE', bold = true, })
   hl(0, "Error", { fg = c.error, bg = 'NONE', bold = true, })
   hl(0, "Statement", { fg = c.purple, bg = 'NONE' })
-  hl(0, "Identifier", { fg = c.light_blue, bg = 'NONE' })
   hl(0, "PreCondit", { fg = c.purple, bg = 'NONE' })
-  hl(0, "Special", { fg = c.orange, bg = 'NONE' })
 
-  -- Treesitter
-  hl(0, "@comment", { fg = c.green, bg = 'NONE', italic = true, })
+
+--------------------------------------------------------------
+-- Treesitter
+
+  hl(0, "@comment", { fg = c.red, bg = 'NONE' })
+
+
+
   hl(0, "@none", { fg = 'NONE', bg = 'NONE' })
   hl(0, "@preproc", { link = 'PreProc' })
   hl(0, "@define", { link = 'Define' })
@@ -179,25 +210,35 @@ theme.set_highlights = function()
   hl(0, "@tag.attribute", { fg = c.light_blue, bg = 'NONE', italic = true, })
   hl(0, "@tag.delimiter", { fg = c.gray, bg = 'NONE' })
 
-  -- markdown
-  hl(0, "markdownBlockquote", { fg = c.orange, bg = 'NONE' })
-  hl(0, "markdownCode", { fg = c.orange, bg = 'NONE' })
-  hl(0, "markdownCodeBlock", { fg = c.orange, bg = 'NONE' })
-  hl(0, "markdownCodeDelimiter", { fg = c.orange, bg = 'NONE' })
-  hl(0, "markdownH1", { link = 'Title' })
-  hl(0, "markdownH2", { link = 'Title' })
-  hl(0, "markdownH3", { link = 'Title' })
-  hl(0, "markdownH4", { link = 'Title' })
-  hl(0, "markdownH5", { link = 'Title' })
-  hl(0, "markdownH6", { link = 'Title' })
+------------------------------------------------------------------------------
+-- Markdown
+------------------------------------------------------------------------------
+
+  hl(0, "markdownBlockquote", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownBold", { fg = c.white, bg = 'NONE', bold = true, })
+  hl(0, "markdownBoldDelimiter", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownCode", { fg = c.green, bg = 'NONE' })
+  hl(0, "markdownCodeBlock", { fg = c.green, bg = 'NONE' })
+  hl(0, "markdownCodeDelimiter", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownH1", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownH2", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownH3", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownH4", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownH5", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownH6", { fg = c.blue, bg = 'NONE' })
   hl(0, "markdownHeadingDelimiter", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownHeadingRule", { fg = c.fg, bg = 'NONE', bold = true, })
-  hl(0, "markdownId", { link = 'Identifier' })
-  hl(0, "markdownIdDeclaration", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownIdDelimiter", { fg = c.light_gray, bg = 'NONE' })
+  hl(0, "markdownItalic", { fg = c.white, bg = 'NONE', italic = true })
+
+
+
+
+
+
+  --hl(0, "markdownHeadingRule", { fg = c.fg, bg = 'NONE', bold = true, })
+  --hl(0, "markdownId", { link = 'Identifier' })
+  --hl(0, "markdownIdDeclaration", { fg = c.blue, bg = 'NONE' })
+  --hl(0, "markdownIdDelimiter", { fg = c.light_gray, bg = 'NONE' })
   hl(0, "markdownLinkDelimiter", { fg = c.light_gray, bg = 'NONE' })
-  hl(0, "markdownBold", { fg = c.blue, bg = 'NONE', bold = true, })
-  hl(0, "markdownItalic", { link = 'Italic' })
   hl(0, "markdownBoldItalic", { fg = c.yellow, bg = 'NONE', bold = true, italic = true, })
   hl(0, "markdownListMarker", { fg = c.blue, bg = 'NONE' })
   hl(0, "markdownOrderedListMarker", { fg = c.purple, bg = 'NONE' })
@@ -211,6 +252,10 @@ theme.set_highlights = function()
   hl(0, "markdownFootnote", { fg = c.orange, bg = 'NONE' })
   hl(0, "markdownFootnoteDefinition", { fg = c.orange, bg = 'NONE' })
   hl(0, "markdownEscape", { fg = c.yellow, bg = 'NONE' })
+
+
+
+
 
   -- Whichkey
   hl(0, "WhichKey", { fg = c.purple, bg = 'NONE' })
