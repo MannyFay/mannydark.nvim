@@ -1,4 +1,4 @@
-local c = require('darkplus.palette')
+local c = require('mannydark.palette')
 
 local hl = vim.api.nvim_set_hl
 local theme = {}

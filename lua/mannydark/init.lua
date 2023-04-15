@@ -1,5 +1,5 @@
 local M = {}
-local theme = require('darkplus.theme')
+local theme = require('mannydark.theme')
 
 M.setup = function()
   vim.cmd('hi clear')
@@ -10,7 +10,7 @@ M.setup = function()
   end
 
   vim.o.termguicolors = true
-  vim.g.colors_name = 'darkplus'
+  vim.g.colors_name = 'mannydark'
 
   theme.set_highlights()
 end
