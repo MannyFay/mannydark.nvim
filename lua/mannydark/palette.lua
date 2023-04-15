@@ -1,6 +1,11 @@
 local colors = {
+  foreground = "",
+  background = "",
+
+  cursor_line = "",
+
   -- Buffer color:
-  fg = "#D4D4D4",
+  fg = "#CFD2D5", --fg = "#D4D4D4",
   bg = "#191B1C",
 
 -- Tree color:
@@ -10,8 +15,8 @@ local colors = {
   line = "#3e3e3e",
 
   dark_gray = "#00e063", -- default: #404040
-  gray = "#808080",
-  context = "#606060",
+  gray = "#606366", -- gray = "#808080",
+  context = "#ed3276", --context = "#606060",
   light_gray = "#cccccc",
   menu_bg = "#202123",
   red = "#D16969",

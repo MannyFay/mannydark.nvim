@@ -5,7 +5,10 @@ local theme = {}
 
 theme.set_highlights = function()
 
-  -- Editor
+------------------------------------------------------------------------------
+-- Editor
+------------------------------------------------------------------------------
+
   hl(0, "Normal", { fg = c.fg, bg = c.bg })
   hl(0, "SignColumn", { fg = 'NONE', bg = c.bg })
   hl(0, "MsgArea", { fg = c.fg, bg = c.bg })
