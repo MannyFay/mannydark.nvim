@@ -5,6 +5,7 @@ local colors = {
   white = "#CFD2D5",
   black = "#191B1C",
   blue = "#569CD6",
+  blue_link = "#287BDE",
   gray = "#606366", -- gray = "#808080",
   gray_dark = "#252525",
   green = "#4FA544",

@@ -228,27 +228,24 @@ theme.set_highlights = function()
   hl(0, "markdownH6", { fg = c.blue, bg = 'NONE' })
   hl(0, "markdownHeadingDelimiter", { fg = c.blue, bg = 'NONE' })
   hl(0, "markdownItalic", { fg = c.white, bg = 'NONE', italic = true })
-
-
-
-
-
-
-  --hl(0, "markdownHeadingRule", { fg = c.fg, bg = 'NONE', bold = true, })
-  --hl(0, "markdownId", { link = 'Identifier' })
-  --hl(0, "markdownIdDeclaration", { fg = c.blue, bg = 'NONE' })
-  --hl(0, "markdownIdDelimiter", { fg = c.light_gray, bg = 'NONE' })
-  hl(0, "markdownLinkDelimiter", { fg = c.light_gray, bg = 'NONE' })
-  hl(0, "markdownBoldItalic", { fg = c.yellow, bg = 'NONE', bold = true, italic = true, })
+  hl(0, "markdownLinkDelimiter", { fg = c.white, bg = 'NONE' })
+  hl(0, "markdownLinkText", { fg = c.white, bg = 'NONE' })
   hl(0, "markdownListMarker", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownOrderedListMarker", { fg = c.purple, bg = 'NONE' })
-  hl(0, "markdownRule", { fg = c.gray, bg = 'NONE' })
+  hl(0, "markdownOrderedListMarker", { fg = c.blue, bg = 'NONE' })
   if vim.fn.has("nvim-0.7.3") == 1 then
-    hl(0, "markdownUrl", { fg = c.cyan, bg = 'NONE', underdotted = true, })
+    hl(0, "markdownUrl", { fg = c.blue_link, bg = 'NONE', underdotted = true, })
   else
-    hl(0, "markdownUrl", { fg = c.cyan, bg = 'NONE', underdot = true, })
+    hl(0, "markdownUrl", { fg = c.blue_link, bg = 'NONE', underdot = true, })
   end
-  hl(0, "markdownLinkText", { fg = c.blue, bg = 'NONE' })
+
+--------------------------------
+
+  hl(0, "markdownHeadingRule", { fg = c.fg, bg = 'NONE', bold = true, })
+  hl(0, "markdownId", { link = 'Identifier' })
+  hl(0, "markdownIdDeclaration", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownIdDelimiter", { fg = c.light_gray, bg = 'NONE' })
+  hl(0, "markdownBoldItalic", { fg = c.yellow, bg = 'NONE', bold = true, italic = true, })
+  hl(0, "markdownRule", { fg = c.gray, bg = 'NONE' })
   hl(0, "markdownFootnote", { fg = c.orange, bg = 'NONE' })
   hl(0, "markdownFootnoteDefinition", { fg = c.orange, bg = 'NONE' })
   hl(0, "markdownEscape", { fg = c.yellow, bg = 'NONE' })
