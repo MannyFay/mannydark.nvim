@@ -14,7 +14,7 @@ local colors = {
   red_light = "#CE9178",
   orange = "#E8BF6A",
   purple = "#C064C7",
-  torquoise = "#45C8B0",
+  turquoise = "#45C8B0",
   pink = "#ed3276",
   yellow = "#DCDCAA",
 
