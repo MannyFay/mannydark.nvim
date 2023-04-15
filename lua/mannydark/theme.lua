@@ -210,6 +210,35 @@ theme.set_highlights = function()
   hl(0, "@tag.attribute", { fg = c.light_blue, bg = 'NONE', italic = true, })
   hl(0, "@tag.delimiter", { fg = c.gray, bg = 'NONE' })
 
+
+
+------------------------------------------------------------------------------
+-- HTML
+------------------------------------------------------------------------------
+
+  hl(0, "htmlArg", { fg = c.torquoise, bg = 'NONE' })
+  hl(0, "htmlEndTag", { fg = c.blue, bg = 'NONE' })
+  hl(0, "htmlH1", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlH2", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlH3", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlH4", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlH5", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlH6", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlLink", { fg = c.white, bg = 'NONE', underline = true, })
+  hl(0, "htmlSpecialChar", { fg = c.blue, bg = 'NONE' })
+  hl(0, "htmlSpecialTagName", { fg = c.blue, bg = 'NONE' })
+  hl(0, "htmlTag", { fg = c.blue, bg = 'NONE' })
+  hl(0, "htmlTagN", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlTagName", { fg = c.blue, bg = 'NONE' })
+  hl(0, "htmlTitle", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlString", { fg = c.red_light, bg = 'NONE' })
+  hl(0, "htmlComment", { fg = c.red, bg = 'NONE' })
+  hl(0, "htmlLeadingSpace", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlHead", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlScriptTag", { fg = c.blue, bg = 'NONE' })
+
+
+
 ------------------------------------------------------------------------------
 -- Markdown
 ------------------------------------------------------------------------------
@@ -671,20 +700,7 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   hl(0, "luaFunc", { fg = c.yellow, bg = 'NONE' })
   hl(0, "luaFunction", { fg = c.blue, bg = 'NONE' })
   hl(0, "hclTSPunctSpecial", { fg = c.alt_fg, bg = 'NONE' })
-  hl(0, "htmlH1", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlH2", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlH3", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlH4", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlH5", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlH6", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlHead", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlTitle", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlArg", { fg = c.fg, bg = 'NONE' })
-  hl(0, "htmlTag", { fg = c.blue, bg = 'NONE' })
-  hl(0, "htmlTagN", { fg = c.blue, bg = 'NONE' })
-  hl(0, "htmlTagName", { fg = c.blue, bg = 'NONE' })
-  hl(0, "htmlComment", { fg = c.green, bg = 'NONE' })
-  hl(0, "htmlLink", { fg = c.orange, bg = 'NONE', underline = true, })
+
   hl(0, "cssBraces", { fg = c.fg, bg = 'NONE' })
   hl(0, "cssInclude", { fg = c.purple, bg = 'NONE' })
   hl(0, "cssTagName", { fg = c.yellow, bg = 'NONE' })
