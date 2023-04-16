@@ -237,6 +237,7 @@ theme.set_highlights = function()
 -------------------------------------------------------------
 
 
+  hl(0, "SpecialChar", { fg = c.white, bg = 'NONE' })
 
   hl(0, "Repeat", { fg = c.purple, bg = 'NONE' })
   hl(0, "StorageClass", { fg = c.cyan, bg = 'NONE' })
@@ -246,7 +247,6 @@ theme.set_highlights = function()
   hl(0, "Macro", { fg = c.purple, bg = 'NONE' })
   hl(0, "Debug", { fg = c.red, bg = 'NONE' })
   hl(0, "Label", { fg = c.blue, bg = 'NONE' })
-  hl(0, "SpecialChar", { fg = c.yellow_orange, bg = 'NONE' })
   hl(0, "SpecialComment", { fg = c.fg, bg = 'NONE' })
   hl(0, "Tag", { fg = c.blue, bg = 'NONE' })
   hl(0, "Bold", { fg = 'NONE', bg = 'NONE', bold = true, })
@@ -677,34 +677,42 @@ theme.set_highlights = function()
   hl(0, "BqfPreviewRange", { fg = 'NONE', bg = c.ui2_blue })
   hl(0, "BqfSign", { fg = c.ui_orange, bg = 'NONE' })
 
-  -- Cmp
+
+
+------------------------------------------------------------------------------
+-- CMP
+------------------------------------------------------------------------------
+
+  hl(0, "CmpItemAbbrMatch", { fg = c.black, bg = c.white })
   hl(0, "CmpItemAbbrDeprecated", { fg = c.gray, bg = 'NONE', strikethrough = true, })
-  hl(0, "CmpItemAbbrMatch", { fg = c.ui3_blue, bg = 'NONE' })
-  hl(0, "CmpItemAbbrMatchFuzzy", { fg = c.ui3_blue, bg = 'NONE' })
-  hl(0, "CmpItemKindFunction", { fg = c.ui_purple, bg = 'NONE' })
-  hl(0, "CmpItemKindMethod", { fg = c.ui_purple, bg = 'NONE' })
-  hl(0, "CmpItemKindConstructor", { fg = c.ui_orange, bg = 'NONE' })
-  hl(0, "CmpItemKindClass", { fg = c.ui_orange, bg = 'NONE' })
-  hl(0, "CmpItemKindEnum", { fg = c.ui_orange, bg = 'NONE' })
+
+
+
+  hl(0, "CmpItemAbbrMatchFuzzy", { fg = c.blue, bg = 'NONE' })
+  hl(0, "CmpItemKindFunction", { fg = c.purple, bg = 'NONE' })
+  hl(0, "CmpItemKindMethod", { fg = c.purple, bg = 'NONE' })
+  hl(0, "CmpItemKindConstructor", { fg = c.orange, bg = 'NONE' })
+  hl(0, "CmpItemKindClass", { fg = c.orange, bg = 'NONE' })
+  hl(0, "CmpItemKindEnum", { fg = c.orange, bg = 'NONE' })
   hl(0, "CmpItemKindEvent", { fg = c.info, bg = 'NONE' })
-  hl(0, "CmpItemKindInterface", { fg = c.ui_orange, bg = 'NONE' })
-  hl(0, "CmpItemKindStruct", { fg = c.ui_orange, bg = 'NONE' })
-  hl(0, "CmpItemKindVariable", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "CmpItemKindField", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "CmpItemKindProperty", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "CmpItemKindEnumMember", { fg = c.vivid_blue, bg = 'NONE' })
-  hl(0, "CmpItemKindConstant", { fg = c.vivid_blue, bg = 'NONE' })
-  hl(0, "CmpItemKindKeyword", { fg = c.fg, bg = 'NONE' })
+  hl(0, "CmpItemKindInterface", { fg = c.orange, bg = 'NONE' })
+  hl(0, "CmpItemKindStruct", { fg = c.orange, bg = 'NONE' })
+  hl(0, "CmpItemKindVariable", { fg = c.blue, bg = 'NONE' })
+  hl(0, "CmpItemKindField", { fg = c.blue, bg = 'NONE' })
+  hl(0, "CmpItemKindProperty", { fg = c.blue, bg = 'NONE' })
+  hl(0, "CmpItemKindEnumMember", { fg = c.purple, bg = 'NONE' })
+  hl(0, "CmpItemKindConstant", { fg = c.purple, bg = 'NONE' })
+  hl(0, "CmpItemKindKeyword", { fg = c.blue, bg = 'NONE' })
   hl(0, "CmpItemKindModule", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "CmpItemKindValue", { fg = c.fg, bg = 'NONE' })
-  hl(0, "CmpItemKindUnit", { fg = c.fg, bg = 'NONE' })
-  hl(0, "CmpItemKindText", { fg = c.fg, bg = 'NONE' })
+  hl(0, "CmpItemKindValue", { fg = c.white, bg = 'NONE' })
+  hl(0, "CmpItemKindUnit", { fg = c.white, bg = 'NONE' })
+  hl(0, "CmpItemKindText", { fg = c.white, bg = 'NONE' })
   hl(0, "CmpItemKindSnippet", { fg = c.fg, bg = 'NONE' })
   hl(0, "CmpItemKindFile", { fg = c.fg, bg = 'NONE' })
   hl(0, "CmpItemKindFolder", { fg = c.fg, bg = 'NONE' })
   hl(0, "CmpItemKindColor", { fg = c.fg, bg = 'NONE' })
   hl(0, "CmpItemKindReference", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "CmpItemKindOperator", { fg = c.fg, bg = 'NONE' })
+  hl(0, "CmpItemKindOperator", { fg = c.white, bg = 'NONE' })
   hl(0, "CmpItemKindTypeParameter", { fg = c.light_blue, bg = 'NONE' })
 
   -- Navic
