@@ -152,13 +152,13 @@ theme.set_highlights = function()
   hl(0, "NvimTreeRootFolder", { fg = c.blue, bg = 'NONE' })
   hl(0, "NvimTreeGitStaged", { fg = c.blue, bg = 'NONE' })
   hl(0, "NvimTreeSpecialFile", { fg = c.white, bg = 'NONE' })
+  hl(0, "NvimTreeGitDirty", { fg = c.blue, bg = 'NONE' })
 
 ----------------------------
 
   hl(0, "NvimTreeVertSplit", { fg = c.red, bg = c.green })
   hl(0, "NvimTreeGitRenamed", { fg = c.sign_add_alt, bg = 'NONE' })
   hl(0, "NvimTreeGitMerge", { fg = c.sign_change_alt, bg = 'NONE' })
-  hl(0, "NvimTreeGitDirty", { fg = c.sign_change_alt, bg = 'NONE' })
   hl(0, "NvimTreeSymlink", { fg = c.cyan, bg = 'NONE' })
   hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
 
