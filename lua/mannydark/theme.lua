@@ -698,6 +698,33 @@ theme.set_highlights = function()
   hl(0, "CmpItemKindOperator", { fg = c.white, bg = 'NONE' })
   hl(0, "CmpItemKindTypeParameter", { fg = c.blue, bg = 'NONE' })
 
+
+
+------------------------------------------------------------------------------
+-- PHP
+------------------------------------------------------------------------------
+
+  hl(0, "phpTodo", { link = 'Todo'})
+  hl(0, "phpComment", { fg = c.red, bg = 'NONE' })
+  hl(0, "phpRegion", { fg = c.turquoise, bg = 'NONE' })
+  hl(0, "phpInclude", { fg = c.blue, bg = 'NONE' })
+  hl(0, "phpClass", { fg = c.blue, bg = 'NONE' })
+  hl(0, "phpClasses", { fg = c.blue, bg = 'NONE' })
+  hl(0, "phpFunction", { fg = c.orange, bg = 'NONE' })
+  hl(0, "phpType", { fg = c.blue, bg = 'NONE' })
+  hl(0, "phpKeyword", { fg = c.blue, bg = 'NONE' })
+  hl(0, "phpVarSelector", { fg = c.blue, bg = 'NONE' })
+  hl(0, "phpIdentifier", { fg = c.blue, bg = 'NONE' })
+  hl(0, "phpMethod", { fg = c.orange, bg = 'NONE' })
+
+
+
+
+
+
+
+
+
   -- Navic
   hl(0, "NavicIconsFile", { link = 'CmpItemKindFile' })
   hl(0, "NavicIconsModule", { link = 'CmpItemKindModule' })
