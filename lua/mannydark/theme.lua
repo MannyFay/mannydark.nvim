@@ -116,6 +116,31 @@ theme.set_highlights = function()
   hl(0, "HopPreview", { fg = '#c7ba7d', bg = 'NONE' })
 
 
+--------------------------------------------------------------
+-- NvimTree
+  hl(0, "NvimTreeFolderIcon", { link = 'Directory' })
+  hl(0, "NvimTreeIndentMarker", { fg = c.context, bg = 'NONE' })
+  hl(0, "NvimTreeNormal", { fg = c.fg, bg = c.alt_bg })
+  hl(0, "NvimTreeVertSplit", { fg = c.alt_bg, bg = c.alt_bg })
+  hl(0, "NvimTreeWinSeparator", { fg = c.alt_bg, bg = c.alt_bg })
+  hl(0, "NvimTreeFolderName", { link = 'Directory' })
+  hl(0, "NvimTreeOpenedFolderName", { fg = c.folder_blue, bg = 'NONE', bold = true, italic = true, })
+  hl(0, "NvimTreeEmptyFolderName", { fg = c.gray, bg = 'NONE', italic = true, })
+  hl(0, "NvimTreeGitIgnored", { fg = c.gray, bg = 'NONE', italic = true, })
+  hl(0, "NvimTreeImageFile", { fg = c.light_gray, bg = 'NONE' })
+  hl(0, "NvimTreeSpecialFile", { fg = c.orange, bg = 'NONE' })
+  hl(0, "NvimTreeEndOfBuffer", { fg = c.alt_bg, bg = 'NONE' })
+  hl(0, "NvimTreeCursorLine", { fg = 'NONE', bg = c.line })
+  hl(0, "NvimTreeGitStaged", { fg = c.sign_add_alt, bg = 'NONE' })
+  hl(0, "NvimTreeGitNew", { fg = c.sign_add_alt, bg = 'NONE' })
+  hl(0, "NvimTreeGitRenamed", { fg = c.sign_add_alt, bg = 'NONE' })
+  hl(0, "NvimTreeGitDeleted", { fg = c.sign_delete, bg = 'NONE' })
+  hl(0, "NvimTreeGitMerge", { fg = c.sign_change_alt, bg = 'NONE' })
+  hl(0, "NvimTreeGitDirty", { fg = c.sign_change_alt, bg = 'NONE' })
+  hl(0, "NvimTreeSymlink", { fg = c.cyan, bg = 'NONE' })
+  hl(0, "NvimTreeRootFolder", { fg = c.fg, bg = 'NONE', bold = true, })
+  hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
+
 
 ------------------------------------------------------------------------------
 -- Language Defaults
@@ -542,29 +567,6 @@ theme.set_highlights = function()
   hl(0, "TelescopePromptCounter", { fg = c.red, bg = 'NONE' })
   hl(0, "TelescopePreviewHyphen", { fg = c.red, bg = 'NONE' })
 
-  -- NvimTree
-  hl(0, "NvimTreeFolderIcon", { link = 'Directory' })
-  hl(0, "NvimTreeIndentMarker", { fg = c.context, bg = 'NONE' })
-  hl(0, "NvimTreeNormal", { fg = c.fg, bg = c.alt_bg })
-  hl(0, "NvimTreeVertSplit", { fg = c.alt_bg, bg = c.alt_bg })
-  hl(0, "NvimTreeWinSeparator", { fg = c.alt_bg, bg = c.alt_bg })
-  hl(0, "NvimTreeFolderName", { link = 'Directory' })
-  hl(0, "NvimTreeOpenedFolderName", { fg = c.folder_blue, bg = 'NONE', bold = true, italic = true, })
-  hl(0, "NvimTreeEmptyFolderName", { fg = c.gray, bg = 'NONE', italic = true, })
-  hl(0, "NvimTreeGitIgnored", { fg = c.gray, bg = 'NONE', italic = true, })
-  hl(0, "NvimTreeImageFile", { fg = c.light_gray, bg = 'NONE' })
-  hl(0, "NvimTreeSpecialFile", { fg = c.orange, bg = 'NONE' })
-  hl(0, "NvimTreeEndOfBuffer", { fg = c.alt_bg, bg = 'NONE' })
-  hl(0, "NvimTreeCursorLine", { fg = 'NONE', bg = c.line })
-  hl(0, "NvimTreeGitStaged", { fg = c.sign_add_alt, bg = 'NONE' })
-  hl(0, "NvimTreeGitNew", { fg = c.sign_add_alt, bg = 'NONE' })
-  hl(0, "NvimTreeGitRenamed", { fg = c.sign_add_alt, bg = 'NONE' })
-  hl(0, "NvimTreeGitDeleted", { fg = c.sign_delete, bg = 'NONE' })
-  hl(0, "NvimTreeGitMerge", { fg = c.sign_change_alt, bg = 'NONE' })
-  hl(0, "NvimTreeGitDirty", { fg = c.sign_change_alt, bg = 'NONE' })
-  hl(0, "NvimTreeSymlink", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "NvimTreeRootFolder", { fg = c.fg, bg = 'NONE', bold = true, })
-  hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
 
   -- Lir
   hl(0, "LirFloatNormal", { fg = c.fg, bg = c.alt_bg })
