@@ -54,7 +54,7 @@ theme.set_highlights = function()
   hl(0, "Visual", { fg = 'NONE', bg = c.ui_blue })
   hl(0, "VisualNOS", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "WarningMsg", { fg = c.ui_orange, bg = c.bg })
-    hl(0, "QuickFixLine", { fg = 'NONE', bg = c.ui2_blue })
+  hl(0, "QuickFixLine", { fg = 'NONE', bg = c.ui2_blue })
   hl(0, "PmenuSbar", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "PmenuThumb", { fg = 'NONE', bg = c.gray })
   hl(0, "MatchWord", { fg = 'NONE', bg = c.reference })
@@ -71,7 +71,9 @@ theme.set_highlights = function()
   hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
   hl(0, "Question", { fg = c.orange, bg = 'NONE' })
   hl(0, "NonText", { fg = c.dark_gray, bg = 'NONE' })
-  hl(0, "TabLine", { fg = c.light_gray, bg = c.line })
+
+  hl(0, "TabLine", { fg = c.red, bg = c.green })
+
   hl(0, "TabLineSel", { fg = c.fg, bg = c.line })
   hl(0, "TabLineFill", { fg = c.line, bg = c.line })
 
@@ -99,11 +101,14 @@ theme.set_highlights = function()
 --------------------------------------------------------------
 -- Status Line
 
-  hl(0, "StatusLine", { fg = c.gray_dark, bg = 'NONE' })
-  hl(0, "StatusLineNC", { fg = c.line, bg = c.bg })
-  hl(0, "StatusLineSeparator", { fg = c.line, bg = 'NONE' })
-  hl(0, "StatusLineTerm", { fg = c.line, bg = 'NONE' })
-  hl(0, "StatusLineTermNC", { fg = c.line, bg = 'NONE' })
+  hl(0, "StatusLine", { fg = c.white, bg = c.gray_dark })
+  hl(0, "StatusLineNC", { fg = c.black, bg = c.gray_dark })
+
+
+
+  hl(0, "StatusLineSeparator", { fg = c.green, bg = c.red })
+  hl(0, "StatusLineTerm", { fg = c.red, bg = c.black })
+  hl(0, "StatusLineTermNC", { fg = c.white, bg = c.purple })
 
 
 --------------------------------------------------------------
@@ -134,14 +139,11 @@ theme.set_highlights = function()
   hl(0, "NvimTreeGitNew", { fg = c.green, bg = 'NONE' })
   hl(0, "NvimTreeRootFolder", { fg = c.blue, bg = 'NONE' })
   hl(0, "NvimTreeGitStaged", { fg = c.blue, bg = 'NONE' })
+  hl(0, "NvimTreeSpecialFile", { fg = c.white, bg = 'NONE' })
 
-
-
-
+----------------------------
 
   hl(0, "NvimTreeVertSplit", { fg = c.red, bg = c.green })
-
-  hl(0, "NvimTreeSpecialFile", { fg = c.orange, bg = 'NONE' })
   hl(0, "NvimTreeGitRenamed", { fg = c.sign_add_alt, bg = 'NONE' })
   hl(0, "NvimTreeGitMerge", { fg = c.sign_change_alt, bg = 'NONE' })
   hl(0, "NvimTreeGitDirty", { fg = c.sign_change_alt, bg = 'NONE' })
@@ -177,6 +179,8 @@ theme.set_highlights = function()
   hl(0, "Special", { fg = c.white, bg = 'NONE' })
   hl(0, "Todo", { fg = c.red, bg = 'NONE', bold = true, })
   hl(0, "Title", { fg = c.white, bg = 'NONE' })
+  hl(0, "Error", { fg = c.red, bg = 'NONE', bold = true, })
+  hl(0, "Statement", { fg = c.blue, bg = 'NONE' })
 
 
 -------------------------------------------------------------
@@ -185,7 +189,7 @@ theme.set_highlights = function()
 
   hl(0, "Repeat", { fg = c.purple, bg = 'NONE' })
   hl(0, "StorageClass", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "Structure", { fg = c.cyan, bg = 'NONE' })
+  hl(0, "Structure", { fg = c.cyan, bg = c.red })
   hl(0, "Typedef", { fg = c.purple, bg = 'NONE' })
   hl(0, "Define", { fg = c.purple, bg = 'NONE' })
   hl(0, "Macro", { fg = c.purple, bg = 'NONE' })
@@ -198,8 +202,6 @@ theme.set_highlights = function()
   hl(0, "Italic", { fg = 'NONE', bg = 'NONE', italic = true, })
   hl(0, "Underlined", { fg = 'NONE', bg = 'NONE', underline = true, })
   hl(0, "Ignore", { fg = c.magenta, bg = 'NONE', bold = true, })
-  hl(0, "Error", { fg = c.error, bg = 'NONE', bold = true, })
-  hl(0, "Statement", { fg = c.purple, bg = 'NONE' })
   hl(0, "PreCondit", { fg = c.purple, bg = 'NONE' })
 
 
@@ -231,19 +233,23 @@ theme.set_highlights = function()
   hl(0, "@text.todo", { link = 'Todo' })
   hl(0, "@text.title", { link = 'Title' })
   hl(0, "@tag.delimiter", { link = 'Tag' })
+  hl(0, "@punctuation.delimiter", { fg = c.white, bg = 'NONE' })
+  hl(0, "@punctuation.bracket", { fg = c.white, bg = 'NONE' })
+  hl(0, "@punctuation.special", { fg = c.white, bg = 'NONE' })
+  hl(0, "@constant.builtin", { link = 'Constant' })
 
 
 ---------------------------------
 
   hl(0, "@none", { fg = 'NONE', bg = 'NONE' })
   hl(0, "@define", { link = 'Define' })
-  hl(0, "@punctuation.delimiter", { link = 'Delimiter' })
-  hl(0, "@punctuation.bracket", { link = 'Delimiter' })
-  hl(0, "@punctuation.special", { link = 'Delimiter' })
+
   hl(0, "@string.regex", { link = 'String' })
   hl(0, "@string.escape", { link = 'SpecialChar' })
   hl(0, "@string.special", { link = 'SpecialChar' })
-  hl(0, "@character.special", { link = 'SpecialChar' })
+
+  hl(0, "@character.special", { fg = c.white, bg = 'NONE' })
+
   hl(0, "@function.builtin", { link = 'Type' })
   hl(0, "@function.macro", { link = 'Macro' })
   hl(0, "@constructor", { link = 'Type' })
@@ -259,7 +265,6 @@ theme.set_highlights = function()
   hl(0, "@attribute", { link = 'Type' })
   hl(0, "@field", { fg = c.light_blue, bg = 'NONE' })
   hl(0, "@property", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "@constant.builtin", { link = 'Constant' })
   hl(0, "@constant.macro", { fg = c.vivid_blue, bg = 'NONE' })
   hl(0, "@namespace", { fg = c.cyan, bg = 'NONE' })
   hl(0, "@symbol", { link = 'Identifier' })
