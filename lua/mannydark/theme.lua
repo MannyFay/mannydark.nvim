@@ -554,12 +554,29 @@ theme.set_highlights = function()
   --hl(0, "WhichKeyFloat", { fg = 'NONE', bg = c.alt_bg })
 
 
-  -- LSP
-  hl(0, "DiagnosticHint", { fg = c.hint, bg = 'NONE' })
-  hl(0, "DiagnosticInfo", { fg = c.info, bg = 'NONE' })
-  hl(0, "DiagnosticWarn", { fg = c.warn, bg = 'NONE' })
-  hl(0, "DiagnosticError", { fg = c.error, bg = 'NONE' })
-  hl(0, "DiagnosticOther", { fg = c.ui_purple, bg = 'NONE' })
+
+------------------------------------------------------------------------------
+-- Language Server Protocol (LSP)
+------------------------------------------------------------------------------
+
+  hl(0, "DiagnosticInfo", { fg = c.blue, bg = 'NONE' })
+  hl(0, "DiagnosticError", { fg = c.red, bg = 'NONE' })
+  hl(0, "DiagnosticHint", { fg = c.blue, bg = 'NONE' })
+  hl(0, "DiagnosticWarn", { fg = c.orange, bg = 'NONE' })
+  hl(0, "DiagnosticVirtualTextHint", { fg = c.blue, bg = c.hint_bg })
+  hl(0, "DiagnosticVirtualTextInfo", { fg = c.blue, bg = c.info_bg })
+  hl(0, "DiagnosticVirtualTextWarn", { fg = c.orange, bg = c.warn_bg })
+  hl(0, "DiagnosticVirtualTextError", { fg = c.red, bg = c.error_bg })
+  hl(0, "LspDiagnosticsError", { fg = c.red, bg = 'NONE' })
+  hl(0, "LspDiagnosticsWarning", { fg = c.orange, bg = 'NONE' })
+  hl(0, "LspDiagnosticsInfo", { fg = c.blue, bg = 'NONE' })
+  hl(0, "LspDiagnosticsHint", { fg = c.blue, bg = 'NONE' })
+
+  hl(0, "LspCodeLens", { fg = c.purple, bg = 'NONE', italic = true, })
+  hl(0, "LspCodeLensSeparator", { fg = c.purple, bg = 'NONE', italic = true, })
+----------------
+
+  hl(0, "DiagnosticOther", { fg = c.purple, bg = 'NONE' })
   hl(0, "DiagnosticSignHint", { link = 'DiagnosticHint' })
   hl(0, "DiagnosticSignInfo", { link = 'DiagnosticInfo' })
   hl(0, "DiagnosticSignWarn", { link = 'DiagnosticWarn' })
@@ -575,15 +592,9 @@ theme.set_highlights = function()
   hl(0, "DiagnosticUnderlineWarn", { fg = 'NONE', bg = 'NONE', sp = c.warn, undercurl = true, })
   hl(0, "DiagnosticUnderlineError", { fg = 'NONE', bg = 'NONE', sp = c.error, undercurl = true, })
   hl(0, "DiagnosticSignInformation", { link = 'DiagnosticInfo' })
-  hl(0, "DiagnosticVirtualTextHint", { fg = c.hint, bg = c.hint_bg })
-  hl(0, "DiagnosticVirtualTextInfo", { fg = c.info, bg = c.info_bg })
-  hl(0, "DiagnosticVirtualTextWarn", { fg = c.warn, bg = c.warn_bg })
-  hl(0, "DiagnosticVirtualTextError", { fg = c.error, bg = c.error_bg })
-  hl(0, "LspDiagnosticsError", { fg = c.error, bg = 'NONE' })
-  hl(0, "LspDiagnosticsWarning", { fg = c.warn, bg = 'NONE' })
-  hl(0, "LspDiagnosticsInfo", { fg = c.info, bg = 'NONE' })
+
+
   hl(0, "LspDiagnosticsInformation", { link = 'LspDiagnosticsInfo' })
-  hl(0, "LspDiagnosticsHint", { fg = c.hint, bg = 'NONE' })
   hl(0, "LspDiagnosticsDefaultError", { link = 'LspDiagnosticsError' })
   hl(0, "LspDiagnosticsDefaultWarning", { link = 'LspDiagnosticsWarning' })
   hl(0, "LspDiagnosticsDefaultInformation", { link = 'LspDiagnosticsInfo' })
@@ -620,8 +631,6 @@ theme.set_highlights = function()
   hl(0, "IlluminatedWordRead", { link = 'LspReferenceRead' })
   hl(0, "IlluminatedWordText", { link = 'LspReferenceText' })
   hl(0, "IlluminatedWordWrite", { link = 'LspReferenceWrite' })
-  hl(0, "LspCodeLens", { fg = c.context, bg = 'NONE', italic = true, })
-  hl(0, "LspCodeLensSeparator", { fg = c.context, bg = 'NONE', italic = true, })
 
   -- Quickscope
   hl(0, "QuickScopePrimary", { fg = '#ff007c', bg = 'NONE', underline = true, })
