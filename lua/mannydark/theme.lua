@@ -314,6 +314,21 @@ theme.set_highlights = function()
 
 
 ------------------------------------------------------------------------------
+-- JSON
+------------------------------------------------------------------------------
+
+  hl(0, "jsonNoise", { fg = c.white, bg = 'NONE' })
+  hl(0, "jsonKeyword", { fg = c.blue, bg = 'NONE' })
+  hl(0, "jsonKeywordMatch", { fg = c.white, bg = 'NONE' })
+  hl(0, "jsonQuote", { fg = c.white, bg = 'NONE' })
+  hl(0, "jsonString", { fg = c.red_light, bg = 'NONE' })
+  hl(0, "jsonEscape", { fg = c.blue, bg = 'NONE' })
+  hl(0, "jsonBoolean", { fg = c.blue, bg = 'NONE' })
+  hl(0, "jsonBraces", { fg = c.white, bg = 'NONE' })
+
+
+
+------------------------------------------------------------------------------
 -- Lua
 ------------------------------------------------------------------------------
 
@@ -793,7 +808,6 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   -- hl(0, "yamlTSField", { fg = c.blue, bg = 'NONE' })
   hl(0, "hclTSPunctSpecial", { fg = c.alt_fg, bg = 'NONE' })
 
-  hl(0, "jsonKeyword", { fg = c.blue, bg = 'NONE' })
   hl(0, "yamlBlockMappingKey", { fg = c.blue, bg = 'NONE' })
   hl(0, "tomlTSProperty", { fg = c.blue, bg = 'NONE' })
   hl(0, "zshKSHFunction", { link = "Function" })
