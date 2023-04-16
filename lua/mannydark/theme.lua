@@ -314,6 +314,26 @@ theme.set_highlights = function()
 
 
 ------------------------------------------------------------------------------
+-- Lua
+------------------------------------------------------------------------------
+
+  hl(0, "luaFunction", { fg = c.blue, bg = 'NONE' })
+  hl(0, "luaCond", { fg = c.blue, bg = 'NONE' })
+  hl(0, "luaStatement", { fg = c.blue, bg = 'NONE' })
+  hl(0, "luaOperator", { fg = c.blue, bg = 'NONE' })
+  hl(0, "luaSymbolOperator", { fg = c.white, bg = 'NONE' })
+  hl(0, "luaComment", { fg = c.red, bg = 'NONE' })
+  hl(0, "luaConstant", { fg = c.purple, bg = 'NONE' })
+  hl(0, "luaString2", { fg = c.red_light, bg = 'NONE' })
+  hl(0, "luaStringDelimiter", { fg = c.red_light, bg = 'NONE' })
+  hl(0, "luaString", { fg = c.red_light, bg = 'NONE' })
+  hl(0, "luaNumber", { fg = c.green_light, bg = 'NONE' })
+  hl(0, "luaTable", { fg = c.white, bg = 'NONE' })
+  hl(0, "luaFunc", { fg = c.yellow, bg = 'NONE' })
+
+
+
+------------------------------------------------------------------------------
 -- Markdown
 ------------------------------------------------------------------------------
 
@@ -771,8 +791,6 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   hl(0, "xmlEndTag", { fg = c.cyan, bg = 'NONE' })
   -- hl(0, "yamlPlainScalar", { fg = c.orange, bg = 'NONE' })
   -- hl(0, "yamlTSField", { fg = c.blue, bg = 'NONE' })
-  hl(0, "luaFunc", { fg = c.yellow, bg = 'NONE' })
-  hl(0, "luaFunction", { fg = c.blue, bg = 'NONE' })
   hl(0, "hclTSPunctSpecial", { fg = c.alt_fg, bg = 'NONE' })
 
   hl(0, "jsonKeyword", { fg = c.blue, bg = 'NONE' })
