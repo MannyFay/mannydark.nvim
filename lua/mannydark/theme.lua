@@ -54,11 +54,7 @@ theme.set_highlights = function()
   hl(0, "Visual", { fg = 'NONE', bg = c.ui_blue })
   hl(0, "VisualNOS", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "WarningMsg", { fg = c.ui_orange, bg = c.bg })
-  hl(0, "DiffText", { fg = c.alt_bg, bg = c.sign_delete })
-  hl(0, "DiffAdd", { fg = c.alt_bg, bg = c.sign_add })
-  hl(0, "DiffChange", { fg = c.alt_bg, bg = c.sign_change, underline = true, })
-  hl(0, "DiffDelete", { fg = c.alt_bg, bg = c.sign_delete })
-  hl(0, "QuickFixLine", { fg = 'NONE', bg = c.ui2_blue })
+    hl(0, "QuickFixLine", { fg = 'NONE', bg = c.ui2_blue })
   hl(0, "PmenuSbar", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "PmenuThumb", { fg = 'NONE', bg = c.gray })
   hl(0, "MatchWord", { fg = 'NONE', bg = c.reference })
@@ -314,6 +310,24 @@ theme.set_highlights = function()
 
 
 ------------------------------------------------------------------------------
+-- Git
+------------------------------------------------------------------------------
+
+  hl(0, "SignAdd", { fg = c.green, bg = 'NONE' })
+  hl(0, "SignChange", { fg = c.blue, bg = 'NONE' })
+  hl(0, "SignDelete", { fg = c.red, bg = 'NONE' })
+  hl(0, "GitSignsAdd", { fg = c.green, bg = 'NONE' })
+  hl(0, "GitSignsChange", { fg = c.blue, bg = 'NONE' })
+  hl(0, "GitSignsDelete", { fg = c.red, bg = 'NONE' })
+
+  hl(0, "DiffText", { fg = c.alt_bg, bg = c.sign_delete })
+  hl(0, "DiffAdd", { fg = c.alt_bg, bg = c.sign_add })
+  hl(0, "DiffChange", { fg = c.alt_bg, bg = c.sign_change, underline = true, })
+  hl(0, "DiffDelete", { fg = c.alt_bg, bg = c.sign_delete })
+
+
+
+------------------------------------------------------------------------------
 -- JSON
 ------------------------------------------------------------------------------
 
@@ -399,13 +413,6 @@ theme.set_highlights = function()
   hl(0, "WhichKeyDesc", { fg = c.fg, bg = 'NONE' })
   hl(0, "WhichKeyFloat", { fg = 'NONE', bg = c.alt_bg })
 
-  -- Git
-  hl(0, "SignAdd", { fg = c.sign_add, bg = 'NONE' })
-  hl(0, "SignChange", { fg = c.sign_change, bg = 'NONE' })
-  hl(0, "SignDelete", { fg = c.sign_delete, bg = 'NONE' })
-  hl(0, "GitSignsAdd", { fg = c.sign_add, bg = 'NONE' })
-  hl(0, "GitSignsChange", { fg = c.sign_change, bg = 'NONE' })
-  hl(0, "GitSignsDelete", { fg = c.sign_delete, bg = 'NONE' })
 
   -- LSP
   hl(0, "DiagnosticHint", { fg = c.hint, bg = 'NONE' })
