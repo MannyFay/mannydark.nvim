@@ -223,6 +223,7 @@ theme.set_highlights = function()
   hl(0, "@function.call", { link = 'Function' })
   hl(0, "@text.todo", { link = 'Todo' })
   hl(0, "@text.title", { link = 'Title' })
+  hl(0, "@tag.delimiter", { link = 'Tag' })
 
 
 ---------------------------------
@@ -271,7 +272,6 @@ theme.set_highlights = function()
   hl(0, "@text.danger", { link = 'WarningMsg' })
   hl(0, "@tag", { link = 'Tag' })
   hl(0, "@tag.attribute", { fg = c.light_blue, bg = 'NONE', italic = true, })
-  hl(0, "@tag.delimiter", { fg = c.gray, bg = 'NONE' })
 
 
 
