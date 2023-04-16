@@ -107,6 +107,16 @@ theme.set_highlights = function()
   hl(0, "StatusLineTermNC", { fg = c.line, bg = 'NONE' })
 
 
+--------------------------------------------------------------
+-- Hop
+  hl(0, "HopNextKey", { fg = '#4ae0ff', bg = 'NONE' })
+  hl(0, "HopNextKey1", { fg = '#d44eed', bg = 'NONE' })
+  hl(0, "HopNextKey2", { fg = '#b42ecd', bg = 'NONE' })
+  hl(0, "HopUnmatched", { fg = c.gray, bg = 'NONE' })
+  hl(0, "HopPreview", { fg = '#c7ba7d', bg = 'NONE' })
+
+
+
 ------------------------------------------------------------------------------
 -- Language Defaults
 ------------------------------------------------------------------------------
@@ -791,12 +801,7 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   -- TreesitterContext
   hl(0, "TreesitterContext", { fg = 'NONE', bg = c.alt_bg })
 
-  -- Hop
-  hl(0, "HopNextKey", { fg = '#4ae0ff', bg = 'NONE' })
-  hl(0, "HopNextKey1", { fg = '#d44eed', bg = 'NONE' })
-  hl(0, "HopNextKey2", { fg = '#b42ecd', bg = 'NONE' })
-  hl(0, "HopUnmatched", { fg = c.gray, bg = 'NONE' })
-  hl(0, "HopPreview", { fg = '#c7ba7d', bg = 'NONE' })
+
 
   -- Crates
   hl(0, "CratesNvimLoading", { fg = c.hint, bg = 'NONE' })
