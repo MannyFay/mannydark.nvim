@@ -329,7 +329,7 @@ theme.set_highlights = function()
   hl(0, "luaString", { fg = c.red_light, bg = 'NONE' })
   hl(0, "luaNumber", { fg = c.green_light, bg = 'NONE' })
   hl(0, "luaTable", { fg = c.white, bg = 'NONE' })
-  hl(0, "luaFunc", { fg = c.yellow, bg = 'NONE' })
+  hl(0, "luaFunc", { fg = c.orange, bg = 'NONE' })
 
 
 
