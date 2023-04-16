@@ -78,8 +78,8 @@ theme.set_highlights = function()
 
 
 --------------------------------------------------------------
--- Colors
-  -- Buffer
+-- Buffer
+
   hl(0, "BufferCurrent", { fg = c.fg, bg = c.bg })
   hl(0, "BufferCurrentIndex", { fg = c.fg, bg = c.bg })
   hl(0, "BufferCurrentMod", { fg = c.info, bg = c.bg })
@@ -95,6 +95,17 @@ theme.set_highlights = function()
   hl(0, "BufferInactiveMod", { fg = c.info, bg = c.alt_bg })
   hl(0, "BufferInactiveSign", { fg = c.gray, bg = c.alt_bg })
   hl(0, "BufferInactiveTarget", { fg = c.red, bg = c.alt_bg, bold = true, })
+
+
+--------------------------------------------------------------
+-- Status Line
+  hl(0, "StatusLine", { fg = c.context, bg = c.alt_bg })
+  hl(0, "StatusLineNC", { fg = c.line, bg = c.bg })
+  hl(0, "StatusLineSeparator", { fg = c.line, bg = 'NONE' })
+  hl(0, "StatusLineTerm", { fg = c.line, bg = 'NONE' })
+  hl(0, "StatusLineTermNC", { fg = c.line, bg = 'NONE' })
+
+
 ------------------------------------------------------------------------------
 -- Language Defaults
 ------------------------------------------------------------------------------
@@ -552,12 +563,6 @@ theme.set_highlights = function()
 
 
 
-  -- StatusLine
-  hl(0, "StatusLine", { fg = c.context, bg = c.alt_bg })
-  hl(0, "StatusLineNC", { fg = c.line, bg = c.bg })
-  hl(0, "StatusLineSeparator", { fg = c.line, bg = 'NONE' })
-  hl(0, "StatusLineTerm", { fg = c.line, bg = 'NONE' })
-  hl(0, "StatusLineTermNC", { fg = c.line, bg = 'NONE' })
 
   -- IndentBlankline
   hl(0, "IndentBlanklineContextChar", { fg = c.context, bg = 'NONE' })
