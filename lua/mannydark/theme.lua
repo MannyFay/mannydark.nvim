@@ -160,6 +160,45 @@ theme.set_highlights = function()
   hl(0, "NvimTreeSymlink", { fg = c.cyan, bg = 'NONE' })
   hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
 
+--------------------------------------------------------------
+-- Lualine
+
+  hl(0, "lualine_b_insert", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_a_insert", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_inactive", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_c_inactive", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_a_inactive", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_visual", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_a_visual", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_normal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_c_normal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_a_normal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_command", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_a_command", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_replace", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_a_replace", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_added_normal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_added_insert", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_added_visual", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_added_replace", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_added_command", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_added_terminal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_added_inactive", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_modified_normal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_modified_insert", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_modified_visual", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_modified_replace", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_modified_command", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_modified_terminal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_modified_inactive", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_removed_normal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_removed_insert", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_removed_visual", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_removed_replace", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_removed_command", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_removed_terminal", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_x_diff_removed_inactive", { fg = c.red, bg = c.green, italic = true, })
+
 
 
 ------------------------------------------------------------------------------
@@ -294,6 +333,11 @@ theme.set_highlights = function()
   hl(0, "@text.danger", { link = 'WarningMsg' })
   hl(0, "@tag", { link = 'Tag' })
   hl(0, "@tag.attribute", { fg = c.light_blue, bg = 'NONE', italic = true, })
+
+
+
+
+
 
 
 
