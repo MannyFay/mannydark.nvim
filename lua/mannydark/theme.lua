@@ -236,6 +236,7 @@ theme.set_highlights = function()
   hl(0, "Title", { fg = c.white, bg = 'NONE' })
   hl(0, "Error", { fg = c.red, bg = 'NONE', bold = true, })
   hl(0, "Statement", { fg = c.blue, bg = 'NONE' })
+  hl(0, "Structure", { fg = c.blue, bg = 'NONE' })
 
 
 -------------------------------------------------------------
@@ -245,7 +246,6 @@ theme.set_highlights = function()
 
   hl(0, "Repeat", { fg = c.purple, bg = 'NONE' })
   hl(0, "StorageClass", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "Structure", { fg = c.cyan, bg = c.red })
   hl(0, "Typedef", { fg = c.purple, bg = 'NONE' })
   hl(0, "Define", { fg = c.purple, bg = 'NONE' })
   hl(0, "Macro", { fg = c.purple, bg = 'NONE' })
@@ -571,9 +571,13 @@ theme.set_highlights = function()
   hl(0, "LspDiagnosticsWarning", { fg = c.orange, bg = 'NONE' })
   hl(0, "LspDiagnosticsInfo", { fg = c.blue, bg = 'NONE' })
   hl(0, "LspDiagnosticsHint", { fg = c.blue, bg = 'NONE' })
-
   hl(0, "LspCodeLens", { fg = c.purple, bg = 'NONE', italic = true, })
   hl(0, "LspCodeLensSeparator", { fg = c.purple, bg = 'NONE', italic = true, })
+  hl(0, "DiagnosticUnderlineHint", { fg = 'NONE', bg = 'NONE', sp = c.blue, undercurl = true, })
+  hl(0, "DiagnosticUnderlineInfo", { fg = 'NONE', bg = 'NONE', sp = c.blue, undercurl = true, })
+  hl(0, "DiagnosticUnderlineWarn", { fg = 'NONE', bg = 'NONE', sp = c.orange, undercurl = true, })
+  hl(0, "DiagnosticUnderlineError", { fg = 'NONE', bg = 'NONE', sp = c.red, undercurl = true, })
+
 ----------------
 
   hl(0, "DiagnosticOther", { fg = c.purple, bg = 'NONE' })
@@ -587,10 +591,6 @@ theme.set_highlights = function()
   hl(0, "DiagnosticFloatingInfo", { link = 'DiagnosticInfo' })
   hl(0, "DiagnosticFloatingWarn", { link = 'DiagnosticWarn' })
   hl(0, "DiagnosticFloatingError", { link = 'DiagnosticError' })
-  hl(0, "DiagnosticUnderlineHint", { fg = 'NONE', bg = 'NONE', sp = c.hint, undercurl = true, })
-  hl(0, "DiagnosticUnderlineInfo", { fg = 'NONE', bg = 'NONE', sp = c.info, undercurl = true, })
-  hl(0, "DiagnosticUnderlineWarn", { fg = 'NONE', bg = 'NONE', sp = c.warn, undercurl = true, })
-  hl(0, "DiagnosticUnderlineError", { fg = 'NONE', bg = 'NONE', sp = c.error, undercurl = true, })
   hl(0, "DiagnosticSignInformation", { link = 'DiagnosticInfo' })
 
 
