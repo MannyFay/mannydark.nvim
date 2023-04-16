@@ -46,10 +46,7 @@ theme.set_highlights = function()
   hl(0, "SpellRare", { fg = 'NONE', bg = 'NONE', sp = c.purple, underline = true, })
   hl(0, "NormalNC", { fg = c.fg, bg = c.bg })
 
-
-
   hl(0, "WildMenu", { fg = c.red, bg = c.purple })
-
 
   hl(0, "Folded", { fg = c.gray, bg = c.alt_bg })
   hl(0, "FoldColumn", { fg = c.gray, bg = c.alt_bg })
@@ -60,14 +57,6 @@ theme.set_highlights = function()
   --hl(0, "CursorColumn", { fg = 'NONE', bg = c.alt_bg })
 
   hl(0, "NormalFloat", { fg = 'NONE', bg = c.alt_bg })
-
-
-
-
-
-
-
-
   hl(0, "VisualNOS", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "WarningMsg", { fg = c.ui_orange, bg = c.bg })
   hl(0, "QuickFixLine", { fg = 'NONE', bg = c.ui2_blue })
@@ -76,7 +65,6 @@ theme.set_highlights = function()
   hl(0, "MatchWord", { fg = 'NONE', bg = c.reference })
   hl(0, "MatchWordCur", { fg = 'NONE', bg = c.reference })
   hl(0, "MatchParenCur", { fg = 'NONE', bg = c.reference })
-
   hl(0, "TermCursor", { fg = c.cursor_fg, bg = c.cursor_bg })
   hl(0, "TermCursorNC", { fg = c.cursor_fg, bg = c.cursor_bg })
   hl(0, "Conceal", { fg = c.gray, bg = 'NONE' })
@@ -118,7 +106,7 @@ theme.set_highlights = function()
   hl(0, "StatusLine", { fg = c.white, bg = c.gray_dark })
   hl(0, "StatusLineNC", { fg = c.black, bg = c.gray_dark })
 
-
+-----------------------
 
   hl(0, "StatusLineSeparator", { fg = c.green, bg = c.red })
   hl(0, "StatusLineTerm", { fg = c.red, bg = c.black })
@@ -238,12 +226,9 @@ theme.set_highlights = function()
   hl(0, "Statement", { fg = c.blue, bg = 'NONE' })
   hl(0, "Structure", { fg = c.blue, bg = 'NONE' })
 
-
 -------------------------------------------------------------
 
-
   hl(0, "SpecialChar", { fg = c.white, bg = 'NONE' })
-
   hl(0, "Repeat", { fg = c.purple, bg = 'NONE' })
   hl(0, "StorageClass", { fg = c.cyan, bg = 'NONE' })
   hl(0, "Typedef", { fg = c.purple, bg = 'NONE' })
@@ -293,18 +278,14 @@ theme.set_highlights = function()
   hl(0, "@punctuation.special", { fg = c.white, bg = 'NONE' })
   hl(0, "@constant.builtin", { link = 'Constant' })
 
-
 ---------------------------------
 
   hl(0, "@none", { fg = 'NONE', bg = 'NONE' })
   hl(0, "@define", { link = 'Define' })
-
   hl(0, "@string.regex", { link = 'String' })
   hl(0, "@string.escape", { link = 'SpecialChar' })
   hl(0, "@string.special", { link = 'SpecialChar' })
-
   hl(0, "@character.special", { fg = c.white, bg = 'NONE' })
-
   hl(0, "@function.builtin", { link = 'Type' })
   hl(0, "@function.macro", { link = 'Macro' })
   hl(0, "@constructor", { link = 'Type' })
@@ -339,11 +320,6 @@ theme.set_highlights = function()
   hl(0, "@text.danger", { link = 'WarningMsg' })
   hl(0, "@tag", { link = 'Tag' })
   hl(0, "@tag.attribute", { fg = c.light_blue, bg = 'NONE', italic = true, })
-
-
-
-
-
 
 
 
@@ -592,8 +568,6 @@ theme.set_highlights = function()
   hl(0, "DiagnosticFloatingWarn", { link = 'DiagnosticWarn' })
   hl(0, "DiagnosticFloatingError", { link = 'DiagnosticError' })
   hl(0, "DiagnosticSignInformation", { link = 'DiagnosticInfo' })
-
-
   hl(0, "LspDiagnosticsInformation", { link = 'LspDiagnosticsInfo' })
   hl(0, "LspDiagnosticsDefaultError", { link = 'LspDiagnosticsError' })
   hl(0, "LspDiagnosticsDefaultWarning", { link = 'LspDiagnosticsWarning' })
@@ -649,15 +623,11 @@ theme.set_highlights = function()
   hl(0, "TelescopePromptCounter", { fg = c.red, bg = 'NONE' })
   hl(0, "TelescopePreviewHyphen", { fg = c.red, bg = 'NONE' })
 
-
   -- Lir
   hl(0, "LirFloatNormal", { fg = c.fg, bg = c.alt_bg })
   hl(0, "LirDir", { link = 'Directory' })
   hl(0, "LirSymLink", { fg = c.cyan, bg = 'NONE' })
   hl(0, "LirEmptyDirText", { fg = c.gray, bg = 'NONE', italic = true, })
-
-
-
 
   -- IndentBlankline
   --hl(0, "IndentBlanklineContextChar", { fg = c.context, bg = 'NONE' })
@@ -699,7 +669,7 @@ theme.set_highlights = function()
   hl(0, "CmpItemAbbrMatch", { fg = c.black, bg = c.gray })
   hl(0, "CmpItemAbbrDeprecated", { fg = c.gray, bg = 'NONE', strikethrough = true, })
 
-
+---------------------
 
   hl(0, "CmpItemAbbrMatchFuzzy", { fg = c.blue, bg = 'NONE' })
   hl(0, "CmpItemKindFunction", { fg = c.purple, bg = 'NONE' })
@@ -787,7 +757,6 @@ theme.set_highlights = function()
   hl(0, "NotifyINFOTitle", { fg = c.ui4_blue, bg = 'NONE' })
   hl(0, "NotifyDEBUGTitle", { fg = c.gray, bg = 'NONE' })
   hl(0, "NotifyTRACETitle", { fg = c.ui_purple, bg = 'NONE' }) ]]
-
   -- hl(0, "NeogitFold", { fg = c.ui_purple, bg = 'NONE' })
   -- hl(0, "NeogitStash", { fg = c.ui_purple, bg = 'NONE' })
   -- hl(0, "NeogitDiffAdd", { fg = c.ui_purple, bg = 'NONE' })
@@ -806,7 +775,6 @@ theme.set_highlights = function()
   hl(0, "NeogitUnmergedchanges", { fg = c.blue, bg = 'NONE' })
   hl(0, "NeogitUnpulledchanges", { fg = c.blue, bg = 'NONE' })
   hl(0, "NeogitUnstagedchanges", { fg = c.blue, bg = 'NONE' })
-
   -- hl(0, "NoiceCmdline", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCmdlineIcon", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCmdlineIconCmdline", { fg = c.hint, bg = c.hint })
@@ -826,7 +794,6 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   -- hl(0, "NoiceCmdlinePopupBorderLua", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCmdlinePopupBorderSearch", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCmdlinePrompt", { fg = c.hint, bg = c.hint })
-
   -- hl(0, "NoiceCompletionItemKindClass", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCompletionItemKindColor", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCompletionItemKindConstant", { fg = c.hint, bg = c.hint })
@@ -851,11 +818,9 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   -- hl(0, "NoiceCompletionItemKindVariable", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCompletionItemMenu", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCompletionItemWord", { fg = c.hint, bg = c.hint })
-
   -- hl(0, "NoiceConfirm", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceConfirmBorder", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceCursor", { fg = c.hint, bg = c.hint })
-
   -- hl(0, "NoiceFormatConfirm", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceFormatConfirmDefault", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceFormatDate", { fg = c.hint, bg = c.hint })
@@ -870,11 +835,9 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   -- hl(0, "NoiceFormatProgressDone", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceFormatProgressTodo", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceFormatTitle", { fg = c.hint, bg = c.hint })
-
   -- hl(0, "NoiceLspProgressClient", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceLspProgressSpinner", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceLspProgressTitle", { fg = c.hint, bg = c.hint })
-
   -- hl(0, "NoiceMini", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoicePopup", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoicePopupBorder", { fg = c.hint, bg = c.hint })
@@ -887,13 +850,10 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   -- hl(0, "NoiceSplit", { fg = c.hint, bg = c.hint })
   -- hl(0, "NoiceSplitBorder", { fg = c.hint, bg = c.hint })
   hl(0, "NoiceVirtualText", { fg = c.hint, bg = c.hint_bg })
-
   -- Noice
 
   -- TreesitterContext
   hl(0, "TreesitterContext", { fg = 'NONE', bg = c.alt_bg })
-
-
 
   -- Crates
   hl(0, "CratesNvimLoading", { fg = c.hint, bg = 'NONE' })
@@ -922,7 +882,6 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   -- hl(0, "yamlPlainScalar", { fg = c.orange, bg = 'NONE' })
   -- hl(0, "yamlTSField", { fg = c.blue, bg = 'NONE' })
   hl(0, "hclTSPunctSpecial", { fg = c.alt_fg, bg = 'NONE' })
-
   hl(0, "yamlBlockMappingKey", { fg = c.blue, bg = 'NONE' })
   hl(0, "tomlTSProperty", { fg = c.blue, bg = 'NONE' })
   hl(0, "zshKSHFunction", { link = "Function" })
