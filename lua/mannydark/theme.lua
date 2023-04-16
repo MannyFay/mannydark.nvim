@@ -28,8 +28,13 @@ theme.set_highlights = function()
   hl(0, "EndOfBuffer", { fg = c.black, bg = 'NONE' })
   -- Error message:
   hl(0, "ErrorMsg", { fg = c.white, bg = c.red, bold = true, })
+  hl(0, "Visual", { fg = 'NONE', bg = c.gray_dark })
 
 
+----------------------------
+  hl(0, "Cursor", { fg = c.red, bg = c.green })
+  hl(0, "lCursor", { fg = c.red, bg = c.green })
+  hl(0, "CursorIM", { fg = c.red, bg = c.green })
 
   hl(0, "MsgArea", { fg = c.fg, bg = c.bg })
   hl(0, "ModeMsg", { fg = c.fg, bg = c.alt_bg })
@@ -51,7 +56,14 @@ theme.set_highlights = function()
   --hl(0, "CursorColumn", { fg = 'NONE', bg = c.alt_bg })
 
   hl(0, "NormalFloat", { fg = 'NONE', bg = c.alt_bg })
-  hl(0, "Visual", { fg = 'NONE', bg = c.ui_blue })
+
+
+
+
+
+
+
+
   hl(0, "VisualNOS", { fg = 'NONE', bg = c.alt_bg })
   hl(0, "WarningMsg", { fg = c.ui_orange, bg = c.bg })
   hl(0, "QuickFixLine", { fg = 'NONE', bg = c.ui2_blue })
@@ -60,9 +72,7 @@ theme.set_highlights = function()
   hl(0, "MatchWord", { fg = 'NONE', bg = c.reference })
   hl(0, "MatchWordCur", { fg = 'NONE', bg = c.reference })
   hl(0, "MatchParenCur", { fg = 'NONE', bg = c.reference })
-  hl(0, "Cursor", { fg = c.cursor_fg, bg = c.cursor_bg })
-  hl(0, "lCursor", { fg = c.cursor_fg, bg = c.cursor_bg })
-  hl(0, "CursorIM", { fg = c.cursor_fg, bg = c.cursor_bg })
+
   hl(0, "TermCursor", { fg = c.cursor_fg, bg = c.cursor_bg })
   hl(0, "TermCursorNC", { fg = c.cursor_fg, bg = c.cursor_bg })
   hl(0, "Conceal", { fg = c.gray, bg = 'NONE' })
