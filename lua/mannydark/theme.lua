@@ -17,7 +17,7 @@ theme.set_highlights = function()
   hl(0, "LineNr", { fg = c.gray, bg = 'NONE' })
   hl(0, "CursorLineNr", { fg = c.white, bg = 'NONE' })
   -- Vertical split separator line:
-  hl(0, "VertSplit", { fg = c.gray, bg = c.bg })
+  hl(0, "VertSplit", { fg = c.gray_dark, bg = c.gray_dark })
   -- Color of actual line:
   hl(0, "CursorLine", { fg = 'NONE', bg = c.gray_dark })
   -- Highlighting of search patterns:
@@ -66,7 +66,6 @@ theme.set_highlights = function()
   hl(0, "TermCursor", { fg = c.cursor_fg, bg = c.cursor_bg })
   hl(0, "TermCursorNC", { fg = c.cursor_fg, bg = c.cursor_bg })
   hl(0, "Conceal", { fg = c.gray, bg = 'NONE' })
-  hl(0, "Directory", { fg = c.folder_blue, bg = 'NONE' })
   hl(0, "SpecialKey", { fg = c.blue, bg = 'NONE', bold = true, })
   hl(0, "Substitute", { fg = 'NONE', bg = c.ui2_orange })
   hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
@@ -118,27 +117,35 @@ theme.set_highlights = function()
 
 --------------------------------------------------------------
 -- NvimTree
+
+  hl(0, "Directory", { fg = c.blue, bg = 'NONE' })
   hl(0, "NvimTreeFolderIcon", { link = 'Directory' })
-  hl(0, "NvimTreeIndentMarker", { fg = c.context, bg = 'NONE' })
-  hl(0, "NvimTreeNormal", { fg = c.fg, bg = c.alt_bg })
-  hl(0, "NvimTreeVertSplit", { fg = c.alt_bg, bg = c.alt_bg })
-  hl(0, "NvimTreeWinSeparator", { fg = c.alt_bg, bg = c.alt_bg })
+  hl(0, "NvimTreeIndentMarker", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NvimTreeWinSeparator", { fg = c.gray_dark, bg = c.gray_dark })
+  hl(0, "NvimTreeNormal", { fg = c.white, bg = 'NONE' })
   hl(0, "NvimTreeFolderName", { link = 'Directory' })
-  hl(0, "NvimTreeOpenedFolderName", { fg = c.folder_blue, bg = 'NONE', bold = true, italic = true, })
-  hl(0, "NvimTreeEmptyFolderName", { fg = c.gray, bg = 'NONE', italic = true, })
-  hl(0, "NvimTreeGitIgnored", { fg = c.gray, bg = 'NONE', italic = true, })
-  hl(0, "NvimTreeImageFile", { fg = c.light_gray, bg = 'NONE' })
+  hl(0, "NvimTreeOpenedFolderName", { fg = c.blue, bg = 'NONE', bold = true, })
+  hl(0, "NvimTreeEmptyFolderName", { fg = c.blue, bg = 'NONE', italic = true, })
+  hl(0, "NvimTreeGitIgnored", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NvimTreeEndOfBuffer", { fg = c.black, bg = 'NONE' })
+  hl(0, "NvimTreeCursorLine", { fg = 'NONE', bg = c.gray_dark })
+  hl(0, "NvimTreeImageFile", { fg = c.white, bg = 'NONE' })
+  hl(0, "NvimTreeGitDeleted", { fg = c.red, bg = 'NONE' })
+  hl(0, "NvimTreeGitNew", { fg = c.green, bg = 'NONE' })
+  hl(0, "NvimTreeRootFolder", { fg = c.blue, bg = 'NONE' })
+  hl(0, "NvimTreeGitStaged", { fg = c.blue, bg = 'NONE' })
+
+
+
+
+
+  hl(0, "NvimTreeVertSplit", { fg = c.red, bg = c.green })
+
   hl(0, "NvimTreeSpecialFile", { fg = c.orange, bg = 'NONE' })
-  hl(0, "NvimTreeEndOfBuffer", { fg = c.alt_bg, bg = 'NONE' })
-  hl(0, "NvimTreeCursorLine", { fg = 'NONE', bg = c.line })
-  hl(0, "NvimTreeGitStaged", { fg = c.sign_add_alt, bg = 'NONE' })
-  hl(0, "NvimTreeGitNew", { fg = c.sign_add_alt, bg = 'NONE' })
   hl(0, "NvimTreeGitRenamed", { fg = c.sign_add_alt, bg = 'NONE' })
-  hl(0, "NvimTreeGitDeleted", { fg = c.sign_delete, bg = 'NONE' })
   hl(0, "NvimTreeGitMerge", { fg = c.sign_change_alt, bg = 'NONE' })
   hl(0, "NvimTreeGitDirty", { fg = c.sign_change_alt, bg = 'NONE' })
   hl(0, "NvimTreeSymlink", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "NvimTreeRootFolder", { fg = c.fg, bg = 'NONE', bold = true, })
   hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
 
 
