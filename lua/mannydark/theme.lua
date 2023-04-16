@@ -28,7 +28,7 @@ theme.set_highlights = function()
   hl(0, "EndOfBuffer", { fg = c.black, bg = 'NONE' })
   -- Error message:
   hl(0, "ErrorMsg", { fg = c.white, bg = c.red, bold = true, })
-  hl(0, "Visual", { fg = 'NONE', bg = c.gray_dark })
+  hl(0, "Visual", { fg = 'NONE', bg = c.gray })
 
 
 ----------------------------
@@ -123,11 +123,13 @@ theme.set_highlights = function()
 
 --------------------------------------------------------------
 -- Hop
-  hl(0, "HopNextKey", { fg = '#4ae0ff', bg = 'NONE' })
-  hl(0, "HopNextKey1", { fg = '#d44eed', bg = 'NONE' })
-  hl(0, "HopNextKey2", { fg = '#b42ecd', bg = 'NONE' })
+
+  hl(0, "HopNextKey", { fg = c.blue, bg = 'NONE' })
+  hl(0, "HopNextKey1", { fg = c.purple, bg = 'NONE' })
+  hl(0, "HopNextKey2", { fg = c.purple, bg = 'NONE' })
   hl(0, "HopUnmatched", { fg = c.gray, bg = 'NONE' })
   hl(0, "HopPreview", { fg = '#c7ba7d', bg = 'NONE' })
+  hl(0, "HopCursor", { fg = c.white, bg = 'NONE' })
 
 
 --------------------------------------------------------------
