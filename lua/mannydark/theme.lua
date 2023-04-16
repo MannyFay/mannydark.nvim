@@ -142,6 +142,7 @@ theme.set_highlights = function()
   hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
 
 
+
 ------------------------------------------------------------------------------
 -- Language Defaults
 ------------------------------------------------------------------------------
@@ -168,6 +169,7 @@ theme.set_highlights = function()
   hl(0, "PreProc", { fg = c.blue, bg = 'NONE' })
   hl(0, "Special", { fg = c.white, bg = 'NONE' })
   hl(0, "Todo", { fg = c.red, bg = 'NONE', bold = true, })
+  hl(0, "Title", { fg = c.white, bg = 'NONE' })
 
 
 -------------------------------------------------------------
@@ -181,7 +183,6 @@ theme.set_highlights = function()
   hl(0, "Define", { fg = c.purple, bg = 'NONE' })
   hl(0, "Macro", { fg = c.purple, bg = 'NONE' })
   hl(0, "Debug", { fg = c.red, bg = 'NONE' })
-  hl(0, "Title", { fg = c.blue, bg = 'NONE', bold = true, })
   hl(0, "Label", { fg = c.blue, bg = 'NONE' })
   hl(0, "SpecialChar", { fg = c.yellow_orange, bg = 'NONE' })
   hl(0, "SpecialComment", { fg = c.fg, bg = 'NONE' })
@@ -221,6 +222,7 @@ theme.set_highlights = function()
   hl(0, "@keyword.function", { link = 'Keyword' })
   hl(0, "@function.call", { link = 'Function' })
   hl(0, "@text.todo", { link = 'Todo' })
+  hl(0, "@text.title", { link = 'Title' })
 
 
 ---------------------------------
@@ -258,7 +260,6 @@ theme.set_highlights = function()
   hl(0, "@text.emphasis", { link = 'Italic' })
   hl(0, "@text.underline", { link = 'Underlined' })
   hl(0, "@text.strike", { fg = 'NONE', bg = 'NONE', strikethrough = true, })
-  hl(0, "@text.title", { link = 'Title' })
   hl(0, "@text.literal", { link = 'String' })
   hl(0, "@text.uri", { link = 'Underlined' })
   hl(0, "@text.math", { link = 'Special' })
@@ -692,11 +693,11 @@ theme.set_highlights = function()
   hl(0, "NotifyINFOIcon", { fg = c.ui4_blue, bg = 'NONE' })
   hl(0, "NotifyDEBUGIcon", { fg = c.gray, bg = 'NONE' })
   hl(0, "NotifyTRACEIcon", { fg = c.ui_purple, bg = 'NONE' })
-  hl(0, "NotifyERRORTitle", { fg = c.error, bg = 'NONE' })
+  --[[ hl(0, "NotifyERRORTitle", { fg = c.error, bg = 'NONE' })
   hl(0, "NotifyWARNTitle", { fg = c.warn, bg = 'NONE' })
   hl(0, "NotifyINFOTitle", { fg = c.ui4_blue, bg = 'NONE' })
   hl(0, "NotifyDEBUGTitle", { fg = c.gray, bg = 'NONE' })
-  hl(0, "NotifyTRACETitle", { fg = c.ui_purple, bg = 'NONE' })
+  hl(0, "NotifyTRACETitle", { fg = c.ui_purple, bg = 'NONE' }) ]]
 
   -- hl(0, "NeogitFold", { fg = c.ui_purple, bg = 'NONE' })
   -- hl(0, "NeogitStash", { fg = c.ui_purple, bg = 'NONE' })
