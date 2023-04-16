@@ -99,7 +99,8 @@ theme.set_highlights = function()
 
 --------------------------------------------------------------
 -- Status Line
-  hl(0, "StatusLine", { fg = c.context, bg = c.alt_bg })
+
+  hl(0, "StatusLine", { fg = c.gray_dark, bg = 'NONE' })
   hl(0, "StatusLineNC", { fg = c.line, bg = c.bg })
   hl(0, "StatusLineSeparator", { fg = c.line, bg = 'NONE' })
   hl(0, "StatusLineTerm", { fg = c.line, bg = 'NONE' })
