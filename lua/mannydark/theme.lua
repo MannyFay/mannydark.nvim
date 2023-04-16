@@ -29,7 +29,8 @@ theme.set_highlights = function()
   -- Error message:
   hl(0, "ErrorMsg", { fg = c.white, bg = c.red, bold = true, })
   hl(0, "Visual", { fg = 'NONE', bg = c.gray })
-
+  hl(0, "Pmenu", { fg = c.white, bg = c.gray_dark })
+  hl(0, "PmenuSel", { fg = c.black, bg = c.gray })
 
 ----------------------------
   hl(0, "Cursor", { fg = c.red, bg = c.green })
@@ -44,9 +45,12 @@ theme.set_highlights = function()
   hl(0, "SpellLocal", { fg = 'NONE', bg = 'NONE', sp = c.green, underline = true, })
   hl(0, "SpellRare", { fg = 'NONE', bg = 'NONE', sp = c.purple, underline = true, })
   hl(0, "NormalNC", { fg = c.fg, bg = c.bg })
-  hl(0, "Pmenu", { fg = c.light_gray, bg = c.menu_bg })
-  hl(0, "PmenuSel", { fg = 'NONE', bg = c.ui2_blue })
-  hl(0, "WildMenu", { fg = c.fg, bg = c.ui2_blue })
+
+
+
+  hl(0, "WildMenu", { fg = c.red, bg = c.purple })
+
+
   hl(0, "Folded", { fg = c.gray, bg = c.alt_bg })
   hl(0, "FoldColumn", { fg = c.gray, bg = c.alt_bg })
   hl(0, "FloatBorder", { fg = c.gray, bg = c.alt_bg })
@@ -683,7 +687,7 @@ theme.set_highlights = function()
 -- CMP
 ------------------------------------------------------------------------------
 
-  hl(0, "CmpItemAbbrMatch", { fg = c.black, bg = c.white })
+  hl(0, "CmpItemAbbrMatch", { fg = c.black, bg = c.gray })
   hl(0, "CmpItemAbbrDeprecated", { fg = c.gray, bg = 'NONE', strikethrough = true, })
 
 
@@ -713,7 +717,7 @@ theme.set_highlights = function()
   hl(0, "CmpItemKindColor", { fg = c.fg, bg = 'NONE' })
   hl(0, "CmpItemKindReference", { fg = c.light_blue, bg = 'NONE' })
   hl(0, "CmpItemKindOperator", { fg = c.white, bg = 'NONE' })
-  hl(0, "CmpItemKindTypeParameter", { fg = c.light_blue, bg = 'NONE' })
+  hl(0, "CmpItemKindTypeParameter", { fg = c.blue, bg = 'NONE' })
 
   -- Navic
   hl(0, "NavicIconsFile", { link = 'CmpItemKindFile' })
