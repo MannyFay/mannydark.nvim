@@ -77,6 +77,24 @@ theme.set_highlights = function()
   hl(0, "TabLineFill", { fg = c.line, bg = c.line })
 
 
+--------------------------------------------------------------
+-- Colors
+  -- Buffer
+  hl(0, "BufferCurrent", { fg = c.fg, bg = c.bg })
+  hl(0, "BufferCurrentIndex", { fg = c.fg, bg = c.bg })
+  hl(0, "BufferCurrentMod", { fg = c.info, bg = c.bg })
+  hl(0, "BufferCurrentSign", { fg = c.hint, bg = c.bg })
+  hl(0, "BufferCurrentTarget", { fg = c.red, bg = c.bg, bold = true, })
+  hl(0, "BufferVisible", { fg = c.fg, bg = c.bg })
+  hl(0, "BufferVisibleIndex", { fg = c.fg, bg = c.bg })
+  hl(0, "BufferVisibleMod", { fg = c.info, bg = c.bg })
+  hl(0, "BufferVisibleSign", { fg = c.gray, bg = c.bg })
+  hl(0, "BufferVisibleTarget", { fg = c.red, bg = c.bg, bold = true, })
+  hl(0, "BufferInactive", { fg = c.gray, bg = c.alt_bg })
+  hl(0, "BufferInactiveIndex", { fg = c.gray, bg = c.alt_bg })
+  hl(0, "BufferInactiveMod", { fg = c.info, bg = c.alt_bg })
+  hl(0, "BufferInactiveSign", { fg = c.gray, bg = c.alt_bg })
+  hl(0, "BufferInactiveTarget", { fg = c.red, bg = c.alt_bg, bold = true, })
 ------------------------------------------------------------------------------
 -- Language Defaults
 ------------------------------------------------------------------------------
@@ -320,6 +338,8 @@ theme.set_highlights = function()
   hl(0, "GitSignsChange", { fg = c.blue, bg = 'NONE' })
   hl(0, "GitSignsDelete", { fg = c.red, bg = 'NONE' })
 
+-----------------------
+
   hl(0, "DiffText", { fg = c.alt_bg, bg = c.sign_delete })
   hl(0, "DiffAdd", { fg = c.alt_bg, bg = c.sign_add })
   hl(0, "DiffChange", { fg = c.alt_bg, bg = c.sign_change, underline = true, })
@@ -530,22 +550,7 @@ theme.set_highlights = function()
   hl(0, "LirSymLink", { fg = c.cyan, bg = 'NONE' })
   hl(0, "LirEmptyDirText", { fg = c.gray, bg = 'NONE', italic = true, })
 
-  -- Buffer
-  hl(0, "BufferCurrent", { fg = c.fg, bg = c.bg })
-  hl(0, "BufferCurrentIndex", { fg = c.fg, bg = c.bg })
-  hl(0, "BufferCurrentMod", { fg = c.info, bg = c.bg })
-  hl(0, "BufferCurrentSign", { fg = c.hint, bg = c.bg })
-  hl(0, "BufferCurrentTarget", { fg = c.red, bg = c.bg, bold = true, })
-  hl(0, "BufferVisible", { fg = c.fg, bg = c.bg })
-  hl(0, "BufferVisibleIndex", { fg = c.fg, bg = c.bg })
-  hl(0, "BufferVisibleMod", { fg = c.info, bg = c.bg })
-  hl(0, "BufferVisibleSign", { fg = c.gray, bg = c.bg })
-  hl(0, "BufferVisibleTarget", { fg = c.red, bg = c.bg, bold = true, })
-  hl(0, "BufferInactive", { fg = c.gray, bg = c.alt_bg })
-  hl(0, "BufferInactiveIndex", { fg = c.gray, bg = c.alt_bg })
-  hl(0, "BufferInactiveMod", { fg = c.info, bg = c.alt_bg })
-  hl(0, "BufferInactiveSign", { fg = c.gray, bg = c.alt_bg })
-  hl(0, "BufferInactiveTarget", { fg = c.red, bg = c.alt_bg, bold = true, })
+
 
   -- StatusLine
   hl(0, "StatusLine", { fg = c.context, bg = c.alt_bg })
