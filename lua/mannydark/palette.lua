@@ -2,7 +2,8 @@ local colors = {
   foreground = "",
   background = "",
 
-  white = "#CFD2D5",
+  --[[ white = "#CFD2D5", ]]
+  white = "#ababab",
   black = "#191B1C",
   blue = "#569CD6",
   blue_link = "#287BDE",
