@@ -293,6 +293,12 @@ theme.set_highlights = function()
   hl(0, "@tag.attribute", { fg = c.turquoise, bg = 'NONE' })
   -- Path of namespaces:
   hl(0, "@namespace", { fg = c.white, bg = 'NONE' })
+  hl(0, "@function.builtin", { fg = c.orange, bg = 'NONE' })
+  -- In PHP the @stuff in a doc block:
+  hl(0, "@attribute", { fg = c.blue, bg = 'NONE' })
+  -- All properties (css classes too):
+  hl(0, "@property", { fg = c.purple, bg = 'NONE' })
+
 
 ---------------------------------
 
@@ -301,7 +307,8 @@ theme.set_highlights = function()
   hl(0, "@string.escape", { fg = c.green, bg = c.blue })
   hl(0, "@string.special", { fg = c.red, bg = c.orange })
   hl(0, "@character.special", { fg = c.white, bg = c.purple })
-  hl(0, "@function.builtin", { fg = c.black, bg = c.green })
+
+
   hl(0, "@function.macro", { fg = c.black, bg = c.white })
 
 
@@ -315,14 +322,12 @@ theme.set_highlights = function()
   hl(0, "@type.definition", { fg = c.purple, bg = 'NONE' })
 
 
-  hl(0, "@attribute", { fg = c.blue, bg = c.red })
 
 
 
-  hl(0, "@field", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "@property", { fg = c.light_blue, bg = 'NONE' })
-  hl(0, "@constant.macro", { fg = c.vivid_blue, bg = 'NONE' })
-  hl(0, "@symbol", { link = 'Identifier' })
+  hl(0, "@field", { fg = c.purple, bg = c.green })
+  hl(0, "@constant.macro", { fg = c.red, bg = c.green })
+  hl(0, "@symbol", { fg = c.blue, bg = c.orange })
   hl(0, "@text", { link = 'None' })
   hl(0, "@text.strong", { link = 'Bold' })
   hl(0, "@text.emphasis", { link = 'Italic' })
