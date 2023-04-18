@@ -326,6 +326,9 @@ theme.set_highlights = function()
 
 
   hl(0, "@field", { fg = c.purple, bg = c.green })
+
+
+
   hl(0, "@constant.macro", { fg = c.red, bg = c.green })
   hl(0, "@symbol", { fg = c.blue, bg = c.orange })
   hl(0, "@text", { link = 'None' })
@@ -435,7 +438,7 @@ theme.set_highlights = function()
   hl(0, "htmlSpecialChar", { fg = c.blue, bg = 'NONE' })
   hl(0, "htmlSpecialTagName", { fg = c.blue, bg = 'NONE' })
   hl(0, "htmlTag", { fg = c.blue, bg = 'NONE' })
-  hl(0, "htmlTagN", { fg = c.white, bg = 'NONE' })
+  hl(0, "htmlTagN", { fg = c.blue, bg = 'NONE' })
   hl(0, "htmlTagName", { fg = c.blue, bg = 'NONE' })
   hl(0, "htmlTitle", { fg = c.white, bg = 'NONE' })
   hl(0, "htmlString", { fg = c.red_light, bg = 'NONE' })
