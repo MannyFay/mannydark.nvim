@@ -8,6 +8,10 @@ theme.set_highlights = function()
 ------------------------------------------------------------------------------
 -- Editor
 ------------------------------------------------------------------------------
+  hl(0, 'FloatBorder', {
+      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).backround,
+      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).backround,
+  })    
 
   hl(0, "SignColumn", { fg = 'NONE', bg = c.black })
 
