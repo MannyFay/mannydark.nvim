@@ -1,4 +1,4 @@
 lua << EOF
-local darkplus = require("mannydark")
-darkplus.setup({})
+local mannydark = require('mannydark')
+  mannydark.setup({})
 EOF
