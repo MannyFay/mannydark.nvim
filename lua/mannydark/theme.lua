@@ -304,6 +304,8 @@ theme.set_highlights = function()
   hl(0, "@property", { fg = c.purple, bg = 'NONE' })
 
 
+  hl(0, "@field", { fg = c.purple, bg = 'NONE' })
+  hl(0, "@keyword.operator", { fg = c.blue, bg = 'NONE' })
 ---------------------------------
 
   hl(0, "@define", { fg = c.orange, bg = c.red })
@@ -316,7 +318,6 @@ theme.set_highlights = function()
   hl(0, "@function.macro", { fg = c.black, bg = c.white })
 
 
-  hl(0, "@keyword.operator", { fg = c.orange, bg = c.purple })
   hl(0, "@repeat", { link = 'Repeat' })
   hl(0, "@debug", { link = 'Debug' })
 
@@ -328,8 +329,6 @@ theme.set_highlights = function()
 
 
 
-
-  hl(0, "@field", { fg = c.purple, bg = c.green })
 
 
 
