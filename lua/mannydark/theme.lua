@@ -13,7 +13,8 @@ theme.set_highlights = function()
       bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
   })    
 
-  vim.cmd([[highlight IndentBlanklineChar1 guifg=#252525]])
+  --hl(0, 'IndentBlanklineChar', { fg=#252525]])
+      hl(0, 'IndentBlanklineChar', { fg = c.gray_dark, bg = 'NONE' })
   
   hl(0, "SignColumn", { fg = 'NONE', bg = c.black })
 
