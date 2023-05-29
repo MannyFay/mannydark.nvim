@@ -13,6 +13,8 @@ theme.set_highlights = function()
       bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
   })    
 
+  vim.cmd([[highlight IndentBlanklineChar1 guifg=#252525]])
+  
   hl(0, "SignColumn", { fg = 'NONE', bg = c.black })
 
   -- Vertical visual guide line:
