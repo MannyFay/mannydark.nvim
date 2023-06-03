@@ -22,9 +22,9 @@ return {
     a = { fg = colors.blue, bg = colors.gray },
     b = { fg = colors.blue, bg = colors.gray },
     c = { fg = colors.blue, bg = colors.gray },
-    x = {},
-    y = {},
-    z = {},
+    x = { fg = colors.blue, bg = colors.gray },
+    y = { fg = colors.blue, bg = colors.gray },
+    z = { fg = colors.blue, bg = colors.gray },
   },
   insert = {
     a = { fg = colors.gray     , bg = colors.turquoise },
