@@ -27,15 +27,31 @@ return {
     z = { fg = colors.blue, bg = colors.gray },
   },
   insert = {
-    a = { fg = colors.gray     , bg = colors.turquoise },
-    b = { fg = colors.turquoise, bg = colors.gray      },
-    c = { fg = colors.turquoise, bg = colors.gray      },
-    x = {},
-    y = {},
-    z = {},
+    a = { fg = colors.purple, bg = colors.gray },
+    b = { fg = colors.purple, bg = colors.gray },
+    c = { fg = colors.purple, bg = colors.gray },
+    x = { fg = colors.purple, bg = colors.gray },
+    y = { fg = colors.purple, bg = colors.gray },
+    z = { fg = colors.purple, bg = colors.gray },
   },
-	visual = { a = { fg = colors.bg, bg = colors.purple }, b = { fg = colors.purple, bg = colors.gray } },
-	command = { a = { fg = colors.bg, bg = colors.orange }, b = { fg = colors.orange, bg = colors.gray } },
+  visual = {
+		a = { fg = colors.orange, bg = colors.gray }, 
+    b = { fg = colors.orange, bg = colors.gray },
+    c = { fg = colors.orange, bg = colors.gray },
+    x = { fg = colors.orange, bg = colors.gray },
+    y = { fg = colors.orange, bg = colors.gray },
+    z = { fg = colors.orange, bg = colors.gray },
+  },
+	command = {
+    a = { fg = colors.turquoise, bg = colors.gray },
+    b = { fg = colors.turquoise, bg = colors.gray },
+    c = { fg = colors.turquoise, bg = colors.gray },
+    x = { fg = colors.turquoise, bg = colors.gray },
+    y = { fg = colors.turquoise, bg = colors.gray },
+    z = { fg = colors.turquoise, bg = colors.gray },
+  },
+	
+	
 	replace = { a = { fg = colors.bg, bg = colors.red }, b = { fg = colors.red, bg = colors.gray } },
 
 	inactive = {
