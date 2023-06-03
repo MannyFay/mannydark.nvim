@@ -18,11 +18,11 @@ local colors = {
 }
 
 return {
-	normal = {
-		a = { fg = colors.bg, bg = colors.blue },
-		b = { fg = colors.blue, bg = colors.gray },
-		c = { fg = colors.fg, bg = colors.bg },
-	},
+  normal = {
+    a = { fg = colors.bg, bg = colors.blue },
+    b = { fg = colors.blue, bg = colors.gray },
+    c = { fg = colors.blue, bg = colors.gray },
+  },
 	insert = { a = { fg = colors.bg, bg = colors.green }, b = { fg = colors.green, bg = colors.gray } },
 	visual = { a = { fg = colors.bg, bg = colors.purple }, b = { fg = colors.purple, bg = colors.gray } },
 	command = { a = { fg = colors.bg, bg = colors.orange }, b = { fg = colors.orange, bg = colors.gray } },
