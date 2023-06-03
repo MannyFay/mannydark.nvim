@@ -1,7 +1,7 @@
 local colors = {
-  blue   = '#569CD6',
-  green  = '#45C8B0',
-  purple = '#C064C7',
+  blue       = '#569CD6',
+  turquoise  = '#45C8B0',
+  purple     = '#C064C7',
   red1   = '#CE9178',
   --[[ yellow = '#dcdcaa', ]]
   --[[ orange = '#D7BA7D', ]]
@@ -19,11 +19,21 @@ local colors = {
 
 return {
   normal = {
-    a = { fg = colors.bg, bg = colors.blue },
+    a = { fg = colors.blue, bg = colors.gray },
     b = { fg = colors.blue, bg = colors.gray },
     c = { fg = colors.blue, bg = colors.gray },
+    x = {},
+    y = {},
+    z = {},
   },
-	insert = { a = { fg = colors.bg, bg = colors.green }, b = { fg = colors.green, bg = colors.gray } },
+  insert = {
+    a = { fg = colors.gray     , bg = colors.turquoise },
+    b = { fg = colors.turquoise, bg = colors.gray      },
+    c = { fg = colors.turquoise, bg = colors.gray      },
+    x = {},
+    y = {},
+    z = {},
+  },
 	visual = { a = { fg = colors.bg, bg = colors.purple }, b = { fg = colors.purple, bg = colors.gray } },
 	command = { a = { fg = colors.bg, bg = colors.orange }, b = { fg = colors.orange, bg = colors.gray } },
 	replace = { a = { fg = colors.bg, bg = colors.red }, b = { fg = colors.red, bg = colors.gray } },
