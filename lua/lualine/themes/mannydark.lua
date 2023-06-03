@@ -1,20 +1,14 @@
+-- [[ MannyDark theme for LuaLine ]]
+-- [[ License: MIT                ]]
+-- [[ mannythefay@gmail.com       ]]
+-- [[ https://github.com/MannyFay ]]
+
 local colors = {
   blue       = '#569CD6',
   turquoise  = '#45C8B0',
   purple     = '#C064C7',
-  red1   = '#CE9178',
-  --[[ yellow = '#dcdcaa', ]]
-  --[[ orange = '#D7BA7D', ]]
-  orange = '#E8BF6A',
-  fg     = '#ababab',
-  -- bg     = '#007acc',
-  -- bg     = '#68217a',
-  bg     = '#252525',
-  gray  = '#252525',
-  --gray  = '#333333',
-  -- light_gray  = '#5c6370',
-  --[[ gray3  = '#3e4452', ]]
-  gray3  = '#252525',
+  orange     = '#E8BF6A',
+  gray       = '#252525',
 }
 
 return {
@@ -35,14 +29,14 @@ return {
     z = { fg = colors.purple, bg = colors.gray },
   },
   visual = {
-		a = { fg = colors.orange, bg = colors.gray }, 
+    a = { fg = colors.orange, bg = colors.gray }, 
     b = { fg = colors.orange, bg = colors.gray },
     c = { fg = colors.orange, bg = colors.gray },
     x = { fg = colors.orange, bg = colors.gray },
     y = { fg = colors.orange, bg = colors.gray },
     z = { fg = colors.orange, bg = colors.gray },
   },
-	command = {
+  command = {
     a = { fg = colors.turquoise, bg = colors.gray },
     b = { fg = colors.turquoise, bg = colors.gray },
     c = { fg = colors.turquoise, bg = colors.gray },
@@ -50,13 +44,20 @@ return {
     y = { fg = colors.turquoise, bg = colors.gray },
     z = { fg = colors.turquoise, bg = colors.gray },
   },
-	
-	
-	replace = { a = { fg = colors.bg, bg = colors.red }, b = { fg = colors.red, bg = colors.gray } },
-
+	replace = {
+    a = {  },
+    b = {  },
+    c = {  },
+    x = {  },
+    y = {  },
+    z = {  },
+  },
 	inactive = {
-		a = { bg = colors.bg, fg = colors.blue },
-		b = { bg = colors.bg, fg = colors.gray, gui = "bold" },
-		c = { bg = colors.bg, fg = colors.gray },
+		a = {  },
+    b = {  },
+    c = {  },
+    x = {  },
+    y = {  },
+    z = {  },
 	},
 }
