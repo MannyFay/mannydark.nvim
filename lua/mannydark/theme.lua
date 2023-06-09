@@ -147,7 +147,9 @@ theme.set_highlights = function()
   hl(0, "NvimTreeCursorLine", { fg = 'NONE', bg = c.gray_dark })
   hl(0, "NvimTreeImageFile", { fg = c.white, bg = 'NONE' })
   hl(0, "NvimTreeGitDeleted", { fg = c.red, bg = 'NONE' })
-  hl(0, "NvimTreeGitNew", { fg = c.green, bg = 'NONE' })
+  
+  hl(0, "NvimTreeGitNew", { fg = 'DB005B', bg = 'DB005B' })
+  
   hl(0, "NvimTreeRootFolder", { fg = c.blue, bg = 'NONE' })
   hl(0, "NvimTreeGitStaged", { fg = c.blue, bg = 'NONE' })
   hl(0, "NvimTreeSpecialFile", { fg = c.white, bg = 'NONE' })
