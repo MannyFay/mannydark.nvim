@@ -134,31 +134,41 @@ theme.set_highlights = function()
 --------------------------------------------------------------
 -- NvimTree
 
-  hl(0, "Directory", { fg = c.blue, bg = 'NONE' })
-  hl(0, "NvimTreeFolderIcon", { link = 'Directory' })
-  hl(0, "NvimTreeIndentMarker", { fg = c.gray, bg = 'NONE' })
-  hl(0, "NvimTreeWinSeparator", { fg = c.gray_dark, bg = c.gray_dark })
-  hl(0, "NvimTreeNormal", { fg = c.white, bg = 'NONE' })
-  hl(0, "NvimTreeFolderName", { link = 'Directory' })
-  hl(0, "NvimTreeOpenedFolderName", { fg = c.blue, bg = 'NONE' })
-  hl(0, "NvimTreeEmptyFolderName", { fg = c.blue, bg = 'NONE' })
-  hl(0, "NvimTreeGitIgnored", { fg = c.gray, bg = 'NONE' })
-  hl(0, "NvimTreeEndOfBuffer", { fg = c.black, bg = 'NONE' })
-  hl(0, "NvimTreeCursorLine", { fg = 'NONE', bg = c.gray_dark })
-  hl(0, "NvimTreeImageFile", { fg = c.white, bg = 'NONE' })
-  hl(0, "NvimTreeGitDeleted", { fg = c.red, bg = 'NONE' })
+  hl(0, "NvimTreeRootFolder"               , { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "Directory"                        , { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "NvimTreeFolderIcon"               , { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "NvimTreeIndentMarker"             , { fg = c.gray     , bg = 'NONE'      })
+  hl(0, "NvimTreeWinSeparator"             , { fg = c.gray_dark, bg = c.gray_dark })
+  hl(0, "NvimTreeNormal"                   , { fg = c.white    , bg = 'NONE'      })
+  hl(0, "NvimTreeFolderName"               , { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "NvimTreeOpenedFolderName"         , { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "NvimTreeEmptyFolderName"          , { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "NvimTreeEndOfBuffer"              , { fg = c.black    , bg = 'NONE'      })
+  hl(0, "NvimTreeCursorLine"               , { fg = 'NONE'     , bg = c.gray_dark })
+  hl(0, "NvimTreeImageFile"                , { fg = c.white    , bg = 'NONE'      })
+  hl(0, "NvimTreeGitIgnored"               , { fg = c.gray     , bg = 'NONE'      })
+  hl(0, "NvimTreeGitDeleted"               , { fg = c.gray     , bg = 'NONE'      })
+  hl(0, "NvimTreeGitRenamed"               , { fg = c.red      , bg = 'NONE'      })
+  hl(0, "NvimTreeGitNew"                   , { fg = c.red      , bg = 'NONE'      })
+  hl(0, "NvimTreeGitDirty"                 , { fg = c.red      , bg = 'NONE'      })
+  hl(0, "NvimTreeGitStaged"                , { fg = c.orange   , bg = 'NONE'      })
+  hl(0, "NvimTreeGitMerge"                 , { fg = c.orange   , bg = 'NONE'      })
+  hl(0, "NvimTreeLspDiagnosticsError"      , { fg = c.red      , bg = 'NONE'      })
+  hl(0, "NvimTreeLspDiagnosticsWarning"    , { fg = c.orange   , bg = 'NONE'      })
+  hl(0, "NvimTreeLspDiagnosticsInformation", { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "NvimTreeLspDiagnosticsHint"       , { fg = c.blue     , bg = 'NONE'      })
+  hl(0, "NvimTreeFileIgnored",          { fg = '#606366', bg = 'NONE' })
+  hl(0, "NvimTreeFileDeleted",          { fg = '#606366', bg = 'NONE' })
+  hl(0, "nvimtreefilerenamed",          { fg = '#ff0000', bg = 'none' })
+  hl(0, "NvimTreeFileNew",              { fg = '#FF0000', bg = 'NONE' })
+  hl(0, "NvimTreeFileDirty",            { fg = '#FF0000', bg = 'NONE' })
+  hl(0, "NvimTreeFileStaged",           { fg = '#E8BF6A', bg = 'NONE' })
+  hl(0, "NvimTreeFileMerge",            { fg = '#E8BF6A', bg = 'NONE' })
+  hl(0, "NvimTreeModifiedFile",           { fg = '#E8BF6A', bg = 'NONE' })
+  hl(0, "NvimTreeOpenedFile",            { fg = '#E8BF6A', bg = 'NONE' })
+  hl(0, "NvimTreeNormalFloat",          { fg = '#606366', bg = 'NONE' })
+
   
-  
-  hl(0, "NvimTreeGitNew", { fg = '#DB005B', bg = '#DB005B' })
-  hl(0, "NvimTreeGitStaged", { fg = '#DB005B', bg = 'NONE' })
-  hl(0, "NvimTreeGitDirty", { fg = '#DB005B', bg = 'NONE' })
-  hl(0, "NvimTreeGitRenamed", { fg = '#DB005B', bg = 'NONE' })
-  hl(0, "NvimTreeGitMerge", { fg = '#DB005B', bg = 'NONE' })
-  
-  
-  
-  
-  hl(0, "NvimTreeRootFolder", { fg = c.blue, bg = 'NONE' })
   
   hl(0, "NvimTreeSpecialFile", { fg = c.white, bg = 'NONE' })
 
@@ -168,7 +178,29 @@ theme.set_highlights = function()
 
   hl(0, "NvimTreeSymlink", { fg = c.cyan, bg = 'NONE' })
   hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
+  
+  --[[ NvimTreeSymlinkIcon ]]
+--[[ NvimTreeSymlinkFolderName   (Directory) ]]
+--[[ NvimTreeOpenedFolderIcon    (NvimTreeFolderIcon) ]]
+--[[ NvimTreeClosedFolderIcon    (NvimTreeFolderIcon) ]]
+--[[ NvimTreeFileIcon ]]
+--[[ NvimTreeWindowPicker ]]
 
+--[[ There are also links to normal bindings to style the tree itself. ]]
+
+--[[ NvimTreeNormalFloat ]]
+--[[ NvimTreeCursorLineNr    (CursorLineNr) ]]
+--[[ NvimTreeLineNr          (LineNr) ]]
+--[[ NvimTreeCursorColumn    (CursorColumn) ]]
+
+--[[ There are 2 highlight groups for the live filter feature ]]
+--[[ NvimTreeLiveFilterPrefix ]]
+--[[ NvimTreeLiveFilterValue ]]
+
+--[[ Color of the bookmark icon ]]
+--[[ NvimTreeBookmark ]]
+
+  
 --------------------------------------------------------------
 -- Lualine
 
