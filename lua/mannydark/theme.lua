@@ -157,17 +157,17 @@ theme.set_highlights = function()
   hl(0, "NvimTreeLspDiagnosticsWarning"    , { fg = c.orange   , bg = 'NONE'      })
   hl(0, "NvimTreeLspDiagnosticsInformation", { fg = c.blue     , bg = 'NONE'      })
   hl(0, "NvimTreeLspDiagnosticsHint"       , { fg = c.blue     , bg = 'NONE'      })
-  hl(0, "NvimTreeFileIgnored",          { fg = '#606366', bg = 'NONE' })
-  hl(0, "NvimTreeFileDeleted",          { fg = '#606366', bg = 'NONE' })
-  hl(0, "nvimtreefilerenamed",          { fg = '#ff0000', bg = 'none' })
-  hl(0, "NvimTreeFileNew",              { fg = '#FF0000', bg = 'NONE' })
-  hl(0, "NvimTreeFileDirty",            { fg = '#FF0000', bg = 'NONE' })
-  hl(0, "NvimTreeFileStaged",           { fg = '#E8BF6A', bg = 'NONE' })
-  hl(0, "NvimTreeFileMerge",            { fg = '#E8BF6A', bg = 'NONE' })
-  hl(0, "NvimTreeModifiedFile",           { fg = '#E8BF6A', bg = 'NONE' })
-  hl(0, "NvimTreeOpenedFile",            { fg = '#E8BF6A', bg = 'NONE' })
-  hl(0, "NvimTreeNormalFloat",          { fg = '#606366', bg = 'NONE' })
-
+  hl(0, "NvimTreeFileIgnored"              , { fg = '#606366'  , bg = 'NONE'      })
+  hl(0, "NvimTreeFileDeleted"              , { fg = '#606366'  , bg = 'NONE'      })
+  hl(0, "nvimtreefilerenamed"              , { fg = '#ff0000'  , bg = 'NONE'      })
+  hl(0, "NvimTreeFileNew"                  , { fg = '#FF0000'  , bg = 'NONE'      })
+  hl(0, "NvimTreeFileDirty"                , { fg = '#FF0000'  , bg = 'NONE'      })
+  hl(0, "NvimTreeFileStaged"               , { fg = '#E8BF6A'  , bg = 'NONE'      })
+  hl(0, "NvimTreeFileMerge"                , { fg = '#E8BF6A'  , bg = 'NONE'      })
+  hl(0, "NvimTreeModifiedFile"             , { fg = '#E8BF6A'  , bg = 'NONE'      })
+  hl(0, "NvimTreeOpenedFile"               , { fg = '#E8BF6A'  , bg = 'NONE'      })
+  hl(0, "NvimTreeNormalFloat"              , { fg = '#606366'  , bg = 'NONE'      })
+  hl(0, "NvimTreeExecFile"                 , { fg = c.white    , bg = 'NONE'      })
   
   
   hl(0, "NvimTreeSpecialFile", { fg = c.white, bg = 'NONE' })
@@ -177,7 +177,7 @@ theme.set_highlights = function()
   hl(0, "NvimTreeVertSplit", { fg = c.red, bg = c.green })
 
   hl(0, "NvimTreeSymlink", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "NvimTreeExecFile", { fg = '#9FBA89', bg = 'NONE' })
+
   
   --[[ NvimTreeSymlinkIcon ]]
 --[[ NvimTreeSymlinkFolderName   (Directory) ]]
