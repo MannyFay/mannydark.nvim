@@ -349,11 +349,12 @@ theme.set_highlights = function()
 
   hl(0, "@field", { fg = c.purple, bg = 'NONE' })
   hl(0, "@keyword.operator", { fg = c.blue, bg = 'NONE' })
+  hl(0, "@string.escape", { fg = c.pink, bg = 'NONE' })
+
 ---------------------------------
 
   hl(0, "@define", { fg = c.orange, bg = c.red })
   hl(0, "@string.regex", { fg = c.blue, bg = c.red })
-  hl(0, "@string.escape", { fg = c.green, bg = c.blue })
   hl(0, "@string.special", { fg = c.red, bg = c.orange })
   hl(0, "@character.special", { fg = c.white, bg = c.purple })
 
