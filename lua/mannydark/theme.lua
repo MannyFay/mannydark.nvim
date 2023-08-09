@@ -246,6 +246,7 @@ theme.set_highlights = function()
 -- Language Defaults
 ------------------------------------------------------------------------------
 
+  --testcomment
   hl(0, "Comment", { fg = c.red, bg = 'NONE' })
   hl(0, "Variable", { fg = c.purple, bg = 'NONE' })
   hl(0, "String", { fg = c.red_light, bg = 'NONE' })
