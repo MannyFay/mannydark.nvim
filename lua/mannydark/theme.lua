@@ -839,7 +839,7 @@ hl(0, "phpUseAlias"               , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpYieldFromKeyword"       , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpStructure"              , { fg = c.turquoise           , bg = c.yellow })--xxx links to Statement
 hl(0, "phpException"              , { fg = c.turquoise           , bg = c.blue })--xxx links to Exception
-hl(0, "phpParentError"            , { fg = c.red_light           , bg = .green_light })--xxx links to Error
+hl(0, "phpParentError"            , { fg = c.red_light           , bg = c.green_light })--xxx links to Error
 hl(0, "phpFoldIfContainer"        , { fg = c.orange           , bg = 'NONE' })-- xxx cleared
 hl(0, "phpFoldWhile"              , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
 hl(0, "phpFoldDoWhile"            , { fg = c.red_light           , bg = 'NONE' })--xxx cleared
