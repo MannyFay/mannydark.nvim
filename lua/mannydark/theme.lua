@@ -553,45 +553,7 @@ theme.set_highlights = function()
 
 
 
-------------------------------------------------------------------------------
--- Markdown
-------------------------------------------------------------------------------
 
-  hl(0, "markdownBlockquote", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownBold", { fg = c.white, bg = 'NONE', bold = true, })
-  hl(0, "markdownBoldDelimiter", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownCode", { fg = c.green, bg = 'NONE' })
-  hl(0, "markdownCodeBlock", { fg = c.green, bg = 'NONE' })
-  hl(0, "markdownCodeDelimiter", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownH1", { fg = c.pink, bg = 'NONE' , bold = true })
-  hl(0, "markdownH2", { fg = c.pink, bg = 'NONE' , bold = true })
-  hl(0, "markdownH3", { fg = c.pink, bg = 'NONE' , bold = true })
-  hl(0, "markdownH4", { fg = c.pink, bg = 'NONE' , bold = true })
-  hl(0, "markdownH5", { fg = c.pink, bg = 'NONE' , bold = true })
-  hl(0, "markdownH6", { fg = c.pink, bg = 'NONE' , bold = true })
-  hl(0, "markdownHeadingDelimiter", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownItalic", { fg = c.white, bg = 'NONE', italic = true })
-  hl(0, "markdownLinkDelimiter", { fg = c.white, bg = 'NONE' })
-  hl(0, "markdownLinkText", { fg = c.white, bg = 'NONE' })
-  hl(0, "markdownListMarker", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownOrderedListMarker", { fg = c.blue, bg = 'NONE' })
-  if vim.fn.has("nvim-0.7.3") == 1 then
-    hl(0, "markdownUrl", { fg = c.blue_link, bg = 'NONE', underdotted = true, })
-  else
-    hl(0, "markdownUrl", { fg = c.blue_link, bg = 'NONE', underdot = true, })
-  end
-
---------------------------------
-
-  hl(0, "markdownHeadingRule", { fg = c.fg, bg = 'NONE', bold = true, })
-  hl(0, "markdownId", { link = 'Identifier' })
-  hl(0, "markdownIdDeclaration", { fg = c.blue, bg = 'NONE' })
-  hl(0, "markdownIdDelimiter", { fg = c.light_gray, bg = 'NONE' })
-  hl(0, "markdownBoldItalic", { fg = c.yellow, bg = 'NONE', bold = true, italic = true, })
-  hl(0, "markdownRule", { fg = c.gray, bg = 'NONE' })
-  hl(0, "markdownFootnote", { fg = c.orange, bg = 'NONE' })
-  hl(0, "markdownFootnoteDefinition", { fg = c.orange, bg = 'NONE' })
-  hl(0, "markdownEscape", { fg = c.yellow, bg = 'NONE' })
 
 
 
@@ -680,6 +642,83 @@ theme.set_highlights = function()
   hl(0, "IlluminatedWordRead", { link = 'LspReferenceRead' })
   hl(0, "IlluminatedWordText", { link = 'LspReferenceText' })
   hl(0, "IlluminatedWordWrite", { link = 'LspReferenceWrite' })
+
+
+
+------------------------------------------------------------------------------
+-- Markdown
+------------------------------------------------------------------------------
+
+  hl(0, "markdownBlockquote", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownBold", { fg = c.white, bg = 'NONE', bold = true, })
+  hl(0, "markdownBoldDelimiter", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownCode", { fg = c.green, bg = 'NONE' })
+  hl(0, "markdownCodeBlock", { fg = c.green, bg = 'NONE' })
+  hl(0, "markdownCodeDelimiter", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownH1", { fg = c.pink, bg = 'NONE' , bold = true })
+  hl(0, "markdownH2", { fg = c.pink, bg = 'NONE' , bold = true })
+  hl(0, "markdownH3", { fg = c.pink, bg = 'NONE' , bold = true })
+  hl(0, "markdownH4", { fg = c.pink, bg = 'NONE' , bold = true })
+  hl(0, "markdownH5", { fg = c.pink, bg = 'NONE' , bold = true })
+  hl(0, "markdownH6", { fg = c.pink, bg = 'NONE' , bold = true })
+  hl(0, "markdownHeadingDelimiter", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownItalic", { fg = c.white, bg = 'NONE', italic = true })
+  hl(0, "markdownLinkDelimiter", { fg = c.white, bg = 'NONE' })
+  hl(0, "markdownLinkText", { fg = c.white, bg = 'NONE' })
+  hl(0, "markdownListMarker", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownOrderedListMarker", { fg = c.blue, bg = 'NONE' })
+  if vim.fn.has("nvim-0.7.3") == 1 then
+    hl(0, "markdownUrl", { fg = c.blue_link, bg = 'NONE', underdotted = true, })
+  else
+    hl(0, "markdownUrl", { fg = c.blue_link, bg = 'NONE', underdot = true, })
+  end
+  hl(0, "mkdHeading", { fg = c.blue, bg = 'NONE' })
+  hl(0, "mkdListItem", { fg = c.blue, bg = 'NONE' })
+
+--[[ mkdItalic      xxx cleared ]]
+--[[ mkdBold        xxx cleared ]]
+--[[ mkdBoldItalic  xxx cleared ]]
+--[[ mkdDelimiter   xxx links to Delimiter ]]
+--[[ mkdFootnotes   xxx links to htmlLink ]]
+--[[ mkdID          xxx links to Identifier ]]
+--[[ mkdURL         xxx links to htmlString ]]
+--[[ mkdLink        xxx links to htmlLink ]]
+--[[ mkdInlineURL   xxx links to htmlLink ]]
+--[[ mkdLinkDefTarget xxx links to mkdURL ]]
+--[[ mkdLinkDef     xxx links to mkdID ]]
+--[[ mkdLinkTitle   xxx links to htmlString ]]
+--[[ mkdHeading     xxx cleared ]]
+--[[ mkdLineBreak   xxx links to Visual ]]
+--[[ mkdBlockquote  xxx links to Comment ]]
+--[[ mkdCodeDelimiter xxx links to String ]]
+--[[ mkdCode        xxx links to String ]]
+--[[ mkdFootnote    xxx links to Comment ]]
+--[[ mkdListItem    xxx links to Identifier ]]
+--[[ mkdListItemLine xxx cleared ]]
+--[[ mkdNonListItemBlock xxx cleared ]]
+--[[ mkdRule        xxx links to Identifier ]]
+--[[ mkdMath        xxx cleared ]]
+--[[ mkdStrike      xxx cleared ]]
+--[[ mkdString      xxx links to String ]]
+--[[ mkdCodeStart   xxx links to String ]]
+--[[ mkdCodeEnd     xxx links to String ]]
+  hl(0, "markdownHeadingRule", { fg = c.fg, bg = 'NONE', bold = true, })
+  hl(0, "markdownId", { link = 'Identifier' })
+  hl(0, "markdownIdDeclaration", { fg = c.blue, bg = 'NONE' })
+  hl(0, "markdownIdDelimiter", { fg = c.light_gray, bg = 'NONE' })
+  hl(0, "markdownBoldItalic", { fg = c.yellow, bg = 'NONE', bold = true, italic = true, })
+  hl(0, "markdownRule", { fg = c.gray, bg = 'NONE' })
+  hl(0, "markdownFootnote", { fg = c.orange, bg = 'NONE' })
+  hl(0, "markdownFootnoteDefinition", { fg = c.orange, bg = 'NONE' })
+  hl(0, "markdownEscape", { fg = c.yellow, bg = 'NONE' })
+
+
+
+
+
+
+
+
 
   -- Quickscope
   hl(0, "QuickScopePrimary", { fg = '#ff007c', bg = 'NONE', underline = true, })
@@ -776,6 +815,77 @@ theme.set_highlights = function()
 
 
 ------------------------------------------------------------------------------
+-- Navic
+------------------------------------------------------------------------------
+
+  hl(0, "NavicIconsFile", { link = 'CmpItemKindFile' })
+  hl(0, "NavicIconsModule", { link = 'CmpItemKindModule' })
+  hl(0, "NavicIconsNamespace", { link = 'CmpItemKindModule' })
+  hl(0, "NavicIconsPackage", { link = 'CmpItemKindModule' })
+  hl(0, "NavicIconsClass", { link = 'CmpItemKindClass' })
+  hl(0, "NavicIconsMethod", { link = 'CmpItemKindMethod' })
+  hl(0, "NavicIconsProperty", { link = 'CmpItemKindProperty' })
+  hl(0, "NavicIconsField", { link = 'CmpItemKindField' })
+  hl(0, "NavicIconsConstructor", { link = 'CmpItemKindConstructor' })
+  hl(0, "NavicIconsEnum", { link = 'CmpItemKindEnum' })
+  hl(0, "NavicIconsInterface", { link = 'CmpItemKindInterface' })
+  hl(0, "NavicIconsFunction", { link = 'CmpItemKindFunction' })
+  hl(0, "NavicIconsVariable", { link = 'CmpItemKindVariable' })
+  hl(0, "NavicIconsConstant", { link = 'CmpItemKindConstant' })
+  hl(0, "NavicIconsString", { link = 'String' })
+  hl(0, "NavicIconsNumber", { link = 'Number' })
+  hl(0, "NavicIconsBoolean", { link = 'Boolean' })
+  hl(0, "NavicIconsArray", { link = 'CmpItemKindClass' })
+  hl(0, "NavicIconsObject", { link = 'CmpItemKindClass' })
+  hl(0, "NavicIconsKey", { link = 'CmpItemKindKeyword' })
+  hl(0, "NavicIconsKeyword", { link = 'CmpItemKindKeyword' })
+  hl(0, "NavicIconsNull", { fg = c.blue, bg = 'NONE' })
+  hl(0, "NavicIconsEnumMember", { link = 'CmpItemKindEnumMember' })
+  hl(0, "NavicIconsStruct", { link = 'CmpItemKindStruct' })
+  hl(0, "NavicIconsEvent", { link = 'CmpItemKindEvent' })
+  hl(0, "NavicIconsOperator", { link = 'CmpItemKindOperator' })
+  hl(0, "NavicIconsTypeParameter", { link = 'CmpItemKindTypeParameter' })
+  hl(0, "NavicText", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NavicSeparator", { fg = c.context, bg = 'NONE' })
+
+
+
+------------------------------------------------------------------------------
+-- Notify
+------------------------------------------------------------------------------
+
+  hl(0, "NotifyERRORBorder", { fg = '#8A1F1F', bg = 'NONE' })
+  hl(0, "NotifyWARNBorder", { fg = '#79491D', bg = 'NONE' })
+  hl(0, "NotifyINFOBorder", { fg = c.ui_blue, bg = 'NONE' })
+  hl(0, "NotifyDEBUGBorder", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NotifyTRACEBorder", { fg = '#4F3552', bg = 'NONE' })
+  hl(0, "NotifyERRORIcon", { fg = c.error, bg = 'NONE' })
+  hl(0, "NotifyWARNIcon", { fg = c.warn, bg = 'NONE' })
+  hl(0, "NotifyINFOIcon", { fg = c.ui4_blue, bg = 'NONE' })
+  hl(0, "NotifyDEBUGIcon", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NotifyTRACEIcon", { fg = c.ui_purple, bg = 'NONE' })
+  --[[ hl(0, "NotifyERRORTitle", { fg = c.error, bg = 'NONE' })
+  hl(0, "NotifyWARNTitle", { fg = c.warn, bg = 'NONE' })
+  hl(0, "NotifyINFOTitle", { fg = c.ui4_blue, bg = 'NONE' })
+  hl(0, "NotifyDEBUGTitle", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NotifyTRACETitle", { fg = c.ui_purple, bg = 'NONE' }) ]]
+
+
+
+------------------------------------------------------------------------------
+-- Packer
+------------------------------------------------------------------------------
+
+  hl(0, "packerString", { fg = c.ui_orange, bg = 'NONE' })
+  hl(0, "packerHash", { fg = c.ui4_blue, bg = 'NONE' })
+  hl(0, "packerOutput", { fg = c.ui_purple, bg = 'NONE' })
+  hl(0, "packerRelDate", { fg = c.gray, bg = 'NONE' })
+  hl(0, "packerSuccess", { fg = c.success_green, bg = 'NONE' })
+  hl(0, "packerStatusSuccess", { fg = c.ui4_blue, bg = 'NONE' })
+
+
+
+------------------------------------------------------------------------------
 -- PHP
 ------------------------------------------------------------------------------
 
@@ -864,68 +974,13 @@ hl(0, "phpBackslashSequences"     , { fg = c.green           , bg = 'NONE' })--x
 
 
 
-------------------------------------------------------------------------------
--- Navic
-------------------------------------------------------------------------------
 
-  hl(0, "NavicIconsFile", { link = 'CmpItemKindFile' })
-  hl(0, "NavicIconsModule", { link = 'CmpItemKindModule' })
-  hl(0, "NavicIconsNamespace", { link = 'CmpItemKindModule' })
-  hl(0, "NavicIconsPackage", { link = 'CmpItemKindModule' })
-  hl(0, "NavicIconsClass", { link = 'CmpItemKindClass' })
-  hl(0, "NavicIconsMethod", { link = 'CmpItemKindMethod' })
-  hl(0, "NavicIconsProperty", { link = 'CmpItemKindProperty' })
-  hl(0, "NavicIconsField", { link = 'CmpItemKindField' })
-  hl(0, "NavicIconsConstructor", { link = 'CmpItemKindConstructor' })
-  hl(0, "NavicIconsEnum", { link = 'CmpItemKindEnum' })
-  hl(0, "NavicIconsInterface", { link = 'CmpItemKindInterface' })
-  hl(0, "NavicIconsFunction", { link = 'CmpItemKindFunction' })
-  hl(0, "NavicIconsVariable", { link = 'CmpItemKindVariable' })
-  hl(0, "NavicIconsConstant", { link = 'CmpItemKindConstant' })
-  hl(0, "NavicIconsString", { link = 'String' })
-  hl(0, "NavicIconsNumber", { link = 'Number' })
-  hl(0, "NavicIconsBoolean", { link = 'Boolean' })
-  hl(0, "NavicIconsArray", { link = 'CmpItemKindClass' })
-  hl(0, "NavicIconsObject", { link = 'CmpItemKindClass' })
-  hl(0, "NavicIconsKey", { link = 'CmpItemKindKeyword' })
-  hl(0, "NavicIconsKeyword", { link = 'CmpItemKindKeyword' })
-  hl(0, "NavicIconsNull", { fg = c.blue, bg = 'NONE' })
-  hl(0, "NavicIconsEnumMember", { link = 'CmpItemKindEnumMember' })
-  hl(0, "NavicIconsStruct", { link = 'CmpItemKindStruct' })
-  hl(0, "NavicIconsEvent", { link = 'CmpItemKindEvent' })
-  hl(0, "NavicIconsOperator", { link = 'CmpItemKindOperator' })
-  hl(0, "NavicIconsTypeParameter", { link = 'CmpItemKindTypeParameter' })
-  hl(0, "NavicText", { fg = c.gray, bg = 'NONE' })
-  hl(0, "NavicSeparator", { fg = c.context, bg = 'NONE' })
 
-  -- Packer
-  hl(0, "packerString", { fg = c.ui_orange, bg = 'NONE' })
-  hl(0, "packerHash", { fg = c.ui4_blue, bg = 'NONE' })
-  hl(0, "packerOutput", { fg = c.ui_purple, bg = 'NONE' })
-  hl(0, "packerRelDate", { fg = c.gray, bg = 'NONE' })
-  hl(0, "packerSuccess", { fg = c.success_green, bg = 'NONE' })
-  hl(0, "packerStatusSuccess", { fg = c.ui4_blue, bg = 'NONE' })
 
   -- SymbolOutline
   hl(0, "SymbolsOutlineConnector", { fg = c.gray, bg = 'NONE' })
   hl(0, "FocusedSymbol", { fg = 'NONE', bg = '#36383F' })
 
-  -- Notify
-  hl(0, "NotifyERRORBorder", { fg = '#8A1F1F', bg = 'NONE' })
-  hl(0, "NotifyWARNBorder", { fg = '#79491D', bg = 'NONE' })
-  hl(0, "NotifyINFOBorder", { fg = c.ui_blue, bg = 'NONE' })
-  hl(0, "NotifyDEBUGBorder", { fg = c.gray, bg = 'NONE' })
-  hl(0, "NotifyTRACEBorder", { fg = '#4F3552', bg = 'NONE' })
-  hl(0, "NotifyERRORIcon", { fg = c.error, bg = 'NONE' })
-  hl(0, "NotifyWARNIcon", { fg = c.warn, bg = 'NONE' })
-  hl(0, "NotifyINFOIcon", { fg = c.ui4_blue, bg = 'NONE' })
-  hl(0, "NotifyDEBUGIcon", { fg = c.gray, bg = 'NONE' })
-  hl(0, "NotifyTRACEIcon", { fg = c.ui_purple, bg = 'NONE' })
-  --[[ hl(0, "NotifyERRORTitle", { fg = c.error, bg = 'NONE' })
-  hl(0, "NotifyWARNTitle", { fg = c.warn, bg = 'NONE' })
-  hl(0, "NotifyINFOTitle", { fg = c.ui4_blue, bg = 'NONE' })
-  hl(0, "NotifyDEBUGTitle", { fg = c.gray, bg = 'NONE' })
-  hl(0, "NotifyTRACETitle", { fg = c.ui_purple, bg = 'NONE' }) ]]
   -- hl(0, "NeogitFold", { fg = c.ui_purple, bg = 'NONE' })
   -- hl(0, "NeogitStash", { fg = c.ui_purple, bg = 'NONE' })
   -- hl(0, "NeogitDiffAdd", { fg = c.ui_purple, bg = 'NONE' })
@@ -1065,7 +1120,28 @@ hl(0, 'xmlTagName'        , { fg = c.blue , bg = 'NONE' })
 hl(0, 'xmlEndTag'         , { fg = c.blue , bg = 'NONE' })
 hl(0, 'xmlProcessingDelim', { fg = c.blue , bg = 'NONE' })
 hl(0, 'xmlAttribPunct'    , { fg = c.white, bg = 'NONE' })
-
+--[[ xmlError       xxx links to Error ]]
+--[[ xmlEntity      xxx links to Statement ]]
+--[[ xmlString      xxx links to String ]]
+--[[ xmlEqual       xxx cleared ]]
+--[[ xmlAttrib      xxx links to Type ]]
+--[[ xmlNamespace   xxx links to Tag ]]
+--[[ xmlCdata       xxx links to String ]]
+--[[ xmlRegion      xxx cleared ]]
+--[[ xmlComment     xxx links to Comment ]]
+--[[ xmlProcessing  xxx links to Type ]]
+--[[ xmlEntityPunct xxx links to Type ]]
+--[[ xmlCommentStart xxx links to xmlComment ]]
+--[[ xmlCommentError xxx links to Error ]]
+--[[ xmlCommentPart xxx links to Comment ]]
+--[[ xmlTodo        xxx links to Todo ]]
+--[[ xmlCdataStart  xxx links to Type ]]
+--[[ xmlCdataEnd    xxx links to Type ]]
+--[[ xmlCdataCdata  xxx links to Statement ]]
+--[[ xmlDocTypeKeyword xxx links to Statement ]]
+--[[ xmlInlineDTD   xxx links to Function ]]
+--[[ xmlDocTypeDecl xxx links to Function ]]
+--[[ xmlDocType     xxx cleared ]]
 
 
 end
