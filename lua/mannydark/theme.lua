@@ -1059,9 +1059,11 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
 -- XML
 ------------------------------------------------------------------------------
 
-hl(0, "xmlTag", { fg = c.blue, bg = 'NONE' })
-hl(0, "xmlTagName", { fg = c.blue, bg = 'NONE' })
-hl(0, "xmlEndTag", { fg = c.blue, bg = 'NONE' })
+hl(0, 'xmlTag'            , { fg = c.blue , bg = 'NONE' })
+hl(0, 'xmlTagName'        , { fg = c.blue , bg = 'NONE' })
+hl(0, 'xmlEndTag'         , { fg = c.blue , bg = 'NONE' })
+hl(0, 'xmlProcessingDelim', { fg = c.blue , bg = 'NONE' })
+hl(0, 'xmlAttribPunct'    , { fg = c.white, bg = 'NONE' })
 
 
 
