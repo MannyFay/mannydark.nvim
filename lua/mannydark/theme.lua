@@ -831,7 +831,7 @@ hl(0, "phpClassNamespaceSeparator", { fg = c.purple           , bg = c.orange })
 hl(0, "phpClassExtends"           , { fg = c.turquoise   , bg = 'NONE' })
 hl(0, "phpClassImplements"        , { fg = c.red           , bg = 'NONE' })--xxx links to phpClass
 hl(0, "phpClassDelimiter"         , { fg = c.purple           , bg = 'NONE' })--xxx links to phpRegion
-hl(0, "phpUseNamespaceSeparator"  , { fg = c.red_light           , bg = 'NONE' })--xxx links to phpRegion
+hl(0, "phpUseNamespaceSeparator"  , { fg = c.white      , bg = 'NONE' })
 hl(0, "phpUseFunction"            , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
 hl(0, "phpUseClass"               , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
 hl(0, "phpUseKeyword"             , { fg = c.blue       , bg = 'NONE' })
