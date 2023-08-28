@@ -780,7 +780,7 @@ theme.set_highlights = function()
 
 hl(0, "phpTodo"                   , { fg = c.red        , bg = 'NONE' })
 hl(0, "phpComment"                , { fg = c.red        , bg = 'NONE' })
-hl(0, "phpRegion"                 , { fg = c.turquoise  , bg = 'NONE' })
+hl(0, "phpRegion"                 , { fg = c.white      , bg = 'NONE' })
 hl(0, "phpInclude"                , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpClass"                  , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpClasses"                , { fg = c.turquoise  , bg = 'NONE' })
