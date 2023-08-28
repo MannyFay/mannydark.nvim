@@ -821,8 +821,8 @@ hl(0, "phpHereDoc"                , { fg = c.red_light  , bg = 'NONE' })
 hl(0, "phpCommentStar"            , { fg = c.green      , bg = 'NONE' })
 hl(0, "phpCommentTitle"           , { fg = c.green      , bg = 'NONE' })
 hl(0, "phpDocTags"                , { fg = c.blue       , bg = 'NONE' })
-hl(0, "phpDocParam"               , { fg = c.red           , bg = 'NONE' })--xxx links to phpComment
-hl(0, "phpDocIdentifier"          , { fg = c.purple           , bg = 'NONE' })--xxx links to phpComment
+hl(0, "phpDocParam"               , { fg = c.green      , bg = 'NONE' })
+hl(0, "phpDocIdentifier"          , { fg = c.purple     , bg = 'NONE' })
 hl(0, "phpDocNamespaceSeparator"  , { fg = c.white      , bg = 'NONE' })
 hl(0, "phpStringDelimiter"        , { fg = c.purple           , bg = c.turquoise })--xxx links to String
 hl(0, "phpNowDoc"                 , { fg = c.green           , bg = 'NONE' })--xxx links to String
