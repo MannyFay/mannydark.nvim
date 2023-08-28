@@ -824,10 +824,10 @@ hl(0, "phpDocTags"                , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpDocParam"               , { fg = c.green      , bg = 'NONE' })
 hl(0, "phpDocIdentifier"          , { fg = c.purple     , bg = 'NONE' })
 hl(0, "phpDocNamespaceSeparator"  , { fg = c.white      , bg = 'NONE' })
-hl(0, "phpStringDelimiter"        , { fg = c.purple           , bg = c.turquoise })--xxx links to String
-hl(0, "phpNowDoc"                 , { fg = c.green           , bg = 'NONE' })--xxx links to String
-hl(0, "phpStaticClasses"          , { fg = c.purple           , bg = 'NONE' })--xxx links to phpClasses
-hl(0, "phpClassNamespaceSeparator", { fg = c.purple           , bg = 'NONE' })--xxx links to phpClass
+hl(0, "phpStringDelimiter"        , { fg = c.red_light  , bg = 'NONE' })
+hl(0, "phpNowDoc"                 , { fg = c.green           , bg = c.blue })--xxx links to String
+hl(0, "phpStaticClasses"          , { fg = c.purple           , bg = c.green_light })--xxx links to phpClasses
+hl(0, "phpClassNamespaceSeparator", { fg = c.purple           , bg = c.orange })--xxx links to phpClass
 hl(0, "phpClassExtends"           , { fg = c.turquoise   , bg = 'NONE' })
 hl(0, "phpClassImplements"        , { fg = c.red           , bg = 'NONE' })--xxx links to phpClass
 hl(0, "phpClassDelimiter"         , { fg = c.purple           , bg = 'NONE' })--xxx links to phpRegion
