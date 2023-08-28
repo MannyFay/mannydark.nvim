@@ -787,7 +787,7 @@ hl(0, "phpClasses"                , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpFunction"               , { fg = c.orange     , bg = 'NONE' })
 hl(0, "phpType"                   , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpKeyword"                , { fg = c.blue       , bg = 'NONE' })
-hl(0, "phpVarSelector"            , { fg = c.purple       , bg = 'NONE' })
+hl(0, "phpVarSelector"            , { fg = c.purple     , bg = 'NONE' })
 hl(0, "phpIdentifier"             , { fg = c.purple     , bg = 'NONE' })
 hl(0, "phpMethod"                 , { fg = c.orange     , bg = 'NONE' })
 hl(0, "phpMethodsVar"             , { fg = c.purple     , bg = 'NONE' })
@@ -828,12 +828,12 @@ hl(0, "phpStringDelimiter"        , { fg = c.red_light  , bg = 'NONE' })
 hl(0, "phpNowDoc"                 , { fg = c.green           , bg = c.blue })--xxx links to String
 hl(0, "phpStaticClasses"          , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpClassNamespaceSeparator", { fg = c.purple           , bg = c.orange })--xxx links to phpClass
-hl(0, "phpClassExtends"           , { fg = c.turquoise   , bg = 'NONE' })
+hl(0, "phpClassExtends"           , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpClassImplements"        , { fg = c.red           , bg = c.green_light })--xxx links to phpClass
 hl(0, "phpClassDelimiter"         , { fg = c.purple           , bg = c.white })--xxx links to phpRegion
 hl(0, "phpUseNamespaceSeparator"  , { fg = c.white      , bg = 'NONE' })
 hl(0, "phpUseFunction"            , { fg = c.turquoise           , bg = c.red })--xxx cleared
-hl(0, "phpUseClass"               , { fg = c.turquoise           , bg = c.gray })--xxx cleared
+hl(0, "phpUseClass"               , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpUseKeyword"             , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpUseAlias"               , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpYieldFromKeyword"       , { fg = c.blue       , bg = 'NONE' })
@@ -1044,9 +1044,7 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   hl(0, "DapBreakpoint", { fg = c.error, bg = 'NONE' })
 
   -- Language
-  hl(0, "xmlTag", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "xmlTagName", { fg = c.cyan, bg = 'NONE' })
-  hl(0, "xmlEndTag", { fg = c.cyan, bg = 'NONE' })
+
   -- hl(0, "yamlPlainScalar", { fg = c.orange, bg = 'NONE' })
   -- hl(0, "yamlTSField", { fg = c.blue, bg = 'NONE' })
   hl(0, "hclTSPunctSpecial", { fg = c.alt_fg, bg = 'NONE' })
@@ -1054,6 +1052,19 @@ hl(0, "NoiceCmdlinePopupBorder", { fg = c.hint, bg = "NONE" })
   hl(0, "tomlTSProperty", { fg = c.blue, bg = 'NONE' })
   hl(0, "zshKSHFunction", { link = "Function" })
   hl(0, "zshVariableDef", { link = "Constant" })
+
+
+
+------------------------------------------------------------------------------
+-- XML
+------------------------------------------------------------------------------
+
+hl(0, "xmlTag", { fg = c.blue, bg = 'NONE' })
+hl(0, "xmlTagName", { fg = c.blue, bg = 'NONE' })
+hl(0, "xmlEndTag", { fg = c.blue, bg = 'NONE' })
+
+
+
 end
 
 return theme
