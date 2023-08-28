@@ -835,7 +835,7 @@ hl(0, "phpUseNamespaceSeparator"  , { fg = c.red_light           , bg = 'NONE' }
 hl(0, "phpUseFunction"            , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
 hl(0, "phpUseClass"               , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
 hl(0, "phpUseKeyword"             , { fg = c.blue       , bg = 'NONE' })
-hl(0, "phpUseAlias"               , { fg = c.red           , bg = 'NONE' })--xxx cleared
+hl(0, "phpUseAlias"               , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpYieldFromKeyword"       , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpStructure"              , { fg = c.turquoise           , bg = 'NONE' })--xxx links to Statement
 hl(0, "phpException"              , { fg = c.turquoise           , bg = 'NONE' })--xxx links to Exception
