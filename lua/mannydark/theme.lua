@@ -811,12 +811,12 @@ hl(0, "phpMethods"                , { fg = c.orange     , bg = 'NONE' })
 hl(0, "phpSplatOperator"          , { fg = c.green      , bg = c.red })
 hl(0, "phpIdentifierSimply"       , { fg = c.orange           , bg = c.red })--xxx links to Identifier
 hl(0, "phpSpecialChar"            , { fg = c.green           , bg = c.blue })--xxx links to SpecialChar
-hl(0, "phpBacktick"               , { fg = c.purple           , bg = 'NONE' })--xxx links to String
-hl(0, "phpStrEsc"                 , { fg = c.orange           , bg = 'NONE' })--xxx links to SpecialChar
-hl(0, "phpIdentifierComplex"      , { fg = c.red           , bg = 'NONE' })--xxx cleared
+hl(0, "phpBacktick"               , { fg = c.purple           , bg = c.green_light})--xxx links to String
+hl(0, "phpStrEsc"                 , { fg = c.orange           , bg = c.pink })--xxx links to SpecialChar
+hl(0, "phpIdentifierComplex"      , { fg = c.red           , bg = c.blue })--xxx cleared
 hl(0, "phpBoolean"                , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpNumber"                 , { fg = c.green_light, bg = 'NONE' })
-hl(0, "phpOctalError"             , { fg = c.purple           , bg = 'NONE' })--xxx links to Error
+hl(0, "phpOctalError"             , { fg = c.purple           , bg = c.red })--xxx links to Error
 hl(0, "phpHereDoc"                , { fg = c.red_light  , bg = 'NONE' })
 hl(0, "phpCommentStar"            , { fg = c.green      , bg = 'NONE' })
 hl(0, "phpCommentTitle"           , { fg = c.green      , bg = 'NONE' })
@@ -829,17 +829,17 @@ hl(0, "phpNowDoc"                 , { fg = c.green           , bg = c.blue })--x
 hl(0, "phpStaticClasses"          , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpClassNamespaceSeparator", { fg = c.purple           , bg = c.orange })--xxx links to phpClass
 hl(0, "phpClassExtends"           , { fg = c.turquoise   , bg = 'NONE' })
-hl(0, "phpClassImplements"        , { fg = c.red           , bg = 'NONE' })--xxx links to phpClass
-hl(0, "phpClassDelimiter"         , { fg = c.purple           , bg = 'NONE' })--xxx links to phpRegion
+hl(0, "phpClassImplements"        , { fg = c.red           , bg = c.green_light })--xxx links to phpClass
+hl(0, "phpClassDelimiter"         , { fg = c.purple           , bg = c.white })--xxx links to phpRegion
 hl(0, "phpUseNamespaceSeparator"  , { fg = c.white      , bg = 'NONE' })
-hl(0, "phpUseFunction"            , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
-hl(0, "phpUseClass"               , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
+hl(0, "phpUseFunction"            , { fg = c.turquoise           , bg = c.red })--xxx cleared
+hl(0, "phpUseClass"               , { fg = c.turquoise           , bg = c.gray })--xxx cleared
 hl(0, "phpUseKeyword"             , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpUseAlias"               , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpYieldFromKeyword"       , { fg = c.blue       , bg = 'NONE' })
-hl(0, "phpStructure"              , { fg = c.turquoise           , bg = 'NONE' })--xxx links to Statement
-hl(0, "phpException"              , { fg = c.turquoise           , bg = 'NONE' })--xxx links to Exception
-hl(0, "phpParentError"            , { fg = c.red_light           , bg = 'NONE' })--xxx links to Error
+hl(0, "phpStructure"              , { fg = c.turquoise           , bg = c.yellow })--xxx links to Statement
+hl(0, "phpException"              , { fg = c.turquoise           , bg = c.blue })--xxx links to Exception
+hl(0, "phpParentError"            , { fg = c.red_light           , bg = .green_light })--xxx links to Error
 hl(0, "phpFoldIfContainer"        , { fg = c.orange           , bg = 'NONE' })-- xxx cleared
 hl(0, "phpFoldWhile"              , { fg = c.turquoise           , bg = 'NONE' })--xxx cleared
 hl(0, "phpFoldDoWhile"            , { fg = c.red_light           , bg = 'NONE' })--xxx cleared
