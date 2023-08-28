@@ -787,7 +787,7 @@ hl(0, "phpClasses"                , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpFunction"               , { fg = c.orange     , bg = 'NONE' })
 hl(0, "phpType"                   , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpKeyword"                , { fg = c.blue       , bg = 'NONE' })
-hl(0, "phpVarSelector"            , { fg = c.blue       , bg = 'NONE' })
+hl(0, "phpVarSelector"            , { fg = c.purple       , bg = 'NONE' })
 hl(0, "phpIdentifier"             , { fg = c.purple     , bg = 'NONE' })
 hl(0, "phpMethod"                 , { fg = c.orange     , bg = 'NONE' })
 hl(0, "phpMethodsVar"             , { fg = c.orange     , bg = 'NONE' })
@@ -826,7 +826,7 @@ hl(0, "phpDocIdentifier"          , { fg = c.purple     , bg = 'NONE' })
 hl(0, "phpDocNamespaceSeparator"  , { fg = c.white      , bg = 'NONE' })
 hl(0, "phpStringDelimiter"        , { fg = c.red_light  , bg = 'NONE' })
 hl(0, "phpNowDoc"                 , { fg = c.green           , bg = c.blue })--xxx links to String
-hl(0, "phpStaticClasses"          , { fg = c.purple           , bg = c.green_light })--xxx links to phpClasses
+hl(0, "phpStaticClasses"          , { fg = c.turquoise  , bg = 'NONE' })
 hl(0, "phpClassNamespaceSeparator", { fg = c.purple           , bg = c.orange })--xxx links to phpClass
 hl(0, "phpClassExtends"           , { fg = c.turquoise   , bg = 'NONE' })
 hl(0, "phpClassImplements"        , { fg = c.red           , bg = 'NONE' })--xxx links to phpClass
