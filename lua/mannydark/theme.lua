@@ -778,35 +778,95 @@ theme.set_highlights = function()
 -- PHP
 ------------------------------------------------------------------------------
 
-  hl(0, "phpTodo", { fg = c.red, bg = 'NONE', bold = true })
-  hl(0, "phpComment", { fg = c.red, bg = 'NONE' })
-  hl(0, "phpRegion", { fg = c.turquoise, bg = 'NONE' })
-  hl(0, "phpInclude", { fg = c.blue, bg = 'NONE' })
-  hl(0, "phpClass", { fg = c.blue, bg = 'NONE' })
-  hl(0, "phpClasses", { fg = c.blue, bg = 'NONE' })
-  hl(0, "phpFunction", { fg = c.orange, bg = 'NONE' })
-  hl(0, "phpType", { fg = c.blue, bg = 'NONE' })
-  hl(0, "phpKeyword", { fg = c.blue, bg = 'NONE' })
-  hl(0, "phpVarSelector", { fg = c.purple, bg = 'NONE' })
-  hl(0, "phpIdentifier", { fg = c.purple, bg = 'NONE' })
-  hl(0, "phpMethod", { fg = c.orange, bg = 'NONE' })
-  hl(0, "phpMethodsVar", { fg = c.orange, bg = 'NONE' })
-  hl(0, "phpMemberSelector", { fg = c.white, bg = 'NONE' })
-  hl(0, "phpStorageClass", { fg = c.blue, bg = 'NONE' })
-  hl(0, "phpDefine", { fg = c.blue, bg = 'NONE' })
-  hl(0, "phpSpecialFunction", { fg = c.orange, bg = 'NONE' })
-  hl(0, "phpParent", { fg = c.white, bg = 'NONE' })
+hl(0, "phpTodo"                   , { fg = c.red      , bg = 'NONE', bold = true })
+hl(0, "phpComment"                , { fg = c.red      , bg = 'NONE' })
+hl(0, "phpRegion"                 , { fg = c.turquoise, bg = 'NONE' })
+hl(0, "phpInclude"                , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpClass"                  , { fg = c.turquoise, bg = 'NONE' })
+hl(0, "phpClasses"                , { fg = c.turquoise, bg = 'NONE' })
+hl(0, "phpFunction"               , { fg = c.orange   , bg = 'NONE' })
+hl(0, "phpType"                   , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpKeyword"                , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpVarSelector"            , { fg = c.purple   , bg = 'NONE' })
+hl(0, "phpIdentifier"             , { fg = c.purple   , bg = 'NONE' })
+hl(0, "phpMethod"                 , { fg = c.orange   , bg = 'NONE' })
+hl(0, "phpMethodsVar"             , { fg = c.orange   , bg = 'NONE' })
+hl(0, "phpMemberSelector"         , { fg = c.white    , bg = 'NONE' })
+hl(0, "phpStorageClass"           , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpDefine"                 , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpSpecialFunction"        , { fg = c.orange   , bg = 'NONE' })
+hl(0, "phpParent"                 , { fg = c.white    , bg = 'NONE' })
+hl(0, "phpSuperglobals"           , { fg = c.purple   , bg = 'NONE' })
+hl(0, "phpMagicConstants"         , { fg = c.purple   , bg = 'NONE' })
+hl(0, "phpServerVars"             , { fg = c.red      , bg = c.green })
+hl(0, "phpConstants"              , { fg = c.purple   , bg = 'NONE' })
+hl(0, "phpFunctions"              , { fg = c.orange   , bg = 'NONE' })
+hl(0, "phpDocComment"             , { fg = c.green    , bg = 'NONE' })
+hl(0, "phpStringDouble"           , { fg = c.red      , bg = c.purple })
+hl(0, "phpStringSingle"           , { fg = c.red      , bg = c.blue })
+hl(0, "phpStatement"              , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpNullValue"              , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpOperator"               , { fg = c.red      , bg = c.white })
+hl(0, "phpMethods"                , { fg = c.orange   , bg = 'NONE' })
+hl(0, "phpSplatOperator"          , { fg = c.green    , bg = c.red })
+hl(0, "phpIdentifierSimply"       , { fg = c.         , bg = 'NONE' })--xxx links to Identifier
+hl(0, "phpSpecialChar"            , { fg = c.         , bg = 'NONE' })--xxx links to SpecialChar
+hl(0, "phpBacktick"               , { fg = c.         , bg = 'NONE' })--xxx links to String
+hl(0, "phpStrEsc"                 , { fg = c.         , bg = 'NONE' })--xxx links to SpecialChar
+hl(0, "phpIdentifierComplex"      , { fg = c.         , bg = 'NONE' })--xxx cleared
+hl(0, "phpBoolean"                , { fg = c.blue     , bg = 'NONE' })
+hl(0, "phpNumber"                 , { fg = c.green_light, bg = 'NONE' })
+hl(0, "phpOctalError"             , { fg = c.           , bg = 'NONE' })--xxx links to Error
+hl(0, "phpHereDoc"                , { fg = c.red_light  , bg = 'NONE' })
+hl(0, "phpCommentStar"            , { fg = c.           , bg = 'NONE' })--xxx links to phpComment
+hl(0, "phpCommentTitle"           , { fg = c.           , bg = 'NONE' }) --xxx links to phpComment
+hl(0, "phpDocTags"                , { fg = c.blue       , bg = 'NONE' })
+hl(0, "phpDocParam"               , { fg = c.           , bg = 'NONE' })--xxx links to phpComment
+hl(0, "phpDocIdentifier"          , { fg = c.           , bg = 'NONE' })xxx links to phpComment
+hl(0, "phpDocNamespaceSeparator"  , { fg = c.           , bg = 'NONE' })xxx links to phpComment
+hl(0, "phpStringDelimiter"        , { fg = c.           , bg = 'NONE' })xxx links to String
+hl(0, "phpNowDoc"                 , { fg = c., bg = 'NONE' })xxx links to String
+hl(0, "phpStaticClasses"          , { fg = c., bg = 'NONE' })xxx links to phpClasses
+hl(0, "phpClassNamespaceSeparator", { fg = c., bg = 'NONE' })xxx links to phpClass
+hl(0, "phpClassExtends"           , { fg = c., bg = 'NONE' })xxx links to phpClass
+hl(0, "phpClassImplements"        , { fg = c., bg = 'NONE' })xxx links to phpClass
+hl(0, "phpClassDelimiter"         , { fg = c., bg = 'NONE' })xxx links to phpRegion
+hl(0, "phpUseNamespaceSeparator"  , { fg = c., bg = 'NONE' })xxx links to phpRegion
+hl(0, "phpUseFunction"            , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpUseClass"               , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpUseKeyword"             , { fg = c.blue, bg = 'NONE' })
+hl(0, "phpUseAlias"               , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpYieldFromKeyword"       , { fg = c.blue, bg = 'NONE' })
+hl(0, "phpStructure"              , { fg = c., bg = 'NONE' })xxx links to Statement
+hl(0, "phpException"              , { fg = c., bg = 'NONE' })xxx links to Exception
+hl(0, "phpParentError"            , { fg = c., bg = 'NONE' })xxx links to Error
+hl(0, "phpFoldIfContainer"        , { fg = c., bg = 'NONE' }) xxx cleared
+hl(0, "phpFoldWhile"              , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldDoWhile"            , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldFor"                , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldForeach"            , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldTryContainer"       , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldSwitch"             , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldFunction"           , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldClass"              , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldInterface"          , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldHtmlInside"         , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpSCKeyword"              , { fg = c., bg = 'NONE' })xxx links to phpKeyword
+hl(0, "phpFCKeyword"              , { fg = c., bg = 'NONE' })xxx links to phpKeyword
+hl(0, "phpFoldCatch"              , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldFinally"            , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldElseIf"             , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldElse"               , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldCase"               , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpFoldDefault"            , { fg = c., bg = 'NONE' })xxx cleared
+hl(0, "phpBackslashSequences"     , { fg = c., bg = 'NONE' })xxx cleared
 
 
 
+------------------------------------------------------------------------------
+-- Navic
+------------------------------------------------------------------------------
 
-
-
-
-
-
-
-  -- Navic
   hl(0, "NavicIconsFile", { link = 'CmpItemKindFile' })
   hl(0, "NavicIconsModule", { link = 'CmpItemKindModule' })
   hl(0, "NavicIconsNamespace", { link = 'CmpItemKindModule' })
