@@ -806,7 +806,7 @@ hl(0, "phpStringDouble"           , { fg = c.red        , bg = c.purple })
 hl(0, "phpStringSingle"           , { fg = c.red        , bg = c.blue })
 hl(0, "phpStatement"              , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpNullValue"              , { fg = c.blue       , bg = 'NONE' })
-hl(0, "phpOperator"               , { fg = c.red        , bg = c.white })
+hl(0, "phpOperator"               , { fg = c.white      , bg = 'NONE' })
 hl(0, "phpMethods"                , { fg = c.orange     , bg = 'NONE' })
 hl(0, "phpSplatOperator"          , { fg = c.green      , bg = c.red })
 hl(0, "phpIdentifierSimply"       , { fg = c.orange           , bg = c.red })--xxx links to Identifier
