@@ -938,7 +938,7 @@ hl(0, "phpSplatOperator"          , { fg = c.green      , bg = c.red })
 hl(0, "phpIdentifierSimply"       , { fg = c.orange           , bg = c.red })--xxx links to Identifier
 hl(0, "phpSpecialChar"            , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpBacktick"               , { fg = c.purple           , bg = c.green_light})--xxx links to String
-hl(0, "phpStrEsc"                 , { fg = c.green_light, bg = 'NONE' })
+hl(0, "phpStrEsc"                 , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpIdentifierComplex"      , { fg = c.red           , bg = c.blue })--xxx cleared
 hl(0, "phpBoolean"                , { fg = c.blue       , bg = 'NONE' })
 hl(0, "phpNumber"                 , { fg = c.green_light, bg = 'NONE' })
