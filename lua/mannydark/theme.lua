@@ -126,6 +126,8 @@ theme.set_highlights = function()
 ------------------------------------------------------------------------------
 
 hl(0, 'bladeDelimiter', { fg = c.white, bg = 'NONE' })
+hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
+
 
 
 
