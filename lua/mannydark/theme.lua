@@ -29,7 +29,7 @@ theme.set_highlights = function()
   hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE'  })  -- Error messages below status line.
   hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE' })  -- Warning messages below status line.
   hl(0, 'Question',            { fg = c.green,    bg = 'NONE' })  -- Questions that Neovim asks the user.
-  hl(0, 'NormalFloat',         { fg = c.white,    bg = 'NONE' })  -- Neovims regular floating window.
+  hl(0, 'NormalFloat',         { fg = c.white,    bg = c.grayDark })  -- Neovims regular floating window.
 
 
 
