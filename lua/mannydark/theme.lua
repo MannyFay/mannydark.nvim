@@ -12,31 +12,30 @@ theme.set_highlights = function()
       bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
   })
 
-  hl(0, 'IndentBlanklineChar', { fg = c.grayDark, bg = 'NONE'               })  -- Indent Blank Line plugin vertical lines.
-  hl(0, 'SignColumn',          { fg = 'NONE',     bg = c.black              })  -- Sign column left of the line numbers.
-  hl(0, 'ColorColumn',         { fg = 'NONE',     bg = c.grayDark           })  -- Vertical visual guide line.
-  hl(0, 'LineNr',              { fg = c.gray,     bg = 'NONE'               })  -- Line numbers.
-  hl(0, 'CursorLineNr',        { fg = c.white,    bg = 'NONE'               })  -- Line number of current line.
-  hl(0, 'VertSplit',           { fg = c.grayDark, bg = c.grayDark           })  -- Vertical split separator line.
-  hl(0, 'CursorLine',          { fg = 'NONE',     bg = c.grayDark           })  -- Color of actual line.
-  hl(0, 'Search',              { fg = c.black,    bg = c.pink               })  -- Highlighting of search patterns.
-  hl(0, 'IncSearch',           { fg = c.black,    bg = c.white              })  -- Highlighting of first result from search pattern.
-  hl(0, 'EndOfBuffer',         { fg = c.black,    bg = 'NONE'               })  -- Empty end of buffer.
-  hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE', bold = true, })  -- Error message.
-  hl(0, 'Visual',              { fg = 'NONE',     bg = c.gray               })
-  hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark           })
-  hl(0, 'PmenuSel',            { fg = c.black,    bg = c.gray               })
-  hl(0, 'MsgArea',             { fg = c.white,    bg = c.black              })  -- Area below status line.
+  hl(0, 'IndentBlanklineChar', { fg = c.grayDark, bg = 'NONE'              })  -- Indent Blank Line plugin vertical lines.
+  hl(0, 'SignColumn',          { fg = 'NONE',     bg = c.black             })  -- Sign column left of the line numbers.
+  hl(0, 'ColorColumn',         { fg = 'NONE',     bg = c.grayDark          })  -- Vertical visual guide line.
+  hl(0, 'LineNr',              { fg = c.gray,     bg = 'NONE'              })  -- Line numbers.
+  hl(0, 'CursorLineNr',        { fg = c.white,    bg = 'NONE'              })  -- Line number of current line.
+  hl(0, 'VertSplit',           { fg = c.grayDark, bg = c.grayDark          })  -- Vertical split separator line.
+  hl(0, 'CursorLine',          { fg = 'NONE',     bg = c.grayDark          })  -- Color of actual line.
+  hl(0, 'Search',              { fg = c.black,    bg = c.pink              })  -- Highlighting of search patterns.
+  hl(0, 'IncSearch',           { fg = c.black,    bg = c.white             })  -- Highlighting of first result from search pattern.
+  hl(0, 'EndOfBuffer',         { fg = c.black,    bg = 'NONE'              })  -- Empty end of buffer.
+  hl(0, 'Visual',              { fg = 'NONE',     bg = c.gray              })
+  hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark          })
+  hl(0, 'PmenuSel',            { fg = c.black,    bg = c.gray              })
+  hl(0, 'MsgArea',             { fg = c.white,    bg = 'NONE'              })  -- Area below status line.
+  hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE', bold = true })  -- Error messages below status line.
+  hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE', bold = true })  -- Warning messages below status line.
 
+
+
+  
 ---------------------------- Not used by now:
   hl(0, "Cursor", { fg = c.red, bg = c.green })
   hl(0, "lCursor", { fg = c.red, bg = c.green })
   hl(0, "CursorIM", { fg = c.red, bg = c.green })
-
-  
-  
-
-  
   hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
   hl(0, "MsgSeparator", { fg = c.blue, bg = c.bg })
   hl(0, "SpellBad", { fg = c.gray, bg = c.green, sp = c.red, undercurl = true, })
@@ -51,12 +50,7 @@ theme.set_highlights = function()
   hl(0, "Whitespace", { fg = c.darkGray, bg = c.yellow })
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
   hl(0, "NormalFloat", { fg = c.green, bg = c.blue })
-  hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })
-
-  
-  hl(0, "WarningMsg", { fg = c.ui_orange, bg = c.green })
-
-  
+  hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })  
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
   hl(0, "PmenuSbar", { fg = c.pink, bg = c.yellow })
   hl(0, "PmenuThumb", { fg = 'NONE', bg = c.gray })
@@ -69,7 +63,9 @@ theme.set_highlights = function()
   hl(0, "SpecialKey", { fg = c.blue, bg = c.pink, bold = true, })
   hl(0, "Substitute", { fg = 'NONE', bg = c.purple })
   hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
-  hl(0, "Question", { fg = c.orange, bg = c.pink })
+  
+  hl(0, "Question", { fg = c.orange, bg = c.blue })
+  
   hl(0, "NonText", { fg = c.dark_gray, bg = 'NONE' })
   hl(0, "TabLine", { fg = c.red, bg = c.green })
   hl(0, "TabLineSel", { fg = c.green, bg = c.orange })
