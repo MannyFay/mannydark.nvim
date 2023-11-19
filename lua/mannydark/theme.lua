@@ -30,6 +30,7 @@ theme.set_highlights = function()
   hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE' })  -- Warning messages below status line.
   hl(0, 'Question',            { fg = c.green,    bg = 'NONE' })  -- Questions that Neovim asks the user.
   hl(0, 'NormalFloat',         { fg = c.white,    bg = c.grayDark })  -- Neovims regular floating window.
+  hl(0, 'Whitespace',          { fg = c.red,      bg = 'NONE' }) -- Trailing whitespaces in buffer.
 
 
 
@@ -50,7 +51,6 @@ theme.set_highlights = function()
   hl(0, "FoldColumn", { fg = c.gray, bg = c.yellow })
   hl(0, "FloatBorder", { fg = c.gray, bg = c.alt_bg })
   
-  hl(0, "Whitespace", { fg = c.darkGray, bg = c.blue })
   
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
   hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })  
