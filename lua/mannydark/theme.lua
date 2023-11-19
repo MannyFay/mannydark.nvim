@@ -45,27 +45,35 @@ theme.set_highlights = function()
   hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.green, underline = true, })
   hl(0, "SpellRare", { fg = 'NONE', bg = c.green, sp = c.purple, underline = true, })
   hl(0, "NormalNC", { fg = c.blue, bg = c.bg })
+
+  
   hl(0, "WildMenu", { fg = c.red, bg = c.purple })
+
+  
   hl(0, "Folded", { fg = c.gray, bg = c.orange })
   hl(0, "FoldColumn", { fg = c.gray, bg = c.yellow })
   hl(0, "FloatBorder", { fg = c.gray, bg = c.alt_bg })
   hl(0, "Whitespace", { fg = c.darkGray, bg = c.yellow })
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
-
-  
-
-  
   hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })  
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
   hl(0, "PmenuSbar", { fg = c.pink, bg = c.yellow })
   hl(0, "PmenuThumb", { fg = 'NONE', bg = c.gray })
+
+  
   hl(0, "MatchWord", { fg = c.pink, bg = c.purple })
+
+  
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.reference })
   hl(0, "MatchParenCur", { fg = c.purple, bg = c.pink })
   hl(0, "TermCursor", { fg = c.pink, bg = c.purple })
   hl(0, "TermCursorNC", { fg = c.cursor_fg, bg = c.yellow })
   hl(0, "Conceal", { fg = c.gray, bg = c.purple })
-  hl(0, "SpecialKey", { fg = c.blue, bg = c.pink, bold = true, })
+
+  
+  hl(0, "SpecialKey", { fg = c.blue, bg = c.orange, bold = true, })
+
+  
   hl(0, "Substitute", { fg = 'NONE', bg = c.purple })
   hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
   
