@@ -52,7 +52,11 @@ theme.set_highlights = function()
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
   hl(0, "NormalFloat", { fg = c.green, bg = c.blue })
   hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })
-  hl(0, "WarningMsg", { fg = c.ui_orange, bg = c.blue })
+
+  
+  hl(0, "WarningMsg", { fg = c.ui_orange, bg = c.green })
+
+  
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
   hl(0, "PmenuSbar", { fg = c.pink, bg = c.yellow })
   hl(0, "PmenuThumb", { fg = 'NONE', bg = c.gray })
