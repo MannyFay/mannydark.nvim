@@ -26,8 +26,9 @@ theme.set_highlights = function()
   hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark          })
   hl(0, 'PmenuSel',            { fg = c.black,    bg = c.gray              })
   hl(0, 'MsgArea',             { fg = c.white,    bg = 'NONE'              })  -- Area below status line.
-  hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE', bold = true })  -- Error messages below status line.
-  hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE', bold = true })  -- Warning messages below status line.
+  hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE'  })  -- Error messages below status line.
+  hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE' })  -- Warning messages below status line.
+  hl(0, 'Question',            { fg = c.green,    bg = 'NONE' })  -- Questions that Neovim asks the user.
 
 
 
@@ -64,7 +65,6 @@ theme.set_highlights = function()
   hl(0, "Substitute", { fg = 'NONE', bg = c.purple })
   hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
   
-  hl(0, "Question", { fg = c.orange, bg = c.blue })
   
   hl(0, "NonText", { fg = c.dark_gray, bg = 'NONE' })
   hl(0, "TabLine", { fg = c.red, bg = c.green })
