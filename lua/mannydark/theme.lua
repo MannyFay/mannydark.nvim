@@ -88,7 +88,7 @@ theme.set_highlights = function()
   hl(0, "BufferVisibleTarget", { fg = c.red, bg = c.orange, bold = true, })
   hl(0, "BufferInactive", { fg = c.pink, bg = c.green })
   hl(0, "BufferInactiveIndex", { fg = c.blue, bg = c.purple })
-  hl(0, "BufferInactiveMod", { fg = cc.orange, bg = c.pink })
+  hl(0, "BufferInactiveMod", { fg = c.orange, bg = c.pink })
   hl(0, "BufferInactiveSign", { fg = c.gray, bg = c.yellow })
   hl(0, "BufferInactiveTarget", { fg = c.red, bg = c.green, bold = true, })
 
