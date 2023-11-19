@@ -43,36 +43,21 @@ theme.set_highlights = function()
   hl(0, "lCursor", { fg = c.red, bg = c.green })
   hl(0, "CursorIM", { fg = c.red, bg = c.green })
   hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
-  hl(0, "MsgSeparator", { fg = c.blue, bg = c.bg })
+  hl(0, "MsgSeparator", { fg = c.blue, bg = c.pink })
   hl(0, "SpellBad", { fg = c.gray, bg = c.green, sp = c.red, undercurl = true, })
   hl(0, "SpellCap", { fg = c.orange, bg = 'NONE', sp = c.yellow, undercurl = true, })
-  hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.green, underline = true, })
+  hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.pink, underline = true, })
 
   
   hl(0, "SpellRare", { fg = 'NONE', bg = c.blue, sp = c.purple, underline = true, })
-  
-  
   hl(0, "NormalNC", { fg = c.blue, bg = c.bg })
   hl(0, "WildMenu", { fg = c.red, bg = c.purple })
   hl(0, "Folded", { fg = c.gray, bg = c.orange })
-
-  
   hl(0, "FoldColumn", { fg = c.red, bg = c.blue })
-
-  
-  
-  
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
   hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })  
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
 
-  
-  
-  
-  
-
-
-  
   hl(0, "MatchWord", { fg = c.pink, bg = c.purple })
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.reference })
   hl(0, "MatchParenCur", { fg = c.purple, bg = c.pink })
@@ -83,7 +68,7 @@ theme.set_highlights = function()
   hl(0, "Substitute", { fg = 'NONE', bg = c.purple })
   hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
   hl(0, "NonText", { fg = c.dark_gray, bg = 'NONE' })
-  hl(0, "TabLine", { fg = c.red, bg = c.green })
+  hl(0, "TabLine", { fg = c.red, bg = c.purple })
   hl(0, "TabLineSel", { fg = c.green, bg = c.orange })
   hl(0, "TabLineFill", { fg = c.green, bg = c.line })
 
