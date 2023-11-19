@@ -44,12 +44,16 @@ theme.set_highlights = function()
   hl(0, "SpellBad", { fg = c.gray, bg = c.green, sp = c.red, undercurl = true, })
   hl(0, "SpellCap", { fg = c.orange, bg = 'NONE', sp = c.yellow, undercurl = true, })
   hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.green, underline = true, })
-  hl(0, "SpellRare", { fg = 'NONE', bg = c.green, sp = c.purple, underline = true, })
+
+  
+  hl(0, "SpellRare", { fg = 'NONE', bg = c.blue, sp = c.purple, underline = true, })
+  
+  
   hl(0, "NormalNC", { fg = c.blue, bg = c.bg })
   hl(0, "WildMenu", { fg = c.red, bg = c.purple })
   hl(0, "Folded", { fg = c.gray, bg = c.orange })
   hl(0, "FoldColumn", { fg = c.gray, bg = c.yellow })
-  hl(0, "FloatBorder", { fg = c.gray, bg = c.alt_bg })
+  hl(0, "FloatBorder", { fg = c.blue, bg = c.pink })
   
   
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
