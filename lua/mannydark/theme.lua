@@ -26,6 +26,7 @@ theme.set_highlights = function()
   hl(0, 'Visual',              { fg = 'NONE',     bg = c.gray               })
   hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark           })
   hl(0, 'PmenuSel',            { fg = c.black,    bg = c.gray               })
+  hl(0, 'MsgArea',             { fg = c.white,    bg = c.black              })  -- Area below status line.
 
 ---------------------------- Not used by now:
   hl(0, "Cursor", { fg = c.red, bg = c.green })
@@ -33,7 +34,7 @@ theme.set_highlights = function()
   hl(0, "CursorIM", { fg = c.red, bg = c.green })
 
   
-  hl(0, "MsgArea", { fg = c.gray, bg = c.blue })
+  
 
   
   hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
