@@ -34,7 +34,7 @@ theme.set_highlights = function()
   hl(0, 'Whitespace',          { fg = c.red,      bg = 'NONE' }) -- Trailing whitespaces in buffer.
   hl(0, 'PmenuSbar',           { fg = 'NONE',     bg = c.grayDark })  -- Scroll bar background in context menus.
   hl(0, 'PmenuThumb',          { fg = c.white,    bg = 'NONE' }) -- Scroll bar in context menus.
-  hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black }) -- Seperator line above messages under status line.
+  hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.red }) -- Seperator line above messages under status line.
   hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE', sp = c.red, undercurl = true }) -- Spelling mistakes.
 
 
