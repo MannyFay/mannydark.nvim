@@ -13,7 +13,7 @@ theme.set_highlights = function()
   })
 
   hl(0, 'IndentBlanklineChar', { fg = c.grayDark, bg = 'NONE'              })  -- Indent Blank Line plugin vertical lines.
-  hl(0, 'SignColumn',          { fg = 'NONE',     bg = c.black             })  -- Sign column left of the line numbers.
+  hl(0, 'SignColumn',          { fg = 'NONE',     bg = c.green             })  -- Sign column left of the line numbers.
   hl(0, 'ColorColumn',         { fg = 'NONE',     bg = c.grayDark          })  -- Vertical visual guide line.
   hl(0, 'LineNr',              { fg = c.gray,     bg = 'NONE'              })  -- Line numbers.
   hl(0, 'CursorLineNr',        { fg = c.white,    bg = 'NONE'              })  -- Line number of current line.
