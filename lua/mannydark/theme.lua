@@ -53,7 +53,9 @@ theme.set_highlights = function()
   hl(0, "NormalNC", { fg = c.blue, bg = c.bg })
   hl(0, "WildMenu", { fg = c.red, bg = c.purple })
   hl(0, "Folded", { fg = c.gray, bg = c.orange })
-  hl(0, "FoldColumn", { fg = c.gray, bg = c.yellow })
+
+  
+  hl(0, "FoldColumn", { fg = c.red, bg = c.blue })
 
   
   
