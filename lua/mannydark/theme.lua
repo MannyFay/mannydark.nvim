@@ -31,7 +31,11 @@ theme.set_highlights = function()
   hl(0, "Cursor", { fg = c.red, bg = c.green })
   hl(0, "lCursor", { fg = c.red, bg = c.green })
   hl(0, "CursorIM", { fg = c.red, bg = c.green })
-  hl(0, "MsgArea", { fg = c.gray, bg = c.orange })
+
+  
+  hl(0, "MsgArea", { fg = c.gray, bg = c.blue })
+
+  
   hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
   hl(0, "MsgSeparator", { fg = c.blue, bg = c.bg })
   hl(0, "SpellBad", { fg = c.gray, bg = c.green, sp = c.red, undercurl = true, })
