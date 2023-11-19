@@ -69,7 +69,10 @@ theme.set_highlights = function()
   
   
   
-  hl(0, "PmenuThumb", { fg = 'NONE', bg = c.gray })
+  hl(0, "PmenuThumb", { fg = c.green, bg = c.pink })
+
+
+  
   hl(0, "MatchWord", { fg = c.pink, bg = c.purple })
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.reference })
   hl(0, "MatchParenCur", { fg = c.purple, bg = c.pink })
