@@ -32,6 +32,7 @@ theme.set_highlights = function()
   hl(0, 'NormalFloat',         { fg = c.white,    bg = c.grayDark })  -- Neovims regular floating window.
   hl(0, 'FloatBorder',         { fg = 'NONE',     bg = c.grayDark })  -- Border of Neovims regular floating window.
   hl(0, 'Whitespace',          { fg = c.red,      bg = 'NONE' }) -- Trailing whitespaces in buffer.
+  hl(0, 'PmenuSbar',           { fg = 'NONE',     bg = c.gray })  -- Scroll bar in context menus.
 
 
 
@@ -65,7 +66,6 @@ theme.set_highlights = function()
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
 
   
-  hl(0, "PmenuSbar", { fg = c.pink, bg = c.blue })
   
   
   
