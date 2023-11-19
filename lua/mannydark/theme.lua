@@ -35,6 +35,7 @@ theme.set_highlights = function()
   hl(0, 'PmenuSbar',           { fg = 'NONE',     bg = c.grayDark })  -- Scroll bar background in context menus.
   hl(0, 'PmenuThumb',          { fg = c.white,    bg = 'NONE' }) -- Scroll bar in context menus.
   hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black }) -- Seperator line above messages under status line.
+  hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE', sp = c.red, undercurl = true }) -- Spelling mistakes.
 
 
 
@@ -44,7 +45,6 @@ theme.set_highlights = function()
   hl(0, "lCursor", { fg = c.red, bg = c.green })
   hl(0, "CursorIM", { fg = c.red, bg = c.green })
   hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
-  hl(0, "SpellBad", { fg = c.gray, bg = c.orange, sp = c.red, undercurl = true, })
   hl(0, "SpellCap", { fg = c.orange, bg = 'NONE', sp = c.yellow, undercurl = true, })
   hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.pink, underline = true, })
 
@@ -62,15 +62,15 @@ theme.set_highlights = function()
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.reference })
   hl(0, "MatchParenCur", { fg = c.purple, bg = c.pink })
   hl(0, "TermCursor", { fg = c.pink, bg = c.purple })
-  hl(0, "TermCursorNC", { fg = c.cursor_fg, bg = c.yellow })
+  hl(0, "TermCursorNC", { fg = c.blue, bg = c.yellow })
   hl(0, "Conceal", { fg = c.gray, bg = c.purple })
   hl(0, "SpecialKey", { fg = c.blue, bg = c.orange, bold = true, })
-  hl(0, "Substitute", { fg = 'NONE', bg = c.purple })
-  hl(0, "MoreMsg", { fg = c.orange, bg = 'NONE' })
-  hl(0, "NonText", { fg = c.dark_gray, bg = 'NONE' })
+  hl(0, "Substitute", { fg = c.orange, bg = c.purple })
+  hl(0, "MoreMsg", { fg = c.orange, bg = c.blue })
+  hl(0, "NonText", { fg = c.darkGray, bg = c.pink })
   hl(0, "TabLine", { fg = c.red, bg = c.purple })
   hl(0, "TabLineSel", { fg = c.green, bg = c.orange })
-  hl(0, "TabLineFill", { fg = c.green, bg = c.line })
+  hl(0, "TabLineFill", { fg = c.green, bg = c.blue })
 
 
 --------------------------------------------------------------
