@@ -44,7 +44,7 @@ theme.set_highlights = function()
   hl(0, "lCursor", { fg = c.red, bg = c.green })
   hl(0, "CursorIM", { fg = c.red, bg = c.green })
   hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
-  hl(0, "SpellBad", { fg = c.gray, bg = c.green, sp = c.red, undercurl = true, })
+  hl(0, "SpellBad", { fg = c.gray, bg = c.orange, sp = c.red, undercurl = true, })
   hl(0, "SpellCap", { fg = c.orange, bg = 'NONE', sp = c.yellow, undercurl = true, })
   hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.pink, underline = true, })
 
