@@ -25,7 +25,11 @@ hl(0, 'jsStorageClass', { fg = c.blue, bg = 'NONE'    }) -- 'const' Keyword.
 hl(0, 'jsVariableDef', { fg = c.purple, bg = 'NONE'    }) -- Names of variables.
 hl(0, 'jsOperatorKeyword', { fg = c.blue, bg = 'NONE'    }) -- 'new' keyword.
 hl(0, 'jsDot'         , { fg = c.white      , bg = 'NONE' })  -- Dots in JS files.
-
+hl(0, 'jsFuncName'         , { fg = c.orange      , bg = 'NONE' })  -- Name of functions.
+hl(0, 'jsFunction'         , { fg = c.blue      , bg = 'NONE' })  -- 'function' keyword.
+hl(0, 'jsClassKeyword'         , { fg = c.blue      , bg = 'NONE' })  -- 'class' keyword.
+hl(0, 'jsComment'         , { fg = c.red     , bg = 'NONE' })  -- Comments.
+hl(0, 'jsCommentTodo'         , { fg = c.red      , bg = 'NONE' })  -- 'Todo' text.
 
 
 
@@ -161,7 +165,6 @@ hl(0, 'jsClassProperty'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassPropertyComputed'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassStringKey'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsFuncBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsIfElseBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTryCatchBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFinallyBraces'         , { fg = c.purple      , bg = c.blue })
@@ -183,10 +186,8 @@ hl(0, 'jsTernaryIf'         , { fg = c.purple      , bg = c.blue })
 
 
   
-hl(0, 'jsFuncName'         , { fg = c.orange      , bg = 'NONE' })  -- Name of functions.
-hl(0, 'jsFunction'         , { fg = c.blue      , bg = 'NONE' })  -- 'function' keyword.
-hl(0, 'jsClassKeyword'         , { fg = c.blue      , bg = 'NONE' })  -- 'class' keyword.
-hl(0, 'jsComment'         , { fg = c.purple      , bg = c.pink })
+hl(0, 'jsFuncBraces'         , { fg = c.purple      , bg = c.red })
+
 
 
   
@@ -202,7 +203,6 @@ hl(0, 'jsClassValue'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowClassDef'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDestructuringValue'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDestructuringValueAssignment'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsCommentTodo'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsEnvComment'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDecoratorFunction'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDocTags'         , { fg = c.purple      , bg = c.blue })
