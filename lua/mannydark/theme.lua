@@ -542,7 +542,8 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaTable'          , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaFunc'           , { fg = c.orange     , bg = 'NONE' })
   hl(0, 'luaBraces'         , { fg = c.white      , bg = 'NONE' })
-
+  hl(0, 'luaLocal'          , { fg = c.blue       , bg = 'NONE' })  -- 'local' keyword.
+  hl(0, 'luaFuncCall'       , { fg = c.orange     , bg = 'NONE' })  -- Function that is called.
 
 
 
