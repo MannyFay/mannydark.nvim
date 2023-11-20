@@ -43,11 +43,16 @@ hl(0, 'jsParen'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whitespace.
 hl(0, 'jsFuncParens'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses () of functions.
 hl(0, 'jsReturn'         , { fg = c.blue      , bg = 'NONE' })  -- 'return' keyword.
 hl(0, 'jsFuncBlock'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whole function body area.
+hl(0, 'jsFuncArgCommas'         , { fg = c.white      , bg = 'NONE' })  -- Commata in functions parameter list.
+hl(0, 'jsClassFuncName'         , { fg = c.orange      , bg = 'NONE' })  -- Names of methods.
+hl(0, 'jsClassBlock'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whole area of method body.
+hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = 'NONE' })  -- Variable in methods.
+hl(0, 'jsClassProperty'         , { fg = c.purple      , bg = 'NONE' })  -- Attribute.
+hl(0, 'jsClassBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly Braces {} of classes.
 
 
 
   
-hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsPrototype'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTaggedTemplate'         , { fg = c.purple      , bg = c.blue })
 
@@ -150,22 +155,17 @@ hl(0, 'jsCommentRepeat'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensFor'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensSwitch'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensCatch'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsFuncArgCommas'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncArgExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRestExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowArgumentDef'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsCommentFunction'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowReturn'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsClassBraces'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsClassFuncName'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassMethodType'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsArrowFuncArgs'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsGenerator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDecorator'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsClassProperty'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassPropertyComputed'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassStringKey'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsClassBlock'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsIfElseBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTryCatchBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFinallyBraces'         , { fg = c.purple      , bg = c.blue })
