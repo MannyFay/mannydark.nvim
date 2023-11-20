@@ -15,7 +15,9 @@ hl(0, 'jsClassDefinition', { fg = c.turquoise, bg = 'NONE'    }) -- Name of clas
 hl(0, 'jsFuncArgs', { fg = c.purple, bg = 'NONE'    }) -- Parameters of functions.
 hl(0, 'jsThis', { fg = c.blue, bg = 'NONE'    }) -- 'this' keyword.
 hl(0, 'jsArrowFunction', { fg = c.white, bg = 'NONE'    }) -- Arrow => of arrow functions.
-
+hl(0, 'jsStorageClass', { fg = c.blue, bg = 'NONE'    }) -- 'const' Keyword.
+hl(0, 'jsVariableDef', { fg = c.purple, bg = 'NONE'    }) -- Names of variables.
+hl(0, 'jsOperatorKeyword', { fg = c.blue, bg = 'NONE'    }) -- 'new' keyword.
   
 ------------------------------------------------------------------------------
 -- Configuration Files
