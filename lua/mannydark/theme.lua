@@ -236,19 +236,21 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 -- Language Defaults
 ------------------------------------------------------------------------------
 
-  --testcomment
-  hl(0, "Comment", { fg = c.red, bg = 'NONE' })
-  hl(0, "Variable", { fg = c.purple, bg = 'NONE' })
-  hl(0, "String", { fg = c.red_light, bg = 'NONE' })
-  hl(0, "Number", { fg = c.green_light, bg = 'NONE' })
-  hl(0, "Float", { fg = c.green_light, bg = 'NONE' })
-  hl(0, "Boolean", { fg = c.blue, bg = 'NONE' })
-  hl(0, "Constant", { fg = c.purple, bg = 'NONE' })
+  hl(0, 'Comment', { fg = c.red, bg = 'NONE' })  -- Block and line comments.
+  hl(0, "Variable", { fg = c.purple, bg = 'NONE' })  -- All kinds of variables.
+  hl(0, "String", { fg = c.redLight, bg = 'NONE' })  -- Main setting for everything between quotes.
+  hl(0, "Number", { fg = c.greenLight, bg = 'NONE' })  -- All kinds of integer numbers.
+  hl(0, "Float", { fg = c.greenLight, bg = 'NONE' })  -- All kinds of floating point numbers.
+  hl(0, "Boolean", { fg = c.blue, bg = 'NONE' })  -- The boolean values 'true' and 'false'.
+  hl(0, "Constant", { fg = c.purple, bg = 'NONE' }) -- All kinds of constants.
+  hl(0, "Function", { fg = c.orange, bg = 'NONE' })  -- All kinds of functions.
+  hl(0, "Keyword", { fg = c.blue, bg = 'NONE' })  -- Keywords of programming languages.
+  hl(0, "Character", { fg = c.white, bg = 'NONE' })  -- Regualar characters in a code file.
+  hl(0, "Conditional", { fg = c.blue, bg = 'NONE' })  -- Conditional statements like 'if', 'else', etc.
+
+  
   hl(0, "Type", { fg = c.turquoise, bg = 'NONE' })
-  hl(0, "Function", { fg = c.orange, bg = 'NONE' })
-  hl(0, "Keyword", { fg = c.blue, bg = 'NONE' })
-  hl(0, "Character", { fg = c.white, bg = 'NONE' })
-  hl(0, "Conditional", { fg = c.blue, bg = 'NONE' })
+
 
   hl(0, "Delimiter", { fg = c.blue, bg = 'NONE' })
 
