@@ -7,7 +7,19 @@ theme.set_highlights = function()
 -- Editor
 ------------------------------------------------------------------------------
 
+------------------------------------------------------------------------------
+-- JavaScript
+------------------------------------------------------------------------------
+  
+hl(0, 'jsClassDefinition', { fg = c.turquoise, bg = 'NONE'    }) -- Name of classes.
+hl(0, 'jsFuncArgs', { fg = c.purple, bg = 'NONE'    }) -- Parameters of functions.
+hl(0, 'jsThis', { fg = c.blue, bg = 'NONE'    }) -- 'this' keyword.
+hl(0, 'jsArrowFunction', { fg = c.white, bg = 'NONE'    }) -- Arrow => of arrow functions.
 
+  
+------------------------------------------------------------------------------
+-- Configuration Files
+------------------------------------------------------------------------------
   hl(0, 'dosiniLabel', { fg = c.purple, bg = 'NONE'                                  })  -- Settings variable of config files (.editorconfig).
   hl(0, 'dosiniValue', { fg = c.blue, bg = 'NONE'                                  })
   hl(0, 'dosiniComment', { fg = c.red, bg = 'NONE'                                  })
