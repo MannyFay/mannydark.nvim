@@ -551,8 +551,10 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaCommentLongTag'         , { fg = c.red      , bg = 'NONE' })  -- Tags of comments.
   hl(0, 'luaNoise'         , { fg = c.white      , bg = 'NONE' }) -- Dot opperator.
   hl(0, 'luaSpecialValue'         , { fg = 'NONE'      , bg = 'NONE' })  -- Require function.
-  hl(0, 'luaStringLongTag'         , { fg = c.redLight      , bg = 'NONE' })  -- Brackets of long string.
+  hl(0, 'luaStringLongTag'         , { fg = c.redLight      , bg = 'NONE' })  -- Brackets [] of long string.
   hl(0, 'luaStringLong'         , { fg = c.redLight      , bg = 'NONE' })  -- Content of long strings.
+  hl(0, 'luaParens'         , { fg = c.white      , bg = 'NONE' }) -- Parentheses ().
+  hl(0, 'luaFuncParens'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses () of function keyword.
 
 
 
@@ -602,7 +604,6 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 
 
   
-  hl(0, 'luaParens'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaBrackets'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaNotEqOperator'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaCommentTodo'         , { fg = c.white      , bg = c.purple })
@@ -617,7 +618,6 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaFuncArgs'         , { fg = c.pink      , bg = 'NONE' })
   hl(0, 'luaFuncTable'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaFuncName'         , { fg = c.white      , bg = c.pink })
-  hl(0, 'luaFuncParens'         , { fg = c.turquoise      , bg = 'NONE' })
   hl(0, 'luaFuncArgName'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaFuncArgComma'         , { fg = c.white      , bg = c.purple })
   hl(0, 'luaThenEnd'         , { fg = c.white      , bg = c.blue })
