@@ -12,31 +12,30 @@ theme.set_highlights = function()
       bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
   })
 
-  hl(0, 'IndentBlanklineChar', { fg = c.grayDark, bg = 'NONE'              })  -- Indent Blank Line plugin vertical lines.
-  hl(0, 'SignColumn',          { fg = 'NONE',     bg = c.black             })  -- Sign column left of the line numbers.
-  hl(0, 'ColorColumn',         { fg = 'NONE',     bg = c.grayDark          })  -- Vertical visual guide line.
-  hl(0, 'LineNr',              { fg = c.gray,     bg = 'NONE'              })  -- Line numbers.
-  hl(0, 'CursorLineNr',        { fg = c.white,    bg = 'NONE'              })  -- Line number of current line.
-  hl(0, 'VertSplit',           { fg = c.grayDark, bg = c.grayDark          })  -- Vertical split separator line.
-  hl(0, 'CursorLine',          { fg = 'NONE',     bg = c.grayDark          })  -- Color of actual line.
-  hl(0, 'Search',              { fg = c.black,    bg = c.pink              })  -- Highlighting of search patterns.
-  hl(0, 'IncSearch',           { fg = c.black,    bg = c.white             })  -- Highlighting of first result from search pattern.
-  hl(0, 'EndOfBuffer',         { fg = c.black,    bg = 'NONE'              })  -- Empty end of buffer.
-  hl(0, 'Visual',              { fg = 'NONE',     bg = c.gray              })
-  hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark          })
-  hl(0, 'PmenuSel',            { fg = c.black,    bg = c.gray              })
-  hl(0, 'MsgArea',             { fg = c.white,    bg = 'NONE'              })  -- Area below status line.
-  hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE'  })  -- Error messages below status line.
-  hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE' })  -- Warning messages below status line.
-  hl(0, 'Question',            { fg = c.green,    bg = 'NONE' })  -- Questions that Neovim asks the user.
-  hl(0, 'NormalFloat',         { fg = c.white,    bg = c.grayDark })  -- Neovims regular floating window.
-  hl(0, 'FloatBorder',         { fg = 'NONE',     bg = c.grayDark })  -- Border of Neovims regular floating window.
-  hl(0, 'Whitespace',          { fg = c.red,      bg = 'NONE' }) -- Trailing whitespaces in buffer.
-  hl(0, 'PmenuSbar',           { fg = 'NONE',     bg = c.grayDark })  -- Scroll bar background in context menus.
-  hl(0, 'PmenuThumb',          { fg = c.white,    bg = 'NONE' }) -- Scroll bar in context menus.
-  hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black }) -- Seperator line above messages under status line.
-  hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE', sp = c.red, undercurl = true }) -- Spelling mistakes.
-
+  hl(0, 'IndentBlanklineChar', { fg = c.grayDark, bg = 'NONE'                                  })  -- Indent Blank Line plugin vertical lines.
+  hl(0, 'SignColumn',          { fg = 'NONE',     bg = c.black                                 })  -- Sign column left of the line numbers.
+  hl(0, 'ColorColumn',         { fg = 'NONE',     bg = c.grayDark                              })  -- Vertical visual guide line.
+  hl(0, 'LineNr',              { fg = c.gray,     bg = 'NONE'                                  })  -- Line numbers.
+  hl(0, 'CursorLineNr',        { fg = c.white,    bg = 'NONE'                                  })  -- Line number of current line.
+  hl(0, 'VertSplit',           { fg = c.grayDark, bg = c.grayDark                              })  -- Vertical split separator line.
+  hl(0, 'CursorLine',          { fg = 'NONE',     bg = c.grayDark                              })  -- Color of actual line.
+  hl(0, 'Search',              { fg = c.black,    bg = c.pink                                  })  -- Highlighting of search patterns.
+  hl(0, 'IncSearch',           { fg = c.black,    bg = c.white                                 })  -- Highlighting of first result from search pattern.
+  hl(0, 'EndOfBuffer',         { fg = c.black,    bg = 'NONE'                                  })  -- Empty end of buffer.
+  hl(0, 'Visual',              { fg = 'NONE',     bg = c.gray                                  })  -- Selected text in visual mode.
+  hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark                              })  -- Context menus.
+  hl(0, 'PmenuSel',            { fg = c.blue,     bg = c.gray                                  })  -- Selected item in context menus.
+  hl(0, 'MsgArea',             { fg = c.white,    bg = 'NONE'                                  })  -- Area below status line.
+  hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE'                                  })  -- Error messages below status line.
+  hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE'                                  })  -- Warning messages below status line.
+  hl(0, 'Question',            { fg = c.green,    bg = 'NONE'                                  })  -- Questions that Neovim asks the user.
+  hl(0, 'NormalFloat',         { fg = c.white,    bg = c.grayDark                              })  -- Neovims regular floating window.
+  hl(0, 'FloatBorder',         { fg = 'NONE',     bg = c.grayDark                              })  -- Border of Neovims regular floating window.
+  hl(0, 'Whitespace',          { fg = c.red,      bg = 'NONE'                                  }) -- Trailing whitespaces in buffer.
+  hl(0, 'PmenuSbar',           { fg = 'NONE',     bg = c.grayDark                              })  -- Scroll bar background in context menus.
+  hl(0, 'PmenuThumb',          { fg = c.gray,     bg = 'NONE'                                  }) -- Scroll bar in context menus.
+  hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black                                 }) -- Separator line above messages under status line.
+  hl(0, 'SpellBad',            { fg = c.red,     bg = 'NONE',    sp = c.red, undercurl = true }) -- Spelling mistakes.
 
 ---------------------------- Not used by now:
   hl(0, "Cursor", { fg = c.red, bg = c.green })
@@ -51,7 +50,7 @@ theme.set_highlights = function()
   hl(0, "Folded", { fg = c.green, bg = c.orange })
   hl(0, "FoldColumn", { fg = c.red, bg = c.blue })
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
-  hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })  
+  hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
   hl(0, "MatchWord", { fg = c.pink, bg = c.purple })
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.green })
@@ -71,6 +70,7 @@ theme.set_highlights = function()
 --------------------------------------------------------------
 -- Buffer
 
+---------------------------- Not used by now:
   hl(0, "BufferCurrent", { fg = c.green, bg = c.purple })
   hl(0, "BufferCurrentIndex", { fg = c.orange, bg = c.green })
   hl(0, "BufferCurrentMod", { fg = c.purple, bg = c.blue })
@@ -91,7 +91,7 @@ theme.set_highlights = function()
 --------------------------------------------------------------
 -- Status Line
 
-  hl(0, 'StatusLine',   { fg = 'NONE', bg = c.grayDark })  -- Little edge left to the status line.
+  hl(0, 'StatusLine',   { fg = 'NONE',  bg = c.grayDark })  -- Little edge left to the status line.
   hl(0, 'StatusLineNC', { fg = c.black, bg = c.grayDark })  -- Little edge left to the status line if inactive.
 
 ----------------------- Not used by now:
@@ -108,7 +108,7 @@ theme.set_highlights = function()
   hl(0, 'HopNextKey1',  { fg = c.purple, bg = 'NONE' })  -- Next closest keys.
   hl(0, 'HopNextKey2',  { fg = c.blue,   bg = 'NONE' })  -- Many next to each other keys.
   hl(0, 'HopUnmatched', { fg = c.gray,   bg = 'NONE' })  -- Regular not matching text if Hop is active.
-  
+
   ----------------------- Not used by now:
   hl(0, "HopPreview", { fg = c.pink, bg = c.purple })
 
@@ -236,19 +236,19 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 -- Language Defaults
 ------------------------------------------------------------------------------
 
-  hl(0, 'Comment', { fg = c.red, bg = 'NONE' })  -- Block and line comments.
-  hl(0, "Variable", { fg = c.purple, bg = 'NONE' })  -- All kinds of variables.
-  hl(0, "String", { fg = c.redLight, bg = 'NONE' })  -- Main setting for everything between quotes.
-  hl(0, "Number", { fg = c.greenLight, bg = 'NONE' })  -- All kinds of integer numbers.
-  hl(0, "Float", { fg = c.greenLight, bg = 'NONE' })  -- All kinds of floating point numbers.
-  hl(0, "Boolean", { fg = c.blue, bg = 'NONE' })  -- The boolean values 'true' and 'false'.
-  hl(0, "Constant", { fg = c.purple, bg = 'NONE' }) -- All kinds of constants.
-  hl(0, "Function", { fg = c.orange, bg = 'NONE' })  -- All kinds of functions.
-  hl(0, "Keyword", { fg = c.blue, bg = 'NONE' })  -- Keywords of programming languages.
-  hl(0, "Character", { fg = c.white, bg = 'NONE' })  -- Regualar characters in a code file.
-  hl(0, "Conditional", { fg = c.blue, bg = 'NONE' })  -- Conditional statements like 'if', 'else', etc.
+  hl(0, 'Comment',     { fg = c.red,        bg = 'NONE' })  -- Block and line comments.
+  hl(0, 'Variable',    { fg = c.purple,     bg = 'NONE' })  -- All kinds of variables.
+  hl(0, 'String',      { fg = c.redLight,   bg = 'NONE' })  -- Main setting for everything between quotes.
+  hl(0, 'Number',      { fg = c.greenLight, bg = 'NONE' })  -- All kinds of integer numbers.
+  hl(0, 'Float',       { fg = c.greenLight, bg = 'NONE' })  -- All kinds of floating point numbers.
+  hl(0, 'Boolean',     { fg = c.blue,       bg = 'NONE' })  -- The boolean values 'true' and 'false'.
+  hl(0, 'Constant',    { fg = c.purple,     bg = 'NONE' }) -- All kinds of constants.
+  hl(0, 'Function',    { fg = c.orange,     bg = 'NONE' })  -- All kinds of functions.
+  hl(0, 'Keyword',     { fg = c.blue,       bg = 'NONE' })  -- Keywords of programming languages.
+  hl(0, 'Character',   { fg = c.white,      bg = 'NONE' })  -- Regualar characters in a code file.
+  hl(0, 'Conditional', { fg = c.blue,       bg = 'NONE' })  -- Conditional statements like 'if', 'else', etc.
 
-  
+
   hl(0, "Type", { fg = c.turquoise, bg = 'NONE' })
 
 
