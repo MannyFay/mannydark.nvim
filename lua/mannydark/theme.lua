@@ -70,7 +70,11 @@ hl(0, 'jsFunctionKey'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectValue'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectKey'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectKeyString'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsBrackets'         , { fg = c.purple      , bg = c.blue })
+
+  
+hl(0, 'jsBrackets'         , { fg = c.white      , bg = 'NONE' })
+
+  
 hl(0, 'jsObjectKeyComputed'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectColon'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectFuncName'         , { fg = c.purple      , bg = c.blue })
