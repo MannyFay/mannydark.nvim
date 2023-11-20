@@ -54,7 +54,8 @@ hl(0, 'jsParensIfElse'         , { fg = c.white      , bg = 'NONE' })  -- Parent
 hl(0, 'jsParenIfElse'         , { fg = 'NONE'      , bg = 'NONE' })  -- Content of conditional statement.
 hl(0, 'jsClassValue'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whitespaces inside of classes.
 hl(0, 'jsTemplateString'         , { fg = c.redLight      , bg = 'NONE' })  -- Template string back ticks.
-hl(0, 'jsTemplateBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {} in template strings.
+hl(0, 'jsTemplateBraces'         , { fg = c.redLight      , bg = 'NONE' })  -- Curly braces {} in template strings.
+hl(0, 'jsTemplateExpression'         , { fg = c.redLight      , bg = 'NONE' })  -- Content of template strings.
 
 
 
@@ -84,7 +85,6 @@ hl(0, 'jsModuleComma'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsExportDefaultGroup'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowTypeKeyword'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSpecial'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsTemplateExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFloat'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRegexpCharClass'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRegexpBoundary'         , { fg = c.purple      , bg = c.blue })
