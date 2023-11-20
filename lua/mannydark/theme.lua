@@ -38,8 +38,6 @@ theme.set_highlights = function()
   hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE', sp = c.red, undercurl = true }) -- Spelling mistakes.
 
 
-
-  
 ---------------------------- Not used by now:
   hl(0, "Cursor", { fg = c.red, bg = c.green })
   hl(0, "lCursor", { fg = c.red, bg = c.green })
@@ -47,8 +45,6 @@ theme.set_highlights = function()
   hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
   hl(0, "SpellCap", { fg = c.orange, bg = 'NONE', sp = c.yellow, undercurl = true, })
   hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.pink, underline = true, })
-
-  
   hl(0, "SpellRare", { fg = 'NONE', bg = c.blue, sp = c.purple, underline = true, })
   hl(0, "NormalNC", { fg = c.blue, bg = c.bg })
   hl(0, "WildMenu", { fg = c.red, bg = c.purple })
@@ -57,7 +53,6 @@ theme.set_highlights = function()
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
   hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })  
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
-
   hl(0, "MatchWord", { fg = c.pink, bg = c.purple })
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.green })
   hl(0, "MatchParenCur", { fg = c.purple, bg = c.pink })
@@ -99,8 +94,7 @@ theme.set_highlights = function()
   hl(0, 'StatusLine',   { fg = 'NONE', bg = c.grayDark })  -- Little edge left to the status line.
   hl(0, 'StatusLineNC', { fg = c.black, bg = c.grayDark })  -- Little edge left to the status line if inactive.
 
------------------------
-
+----------------------- Not used by now:
   hl(0, "StatusLineSeparator", { fg = c.green, bg = c.red })
   hl(0, "StatusLineTerm", { fg = c.red, bg = c.black })
   hl(0, "StatusLineTermNC", { fg = c.white, bg = c.purple })
@@ -109,13 +103,14 @@ theme.set_highlights = function()
 --------------------------------------------------------------
 -- Hop
 
-  hl(0, 'HopCursor',  { fg = c.blue, bg = 'NONE'              })  -- Cursor in Hop mode.
+  hl(0, 'HopCursor',  { fg = c.blue, bg = c.blue              })  -- Cursor in Hop mode.
   hl(0, 'HopNextKey', { fg = c.blue, bg = 'NONE', bold = true })  -- Neareast keys with one char.
+  hl(0, 'HopNextKey1', { fg = c.purple, bg = 'NONE', bold = true })
+  hl(0, 'HopNextKey2', { fg = c.purple, bg = 'NONE', bold = true })
+
   
-  hl(0, "HopNextKey1", { fg = c.purple, bg = 'NONE' })
-  hl(0, "HopNextKey2", { fg = c.purple, bg = 'NONE' })
-  hl(0, "HopUnmatched", { fg = c.gray, bg = 'NONE' })
-  hl(0, "HopPreview", { fg = '#c7ba7d', bg = 'NONE' })
+  hl(0, "HopUnmatched", { fg = c.orange, bg = c.green })
+  hl(0, "HopPreview", { fg = c.pink, bg = c.purple })
 
   
 ------------------------------------------------------------------------------
