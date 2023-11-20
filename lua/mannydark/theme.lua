@@ -39,6 +39,10 @@ hl(0, 'jsString'         , { fg = c.redLight      , bg = 'NONE' })  -- Regular s
 hl(0, 'jsGlobalObjects'         , { fg = c.purple      , bg = 'NONE' }) -- Objects.
 hl(0, 'jsParens'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses ().
 hl(0, 'jsNoise'         , { fg = c.white      , bg = 'NONE' })  -- Semikolon ;.
+hl(0, 'jsParen'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whitespace.
+hl(0, 'jsFuncParens'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses () of functions.
+hl(0, 'jsReturn'         , { fg = c.blue      , bg = 'NONE' })  -- 'return' keyword.
+hl(0, 'jsFuncBlock'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whole function body area.
 
 
 
@@ -98,7 +102,6 @@ hl(0, 'jsObjectFuncName'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectMethodType'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectStringKey'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsNull'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsReturn'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsUndefined'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsNan'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSuper'         , { fg = c.purple      , bg = c.blue })
@@ -139,7 +142,6 @@ hl(0, 'jsDomNodeConsts'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsHtmlEvents'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSpreadExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBracket'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsParen'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensDecorator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParenDecorator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensIfElse'         , { fg = c.purple      , bg = c.blue })
@@ -148,13 +150,11 @@ hl(0, 'jsCommentRepeat'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensFor'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensSwitch'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensCatch'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsFuncParens'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncArgCommas'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncArgExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRestExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowArgumentDef'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsCommentFunction'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsFuncBlock'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowReturn'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassFuncName'         , { fg = c.purple      , bg = c.blue })
