@@ -145,7 +145,6 @@ hl(0, 'jsParensSwitch'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensCatch'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncParens'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncArgCommas'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsComment'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncArgExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRestExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowArgumentDef'         , { fg = c.purple      , bg = c.blue })
@@ -186,7 +185,8 @@ hl(0, 'jsTernaryIf'         , { fg = c.purple      , bg = c.blue })
   
 hl(0, 'jsFuncName'         , { fg = c.orange      , bg = 'NONE' })  -- Name of functions.
 hl(0, 'jsFunction'         , { fg = c.blue      , bg = 'NONE' })  -- 'function' keyword.
-hl(0, 'jsClassKeyword'         , { fg = c.purple      , bg = c.green })
+hl(0, 'jsClassKeyword'         , { fg = c.blue      , bg = 'NONE' })  -- 'class' keyword.
+hl(0, 'jsComment'         , { fg = c.purple      , bg = c.pink })
 
 
   
@@ -236,20 +236,10 @@ hl(0, 'jsTemplateStringTag'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'javascriptTagRef'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'javaScriptSpecial'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })  
+
+
+
+  
 ------------------------------------------------------------------------------
 -- Configuration Files
 ------------------------------------------------------------------------------
