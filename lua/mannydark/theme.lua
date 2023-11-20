@@ -547,6 +547,8 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaFuncKeyword'    , { fg = c.blue,   bg = 'NONE' })  -- 'function' keyword.
   hl(0, 'luaFloat'         , { fg = c.greenLight      , bg = 'NONE' })  -- Floating point numbers.
   hl(0, 'luaComma'         , { fg = c.white      , bg = 'NONE' })  -- Commata.
+  hl(0, 'luaCommentLong'   , { fg = c.red      , bg = 'NONE' })  -- Comments.
+
 
 
   hl(0, 'luaFunction'       , { fg = c.blue       , bg = 'NONE' })
@@ -565,7 +567,6 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaBraces'         , { fg = c.white      , bg = 'NONE' })
 
 
-  hl(0, 'luaCommentLong'         , { fg = c.white      , bg = 'NONE' })
 
 
 
@@ -591,7 +592,12 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaNotEqOperator'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaCommentTodo'         , { fg = c.white      , bg = c.purple })
   hl(0, 'luaDocTag'         , { fg = c.turquoise      , bg = 'NONE' })
-  hl(0, 'luaCommentLongTag'         , { fg = c.white      , bg = c.blue })
+
+  
+  hl(0, 'luaCommentLongTag'         , { fg = c.white      , bg = c.green })
+
+
+  
   hl(0, 'luaFuncSig'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaFuncId'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaFuncArgs'         , { fg = c.pink      , bg = 'NONE' })
