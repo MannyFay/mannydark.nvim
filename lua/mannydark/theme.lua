@@ -549,6 +549,7 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaComma'         , { fg = c.white      , bg = 'NONE' })  -- Commata.
   hl(0, 'luaCommentLong'   , { fg = c.red      , bg = 'NONE' })  -- Content of comments.
   hl(0, 'luaCommentLongTag'         , { fg = c.red      , bg = 'NONE' })  -- Tags of comments.
+  hl(0, 'luaNoise'         , { fg = c.white      , bg = 'NONE' }) -- Dot opperator.
 
 
 
@@ -577,7 +578,12 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaParen'         , { fg = c.white      , bg = c.purple })
   hl(0, 'luaBracket'         , { fg = c.white      , bg = c.white })
   hl(0, 'luaSpecialTable'         , { fg = c.white      , bg = c.turquoise })
-  hl(0, 'luaSpecialValue'         , { fg = c.white      , bg = c.yellow })
+
+  
+  hl(0, 'luaSpecialValue'         , { fg = 'NONE'      , bg = 'NONE' })  -- Require function.
+
+
+  
   hl(0, 'luaEllipsis'         , { fg = c.white      , bg = c.green })
   hl(0, 'luaError'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaIfThen'         , { fg = c.white      , bg = 'NONE' })
@@ -590,7 +596,6 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 
 
   
-  hl(0, 'luaNoise'         , { fg = c.pink      , bg = c.red })
 
 
   
