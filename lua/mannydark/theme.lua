@@ -545,10 +545,9 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaLocal'          , { fg = c.blue,   bg = 'NONE' })  -- 'local' keyword.
   hl(0, 'luaFuncCall'       , { fg = c.orange, bg = 'NONE' })  -- Function that is called.
   hl(0, 'luaFuncKeyword'    , { fg = c.blue,   bg = 'NONE' })  -- 'function' keyword.
+  hl(0, 'luaFloat'         , { fg = c.greenLight      , bg = 'NONE' })  -- Floating point numbers.
 
 
-
-  
   hl(0, 'luaFunction'       , { fg = c.blue       , bg = 'NONE' })
   hl(0, 'luaCond'           , { fg = c.blue       , bg = 'NONE' })
   hl(0, 'luaStatement'      , { fg = c.blue       , bg = 'NONE' })
@@ -563,6 +562,50 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaTable'          , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaFunc'           , { fg = c.orange     , bg = 'NONE' })
   hl(0, 'luaBraces'         , { fg = c.white      , bg = 'NONE' })
+
+
+  hl(0, 'luaCommentLong'         , { fg = c.white      , bg = c.orange })
+  hl(0, 'luaStringLong'         , { fg = c.white      , bg = c.pink })
+  hl(0, 'luaBuiltIn'         , { fg = c.white      , bg = c.blue })
+  hl(0, 'luaParen'         , { fg = c.white      , bg = c.purple })
+  hl(0, 'luaBracket'         , { fg = c.white      , bg = c.white })
+  hl(0, 'luaSpecialTable'         , { fg = c.white      , bg = c.turquoise })
+  hl(0, 'luaSpecialValue'         , { fg = c.white      , bg = c.yellow })
+  hl(0, 'luaEllipsis'         , { fg = c.white      , bg = c.green })
+  hl(0, 'luaComma'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaError'         , { fg = c.blue      , bg = 'NONE' })
+  hl(0, 'luaIfThen'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaBlock'         , { fg = c.white      , bg = c.blue })
+  hl(0, 'luaLoop'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaGoto'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaLabel'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaSemiCol'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaErrHand'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaNoise'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaParens'         , { fg = c.blue      , bg = 'NONE' })
+  hl(0, 'luaBrackets'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaNotEqOperator'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaCommentTodo'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaDocTag'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaCommentLongTag'         , { fg = c.white      , bg = c.blue })
+  hl(0, 'luaFuncSig'         , { fg = c.blue      , bg = 'NONE' })
+  hl(0, 'luaFuncId'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaFuncArgs'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaFuncTable'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaFuncName'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaFuncParens'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaFuncArgName'         , { fg = c.blue      , bg = 'NONE' })
+  hl(0, 'luaFuncArgComma'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaThenEnd'         , { fg = c.white      , bg = c.blue })
+  hl(0, 'luaElseifThen'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaElse'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaRepeat'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaLoopBlock'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaIn'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaGotoLabel'         , { fg = c.white      , bg = c.blue })
+  hl(0, 'luaStringSpecial'         , { fg = c.white      , bg = 'NONE' })
+  hl(0, 'luaStringLongTag'         , { fg = c.white      , bg = 'NONE' })
+
 
 
 
