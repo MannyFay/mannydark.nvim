@@ -106,7 +106,18 @@ theme.set_highlights = function()
   hl(0, "StatusLineTermNC", { fg = c.white, bg = c.purple })
 
 
+--------------------------------------------------------------
+-- Hop
 
+  hl(0, 'HopCursor',  { fg = c.blue, bg = 'NONE'              })  -- Cursor in Hop mode.
+  hl(0, 'HopNextKey', { fg = c.blue, bg = 'NONE', bold = true })  -- Neareast keys with one char.
+  
+  hl(0, "HopNextKey1", { fg = c.purple, bg = 'NONE' })
+  hl(0, "HopNextKey2", { fg = c.purple, bg = 'NONE' })
+  hl(0, "HopUnmatched", { fg = c.gray, bg = 'NONE' })
+  hl(0, "HopPreview", { fg = '#c7ba7d', bg = 'NONE' })
+
+  
 ------------------------------------------------------------------------------
 -- Laravel Blade
 ------------------------------------------------------------------------------
@@ -114,24 +125,7 @@ theme.set_highlights = function()
 hl(0, 'bladeDelimiter', { fg = c.white, bg = 'NONE' })
 hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 
-
-
-
-
-
-
-
---------------------------------------------------------------
--- Hop
-
-  hl(0, "HopNextKey", { fg = c.blue, bg = 'NONE' })
-  hl(0, "HopNextKey1", { fg = c.purple, bg = 'NONE' })
-  hl(0, "HopNextKey2", { fg = c.purple, bg = 'NONE' })
-  hl(0, "HopUnmatched", { fg = c.gray, bg = 'NONE' })
-  hl(0, "HopPreview", { fg = '#c7ba7d', bg = 'NONE' })
-  hl(0, "HopCursor", { fg = c.white, bg = 'NONE' })
-
-
+  
 --------------------------------------------------------------
 -- NvimTree
 
