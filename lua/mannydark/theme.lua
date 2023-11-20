@@ -22,9 +22,9 @@ theme.set_highlights = function()
   hl(0, 'Search',              { fg = c.black,    bg = c.pink                                  })  -- Highlighting of search patterns.
   hl(0, 'IncSearch',           { fg = c.black,    bg = c.white                                 })  -- Highlighting of first result from search pattern.
   hl(0, 'EndOfBuffer',         { fg = c.black,    bg = 'NONE'                                  })  -- Empty end of buffer.
-  hl(0, 'Visual',              { fg = 'NONE',     bg = c.gray                                  })  -- Selected text in visual mode.
+  hl(0, 'Visual',              { fg = 'NONE',     bg = c.grayDark                              })  -- Selected text in visual mode.
   hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark                              })  -- Context menus.
-  hl(0, 'PmenuSel',            { fg = c.blue,     bg = c.gray                                  })  -- Selected item in context menus.
+  hl(0, 'PmenuSel',            { fg = c.black,    bg = c.gray                                  })  -- Selected item in context menus.
   hl(0, 'MsgArea',             { fg = c.white,    bg = 'NONE'                                  })  -- Area below status line.
   hl(0, 'ErrorMsg',            { fg = c.red,      bg = 'NONE'                                  })  -- Error messages below status line.
   hl(0, 'WarningMsg',          { fg = c.orange,   bg = 'NONE'                                  })  -- Warning messages below status line.
@@ -35,7 +35,7 @@ theme.set_highlights = function()
   hl(0, 'PmenuSbar',           { fg = 'NONE',     bg = c.grayDark                              })  -- Scroll bar background in context menus.
   hl(0, 'PmenuThumb',          { fg = c.gray,     bg = 'NONE'                                  }) -- Scroll bar in context menus.
   hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black                                 }) -- Separator line above messages under status line.
-  hl(0, 'SpellBad',            { fg = c.red,     bg = 'NONE',    sp = c.red, undercurl = true }) -- Spelling mistakes.
+  hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE',    sp = c.red, undercurl = true }) -- Spelling mistakes.
 
 ---------------------------- Not used by now:
   hl(0, "Cursor", { fg = c.red, bg = c.green })
