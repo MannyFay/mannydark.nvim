@@ -7,6 +7,14 @@ theme.set_highlights = function()
 -- Editor
 ------------------------------------------------------------------------------
 
+
+  hl(0, 'dosiniLabel', { fg = c.purple, bg = 'NONE'                                  })  -- Settings variable of config files (.editorconfig).
+  hl(0, 'dosiniValue', { fg = c.blue, bg = 'NONE'                                  })
+  hl(0, 'dosiniComment', { fg = c.red, bg = 'NONE'                                  })
+  hl(0, 'dosiniHeader', { fg = c.white, bg = 'NONE'                                  })
+  hl(0, 'dosiniNumber', { fg = c.greenLight, bg = 'NONE'                                  })
+  
+  
   hl(0, 'FloatBorder', {
       fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
       bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
