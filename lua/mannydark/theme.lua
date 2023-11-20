@@ -96,8 +96,8 @@ theme.set_highlights = function()
 --------------------------------------------------------------
 -- Status Line
 
-  hl(0, "StatusLine", { fg = c.white, bg = c.gray_dark })
-  hl(0, "StatusLineNC", { fg = c.black, bg = c.gray_dark })
+  hl(0, "StatusLine", { fg = c.purple, bg = c.green })
+  hl(0, "StatusLineNC", { fg = c.green, bg = c.red })
 
 -----------------------
 
