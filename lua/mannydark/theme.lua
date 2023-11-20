@@ -36,12 +36,13 @@ theme.set_highlights = function()
   hl(0, 'PmenuThumb',          { fg = c.gray,     bg = 'NONE'                                  }) -- Scroll bar in context menus.
   hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black                                 }) -- Separator line above messages under status line.
   hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE',    sp = c.red, undercurl = true }) -- Spelling mistakes.
+  hl(0, 'ModeMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Messages of Neovim in sepcific modes.
+  hl(0, 'MoreMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Message of Neovim if it asks for more.
 
 ---------------------------- Not used by now:
   hl(0, "Cursor", { fg = c.red, bg = c.green })
   hl(0, "lCursor", { fg = c.red, bg = c.green })
   hl(0, "CursorIM", { fg = c.red, bg = c.green })
-  hl(0, "ModeMsg", { fg = c.green, bg = c.gray })
   hl(0, "SpellCap", { fg = c.orange, bg = 'NONE', sp = c.yellow, undercurl = true, })
   hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.pink, underline = true, })
   hl(0, "SpellRare", { fg = 'NONE', bg = c.blue, sp = c.purple, underline = true, })
@@ -60,7 +61,6 @@ theme.set_highlights = function()
   hl(0, "Conceal", { fg = c.orange, bg = c.purple })
   hl(0, "SpecialKey", { fg = c.blue, bg = c.orange, bold = true, })
   hl(0, "Substitute", { fg = c.orange, bg = c.purple })
-  hl(0, "MoreMsg", { fg = c.orange, bg = c.blue })
   hl(0, "NonText", { fg = c.darkGray, bg = c.pink })
   hl(0, "TabLine", { fg = c.red, bg = c.purple })
   hl(0, "TabLineSel", { fg = c.green, bg = c.orange })
@@ -542,6 +542,13 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 -- Lua
 ------------------------------------------------------------------------------
 
+  hl(0, 'luaLocal'          , { fg = c.blue,   bg = 'NONE' })  -- 'local' keyword.
+  hl(0, 'luaFuncCall'       , { fg = c.orange, bg = 'NONE' })  -- Function that is called.
+  hl(0, 'luaFuncKeyword'    , { fg = c.blue,   bg = 'NONE' })  -- 'function' keyword.
+
+
+
+  
   hl(0, 'luaFunction'       , { fg = c.blue       , bg = 'NONE' })
   hl(0, 'luaCond'           , { fg = c.blue       , bg = 'NONE' })
   hl(0, 'luaStatement'      , { fg = c.blue       , bg = 'NONE' })
@@ -556,8 +563,7 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaTable'          , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaFunc'           , { fg = c.orange     , bg = 'NONE' })
   hl(0, 'luaBraces'         , { fg = c.white      , bg = 'NONE' })
-  hl(0, 'luaLocal'          , { fg = c.blue       , bg = 'NONE' })  -- 'local' keyword.
-  hl(0, 'luaFuncCall'       , { fg = c.orange     , bg = 'NONE' })  -- Function that is called.
+
 
 
 
