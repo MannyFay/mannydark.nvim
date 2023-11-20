@@ -263,7 +263,7 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, 'Search',              { fg = c.black,    bg = c.pink                                  })  -- Highlighting of search patterns.
   hl(0, 'IncSearch',           { fg = c.black,    bg = c.white                                 })  -- Highlighting of first result from search pattern.
   hl(0, 'EndOfBuffer',         { fg = c.black,    bg = 'NONE'                                  })  -- Empty end of buffer.
-  hl(0, 'Visual',              { fg = 'NONE',     bg = c.grayDark                              })  -- Selected text in visual mode.
+  hl(0, 'Visual',              { fg = 'NONE',     bg = c.gray                                  })  -- Selected text in visual mode.
   hl(0, 'Pmenu',               { fg = c.white,    bg = c.grayDark                              })  -- Context menus.
   hl(0, 'PmenuSel',            { fg = c.black,    bg = c.gray                                  })  -- Selected item in context menus.
   hl(0, 'MsgArea',             { fg = c.white,    bg = 'NONE'                                  })  -- Area below status line.
@@ -272,11 +272,11 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, 'Question',            { fg = c.green,    bg = 'NONE'                                  })  -- Questions that Neovim asks the user.
   hl(0, 'NormalFloat',         { fg = c.white,    bg = c.grayDark                              })  -- Neovims regular floating window.
   hl(0, 'FloatBorder',         { fg = 'NONE',     bg = c.grayDark                              })  -- Border of Neovims regular floating window.
-  hl(0, 'Whitespace',          { fg = c.red,      bg = 'NONE'                                  }) -- Trailing whitespaces in buffer.
+  hl(0, 'Whitespace',          { fg = c.red,      bg = 'NONE'                                  })  -- Trailing whitespaces in buffer.
   hl(0, 'PmenuSbar',           { fg = 'NONE',     bg = c.grayDark                              })  -- Scroll bar background in context menus.
-  hl(0, 'PmenuThumb',          { fg = c.gray,     bg = 'NONE'                                  }) -- Scroll bar in context menus.
-  hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black                                 }) -- Separator line above messages under status line.
-  hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE',    sp = c.red, undercurl = true }) -- Spelling mistakes.
+  hl(0, 'PmenuThumb',          { fg = c.gray,     bg = 'NONE'                                  })  -- Scroll bar in context menus.
+  hl(0, 'MsgSeparator',        { fg = 'NONE',     bg = c.black                                 })  -- Separator line above messages under status line.
+  hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE',    sp = c.red, undercurl = true })  -- Spelling mistakes.
   hl(0, 'ModeMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Messages of Neovim in sepcific modes.
   hl(0, 'MoreMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Message of Neovim if it asks for more.
 
@@ -325,7 +325,9 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, "BufferVisible", { fg = c.green, bg = c.pink })
   hl(0, "BufferVisibleIndex", { fg = c.orange, bg = c.purple })
   hl(0, "BufferVisibleMod", { fg = c.purple, bg = c.pink })
-  hl(0, "BufferVisibleSign", { fg = c.blue, bg = c.yellow })
+  
+  hl(0, "BufferVisibleSign", { fg = c.blue, bg = c.pink })
+  
   hl(0, "BufferVisibleTarget", { fg = c.red, bg = c.orange, bold = true, })
   hl(0, "BufferInactive", { fg = c.pink, bg = c.green })
   hl(0, "BufferInactiveIndex", { fg = c.blue, bg = c.purple })
