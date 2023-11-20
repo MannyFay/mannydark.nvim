@@ -52,6 +52,9 @@ hl(0, 'jsIfElseBlock'         , { fg = 'NONE'      , bg = 'NONE' })  -- Body of 
 hl(0, 'jsIfElseBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {} of conditional statement.
 hl(0, 'jsParensIfElse'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses of conditional statements.
 hl(0, 'jsParenIfElse'         , { fg = 'NONE'      , bg = 'NONE' })  -- Content of conditional statement.
+hl(0, 'jsClassValue'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whitespaces inside of classes.
+hl(0, 'jsTemplateString'         , { fg = c.redLight      , bg = 'NONE' })  -- Template string back ticks.
+hl(0, 'jsTemplateBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {} in template strings.
 
 
 
@@ -82,9 +85,7 @@ hl(0, 'jsExportDefaultGroup'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowTypeKeyword'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSpecial'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTemplateExpression'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsTemplateString'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFloat'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsTemplateBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRegexpCharClass'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRegexpBoundary'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRegexpBackRef'         , { fg = c.purple      , bg = c.blue })
@@ -197,7 +198,6 @@ hl(0, 'jsClassNoise'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowClassFunctionGroup'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowClassGroup'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsCommentClass'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsClassValue'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowClassDef'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDestructuringValue'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDestructuringValueAssignment'         , { fg = c.purple      , bg = c.blue })
