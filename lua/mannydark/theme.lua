@@ -311,7 +311,10 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
 
   
   hl(0, "Conceal", { fg = c.orange, bg = c.purple })
-  hl(0, "SpecialKey", { fg = c.blue, bg = c.orange, bold = true, })
+  
+  hl(0, "SpecialKey", { fg = c.blue, bg = c.red, bold = true, })
+
+  
   hl(0, "Substitute", { fg = c.orange, bg = c.purple })
   hl(0, "NonText", { fg = c.darkGray, bg = c.pink })
   hl(0, "TabLine", { fg = c.red, bg = c.purple })
