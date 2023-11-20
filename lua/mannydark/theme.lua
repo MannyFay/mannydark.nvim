@@ -96,8 +96,8 @@ theme.set_highlights = function()
 --------------------------------------------------------------
 -- Status Line
 
-  hl(0, 'StatusLine',   { fg = 'NONE', bg = c.grayDark }) -- Little edge left to the status line.
-  hl(0, "StatusLineNC", { fg = c.green, bg = c.red })
+  hl(0, 'StatusLine',   { fg = 'NONE', bg = c.grayDark })  -- Little edge left to the status line.
+  hl(0, 'StatusLineNC', { fg = 'NONE', bg = c.grayDark })  -- Little edge left to the status line.
 
 -----------------------
 
