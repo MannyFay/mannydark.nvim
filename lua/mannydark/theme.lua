@@ -194,20 +194,34 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 --------------------------------------------------------------
 -- Lualine
 
-  hl(0, "lualine_b_insert", { fg = c.red, bg = c.green, italic = true, })
+  -- Normal Mode:
+  hl(0, "lualine_a_normal", { fg = colors.blue, bg = colors.grayDark })
+  hl(0, "lualine_b_normal", { fg = colors.blue, bg = colors.grayDark })
+  hl(0, "lualine_c_normal", { fg = colors.blue, bg = colors.grayDark })
+  hl(0, "lualine_x_normal", { fg = colors.blue, bg = colors.grayDark })
+  hl(0, "lualine_y_normal", { fg = colors.blue, bg = colors.grayDark })
+  hl(0, "lualine_z_normal", { fg = colors.blue, bg = colors.grayDark })
+
+
+
+  
   hl(0, "lualine_a_insert", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_b_inactive", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_c_inactive", { fg = c.red, bg = c.green, italic = true, })
   hl(0, "lualine_a_inactive", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_b_visual", { fg = c.red, bg = c.green, italic = true, })
   hl(0, "lualine_a_visual", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_b_normal", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_c_normal", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_a_normal", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_b_command", { fg = c.red, bg = c.green, italic = true, })
   hl(0, "lualine_a_command", { fg = c.red, bg = c.green, italic = true, })
-  hl(0, "lualine_b_replace", { fg = c.red, bg = c.green, italic = true, })
   hl(0, "lualine_a_replace", { fg = c.red, bg = c.green, italic = true, })
+
+  hl(0, "lualine_b_insert", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_inactive", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_visual", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_command", { fg = c.red, bg = c.green, italic = true, })
+  hl(0, "lualine_b_replace", { fg = c.red, bg = c.green, italic = true, })
+  
+  hl(0, "lualine_c_inactive", { fg = c.red, bg = c.green, italic = true, })
+
+
+
+  
   hl(0, "lualine_x_diff_added_normal", { fg = c.red, bg = c.green, italic = true, })
   hl(0, "lualine_x_diff_added_insert", { fg = c.red, bg = c.green, italic = true, })
   hl(0, "lualine_x_diff_added_visual", { fg = c.red, bg = c.green, italic = true, })
