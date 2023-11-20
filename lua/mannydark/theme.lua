@@ -104,10 +104,10 @@ theme.set_highlights = function()
 -- Hop
 
   hl(0, 'HopCursor',    { fg = c.blue,   bg = c.blue              })  -- Cursor in Hop mode.
-  hl(0, 'HopNextKey',   { fg = c.blue,   bg = 'NONE', bold = true })  -- Closest keys with one char.
-  hl(0, 'HopNextKey1',  { fg = c.purple, bg = 'NONE', bold = true })  -- Next closest keys.
-  hl(0, 'HopNextKey2',  { fg = c.blue,   bg = 'NONE', bold = true })  -- Many next to each other keys.
-  hl(0, 'HopUnmatched', { fg = c.gray,   bg = 'NONE'              })  -- Regular not matching text if Hop is active.
+  hl(0, 'HopNextKey',   { fg = c.blue,   bg = 'NONE' })  -- Closest keys with one char.
+  hl(0, 'HopNextKey1',  { fg = c.purple, bg = 'NONE' })  -- Next closest keys.
+  hl(0, 'HopNextKey2',  { fg = c.blue,   bg = 'NONE' })  -- Many next to each other keys.
+  hl(0, 'HopUnmatched', { fg = c.grayDark,   bg = 'NONE'              })  -- Regular not matching text if Hop is active.
   
   ----------------------- Not used by now:
   hl(0, "HopPreview", { fg = c.pink, bg = c.purple })
