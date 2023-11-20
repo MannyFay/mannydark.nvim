@@ -292,7 +292,10 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, "Folded", { fg = c.green, bg = c.orange })
   hl(0, "FoldColumn", { fg = c.red, bg = c.blue })
   hl(0, "CursorColumn", { fg = c.blue, bg = c.red })
-  hl(0, "VisualNOS", { fg = c.blue, bg = c.orange })
+  
+  hl(0, "VisualNOS", { fg = c.blue, bg = c.green })
+
+  
   hl(0, "QuickFixLine", { fg = c.green, bg = c.orange })
   hl(0, "MatchWord", { fg = c.pink, bg = c.purple })
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.green })
