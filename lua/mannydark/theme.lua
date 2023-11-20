@@ -298,7 +298,12 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, "MatchWordCur", { fg = c.orange, bg = c.green })
   hl(0, "MatchParenCur", { fg = c.purple, bg = c.pink })
   hl(0, "TermCursor", { fg = c.pink, bg = c.purple })
-  hl(0, "TermCursorNC", { fg = c.blue, bg = c.yellow })
+
+  
+  hl(0, "TermCursorNC", { fg = c.white, bg = c.pink })
+
+
+  
   hl(0, "Conceal", { fg = c.orange, bg = c.purple })
   hl(0, "SpecialKey", { fg = c.blue, bg = c.orange, bold = true, })
   hl(0, "Substitute", { fg = c.orange, bg = c.purple })
