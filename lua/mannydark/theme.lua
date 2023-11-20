@@ -279,6 +279,8 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, 'SpellBad',            { fg = 'NONE',     bg = 'NONE',    sp = c.red, undercurl = true })  -- Spelling mistakes.
   hl(0, 'ModeMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Messages of Neovim in sepcific modes.
   hl(0, 'MoreMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Message of Neovim if it asks for more.
+  hl(0, "NormalNC", { fg = 'NONE', bg = 'NONE' })  -- Inactive new buffer.
+
 
 ---------------------------- Not used by now:
   hl(0, "Cursor", { fg = c.red, bg = c.green })
@@ -287,7 +289,6 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, "SpellCap", { fg = c.orange, bg = 'NONE', sp = c.yellow, undercurl = true, })
   hl(0, "SpellLocal", { fg = c.blue, bg = c.orange, sp = c.pink, underline = true, })
   hl(0, "SpellRare", { fg = 'NONE', bg = c.blue, sp = c.purple, underline = true, })
-  hl(0, "NormalNC", { fg = c.blue, bg = c.pink })
   hl(0, "WildMenu", { fg = c.red, bg = c.purple })
   hl(0, "Folded", { fg = c.green, bg = c.orange })
   hl(0, "FoldColumn", { fg = c.red, bg = c.blue })
