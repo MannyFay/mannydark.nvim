@@ -56,6 +56,7 @@ hl(0, 'jsClassValue'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whitespac
 hl(0, 'jsTemplateString'         , { fg = c.redLight      , bg = 'NONE' })  -- Template string back ticks.
 hl(0, 'jsTemplateBraces'         , { fg = c.redLight      , bg = 'NONE' })  -- Curly braces {} in template strings.
 hl(0, 'jsTemplateExpression'         , { fg = c.redLight      , bg = 'NONE' })  -- Content of template strings.
+hl(0, 'jsGlobalNodeObjects'         , { fg = c.orange      , bg = 'NONE' })  -- Global function names.
 
 
 
@@ -139,7 +140,6 @@ hl(0, 'jsParenCatch'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsException'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsAsyncKeyword'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSwitchBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsGlobalNodeObjects'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsExceptions'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBuiltins'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFutureKeys'         , { fg = c.purple      , bg = c.blue })
@@ -754,9 +754,9 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, "GitSignsAdd", { fg = c.green, bg = 'NONE' })
   hl(0, "GitSignsChange", { fg = c.blue, bg = 'NONE' })
   hl(0, "GitSignsDelete", { fg = c.red, bg = 'NONE' })
+  hl(0, "GitignoreSeparator", { fg = c.white, bg = 'NONE' })  -- '/' in .gitignore files.
 
------------------------
-
+----------------------- Not used by now:
   hl(0, "DiffText", { fg = c.alt_bg, bg = c.sign_delete })
   hl(0, "DiffAdd", { fg = c.alt_bg, bg = c.sign_add })
   hl(0, "DiffChange", { fg = c.alt_bg, bg = c.sign_change, underline = true, })
