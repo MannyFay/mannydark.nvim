@@ -24,7 +24,14 @@ hl(0, 'jsArrowFunction', { fg = c.white, bg = 'NONE'    }) -- Arrow => of arrow 
 hl(0, 'jsStorageClass', { fg = c.blue, bg = 'NONE'    }) -- 'const' Keyword.
 hl(0, 'jsVariableDef', { fg = c.purple, bg = 'NONE'    }) -- Names of variables.
 hl(0, 'jsOperatorKeyword', { fg = c.blue, bg = 'NONE'    }) -- 'new' keyword.
+hl(0, 'jsDot'         , { fg = c.white      , bg = 'NONE' })  -- Dots in JS files.
 
+
+
+
+
+
+  
 hl(0, 'jsNoise'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncCall'         , { fg = c.purple      , bg = c.blue })
@@ -32,7 +39,6 @@ hl(0, 'jsPrototype'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTaggedTemplate'         , { fg = c.purple      , bg = c.blue })
 
   
-hl(0, 'jsDot'         , { fg = c.white      , bg = 'NONE' })
 
   
 hl(0, 'jsParensError'         , { fg = c.purple      , bg = c.blue })
@@ -175,7 +181,13 @@ hl(0, 'jsSpreadOperator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsRestOperator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTernaryIfOperator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTernaryIf'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsFuncName'         , { fg = c.purple      , bg = c.blue })
+
+
+  
+hl(0, 'jsFuncName'         , { fg = c.orange      , bg = 'NONE' })
+
+
+  
 hl(0, 'jsFlowFunctionGroup'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncArgOperator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsArguments'         , { fg = c.purple      , bg = c.blue })
