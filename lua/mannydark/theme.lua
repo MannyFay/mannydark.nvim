@@ -48,9 +48,10 @@ hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = 'NONE' })  -- Variabl
 hl(0, 'jsClassProperty'         , { fg = c.purple      , bg = 'NONE' })  -- Attribute.
 hl(0, 'jsClassBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly Braces {} of classes.
 hl(0, 'jsConditional'         , { fg = c.blue      , bg = 'NONE' })  -- Keywords of conditional statements.
-hl(0, 'jsParenIfElse'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses and content of conditional statements.
 hl(0, 'jsIfElseBlock'         , { fg = 'NONE'      , bg = 'NONE' })  -- Body of conditional statements.
 hl(0, 'jsIfElseBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {} of conditional statement.
+hl(0, 'jsParensIfElse'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses of conditional statements.
+hl(0, 'jsParenIfElse'         , { fg = 'NONE'      , bg = 'NONE' })  -- Content of conditional statement.
 
 
 
@@ -148,7 +149,6 @@ hl(0, 'jsSpreadExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBracket'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensDecorator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParenDecorator'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsParensIfElse'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensWhile'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsCommentRepeat'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensFor'         , { fg = c.purple      , bg = c.blue })
