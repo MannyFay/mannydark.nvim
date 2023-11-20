@@ -556,10 +556,6 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaParens'         , { fg = c.white      , bg = 'NONE' }) -- Parentheses ().
   hl(0, 'luaFuncParens'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses () of function keyword.
 
-
-
-  
-
   hl(0, 'luaFunction'       , { fg = c.blue       , bg = 'NONE' })
   hl(0, 'luaCond'           , { fg = c.blue       , bg = 'NONE' })
   hl(0, 'luaStatement'      , { fg = c.blue       , bg = 'NONE' })
@@ -567,28 +563,20 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaSymbolOperator' , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaComment'        , { fg = c.red        , bg = 'NONE' })
   hl(0, 'luaConstant'       , { fg = c.purple     , bg = 'NONE' })
-  hl(0, 'luaString2'        , { fg = c.red_light  , bg = 'NONE' })
-  hl(0, 'luaStringDelimiter', { fg = c.red_light  , bg = 'NONE' })
-  hl(0, 'luaString'         , { fg = c.red_light  , bg = 'NONE' })
-  hl(0, 'luaNumber'         , { fg = c.green_light, bg = 'NONE' })
+  hl(0, 'luaString2'        , { fg = c.redLight  , bg = 'NONE' })
+  hl(0, 'luaStringDelimiter', { fg = c.redLight  , bg = 'NONE' })
+  hl(0, 'luaString'         , { fg = c.redLight  , bg = 'NONE' })
+  hl(0, 'luaNumber'         , { fg = c.greenLight, bg = 'NONE' })
   hl(0, 'luaTable'          , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaFunc'           , { fg = c.orange     , bg = 'NONE' })
   hl(0, 'luaBraces'         , { fg = c.white      , bg = 'NONE' })
 
 
-
-
-
-  
+------------------------- Not used by now:
   hl(0, 'luaBuiltIn'         , { fg = c.white      , bg = c.blue })
   hl(0, 'luaParen'         , { fg = c.white      , bg = c.purple })
   hl(0, 'luaBracket'         , { fg = c.white      , bg = c.white })
   hl(0, 'luaSpecialTable'         , { fg = c.white      , bg = c.turquoise })
-
-  
-
-
-  
   hl(0, 'luaEllipsis'         , { fg = c.white      , bg = c.green })
   hl(0, 'luaError'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaIfThen'         , { fg = c.white      , bg = 'NONE' })
@@ -598,21 +586,10 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaLabel'         , { fg = c.white      , bg = c.pink })
   hl(0, 'luaSemiCol'         , { fg = c.turquoise      , bg = c.purple })
   hl(0, 'luaErrHand'         , { fg = c.white      , bg = 'NONE' })
-
-
-  
-
-
-  
   hl(0, 'luaBrackets'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaNotEqOperator'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaCommentTodo'         , { fg = c.white      , bg = c.purple })
   hl(0, 'luaDocTag'         , { fg = c.turquoise      , bg = 'NONE' })
-
-  
-
-
-  
   hl(0, 'luaFuncSig'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaFuncId'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaFuncArgs'         , { fg = c.pink      , bg = 'NONE' })
