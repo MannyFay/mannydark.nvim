@@ -546,6 +546,7 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaFuncCall'       , { fg = c.orange, bg = 'NONE' })  -- Function that is called.
   hl(0, 'luaFuncKeyword'    , { fg = c.blue,   bg = 'NONE' })  -- 'function' keyword.
   hl(0, 'luaFloat'         , { fg = c.greenLight      , bg = 'NONE' })  -- Floating point numbers.
+  hl(0, 'luaComma'         , { fg = c.white      , bg = 'NONE' })  -- Commata.
 
 
   hl(0, 'luaFunction'       , { fg = c.blue       , bg = 'NONE' })
@@ -564,7 +565,11 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaBraces'         , { fg = c.white      , bg = 'NONE' })
 
 
-  hl(0, 'luaCommentLong'         , { fg = c.white      , bg = c.orange })
+  hl(0, 'luaCommentLong'         , { fg = c.white      , bg = 'NONE' })
+
+
+
+  
   hl(0, 'luaStringLong'         , { fg = c.white      , bg = c.pink })
   hl(0, 'luaBuiltIn'         , { fg = c.white      , bg = c.blue })
   hl(0, 'luaParen'         , { fg = c.white      , bg = c.purple })
@@ -572,7 +577,6 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaSpecialTable'         , { fg = c.white      , bg = c.turquoise })
   hl(0, 'luaSpecialValue'         , { fg = c.white      , bg = c.yellow })
   hl(0, 'luaEllipsis'         , { fg = c.white      , bg = c.green })
-  hl(0, 'luaComma'         , { fg = c.white      , bg = c.turquoise })
   hl(0, 'luaError'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaIfThen'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaBlock'         , { fg = c.purple      , bg = c.blue })
