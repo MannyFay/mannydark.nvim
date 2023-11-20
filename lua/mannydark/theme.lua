@@ -36,11 +36,13 @@ hl(0, 'jsFuncCall'         , { fg = c.orange      , bg = 'NONE' })  -- Funtions 
 hl(0, 'jsString'         , { fg = c.redLight      , bg = 'NONE' })  -- Regular strings.
 
 
+hl(0, 'jsGlobalObjects'         , { fg = c.purple      , bg = 'NONE' }) -- Objects.
+hl(0, 'jsParens'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses ().
+hl(0, 'jsNoise'         , { fg = c.white      , bg = 'NONE' })  -- Semikolon ;.
 
 
 
   
-hl(0, 'jsNoise'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsPrototype'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTaggedTemplate'         , { fg = c.purple      , bg = c.blue })
@@ -128,7 +130,6 @@ hl(0, 'jsParenCatch'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsException'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsAsyncKeyword'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSwitchBlock'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsGlobalObjects'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsGlobalNodeObjects'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsExceptions'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBuiltins'         , { fg = c.purple      , bg = c.blue })
@@ -138,7 +139,6 @@ hl(0, 'jsDomNodeConsts'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsHtmlEvents'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSpreadExpression'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBracket'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsParens'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParen'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParensDecorator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParenDecorator'         , { fg = c.purple      , bg = c.blue })
