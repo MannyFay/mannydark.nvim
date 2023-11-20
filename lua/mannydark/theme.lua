@@ -587,7 +587,13 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaLabel'         , { fg = c.white      , bg = c.pink })
   hl(0, 'luaSemiCol'         , { fg = c.turquoise      , bg = c.purple })
   hl(0, 'luaErrHand'         , { fg = c.white      , bg = 'NONE' })
-  hl(0, 'luaNoise'         , { fg = c.pink      , bg = c.turquoise })
+
+
+  
+  hl(0, 'luaNoise'         , { fg = c.pink      , bg = c.red })
+
+
+  
   hl(0, 'luaParens'         , { fg = c.blue      , bg = 'NONE' })
   hl(0, 'luaBrackets'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaNotEqOperator'         , { fg = c.white      , bg = 'NONE' })
