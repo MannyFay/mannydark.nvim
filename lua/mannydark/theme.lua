@@ -280,6 +280,7 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   hl(0, 'ModeMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Messages of Neovim in sepcific modes.
   hl(0, 'MoreMsg',             { fg = c.green,    bg = 'NONE'                                  })  -- Message of Neovim if it asks for more.
   hl(0, "NormalNC", { fg = 'NONE', bg = 'NONE' })  -- Inactive new buffer.
+  hl(0, "SpecialKey", { fg = 'NONE', bg = 'NONE' })  -- Left sign column in floating window.
 
 
 ---------------------------- Not used by now:
@@ -312,7 +313,6 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
   
   hl(0, "Conceal", { fg = c.orange, bg = c.purple })
   
-  hl(0, "SpecialKey", { fg = c.blue, bg = c.red, bold = true, })
 
   
   hl(0, "Substitute", { fg = c.orange, bg = c.purple })
