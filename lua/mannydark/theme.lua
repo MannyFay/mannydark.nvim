@@ -32,6 +32,8 @@ hl(0, 'jsComment'         , { fg = c.red     , bg = 'NONE' })  -- Comments.
 hl(0, 'jsCommentTodo'         , { fg = c.red      , bg = 'NONE' })  -- 'Todo' text.
 hl(0, 'jsOperator'         , { fg = c.white      , bg = 'NONE' })  -- Operators like =.
 hl(0, 'jsFuncBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {}.
+hl(0, 'jsFuncCall'         , { fg = c.orange      , bg = 'NONE' })  -- Funtions that are called.
+hl(0, 'jsString'         , { fg = c.redLight      , bg = 'NONE' })  -- Regular strings.
 
 
 
@@ -40,7 +42,6 @@ hl(0, 'jsFuncBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly br
   
 hl(0, 'jsNoise'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsFuncCall'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsPrototype'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTaggedTemplate'         , { fg = c.purple      , bg = c.blue })
 
@@ -64,7 +65,6 @@ hl(0, 'jsModuleAs'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFrom'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsModuleComma'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsExportDefaultGroup'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsString'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowTypeKeyword'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSpecial'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTemplateExpression'         , { fg = c.purple      , bg = c.blue })
