@@ -550,8 +550,13 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaCommentLong'   , { fg = c.red      , bg = 'NONE' })  -- Content of comments.
   hl(0, 'luaCommentLongTag'         , { fg = c.red      , bg = 'NONE' })  -- Tags of comments.
   hl(0, 'luaNoise'         , { fg = c.white      , bg = 'NONE' }) -- Dot opperator.
+  hl(0, 'luaSpecialValue'         , { fg = 'NONE'      , bg = 'NONE' })  -- Require function.
+  hl(0, 'luaStringLongTag'         , { fg = c.redLight      , bg = 'NONE' })  -- Brackets of long string.
+  hl(0, 'luaStringLong'         , { fg = c.redLight      , bg = 'NONE' })  -- Content of long strings.
 
 
+
+  
 
   hl(0, 'luaFunction'       , { fg = c.blue       , bg = 'NONE' })
   hl(0, 'luaCond'           , { fg = c.blue       , bg = 'NONE' })
@@ -573,14 +578,12 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 
 
   
-  hl(0, 'luaStringLong'         , { fg = c.white      , bg = c.pink })
   hl(0, 'luaBuiltIn'         , { fg = c.white      , bg = c.blue })
   hl(0, 'luaParen'         , { fg = c.white      , bg = c.purple })
   hl(0, 'luaBracket'         , { fg = c.white      , bg = c.white })
   hl(0, 'luaSpecialTable'         , { fg = c.white      , bg = c.turquoise })
 
   
-  hl(0, 'luaSpecialValue'         , { fg = 'NONE'      , bg = 'NONE' })  -- Require function.
 
 
   
@@ -625,7 +628,8 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
   hl(0, 'luaIn'         , { fg = c.white      , bg = 'NONE' })
   hl(0, 'luaGotoLabel'         , { fg = c.white      , bg = c.blue })
   hl(0, 'luaStringSpecial'         , { fg = c.purple      , bg = 'NONE' })
-  hl(0, 'luaStringLongTag'         , { fg = c.white      , bg = c.purple })
+
+  
 
 
 
