@@ -195,12 +195,12 @@ hl(0, 'bladeEcho', { fg = c.orange, bg = 'NONE' })
 -- Lualine
 
   -- Normal Mode:
-  hl(0, "lualine_a_normal", { fg = colors.blue, bg = colors.grayDark })
-  hl(0, "lualine_b_normal", { fg = colors.blue, bg = colors.grayDark })
-  hl(0, "lualine_c_normal", { fg = colors.blue, bg = colors.grayDark })
-  hl(0, "lualine_x_normal", { fg = colors.blue, bg = colors.grayDark })
-  hl(0, "lualine_y_normal", { fg = colors.blue, bg = colors.grayDark })
-  hl(0, "lualine_z_normal", { fg = colors.blue, bg = colors.grayDark })
+  hl(0, "lualine_a_normal", { fg = c.blue, bg = c.grayDark })
+  hl(0, "lualine_b_normal", { fg = c.blue, bg = c.grayDark })
+  hl(0, "lualine_c_normal", { fg = c.blue, bg = c.grayDark })
+  hl(0, "lualine_x_normal", { fg = c.blue, bg = c.grayDark })
+  hl(0, "lualine_y_normal", { fg = c.blue, bg = c.grayDark })
+  hl(0, "lualine_z_normal", { fg = c.blue, bg = c.grayDark })
 
 
 
