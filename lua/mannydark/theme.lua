@@ -30,6 +30,8 @@ hl(0, 'jsFunction'         , { fg = c.blue      , bg = 'NONE' })  -- 'function' 
 hl(0, 'jsClassKeyword'         , { fg = c.blue      , bg = 'NONE' })  -- 'class' keyword.
 hl(0, 'jsComment'         , { fg = c.red     , bg = 'NONE' })  -- Comments.
 hl(0, 'jsCommentTodo'         , { fg = c.red      , bg = 'NONE' })  -- 'Todo' text.
+hl(0, 'jsOperator'         , { fg = c.white      , bg = 'NONE' })  -- Operators like =.
+hl(0, 'jsFuncBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {}.
 
 
 
@@ -50,7 +52,6 @@ hl(0, 'jsDestructuringBlock'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDestructuringArray'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFlowDefinition'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsOf'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsOperator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBooleanTrue'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBooleanFalse'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsModuleAsterisk'         , { fg = c.purple      , bg = c.blue })
@@ -186,7 +187,6 @@ hl(0, 'jsTernaryIf'         , { fg = c.purple      , bg = c.blue })
 
 
   
-hl(0, 'jsFuncBraces'         , { fg = c.purple      , bg = c.red })
 
 
 
