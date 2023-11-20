@@ -34,8 +34,6 @@ hl(0, 'jsOperator'         , { fg = c.white      , bg = 'NONE' })  -- Operators 
 hl(0, 'jsFuncBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {}.
 hl(0, 'jsFuncCall'         , { fg = c.orange      , bg = 'NONE' })  -- Funtions that are called.
 hl(0, 'jsString'         , { fg = c.redLight      , bg = 'NONE' })  -- Regular strings.
-
-
 hl(0, 'jsGlobalObjects'         , { fg = c.purple      , bg = 'NONE' }) -- Objects.
 hl(0, 'jsParens'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses ().
 hl(0, 'jsNoise'         , { fg = c.white      , bg = 'NONE' })  -- Semikolon ;.
@@ -49,6 +47,10 @@ hl(0, 'jsClassBlock'         , { fg = 'NONE'      , bg = 'NONE' })  -- Whole are
 hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = 'NONE' })  -- Variable in methods.
 hl(0, 'jsClassProperty'         , { fg = c.purple      , bg = 'NONE' })  -- Attribute.
 hl(0, 'jsClassBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly Braces {} of classes.
+hl(0, 'jsConditional'         , { fg = c.blue      , bg = 'NONE' })  -- Keywords of conditional statements.
+hl(0, 'jsParenIfElse'         , { fg = c.white      , bg = 'NONE' })  -- Parentheses and content of conditional statements.
+hl(0, 'jsIfElseBlock'         , { fg = 'NONE'      , bg = 'NONE' })  -- Body of conditional statements.
+hl(0, 'jsIfElseBraces'         , { fg = c.white      , bg = 'NONE' })  -- Curly braces {} of conditional statement.
 
 
 
@@ -114,10 +116,7 @@ hl(0, 'jsBlock'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBlockLabel'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsBlockLabelKey'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsStatement'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsConditional'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsParenIfElse'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsCommentIfElse'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsIfElseBlock'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParenSwitch'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsWhile'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsParenWhile'         , { fg = c.purple      , bg = c.blue })
@@ -166,7 +165,6 @@ hl(0, 'jsGenerator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDecorator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassPropertyComputed'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassStringKey'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsIfElseBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTryCatchBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFinallyBraces'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsSwitchBraces'         , { fg = c.purple      , bg = c.blue })
