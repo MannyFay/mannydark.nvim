@@ -185,13 +185,13 @@ hl(0, 'jsTernaryIf'         , { fg = c.purple      , bg = c.blue })
 
   
 hl(0, 'jsFuncName'         , { fg = c.orange      , bg = 'NONE' })
+hl(0, 'jsFunction'         , { fg = c.purple      , bg = c.green })
 
 
   
 hl(0, 'jsFlowFunctionGroup'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncArgOperator'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsArguments'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsFunction'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassKeyword'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsExtendsKeyword'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsClassNoise'         , { fg = c.purple      , bg = c.blue })
