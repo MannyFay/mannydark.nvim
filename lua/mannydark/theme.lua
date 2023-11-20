@@ -30,7 +30,11 @@ hl(0, 'jsObjectProp'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsFuncCall'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsPrototype'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsTaggedTemplate'         , { fg = c.purple      , bg = c.blue })
-hl(0, 'jsDot'         , { fg = c.purple      , bg = c.blue })
+
+  
+hl(0, 'jsDot'         , { fg = c.white      , bg = 'NONE' })
+
+  
 hl(0, 'jsParensError'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDestructuringBlock'         , { fg = c.purple      , bg = c.blue })
 hl(0, 'jsDestructuringArray'         , { fg = c.purple      , bg = c.blue })
