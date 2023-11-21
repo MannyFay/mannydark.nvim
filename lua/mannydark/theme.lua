@@ -8,7 +8,7 @@ local ini = require('highlightings.inifiles')
 
 
 theme.buildTheme = function()
-  ini.setupHighlightings()
+  ini.setupHighlighting()
 ------------------------------------------------------------------------------
 -- Editor
 ------------------------------------------------------------------------------
