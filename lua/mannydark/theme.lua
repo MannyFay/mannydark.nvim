@@ -3,7 +3,9 @@ local c     = require('mannydark.palette')
 local hl    = vim.api.nvim_set_hl
 local theme = {}
 
-local ini = require('../../highlightings/inifiles.lua')
+package.path = package.path .. ";../../?.lua"
+
+local ini = require('inifiles')
 
 
 
