@@ -3,7 +3,7 @@ local c     = require('mannydark.palette')
 local hl    = vim.api.nvim_set_hl
 local theme = {}
 
-local ini = require('highlightings.inifiles')
+local ini = require('mannydark.highlightings.inifiles')
 
 
 
