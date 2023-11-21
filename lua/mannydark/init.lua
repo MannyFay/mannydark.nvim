@@ -12,7 +12,7 @@ M.setup = function()
   vim.o.termguicolors = true
   vim.g.colors_name = 'mannydark'
 
-  theme.set_highlights()
+  theme.buildTheme()
 end
 
 return M

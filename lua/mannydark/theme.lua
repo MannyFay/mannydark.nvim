@@ -3,7 +3,12 @@ local c     = require('mannydark.palette')
 local hl    = vim.api.nvim_set_hl
 local theme = {}
 
-theme.set_highlights = function()
+local ini = require('../../highlightings/inifiles.lua')
+
+
+
+theme.buildTheme = function()
+  ini.setupHighlightings()
 ------------------------------------------------------------------------------
 -- Editor
 ------------------------------------------------------------------------------
@@ -241,11 +246,11 @@ hl(0, 'javaScriptEmbed'         , { fg = c.purple      , bg = c.blue })
 ------------------------------------------------------------------------------
 -- Configuration Files
 ------------------------------------------------------------------------------
-  hl(0, 'dosiniLabel', { fg = c.purple, bg = 'NONE'                                  })  -- Settings variable of config files (.editorconfig).
-  hl(0, 'dosiniValue', { fg = c.blue, bg = 'NONE'                                  })
-  hl(0, 'dosiniComment', { fg = c.red, bg = 'NONE'                                  })
-  hl(0, 'dosiniHeader', { fg = c.white, bg = 'NONE'                                  })
-  hl(0, 'dosiniNumber', { fg = c.greenLight, bg = 'NONE'                                  })
+  -- hl(0, 'dosiniLabel', { fg = c.purple, bg = 'NONE'                                  })  -- Settings variable of config files (.editorconfig).
+  -- hl(0, 'dosiniValue', { fg = c.blue, bg = 'NONE'                                  })
+  -- hl(0, 'dosiniComment', { fg = c.red, bg = 'NONE'                                  })
+  -- hl(0, 'dosiniHeader', { fg = c.white, bg = 'NONE'                                  })
+  -- hl(0, 'dosiniNumber', { fg = c.greenLight, bg = 'NONE'                                  })
   
   
   hl(0, 'FloatBorder', {
