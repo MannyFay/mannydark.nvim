@@ -55,7 +55,7 @@ todoStuff.setupHighlighting = function()
   highlight(0, 'FocusedSymbol',           { fg = colors.orange, bg = colors.gray })
 
   -- TreesitterContext
-  highlight(0, 'TreesitterContext', { fg = colors.white, bg = colors.purple })
+  --highlight(0, 'TreesitterContext', { fg = colors.white, bg = colors.purple })
 
   -- Crates
   highlight(0, 'CratesNvimLoading', { fg = colors.blue, bg = colors.gray })
