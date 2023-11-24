@@ -2,9 +2,8 @@ local c     = require('mannydark.palette')
 local hl    = vim.api.nvim_set_hl
 local theme = {}
 
-local ini          = require('mannydark.highlighting.inifiles')
 -- Editor:
-local environment      = require('mannydark.highlighting.editor.environment')
+-- local environment      = require('mannydark.highlighting.editor.environment')
 local buffer           = require('mannydark.highlighting.editor.buffer')
 local statusLine       = require('mannydark.highlighting.editor.statusline')
 -- Languages:
@@ -12,6 +11,7 @@ local css              = require('mannydark.highlighting.languages.css')
 local javaScript       = require('mannydark.highlighting.javascript')
 local languageDefaults = require('mannydark.highlighting.languages.languagedefaults')
 local laravelBlade     = require('mannydark.highlighting.laravelblade')
+local ini              = require('mannydark.highlighting.languages.inifiles')
 -- local php              = require('mannydark.highlighting.languages.php').setupHighlighting()
 local php              = require('mannydark.highlighting.languages.php')
 local xml              = require('mannydark.highlighting.languages.xml')
@@ -35,9 +35,9 @@ local telescope        = require('mannydark.highlighting.plugins.telescope')
   -- SQL
 
 theme.buildTheme = function()
-  ini.setupHighlighting()
+  require('mannydark.highlighting.editor.environment').setupHighlighting()
   -- Editor:
-  environment.setupHighlighting()
+  -- environment.setupHighlighting()
   buffer.setupHighlighting()
   statusLine.setupHighlighting()
   -- Languages:
@@ -51,6 +51,7 @@ theme.buildTheme = function()
   json.setupHighlighting()
   lua.setupHighlighting()
   markdown.setupHighlighting()
+  ini.setupHighlighting()
   -- Plugins:
   hopPlugin.setupHighlighting()
   lualinePlugin.setupHighlighting()
