@@ -36,6 +36,14 @@ markdown.setupHighlighting = function()
   end
   highlight(0, 'mkdHeading',                 { fg = colors.blue,     bg = 'NONE'                      })
   highlight(0, 'mkdListItem',                { fg = colors.blue,     bg = 'NONE'                      })
+  highlight(0, 'mkdHeading',                 { fg = colors.blue, bg = 'NONE'                          })  -- Hash symbols before heading text.
+  highlight(0, 'mkdCode',                    { fg = colors.green, bg = 'NONE'                         })  -- Inline code content.
+  highlight(0, 'mkdCodeDelimiter',           { fg = colors.green, bg = 'NONE'                         })  -- Inline code backticks.
+  highlight(0, 'mkdCodeStart',               { fg = colors.green, bg = 'NONE'                         })  -- Code block start delimiter.
+  highlight(0, 'mkdCodeEnd',                 { fg = colors.green, bg = 'NONE'                         })  -- Code block end delimiter.
+  highlight(0, 'mkdNonListItemBlock',        { fg = colors.white, bg = 'NONE'                         })  -- Regular text.
+  highlight(0, 'mkdLineBreak',               { fg = colors.blue, bg = 'NONE'                          })  -- Line break dots (two spaces at end of line).
+  highlight(0, 'mkdRule',                    { fg = colors.blue, bg = 'NONE'                          })  -- Horizontal line indicator.
 
   ----------------------- Not used by now:
   highlight(0, 'mkdItalic',                  { fg = colors.green, bg = colors.orange                  })
@@ -50,30 +58,23 @@ markdown.setupHighlighting = function()
   highlight(0, 'mkdLinkDefTarget',           { fg = colors.green, bg = colors.orange                  })
   highlight(0, 'mkdLinkDef',                 { fg = colors.green, bg = colors.orange                  })
   highlight(0, 'mkdLinkTitle',               { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdHeading',                 { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdLineBreak',               { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdBlockquote',              { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdCodeDelimiter',           { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdCode',                    { fg = colors.green, bg = colors.orange                  })
+  highlight(0, 'mkdBlockquote',              { fg = colors.blue, bg = colors.orange                   })
   highlight(0, 'mkdFootnote',                { fg = colors.green, bg = colors.orange                  })
   highlight(0, 'mkdListItem',                { fg = colors.green, bg = colors.orange                  })
   highlight(0, 'mkdListItemLine',            { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdNonListItemBlock',        { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdRule',                    { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdMath',                    { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdStrike',                  { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdString',                  { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdCodeStart',               { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdCodeEnd',                 { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownHeadingRule',        { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownId',                 { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownIdDeclaration',      { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownIdDelimiter',        { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownBoldItalic',         { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownRule',               { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownFootnote',           { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownFootnoteDefinition', { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'markdownEscape',             { fg = colors.green, bg = colors.orange                  })
+  highlight(0, 'mkdMath',                    { fg = colors.blue, bg = colors.greenLight               })
+  highlight(0, 'mkdStrike',                  { fg = colors.turquoise, bg = colors.gray                })
+  highlight(0, 'mkdString',                  { fg = colors.turquoise, bg = colors.white               })
+  highlight(0, 'markdownHeadingRule',        { fg = colors.turquoise, bg = colors.pink                })
+  highlight(0, 'markdownId',                 { fg = colors.turquoise, bg = colors.red                 })
+  highlight(0, 'markdownIdDeclaration',      { fg = colors.turquoise, bg = colors.orange              })
+  highlight(0, 'markdownIdDelimiter',        { fg = colors.turquoise, bg = colors.blue                })
+  highlight(0, 'markdownBoldItalic',         { fg = colors.greenLight, bg = colors.orange             })
+  highlight(0, 'markdownRule',               { fg = colors.turquoise, bg = colors.orange              })
+  highlight(0, 'markdownFootnote',           { fg = colors.blue, bg = colors.orange                   })
+  highlight(0, 'markdownFootnoteDefinition', { fg = colors.red, bg = colors.orange                    })
+  highlight(0, 'markdownEscape',             { fg = colors.pink, bg = colors.orange                   })
 end
 
 return markdown
+
