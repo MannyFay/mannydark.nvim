@@ -18,7 +18,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.languages.php'             ).setupHighlighting()
   require('mannydark.highlighting.languages.xml'             ).setupHighlighting()
   -- Plugins:
-  --require('mannydark.highlighting.plugins.diffview').setupHighlighting()
+  require('mannydark.highlighting.plugins.diffview').setupHighlighting()
   require('mannydark.highlighting.plugins.gitsigns'          ).setupHighlighting()
   require('mannydark.highlighting.plugins.hop'               ).setupHighlighting()
   --require('mannydark.highlighting.plugins.lsp').setupHighlighting()
