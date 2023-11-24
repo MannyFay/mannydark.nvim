@@ -1,12 +1,31 @@
 # Mannydark Neovim Color Scheme
-A very dark color scheme.
+A very dark color scheme - by default :)  
+This is a highly customizable color scheme for Neovim written in Lua.
+So is anything annoying for your eyes, you can change it very easy.
 
-## Installation
-### macOS
-Open your plugin file and paste the plugin.
+This project has a MIT license so please feel free to use it wherever you want and change it as you like.  
+Fork it, contribute to it or donate to it - everything is possible!
+
+---
+<br>
+
+# Installation
+## macOS
+Open your Neovim plugin file and paste the plugin.
 Packer:
 ```lua
-use "MannyFay/mannydark.nvim"
+-- Set color scheme:
+use({
+  'MannyFay/mannydark.nvim',
+  vim.cmd [[
+    try
+      colorscheme mannydark
+    catch /^Vim\%((\a\+)\)\=:E185/
+      colorscheme default
+      set background=dark
+    endtry
+  ]],
+})
 ```
 After that, you can run the following commands in your Neovim command line to
 be up to date. Enter the command line from normal mode with `:`.
@@ -23,21 +42,22 @@ You will find the repository on your machine in:
 ~/.local/share/nvim/site/pack/packer/start/mannydark.nvim
 ```
 
-## Activate Color Scheme
-To activate the color scheme, put this in your `init.lua` (or another
-configuration file of Neovim):
-```lua
-vim.cmd("colorscheme mannydark")
-```
+---
+<br>
 
-## Change Color Scheme
-If there are colors you would like to change, go into visual mode and mark the charakter or the word with the color you like to change. Then press `:`
-to switch into the Neovim command line and enter:
+# Change Color Scheme
+If there are colors you would like to change, go into visual mode and mark the character or the word with the color you like to change. Then press `:`.
+In command line the Neovim range indicator `'<'>` will be displayed by default.
+Delete it and enter the following command after `:`:
 ```shell
 echo synIDattr(synID(line("."), col("."), 1), "name")
 ```
 The color variable will be displayed in the command line.
 
+Do your changes it `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`.
+Save your changes and restart Neovim. You should see them immediately after open the specific file again.
 The colors itself you can change in `/lua/mannydark/palette.lua`.
 If you want to change the color of a part in your document, enter
-`/lua/mannydark/theme.lua`.
+`/lua/mannydark/theme.lua` file. There you will see a list of all highlighting files and their place.
+
+After your changes, save the whole `mannydark.nvim` directory somewhere else on your machine, because if you do `PackerUpdate` or `PackerSync` your changes will be lost in `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`.
