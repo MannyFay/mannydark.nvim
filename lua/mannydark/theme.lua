@@ -27,7 +27,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.plugins.neogit').setupHighlighting()
   --require('mannydark.highlighting.plugins.noice').setupHighlighting() -- Here is a bug (inside the file?!), but where?
   require('mannydark.highlighting.plugins.notify').setupHighlighting()
-  --require('mannydark.highlighting.plugins.nvimcmp').setupHighlighting()
+  require('mannydark.highlighting.plugins.nvimcmp').setupHighlighting()
   require('mannydark.highlighting.plugins.nvimtree'          ).setupHighlighting()
   require('mannydark.highlighting.plugins.packer'            ).setupHighlighting()
   require('mannydark.highlighting.plugins.telescope'         ).setupHighlighting()
