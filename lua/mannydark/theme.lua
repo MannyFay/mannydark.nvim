@@ -34,7 +34,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.plugins.treesitter'        ).setupHighlighting()
   require('mannydark.highlighting.plugins.whichkey').setupHighlighting()
   -- Todo:
-  --require('mannydark.highlighting.todos').setupHighlighting()
+  require('mannydark.highlighting.todos').setupHighlighting()
 end
 
 return theme
