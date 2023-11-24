@@ -11,7 +11,7 @@ Fork it, contribute to it or donate to it - everything is possible!
 
 # Installation
 ## macOS
-Open your Neovim plugin file and paste the plugin.
+Open your Neovim plugin file and paste the plugin.  
 Packer:
 ```lua
 -- Set color scheme:
@@ -46,18 +46,23 @@ You will find the repository on your machine in:
 <br>
 
 # Change Color Scheme
-If there are colors you would like to change, go into visual mode and mark the character or the word with the color you like to change. Then press `:`.
-In command line the Neovim range indicator `'<'>` will be displayed by default.
+If there are colors you would like to change, go into visual mode and select the character or the word with the color you like to change, then press `:`.  
+In command line the Neovim range indicator `'<'>` will be displayed by default.  
 Delete it and enter the following command after `:`:
 ```shell
 echo synIDattr(synID(line("."), col("."), 1), "name")
 ```
 The color variable will be displayed in the command line.
 
-Do your changes it `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`.
-Save your changes and restart Neovim. You should see them immediately after open the specific file again.
-The colors itself you can change in `/lua/mannydark/palette.lua`.
-If you want to change the color of a part in your document, enter
-`/lua/mannydark/theme.lua` file. There you will see a list of all highlighting files and their place.
+Do your changes it `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`.  
+Save your changes and restart Neovim. You should see them immediately after open the specific file again.  
+The colors itself you can change in `/lua/mannydark/palette.lua`.  
+If you want to change the color of a part in your document, enter `/lua/mannydark/theme.lua` file. There you will see a list of all highlighting files and their places.
 
-After your changes, save the whole `mannydark.nvim` directory somewhere else on your machine, because if you do `PackerUpdate` or `PackerSync` your changes will be lost in `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`.
+After your changes, save the whole `mannydark.nvim` directory somewhere else on your machine, because if you do `PackerUpdate` or `PackerSync` your changes will be lost in `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`. Now you can set your scheme.  
+I recommend to put it into a GitHb remote repository, so it never gets lost.
+
+---
+<br>
+
+Have fun and a great time ;)
