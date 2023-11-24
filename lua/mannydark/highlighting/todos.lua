@@ -78,13 +78,13 @@ todoStuff.setupHighlighting = function()
   highlight(0, 'DapBreakpoint',         { fg = colors.grayDark, bg = colors.white                               })
 
   -- Language
-  -- highlight(0, 'yamlPlainScalar',  { colors.pink, bg = colors.greenLight })
-  -- highlight(0, 'yamlTSField',      { colors.pink, bg = colors.greenLight })
-  highlight(0, 'hclTSPunctSpecial',   { colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlBlockMappingKey', { colors.pink, bg = colors.greenLight })
-  highlight(0, 'tomlTSProperty',      { colors.pink, bg = colors.greenLight })
-  highlight(0, 'zshKSHFunction',      { colors.pink, bg = colors.greenLight })
-  highlight(0, 'zshVariableDef',      { colors.pink, bg = colors.greenLight })
+  -- highlight(0, 'yamlPlainScalar',  { fg = colors.pink, bg = colors.greenLight })
+  -- highlight(0, 'yamlTSField',      { fg = colors.pink, bg = colors.greenLight })
+  highlight(0, 'hclTSPunctSpecial',   { fg = colors.pink, bg = colors.greenLight })
+  highlight(0, 'yamlBlockMappingKey', { fg = colors.pink, bg = colors.greenLight })
+  highlight(0, 'tomlTSProperty',      { fg = colors.pink, bg = colors.greenLight })
+  highlight(0, 'zshKSHFunction',      { fg = colors.pink, bg = colors.greenLight })
+  highlight(0, 'zshVariableDef',      { fg = colors.pink, bg = colors.greenLight })
 end
 
 return todoStuff
