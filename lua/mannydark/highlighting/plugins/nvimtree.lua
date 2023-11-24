@@ -46,23 +46,23 @@ nvimTree.setupHighlighting = function()
   highlight(0, 'NvimTreeNormalFloat',               { fg = colors.gray,     bg = 'NONE'           })
   highlight(0, 'NvimTreeExecFile',                  { fg = colors.white,    bg = 'NONE'           })
   highlight(0, 'NvimTreeSpecialFile',               { fg = colors.white,    bg = 'NONE'           })
+  highlight(0, 'NvimTreeClosedFolderIcon',          { fg = colors.blue,     bg = 'NONE'           })  -- Icons of closed directories.
+  highlight(0, 'NvimTreeOpenedFolderIcon',          { fg = colors.blue,     bg = 'NONE'           })  -- Icons of open directories.
+  highlight(0, 'NvimTreeFileIcon',                  { fg = colors.white,    bg = 'NONE'           })  -- Icons not belong to WebDevIcons.
+  highlight(0, 'NvimTreeSymlinkIcon',               { fg = colors.orange,   bg = 'NONE'           })  -- Icons of symlinks before filename.
+  highlight(0, 'NvimTreeSymlink',                   { fg = colors.white,    bg = 'NONE'           })  -- Name and destination of symlinks.
+  highlight(0, 'NvimTreeSymlinkFolderName',         { fg = colors.blue,     bg = 'NONE'           })  -- Name and destination of symlink directories.
 
   ----------------------- Not used by now:
   highlight(0, 'NvimTreeVertSplit',                 { fg = colors.red,      bg = colors.green     })
-  highlight(0, 'NvimTreeSymlink',                   { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeSymlinkIcon',               { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeSymlinkFolderName',         { fg = colors.red,      bg = colors.green     })
-  highlight(0, 'NvimTreeOpenedFolderIcon',          { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeClosedFolderIcon',          { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeFileIcon',                  { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeWindowPicker',              { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeNormalFloat',               { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeCursorLineNr',              { fg = colors.red,      bg = colors.green     })
-  highlight(0, 'NvimTreeLineNr',                    { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeCursorColumn',              { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeLiveFilterPrefix',          { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeLiveFilterValue',           { fg = colors.pink,     bg = colors.orange    })
-  highlight(0, 'NvimTreeBookmark',                  { fg = colors.pink,     bg = colors.orange    })
+  highlight(0, 'NvimTreeWindowPicker',              { fg = colors.green,    bg = colors.orange    })
+  highlight(0, 'NvimTreeNormalFloat',               { fg = colors.turquoise,bg = colors.orange    })
+  highlight(0, 'NvimTreeCursorLineNr',              { fg = colors.red,      bg = colors.blue      })
+  highlight(0, 'NvimTreeLineNr',                    { fg = colors.pink,     bg = colors.blue      })
+  highlight(0, 'NvimTreeCursorColumn',              { fg = colors.orange,   bg = colors.blue      })
+  highlight(0, 'NvimTreeLiveFilterPrefix',          { fg = colors.green,    bg = colors.blue      })
+  highlight(0, 'NvimTreeLiveFilterValue',           { fg = colors.turquoise,bg = colors.blue      })
+  highlight(0, 'NvimTreeBookmark',                  { fg = colors.orange,   bg = colors.blue      })
 end
 
 return nvimTree
