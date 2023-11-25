@@ -7,6 +7,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.editor.statusline'         ).setupHighlighting()
   -- Languages:
   require('mannydark.highlighting.languages.css'             ).setupHighlighting()
+  require('mannydark.highlighting.languages.dockercompose'   ).setupHighlighting()
   require('mannydark.highlighting.languages.html'            ).setupHighlighting()
   require('mannydark.highlighting.languages.inifiles'        ).setupHighlighting()
   require('mannydark.highlighting.languages.javascript'      ).setupHighlighting()
