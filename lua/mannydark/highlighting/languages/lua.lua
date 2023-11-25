@@ -24,6 +24,7 @@ lua.setupHighlighting = function()
   highlight(0, 'luaStringLong',      { fg = colors.redLight,   bg = 'NONE'           })  -- Content of long strings.
   highlight(0, 'luaParens',          { fg = colors.white,      bg = 'NONE'           })  -- Parentheses ().
   highlight(0, 'luaFuncParens',      { fg = colors.white,      bg = 'NONE'           })  -- Parentheses () of function keyword.
+  highlight(0, 'luaCommentTodo',     { fg = colors.red,        bg = 'NONE'           })  -- TODO comments.
   highlight(0, 'luaFunction',        { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaCond',            { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaStatement',       { fg = colors.blue,       bg = 'NONE'           })
@@ -55,7 +56,6 @@ lua.setupHighlighting = function()
   highlight(0, 'luaErrHand',         { fg = colors.white,      bg = 'NONE'           })
   highlight(0, 'luaBrackets',        { fg = colors.white,      bg = 'NONE'           })
   highlight(0, 'luaNotEqOperator',   { fg = colors.white,      bg = 'NONE'           })
-  highlight(0, 'luaCommentTodo',     { fg = colors.white,      bg = colors.purple    })
   highlight(0, 'luaDocTag',          { fg = colors.turquoise,  bg = 'NONE'           })
   highlight(0, 'luaFuncSig',         { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaFuncId',          { fg = colors.white,      bg = 'NONE'           })
