@@ -11,11 +11,17 @@ local yml      = {}
 -- Settings
 
 yml.setupHighlighting = function()
+  highlight(0, 'yamlKeyValueDelimiter',        { fg = colors.white,      bg = 'NONE' })  -- Colon between key and value.
+  highlight(0, 'yamlPlainScalar',              { fg = colors.white,      bg = 'NONE' })  -- Name of containers.
+  highlight(0, 'yamlBlockMappingKey',          { fg = colors.purple,     bg = 'NONE' })  -- Name of services.
+  highlight(0, 'yamlTodo',                     { fg = colors.red,        bg = 'NONE' })  -- TODO comments.
+  highlight(0, 'yamlComment',                  { fg = colors.red,        bg = 'NONE' })  -- Comments.
+  highlight(0, 'yamlInteger',                  { fg = colors.greenLight, bg = 'NONE' })  -- Integer numbers.
+  highlight(0, 'yamlBlockCollectionItemStart', { fg = colors.white,      bg = 'NONE' })  -- Hyphens of list items.
+
+  ----------------------- Not used by now:
   highlight(0, 'yamlPlainScalar',              { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlBlockMappingKey',          { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlTodo',                     { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlComment',                  { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlTAGDirective',             { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlYAMLDirective',            { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlReservedDirective',        { fg = colors.pink, bg = colors.greenLight })
@@ -25,7 +31,6 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlYAMLVersion',              { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowStringDelimiter',      { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlEscape',                   { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlKeyValueDelimiter',        { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowString',               { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlSingleEscape',             { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockScalarHeader',        { fg = colors.pink, bg = colors.greenLight })
@@ -35,14 +40,11 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFlowCollection',           { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowMappingKey',           { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowMappingMerge',         { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlPlainScalar',              { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFloat',                    { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlTimestamp',                { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlInteger',                  { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlMappingKeyStart',          { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowIndicator',            { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockMappingMerge',        { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlBlockCollectionItemStart', { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlNodeTag',                  { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlAnchor',                   { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlAlias',                    { fg = colors.pink, bg = colors.greenLight })
@@ -54,3 +56,4 @@ yml.setupHighlighting = function()
 end
 
 return yml
+
