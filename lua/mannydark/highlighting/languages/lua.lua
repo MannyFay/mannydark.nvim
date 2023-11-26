@@ -25,6 +25,7 @@ lua.setupHighlighting = function()
   highlight(0, 'luaParens',          { fg = colors.white,      bg = 'NONE'           })  -- Parentheses ().
   highlight(0, 'luaFuncParens',      { fg = colors.white,      bg = 'NONE'           })  -- Parentheses () of function keyword.
   highlight(0, 'luaCommentTodo',     { fg = colors.red,        bg = 'NONE'           })  -- TODO comments.
+  highlight(0, 'luaFuncName',        { fg = colors.orange,     bg = 'NONE'           })  -- Names of functions.
   highlight(0, 'luaFunction',        { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaCond',            { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaStatement',       { fg = colors.blue,       bg = 'NONE'           })
@@ -61,7 +62,6 @@ lua.setupHighlighting = function()
   highlight(0, 'luaFuncId',          { fg = colors.white,      bg = 'NONE'           })
   highlight(0, 'luaFuncArgs',        { fg = colors.pink,       bg = 'NONE'           })
   highlight(0, 'luaFuncTable',       { fg = colors.white,      bg = 'NONE'           })
-  highlight(0, 'luaFuncName',        { fg = colors.white,      bg = colors.pink      })
   highlight(0, 'luaFuncArgName',     { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaFuncArgComma',    { fg = colors.white,      bg = colors.purple    })
   highlight(0, 'luaThenEnd',         { fg = colors.white,      bg = colors.blue      })
@@ -75,3 +75,4 @@ lua.setupHighlighting = function()
 end
 
 return lua
+
