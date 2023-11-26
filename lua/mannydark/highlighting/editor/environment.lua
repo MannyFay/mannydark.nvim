@@ -11,10 +11,10 @@ local environment = {}
 -- Settings
 
 environment.setupHighlighting = function()
-  highlight(0, 'FloatBorder', {
-      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
-      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
-  })
+  -- highlight(0, 'FloatBorder', {
+  --     fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+  --     bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+  -- })
 
   highlight(0, 'IndentBlanklineChar', { fg = colors.grayDark, bg = 'NONE'                                                })  -- Indent Blank Line plugin vertical lines.
   highlight(0, 'SignColumn',          { fg = 'NONE',          bg = colors.black                                          })  -- Sign column left of the line numbers.
@@ -34,7 +34,7 @@ environment.setupHighlighting = function()
   highlight(0, 'WarningMsg',          { fg = colors.orange,   bg = 'NONE'                                                })  -- Warning messages below status line.
   highlight(0, 'Question',            { fg = colors.green,    bg = 'NONE'                                                })  -- Questions that Neovim asks the user.
   highlight(0, 'NormalFloat',         { fg = colors.white,    bg = colors.grayDark                                       })  -- Neovims regular floating window.
-  highlight(0, 'FloatBorder',         { fg = 'NONE',          bg = colors.grayDark                                       })  -- Border of Neovims regular floating window.
+  highlight(0, 'FloatBorder',         { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Border of Neovims regular floating window.
   highlight(0, 'Whitespace',          { fg = colors.red,      bg = 'NONE'                                                })  -- Trailing whitespaces in buffer.
   highlight(0, 'PmenuSbar',           { fg = 'NONE',          bg = colors.grayDark                                       })  -- Scroll bar background in context menus.
   highlight(0, 'PmenuThumb',          { fg = colors.gray,     bg = 'NONE'                                                })  -- Scroll bar in context menus.
@@ -72,3 +72,4 @@ environment.setupHighlighting = function()
 end
 
 return environment
+
