@@ -31,7 +31,7 @@ todoStuff.setupHighlighting = function()
   -- IndentBlankline
   --highlight(0, 'IndentBlanklineContextChar',  { fg = colors.green, bg = colors.orange                   })
   --highlight(0, 'IndentBlanklineContextStart', { fg = colors.green, bg = colors.orange, underline = true })
-  --highlight(0, 'IndentBlanklineChar',         { fg = colors.green, bg = colors.orange                   })
+  -- highlight(0, 'IndentBlanklineChar',         { fg = colors.green, bg = colors.orange                   })
 
   -- Dashboard
   --highlight(0, 'DashboardHeader', { fg = colors.blue, bg = colors.gray })
@@ -80,8 +80,7 @@ todoStuff.setupHighlighting = function()
   -- Language
   highlight(0, 'hclTSPunctSpecial',   { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'tomlTSProperty',      { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'zshKSHFunction',      { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'zshVariableDef',      { fg = colors.pink, bg = colors.greenLight })
 end
 
 return todoStuff
+
