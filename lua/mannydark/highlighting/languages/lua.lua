@@ -26,6 +26,7 @@ lua.setupHighlighting = function()
   highlight(0, 'luaFuncParens',      { fg = colors.white,      bg = 'NONE'           })  -- Parentheses () of function keyword.
   highlight(0, 'luaCommentTodo',     { fg = colors.red,        bg = 'NONE'           })  -- TODO comments.
   highlight(0, 'luaFuncName',        { fg = colors.orange,     bg = 'NONE'           })  -- Names of functions.
+  highlight(0, 'luaSpecialTable',    { fg = colors.purple,     bg = 'NONE'           })  -- Built-in tables.
   highlight(0, 'luaFunction',        { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaCond',            { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaStatement',       { fg = colors.blue,       bg = 'NONE'           })
@@ -40,12 +41,14 @@ lua.setupHighlighting = function()
   highlight(0, 'luaTable',           { fg = colors.white,      bg = 'NONE'           })
   highlight(0, 'luaFunc',            { fg = colors.orange,     bg = 'NONE'           })
   highlight(0, 'luaBraces',          { fg = colors.white,      bg = 'NONE'           })
+  highlight(0, 'luaFuncArgComma',    { fg = colors.white,      bg = 'NONE'           })  -- Commas between function parameters.
+  highlight(0, 'luaRepeat',          { fg = colors.blue,       bg = 'NONE'           })  -- Loop keywords.
+  highlight(0, 'luaIn',              { fg = colors.blue,       bg = 'NONE'           })  -- 'in' keyword.
 
   ----------------------- Not used by now:
   highlight(0, 'luaBuiltIn',         { fg = colors.white,      bg = colors.blue      })
   highlight(0, 'luaParen',           { fg = colors.white,      bg = colors.purple    })
   highlight(0, 'luaBracket',         { fg = colors.white,      bg = colors.white     })
-  highlight(0, 'luaSpecialTable',    { fg = colors.white,      bg = colors.turquoise })
   highlight(0, 'luaEllipsis',        { fg = colors.white,      bg = colors.green     })
   highlight(0, 'luaError',           { fg = colors.blue,       bg = 'NONE'           })
   highlight(0, 'luaIfThen',          { fg = colors.white,      bg = 'NONE'           })
@@ -63,16 +66,17 @@ lua.setupHighlighting = function()
   highlight(0, 'luaFuncArgs',        { fg = colors.pink,       bg = 'NONE'           })
   highlight(0, 'luaFuncTable',       { fg = colors.white,      bg = 'NONE'           })
   highlight(0, 'luaFuncArgName',     { fg = colors.blue,       bg = 'NONE'           })
-  highlight(0, 'luaFuncArgComma',    { fg = colors.white,      bg = colors.purple    })
   highlight(0, 'luaThenEnd',         { fg = colors.white,      bg = colors.blue      })
+
+  highlight(0, 'luaIf',              { fg = colors.blue,       bg = 'NONE'           })
+
   highlight(0, 'luaElseifThen',      { fg = colors.white,      bg = colors.turquoise })
   highlight(0, 'luaElse',            { fg = colors.white,      bg = 'NONE'           })
-  highlight(0, 'luaRepeat',          { fg = colors.white,      bg = 'NONE'           })
   highlight(0, 'luaLoopBlock',       { fg = colors.white,      bg = colors.purple    })
-  highlight(0, 'luaIn',              { fg = colors.white,      bg = 'NONE'           })
   highlight(0, 'luaGotoLabel',       { fg = colors.white,      bg = colors.blue      })
   highlight(0, 'luaStringSpecial',   { fg = colors.purple,     bg = 'NONE'           })
 end
 
 return lua
+
 
