@@ -27,16 +27,16 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsCommentTodo',                   { fg = colors.red,       bg = 'NONE' })  -- 'Todo' text.
   highlight(0, 'jsOperator',                      { fg = colors.white,     bg = 'NONE' })  -- Operators like =.
   highlight(0, 'jsFuncBraces',                    { fg = colors.white,     bg = 'NONE' })  -- Curly braces {}.
-  highlight(0, 'jsFuncCall',                      { fg = colors.orange,    bg = 'NONE' })  -- Funtions that are called.
+  highlight(0, 'jsFuncCall',                      { fg = colors.orange,    bg = 'NONE' })  -- Functions that are called.
   highlight(0, 'jsString',                        { fg = colors.redLight,  bg = 'NONE' })  -- Regular strings.
   highlight(0, 'jsGlobalObjects',                 { fg = colors.purple,    bg = 'NONE' })  -- Objects.
   highlight(0, 'jsParens',                        { fg = colors.white,     bg = 'NONE' })  -- Parentheses ().
-  highlight(0, 'jsNoise',                         { fg = colors.white,     bg = 'NONE' })  -- Semikolon ;.
-  highlight(0, 'jsParen',                         { fg = 'NONE',           bg = 'NONE' })  -- Whitespace.
+  highlight(0, 'jsNoise',                         { fg = colors.white,     bg = 'NONE' })  -- Semicolon ;.
+  highlight(0, 'jsParen',                         { fg = 'NONE',           bg = 'NONE' })  -- White space.
   highlight(0, 'jsFuncParens',                    { fg = colors.white,     bg = 'NONE' })  -- Parentheses () of functions.
   highlight(0, 'jsReturn',                        { fg = colors.blue,      bg = 'NONE' })  -- 'return' keyword.
   highlight(0, 'jsFuncBlock',                     { fg = 'NONE',           bg = 'NONE' })  -- Whole function body area.
-  highlight(0, 'jsFuncArgCommas',                 { fg = colors.white,     bg = 'NONE' })  -- Commata in functions parameter list.
+  highlight(0, 'jsFuncArgCommas',                 { fg = colors.white,     bg = 'NONE' })  -- Comas in functions parameter list.
   highlight(0, 'jsClassFuncName',                 { fg = colors.orange,    bg = 'NONE' })  -- Names of methods.
   highlight(0, 'jsClassBlock',                    { fg = 'NONE',           bg = 'NONE' })  -- Whole area of method body.
   highlight(0, 'jsObjectProp',                    { fg = colors.purple,    bg = 'NONE' })  -- Variable in methods.
@@ -47,11 +47,12 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsIfElseBraces',                  { fg = colors.white,     bg = 'NONE' })  -- Curly braces {} of conditional statement.
   highlight(0, 'jsParensIfElse',                  { fg = colors.white,     bg = 'NONE' })  -- Parentheses of conditional statements.
   highlight(0, 'jsParenIfElse',                   { fg = 'NONE',           bg = 'NONE' })  -- Content of conditional statement.
-  highlight(0, 'jsClassValue',                    { fg = 'NONE',           bg = 'NONE' })  -- Whitespaces inside of classes.
+  highlight(0, 'jsClassValue',                    { fg = 'NONE',           bg = 'NONE' })  -- White spaces inside of classes.
   highlight(0, 'jsTemplateString',                { fg = colors.redLight,  bg = 'NONE' })  -- Template string back ticks.
   highlight(0, 'jsTemplateBraces',                { fg = colors.redLight,  bg = 'NONE' })  -- Curly braces {} in template strings.
   highlight(0, 'jsTemplateExpression',            { fg = colors.redLight,  bg = 'NONE' })  -- Content of template strings.
   highlight(0, 'jsGlobalNodeObjects',             { fg = colors.orange,    bg = 'NONE' })  -- Global function names.
+  highlight(0, 'jsBrackets',                      { fg = colors.white,     bg = 'NONE' })  -- Brackets [].
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -90,7 +91,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsObjectValue',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKey',                     { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKeyString',               { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsBrackets',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKeyComputed',             { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectColon',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectFuncName',                { fg = colors.purple, bg = colors.blue })
@@ -215,3 +215,4 @@ javaScript.setupHighlighting = function()
 end
 
 return javaScript
+
