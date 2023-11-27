@@ -17,8 +17,10 @@ theme.buildTheme = function()
   require('mannydark.highlighting.languages.lua'             ).setupHighlighting()
   require('mannydark.highlighting.languages.markdown'        ).setupHighlighting()
   require('mannydark.highlighting.languages.php'             ).setupHighlighting()
+  -- require('mannydark.highlighting.languages.shell'           ).setupHighlighting() -- Here is a bug (inside the file?!), but where?
   require('mannydark.highlighting.languages.xml'             ).setupHighlighting()
   require('mannydark.highlighting.languages.yml'             ).setupHighlighting()
+  require('mannydark.highlighting.languages.zsh'             ).setupHighlighting()
   -- Plugins:
   require('mannydark.highlighting.plugins.copilot'           ).setupHighlighting()
   require('mannydark.highlighting.plugins.diffview'          ).setupHighlighting()
@@ -41,3 +43,4 @@ theme.buildTheme = function()
 end
 
 return theme
+
