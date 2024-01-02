@@ -1,4 +1,4 @@
-------------------------------------------------------------------------------
+----------------------------------------------------------------------------
 -- Language Defaults
 -- If there is now specific highlighting for languages, these are the defaults.
 ------------------------------------------------------------------------------
@@ -23,6 +23,7 @@ languageDefaults.setupHighlighting = function()
   highlight(0, 'Keyword',     { fg = colors.blue,       bg = 'NONE' })  -- Keywords of programming languages.
   highlight(0, 'Character',   { fg = colors.white,      bg = 'NONE' })  -- Regular characters in a code file.
   highlight(0, 'Conditional', { fg = colors.blue,       bg = 'NONE' })  -- Conditional statements like 'if', 'else', etc.
+  highlight(0, 'PreProc',     { fg = colors.redLight,   bg = 'NONE' })  -- Like ${} in shell scripts.
 
   ----------------------- Not used by now:
   highlight(0, 'Type',           { fg = colors.turquoise, bg = 'NONE'                   })
@@ -33,7 +34,6 @@ languageDefaults.setupHighlighting = function()
   highlight(0, 'MatchParen',     { fg = colors.white,     bg = colors.gray              })
   highlight(0, 'Normal',         { fg = colors.white,     bg = colors.black             })
   highlight(0, 'Operator',       { fg = colors.white,     bg = 'NONE'                   })
-  highlight(0, 'PreProc',        { fg = colors.blue,      bg = 'NONE'                   })
   highlight(0, 'Special',        { fg = colors.white,     bg = 'NONE'                   })
   highlight(0, 'Todo',           { fg = colors.red,       bg = 'NONE', bold = true      })
   highlight(0, 'Title',          { fg = colors.white,     bg = 'NONE'                   })
