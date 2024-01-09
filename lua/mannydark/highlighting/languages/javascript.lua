@@ -53,6 +53,11 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsTemplateExpression',            { fg = colors.redLight,  bg = 'NONE' })  -- Content of template strings.
   highlight(0, 'jsGlobalNodeObjects',             { fg = colors.orange,    bg = 'NONE' })  -- Global function names.
   highlight(0, 'jsBrackets',                      { fg = colors.white,     bg = 'NONE' })  -- Brackets [].
+  highlight(0, 'jsObjectBraces',                  { fg = colors.white,     bg = 'NONE' })  -- Curly braces {} of objects.
+  highlight(0, 'jsObjectKey',                     { fg = colors.purple,    bg = 'NONE' })  -- Object key words.
+  highlight(0, 'jsObjectColon',                   { fg = colors.white,     bg = 'NONE' })  -- Colon of object key words.
+  highlight(0, 'jsObjectSeparator',               { fg = colors.white,     bg = 'NONE' })  -- Comas of object values.
+  highlight(0, 'jsBracket',                       { fg = 'NONE',           bg = 'NONE' })  -- Content of brackets [].
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -85,14 +90,11 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsRegexpMod',                     { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpGroup',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpString',                  { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsObjectSeparator',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFunctionKey',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectValue',                   { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsObjectKey',                     { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKeyString',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKeyComputed',             { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsObjectColon',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectFuncName',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectMethodType',              { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectStringKey',               { fg = colors.purple, bg = colors.blue })
@@ -132,7 +134,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsDomNodeConsts',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsHtmlEvents',                    { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsSpreadExpression',              { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsBracket',                       { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsParensDecorator',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsParenDecorator',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsParensWhile',                   { fg = colors.purple, bg = colors.blue })
@@ -161,7 +162,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsDestructuringNoise',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDestructuringPropertyComputed', { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDestructuringPropertyValue',    { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsObjectBraces',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsBraces',                        { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleBraces',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsSpreadOperator',                { fg = colors.purple, bg = colors.blue })
