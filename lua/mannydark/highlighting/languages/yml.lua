@@ -22,6 +22,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFlowIndicator',            { fg = colors.white,      bg = 'NONE' })  -- Brackets [] of flow strings.
   highlight(0, 'yamlFlowStringDelimiter',      { fg = colors.redLight,   bg = 'NONE' })  -- Quotes of flow strings.
   highlight(0, 'yamlFlowCollection',           { fg = colors.white,      bg = 'NONE' })  -- Commas of flow collections.
+  highlight(0, 'yamlDocumentStart',            { fg = colors.blue,       bg = 'NONE' })  -- Three dashes at the beginning of a document.
 
   ----------------------- Not used by now:
   highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
@@ -47,7 +48,6 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlNodeTag',                  { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlAnchor',                   { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlAlias',                    { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlDocumentStart',            { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlDocumentEnd',              { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlDirectiveName',            { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlString',                   { fg = colors.pink, bg = colors.greenLight })
