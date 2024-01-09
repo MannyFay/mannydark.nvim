@@ -58,6 +58,10 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsObjectColon',                   { fg = colors.white,     bg = 'NONE' })  -- Colon of object key words.
   highlight(0, 'jsObjectSeparator',               { fg = colors.white,     bg = 'NONE' })  -- Comas of object values.
   highlight(0, 'jsBracket',                       { fg = 'NONE',           bg = 'NONE' })  -- Content of brackets [].
+  highlight(0, 'jsObjectValue',                   { fg = 'NONE',           bg = 'NONE' })  -- Content of objects.
+  highlight(0, 'jsRegexpString',                  { fg = colors.redLight,  bg = 'NONE' })  -- Regular expression strings.
+  highlight(0, 'jsRegexpGroup',                   { fg = colors.redLight,  bg = 'NONE' })  -- Content of regular expression strings.
+  highlight(0, 'jsSpecial',                       { fg = colors.white,     bg = 'NONE' })  -- Special characters.
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -80,7 +84,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsModuleComma',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsExportDefaultGroup',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowTypeKeyword',               { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsSpecial',                       { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFloat',                         { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpCharClass',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpBoundary',                { fg = colors.purple, bg = colors.blue })
@@ -88,11 +91,8 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsRegexpQuantifier',              { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpOr',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpMod',                     { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsRegexpGroup',                   { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsRegexpString',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFunctionKey',                   { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsObjectValue',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKeyString',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKeyComputed',             { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectFuncName',                { fg = colors.purple, bg = colors.blue })
