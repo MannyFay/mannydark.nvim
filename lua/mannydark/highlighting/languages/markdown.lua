@@ -49,10 +49,10 @@ markdown.setupHighlighting = function()
   highlight(0, 'mkdListItemLine',            { fg = colors.white,    bg = 'NONE'                      })  -- List item text.
   highlight(0, 'mkdBlockquote',              { fg = colors.orange,   bg = 'NONE'                      })  -- Whole block quotes.
   highlight(0, 'mkdInlineURL',               { fg = colors.blueLink, bg = 'NONE'                      })  -- Link in regular text.
+  highlight(0, 'mkdBold',                    { fg = colors.blue,     bg = 'NONE'                      })  -- Bold delimiter.
 
   ----------------------- Not used by now:
   highlight(0, 'mkdItalic',                  { fg = colors.green, bg = colors.orange                  })
-  highlight(0, 'mkdBold',                    { fg = colors.green, bg = colors.pink                    })
   highlight(0, 'mkdBoldItalic',              { fg = colors.green, bg = colors.blue                    })
   highlight(0, 'mkdDelimiter',               { fg = colors.green, bg = colors.blueLight               })
   highlight(0, 'mkdFootnotes',               { fg = colors.green, bg = colors.purple                  })
