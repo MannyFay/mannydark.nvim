@@ -62,6 +62,8 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsRegexpString',                  { fg = colors.redLight,  bg = 'NONE' })  -- Regular expression strings.
   highlight(0, 'jsRegexpGroup',                   { fg = colors.redLight,  bg = 'NONE' })  -- Content of regular expression strings.
   highlight(0, 'jsSpecial',                       { fg = colors.white,     bg = 'NONE' })  -- Special characters.
+  highlight(0, 'jsRegexpBoundary',                { fg = colors.redLight,  bg = 'NONE' })  -- Boundary of regular expression strings.
+  highlight(0, 'jsRegexpOr',                      { fg = colors.white,     bg = 'NONE' })  -- Or of regular expression strings.
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -86,10 +88,8 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsFlowTypeKeyword',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFloat',                         { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpCharClass',               { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsRegexpBoundary',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpBackRef',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpQuantifier',              { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsRegexpOr',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpMod',                     { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFunctionKey',                   { fg = colors.purple, bg = colors.blue })
