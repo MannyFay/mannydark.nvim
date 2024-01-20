@@ -23,6 +23,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFlowStringDelimiter',      { fg = colors.redLight,   bg = 'NONE' })  -- Quotes of flow strings.
   highlight(0, 'yamlFlowCollection',           { fg = colors.white,      bg = 'NONE' })  -- Commas of flow collections.
   highlight(0, 'yamlDocumentStart',            { fg = colors.blue,       bg = 'NONE' })  -- Three dashes at the beginning of a document.
+  highlight(0, 'yamlBool',                     { fg = colors.blue,       bg = 'NONE' })  -- Boolean values.
 
   ----------------------- Not used by now:
   highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
@@ -36,7 +37,6 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlEscape',                   { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlSingleEscape',             { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockScalarHeader',        { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlBool',                     { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlNull',                     { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowMapping',              { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowMappingKey',           { fg = colors.pink, bg = colors.greenLight })
