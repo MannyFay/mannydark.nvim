@@ -24,9 +24,9 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindFolder',        { fg = colors.blue,      bg = 'NONE'                            })  -- Folder kind marker text.
   highlight(0, 'CmpItemKindFile',          { fg = colors.white,     bg = 'NONE'                            })  -- File kind marker text.
   highlight(0, 'CmpItemKindField',         { fg = colors.purple,    bg = 'NONE'                            })  -- Field (object?) kind marker text.
+  highlight(0, 'CmpItemKindMethod',        { fg = colors.orange,    bg = 'NONE'                            })  -- Method kind marker text.
 
   ----------------------- Not used by now:
-  highlight(0, 'CmpItemKindMethod',        { fg = colors.green, bg = colors.redLight                       })
   highlight(0, 'CmpItemKindConstructor',   { fg = colors.green, bg = colors.blue                           })
   highlight(0, 'CmpItemKindEnum',          { fg = colors.green, bg = colors.ping                           })
   highlight(0, 'CmpItemKindEvent',         { fg = colors.green, bg = colors.turquoise                      })
