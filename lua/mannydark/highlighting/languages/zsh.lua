@@ -19,13 +19,13 @@ zsh.setupHighlighting = function()
   highlight(0, 'zshStringDelimiter', { fg = colors.redLight, bg = 'NONE'            })  -- Quotes of strings.
   highlight(0, 'zshSubstQuoted',     { fg = colors.purple,   bg = 'NONE'            })  -- Name of constants in strings.
   highlight(0, 'zshSubstDelim',      { fg = colors.redLight, bg = 'NONE'            })  -- Delimiters like ${} in strings.
+  highlight(0, 'zshKSHFunction',     { fg = colors.orange,   bg = 'NONE'            })  -- Function names.
+  highlight(0, 'zshSubst',           { fg = colors.purple,   bg = 'NONE'            })  -- Name of constants in strings.
 
   ----------------------- Not used by now:
-  highlight(0, 'zshKSHFunction',     { fg = colors.pink,     bg = colors.greenLight })
   highlight(0, 'zshBraces',          { fg = colors.pink,     bg = colors.white      })
   highlight(0, 'zshBrackets',        { fg = colors.pink,     bg = colors.gray       })
   highlight(0, 'zshFunction',        { fg = colors.pink,     bg = colors.purple     })
-  highlight(0, 'zshSubst',           { fg = colors.pink,     bg = colors.redLight   })
 end
 
 return zsh
