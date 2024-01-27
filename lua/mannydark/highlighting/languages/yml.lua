@@ -24,6 +24,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFlowCollection',           { fg = colors.white,      bg = 'NONE' })  -- Commas of flow collections.
   highlight(0, 'yamlDocumentStart',            { fg = colors.blue,       bg = 'NONE' })  -- Three dashes at the beginning of a document.
   highlight(0, 'yamlBool',                     { fg = colors.blue,       bg = 'NONE' })  -- Boolean values.
+  highlight(0, 'yamlFloat',                    { fg = colors.greenLight, bg = 'NONE' })  -- Float numbers.
 
   ----------------------- Not used by now:
   highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
@@ -41,7 +42,6 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFlowMapping',              { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowMappingKey',           { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlFlowMappingMerge',         { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlFloat',                    { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlTimestamp',                { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlMappingKeyStart',          { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockMappingMerge',        { fg = colors.pink, bg = colors.greenLight })
