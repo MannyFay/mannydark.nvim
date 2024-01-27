@@ -25,6 +25,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlDocumentStart',            { fg = colors.blue,       bg = 'NONE' })  -- Three dashes at the beginning of a document.
   highlight(0, 'yamlBool',                     { fg = colors.blue,       bg = 'NONE' })  -- Boolean values.
   highlight(0, 'yamlFloat',                    { fg = colors.greenLight, bg = 'NONE' })  -- Float numbers.
+  highlight(0, 'yamlEscape',                   { fg = colors.white,      bg = 'NONE' })  -- Escape characters.
 
   ----------------------- Not used by now:
   highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
@@ -35,7 +36,6 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlTagHandle',                { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlTagPrefix',                { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlYAMLVersion',              { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlEscape',                   { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlSingleEscape',             { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockScalarHeader',        { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlNull',                     { fg = colors.pink, bg = colors.greenLight })
