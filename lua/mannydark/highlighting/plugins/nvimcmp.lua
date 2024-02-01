@@ -12,7 +12,7 @@ local nvimCmp   = {}
 
 nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemAbbrMatch',         { fg = colors.blue,      bg = 'NONE'                            })  -- Matched text in autocomplete menu.
-  highlight(0, 'CmpItemAbbrDeprecated',    { fg = colors.gray,      bg = 'NONE',      strikethrough = true })
+  highlight(0, 'CmpItemAbbrDeprecated',    { fg = colors.gray,      bg = 'NONE',      strikethrough = true })  -- Deprecated text in autocomplete menu.
   highlight(0, 'CmpItemAbbrMatchFuzzy',    { fg = colors.blue,      bg = 'NONE'                            })  -- Fuzzy matched text in autocomplete menu.
   highlight(0, 'CmpItemKindSnippet',       { fg = colors.green,     bg = 'NONE'                            })  -- Snippet kind marker text.
   highlight(0, 'CmpItemKindText',          { fg = colors.white,     bg = 'NONE'                            })  -- Text kind marker text.
@@ -26,6 +26,8 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindField',         { fg = colors.purple,    bg = 'NONE'                            })  -- Field (object?) kind marker text.
   highlight(0, 'CmpItemKindMethod',        { fg = colors.orange,    bg = 'NONE'                            })  -- Method kind marker text.
   highlight(0, 'CmpItemKindUnit',          { fg = colors.turquoise, bg = 'NONE'                            })  -- Unit kind marker text.
+  highlight(0, 'CmpItemKindConstant',      { fg = colors.purple,    bg = 'NONE'                            })  -- Constant kind marker text.
+  highlight(0, 'CmpItemKindModule',        { fg = colors.turquoise, bg = 'NONE'                            })  -- Module kind marker text.
 
   ----------------------- Not used by now:
   highlight(0, 'CmpItemKindConstructor',   { fg = colors.green, bg = colors.blue                           })
@@ -34,8 +36,6 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindInterface',     { fg = colors.green, bg = colors.greenLight                     })
   highlight(0, 'CmpItemKindStruct',        { fg = colors.green, bg = colors.gray                           })
   highlight(0, 'CmpItemKindEnumMember',    { fg = colors.pink, bg = colors.green                           })
-  highlight(0, 'CmpItemKindConstant',      { fg = colors.pink, bg = colors.greenLight                      })
-  highlight(0, 'CmpItemKindModule',        { fg = colors.pink, bg = colors.redLight                        })
   highlight(0, 'CmpItemKindValue',         { fg = colors.pink, bg = colors.turquoise                       })
   highlight(0, 'CmpItemKindColor',         { fg = colors.blue, bg = colors.greenLight                      })
   highlight(0, 'CmpItemKindReference',     { fg = colors.blue, bg = colors.purple                          })
