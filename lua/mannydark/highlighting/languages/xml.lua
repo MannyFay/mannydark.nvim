@@ -23,9 +23,9 @@ xml.setupHighlighting = function()
   highlight(0, 'xmlCommentStart',    { fg = colors.red,       bg = 'NONE' })  -- '<!' of comments.
   highlight(0, 'xmlComment',         { fg = colors.red,       bg = 'NONE' })  -- '>' of comments.
   highlight(0, 'xmlCommentPart',     { fg = colors.red,       bg = 'NONE' })  -- Comment text.
+  highlight(0, 'xmlError',           { fg = colors.red,       bg = 'NONE' })  -- Error characters.
 
   ----------------------- Not used by now:
-  highlight(0, 'xmlError',           { fg = colors.red, bg = colors.green })
   highlight(0, 'xmlEntity',          { fg = colors.red, bg = colors.blue })
   highlight(0, 'xmlNamespace',       { fg = colors.red, bg = colors.pink })
   highlight(0, 'xmlCdata',           { fg = colors.red, bg = colors.redLight })
