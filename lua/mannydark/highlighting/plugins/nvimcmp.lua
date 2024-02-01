@@ -25,6 +25,7 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindFile',          { fg = colors.white,     bg = 'NONE'                            })  -- File kind marker text.
   highlight(0, 'CmpItemKindField',         { fg = colors.purple,    bg = 'NONE'                            })  -- Field (object?) kind marker text.
   highlight(0, 'CmpItemKindMethod',        { fg = colors.orange,    bg = 'NONE'                            })  -- Method kind marker text.
+  highlight(0, 'CmpItemKindUnit',          { fg = colors.turquoise, bg = 'NONE'                            })  -- Unit kind marker text.
 
   ----------------------- Not used by now:
   highlight(0, 'CmpItemKindConstructor',   { fg = colors.green, bg = colors.blue                           })
@@ -36,7 +37,6 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindConstant',      { fg = colors.pink, bg = colors.greenLight                      })
   highlight(0, 'CmpItemKindModule',        { fg = colors.pink, bg = colors.redLight                        })
   highlight(0, 'CmpItemKindValue',         { fg = colors.pink, bg = colors.turquoise                       })
-  highlight(0, 'CmpItemKindUnit',          { fg = colors.pink, bg = colors.purple                          })
   highlight(0, 'CmpItemKindColor',         { fg = colors.blue, bg = colors.greenLight                      })
   highlight(0, 'CmpItemKindReference',     { fg = colors.blue, bg = colors.purple                          })
   highlight(0, 'CmpItemKindOperator',      { fg = colors.green, bg = colors.pink                           })
