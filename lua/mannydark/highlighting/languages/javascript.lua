@@ -64,6 +64,8 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsSpecial',                       { fg = colors.white,     bg = 'NONE' })  -- Special characters.
   highlight(0, 'jsRegexpBoundary',                { fg = colors.redLight,  bg = 'NONE' })  -- Boundary of regular expression strings.
   highlight(0, 'jsRegexpOr',                      { fg = colors.white,     bg = 'NONE' })  -- Or of regular expression strings.
+  highlight(0, 'jsModuleKeyword',                 { fg = colors.turquoise, bg = 'NONE' })  -- Module name.
+  highlight(0, 'javaScript',                      { fg = colors.white,     bg = 'NONE' })  -- JS in HTML.
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -76,7 +78,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsBooleanTrue',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsBooleanFalse',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleAsterisk',                { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsModuleKeyword',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleGroup',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowImportType',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsExportDefault',                 { fg = colors.purple, bg = colors.blue })
@@ -199,7 +200,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsHtmlElemAttrs',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsHtmlElemFuncs',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsCssStyles',                     { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'javaScript',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javascriptHtmlEvents',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javascriptDomElemAttrs',          { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javascriptDomElemFuncs',          { fg = colors.purple, bg = colors.blue })
