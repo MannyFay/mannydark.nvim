@@ -29,9 +29,9 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindConstant',      { fg = colors.purple,    bg = 'NONE'                            })  -- Constant kind marker text.
   highlight(0, 'CmpItemKindModule',        { fg = colors.turquoise, bg = 'NONE'                            })  -- Module kind marker text.
   highlight(0, 'CmpItemKindValue',         { fg = colors.white,     bg = 'NONE'                            })  -- Value kind marker text.
+  highlight(0, 'CmpItemKindConstructor',   { fg = colors.orange,    bg = 'NONE'                            })  -- Constructor kind marker text.
 
   ----------------------- Not used by now:
-  highlight(0, 'CmpItemKindConstructor',   { fg = colors.green, bg = colors.blue                           })
   highlight(0, 'CmpItemKindEnum',          { fg = colors.green, bg = colors.ping                           })
   highlight(0, 'CmpItemKindEvent',         { fg = colors.green, bg = colors.turquoise                      })
   highlight(0, 'CmpItemKindInterface',     { fg = colors.green, bg = colors.greenLight                     })
