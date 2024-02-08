@@ -66,6 +66,11 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsRegexpOr',                      { fg = colors.white,     bg = 'NONE' })  -- Or of regular expression strings.
   highlight(0, 'jsModuleKeyword',                 { fg = colors.turquoise, bg = 'NONE' })  -- Module name.
   highlight(0, 'javaScript',                      { fg = colors.white,     bg = 'NONE' })  -- JS in HTML.
+  highlight(0, 'jsBooleanTrue',                   { fg = colors.blue,      bg = 'NONE' })
+  highlight(0, 'jsBooleanFalse',                  { fg = colors.blue,      bg = 'NONE' })
+  highlight(0, 'jsExportDefault',                 { fg = colors.blue,      bg = 'NONE' })  -- 'export default' keyword.
+  highlight(0, 'jsFrom',                          { fg = colors.blue,      bg = 'NONE' })  -- 'from' keyword.
+  highlight(0, 'jsModuleBraces',                  { fg = colors.white,     bg = 'NONE' })  -- Curly braces {} of modules.
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -75,15 +80,11 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsDestructuringArray',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowDefinition',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsOf',                            { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsBooleanTrue',                   { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsBooleanFalse',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleAsterisk',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleGroup',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowImportType',                { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsExportDefault',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowTypeStatement',             { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleAs',                      { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsFrom',                          { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleComma',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsExportDefaultGroup',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowTypeKeyword',               { fg = colors.purple, bg = colors.blue })
@@ -164,7 +165,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsDestructuringPropertyComputed', { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDestructuringPropertyValue',    { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsBraces',                        { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsModuleBraces',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsSpreadOperator',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRestOperator',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsTernaryIfOperator',             { fg = colors.purple, bg = colors.blue })
