@@ -76,6 +76,7 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsDocTypeNoParam',                { fg = colors.green,     bg = 'NONE' })  -- Type of documentation.
   highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple,    bg = 'NONE' })  -- Shorthand properties.
   highlight(0, 'jsObjectKeyString',               { fg = colors.redLight,  bg = 'NONE' })  -- Object key strings.
+  highlight(0, 'jsObjectStringKey',               { fg = colors.redLight,  bg = 'NONE' })  -- Object strings keys.
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
