@@ -72,6 +72,10 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsFrom',                          { fg = colors.blue,      bg = 'NONE' })  -- 'from' keyword.
   highlight(0, 'jsModuleBraces',                  { fg = colors.white,     bg = 'NONE' })  -- Curly braces {} of modules.
   highlight(0, 'jsModuleGroup',                   { fg = 'NONE',           bg = 'NONE' })  -- Whole area of modules.
+  highlight(0, 'jsDocTags',                       { fg = colors.green,     bg = 'NONE' })  -- Tags of documentation.
+  highlight(0, 'jsDocTypeNoParam',                { fg = colors.green,     bg = 'NONE' })  -- Type of documentation.
+  highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple,    bg = 'NONE' })  -- Shorthand properties.
+  highlight(0, 'jsObjectKeyString',               { fg = colors.redLight,  bg = 'NONE' })  -- Object key strings.
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -93,9 +97,7 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsRegexpBackRef',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpQuantifier',              { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpMod',                     { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFunctionKey',                   { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsObjectKeyString',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectKeyComputed',             { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectFuncName',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsObjectMethodType',              { fg = colors.purple, bg = colors.blue })
@@ -182,11 +184,9 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsDestructuringValueAssignment',  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsEnvComment',                    { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDecoratorFunction',             { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsDocTags',                       { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsCvsTag',                        { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDocParam',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDocType',                       { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsDocTypeNoParam',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDocSeeTag',                     { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDocTypeBrackets',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDocTypeRecord',                 { fg = colors.purple, bg = colors.blue })
