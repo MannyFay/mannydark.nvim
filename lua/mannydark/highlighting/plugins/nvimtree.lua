@@ -14,7 +14,7 @@ nvimTree.setupHighlighting = function()
   highlight(0, 'NvimTreeRootFolder',                { fg = colors.blue,     bg = 'NONE'           })
   highlight(0, 'Directory',                         { fg = colors.blue,     bg = 'NONE'           })
   highlight(0, 'NvimTreeFolderIcon',                { fg = colors.blue,     bg = 'NONE'           })
-  highlight(0, 'NvimTreeIndentMarker',              { fg = colors.grayDark, bg = 'NONE'           })  -- Vertical indent lines.
+  highlight(0, 'NvimTreeIndentMarker',              { fg = colors.gray, bg = 'NONE'               })  -- Vertical indent lines.
   highlight(0, 'NvimTreeWinSeparator',              { fg = colors.grayDark, bg = colors.grayDark  })
   highlight(0, 'NvimTreeNormal',                    { fg = colors.white,    bg = 'NONE'           })
   highlight(0, 'NvimTreeFolderName',                { fg = colors.blue,     bg = 'NONE'           })
