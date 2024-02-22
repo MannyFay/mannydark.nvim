@@ -14,14 +14,14 @@ nvimTree.setupHighlighting = function()
   highlight(0, 'NvimTreeRootFolder',                { fg = colors.blue,     bg = 'NONE'           })
   highlight(0, 'Directory',                         { fg = colors.blue,     bg = 'NONE'           })
   highlight(0, 'NvimTreeFolderIcon',                { fg = colors.blue,     bg = 'NONE'           })
-  highlight(0, 'NvimTreeIndentMarker',              { fg = colors.gray,     bg = 'NONE'           })
+  highlight(0, 'NvimTreeIndentMarker',              { fg = colors.grayDark, bg = 'NONE'           })  -- Vertical indent lines.
   highlight(0, 'NvimTreeWinSeparator',              { fg = colors.grayDark, bg = colors.grayDark  })
   highlight(0, 'NvimTreeNormal',                    { fg = colors.white,    bg = 'NONE'           })
   highlight(0, 'NvimTreeFolderName',                { fg = colors.blue,     bg = 'NONE'           })
   highlight(0, 'NvimTreeOpenedFolderName',          { fg = colors.blue,     bg = 'NONE'           })
   highlight(0, 'NvimTreeEmptyFolderName',           { fg = colors.blue,     bg = 'NONE'           })
   highlight(0, 'NvimTreeEndOfBuffer',               { fg = colors.black,    bg = 'NONE'           })
-  highlight(0, 'NvimTreeCursorLine',                { fg = 'NONE',          bg = colors.grayDark  })
+  highlight(0, 'NvimTreeCursorLine',                { fg = 'NONE',          bg = colors.grayDark  })  -- Current line.
   highlight(0, 'NvimTreeImageFile',                 { fg = colors.white,    bg = 'NONE'           })
   highlight(0, 'NvimTreeGitIgnored',                { fg = colors.gray,     bg = 'NONE'           })
   highlight(0, 'NvimTreeGitDeleted',                { fg = colors.gray,     bg = 'NONE'           })
@@ -52,13 +52,13 @@ nvimTree.setupHighlighting = function()
   highlight(0, 'NvimTreeSymlinkIcon',               { fg = colors.orange,   bg = 'NONE'           })  -- Icons of symlinks before filename.
   highlight(0, 'NvimTreeSymlink',                   { fg = colors.white,    bg = 'NONE'           })  -- Name and destination of symlinks.
   highlight(0, 'NvimTreeSymlinkFolderName',         { fg = colors.blue,     bg = 'NONE'           })  -- Name and destination of symlink directories.
+  highlight(0, 'NvimTreeLineNr',                    { fg = colors.gray,     bg = 'NONE'           })  -- Line numbers.
+  highlight(0, 'NvimTreeCursorLineNr',              { fg = colors.white,    bg = 'NONE'           })  -- Line number of the current line.
 
   ----------------------- Not used by now:
   highlight(0, 'NvimTreeVertSplit',                 { fg = colors.red,      bg = colors.green     })
   highlight(0, 'NvimTreeWindowPicker',              { fg = colors.green,    bg = colors.orange    })
   highlight(0, 'NvimTreeNormalFloat',               { fg = colors.turquoise,bg = colors.orange    })
-  highlight(0, 'NvimTreeCursorLineNr',              { fg = colors.red,      bg = colors.blue      })
-  highlight(0, 'NvimTreeLineNr',                    { fg = colors.pink,     bg = colors.blue      })
   highlight(0, 'NvimTreeCursorColumn',              { fg = colors.orange,   bg = colors.blue      })
   highlight(0, 'NvimTreeLiveFilterPrefix',          { fg = colors.green,    bg = colors.blue      })
   highlight(0, 'NvimTreeLiveFilterValue',           { fg = colors.turquoise,bg = colors.blue      })
