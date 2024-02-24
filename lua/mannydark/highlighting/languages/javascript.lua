@@ -1,7 +1,7 @@
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- JavaScript Files
 -- Highlighting for .js files.
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 local colors     = require('mannydark.palette')
 local highlight  = vim.api.nvim_set_hl
@@ -77,11 +77,17 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple,    bg = 'NONE' })  -- Shorthand properties.
   highlight(0, 'jsObjectKeyString',               { fg = colors.redLight,  bg = 'NONE' })  -- Object key strings.
   highlight(0, 'jsObjectStringKey',               { fg = colors.redLight,  bg = 'NONE' })  -- Object strings keys.
+  highlight(0, 'jsParensError',                   { fg = colors.red,       bg = 'NONE' })  -- Error in parentheses.
+  highlight(0, 'jsModuleComma',                   { fg = colors.white,     bg = 'NONE' })  -- Comas in modules.
+  highlight(0, 'jsDomErrNo',                      { fg = colors.red,       bg = 'NONE' })
+  highlight(0, 'jsError',                         { fg = colors.red,       bg = 'NONE' })
+  highlight(0, 'javascriptCommentTodo',           { fg = colors.red,       bg = 'NONE' })
+  highlight(0, 'javaScriptLineComment',           { fg = colors.red,       bg = 'NONE' })
+  highlight(0, 'javaScriptComment',               { fg = colors.red,       bg = 'NONE' })
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsTaggedTemplate',                { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsParensError',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDestructuringBlock',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDestructuringArray',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowDefinition',                { fg = colors.purple, bg = colors.blue })
@@ -90,7 +96,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsFlowImportType',                { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowTypeStatement',             { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsModuleAs',                      { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsModuleComma',                   { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsExportDefaultGroup',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowTypeKeyword',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFloat',                         { fg = colors.purple, bg = colors.blue })
@@ -134,7 +139,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsExceptions',                    { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsBuiltins',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFutureKeys',                    { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsDomErrNo',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDomNodeConsts',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsHtmlEvents',                    { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsSpreadExpression',              { fg = colors.purple, bg = colors.blue })
@@ -194,7 +198,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsCharacter',                     { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsBranch',                        { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRepeat',                        { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsError',                         { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDomElemAttrs',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsDomElemFuncs',                  { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsHtmlElemAttrs',                 { fg = colors.purple, bg = colors.blue })
@@ -203,10 +206,7 @@ javaScript.setupHighlighting = function()
   highlight(0, 'javascriptHtmlEvents',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javascriptDomElemAttrs',          { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javascriptDomElemFuncs',          { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'javascriptCommentTodo',           { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javaScriptBlock',                 { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'javaScriptLineComment',           { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'javaScriptComment',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javascriptSpreadOp',              { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsTemplateStringTag',             { fg = colors.purple, bg = colors.blue })
   highlight(0, 'javascriptTagRef',                { fg = colors.purple, bg = colors.blue })
