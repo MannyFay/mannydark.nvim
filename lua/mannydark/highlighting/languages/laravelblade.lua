@@ -12,7 +12,7 @@ local laravelBlade = {}
 -- Settings
 
 laravelBlade.setupHighlighting = function()
-  highlight(0, 'bladeDelimiter', { fg = colors.white,  bg = 'NONE' })
+  highlight(0, 'bladeDelimiter', { fg = colors.red,    bg = 'NONE' })
   highlight(0, 'bladeEcho',      { fg = colors.orange, bg = 'NONE' })
 end
 

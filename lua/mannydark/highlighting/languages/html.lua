@@ -1,6 +1,7 @@
-------------------------------------------------------------------------------
--- HTML
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-- HTML Files
+-- Highlighting for .html files.
+-------------------------------------------------------------------------------
 
 local colors    = require('mannydark.palette')
 local highlight = vim.api.nvim_set_hl
@@ -22,7 +23,7 @@ html.setupHighlighting = function()
   highlight(0, 'htmlLink',           { fg = colors.white,     bg = 'NONE', underline = true, })
   highlight(0, 'htmlSpecialChar',    { fg = colors.blue,      bg = 'NONE'                    })
   highlight(0, 'htmlSpecialTagName', { fg = colors.blue,      bg = 'NONE'                    })
-  highlight(0, 'htmlTag',            { fg = colors.blue,      bg = 'NONE'                    })
+  highlight(0, 'htmlTag',            { fg = colors.white,     bg = 'NONE'                    })
   highlight(0, 'htmlTagN',           { fg = colors.blue,      bg = 'NONE'                    })
   highlight(0, 'htmlTagName',        { fg = colors.blue,      bg = 'NONE'                    })
   highlight(0, 'htmlTitle',          { fg = colors.white,     bg = 'NONE'                    })
