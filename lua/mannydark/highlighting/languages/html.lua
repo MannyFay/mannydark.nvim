@@ -13,7 +13,7 @@ local html      = {}
 
 html.setupHighlighting = function()
   highlight(0, 'htmlArg',            { fg = colors.turquoise, bg = 'NONE'                    })
-  highlight(0, 'htmlEndTag',         { fg = colors.blue,      bg = 'NONE'                    })
+  highlight(0, 'htmlEndTag',         { fg = colors.white,     bg = 'NONE'                    })
   highlight(0, 'htmlH1',             { fg = colors.white,     bg = 'NONE'                    })
   highlight(0, 'htmlH2',             { fg = colors.white,     bg = 'NONE'                    })
   highlight(0, 'htmlH3',             { fg = colors.white,     bg = 'NONE'                    })

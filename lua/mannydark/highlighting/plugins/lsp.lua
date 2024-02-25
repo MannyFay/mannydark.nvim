@@ -1,6 +1,6 @@
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- LSP (Language Server Protocol) Neovim Plugin
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 local colors    = require('mannydark.palette')
 local highlight = vim.api.nvim_set_hl
@@ -12,26 +12,26 @@ local lsp       = {}
 
 lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,   bg = 'NONE'                                        })
-  highlight(0, 'DiagnosticError',                     { fg = colors.red,    bg = 'NONE', sp = colors.red,  undercurl = true    })  -- Code error indicator bar and text at end of line.
-  highlight(0, 'DiagnosticHint',                      { fg = colors.blue,   bg = 'NONE', sp = colors.blue, underline = true    })  -- Code hint indicator bar and text at end of line.
+  highlight(0, 'DiagnosticError',                     { fg = colors.red,    bg = 'NONE'                                        })  -- Code error indicator bar and text at end of line.
+  highlight(0, 'DiagnosticHint',                      { fg = colors.blue,   bg = 'NONE'                                        })  -- Code hint indicator bar and text at end of line.
   highlight(0, 'DiagnosticWarn',                      { fg = colors.orange, bg = 'NONE'                                        })
-  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.blue,   bg = 'NONE'                                        })  -- Horizontal hint indicator bar and text at end of line.
-  highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.blue,   bg = 'NONE'                                        })  -- Horizontal info indicator bar and text at end of line.
-  highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange, bg = 'NONE'                                        })  -- Horizontal warning indicator bar and text at end of line.
-  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE'                                        })  -- Horizontal error indicator bar and text at end of line.
+  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.blue,   bg = 'NONE', italic = true                         })  -- Horizontal hint indicator bar and text at end of line.
+  highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.blue,   bg = 'NONE', italic = true                         })  -- Horizontal info indicator bar and text at end of line.
+  highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange, bg = 'NONE', italic = true                         })  -- Horizontal warning indicator bar and text at end of line.
+  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE', italic = true                         })  -- Horizontal error indicator bar and text at end of line.
   highlight(0, 'LspDiagnosticsError',                 { fg = colors.red,    bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsWarning',               { fg = colors.orange, bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsInfo',                  { fg = colors.blue,   bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsHint',                  { fg = colors.blue,   bg = 'NONE'                                        })
   highlight(0, 'LspCodeLens',                         { fg = colors.purple, bg = 'NONE', italic = true,                        })
   highlight(0, 'LspCodeLensSeparator',                { fg = colors.purple, bg = 'NONE', italic = true,                        })
-  highlight(0, 'DiagnosticUnderlineHint',             { fg = 'NONE',        bg = 'NONE', sp = colors.blue,   undercurl = true, })
-  highlight(0, 'DiagnosticUnderlineInfo',             { fg = 'NONE',        bg = 'NONE', sp = colors.blue,   undercurl = true, })
+  highlight(0, 'DiagnosticUnderlineHint',             { fg = 'NONE',        bg = 'NONE', sp = colors.yellow, undercurl = true, })
+  highlight(0, 'DiagnosticUnderlineInfo',             { fg = 'NONE',        bg = 'NONE', sp = colors.blue,   underline = true, })
   highlight(0, 'DiagnosticUnderlineWarn',             { fg = 'NONE',        bg = 'NONE', sp = colors.orange, undercurl = true, })
   highlight(0, 'DiagnosticUnderlineError',            { fg = 'NONE',        bg = 'NONE', sp = colors.red,    undercurl = true, })
   highlight(0, 'DiagnosticSignWarn',                  { fg = colors.orange, bg = 'NONE'                                        })  -- Warning icon in sign column.
   highlight(0, 'DiagnosticSignError',                 { fg = colors.red,    bg = 'NONE'                                        })  -- Error icon in sign column.
-  highlight(0, 'DiagnosticSignHint',                  { fg = colors.blue,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
+  highlight(0, 'DiagnosticSignHint',                  { fg = colors.yellow, bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
   highlight(0, 'DiagnosticSignInfo',                  { fg = colors.blue,   bg = 'NONE'                                        })  -- Info icon in sign column.
 
   ----------------------- Not used by now:
