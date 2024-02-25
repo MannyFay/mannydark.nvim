@@ -17,7 +17,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.languages.lua'             ).setupHighlighting()
   require('mannydark.highlighting.languages.markdown'        ).setupHighlighting()
   require('mannydark.highlighting.languages.php'             ).setupHighlighting()
-  require('mannydark.highlighting.languages.shell'           ).setupHighlighting() -- Here is a bug (inside the file?!), but where?
+  require('mannydark.highlighting.languages.shell'           ).setupHighlighting()  -- Here is a bug (inside the file?!), but where?
   require('mannydark.highlighting.languages.xml'             ).setupHighlighting()
   require('mannydark.highlighting.languages.yml'             ).setupHighlighting()
   require('mannydark.highlighting.languages.zsh'             ).setupHighlighting()
@@ -30,7 +30,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.plugins.lualine'           ).setupHighlighting()
   require('mannydark.highlighting.plugins.navic'             ).setupHighlighting()
   require('mannydark.highlighting.plugins.neogit'            ).setupHighlighting()
-  --require('mannydark.highlighting.plugins.noice').setupHighlighting() -- Here is a bug (inside the file?!), but where?
+  --require('mannydark.highlighting.plugins.noice'           ).setupHighlighting()  -- Here is a bug (inside the file?!), but where?
   require('mannydark.highlighting.plugins.notify'            ).setupHighlighting()
   require('mannydark.highlighting.plugins.nvimcmp'           ).setupHighlighting()
   require('mannydark.highlighting.plugins.nvimtree'          ).setupHighlighting()

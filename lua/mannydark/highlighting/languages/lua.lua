@@ -1,6 +1,6 @@
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Lua
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 local colors    = require('mannydark.palette')
 local highlight = vim.api.nvim_set_hl
@@ -15,10 +15,10 @@ lua.setupHighlighting = function()
   highlight(0, 'luaFuncCall',        { fg = colors.orange,     bg = 'NONE'           })  -- Function that is called.
   highlight(0, 'luaFuncKeyword',     { fg = colors.blue,       bg = 'NONE'           })  -- 'function' keyword.
   highlight(0, 'luaFloat',           { fg = colors.greenLight, bg = 'NONE'           })  -- Floating point numbers.
-  highlight(0, 'luaComma',           { fg = colors.white,      bg = 'NONE'           })  -- Commata.
+  highlight(0, 'luaComma',           { fg = colors.white,      bg = 'NONE'           })  -- Comas.
   highlight(0, 'luaCommentLong',     { fg = colors.red,        bg = 'NONE'           })  -- Content of comments.
   highlight(0, 'luaCommentLongTag',  { fg = colors.red,        bg = 'NONE'           })  -- Tags of comments.
-  highlight(0, 'luaNoise',           { fg = colors.white,      bg = 'NONE'           })  -- Dot opperator.
+  highlight(0, 'luaNoise',           { fg = colors.white,      bg = 'NONE'           })  -- Dot operator.
   highlight(0, 'luaSpecialValue',    { fg = 'NONE',            bg = 'NONE'           })  -- Require function.
   highlight(0, 'luaStringLongTag',   { fg = colors.redLight,   bg = 'NONE'           })  -- Brackets [] of long string.
   highlight(0, 'luaStringLong',      { fg = colors.redLight,   bg = 'NONE'           })  -- Content of long strings.
