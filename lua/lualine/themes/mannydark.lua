@@ -1,9 +1,9 @@
 local colors = {
-  blue       = '#569CD6',
-  turquoise  = '#45C8B0',
-  purple     = '#C064C7',
-  orange     = '#E8BF6A',
-  gray       = '#606366',
+  blue      = '#569CD6',
+  turquoise = '#45C8B0',
+  purple    = '#C064C7',
+  orange    = '#E8BF6A',
+  gray      = '#606366',
   grayDark  = '#252525',
 }
 

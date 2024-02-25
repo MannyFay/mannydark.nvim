@@ -1,6 +1,6 @@
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Editor Environment
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 local colors      = require('mannydark.palette')
 local highlight   = vim.api.nvim_set_hl
@@ -19,7 +19,7 @@ environment.setupHighlighting = function()
   highlight(0, 'IndentBlanklineChar', { fg = colors.grayDark, bg = 'NONE'                                                })  -- Indent Blank Line plugin vertical lines.
   highlight(0, 'SignColumn',          { fg = 'NONE',          bg = colors.black                                          })  -- Sign column left of the line numbers.
   highlight(0, 'ColorColumn',         { fg = 'NONE',          bg = colors.grayDark                                       })  -- Vertical visual guide line.
-  highlight(0, 'LineNr',              { fg = colors.gray,     bg = 'NONE', underline = false                                                })  -- Line numbers.
+  highlight(0, 'LineNr',              { fg = colors.gray,     bg = 'NONE',         underline = false                     })  -- Line numbers.
   highlight(0, 'CursorLineNr',        { fg = colors.white,    bg = 'NONE'                                                })  -- Line number of current line.
   highlight(0, 'VertSplit',           { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Vertical split separator line.
   highlight(0, 'CursorLine',          { fg = 'NONE',          bg = colors.grayDark                                       })  -- Color of actual line.
@@ -35,7 +35,7 @@ environment.setupHighlighting = function()
   highlight(0, 'Question',            { fg = colors.green,    bg = 'NONE'                                                })  -- Questions that Neovim asks the user.
   highlight(0, 'NormalFloat',         { fg = colors.white,    bg = colors.grayDark                                       })  -- Neovims regular floating window.
   highlight(0, 'FloatBorder',         { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Border of Neovims regular floating window.
-  highlight(0, 'Whitespace',          { fg = colors.red,      bg = 'NONE'                                                })  -- Trailing whitespaces in buffer.
+  highlight(0, 'Whitespace',          { fg = colors.red,      bg = 'NONE'                                                })  -- Trailing white spaces in buffer.
   highlight(0, 'PmenuSbar',           { fg = 'NONE',          bg = colors.grayDark                                       })  -- Scroll bar background in context menus.
   highlight(0, 'PmenuThumb',          { fg = colors.gray,     bg = 'NONE'                                                })  -- Scroll bar in context menus.
   highlight(0, 'MsgSeparator',        { fg = 'NONE',          bg = colors.black                                          })  -- Separator line above messages under status line.
@@ -43,7 +43,7 @@ environment.setupHighlighting = function()
   highlight(0, 'SpellCap',            { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes of not capitalized word.
   highlight(0, 'SpellLocal',          { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes in another language.
   highlight(0, 'SpellRare',           { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes of a rare word.
-  highlight(0, 'ModeMsg',             { fg = colors.green,    bg = 'NONE'                                                })  -- Messages of Neovim in sepcific modes.
+  highlight(0, 'ModeMsg',             { fg = colors.green,    bg = 'NONE'                                                })  -- Messages of Neovim in specific modes.
   highlight(0, 'MoreMsg',             { fg = colors.green,    bg = 'NONE'                                                })  -- Message of Neovim if it asks for more.
   highlight(0, 'NormalNC',            { fg = 'NONE',          bg = 'NONE'                                                })  -- Inactive new buffer.
   highlight(0, 'SpecialKey',          { fg = 'NONE',          bg = 'NONE'                                                })  -- Left sign column in floating window.
