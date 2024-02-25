@@ -39,7 +39,10 @@ environment.setupHighlighting = function()
   highlight(0, 'PmenuSbar',           { fg = 'NONE',          bg = colors.grayDark                                       })  -- Scroll bar background in context menus.
   highlight(0, 'PmenuThumb',          { fg = colors.gray,     bg = 'NONE'                                                })  -- Scroll bar in context menus.
   highlight(0, 'MsgSeparator',        { fg = 'NONE',          bg = colors.black                                          })  -- Separator line above messages under status line.
-  highlight(0, 'SpellBad',            { fg = 'NONE',          bg = 'NONE',         sp = colors.red, undercurl = true     })  -- Spelling mistakes.
+  highlight(0, 'SpellBad',            { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes of a not recognized word.
+  highlight(0, 'SpellCap',            { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes of not capitalized word.
+  highlight(0, 'SpellLocal',          { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes in another language.
+  highlight(0, 'SpellRare',           { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes of a rare word.
   highlight(0, 'ModeMsg',             { fg = colors.green,    bg = 'NONE'                                                })  -- Messages of Neovim in sepcific modes.
   highlight(0, 'MoreMsg',             { fg = colors.green,    bg = 'NONE'                                                })  -- Message of Neovim if it asks for more.
   highlight(0, 'NormalNC',            { fg = 'NONE',          bg = 'NONE'                                                })  -- Inactive new buffer.
@@ -49,9 +52,6 @@ environment.setupHighlighting = function()
   highlight(0, 'Cursor',              { fg = colors.red,      bg = colors.green                                          })
   highlight(0, 'lCursor',             { fg = colors.red,      bg = colors.green                                          })
   highlight(0, 'CursorIM',            { fg = colors.red,      bg = colors.green                                          })
-  highlight(0, 'SpellCap',            { fg = colors.orange,   bg = 'NONE',         sp = colors.yellow, undercurl = true, })
-  highlight(0, 'SpellLocal',          { fg = colors.blue,     bg = colors.orange,  sp = colors.pink, underline = true,   })
-  highlight(0, 'SpellRare',           { fg = 'NONE',          bg = colors.blue,    sp = colors.purple, underline = true, })
   highlight(0, 'WildMenu',            { fg = colors.red,      bg = colors.purple                                         })
   highlight(0, 'Folded',              { fg = colors.green,    bg = colors.orange                                         })
   highlight(0, 'FoldColumn',          { fg = colors.red,      bg = colors.blue                                           })
