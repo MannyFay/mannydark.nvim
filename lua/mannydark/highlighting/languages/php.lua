@@ -41,7 +41,7 @@ php.setupHighlighting = function()
   highlight(0, 'phpNullValue',               { fg = colors.blue,       bg = 'NONE'            })
   highlight(0, 'phpOperator',                { fg = colors.white,      bg = 'NONE'            })
   highlight(0, 'phpMethods',                 { fg = colors.orange,     bg = 'NONE'            })
-  highlight(0, 'phpSplatOperator',           { fg = colors.green,      bg = colors.red        })
+  highlight(0, 'phpSplatOperator',           { fg = colors.white,      bg = 'NONE'        })  -- Three dots before a variable
   highlight(0, 'phpIdentifierSimply',        { fg = colors.orange,     bg = colors.red        })
   highlight(0, 'phpSpecialChar',             { fg = colors.blue,       bg = 'NONE'            })
   highlight(0, 'phpBacktick',                { fg = colors.purple,     bg = colors.greenLight })

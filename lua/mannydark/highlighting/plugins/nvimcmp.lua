@@ -34,7 +34,7 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindColor',         { fg = colors.purple,    bg = 'NONE'                            })  -- Color kind marker text.
 
   ----------------------- Not used by now:
-  highlight(0, 'CmpItemKindEnum',          { fg = colors.green, bg = colors.ping                           })
+  highlight(0, 'CmpItemKindEnum',          { fg = colors.green, bg = colors.pink                           })
   highlight(0, 'CmpItemKindEvent',         { fg = colors.green, bg = colors.turquoise                      })
   highlight(0, 'CmpItemKindStruct',        { fg = colors.green, bg = colors.gray                           })
   highlight(0, 'CmpItemKindEnumMember',    { fg = colors.pink, bg = colors.green                           })

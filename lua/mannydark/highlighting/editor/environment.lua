@@ -36,8 +36,8 @@ environment.setupHighlighting = function()
   highlight(0, 'NormalFloat',         { fg = colors.white,    bg = colors.grayDark                                       })  -- Neovims regular floating window.
   highlight(0, 'FloatBorder',         { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Border of Neovims regular floating window.
   highlight(0, 'Whitespace',          { fg = colors.red,      bg = 'NONE'                                                })  -- Trailing white spaces in buffer.
-  highlight(0, 'PmenuSbar',           { fg = 'NONE',          bg = colors.grayDark                                       })  -- Scroll bar background in context menus.
-  highlight(0, 'PmenuThumb',          { fg = colors.gray,     bg = 'NONE'                                                })  -- Scroll bar in context menus.
+  highlight(0, 'PmenuSbar',           { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Scroll bar background in context menus.
+  highlight(0, 'PmenuThumb',          { fg = colors.gray,     bg = colors.gray                                           })  -- Scroll bar in context menus.
   highlight(0, 'MsgSeparator',        { fg = 'NONE',          bg = colors.black                                          })  -- Separator line above messages under status line.
   highlight(0, 'SpellBad',            { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes of a not recognized word.
   highlight(0, 'SpellCap',            { fg = 'NONE',          bg = 'NONE',         sp = colors.gray, undercurl = true    })  -- Spelling mistakes of not capitalized word.
