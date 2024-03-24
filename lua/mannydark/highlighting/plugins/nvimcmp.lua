@@ -33,9 +33,9 @@ nvimCmp.setupHighlighting = function()
   highlight(0, 'CmpItemKindInterface',     { fg = colors.turquoise, bg = 'NONE'                            })  -- Interface kind marker text.
   highlight(0, 'CmpItemKindColor',         { fg = colors.purple,    bg = 'NONE'                            })  -- Color kind marker text.
   highlight(0, 'CmpItemKindReference',     { fg = colors.white,     bg = 'NONE'                            })  -- Reference kind marker text.
+  highlight(0, 'CmpItemKindEnum',          { fg = colors.green,     bg = 'NONE'                            })  -- Enum kind marker text.
 
   ----------------------- Not used by now:
-  highlight(0, 'CmpItemKindEnum',          { fg = colors.green, bg = colors.pink                           })
   highlight(0, 'CmpItemKindEvent',         { fg = colors.green, bg = colors.turquoise                      })
   highlight(0, 'CmpItemKindStruct',        { fg = colors.green, bg = colors.gray                           })
   highlight(0, 'CmpItemKindEnumMember',    { fg = colors.pink, bg = colors.green                           })
