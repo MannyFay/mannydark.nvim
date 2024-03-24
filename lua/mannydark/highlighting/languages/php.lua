@@ -62,7 +62,7 @@ php.setupHighlighting = function()
   highlight(0, 'phpStaticClasses',           { fg = colors.turquoise,  bg = 'NONE'            })
   highlight(0, 'phpClassNamespaceSeparator', { fg = colors.purple,     bg = colors.orange     })
   highlight(0, 'phpClassExtends',            { fg = colors.turquoise,  bg = 'NONE'            })
-  highlight(0, 'phpClassImplements',         { fg = colors.red,        bg = colors.greenLight })
+  highlight(0, 'phpClassImplements',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Class names after implements keyword.
   highlight(0, 'phpClassDelimiter',          { fg = colors.purple,     bg = colors.white      })
   highlight(0, 'phpUseNamespaceSeparator',   { fg = colors.white,      bg = 'NONE'            })
   highlight(0, 'phpUseFunction',             { fg = colors.turquoise,  bg = colors.red        })
