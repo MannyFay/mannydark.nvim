@@ -23,7 +23,7 @@ environment.setupHighlighting = function()
   highlight(0, 'CursorLineNr',        { fg = colors.white,    bg = 'NONE'                                                })  -- Line number of current line.
   highlight(0, 'VertSplit',           { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Vertical split separator line.
   highlight(0, 'CursorLine',          { fg = 'NONE',          bg = colors.grayDark                                       })  -- Color of actual line.
-  highlight(0, 'Search',              { fg = colors.black,    bg = colors.pink                                           })  -- Highlighting of search patterns.
+  highlight(0, 'Search',              { fg = colors.black,    bg = colors.gray                                           })  -- Highlighting of search patterns.
   highlight(0, 'IncSearch',           { fg = colors.black,    bg = colors.white                                          })  -- Highlighting of first result from search pattern.
   highlight(0, 'EndOfBuffer',         { fg = colors.black,    bg = 'NONE'                                                })  -- Empty end of buffer.
   highlight(0, 'Visual',              { fg = 'NONE',          bg = colors.gray                                           })  -- Selected text in visual mode.
