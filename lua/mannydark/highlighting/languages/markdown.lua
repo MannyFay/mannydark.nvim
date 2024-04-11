@@ -50,9 +50,9 @@ markdown.setupHighlighting = function()
   highlight(0, 'mkdBlockquote',              { fg = colors.orange,   bg = 'NONE'                      })  -- Whole block quotes.
   highlight(0, 'mkdInlineURL',               { fg = colors.blueLink, bg = 'NONE'                      })  -- Link in regular text.
   highlight(0, 'mkdBold',                    { fg = colors.blue,     bg = 'NONE'                      })  -- Bold delimiter.
+  highlight(0, 'mkdItalic',                  { fg = colors.blue,     bg = 'NONE'                      })  -- Italic delimiter.
 
   ----------------------- Not used by now:
-  highlight(0, 'mkdItalic',                  { fg = colors.green, bg = colors.orange                  })
   highlight(0, 'mkdBoldItalic',              { fg = colors.green, bg = colors.blue                    })
   highlight(0, 'mkdDelimiter',               { fg = colors.green, bg = colors.blueLight               })
   highlight(0, 'mkdFootnotes',               { fg = colors.green, bg = colors.purple                  })
@@ -60,7 +60,7 @@ markdown.setupHighlighting = function()
   highlight(0, 'mkdLinkDefTarget',           { fg = colors.green, bg = colors.white                   })
   highlight(0, 'mkdLinkDef',                 { fg = colors.green, bg = colors.gray                    })
   highlight(0, 'mkdLinkTitle',               { fg = colors.pink, bg = colors.orange                   })
-  highlight(0, 'mkdFootnote',                { fg = colors.pink, bg = colors.orange                   })
+  highlight(0, 'mkdFootnote',                { fg = colors.red, bg = colors.orange                   })
   highlight(0, 'mkdMath',                    { fg = colors.blue, bg = colors.greenLight               })
   highlight(0, 'mkdStrike',                  { fg = colors.turquoise, bg = colors.gray                })
   highlight(0, 'mkdString',                  { fg = colors.turquoise, bg = colors.white               })
@@ -68,8 +68,8 @@ markdown.setupHighlighting = function()
   highlight(0, 'markdownId',                 { fg = colors.turquoise, bg = colors.red                 })
   highlight(0, 'markdownIdDeclaration',      { fg = colors.turquoise, bg = colors.orange              })
   highlight(0, 'markdownIdDelimiter',        { fg = colors.turquoise, bg = colors.blue                })
-  highlight(0, 'markdownBoldItalic',         { fg = colors.greenLight, bg = colors.orange             })
-  highlight(0, 'markdownRule',               { fg = colors.turquoise, bg = colors.orange              })
+  highlight(0, 'markdownBoldItalic',         { fg = colors.purple, bg = colors.orange             })
+  highlight(0, 'markdownRule',               { fg = colors.white, bg = colors.orange              })
   highlight(0, 'markdownFootnote',           { fg = colors.blue, bg = colors.orange                   })
   highlight(0, 'markdownFootnoteDefinition', { fg = colors.red, bg = colors.orange                    })
   highlight(0, 'markdownEscape',             { fg = colors.pink, bg = colors.orange                   })
