@@ -44,7 +44,7 @@ php.setupHighlighting = function()
   highlight(0, 'phpSplatOperator',           { fg = colors.white,      bg = 'NONE'            })  -- Three dots before variables and functions.
   highlight(0, 'phpIdentifierSimply',        { fg = colors.orange,     bg = colors.red        })
   highlight(0, 'phpSpecialChar',             { fg = colors.blue,       bg = 'NONE'            })
-  highlight(0, 'phpBacktick',                { fg = colors.purple,     bg = colors.greenLight })
+  highlight(0, 'phpBacktick',                { fg = colors.green,      bg = 'NONE'            })  -- Shell command inside of backticks.
   highlight(0, 'phpStrEsc',                  { fg = colors.blue,       bg = 'NONE'            })
   highlight(0, 'phpIdentifierComplex',       { fg = colors.red,        bg = colors.blue       })
   highlight(0, 'phpBoolean',                 { fg = colors.blue,       bg = 'NONE'            })
