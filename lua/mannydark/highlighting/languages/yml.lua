@@ -27,6 +27,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFloat',                    { fg = colors.greenLight, bg = 'NONE' })  -- Float numbers.
   highlight(0, 'yamlEscape',                   { fg = colors.white,      bg = 'NONE' })  -- Escape characters.
   highlight(0, 'yamlFlowMapping',              { fg = colors.blue,       bg = 'NONE' })  -- Content between curly brackets {}.
+  highlight(0, 'yamlNodeTag',                  { fg = colors.white,      bg = 'NONE' })  -- Operator of tags.
 
   ----------------------- Not used by now:
   highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
@@ -45,7 +46,6 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlTimestamp',                { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlMappingKeyStart',          { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockMappingMerge',        { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlNodeTag',                  { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlAnchor',                   { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlAlias',                    { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlDocumentEnd',              { fg = colors.pink, bg = colors.greenLight })
