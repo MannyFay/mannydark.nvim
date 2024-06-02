@@ -80,6 +80,17 @@ lsp.setupHighlighting = function()
   highlight(0, 'IlluminatedWordRead',                  { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'IlluminatedWordText',                  { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.blue                                    })
+  
+  highlight(0, 'LspInfoFiletype',                 { fg = colors.pink, bg = colors.blue                                    })
+  highlight(0, 'LspInfoTitle',                 { fg = colors.pink, bg = colors.green                                    })
+  highlight(0, 'LspInfoTip',                 { fg = colors.pink, bg = colors.orange                                    })
+  highlight(0, 'LspInfoList',                 { fg = colors.pink, bg = colors.greenLight                                    })
+  highlight(0, 'LspInfoBorder',                 { fg = colors.pink, bg = colors.blueLink                                    })
+  highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.blue                                    })
+  highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.blue                                    })
+  highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.blue                                    })
+  highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.blue                                    })
+
 end
 
 return lsp
