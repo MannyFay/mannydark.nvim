@@ -54,6 +54,8 @@ treesitter.setupHighlighting = function()
   highlight(0, '@field',                 { fg = colors.purple,    bg = 'NONE'                        })
   highlight(0, '@keyword.operator',      { fg = colors.blue,      bg = 'NONE'                        })
   highlight(0, '@string.escape',         { fg = colors.pink,      bg = 'NONE'                        })
+  highlight(0, '@lsp.type.comment',      { fg = colors.gray,      bg = 'NONE'                        })
+
 
   ----------------------- Not used by now:
   highlight(0, '@define',                { fg = colors.orange,    bg = colors.red                    })
