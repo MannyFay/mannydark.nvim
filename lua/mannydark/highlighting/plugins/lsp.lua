@@ -12,7 +12,7 @@ local lsp       = {}
 
 lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,   bg = 'NONE'                                        })
-  highlight(0, 'DiagnosticError',                     { fg = colors.red,    bg = 'NONE'                                        })  -- Code error indicator bar and text at end of line.
+  highlight(0, 'DiagnosticError',                     { fg = colors.green,    bg = 'NONE'                                        })  -- Code error indicator bar and text at end of line.
   highlight(0, 'DiagnosticHint',                      { fg = colors.blue,   bg = 'NONE'                                        })  -- Code hint indicator bar and text at end of line.
   highlight(0, 'DiagnosticWarn',                      { fg = colors.orange, bg = 'NONE'                                        })
   highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.blue,   bg = 'NONE'                                        })  -- Horizontal hint indicator bar and text at end of line.
