@@ -54,6 +54,8 @@ treesitter.setupHighlighting = function()
   highlight(0, '@field',                 { fg = colors.purple,    bg = 'NONE'                        })
   highlight(0, '@keyword.operator',      { fg = colors.blue,      bg = 'NONE'                        })
   highlight(0, '@string.escape',         { fg = colors.pink,      bg = 'NONE'                        })
+  highlight(0, '@lsp.type.comment',      { fg = colors.gray,      bg = 'NONE'                        })
+
 
   ----------------------- Not used by now:
   highlight(0, '@define',                { fg = colors.orange,    bg = colors.red                    })
@@ -82,6 +84,31 @@ treesitter.setupHighlighting = function()
   highlight(0, '@text.warning',          { link = 'Todo'                                             })
   highlight(0, '@text.danger',           { link = 'WarningMsg'                                       })
   highlight(0, '@tag',                   { link = 'Tag'                                              })
+
+  highlight(0, '@lsp.type.class',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.comment',                { fg = colors.red,      bg = "NONE"                 })
+  highlight(0, '@lsp.type.decorator',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.enum',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.enumMember',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.event',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.function',                { fg = colors.orange,      bg = "NONE"                 })
+  highlight(0, '@lsp.type.interface',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.keyword',                { fg = colors.blue,      bg = "NONE"                 })
+  highlight(0, '@lsp.type.macro',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.method',                { fg = colors.orange,      bg = "NONE"                 })
+  highlight(0, '@lsp.type.modifier',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.namespace',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.number',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.operator',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.parameter',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.property',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.regexp',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.string',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.struct',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.type',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.typeParameter',                { fg = colors.blue,      bg = colors.orange                 })
+  highlight(0, '@lsp.type.variable',                { fg = colors.blue,      bg = colors.orange                 })
+
 end
 
 return treesitter

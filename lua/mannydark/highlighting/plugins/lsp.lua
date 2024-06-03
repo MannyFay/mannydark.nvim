@@ -19,7 +19,7 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.blue,   bg = 'NONE'                                        })  -- Horizontal info indicator bar and text at end of line.
   highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange, bg = 'NONE'                                        })  -- Horizontal warning indicator bar and text at end of line.
   highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE'                                        })  -- Horizontal error indicator bar and text at end of line.
-  highlight(0, 'LspDiagnosticsError',                 { fg = colors.red,    bg = 'NONE'                                        })
+  highlight(0, 'LspDiagnosticsError',                 { fg = colors.green,    bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsWarning',               { fg = colors.orange, bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsInfo',                  { fg = colors.blue,   bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsHint',                  { fg = colors.blue,   bg = 'NONE'                                        })
@@ -30,7 +30,7 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticUnderlineWarn',             { fg = 'NONE',        bg = 'NONE', sp = colors.orange, undercurl = true, })
   highlight(0, 'DiagnosticUnderlineError',            { fg = 'NONE',        bg = 'NONE', sp = colors.red,    undercurl = true, })
   highlight(0, 'DiagnosticSignWarn',                  { fg = colors.orange, bg = 'NONE'                                        })  -- Warning icon in sign column.
-  highlight(0, 'DiagnosticSignError',                 { fg = colors.red,    bg = 'NONE'                                        })  -- Error icon in sign column.
+  highlight(0, 'DiagnosticSignError',                 { fg = colors.blue,    bg = 'NONE'                                        })  -- Error icon in sign column.
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.yellow, bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
   highlight(0, 'DiagnosticSignInfo',                  { fg = colors.blue,   bg = 'NONE'                                        })  -- Info icon in sign column.
 
@@ -80,6 +80,13 @@ lsp.setupHighlighting = function()
   highlight(0, 'IlluminatedWordRead',                  { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'IlluminatedWordText',                  { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.blue                                    })
+  
+  highlight(0, 'LspInfoFiletype',                 { fg = colors.pink, bg = colors.blue                                    })
+  highlight(0, 'LspInfoTitle',                 { fg = colors.pink, bg = colors.green                                    })
+  highlight(0, 'LspInfoTip',                 { fg = colors.pink, bg = colors.orange                                    })
+  highlight(0, 'LspInfoList',                 { fg = colors.pink, bg = colors.greenLight                                    })
+  highlight(0, 'LspInfoBorder',                 { fg = colors.pink, bg = colors.blueLink                                    })
+
 end
 
 return lsp
