@@ -18,8 +18,8 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.blue,   bg = 'NONE'                                        })  -- Horizontal hint indicator bar and text at end of line.
   highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.blue,   bg = 'NONE'                                        })  -- Horizontal info indicator bar and text at end of line.
   highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange, bg = 'NONE'                                        })  -- Horizontal warning indicator bar and text at end of line.
-  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.blue,    bg = 'NONE'                                        })  -- Horizontal error indicator bar and text at end of line.
-  highlight(0, 'LspDiagnosticsError',                 { fg = colors.red,    bg = 'NONE'                                        })
+  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE'                                        })  -- Horizontal error indicator bar and text at end of line.
+  highlight(0, 'LspDiagnosticsError',                 { fg = colors.blue,    bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsWarning',               { fg = colors.orange, bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsInfo',                  { fg = colors.blue,   bg = 'NONE'                                        })
   highlight(0, 'LspDiagnosticsHint',                  { fg = colors.blue,   bg = 'NONE'                                        })
