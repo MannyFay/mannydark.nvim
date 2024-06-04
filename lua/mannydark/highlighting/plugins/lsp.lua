@@ -6,7 +6,8 @@ local colors    = require('mannydark.palette')
 local highlight = vim.api.nvim_set_hl
 local lsp       = {}
 
-local bla
+
+
 --------------------------------------------------------------
 -- Settings
 
