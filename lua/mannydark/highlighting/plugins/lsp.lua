@@ -6,7 +6,7 @@ local colors    = require('mannydark.palette')
 local highlight = vim.api.nvim_set_hl
 local lsp       = {}
 
-
+local bla
 --------------------------------------------------------------
 -- Settings
 
@@ -76,10 +76,10 @@ lsp.setupHighlighting = function()
   highlight(0, 'LspDiagnosticsUnderlineHint',          { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'LspReferenceRead',                     { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'LspReferenceText',                     { fg = colors.pink, bg = colors.blue                                    })
-  highlight(0, 'LspReferenceWrite',                    { fg = colors.pink, bg = colors.blue                                    })
-  highlight(0, 'IlluminatedWordRead',                  { fg = colors.pink, bg = colors.blue                                    })
-  highlight(0, 'IlluminatedWordText',                  { fg = colors.pink, bg = colors.blue                                    })
-  highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.blue                                    })
+  highlight(0, 'LspReferenceWrite',                    { fg = colors.pink, bg = colors.green                                    })
+  highlight(0, 'IlluminatedWordRead',                  { fg = colors.pink, bg = colors.blueLink                                   })
+  highlight(0, 'IlluminatedWordText',                  { fg = colors.pink, bg = colors.purple                                   })
+  highlight(0, 'IlluminatedWordWrite',                 { fg = colors.pink, bg = colors.orange                                   })
   
   highlight(0, 'LspInfoFiletype',                 { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'LspInfoTitle',                 { fg = colors.pink, bg = colors.green                                    })
