@@ -33,6 +33,8 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticSignError',                 { fg = colors.blue,    bg = 'NONE'                                        })  -- Error icon in sign column.
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.yellow, bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
   highlight(0, 'DiagnosticSignInfo',                  { fg = colors.blue,   bg = 'NONE'                                        })  -- Info icon in sign column.
+  highlight(0, 'LspReferenceRead',                     { fg = "NONE", bg = colors.grayDark                                    })  -- Matching words to the one under cursor, like HTML tag names.
+
 
   ----------------------- Not used by now:
   highlight(0, 'DiagnosticOther',                      { fg = colors.pink, bg = colors.blue                                    })
@@ -74,7 +76,6 @@ lsp.setupHighlighting = function()
   highlight(0, 'LspDiagnosticsUnderlineInformation',   { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'LspDiagnosticsUnderlineInfo',          { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'LspDiagnosticsUnderlineHint',          { fg = colors.pink, bg = colors.blue                                    })
-  highlight(0, 'LspReferenceRead',                     { fg = colors.pink, bg = colors.green                                    })
   highlight(0, 'LspReferenceText',                     { fg = colors.pink, bg = colors.orange                                    })
   highlight(0, 'LspReferenceWrite',                    { fg = colors.pink, bg = colors.pink                                    })
   highlight(0, 'IlluminatedWordRead',                  { fg = colors.pink, bg = colors.blueLink                                   })
