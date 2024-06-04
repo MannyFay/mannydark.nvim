@@ -77,7 +77,7 @@ lsp.setupHighlighting = function()
   highlight(0, 'LspDiagnosticsUnderlineInformation',   { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'LspDiagnosticsUnderlineInfo',          { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'LspDiagnosticsUnderlineHint',          { fg = colors.pink, bg = colors.blue                                    })
-  highlight(0, 'LspReferenceText',                     { fg = colors.pink, bg = colors.orange                                    })
+  highlight(0, 'LspReferenceText',                     { fg = colors.pink, bg = colors.orange                                    }) -- This is text inside of strings including the quotes.
   highlight(0, 'LspReferenceWrite',                    { fg = colors.pink, bg = colors.pink                                    })
   highlight(0, 'IlluminatedWordRead',                  { fg = colors.pink, bg = colors.blueLink                                   })
   highlight(0, 'IlluminatedWordText',                  { fg = colors.pink, bg = colors.purple                                   })
