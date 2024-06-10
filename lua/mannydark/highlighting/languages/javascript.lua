@@ -84,6 +84,7 @@ javaScript.setupHighlighting = function()
   highlight(0, 'javascriptCommentTodo',           { fg = colors.red,       bg = 'NONE'                                    })
   highlight(0, 'javaScriptLineComment',           { fg = colors.red,       bg = 'NONE'                                    })
   highlight(0, 'javaScriptComment',               { fg = colors.red,       bg = 'NONE'                                    })
+  highlight(0, 'jsFloat',                         { fg = colors.greenLight, bg = 'NONE' })  -- Floating point numbers inclusive dot.
 
   ------------------------- Not used by now:
   highlight(0, 'jsPrototype',                     { fg = colors.purple, bg = colors.blue })
@@ -98,7 +99,6 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsModuleAs',                      { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsExportDefaultGroup',            { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsFlowTypeKeyword',               { fg = colors.purple, bg = colors.blue })
-  highlight(0, 'jsFloat',                         { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpCharClass',               { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpBackRef',                 { fg = colors.purple, bg = colors.blue })
   highlight(0, 'jsRegexpQuantifier',              { fg = colors.purple, bg = colors.blue })
