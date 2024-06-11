@@ -20,6 +20,7 @@ typescript.setupHighlighting = function()
   highlight(0, "typescriptTypeBlock",         { fg = colors.turquoise, bg = "NONE" })  -- Imported types.
   highlight(0, "typescriptPredefinedType",    { fg = colors.blue,      bg = "NONE" })  -- Data types.
   highlight(0, "typescriptTypeParameter",     { fg = colors.purple,    bg = "NONE" })  -- Parameter variables of types.
+  highlight(0, "typescriptTemplateSB",        { fg = colors.redLight,  bg = "NONE" })  -- ${} in template strings.
 
 
 
@@ -339,7 +340,6 @@ typescript.setupHighlighting = function()
 -- typescriptDefaultParam xxx cleared
 -- typescriptArrayDestructure xxx cleared
 -- typescriptObjectDestructure xxx cleared
--- typescriptTemplateSB xxx links to Label
 -- typescriptObjectSpread xxx cleared
 -- typescriptReserved xxx links to Error
 -- typescriptLabel xxx links to Label
