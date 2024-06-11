@@ -10,12 +10,17 @@ local typescript = {}
 ---- Settings
 
 typescript.setupHighlighting = function()
-  highlight(0, "typescriptGlobal",  { fg = colors.purple,   bg = "NONE" })  -- Global objects of global libraries.
-  highlight(0, "typescriptExport",  { fg = colors.blue,     bg = "NONE" })  -- 'export' keyword.
-  highlight(0, "typescriptDefault", { fg = colors.blue,     bg = "NONE" })  -- 'default' keyword.
-  highlight(0, "typescriptImport",  { fg = colors.blue,     bg = "NONE" })  -- 'from' keyword.
-  highlight(0, "typescriptBraces",  { fg = colors.white,    bg = "NONE" })  -- Braces: { }.
-  highlight(0, "typescriptString",  { fg = colors.redLight, bg = "NONE" })  -- Strings.
+  highlight(0, "typescriptGlobal",            { fg = colors.purple,    bg = "NONE" })  -- Global objects of global libraries.
+  highlight(0, "typescriptExport",            { fg = colors.blue,      bg = "NONE" })  -- 'export' keyword.
+  highlight(0, "typescriptDefault",           { fg = colors.blue,      bg = "NONE" })  -- 'default' keyword.
+  highlight(0, "typescriptImport",            { fg = colors.blue,      bg = "NONE" })  -- 'from' keyword.
+  highlight(0, "typescriptBraces",            { fg = colors.white,     bg = "NONE" })  -- Braces: { }.
+  highlight(0, "typescriptString",            { fg = colors.redLight,  bg = "NONE" })  -- Strings.
+  highlight(0, "typescriptDefaultImportName", { fg = colors.turquoise, bg = "NONE" })  -- Imported libraries.
+  highlight(0, "typescriptTypeBlock",         { fg = colors.turquoise, bg = "NONE" })  -- Imported types.
+  highlight(0, "typescriptPredefinedType",    { fg = colors.blue,      bg = "NONE" })  -- Data types.
+  highlight(0, "typescriptTypeParameter",     { fg = colors.purple,    bg = "NONE" })  -- Parameter variables of types.
+
 
 
 ----------------------- Not used by now:
@@ -235,7 +240,6 @@ typescript.setupHighlighting = function()
 -- typescriptDocB xxx cleared
 -- typescriptDocLinkTag xxx cleared
 -- typescriptOptionalMark xxx links to PreProc
--- typescriptTypeParameter xxx links to Identifier
 -- typescriptGenericDefault xxx cleared
 -- typescriptTypeBrackets xxx cleared
 -- typescriptTypeParameters xxx cleared
@@ -244,7 +248,6 @@ typescript.setupHighlighting = function()
 -- typescriptConstructorType xxx links to Function
 -- typescriptTypeBracket xxx cleared
 -- typescriptParenthesizedType xxx cleared
--- typescriptPredefinedType xxx links to Type
 -- typescriptTypeReference xxx links to Identifier
 -- typescriptObjectType xxx cleared
 -- typescriptTupleType xxx cleared
@@ -305,8 +308,6 @@ typescript.setupHighlighting = function()
 -- typescriptBinaryOp xxx cleared
 -- typescriptKeywordOp xxx links to Identifier
 -- typescriptImportType xxx links to Special
--- typescriptTypeBlock xxx cleared
--- typescriptDefaultImportName xxx cleared
 -- typescriptExportType xxx links to Special
 -- typescriptModule xxx links to Special
 -- typescriptBlock xxx cleared
