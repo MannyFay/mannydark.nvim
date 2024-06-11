@@ -10,7 +10,12 @@ local typescript = {}
 ---- Settings
 
 typescript.setupHighlighting = function()
-  highlight(0, "typescriptGlobal", { fg = colors.purple, bg = "NONE" })  -- Global objects of global libraries.
+  highlight(0, "typescriptGlobal",  { fg = colors.purple,   bg = "NONE" })  -- Global objects of global libraries.
+  highlight(0, "typescriptExport",  { fg = colors.blue,     bg = "NONE" })  -- 'export' keyword.
+  highlight(0, "typescriptDefault", { fg = colors.blue,     bg = "NONE" })  -- 'default' keyword.
+  highlight(0, "typescriptImport",  { fg = colors.blue,     bg = "NONE" })  -- 'from' keyword.
+  highlight(0, "typescriptBraces",  { fg = colors.white,    bg = "NONE" })  -- Braces: { }.
+  highlight(0, "typescriptString",  { fg = colors.redLight, bg = "NONE" })  -- Strings.
 
 
 ----------------------- Not used by now:
@@ -263,7 +268,6 @@ typescript.setupHighlighting = function()
 -- typescriptAsyncFor xxx links to Keyword
 -- typescriptBranch xxx links to Conditional
 -- typescriptCase xxx links to Conditional
--- typescriptDefault xxx links to typescriptCase
 -- typescriptClassKeyword xxx links to Keyword
 -- typescriptInterfaceKeyword xxx links to Keyword
 -- typescriptStatementKeyword xxx links to Statement
@@ -279,7 +283,6 @@ typescript.setupHighlighting = function()
 -- typescriptPrototype xxx links to Type
 -- typescriptTemplateSubstitution xxx cleared
 -- typescriptSpecial xxx links to Special
--- typescriptString xxx links to String
 -- typescriptRegexpCharClass xxx cleared
 -- typescriptRegexpBoundary xxx cleared
 -- typescriptRegexpBackRef xxx cleared
@@ -301,11 +304,9 @@ typescript.setupHighlighting = function()
 -- typescriptTernaryOp xxx cleared
 -- typescriptBinaryOp xxx cleared
 -- typescriptKeywordOp xxx links to Identifier
--- typescriptImport xxx links to Special
 -- typescriptImportType xxx links to Special
 -- typescriptTypeBlock xxx cleared
 -- typescriptDefaultImportName xxx cleared
--- typescriptExport xxx links to Special
 -- typescriptExportType xxx links to Special
 -- typescriptModule xxx links to Special
 -- typescriptBlock xxx cleared
@@ -339,7 +340,6 @@ typescript.setupHighlighting = function()
 -- typescriptObjectDestructure xxx cleared
 -- typescriptTemplateSB xxx links to Label
 -- typescriptObjectSpread xxx cleared
--- typescriptBraces xxx links to Function
 -- typescriptReserved xxx links to Error
 -- typescriptLabel xxx links to Label
 
