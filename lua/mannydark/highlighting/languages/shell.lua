@@ -198,6 +198,7 @@ shell.setupHighlighting = function()
   -- highlight(0, 'shDerefPOL',    { fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shForPP',       { fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shFunctionName,',{ fg = colors.pink, bg = colors.green })
+  -- shellbang      xxx links to Comment
 end
 
 return shell
