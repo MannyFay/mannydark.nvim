@@ -14,7 +14,9 @@ react.setupHighlighting = function()
   highlight(0, "jsxClosePunct",    { fg = colors.white,     bg = "NONE" })  -- </ of JSX/HTML tag.
   highlight(0, "jsxTagName",       { fg = colors.blue,      bg = "NONE" })  -- Name of JSX/HTML tag.
   highlight(0, "jsxComponentName", { fg = colors.turquoise, bg = "NONE" })  -- Name of used React components in JSX/HTML.
-  highlight(0, "jsxCloseString",   { fg = colors.turquoise, bg = "NONE" })  -- /> of JSX/HTML tag.
+  highlight(0, "jsxCloseString",   { fg = colors.turquoise, bg = "NONE" })  -- /> of JSX/HTML tag. -> WTF, wrong description?
+  highlight(0, "tsxTagName",       { fg = colors.purple,    bg = "NONE" })  -- HTML tags with component names.
+  highlight(0, "tsxCloseString",   { fg = colors.white,     bg = "NONE" })  -- /> of HTML tags with component names.
 
 
 
@@ -42,11 +44,9 @@ react.setupHighlighting = function()
 
 
 
--- tsxTagName     xxx links to Function
 -- tsxIntrinsicTagName xxx links to htmlTagName
 -- tsxAttrib      xxx links to Type
 -- tsxEscJs       xxx links to tsxEscapeJs
--- tsxCloseString xxx links to Identifier
 -- tsxTag         xxx links to htmlTag
 -- tsxRegion      xxx cleared
 -- tsxCloseTag    xxx links to htmlTag

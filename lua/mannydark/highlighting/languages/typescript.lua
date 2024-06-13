@@ -10,7 +10,7 @@ local typescript = {}
 ---- Settings
 
 typescript.setupHighlighting = function()
-  highlight(0, "typescriptGlobal",            { fg = colors.purple,    bg = "NONE" })  -- Global objects of global libraries.
+  highlight(0, "typescriptGlobal",            { fg = colors.turquoise, bg = "NONE" })  -- Global objects of global libraries.
   highlight(0, "typescriptExport",            { fg = colors.blue,      bg = "NONE" })  -- 'export' keyword.
   highlight(0, "typescriptDefault",           { fg = colors.blue,      bg = "NONE" })  -- 'default' keyword.
   highlight(0, "typescriptImport",            { fg = colors.blue,      bg = "NONE" })  -- 'from' keyword.
@@ -21,6 +21,8 @@ typescript.setupHighlighting = function()
   highlight(0, "typescriptPredefinedType",    { fg = colors.blue,      bg = "NONE" })  -- Data types.
   highlight(0, "typescriptTypeParameter",     { fg = colors.purple,    bg = "NONE" })  -- Parameter variables of types.
   highlight(0, "typescriptTemplateSB",        { fg = colors.redLight,  bg = "NONE" })  -- ${} in template strings.
+  highlight(0, "typescriptCall",              { fg = colors.blue,      bg = "NONE" })  -- foobar
+  highlight(0, "typescriptObjectStaticMethod", { fg = colors.orange,   bg = "NONE" })  -- Static methods of objects.
 
 
 
@@ -73,7 +75,6 @@ typescript.setupHighlighting = function()
 -- typescriptArrayStaticMethod xxx links to Keyword
 -- typescriptArrayMethod xxx links to Keyword
 -- typescriptGlobalObjectDot xxx cleared
--- typescriptObjectStaticMethod xxx links to Keyword
 -- typescriptObjectMethod xxx links to Keyword
 -- typescriptGlobalSymbolDot xxx cleared
 -- typescriptSymbolStaticProp xxx links to Keyword
@@ -212,7 +213,6 @@ typescript.setupHighlighting = function()
 -- typescriptFunctionType xxx cleared
 -- typescriptFuncTypeArrow xxx links to Function
 -- typescriptGenericCall xxx cleared
--- typescriptCall xxx links to PreProc
 -- typescriptDecorator xxx links to Special
 -- typescriptFuncComma xxx links to Operator
 -- typescriptMappedIn xxx links to Special
