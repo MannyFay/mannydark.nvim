@@ -64,6 +64,8 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.class',        { fg = colors.turquoise, bg = "NONE"                        })  -- Class names marked by LSP.
   highlight(0, '@lsp.type.property',     { fg = colors.purple,    bg = "NONE"                        })  -- Properties/Attributes marked by LSP.
 
+  highlight(0, '@lsp.type.comment',             { fg = colors.red,         bg = 'NONE'                 })
+
 
 
 
@@ -95,7 +97,6 @@ treesitter.setupHighlighting = function()
   highlight(0, '@text.danger',           { fg = colors.blue,      bg = colors.red })
   highlight(0, '@tag',                   { fg = colors.blue,      bg = colors.red })
 
-  highlight(0, '@lsp.type.comment',             { fg = colors.red,         bg = colors.gray                 })
   highlight(0, '@lsp.type.decorator',           { fg = colors.blue,        bg = colors.green                 })
   highlight(0, '@lsp.type.enum',                { fg = colors.blue,        bg = colors.greenLight                 })
   highlight(0, '@lsp.type.enumMember',          { fg = colors.blue,        bg = colors.orange                 })
