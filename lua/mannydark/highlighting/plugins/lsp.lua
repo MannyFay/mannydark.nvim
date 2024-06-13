@@ -18,9 +18,9 @@ lsp.setupHighlighting = function()
 
   -- hints are more important than information!
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.greenLight,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
-  highlight(0, 'DiagnosticHint',                      { fg = colors.greenLight,   bg = 'NONE'                                        })  -- Code hint indicator bar and text at end of line.
+  highlight(0, 'DiagnosticHint',                      { fg = colors.purple,   bg = 'NONE'                                        })  -- Code hint indicator bar and text at end of line.
   highlight(0, 'DiagnosticUnderlineHint',             { fg = colors.greenLight,   bg = 'NONE', sp = colors.yellow, undercurl = true, })
-  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.red,   bg = 'NONE'                                        })
+  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.red,   bg = colors.blue                                        })
   highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.greenLight,   bg = 'NONE', italic = true,                                        })  -- Horizontal hint indicator bar and text at end of line.
 
   highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,   bg = 'NONE'                                        })
