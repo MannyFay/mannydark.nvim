@@ -77,9 +77,9 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsObjectShorthandProp',           { fg = colors.purple,    bg = 'NONE'                                    })  -- Shorthand properties.
   highlight(0, 'jsObjectKeyString',               { fg = colors.redLight,  bg = 'NONE'                                    })  -- Object key strings.
   highlight(0, 'jsObjectStringKey',               { fg = colors.redLight,  bg = 'NONE'                                    })  -- Object strings keys.
-  highlight(0, 'jsParensError',                   { fg = colors.red,       bg = 'NONE', sp = colors.red, undercurl = true })  -- Error in parentheses.
+  highlight(0, 'jsParensError',                   { fg = 'NONE',       bg = 'NONE', sp = colors.red, undercurl = true })  -- Error in parentheses.
   highlight(0, 'jsModuleComma',                   { fg = colors.white,     bg = 'NONE'                                    })  -- Comas in modules.
-  highlight(0, 'jsDomErrNo',                      { fg = colors.red,       bg = 'NONE', sp = colors.red, undercurl = true })
+  highlight(0, 'jsDomErrNo',                      { fg = 'NONE',       bg = 'NONE', sp = colors.red, undercurl = true })
   highlight(0, 'jsError',                         { fg = 'NONE',           bg = 'NONE', sp = colors.red, undercurl = true })
   highlight(0, 'javascriptCommentTodo',           { fg = colors.red,       bg = 'NONE'                                    })
   highlight(0, 'javaScriptLineComment',           { fg = colors.red,       bg = 'NONE'                                    })
