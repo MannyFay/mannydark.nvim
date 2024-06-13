@@ -24,6 +24,7 @@ languageDefaults.setupHighlighting = function()
   highlight(0, 'Character',   { fg = colors.white,      bg = 'NONE' })  -- Regular characters in a code file.
   highlight(0, 'Conditional', { fg = colors.blue,       bg = 'NONE' })  -- Conditional statements like 'if', 'else', etc.
   highlight(0, 'PreProc',     { fg = colors.redLight,   bg = 'NONE' })  -- Like ${} in shell scripts.
+  highlight(0, 'Error',       { fg = 'NONE',            bg = 'NONE', sp = colors.red, undercurl = true       })
 
   ----------------------- Not used by now:
   highlight(0, 'Type',           { fg = colors.turquoise, bg = 'NONE'                   })
@@ -37,7 +38,6 @@ languageDefaults.setupHighlighting = function()
   highlight(0, 'Special',        { fg = colors.white,     bg = 'NONE'                   })
   highlight(0, 'Todo',           { fg = colors.red,       bg = 'NONE', bold = true      })
   highlight(0, 'Title',          { fg = colors.white,     bg = 'NONE'                   })
-  highlight(0, 'Error',          { fg = colors.red,       bg = 'NONE', bold = true      })
   highlight(0, 'Statement',      { fg = colors.blue,      bg = 'NONE'                   })
   highlight(0, 'Structure',      { fg = colors.blue,      bg = 'NONE'                   })
   highlight(0, 'SpecialChar',    { fg = colors.white,     bg = 'NONE'                   })

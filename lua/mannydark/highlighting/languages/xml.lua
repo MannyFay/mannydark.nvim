@@ -23,7 +23,7 @@ xml.setupHighlighting = function()
   highlight(0, 'xmlCommentStart',    { fg = colors.red,       bg = 'NONE' })  -- '<!' of comments.
   highlight(0, 'xmlComment',         { fg = colors.red,       bg = 'NONE' })  -- '>' of comments.
   highlight(0, 'xmlCommentPart',     { fg = colors.red,       bg = 'NONE' })  -- Comment text.
-  highlight(0, 'xmlError',           { fg = colors.red,       bg = 'NONE' })  -- Error characters.
+  highlight(0, 'xmlError',           { fg = 'NONE',           bg = 'NONE', sp = colors.red, undercurl = true })  -- Error characters.
 
   ----------------------- Not used by now:
   highlight(0, 'xmlEntity',          { fg = colors.red, bg = colors.blue })
