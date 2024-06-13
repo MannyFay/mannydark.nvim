@@ -29,7 +29,9 @@ xml.setupHighlighting = function()
   highlight(0, 'xmlEntity',          { fg = colors.red, bg = colors.blue })
   highlight(0, 'xmlNamespace',       { fg = colors.red, bg = colors.pink })
   highlight(0, 'xmlCdata',           { fg = colors.red, bg = colors.redLight })
-  highlight(0, 'xmlRegion',          { fg = colors.red, bg = colors.orange })
+
+  highlight(0, 'xmlRegion',          { fg = colors.green, bg = colors.blueLink })
+
   highlight(0, 'xmlEntityPunct',     { fg = colors.blue, bg = colors.red })
   highlight(0, 'xmlCommentError',    { fg = colors.blue, bg = colors.pink })
   highlight(0, 'xmlTodo',            { fg = colors.blue, bg = colors.blueLink })

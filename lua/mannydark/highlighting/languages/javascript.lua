@@ -114,7 +114,9 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsUndefined',                     { fg = colors.red, bg = colors.redLight })
   highlight(0, 'jsNan',                           { fg = colors.red, bg = colors.green })
   highlight(0, 'jsSuper',                         { fg = colors.red, bg = colors.greenLight })
-  highlight(0, 'jsBlockLabel',                    { fg = colors.red, bg = colors.yellow })
+
+  highlight(0, 'jsBlockLabel',                    { fg = colors.purple, bg = colors.turquoise })
+
   highlight(0, 'jsStatement',                     { fg = colors.red, bg = colors.turquoise })
   highlight(0, 'jsCommentIfElse',                 { fg = colors.red, bg = colors.gray })
   highlight(0, 'jsParenSwitch',                   { fg = colors.red, bg = colors.white })
