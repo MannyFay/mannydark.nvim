@@ -56,6 +56,13 @@ treesitter.setupHighlighting = function()
   highlight(0, '@string.escape',         { fg = colors.pink,      bg = 'NONE'                        })
   highlight(0, '@lsp.type.comment',      { fg = colors.gray,      bg = 'NONE'                        })
 
+  highlight(0, '@lsp.type.variable',     { fg = colors.purple,    bg = "NONE"                        })  -- Variables marked by LSP.
+  highlight(0, '@lsp.type.type',         { fg = colors.blue,      bg = "NONE"                        })  -- Keywords marked by LSP.
+  highlight(0, '@lsp.type.function',     { fg = colors.orange,    bg = "NONE"                        })  -- Functions marked by LSP.
+  highlight(0, '@lsp.type.parameter',    { fg = colors.blue,      bg = "NONE"                        })  -- Props in React functions marked by LSP.
+
+
+
 
   ----------------------- Not used by now:
   highlight(0, '@define',                { fg = colors.orange,    bg = colors.red                    })
@@ -91,7 +98,6 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.enum',                { fg = colors.blue,        bg = colors.greenLight                 })
   highlight(0, '@lsp.type.enumMember',          { fg = colors.blue,        bg = colors.orange                 })
   highlight(0, '@lsp.type.event',               { fg = colors.blue,        bg = colors.yellow                 })
-  highlight(0, '@lsp.type.function',            { fg = colors.orange,      bg = colors.turquoise                 })
   highlight(0, '@lsp.type.interface',           { fg = colors.blue,        bg = colors.red                 })
   highlight(0, '@lsp.type.keyword',             { fg = colors.blue,        bg = colors.grayDark                 })
   highlight(0, '@lsp.type.macro',               { fg = colors.blue,        bg = colors.purple                 })
@@ -100,14 +106,11 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.namespace',           { fg = colors.orange,        bg = colors.pink                 })
   highlight(0, '@lsp.type.number',              { fg = colors.orange,       bg = colors.red                 })
   highlight(0, '@lsp.type.operator',            { fg = colors.orange,       bg = colors.white                 })
-  highlight(0, '@lsp.type.parameter',           { fg = colors.orange,        bg = colors.redLight                 })
   highlight(0, '@lsp.type.property',            { fg = colors.purple,      bg = colors.grayDark               })
   highlight(0, '@lsp.type.regexp',              { fg = colors.purple,        bg = colors.gray                 })
   highlight(0, '@lsp.type.string',              { fg = colors.purple,    bg = colors.red                 })
   highlight(0, '@lsp.type.struct',              { fg = colors.purple,        bg = colors.blue                 })
-  highlight(0, '@lsp.type.type',                { fg = colors.purple,        bg = colors.blueLink                 })
   highlight(0, '@lsp.type.typeParameter',       { fg = colors.purple,        bg = colors.orange                 })
-  highlight(0, '@lsp.type.variable',            { fg = colors.purple,      bg = colors.green                })
 
 end
 
