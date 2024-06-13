@@ -12,17 +12,22 @@ local lsp       = {}
 -- Settings
 
 lsp.setupHighlighting = function()
-  highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,   bg = 'NONE'                                        })
   highlight(0, 'DiagnosticError',                     { fg = colors.red,    bg = 'NONE'                                        })  -- Code error indicator bar and text at end of line.
 
-  highlight(0, 'DiagnosticSignHint',                  { fg = colors.gray,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
-  highlight(0, 'DiagnosticHint',                      { fg = colors.gray,   bg = 'NONE'                                        })  -- Code hint indicator bar and text at end of line.
-  highlight(0, 'DiagnosticUnderlineHint',             { fg = 'NONE',        bg = 'NONE', sp = colors.yellow, undercurl = true, })
-  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.redLight,   bg = 'NONE'                                        })
-  highlight(0, 'DiagnosticFloatingHint',               { fg = colors.pink, bg = colors.blue                                    })
-  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.purple,   bg = 'NONE'                                        })  -- Horizontal hint indicator bar and text at end of line.
-
   highlight(0, 'DiagnosticWarn',                      { fg = colors.orange, bg = 'NONE'                                        })
+
+  -- hints are more important than information!
+  highlight(0, 'DiagnosticSignHint',                  { fg = colors.greenLight,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
+  highlight(0, 'DiagnosticHint',                      { fg = colors.greenLight,   bg = 'NONE'                                        })  -- Code hint indicator bar and text at end of line.
+  highlight(0, 'DiagnosticUnderlineHint',             { fg = colors.greenLight,   bg = 'NONE', sp = colors.yellow, undercurl = true, })
+  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.greenLight,   bg = 'NONE'                                        })
+  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.greenLight,   bg = 'NONE', italic = true,                                        })  -- Horizontal hint indicator bar and text at end of line.
+
+  highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,   bg = 'NONE'                                        })
+
+
+
+
   highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.blue,   bg = 'NONE'                                        })  -- Horizontal info indicator bar and text at end of line.
   highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange, bg = 'NONE'                                        })  -- Horizontal warning indicator bar and text at end of line.
   highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE'                                        })  -- Horizontal error indicator bar and text at end of line.
@@ -43,6 +48,7 @@ lsp.setupHighlighting = function()
 
 
   ----------------------- Not used by now:
+  highlight(0, 'DiagnosticFloatingHint',               { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'DiagnosticOther',                      { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'DiagnosticSignOther',                  { fg = colors.pink, bg = colors.blue                                    })
   highlight(0, 'DiagnosticSignWarning',                { fg = colors.pink, bg = colors.blue                                    })
