@@ -54,7 +54,6 @@ treesitter.setupHighlighting = function()
   highlight(0, '@field',                 { fg = colors.purple,    bg = 'NONE'                        })
   highlight(0, '@keyword.operator',      { fg = colors.blue,      bg = 'NONE'                        })
   highlight(0, '@string.escape',         { fg = colors.pink,      bg = 'NONE'                        })
-  highlight(0, '@lsp.type.comment',      { fg = colors.gray,      bg = 'NONE'                        })
 
   highlight(0, '@lsp.type.variable',     { fg = colors.purple,    bg = "NONE"                        })  -- Variables marked by LSP.
   highlight(0, '@lsp.type.type',         { fg = colors.blue,      bg = "NONE"                        })  -- Keywords marked by LSP.
@@ -63,8 +62,8 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.interface',    { fg = colors.turquoise, bg = "NONE"                        })  -- Interface names marked by LSP.
   highlight(0, '@lsp.type.class',        { fg = colors.turquoise, bg = "NONE"                        })  -- Class names marked by LSP.
   highlight(0, '@lsp.type.property',     { fg = colors.purple,    bg = "NONE"                        })  -- Properties/Attributes marked by LSP.
-
-  highlight(0, '@lsp.type.comment',             { fg = colors.red,         bg = 'NONE'                 })
+  highlight(0, '@lsp.type.comment',      { fg = colors.red,       bg = 'NONE'                        })  -- Comments marked by LSP.
+  highlight(0, '@lsp.type.method',       { fg = colors.orange,    bg = 'NONE'                        })  -- Name of method.
 
 
 
@@ -103,7 +102,6 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.event',               { fg = colors.blue,        bg = colors.yellow                 })
   highlight(0, '@lsp.type.keyword',             { fg = colors.blue,        bg = colors.grayDark                 })
   highlight(0, '@lsp.type.macro',               { fg = colors.blue,        bg = colors.purple                 })
-  highlight(0, '@lsp.type.method',              { fg = colors.orange,      bg = colors.blue                 })
   highlight(0, '@lsp.type.modifier',            { fg = colors.orange,        bg = colors.orange                 })
   highlight(0, '@lsp.type.namespace',           { fg = colors.orange,        bg = colors.pink                 })
   highlight(0, '@lsp.type.number',              { fg = colors.orange,       bg = colors.red                 })
