@@ -100,7 +100,9 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsFlowImportType',                { fg = colors.purple, bg = colors.turquoise })
   highlight(0, 'jsFlowTypeStatement',             { fg = colors.purple, bg = colors.gray })
   highlight(0, 'jsModuleAs',                      { fg = colors.purple, bg = colors.white })
+
   highlight(0, 'jsExportDefaultGroup',            { fg = colors.purple, bg = colors.grayDark })
+
   highlight(0, 'jsFlowTypeKeyword',               { fg = colors.blue, bg = colors.red })
   highlight(0, 'jsRegexpCharClass',               { fg = colors.blue, bg = colors.green })
   highlight(0, 'jsRegexpBackRef',                 { fg = colors.blue, bg = colors.greenLight })

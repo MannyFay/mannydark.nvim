@@ -62,6 +62,7 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.parameter',    { fg = colors.blue,      bg = "NONE"                        })  -- Props in React functions marked by LSP.
   highlight(0, '@lsp.type.interface',    { fg = colors.turquoise, bg = "NONE"                        })  -- Interface names marked by LSP.
   highlight(0, '@lsp.type.class',        { fg = colors.turquoise, bg = "NONE"                        })  -- Class names marked by LSP.
+  highlight(0, '@lsp.type.property',     { fg = colors.purple,    bg = "NONE"                        })  -- Properties/Attributes marked by LSP.
 
 
 
@@ -106,7 +107,6 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.namespace',           { fg = colors.orange,        bg = colors.pink                 })
   highlight(0, '@lsp.type.number',              { fg = colors.orange,       bg = colors.red                 })
   highlight(0, '@lsp.type.operator',            { fg = colors.orange,       bg = colors.white                 })
-  highlight(0, '@lsp.type.property',            { fg = colors.purple,      bg = colors.grayDark               })
   highlight(0, '@lsp.type.regexp',              { fg = colors.purple,        bg = colors.gray                 })
   highlight(0, '@lsp.type.string',              { fg = colors.purple,    bg = colors.red                 })
   highlight(0, '@lsp.type.struct',              { fg = colors.purple,        bg = colors.blue                 })

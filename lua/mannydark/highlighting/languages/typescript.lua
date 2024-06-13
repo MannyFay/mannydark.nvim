@@ -10,21 +10,23 @@ local typescript = {}
 ---- Settings
 
 typescript.setupHighlighting = function()
-  highlight(0, "typescriptGlobal",             { fg = colors.turquoise, bg = "NONE" })  -- Global objects of global libraries.
-  highlight(0, "typescriptExport",             { fg = colors.blue,      bg = "NONE" })  -- 'export' keyword.
-  highlight(0, "typescriptDefault",            { fg = colors.blue,      bg = "NONE" })  -- 'default' keyword.
-  highlight(0, "typescriptImport",             { fg = colors.blue,      bg = "NONE" })  -- 'from' keyword.
-  highlight(0, "typescriptBraces",             { fg = colors.white,     bg = "NONE" })  -- Braces: { }.
-  highlight(0, "typescriptString",             { fg = colors.redLight,  bg = "NONE" })  -- Strings.
-  highlight(0, "typescriptDefaultImportName",  { fg = colors.turquoise, bg = "NONE" })  -- Imported libraries.
-  highlight(0, "typescriptTypeBlock",          { fg = colors.turquoise, bg = "NONE" })  -- Imported types.
-  highlight(0, "typescriptPredefinedType",     { fg = colors.blue,      bg = "NONE" })  -- Data types.
-  highlight(0, "typescriptTypeParameter",      { fg = colors.purple,    bg = "NONE" })  -- Parameter variables of types.
-  highlight(0, "typescriptTemplateSB",         { fg = colors.redLight,  bg = "NONE" })  -- ${} in template strings.
-  highlight(0, "typescriptCall",               { fg = colors.blue,      bg = "NONE" })  -- Like 'props' in function parameters.
-  highlight(0, "typescriptObjectStaticMethod", { fg = colors.orange,    bg = "NONE" })  -- Static methods of objects.
-  highlight(0, "typescriptInterfaceName",      { fg = colors.turquoise, bg = "NONE" })  -- Name of interfaces.
-  highlight(0, "typescriptTypeReference",      { fg = colors.turquoise, bg = "NONE" })  -- Reference to types like classes and interfaces.
+  highlight(0, "typescriptGlobal",              { fg = colors.turquoise, bg = "NONE" })  -- Global objects of global libraries.
+  highlight(0, "typescriptExport",              { fg = colors.blue,      bg = "NONE" })  -- 'export' keyword.
+  highlight(0, "typescriptDefault",             { fg = colors.blue,      bg = "NONE" })  -- 'default' keyword.
+  highlight(0, "typescriptImport",              { fg = colors.blue,      bg = "NONE" })  -- 'from' keyword.
+  highlight(0, "typescriptBraces",              { fg = colors.white,     bg = "NONE" })  -- Braces: { }.
+  highlight(0, "typescriptString",              { fg = colors.redLight,  bg = "NONE" })  -- Strings.
+  highlight(0, "typescriptDefaultImportName",   { fg = colors.turquoise, bg = "NONE" })  -- Imported libraries.
+  highlight(0, "typescriptTypeBlock",           { fg = colors.turquoise, bg = "NONE" })  -- Imported types.
+  highlight(0, "typescriptPredefinedType",      { fg = colors.blue,      bg = "NONE" })  -- Data types.
+  highlight(0, "typescriptTypeParameter",       { fg = colors.purple,    bg = "NONE" })  -- Parameter variables of types.
+  highlight(0, "typescriptTemplateSB",          { fg = colors.redLight,  bg = "NONE" })  -- ${} in template strings.
+  highlight(0, "typescriptCall",                { fg = colors.blue,      bg = "NONE" })  -- Like 'props' in function parameters.
+  highlight(0, "typescriptObjectStaticMethod",  { fg = colors.orange,    bg = "NONE" })  -- Static methods of objects.
+  highlight(0, "typescriptInterfaceName",       { fg = colors.turquoise, bg = "NONE" })  -- Name of interfaces.
+  highlight(0, "typescriptTypeReference",       { fg = colors.turquoise, bg = "NONE" })  -- Reference to types like classes and interfaces.
+  highlight(0, "typescriptVariable",            { fg = colors.blue,      bg = "NONE" })  -- Variable keywords like 'let', 'const' etc.
+  highlight(0, "typescriptVariableDeclaration", { fg = colors.purple,    bg = "NONE" })  -- Variable names.
 
 
 
@@ -257,7 +259,6 @@ typescript.setupHighlighting = function()
 -- typescriptRef  xxx links to Include
 -- typescriptLineComment xxx links to Comment
 -- typescriptComment xxx links to Comment
--- typescriptVariable xxx links to Identifier
 -- typescriptEnum xxx cleared
 -- typescriptEnumKeyword xxx links to Identifier
 -- typescriptOperator xxx links to Identifier
@@ -330,7 +331,6 @@ typescript.setupHighlighting = function()
 -- typescriptEventString xxx links to String
 -- typescriptDestructureAs xxx cleared
 -- typescriptDestructureString xxx links to String
--- typescriptVariableDeclaration xxx cleared
 -- typescriptTypeAnnotation xxx cleared
 -- typescriptAssign xxx cleared
 -- typescriptRestOrSpread xxx cleared
