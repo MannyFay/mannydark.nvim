@@ -5,7 +5,7 @@
 local colors    = require('mannydark.palette')
 local highlight = vim.api.nvim_set_hl
 local lsp       = {}
-
+local ITALIC = 0x08
 
 
 --------------------------------------------------------------
@@ -21,7 +21,7 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.green,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
   highlight(0, 'DiagnosticUnderlineHint',             { fg = 'NONE',        bg = 'NONE', sp = colors.green, undercurl = true, })  -- Hints in project tree on words.
 
-  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green,   bg = 'NONE', italic = true, sp = colors.green, undercurl = true,                                        })  -- Virtual text at the end of the line.
+  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green,   bg = 'NONE', attr = ITALIC                                        })  -- Virtual text at the end of the line.
 
   highlight(0, 'LspDiagnosticsHint',                  { fg = colors.red,   bg = colors.blue                                        })
 
