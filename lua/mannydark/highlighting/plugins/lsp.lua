@@ -17,11 +17,12 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticWarn',                      { fg = colors.orange, bg = 'NONE'                                        })
 
   -- hints are more important than information!
-  highlight(0, 'DiagnosticSignHint',                  { fg = colors.pink,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
-  highlight(0, 'DiagnosticHint',                      { fg = colors.purple,   bg = 'NONE'                                        })  -- Code hint indicator bar and text at end of line.
+  highlight(0, 'DiagnosticSignHint',                  { fg = colors.green,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
   highlight(0, 'DiagnosticUnderlineHint',             { fg = 'NONE',        bg = 'NONE', sp = colors.green, undercurl = true, })  -- Hints in project tree on words.
+
+  highlight(0, 'DiagnosticHint',                      { fg = colors.purple,   bg = colors.blueLink                                       })  -- Code hint indicator bar and text at end of line.
   highlight(0, 'LspDiagnosticsHint',                  { fg = colors.red,   bg = colors.blue                                        })
-  highlight(0, 'DiagnosticVirtualTextHint',           { fg = 'NONE',   bg = 'NONE',                                        })  -- Background of virtual hint text. WTF bg and fg are the same???
+  highlight(0, 'DiagnosticVirtualTextHint',           { fg = 'NONE',   bg = 'NONE',                                        })  -- Background of virtual hint text (fg and bg changes both. WTF bg and fg are the same???
 
   highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,   bg = 'NONE'                                        })
 
