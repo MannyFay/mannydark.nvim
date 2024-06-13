@@ -30,10 +30,10 @@ nvimTree.setupHighlighting = function()
   highlight(0, 'NvimTreeGitDirty',                  { fg = colors.red,      bg = 'NONE'           })
   highlight(0, 'NvimTreeGitStaged',                 { fg = colors.orange,   bg = 'NONE'           })
   highlight(0, 'NvimTreeGitMerge',                  { fg = colors.orange,   bg = 'NONE'           })
-  highlight(0, 'NvimTreeLspDiagnosticsError',       { fg = colors.red,      bg = 'NONE'           })
-  highlight(0, 'NvimTreeLspDiagnosticsWarning',     { fg = colors.orange,   bg = 'NONE'           })
-  highlight(0, 'NvimTreeLspDiagnosticsInformation', { fg = colors.blue,     bg = 'NONE'           })
-  highlight(0, 'NvimTreeLspDiagnosticsHint',        { fg = colors.blue,     bg = 'NONE'           })
+  highlight(0, 'NvimTreeLspDiagnosticsError',       { fg = colors.red,      bg = 'NONE'           })  -- Error icon.
+  highlight(0, 'NvimTreeLspDiagnosticsWarning',     { fg = colors.orange,   bg = 'NONE'           })  -- Warning icon.
+  highlight(0, 'NvimTreeLspDiagnosticsInformation', { fg = colors.gray,     bg = 'NONE'           })  -- Information icon.
+  highlight(0, 'NvimTreeLspDiagnosticsHint',        { fg = colors.green,    bg = 'NONE'           })  -- Hint icon.
   highlight(0, 'NvimTreeFileIgnored',               { fg = colors.gray,     bg = 'NONE'           })
   highlight(0, 'NvimTreeFileDeleted',               { fg = colors.gray,     bg = 'NONE'           })
   highlight(0, 'nvimtreefilerenamed',               { fg = colors.red,      bg = 'NONE'           })
