@@ -10,19 +10,21 @@ local typescript = {}
 ---- Settings
 
 typescript.setupHighlighting = function()
-  highlight(0, "typescriptGlobal",            { fg = colors.turquoise, bg = "NONE" })  -- Global objects of global libraries.
-  highlight(0, "typescriptExport",            { fg = colors.blue,      bg = "NONE" })  -- 'export' keyword.
-  highlight(0, "typescriptDefault",           { fg = colors.blue,      bg = "NONE" })  -- 'default' keyword.
-  highlight(0, "typescriptImport",            { fg = colors.blue,      bg = "NONE" })  -- 'from' keyword.
-  highlight(0, "typescriptBraces",            { fg = colors.white,     bg = "NONE" })  -- Braces: { }.
-  highlight(0, "typescriptString",            { fg = colors.redLight,  bg = "NONE" })  -- Strings.
-  highlight(0, "typescriptDefaultImportName", { fg = colors.turquoise, bg = "NONE" })  -- Imported libraries.
-  highlight(0, "typescriptTypeBlock",         { fg = colors.turquoise, bg = "NONE" })  -- Imported types.
-  highlight(0, "typescriptPredefinedType",    { fg = colors.blue,      bg = "NONE" })  -- Data types.
-  highlight(0, "typescriptTypeParameter",     { fg = colors.purple,    bg = "NONE" })  -- Parameter variables of types.
-  highlight(0, "typescriptTemplateSB",        { fg = colors.redLight,  bg = "NONE" })  -- ${} in template strings.
-  highlight(0, "typescriptCall",              { fg = colors.blue,      bg = "NONE" })  -- foobar
-  highlight(0, "typescriptObjectStaticMethod", { fg = colors.orange,   bg = "NONE" })  -- Static methods of objects.
+  highlight(0, "typescriptGlobal",             { fg = colors.turquoise, bg = "NONE" })  -- Global objects of global libraries.
+  highlight(0, "typescriptExport",             { fg = colors.blue,      bg = "NONE" })  -- 'export' keyword.
+  highlight(0, "typescriptDefault",            { fg = colors.blue,      bg = "NONE" })  -- 'default' keyword.
+  highlight(0, "typescriptImport",             { fg = colors.blue,      bg = "NONE" })  -- 'from' keyword.
+  highlight(0, "typescriptBraces",             { fg = colors.white,     bg = "NONE" })  -- Braces: { }.
+  highlight(0, "typescriptString",             { fg = colors.redLight,  bg = "NONE" })  -- Strings.
+  highlight(0, "typescriptDefaultImportName",  { fg = colors.turquoise, bg = "NONE" })  -- Imported libraries.
+  highlight(0, "typescriptTypeBlock",          { fg = colors.turquoise, bg = "NONE" })  -- Imported types.
+  highlight(0, "typescriptPredefinedType",     { fg = colors.blue,      bg = "NONE" })  -- Data types.
+  highlight(0, "typescriptTypeParameter",      { fg = colors.purple,    bg = "NONE" })  -- Parameter variables of types.
+  highlight(0, "typescriptTemplateSB",         { fg = colors.redLight,  bg = "NONE" })  -- ${} in template strings.
+  highlight(0, "typescriptCall",               { fg = colors.blue,      bg = "NONE" })  -- Like 'props' in function parameters.
+  highlight(0, "typescriptObjectStaticMethod", { fg = colors.orange,    bg = "NONE" })  -- Static methods of objects.
+  highlight(0, "typescriptInterfaceName",      { fg = colors.turquoise, bg = "NONE" })  -- Name of interfaces.
+  highlight(0, "typescriptTypeReference",      { fg = colors.turquoise, bg = "NONE" })  -- Reference to types like classes and interfaces.
 
 
 
@@ -59,7 +61,6 @@ typescript.setupHighlighting = function()
 -- typescriptMixinComma xxx cleared
 -- typescriptClassTypeArguments xxx cleared
 -- typescriptArrowFunc xxx links to Type
--- typescriptInterfaceName xxx links to Function
 -- typescriptInterfaceExtends xxx links to Keyword
 -- typescriptInterfaceTypeParameter xxx cleared
 -- typescriptInterfaceHeritage xxx cleared
@@ -249,7 +250,6 @@ typescript.setupHighlighting = function()
 -- typescriptConstructorType xxx links to Function
 -- typescriptTypeBracket xxx cleared
 -- typescriptParenthesizedType xxx cleared
--- typescriptTypeReference xxx links to Identifier
 -- typescriptObjectType xxx cleared
 -- typescriptTupleType xxx cleared
 -- typescriptCommentTodo xxx links to Todo
