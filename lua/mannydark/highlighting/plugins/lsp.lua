@@ -19,10 +19,9 @@ lsp.setupHighlighting = function()
   -- hints are more important than information!
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.green,   bg = 'NONE'                                        })  -- Hint icon (bulb) in sign column.
   highlight(0, 'DiagnosticUnderlineHint',             { fg = 'NONE',        bg = 'NONE', sp = colors.green, undercurl = true, })  -- Hints in project tree on words.
-
   highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green,   bg = 'NONE', sp = colors.green, underline = true                                        })  -- Virtual text at the end of the line.
 
-  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.red,   bg = colors.blue                                        })
+  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.turquoise,   bg = colors.blue                                        })
 
   highlight(0, 'DiagnosticHint',                      { fg = colors.purple,   bg = colors.blueLink                                       })  -- ??? idk - this is not true -> Code hint indicator bar and text at end of line.
 
