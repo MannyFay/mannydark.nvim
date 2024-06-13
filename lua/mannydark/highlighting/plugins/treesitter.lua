@@ -60,6 +60,8 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.type',         { fg = colors.blue,      bg = "NONE"                        })  -- Keywords marked by LSP.
   highlight(0, '@lsp.type.function',     { fg = colors.orange,    bg = "NONE"                        })  -- Functions marked by LSP.
   highlight(0, '@lsp.type.parameter',    { fg = colors.blue,      bg = "NONE"                        })  -- Props in React functions marked by LSP.
+  highlight(0, '@lsp.type.interface',    { fg = colors.turquoise, bg = "NONE"                        })  -- Interface names marked by LSP.
+  highlight(0, '@lsp.type.class',        { fg = colors.turquoise, bg = "NONE"                        })  -- Class names marked by LSP.
 
 
 
@@ -92,13 +94,11 @@ treesitter.setupHighlighting = function()
   highlight(0, '@text.danger',           { fg = colors.blue,      bg = colors.red })
   highlight(0, '@tag',                   { fg = colors.blue,      bg = colors.red })
 
-  highlight(0, '@lsp.type.class',               { fg = colors.blue,        bg = colors.pink                })
   highlight(0, '@lsp.type.comment',             { fg = colors.red,         bg = colors.gray                 })
   highlight(0, '@lsp.type.decorator',           { fg = colors.blue,        bg = colors.green                 })
   highlight(0, '@lsp.type.enum',                { fg = colors.blue,        bg = colors.greenLight                 })
   highlight(0, '@lsp.type.enumMember',          { fg = colors.blue,        bg = colors.orange                 })
   highlight(0, '@lsp.type.event',               { fg = colors.blue,        bg = colors.yellow                 })
-  highlight(0, '@lsp.type.interface',           { fg = colors.blue,        bg = colors.red                 })
   highlight(0, '@lsp.type.keyword',             { fg = colors.blue,        bg = colors.grayDark                 })
   highlight(0, '@lsp.type.macro',               { fg = colors.blue,        bg = colors.purple                 })
   highlight(0, '@lsp.type.method',              { fg = colors.orange,      bg = colors.blue                 })
