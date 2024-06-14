@@ -52,6 +52,7 @@ lsp.setupHighlighting = function()
 
   highlight(0, 'LspReferenceRead',                     { fg = "NONE", bg = colors.gray                                    })  -- Matching words to the one under cursor, like HTML tag names.
 
+  highlight(0, 'DiagnosticUnnecessary',               { fg = colors.pink, bg = colors.blue                                    })
 
   ----------------------- Not used by now:
   highlight(0, 'DiagnosticFloatingHint',               { fg = colors.pink, bg = colors.blue                                    })
