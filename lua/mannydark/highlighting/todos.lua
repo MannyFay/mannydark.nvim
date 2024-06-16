@@ -64,11 +64,11 @@ todoStuff.setupHighlighting = function()
   -- Misc
   highlight(0, 'diffAdded',             { fg = colors.green, bg = "NONE"                               })  -- Lines/chars added in files in diff view.
   highlight(0, 'diffRemoved',           { fg = colors.red, bg = "NONE"                               })  -- Lines/chars removed in files in diff view.
+  highlight(0, 'diffNewFile',           { fg = colors.greenLight, bg = "NONE"                               })  -- Name of file with changes.
+  highlight(0, 'diffOldFile',           { fg = colors.redLight, bg = "NONE"                               })  -- Name of of file before changes.
 
   highlight(0, 'diffFileId',            { fg = colors.green, bg = colors.white, bold = true, reverse = true, })
   highlight(0, 'diffFile',              { fg = colors.red, bg = colors.white                               })
-  highlight(0, 'diffNewFile',           { fg = colors.orange, bg = colors.white                               })
-  highlight(0, 'diffOldFile',           { fg = colors.blue, bg = colors.white                               })
 
   highlight(0, 'debugPc',               { fg = colors.grayDark, bg = colors.white                               })
   highlight(0, 'debugBreakpoint',       { fg = colors.grayDark, bg = colors.white                               })
