@@ -62,12 +62,13 @@ todoStuff.setupHighlighting = function()
   highlight(0, 'CratesNvimVersion', { fg = colors.blue, bg = colors.gray })
 
   -- Misc
-  highlight(0, 'diffAdded',             { fg = colors.green, bg = "NONE"                               })
-  highlight(0, 'diffRemoved',           { fg = colors.red, bg = "NONE"                               })
-  highlight(0, 'diffFileId',            { fg = colors.grayDark, bg = colors.white, bold = true, reverse = true, })
-  highlight(0, 'diffFile',              { fg = colors.grayDark, bg = colors.white                               })
-  highlight(0, 'diffNewFile',           { fg = colors.grayDark, bg = colors.white                               })
-  highlight(0, 'diffOldFile',           { fg = colors.grayDark, bg = colors.white                               })
+  highlight(0, 'diffAdded',             { fg = colors.green, bg = "NONE"                               })  -- Lines/chars added in files in diff view.
+  highlight(0, 'diffRemoved',           { fg = colors.red, bg = "NONE"                               })  -- Lines/chars removed in files in diff view.
+
+  highlight(0, 'diffFileId',            { fg = colors.gray, bg = colors.white, bold = true, reverse = true, })
+  highlight(0, 'diffFile',              { fg = colors.gray, bg = colors.white                               })
+  highlight(0, 'diffNewFile',           { fg = colors.gray, bg = colors.white                               })
+  highlight(0, 'diffOldFile',           { fg = colors.gray, bg = colors.white                               })
   highlight(0, 'debugPc',               { fg = colors.grayDark, bg = colors.white                               })
   highlight(0, 'debugBreakpoint',       { fg = colors.grayDark, bg = colors.white                               })
   highlight(0, 'CodiVirtualText',       { fg = colors.grayDark, bg = colors.white                               })
