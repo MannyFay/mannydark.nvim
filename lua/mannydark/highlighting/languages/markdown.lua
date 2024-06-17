@@ -30,9 +30,9 @@ markdown.setupHighlighting = function()
   highlight(0, 'markdownListMarker',         { fg = colors.blue,     bg = 'NONE'                      })
   highlight(0, 'markdownOrderedListMarker',  { fg = colors.blue,     bg = 'NONE'                      })
   if vim.fn.has('nvim-0.7.3') == 1 then
-    highlight(0, 'markdownUrl',              { fg = colors.blueLink, bg = 'NONE', underdotted = true, })
+    highlight(0, 'markdownUrl',              { fg = colors.blueLink, bg = 'NONE', underline = true, })
   else
-    highlight(0, 'markdownUrl',              { fg = colors.blueLink, bg = 'NONE', underdot = true,    })
+    highlight(0, 'markdownUrl',              { fg = colors.blueLink, bg = 'NONE', underline = true,    })
   end
   highlight(0, 'mkdHeading',                 { fg = colors.blue,     bg = 'NONE'                      })  -- Hash symbols before heading text.
   highlight(0, 'mkdCode',                    { fg = colors.green,    bg = 'NONE'                      })  -- Inline code content.
@@ -69,7 +69,9 @@ markdown.setupHighlighting = function()
   highlight(0, 'markdownIdDelimiter',        { fg = colors.turquoise, bg = colors.blue                })
   highlight(0, 'markdownBoldItalic',         { fg = colors.purple, bg = colors.orange             })
   highlight(0, 'markdownRule',               { fg = colors.white, bg = colors.orange              })
-  highlight(0, 'markdownFootnote',           { fg = colors.blue, bg = colors.orange                   })
+
+  highlight(0, 'markdownFootnote',           { fg = colors.blue, bg = "NONE"                   })
+
   highlight(0, 'markdownFootnoteDefinition', { fg = colors.red, bg = colors.orange                    })
   highlight(0, 'markdownEscape',             { fg = colors.pink, bg = colors.orange                   })
 end
