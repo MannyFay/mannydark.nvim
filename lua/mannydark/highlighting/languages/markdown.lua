@@ -17,12 +17,12 @@ markdown.setupHighlighting = function()
   highlight(0, 'markdownCode',               { fg = colors.green,    bg = 'NONE'                      })
   highlight(0, 'markdownCodeBlock',          { fg = colors.green,    bg = 'NONE'                      })
   highlight(0, 'markdownCodeDelimiter',      { fg = colors.blue,     bg = 'NONE'                      })
-  highlight(0, 'markdownH1',                 { fg = colors.pink,     bg = 'NONE', bold = true         })
-  highlight(0, 'markdownH2',                 { fg = colors.pink,     bg = 'NONE', bold = true         })
-  highlight(0, 'markdownH3',                 { fg = colors.pink,     bg = 'NONE', bold = true         })
-  highlight(0, 'markdownH4',                 { fg = colors.pink,     bg = 'NONE', bold = true         })
-  highlight(0, 'markdownH5',                 { fg = colors.pink,     bg = 'NONE', bold = true         })
-  highlight(0, 'markdownH6',                 { fg = colors.pink,     bg = 'NONE', bold = true         })
+  highlight(0, 'markdownH1',                 { fg = colors.blue,   bg = 'NONE', bold = true         })  -- Heading 1 text.
+  highlight(0, 'markdownH2',                 { fg = colors.blue,   bg = 'NONE', bold = true         })  -- Heading 2 text.
+  highlight(0, 'markdownH3',                 { fg = colors.blue,   bg = 'NONE', bold = true         })  -- Heading 3 text.
+  highlight(0, 'markdownH4',                 { fg = colors.blue,   bg = 'NONE', bold = true         })  -- Heading 4 text.
+  highlight(0, 'markdownH5',                 { fg = colors.blue,   bg = 'NONE', bold = true         })  -- Heading 5 text.
+  highlight(0, 'markdownH6',                 { fg = colors.blue,   bg = 'NONE', bold = true         })  -- Heading 6 text.
   highlight(0, 'markdownHeadingDelimiter',   { fg = colors.blue,     bg = 'NONE'                      })
   highlight(0, 'markdownItalic',             { fg = colors.white,    bg = 'NONE', italic = true       })
   highlight(0, 'markdownLinkDelimiter',      { fg = colors.white,    bg = 'NONE'                      })
@@ -34,7 +34,6 @@ markdown.setupHighlighting = function()
   else
     highlight(0, 'markdownUrl',              { fg = colors.blueLink, bg = 'NONE', underdot = true,    })
   end
-  highlight(0, 'mkdHeading',                 { fg = colors.blue,     bg = 'NONE'                      })
   highlight(0, 'mkdHeading',                 { fg = colors.blue,     bg = 'NONE'                      })  -- Hash symbols before heading text.
   highlight(0, 'mkdCode',                    { fg = colors.green,    bg = 'NONE'                      })  -- Inline code content.
   highlight(0, 'mkdCodeDelimiter',           { fg = colors.blue,     bg = 'NONE'                      })  -- Inline code backticks.
