@@ -10,9 +10,10 @@ Fork it, contribute to it or donate to it - everything is possible!
 <br>
 
 # Installation
+Install this plugin using your favorite plugin manager, and then paste the `vim.cmd [[...]]` part in the plugin file.
 ## Packer.nvim
 Open your Neovim plugin file and paste the plugin.  
-Packer:
+
 ```lua
 -- Set color scheme:
 use({
@@ -54,6 +55,7 @@ You will find the repository on your machine in:
       set background=dark
     endtry
   ]],
+}
 
 ```
 
