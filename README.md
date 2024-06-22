@@ -47,6 +47,7 @@ You will find the repository on your machine in:
 ```lua
 {
   'MannyFay/mannydark.nvim'
+
   vim.cmd [[
     try
       colorscheme mannydark
