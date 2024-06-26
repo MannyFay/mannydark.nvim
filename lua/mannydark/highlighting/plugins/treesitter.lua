@@ -70,7 +70,7 @@ treesitter.setupHighlighting = function()
 
 
   ----------------------- Not used by now:
-  highlight(0, '@define',                { fg = colors.orange,    bg = colors.red                    })
+  highlight(0, '@define',                { fg = colors.green,    bg = colors.red                    })
   highlight(0, '@string.regex',          { fg = colors.blue,      bg = colors.red                    })
   highlight(0, '@string.special',        { fg = colors.red,       bg = colors.orange                 })
   highlight(0, '@character.special',     { fg = colors.white,     bg = colors.purple                 })
