@@ -66,6 +66,7 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.method',       { fg = colors.orange,    bg = 'NONE'                        })  -- Name of method.
 
 
+  highlight(0, '@text.reference',        { fg = colors.pink,      bg = colors.green })  -- Maybe that is the word reference highlighter?
 
 
   ----------------------- Not used by now:
@@ -90,7 +91,6 @@ treesitter.setupHighlighting = function()
   highlight(0, '@text.math',             { fg = colors.blue,      bg = colors.red })
   highlight(0, '@text.environment',      { fg = colors.blue,      bg = colors.red })
   highlight(0, '@text.environment.name', { fg = colors.blue,      bg = colors.red })
-  highlight(0, '@text.reference',        { fg = colors.blue,      bg = colors.red })
   highlight(0, '@text.note',             { fg = colors.blue,      bg = colors.red })
   highlight(0, '@text.warning',          { fg = "NONE",      bg = "NONE", sp = colors.orange, undercurl = true })
   highlight(0, '@text.danger',           { fg = "NONE",      bg = "NONE", sp = colors.red, undercurl = true })
