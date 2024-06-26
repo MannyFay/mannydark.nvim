@@ -99,7 +99,7 @@ lsp.setupHighlighting = function()
 
   
   highlight(0, 'IlluminatedWordRead',                  { fg = "NONE", bg = colors.grayDark                                   })  -- References of word under cursor (used by illuminate).
-  highlight(0, 'IlluminatedWordText',                  { fg = "NONE", bg = colors.grayDark                                   })  -- String highlighting used by illuminate.
+  highlight(0, 'IlluminatedWordText',                  { fg = "NONE", bg = "NONE"                                   })  -- String highlighting used by illuminate.
   highlight(0, 'IlluminatedWordWrite',                 { fg = "NONE", bg = "NONE"                                   })  -- Word under cursor (used by illuminate).
 
   highlight(0, 'LspInfoFiletype',                 { fg = colors.pink, bg = colors.blue                                    })
