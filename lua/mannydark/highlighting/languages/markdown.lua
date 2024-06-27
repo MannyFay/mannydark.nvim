@@ -42,6 +42,7 @@ markdown.setupHighlighting = function()
   highlight(0, 'mkdNonListItemBlock',        { fg = colors.white,    bg = 'NONE'                      })  -- Regular text.
   highlight(0, 'mkdLineBreak',               { fg = colors.blue,     bg = 'NONE'                      })  -- Line break dots (two spaces at end of line).
   highlight(0, 'mkdRule',                    { fg = colors.blue,     bg = 'NONE'                      })  -- Horizontal line indicator.
+  highlight(0, 'markdownRule',               { fg = colors.blue,     bg = 'NONE'                      })  -- Horizontal line indicator.
   highlight(0, 'mkdLink',                    { fg = colors.purple,   bg = 'NONE'                      })  -- Link text.
   highlight(0, 'mkdURL',                     { fg = colors.blueLink, bg = 'NONE', underline = true    })  -- Link URL.
   highlight(0, 'mkdListItem',                { fg = colors.blue,     bg = 'NONE'                      })  -- List item bullet.
@@ -68,7 +69,7 @@ markdown.setupHighlighting = function()
   highlight(0, 'markdownIdDeclaration',      { fg = colors.turquoise, bg = colors.orange              })
   highlight(0, 'markdownIdDelimiter',        { fg = colors.turquoise, bg = colors.blue                })
   highlight(0, 'markdownBoldItalic',         { fg = colors.purple, bg = colors.orange             })
-  highlight(0, 'markdownRule',               { fg = colors.white, bg = colors.orange              })
+
 
   highlight(0, 'markdownFootnote',           { fg = colors.blue, bg = "NONE"                   })
 
