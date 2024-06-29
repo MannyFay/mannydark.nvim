@@ -29,6 +29,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFlowMapping',              { fg = colors.blue,       bg = 'NONE' })  -- Content between curly brackets {}.
   highlight(0, 'yamlNodeTag',                  { fg = colors.white,      bg = 'NONE' })  -- Operator of tags.
   highlight(0, 'yamlFlowMappingKey',           { fg = colors.white,      bg = 'NONE' })  -- 'http' in a web address, for example.
+  highlight(0, 'yamlAnchor',                   { fg = colors.white,      bg = 'NONE' })  -- Operators like && in keys.
 
   ----------------------- Not used by now:
   highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
@@ -42,12 +43,10 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlSingleEscape',             { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockScalarHeader',        { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlNull',                     { fg = colors.pink, bg = colors.greenLight })
-
   highlight(0, 'yamlFlowMappingMerge',         { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlTimestamp',                { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlMappingKeyStart',          { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlBlockMappingMerge',        { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlAnchor',                   { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlAlias',                    { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlDocumentEnd',              { fg = colors.pink, bg = colors.greenLight })
   highlight(0, 'yamlDirectiveName',            { fg = colors.pink, bg = colors.greenLight })
