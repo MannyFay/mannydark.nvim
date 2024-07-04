@@ -10,9 +10,10 @@ Fork it, contribute to it or donate to it - everything is possible!
 <br>
 
 # Installation
-## macOS
+Install this plugin using your favorite plugin manager, and then paste the `vim.cmd [[...]]` part in the plugin file.
+## Packer.nvim
 Open your Neovim plugin file and paste the plugin.  
-Packer:
+
 ```lua
 -- Set color scheme:
 use({
@@ -40,6 +41,23 @@ PackerUpdate
 You will find the repository on your machine in:
 ```shell
 ~/.local/share/nvim/site/pack/packer/start/mannydark.nvim
+```
+
+## Lazy.nvim
+```lua
+{
+  'MannyFay/mannydark.nvim'
+
+  vim.cmd [[
+    try
+      colorscheme mannydark
+    catch /^Vim\%((\a\+)\)\=:E185/
+      colorscheme default
+      set background=dark
+    endtry
+  ]],
+}
+
 ```
 
 ---
