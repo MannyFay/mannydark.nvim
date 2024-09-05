@@ -87,6 +87,8 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsFloat',                         { fg = colors.greenLight, bg = 'NONE' })  -- Floating point numbers inclusive dot.
 
   ------------------------- Not used by now:
+  highlight(0, 'jsFlowTypeKeyword',               { fg = colors.blue, bg = colors.green })
+
   highlight(0, 'jsBlock',                         { fg = colors.red, bg = colors.green })
   highlight(0, 'jsBlockLabelKey',                 { fg = colors.green, bg = colors.red })
 
@@ -103,7 +105,7 @@ javaScript.setupHighlighting = function()
 
   highlight(0, 'jsExportDefaultGroup',            { fg = colors.purple, bg = colors.grayDark })
 
-  highlight(0, 'jsFlowTypeKeyword',               { fg = colors.blue, bg = colors.red })
+  
   highlight(0, 'jsRegexpCharClass',               { fg = colors.blue, bg = colors.green })
   highlight(0, 'jsRegexpBackRef',                 { fg = colors.blue, bg = colors.greenLight })
   highlight(0, 'jsRegexpQuantifier',              { fg = colors.blue, bg = colors.orange })
