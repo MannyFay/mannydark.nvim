@@ -64,6 +64,12 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.property',     { fg = colors.purple,    bg = "NONE"                        })  -- Properties/Attributes marked by LSP.
   highlight(0, '@lsp.type.comment',      { fg = colors.red,       bg = 'NONE'                        })  -- Comments marked by LSP.
   highlight(0, '@lsp.type.method',       { fg = colors.orange,    bg = 'NONE'                        })  -- Name of method.
+  highlight(0, '@tag',                   { fg = colors.blue,      bg = 'NONE'                        })  -- Tags like HTML tags.
+
+-------------------------------------------------------------------------------
+--- TypeScript/React
+
+  highlight(0, '@tag.tsx',               { fg = colors.turquoise, bg = 'NONE'                        })  -- Tags.
 
 
   highlight(0, '@text.reference',        { fg = colors.pink,      bg = colors.green })  -- Maybe that is the word reference highlighter?
@@ -94,7 +100,6 @@ treesitter.setupHighlighting = function()
   highlight(0, '@text.note',             { fg = colors.blue,      bg = colors.red })
   highlight(0, '@text.warning',          { fg = "NONE",      bg = "NONE", sp = colors.orange, undercurl = true })
   highlight(0, '@text.danger',           { fg = "NONE",      bg = "NONE", sp = colors.red, undercurl = true })
-  highlight(0, '@tag',                   { fg = colors.blue,      bg = colors.red })
 
   highlight(0, '@lsp.type.decorator',           { fg = colors.blue,        bg = colors.green                 })
   highlight(0, '@lsp.type.enum',                { fg = colors.blue,        bg = colors.greenLight                 })
