@@ -84,6 +84,11 @@ treesitter.setupHighlighting = function()
 
 
 
+-------------------------------------------------------------------------------
+--- Prisma
+
+  highlight(0, '@type.prisma',              { fg = colors.blue,     bg = 'NONE'              })  -- Constants like chars in Regex.
+
 
 
   highlight(0, '@text.reference',        { fg = colors.pink,      bg = colors.green })  -- Maybe that is the word reference highlighter?
