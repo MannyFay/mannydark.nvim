@@ -75,6 +75,14 @@ treesitter.setupHighlighting = function()
 
 
 
+-------------------------------------------------------------------------------
+--- Git
+
+  highlight(0, '@string.special.path.gitignore',     { fg = colors.white,     bg = 'NONE'            })  -- Text.
+  highlight(0, '@character.special.gitignore',     { fg = colors.white,     bg = 'NONE'              })  -- * symbol.
+  highlight(0, '@constant.gitignore',              { fg = colors.purple,     bg = 'NONE'              })  -- Constants like chars in Regex.
+
+
 
 
 
