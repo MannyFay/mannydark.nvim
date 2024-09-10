@@ -69,9 +69,10 @@ treesitter.setupHighlighting = function()
 -------------------------------------------------------------------------------
 --- TypeScript/React
 
-  highlight(0, '@tag.tsx',               { fg = colors.turquoise, bg = 'NONE'                        })  -- Tags.
-  highlight(0, '@tag.builtin.tsx',       { fg = colors.blue,      bg = 'NONE'                        })  -- HTML tags.
-  highlight(0, '@tag.delimiter.tsx',     { fg = colors.white,     bg = 'NONE'                        })  -- < > of tags.
+  highlight(0, '@tag.tsx',                            { fg = colors.turquoise, bg = 'NONE'                        })  -- Tags.
+  highlight(0, '@tag.builtin.tsx',                    { fg = colors.blue,      bg = 'NONE'                        })  -- HTML tags.
+  highlight(0, '@tag.delimiter.tsx',                  { fg = colors.white,     bg = 'NONE'                        })  -- < > of tags.
+  highlight(0, '@lsp.type.namespace.typescriptreact', { fg = colors.white,     bg = 'NONE'                        })  -- Namespace of types like 'React'.
 
 
 
