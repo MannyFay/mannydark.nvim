@@ -14,7 +14,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlKeyValueDelimiter',        { fg = colors.white,      bg = 'NONE' })  -- Colon between key and value.
   highlight(0, 'yamlPlainScalar',              { fg = colors.white,      bg = 'NONE' })  -- Name of containers.
   highlight(0, 'yamlBlockMappingKey',          { fg = colors.blue,       bg = 'NONE' })  -- Name of services.
-  highlight(0, 'yamlTodo',                     { fg = colors.red,        bg = 'NONE' })  -- TODO comments.
+  highlight(0, 'yamlTodo',                     { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO comments.
   highlight(0, 'yamlComment',                  { fg = colors.red,        bg = 'NONE' })  -- Comments.
   highlight(0, 'yamlInteger',                  { fg = colors.greenLight, bg = 'NONE' })  -- Integer numbers.
   highlight(0, 'yamlBlockCollectionItemStart', { fg = colors.white,      bg = 'NONE' })  -- Hyphens of list items.

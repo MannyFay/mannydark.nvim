@@ -10,7 +10,7 @@ local php = {}
 -- Settings
 
 php.setupHighlighting = function()
-	highlight(0, "phpTodo", { fg = colors.red, bg = "NONE" })
+	highlight(0, "phpTodo", { fg = colors.red, bg = "NONE", bold = true }) -- TODO comments.
 	highlight(0, "phpComment", { fg = colors.red, bg = "NONE" })
 	highlight(0, "phpRegion", { fg = colors.turquoise, bg = "NONE", underline = false })
 	highlight(0, "phpInclude", { fg = colors.blue, bg = "NONE" })

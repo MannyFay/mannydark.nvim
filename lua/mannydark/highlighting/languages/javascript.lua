@@ -24,7 +24,7 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsFunction',                      { fg = colors.blue,      bg = 'NONE'                                    })  -- 'function' keyword.
   highlight(0, 'jsClassKeyword',                  { fg = colors.blue,      bg = 'NONE'                                    })  -- 'class' keyword.
   highlight(0, 'jsComment',                       { fg = colors.red,       bg = 'NONE'                                    })  -- Comments.
-  highlight(0, 'jsCommentTodo',                   { fg = colors.red,       bg = 'NONE'                                    })  -- 'Todo' text.
+  highlight(0, 'jsCommentTodo',                   { fg = colors.red,       bg = 'NONE', bold = true                                    })  -- 'Todo' text.
   highlight(0, 'jsOperator',                      { fg = colors.white,     bg = 'NONE'                                    })  -- Operators like =.
   highlight(0, 'jsFuncBraces',                    { fg = colors.white,     bg = 'NONE'                                    })  -- Curly braces {}.
   highlight(0, 'jsFuncCall',                      { fg = colors.orange,    bg = 'NONE'                                    })  -- Functions that are called.
@@ -81,7 +81,7 @@ javaScript.setupHighlighting = function()
   highlight(0, 'jsModuleComma',                   { fg = colors.white,     bg = 'NONE'                                    })  -- Comas in modules.
   highlight(0, 'jsDomErrNo',                      { fg = 'NONE',       bg = 'NONE', sp = colors.red, undercurl = true })
   highlight(0, 'jsError',                         { fg = 'NONE',           bg = 'NONE', sp = colors.red, undercurl = true })
-  highlight(0, 'javascriptCommentTodo',           { fg = colors.red,       bg = 'NONE'                                    })
+  highlight(0, 'javascriptCommentTodo',           { fg = colors.red,       bg = 'NONE', bold = true                                    })
   highlight(0, 'javaScriptLineComment',           { fg = colors.red,       bg = 'NONE'                                    })
   highlight(0, 'javaScriptComment',               { fg = colors.red,       bg = 'NONE'                                    })
   highlight(0, 'jsFloat',                         { fg = colors.greenLight, bg = 'NONE' })  -- Floating point numbers inclusive dot.

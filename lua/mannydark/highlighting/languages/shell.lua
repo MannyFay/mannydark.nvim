@@ -33,7 +33,7 @@ shell.setupHighlighting = function()
   highlight(0, 'shStatement',     { fg = colors.orange,     bg = 'NONE' })  -- Internal statement functions like echo.
   highlight(0, 'shShebang',       { fg = colors.white,      bg = 'NONE' })  -- Entry line (Shebang) in shell scripts.
   highlight(0, 'shCtrlSeq',       { fg = colors.blue,       bg = 'NONE' })  -- Control sequences like \n.
-
+  highlight(0, 'shTodo',          { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO comments.
   ----------------------- Not used by now:
   -- highlight(0, 'shFunctionOne',{ fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shIf',          { fg = colors.pink, bg = colors.green })
@@ -130,7 +130,6 @@ shell.setupHighlighting = function()
   -- highlight(0, 'shSpecialSQ',   { fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shBkslshSnglQuote',{ fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shBkslshDblQuote',{ fg = colors.pink, bg = colors.green })
-  -- highlight(0, 'shTodo',        { fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shHereDoc01',   { fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shHereDoc02',   { fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shHereDoc03',   { fg = colors.pink, bg = colors.green })

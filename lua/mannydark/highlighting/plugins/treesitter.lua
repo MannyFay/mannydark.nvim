@@ -33,7 +33,7 @@ treesitter.setupHighlighting = function()
   highlight(0, '@method.call',           { link = 'Function'                                         })
   highlight(0, '@keyword.function',      { link = 'Keyword'                                          })
   highlight(0, '@function.call',         { link = 'Function'                                         })
-  highlight(0, '@text.todo',             { link = 'Todo'                                             })
+  highlight(0, '@text.todo',             { fg = colors.red,       bg = 'NONE', bold = true           })  -- TODO comments.
   highlight(0, '@text.title',            { link = 'Title'                                            })
   highlight(0, '@tag.delimiter',         { link = 'Tag'                                              })  -- Open/close bracket of tags.
   highlight(0, '@punctuation.delimiter', { fg = colors.white,     bg = 'NONE'                        })

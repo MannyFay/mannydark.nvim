@@ -27,6 +27,7 @@ typescript.setupHighlighting = function()
   highlight(0, "typescriptTypeReference",       { fg = colors.turquoise, bg = "NONE" })  -- Reference to types like classes and interfaces.
   highlight(0, "typescriptVariable",            { fg = colors.blue,      bg = "NONE" })  -- Variable keywords like 'let', 'const' etc.
   highlight(0, "typescriptVariableDeclaration", { fg = colors.purple,    bg = "NONE" })  -- Variable names.
+  highlight(0, "typescriptCommentTodo",         { fg = colors.red,       bg = "NONE", bold = true })  -- TODO comments.
 
 
 
@@ -254,7 +255,6 @@ typescript.setupHighlighting = function()
 -- typescriptParenthesizedType xxx cleared
 -- typescriptObjectType xxx cleared
 -- typescriptTupleType xxx cleared
--- typescriptCommentTodo xxx links to Todo
 -- typescriptMagicComment xxx links to SpecialComment
 -- typescriptRef  xxx links to Include
 -- typescriptLineComment xxx links to Comment
