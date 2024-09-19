@@ -78,6 +78,8 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.parameter.typescriptreact', { fg = colors.purple,    bg = 'NONE'           })  -- Variables as parameters.
   highlight(0, '@lsp.type.type.typescriptreact',      { fg = colors.turquoise, bg = 'NONE'           })  -- .
   highlight(0, '@lsp.type.namespace.typescript',      { fg = colors.turquoise, bg = 'NONE'           })  -- Namespaces.
+  highlight(0, '@character.special.tsx',              { fg = colors.blue,      bg = 'NONE'           })  -- HTML entities.
+
 
 
 -------------------------------------------------------------------------------
