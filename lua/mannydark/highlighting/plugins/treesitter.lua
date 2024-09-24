@@ -95,7 +95,10 @@ treesitter.setupHighlighting = function()
   highlight(0, '@tag.delimiter.javascript',      { fg = colors.white,     bg = 'NONE'           })  -- Tag delimiters like < >.
   highlight(0, '@tag.builtin.javascript',      { fg = colors.blue,     bg = 'NONE'           })  -- Tag names.
 
+-------------------------------------------------------------------------------
+--- CSS
 
+  highlight(0, '@character.special.css',    { fg = colors.white,     bg = 'NONE'           })  -- * symbol.
 
 -------------------------------------------------------------------------------
 --- Git
