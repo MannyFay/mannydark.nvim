@@ -18,6 +18,8 @@ gitSigns.setupHighlighting = function()
   highlight(0, 'GitSignsChange',     { fg = colors.blue,   bg = 'NONE'                           })
   highlight(0, 'GitSignsDelete',     { fg = colors.red,    bg = 'NONE'                           })
   highlight(0, 'GitignoreSeparator', { fg = colors.white,  bg = 'NONE'                           })  -- '/' in .gitignore files.
+  highlight(0, 'GitSignsCurrentLineBlame', { fg = colors.gray,  bg = 'NONE'                           })
+
 
   ----------------------- Not used by now:
   highlight(0, 'DiffText',           { fg = colors.green,  bg = colors.red                       })

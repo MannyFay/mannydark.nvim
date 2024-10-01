@@ -31,6 +31,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.plugins.hop'               ).setupHighlighting()
   require('mannydark.highlighting.plugins.lsp'               ).setupHighlighting()
   require('mannydark.highlighting.plugins.lualine'           ).setupHighlighting()
+  require('mannydark.highlighting.plugins.mason'             ).setupHighlighting()
   require('mannydark.highlighting.plugins.navic'             ).setupHighlighting()
   require('mannydark.highlighting.plugins.neogit'            ).setupHighlighting()
   --require('mannydark.highlighting.plugins.noice'           ).setupHighlighting()  -- Here is a bug (inside the file?!), but where?
