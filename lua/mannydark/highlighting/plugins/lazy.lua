@@ -25,7 +25,9 @@ lazy.setupHighlighting = function()
   highlight(0, 'LazyReasonFt',      { fg = colors.green,  bg = 'NONE',                       })  -- File type has changed.
   highlight(0, 'LazyReasonKeys',    { fg = colors.green,  bg = 'NONE',                       })  -- Key mappings has changed.
   highlight(0, 'LazyReasonSource',  { fg = colors.green,  bg = 'NONE',                       })  -- Source has changed.
-
+  highlight(0, 'LazyDimmed',        { fg = colors.white,  bg = 'NONE',                       })  -- Commit message of updated plugin.
+  highlight(0, 'LazyCommitIssue',   { fg = colors.purple, bg = 'NONE',                       })  -- Issue number that was solved on updated plugin.
+  highlight(0, 'LazyCommitScope',   { fg = colors.white,  bg = 'NONE',                       })  -- Scope of the commit message.
 end
 
 return lazy

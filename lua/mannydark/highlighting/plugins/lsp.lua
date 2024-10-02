@@ -12,7 +12,7 @@ local lsp       = {}
 
 lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticSignError',                 { fg = colors.red,    bg = 'NONE'                                        })  -- Error icon (x) in sign column.
-  highlight(0, 'DiagnosticUnderlineError',            { fg = colors.red,    bg = colors.red, sp = colors.red,    undercurl = true })  -- Error highlighting in project tree on words.
+  highlight(0, 'DiagnosticUnderlineError',            { fg = colors.red,    bg = 'NONE', sp = colors.red,    undercurl = true })  -- Error highlighting in project tree on words.
   highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE', sp = colors.red,    underline = true })  -- Virtual text at the end of the line.
 
   highlight(0, 'DiagnosticError',                     { fg = colors.purple,    bg = colors.turquoise                              })  -- ??? Code error indicator bar and text at end of line.
