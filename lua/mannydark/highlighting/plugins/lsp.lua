@@ -7,52 +7,49 @@ local highlight = vim.api.nvim_set_hl
 local lsp       = {}
 
 
---------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Settings
 
 lsp.setupHighlighting = function()
-  highlight(0, 'DiagnosticSignError',                 { fg = colors.red,    bg = 'NONE'                                        })  -- Error icon (x) in sign column.
-  highlight(0, 'DiagnosticUnderlineError',            { fg = 'NONE',    bg = 'NONE', sp = colors.red,    underline = true })  -- Error highlighting in project tree on words.
-  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE', sp = colors.red,    underline = true })  -- Virtual text at the end of the line.
 
-  highlight(0, 'DiagnosticError',                     { fg = colors.purple,    bg = colors.turquoise                              })  -- ??? Code error indicator bar and text at end of line.
+  --- Errors:
+  highlight(0, 'DiagnosticSignError',                 { fg = colors.red,       bg = 'NONE'                            })  -- Error icon (x) in sign column.
+  highlight(0, 'DiagnosticUnderlineError',            { fg = colors.red,       bg = 'NONE',          underline = true })  -- Error highlighting in project tree on words.
+  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,       bg = 'NONE',          underline = true })  -- Virtual text at the end of the line.
+  highlight(0, 'DiagnosticError',                     { fg = colors.purple,    bg = colors.turquoise                  })  -- ??? Code error indicator bar and text at end of line.
 
-  -- warnings
-  highlight(0, 'DiagnosticSignWarn',                  { fg = colors.orange, bg = 'NONE'                                       })  -- Warning icon in sign column.
-  highlight(0, 'DiagnosticUnderlineWarn',             { fg = colors.orange, bg = colors.orange, sp = colors.orange, undercurl = true })  -- Warning highlighting in project tree on words.
-  highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange, bg = 'NONE', sp = colors.orange, underline = true })  -- Virtual text at the end of the line.
+  --- Warnings:
+  highlight(0, 'DiagnosticSignWarn',                  { fg = colors.orange,    bg = 'NONE'                            })  -- Warning icon in sign column.
+  highlight(0, 'DiagnosticUnderlineWarn',             { fg = colors.orange,    bg = 'NONE',          underline = true })  -- Warning highlighting in project tree on words.
+  highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange,    bg = 'NONE',          underline = true })  -- Virtual text at the end of the line.
+  highlight(0, 'DiagnosticWarn',                      { fg = colors.turquoise, bg = colors.orange                     })  -- ???
 
-  highlight(0, 'DiagnosticWarn',                      { fg = colors.turquoise, bg = colors.orange                                       })
+  -- Hints (more important than informations):
+  highlight(0, 'DiagnosticSignHint',                  { fg = colors.green,     bg = 'NONE'                            })  -- Hint icon (bulb) in sign column.
+  highlight(0, 'DiagnosticUnderlineHint',             { fg = colors.green,     bg = 'NONE',          underline = true })  -- Hints in project tree on words.
+  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green,     bg = 'NONE',          underline = true })  -- Virtual text at the end of the line.
+  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.turquoise, bg = colors.blue                       }) -- ???
+  highlight(0, 'DiagnosticHint',                      { fg = colors.purple,    bg = colors.blueLink                   })  -- ??? idk - this is not true -> Code hint indicator bar and text at end of line.
 
-  -- hints are more important than information!
-  highlight(0, 'DiagnosticSignHint',                  { fg = colors.green, bg = 'NONE'                                      })  -- Hint icon (bulb) in sign column.
-  highlight(0, 'DiagnosticUnderlineHint',             { fg = colors.green,       bg = colors.green, sp = colors.green, undercurl = true })  -- Hints in project tree on words.
-  highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green, bg = 'NONE', sp = colors.green, underline = true })  -- Virtual text at the end of the line.
-  highlight(0, 'DiagnosticUnnecessary',               { fg = 'NONE',       bg = 'NONE', sp = colors.green, undercurl = true })  -- POV of hint itself (unnecessary item in code).
---DiagnosticUnnecessary
-  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.turquoise,   bg = colors.blue                                        }) -- ???
-  highlight(0, 'DiagnosticHint',                      { fg = colors.purple,   bg = colors.blueLink                                       })  -- ??? idk - this is not true -> Code hint indicator bar and text at end of line.
-
-  ----- infos
-  highlight(0, 'DiagnosticSignInfo',                  { fg = colors.gray,   bg = 'NONE'                                       })  -- Info icon in sign column.
-  highlight(0, 'DiagnosticUnderlineInfo',             { fg = colors.gray,        bg = colors.gray, sp = colors.gray,   underline = true })  -- Info highlighting in project tree on words.
-  highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.gray,   bg = 'NONE', sp = colors.gray,   underline = true })  -- Horizontal info indicator bar and text at end of line.
-
-
-  highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,   bg = 'NONE'                                        })
+  --- Information:
+  highlight(0, 'DiagnosticSignInfo',                  { fg = colors.gray,      bg = 'NONE'                            })  -- Info icon in sign column.
+  highlight(0, 'DiagnosticUnderlineInfo',             { fg = colors.gray,      bg = 'NONE',          underline = true })  -- Info highlighting in project tree on words.
+  highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.gray,      bg = 'NONE',          underline = true })  -- Horizontal info indicator bar and text at end of line.
+  highlight(0, 'DiagnosticInfo',                      { fg = colors.blue,      bg = 'NONE'                            })
 
 
 
 
-  highlight(0, 'LspDiagnosticsError',                 { fg = colors.green,    bg = 'NONE'                                        })
-  highlight(0, 'LspDiagnosticsWarning',               { fg = colors.white, bg = 'NONE'                                        })
-  highlight(0, 'LspDiagnosticsInfo',                  { fg = colors.redLight,   bg = 'NONE'                                        })
-  highlight(0, 'LspCodeLens',                         { fg = colors.purple, bg = 'NONE', italic = true,                        })
-  highlight(0, 'LspCodeLensSeparator',                { fg = colors.purple, bg = 'NONE', italic = true,                        })
-  highlight(0, 'IlluminatedWordRead',                  { fg = "NONE", bg = colors.grayDark                                   })  -- References of word under cursor (used by illuminate).
-  highlight(0, 'IlluminatedWordText',                  { fg = "NONE", bg = colors.grayDark                                   })  -- String highlighting used by illuminate.
-  highlight(0, 'IlluminatedWordWrite',                 { fg = "NONE", bg = colors.grayDark                                   })  -- Word under cursor (used by illuminate).
+  highlight(0, 'LspDiagnosticsError',                  { fg = colors.green,    bg = 'NONE'                                        })
+  highlight(0, 'LspDiagnosticsWarning',                { fg = colors.white,    bg = 'NONE'                                        })
+  highlight(0, 'LspDiagnosticsInfo',                   { fg = colors.redLight, bg = 'NONE'                                        })
+  highlight(0, 'LspCodeLens',                          { fg = colors.purple,   bg = 'NONE', italic = true,                        })
+  highlight(0, 'LspCodeLensSeparator',                 { fg = colors.purple,   bg = 'NONE', italic = true,                        })
+  highlight(0, 'IlluminatedWordRead',                  { fg = 'NONE',          bg = colors.grayDark                                   })  -- References of word under cursor (used by illuminate).
+  highlight(0, 'IlluminatedWordText',                  { fg = 'NONE',          bg = colors.grayDark                                   })  -- String highlighting used by illuminate.
+  highlight(0, 'IlluminatedWordWrite',                 { fg = 'NONE',          bg = colors.grayDark                                   })  -- Word under cursor (used by illuminate).
 
+  highlight(0, 'DiagnosticUnnecessary',               { fg = colors.gray,      bg = 'NONE', underline = true })  -- POV of hint itself (unnecessary item in code).
 
 
   ----------------------- Not used by now:
