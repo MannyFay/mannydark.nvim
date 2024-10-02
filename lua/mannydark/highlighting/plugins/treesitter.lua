@@ -65,6 +65,8 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.comment',      { fg = colors.red,       bg = 'NONE'                        })  -- Comments marked by LSP.
   highlight(0, '@lsp.type.method',       { fg = colors.orange,    bg = 'NONE'                        })  -- Name of method.
   highlight(0, '@tag',                   { fg = colors.blue,      bg = 'NONE'                        })  -- Tags like HTML tags.
+  highlight(0, '@label.vimdoc',          { fg = colors.blue,      bg = 'NONE', underline = true, bold = true                        })  -- Labels/Headings in vimdoc.
+
 
 -------------------------------------------------------------------------------
 --- TypeScript/React

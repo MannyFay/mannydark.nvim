@@ -24,6 +24,8 @@ lazy.setupHighlighting = function()
   highlight(0, 'LazyReasonCmd',     { fg = colors.green,  bg = 'NONE',                       })  -- Command has changed.
   highlight(0, 'LazyReasonFt',      { fg = colors.green,  bg = 'NONE',                       })  -- File type has changed.
   highlight(0, 'LazyReasonKeys',    { fg = colors.green,  bg = 'NONE',                       })  -- Key mappings has changed.
+  highlight(0, 'LazyReasonSource',  { fg = colors.green,  bg = 'NONE',                       })  -- Source has changed.
+
 end
 
 return lazy

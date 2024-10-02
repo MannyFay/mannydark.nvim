@@ -12,30 +12,30 @@ local lsp       = {}
 
 lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticSignError',                 { fg = colors.red,    bg = 'NONE'                                        })  -- Error icon (x) in sign column.
-  highlight(0, 'DiagnosticUnderlineError',            { fg = 'NONE',        bg = 'NONE', sp = colors.red,    undercurl = true })  -- Error highlighting in project tree on words.
+  highlight(0, 'DiagnosticUnderlineError',            { fg = colors.red,    bg = colors.red, sp = colors.red,    undercurl = true })  -- Error highlighting in project tree on words.
   highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,    bg = 'NONE', sp = colors.red,    underline = true })  -- Virtual text at the end of the line.
 
   highlight(0, 'DiagnosticError',                     { fg = colors.purple,    bg = colors.turquoise                              })  -- ??? Code error indicator bar and text at end of line.
 
   -- warnings
   highlight(0, 'DiagnosticSignWarn',                  { fg = colors.orange, bg = 'NONE'                                       })  -- Warning icon in sign column.
-  highlight(0, 'DiagnosticUnderlineWarn',             { fg = 'NONE',        bg = 'NONE', sp = colors.orange, undercurl = true })  -- Warning highlighting in project tree on words.
+  highlight(0, 'DiagnosticUnderlineWarn',             { fg = colors.orange, bg = colors.orange, sp = colors.orange, undercurl = true })  -- Warning highlighting in project tree on words.
   highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange, bg = 'NONE', sp = colors.orange, underline = true })  -- Virtual text at the end of the line.
 
   highlight(0, 'DiagnosticWarn',                      { fg = colors.turquoise, bg = colors.orange                                       })
 
   -- hints are more important than information!
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.green, bg = 'NONE'                                      })  -- Hint icon (bulb) in sign column.
-  highlight(0, 'DiagnosticUnderlineHint',             { fg = 'NONE',       bg = 'NONE', sp = colors.green, undercurl = true })  -- Hints in project tree on words.
+  highlight(0, 'DiagnosticUnderlineHint',             { fg = colors.green,       bg = colors.green, sp = colors.green, undercurl = true })  -- Hints in project tree on words.
   highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green, bg = 'NONE', sp = colors.green, underline = true })  -- Virtual text at the end of the line.
   highlight(0, 'DiagnosticUnnecessary',               { fg = 'NONE',       bg = 'NONE', sp = colors.green, undercurl = true })  -- POV of hint itself (unnecessary item in code).
-
+--DiagnosticUnnecessary
   highlight(0, 'LspDiagnosticsHint',                  { fg = colors.turquoise,   bg = colors.blue                                        }) -- ???
   highlight(0, 'DiagnosticHint',                      { fg = colors.purple,   bg = colors.blueLink                                       })  -- ??? idk - this is not true -> Code hint indicator bar and text at end of line.
 
   ----- infos
   highlight(0, 'DiagnosticSignInfo',                  { fg = colors.gray,   bg = 'NONE'                                       })  -- Info icon in sign column.
-  highlight(0, 'DiagnosticUnderlineInfo',             { fg = 'NONE',        bg = 'NONE', sp = colors.gray,   underline = true })  -- Info highlighting in project tree on words.
+  highlight(0, 'DiagnosticUnderlineInfo',             { fg = colors.gray,        bg = colors.gray, sp = colors.gray,   underline = true })  -- Info highlighting in project tree on words.
   highlight(0, 'DiagnosticVirtualTextInfo',           { fg = colors.gray,   bg = 'NONE', sp = colors.gray,   underline = true })  -- Horizontal info indicator bar and text at end of line.
 
 
