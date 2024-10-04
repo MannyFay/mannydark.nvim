@@ -67,6 +67,7 @@ treesitter.setupHighlighting = function()
   highlight(0, '@tag',                   { fg = colors.blue,      bg = 'NONE'                        })  -- Tags like HTML tags.
   highlight(0, '@label.vimdoc',          { fg = colors.blue,      bg = 'NONE', underline = true, bold = true                        })  -- Labels/Headings in vimdoc.
 
+  highlight(0, '@string.regexp.tsx',     { fg = colors.redLight,  bg = 'NONE'                        })  -- Regular expression strings.
 
 -------------------------------------------------------------------------------
 --- TypeScript/React
@@ -81,6 +82,7 @@ treesitter.setupHighlighting = function()
   highlight(0, '@lsp.type.type.typescriptreact',      { fg = colors.turquoise, bg = 'NONE'           })  -- .
   highlight(0, '@lsp.type.namespace.typescript',      { fg = colors.turquoise, bg = 'NONE'           })  -- Namespaces.
   highlight(0, '@character.special.tsx',              { fg = colors.blue,      bg = 'NONE'           })  -- HTML entities.
+  highlight(0, '@character.special.typescript',       { fg = colors.white,     bg = 'NONE'           })  -- Characters like *.
 
 
 

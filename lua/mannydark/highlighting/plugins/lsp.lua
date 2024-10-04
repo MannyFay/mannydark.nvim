@@ -30,6 +30,7 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green,     bg = 'NONE',          underline = true })  -- Virtual text at the end of the line.
   highlight(0, 'LspDiagnosticsHint',                  { fg = colors.turquoise, bg = colors.blue                       }) -- ???
   highlight(0, 'DiagnosticHint',                      { fg = colors.purple,    bg = colors.blueLink                   })  -- ??? idk - this is not true -> Code hint indicator bar and text at end of line.
+  highlight(0, 'DiagnosticUnnecessary',               { fg = colors.green,      bg = 'NONE', underline = true })  -- POV of hint itself (unnecessary item in code).
 
   --- Information:
   highlight(0, 'DiagnosticSignInfo',                  { fg = colors.gray,      bg = 'NONE'                            })  -- Info icon in sign column.
@@ -49,7 +50,6 @@ lsp.setupHighlighting = function()
   highlight(0, 'IlluminatedWordText',                  { fg = 'NONE',          bg = colors.grayDark                                   })  -- String highlighting used by illuminate.
   highlight(0, 'IlluminatedWordWrite',                 { fg = 'NONE',          bg = colors.grayDark                                   })  -- Word under cursor (used by illuminate).
 
-  highlight(0, 'DiagnosticUnnecessary',               { fg = colors.gray,      bg = 'NONE', underline = true })  -- POV of hint itself (unnecessary item in code).
 
 
   ----------------------- Not used by now:

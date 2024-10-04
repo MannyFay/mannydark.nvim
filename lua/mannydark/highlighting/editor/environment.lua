@@ -47,6 +47,9 @@ environment.setupHighlighting = function()
   highlight(0, 'MoreMsg',             { fg = colors.green,    bg = 'NONE'                                                })  -- Message of Neovim if it asks for more.
   highlight(0, 'NormalNC',            { fg = 'NONE',          bg = 'NONE'                                                })  -- Inactive new buffer.
   highlight(0, 'SpecialKey',          { fg = 'NONE',          bg = 'NONE'                                                })  -- Left sign column in floating window.
+  highlight(0, 'TabLine',             { fg = colors.white,      bg = 'NONE'                                              })  -- Tabs.
+  highlight(0, 'TabLineSel',          { fg = colors.blue,    bg = 'NONE'                                                 })  -- Current selected tab.
+  highlight(0, 'TabLineFill',         { fg = 'NONE',    bg = 'NONE'                                                      })  -- Color of the tab line itself.
 
   ----------------------- Not used by now:
   highlight(0, 'Cursor',              { fg = colors.red,      bg = colors.green                                          })
@@ -66,9 +69,6 @@ environment.setupHighlighting = function()
   highlight(0, 'Conceal',             { fg = colors.orange,   bg = colors.purple                                         })
   highlight(0, 'Substitute',          { fg = colors.orange,   bg = colors.purple                                         })
   highlight(0, 'NonText',             { fg = colors.darkGray, bg = colors.pink                                           })
-  highlight(0, 'TabLine',             { fg = colors.red,      bg = colors.purple                                         })
-  highlight(0, 'TabLineSel',          { fg = colors.green,    bg = colors.orange                                         })
-  highlight(0, 'TabLineFill',         { fg = colors.green,    bg = colors.blue                                           })
 end
 
 return environment
