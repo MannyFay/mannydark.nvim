@@ -15,7 +15,9 @@ neoGit.setupHighlighting = function()
   highlight(0, 'NeogitStatusHEAD',      { fg = colors.blue,   bg = 'NONE' })  -- 'HEAD' word.
   highlight(0, 'NeogitObjectId',        { fg = colors.blue,   bg = 'NONE' })  -- Commit hash.
   highlight(0, 'NeogitBranch',          { fg = colors.purple, bg = 'NONE' })  -- Branch name.
-
+  highlight(0, 'NeogitStagedchanges',   { fg = colors.red,    bg = 'NONE' })  -- Staged changes.
+  highlight(0, 'NeogitUnstagedchanges', { fg = colors.red,    bg = 'NONE' })  -- Un-staged changes.
+  highlight(0, 'NeogitUntrackedfiles',  { fg = colors.red,    bg = 'NONE' })  -- Untracked files.
 
   ----------------------- Not used by now:
   highlight(0, 'NeogitFold',            { fg = colors.green, bg = colors.greenLignt })
@@ -29,8 +31,6 @@ neoGit.setupHighlighting = function()
   highlight(0, 'NeogitUnmergedInto',    { fg = colors.green, bg = colors.greenLignt })
   highlight(0, 'NeogitUnpulledFrom',    { fg = colors.green, bg = colors.greenLignt })
   highlight(0, 'NeogitRecentcommits',   { fg = colors.green, bg = colors.greenLignt })
-  highlight(0, 'NeogitStagedchanges',   { fg = colors.green, bg = colors.greenLignt })
-  highlight(0, 'NeogitUntrackedfiles',  { fg = colors.green, bg = colors.greenLignt })
   highlight(0, 'NeogitUnmergedchanges', { fg = colors.green, bg = colors.greenLignt })
   highlight(0, 'NeogitUnpulledchanges', { fg = colors.green, bg = colors.greenLignt })
   highlight(0, 'NeogitUnstagedchanges', { fg = colors.green, bg = colors.greenLignt })
