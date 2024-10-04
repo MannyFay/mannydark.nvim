@@ -44,15 +44,15 @@ neoGit.setupHighlighting = function()
 
 
   ----------------------- Not used by now:
-  highlight(0, 'NeogitStash',           { fg = colors.green, bg = colors.greenLignt })
-  highlight(0, 'NeogitDiffAdd',         { fg = colors.green, bg = colors.blue })
-  highlight(0, 'NeogitRebasing',        { fg = colors.green, bg = colors.red })
-  highlight(0, 'NeogitDiffDelete',      { fg = colors.green, bg = colors.redLight })
-  highlight(0, 'NeogitRebaseDone',      { fg = colors.green, bg = colors.orange })
-  highlight(0, 'NeogitUnmergedInto',    { fg = colors.green, bg = colors.gray })
-  highlight(0, 'NeogitUnpulledFrom',    { fg = colors.green, bg = colors.white })
-  highlight(0, 'NeogitUnmergedchanges', { fg = colors.pink, bg = colors.greenLignt })
-  highlight(0, 'NeogitUnpulledchanges', { fg = colors.pink, bg = colors.blue })
+  -- highlight(0, 'NeogitStash',           { fg = colors.green, bg = colors.greenLignt })
+  -- highlight(0, 'NeogitDiffAdd',         { fg = colors.green, bg = colors.blue })
+  -- highlight(0, 'NeogitRebasing',        { fg = colors.green, bg = colors.red })
+  -- highlight(0, 'NeogitDiffDelete',      { fg = colors.green, bg = colors.redLight })
+  -- highlight(0, 'NeogitRebaseDone',      { fg = colors.green, bg = colors.orange })
+  -- highlight(0, 'NeogitUnmergedInto',    { fg = colors.green, bg = colors.gray })
+  -- highlight(0, 'NeogitUnpulledFrom',    { fg = colors.green, bg = colors.white })
+  -- highlight(0, 'NeogitUnmergedchanges', { fg = colors.pink, bg = colors.greenLignt })
+  -- highlight(0, 'NeogitUnpulledchanges', { fg = colors.pink, bg = colors.blue })
 
 
 
