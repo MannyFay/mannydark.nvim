@@ -24,6 +24,25 @@ neoGit.setupHighlighting = function()
   highlight(0, 'NeogitStashes',         { fg = colors.red,    bg = 'NONE', underline = true })  -- Stashes fold heading.
   highlight(0, 'NeogitRemote',          { fg = colors.green, bg = colors.purple })  -- Remote name.
 
+  highlight(0, 'NeogitFilePath',          { fg = colors.orange, bg = colors.purple })  -- Remote name.
+  highlight(0, 'NeogitDiffAdditions',          { fg = colors.orange, bg = colors.blue })  -- Remote name.
+  highlight(0, 'NeogitDiffDeletions',          { fg = colors.orange, bg = colors.turquoise })  -- Remote name.
+  highlight(0, 'NeogitFloatHeaderHighlight',          { fg = colors.orange, bg = colors.green })  -- Remote name.
+
+  highlight(0, 'NeogitRemote',          { fg = colors.green, bg = colors.purple })  -- Remote name.
+  highlight(0, 'NeogitCommitViewDescription',          { fg = colors.green, bg = colors.yellow })  -- Remote name.
+
+-- diff:
+-- NeogitFilePath
+-- NeogitDiffAdditions
+-- NeogitDiffDeletions
+-- NeogitFloatHeaderHighlight
+
+-- commit-view:
+-- NeogitCommitViewHeader
+-- NeogitCommitViewDescription
+
+
   ----------------------- Not used by now:
   highlight(0, 'NeogitStash',           { fg = colors.green, bg = colors.greenLignt })
   highlight(0, 'NeogitDiffAdd',         { fg = colors.green, bg = colors.blue })
