@@ -28,9 +28,9 @@ lsp.setupHighlighting = function()
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.green,     bg = 'NONE'                            })  -- Hint icon (bulb) in sign column.
   highlight(0, 'DiagnosticUnderlineHint',             { fg = colors.green,     bg = 'NONE',          underline = true })  -- Hints in project tree on words.
   highlight(0, 'DiagnosticVirtualTextHint',           { fg = colors.green,     bg = 'NONE',          underline = true })  -- Virtual text at the end of the line.
-  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.turquoise, bg = colors.blue                       }) -- ???
-  highlight(0, 'DiagnosticHint',                      { fg = colors.purple,    bg = colors.blueLink                   })  -- ??? idk - this is not true -> Code hint indicator bar and text at end of line.
-  highlight(0, 'DiagnosticUnnecessary',               { fg = colors.green,      bg = 'NONE', underline = true })  -- POV of hint itself (unnecessary item in code).
+  highlight(0, 'LspDiagnosticsHint',                  { fg = colors.green,     bg = 'NONE'                            }) -- ???
+  highlight(0, 'DiagnosticHint',                      { fg = colors.green,     bg = 'NONE'                            })  -- ??? idk - this is not true -> Code hint indicator bar and text at end of line.
+  highlight(0, 'DiagnosticUnnecessary',               { fg = colors.green,     bg = 'NONE',          underline = true })  -- POV of hint itself (unnecessary item in code).
 
   --- Information:
   highlight(0, 'DiagnosticSignInfo',                  { fg = colors.gray,      bg = 'NONE'                            })  -- Info icon in sign column.
