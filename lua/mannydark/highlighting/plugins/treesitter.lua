@@ -120,10 +120,18 @@ treesitter.setupHighlighting = function()
 
   -- highlight(0, '',              { fg = colors.,     bg = 'NONE'              })  -- .
 
--------------------------------------------------------------------------------
---- Lua
 
+  -----------------------------------------------------------------------------
+  -- Lua
   highlight(0, '@constructor.lua',              { fg = colors.white,     bg = 'NONE'              })  -- {} brackets.
+  -- highlight(0, '',              { fg = colors.white,     bg = 'NONE'              })  -- .
+
+
+  -----------------------------------------------------------------------------
+  -- Vim
+  highlight(0, '@function.macro.vim',           { fg = colors.orange,     bg = 'NONE'              })  -- Function macros (in strings too).
+  highlight(0, '@string.special.vim',           { fg = colors.redLight,   bg = 'NONE'              })  -- Like * symbol in strings.
+  -- highlight(0, '',              { fg = colors.white,     bg = 'NONE'              })  -- .
 
 
 -------------------------------------------------------------------------------
