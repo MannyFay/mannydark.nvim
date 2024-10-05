@@ -110,7 +110,13 @@ treesitter.setupHighlighting = function()
   highlight(0, '@string.special.path.gitignore',     { fg = colors.white,     bg = 'NONE'            })  -- Text.
   highlight(0, '@character.special.gitignore',     { fg = colors.white,     bg = 'NONE'              })  -- * symbol.
   highlight(0, '@constant.gitignore',              { fg = colors.purple,     bg = 'NONE'              })  -- Constants like chars in Regex.
+  highlight(0, '@comment.gitcommit',          { fg = colors.purple, bg = colors.green})  -- .
+  highlight(0, '@keyword.gitcommit',          { fg = colors.purple, bg = colors.blue})  -- .
+  highlight(0, '@markup.heading.gitcommit',          { fg = colors.purple, bg = colors.turquoise})  -- .
+  highlight(0, '@markup.link.gitcommit',          { fg = colors.purple, bg = colors.orange})  -- .
+  highlight(0, '@string.special.path.gitcommit',          { fg = colors.purple, bg = colors.redLight})  -- .
 
+  -- highlight(0, '',              { fg = colors.,     bg = 'NONE'              })  -- .
 
 -------------------------------------------------------------------------------
 --- Lua
