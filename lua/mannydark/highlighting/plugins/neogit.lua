@@ -23,7 +23,7 @@ neoGit.setupHighlighting = function()
   highlight(0, 'NeogitFold',            { fg = colors.blue,   bg = 'NONE' })  -- Heading of file folds.
   highlight(0, 'NeogitStashes',         { fg = colors.red,    bg = 'NONE', underline = true })  -- Stashes fold heading.
   highlight(0, 'NeogitRemote',          { fg = colors.purple, bg = 'NONE' })  -- Remote name.
-  highlight(0, 'NeogitPopupSectionTitle', { fg = colors.blue, bg = 'NONE', underline = true })  -- Title of Neogit window.
+  highlight(0, 'NeogitPopupSectionTitle', { fg = colors.blue, bg = 'NONE' })  -- Title of Neogit window.
 
 
   -- highlight(0, '',          { fg = colors.purple, bg = 'NONE' })  -- .
