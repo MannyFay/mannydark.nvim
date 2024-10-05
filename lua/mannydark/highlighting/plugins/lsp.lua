@@ -13,23 +13,23 @@ local lsp       = {}
 lsp.setupHighlighting = function()
 
   --- Errors:
-  highlight(0, 'DiagnosticSignError',                 { fg = colors.red,       bg = colors.redDark                            })  -- Error icon (x) in sign column.
-  highlight(0, 'DiagnosticUnderlineError',            { fg = colors.red,       bg = colors.redDark,          underline = true })  -- Error highlighting in project tree on words.
-  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,       bg = colors.redDark,          underline = true })  -- Virtual text at the end of the line.
-  highlight(0, 'DiagnosticError',                     { fg = colors.red,       bg = colors.redDark                            })  -- ??? Code error indicator bar and text at end of line.
-  highlight(0, 'LspDiagnosticsSignError',             { fg = colors.red,       bg = colors.redDark                            })
-  highlight(0, 'LspDiagnosticsError',                 { fg = colors.red,       bg = colors.redDark                            })
-  highlight(0, 'LspDiagnosticsDefaultError',          { fg = colors.red,       bg = colors.redDark                            })
+  highlight(0, 'DiagnosticSignError',                 { fg = colors.red,       bg = 'NONE'                            })  -- Error icon (x) in sign column.
+  highlight(0, 'DiagnosticUnderlineError',            { fg = colors.red,       bg = 'NONE',          underline = true })  -- Error highlighting in project tree on words.
+  highlight(0, 'DiagnosticVirtualTextError',          { fg = colors.red,       bg = 'NONE',          underline = true })  -- Virtual text at the end of the line.
+  highlight(0, 'DiagnosticError',                     { fg = colors.red,       bg = 'NONE'                            })  -- ??? Code error indicator bar and text at end of line.
+  highlight(0, 'LspDiagnosticsSignError',             { fg = colors.red,       bg = 'NONE'                            })
+  highlight(0, 'LspDiagnosticsError',                 { fg = colors.red,       bg = 'NONE'                            })
+  highlight(0, 'LspDiagnosticsDefaultError',          { fg = colors.red,       bg = 'NONE'                            })
 
   --- Warnings:
-  highlight(0, 'DiagnosticSignWarn',                  { fg = colors.orange,    bg = colors.orangeDark                            })  -- Warning icon in sign column.
-  highlight(0, 'DiagnosticUnderlineWarn',             { fg = colors.orange,    bg = colors.orangeDark,          underline = true })  -- Warning highlighting in project tree on words.
-  highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange,    bg = colors.orangeDark,          underline = true })  -- Virtual text at the end of the line.
-  highlight(0, 'DiagnosticWarn',                      { fg = colors.orange,    bg = colors.orangeDark                            })  -- ???
-  highlight(0, 'DiagnosticSignWarning',               { fg = colors.orange,    bg = colors.orangeDark                            })
-  highlight(0, 'LspDiagnosticsSignWarning',           { fg = colors.orange,    bg = colors.orangeDark                            })
-  highlight(0, 'LspDiagnosticsWarning',               { fg = colors.orange,    bg = colors.orangeDark                            })
-  highlight(0, 'LspDiagnosticsDefaultWarning',        { fg = colors.orange,    bg = colors.orangeDark                            })
+  highlight(0, 'DiagnosticSignWarn',                  { fg = colors.orange,    bg = 'NONE'                            })  -- Warning icon in sign column.
+  highlight(0, 'DiagnosticUnderlineWarn',             { fg = colors.orange,    bg = 'NONE',          underline = true })  -- Warning highlighting in project tree on words.
+  highlight(0, 'DiagnosticVirtualTextWarn',           { fg = colors.orange,    bg = 'NONE',          underline = true })  -- Virtual text at the end of the line.
+  highlight(0, 'DiagnosticWarn',                      { fg = colors.orange,    bg = 'NONE'                            })  -- ???
+  highlight(0, 'DiagnosticSignWarning',               { fg = colors.orange,    bg = 'NONE'                            })
+  highlight(0, 'LspDiagnosticsSignWarning',           { fg = colors.orange,    bg = 'NONE'                            })
+  highlight(0, 'LspDiagnosticsWarning',               { fg = colors.orange,    bg = 'NONE'                            })
+  highlight(0, 'LspDiagnosticsDefaultWarning',        { fg = colors.orange,    bg = 'NONE'                            })
 
   -- Hints (more important than informations):
   highlight(0, 'DiagnosticSignHint',                  { fg = colors.green,     bg = 'NONE'                            })  -- Hint icon (bulb) in sign column.
