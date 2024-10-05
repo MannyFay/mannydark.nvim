@@ -19,7 +19,7 @@ environment.setupHighlighting = function()
   highlight(0, 'SignColumn',          { fg = 'NONE',          bg = colors.black                                          })  -- Sign column left of the line numbers.
   highlight(0, 'ColorColumn',         { fg = 'NONE',          bg = colors.grayDark                                       })  -- Vertical visual guide line.
   highlight(0, 'LineNr',              { fg = colors.gray,     bg = 'NONE',         underline = false                     })  -- Line numbers.
-  highlight(0, 'CursorLineNr',        { fg = colors.white,    bg = 'NONE'                                                })  -- Line number of current line.
+  highlight(0, 'CursorLineNr',        { fg = colors.white,    bg = colors.grayDark                                       })  -- Line number of current line.
   highlight(0, 'VertSplit',           { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Vertical split separator line.
   highlight(0, 'WinSeparator',        { fg = colors.grayDark, bg = colors.grayDark                                       })  -- Vertical split separator line.
   highlight(0, 'CursorLine',          { fg = 'NONE',          bg = colors.grayDark                                       })  -- Color of actual line.

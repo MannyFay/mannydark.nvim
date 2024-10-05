@@ -10,6 +10,7 @@ local colors = {
   pink       = '#ED3276',
   purple     = '#C064C7',
   red        = '#FF0000',
+  redDark    = '#804040',
   redLight   = '#CE9178',
   turquoise  = '#45C8B0',
   white      = '#ABABAB',
