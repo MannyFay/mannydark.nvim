@@ -7,7 +7,7 @@ local highlight = vim.api.nvim_set_hl
 local gitSigns  = {}
 
 
---------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Settings
 
 gitSigns.setupHighlighting = function()

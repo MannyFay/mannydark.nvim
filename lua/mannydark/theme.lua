@@ -27,6 +27,7 @@ theme.buildTheme = function()
   -- Plugins:
   require('mannydark.highlighting.plugins.copilot'           ).setupHighlighting()
   require('mannydark.highlighting.plugins.diffview'          ).setupHighlighting()
+  require('mannydark.highlighting.plugins.fugitive'          ).setupHighlighting()
   require('mannydark.highlighting.plugins.gitsigns'          ).setupHighlighting()
   require('mannydark.highlighting.plugins.hop'               ).setupHighlighting()
   require('mannydark.highlighting.plugins.lazy'              ).setupHighlighting()

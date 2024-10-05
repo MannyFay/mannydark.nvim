@@ -112,6 +112,11 @@ treesitter.setupHighlighting = function()
   highlight(0, '@constant.gitignore',              { fg = colors.purple,     bg = 'NONE'              })  -- Constants like chars in Regex.
 
 
+-------------------------------------------------------------------------------
+--- Lua
+
+  highlight(0, '@constructor.lua',              { fg = colors.white,     bg = 'NONE'              })  -- {} brackets.
+
 
 -------------------------------------------------------------------------------
 --- Prisma
