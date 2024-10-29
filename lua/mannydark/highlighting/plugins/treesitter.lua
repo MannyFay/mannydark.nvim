@@ -87,7 +87,7 @@ treesitter.setupHighlighting = function()
     highlight(0, '@string.regexp.typescript', { fg = colors.white, bg = 'NONE' })               -- Strings in regex.
     highlight(0, '@lsp.type.typeParameter.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Types as parameters.
     highlight(0, '@lsp.type.type.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Self made types.
-
+    highlight(0, '@lsp.type.typeParameter.typescriptreact', { fg = colors.turquoise, bg = 'NONE' })               -- Types as parameters.
 
 
     -------------------------------------------------------------------------------
