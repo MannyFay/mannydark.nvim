@@ -85,6 +85,9 @@ treesitter.setupHighlighting = function()
     highlight(0, '@character.special.tsx', { fg = colors.blue, bg = 'NONE' })                   -- HTML entities.
     highlight(0, '@character.special.typescript', { fg = colors.white, bg = 'NONE' })           -- Characters like *.
     highlight(0, '@string.regexp.typescript', { fg = colors.white, bg = 'NONE' })               -- Strings in regex.
+    highlight(0, '@lsp.type.typeParameter.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Types as parameters.
+    highlight(0, '@lsp.type.type.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Self made types.
+
 
 
     -------------------------------------------------------------------------------
@@ -105,6 +108,7 @@ treesitter.setupHighlighting = function()
 
     highlight(0, '@tag.delimiter.javascript', { fg = colors.white, bg = 'NONE' }) -- Tag delimiters like < >.
     highlight(0, '@tag.builtin.javascript', { fg = colors.blue, bg = 'NONE' })    -- Tag names.
+    highlight(0, '@lsp.type.namespace.javascript', { fg = colors.turquoise, bg = 'NONE' })    -- Tag names.
 
     -------------------------------------------------------------------------------
     --- CSS

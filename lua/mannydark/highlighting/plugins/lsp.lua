@@ -104,7 +104,6 @@ lsp.setupHighlighting = function()
   highlight(0, 'LspInfoTip',                 { fg = colors.pink, bg = colors.orange                                    })
   highlight(0, 'LspInfoList',                 { fg = colors.pink, bg = colors.greenLight                                    })
   highlight(0, 'LspInfoBorder',                 { fg = colors.pink, bg = colors.blueLink                                    })
-
 end
 
 return lsp
