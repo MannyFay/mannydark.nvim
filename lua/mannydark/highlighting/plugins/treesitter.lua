@@ -88,6 +88,7 @@ treesitter.setupHighlighting = function()
     highlight(0, '@lsp.type.typeParameter.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Types as parameters.
     highlight(0, '@lsp.type.type.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Self made types.
     highlight(0, '@lsp.type.typeParameter.typescriptreact', { fg = colors.turquoise, bg = 'NONE' })               -- Types as parameters.
+    highlight(0, '@lsp.type.enum.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Enum types.
 
 
     -------------------------------------------------------------------------------
@@ -149,6 +150,17 @@ treesitter.setupHighlighting = function()
     --- Prisma
 
     highlight(0, '@type.prisma', { fg = colors.blue, bg = 'NONE' }) -- Constants like chars in Regex.
+
+    -------------------------------------------------------------------------------
+    --- Shell
+
+    highlight(0, '@string.regexp.bash', { fg = colors.redLight, bg = 'NONE' }) -- Regular expressions in bash scripts.
+
+
+    -------------------------------------------------------------------------------
+    --- Markdown
+
+    highlight(0, '@label.markdown', { fg = colors.green, bg = 'NONE' }) -- Labels of code blocks like 'bash'.
 
 
 

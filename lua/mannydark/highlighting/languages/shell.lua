@@ -34,6 +34,7 @@ shell.setupHighlighting = function()
   highlight(0, 'shShebang',       { fg = colors.white,      bg = 'NONE' })  -- Entry line (Shebang) in shell scripts.
   highlight(0, 'shCtrlSeq',       { fg = colors.blue,       bg = 'NONE' })  -- Control sequences like \n.
   highlight(0, 'shTodo',          { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO comments.
+
   ----------------------- Not used by now:
   -- highlight(0, 'shFunctionOne',{ fg = colors.pink, bg = colors.green })
   -- highlight(0, 'shIf',          { fg = colors.pink, bg = colors.green })
