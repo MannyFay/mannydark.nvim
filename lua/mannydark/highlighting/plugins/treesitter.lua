@@ -75,6 +75,8 @@ treesitter.setupHighlighting = function()
     --- C
 
     highlight(0, '@operator.c', { fg = colors.white, bg = 'NONE' })   -- 
+    highlight(0, '@lsp.type.operator.c', { fg = colors.white, bg = 'NONE' })   -- 
+
 
     -------------------------------------------------------------------------------
     --- TypeScript/React
