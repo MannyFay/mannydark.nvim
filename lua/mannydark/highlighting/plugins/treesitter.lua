@@ -76,6 +76,7 @@ treesitter.setupHighlighting = function()
 
     highlight(0, '@operator.c', { fg = colors.white, bg = 'NONE' })   -- 
     highlight(0, '@lsp.type.operator.c', { fg = colors.white, bg = 'NONE' })   -- 
+    highlight(0, '@lsp.type.parameter.c', { fg = colors.purple, bg = 'NONE' })   -- 
 
 
     -------------------------------------------------------------------------------
