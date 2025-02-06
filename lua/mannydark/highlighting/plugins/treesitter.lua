@@ -70,6 +70,12 @@ treesitter.setupHighlighting = function()
 
     highlight(0, '@string.regexp.tsx', { fg = colors.redLight, bg = 'NONE' })   -- Regular expression strings.
 
+
+    -------------------------------------------------------------------------------
+    --- C
+
+    highlight(0, '@operator.c', { fg = colors.white, bg = 'NONE' })   -- 
+
     -------------------------------------------------------------------------------
     --- TypeScript/React
 
