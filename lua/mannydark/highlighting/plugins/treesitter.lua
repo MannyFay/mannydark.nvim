@@ -98,6 +98,7 @@ treesitter.setupHighlighting = function()
     highlight(0, '@lsp.type.type.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Self made types.
     highlight(0, '@lsp.type.typeParameter.typescriptreact', { fg = colors.turquoise, bg = 'NONE' })               -- Types as parameters.
     highlight(0, '@lsp.type.enum.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Enum types.
+    highlight(0, '@keyword.conditional.ternary.tsx', { fg = colors.white, bg = 'NONE' })             -- Ternary operator signs.
 
 
     -------------------------------------------------------------------------------
