@@ -74,9 +74,9 @@ treesitter.setupHighlighting = function()
     -------------------------------------------------------------------------------
     --- C
 
-    highlight(0, '@operator.c', { fg = colors.white, bg = 'NONE' })   -- 
-    highlight(0, '@lsp.type.operator.c', { fg = colors.white, bg = 'NONE' })   -- 
-    highlight(0, '@lsp.type.parameter.c', { fg = colors.purple, bg = 'NONE' })   -- 
+    highlight(0, '@operator.c', { fg = colors.white, bg = 'NONE' })   --
+    highlight(0, '@lsp.type.operator.c', { fg = colors.white, bg = 'NONE' })   --
+    highlight(0, '@lsp.type.parameter.c', { fg = colors.purple, bg = 'NONE' })   --
 
 
     -------------------------------------------------------------------------------
@@ -99,6 +99,20 @@ treesitter.setupHighlighting = function()
     highlight(0, '@lsp.type.typeParameter.typescriptreact', { fg = colors.turquoise, bg = 'NONE' })               -- Types as parameters.
     highlight(0, '@lsp.type.enum.typescript', { fg = colors.turquoise, bg = 'NONE' })               -- Enum types.
     highlight(0, '@keyword.conditional.ternary.tsx', { fg = colors.white, bg = 'NONE' })             -- Ternary operator signs.
+
+
+    -------------------------------------------------------------------------------
+    --- Docker
+
+    highlight(0, '@lsp.type.string.dockerfile', { fg = colors.redLight, bg = 'NONE' })             -- Strings.
+    highlight(0, '@lsp.type.parameter.dockerfile', { fg = colors.white, bg = 'NONE' })             -- Regular text.
+    highlight(0, '@lsp.type.variable.dockerfile', { fg = colors.purple, bg = 'NONE' })             -- Variables.
+    highlight(0, '@lsp.type.keyword.dockerfile', { fg = colors.blue, bg = 'NONE' })             -- Variables.
+    highlight(0, '@operator.dockerfile',         { fg = colors.white, bg = 'NONE' })             -- Operator (like :).
+    highlight(0, '@lsp.type.operator.dockerfile', { fg = colors.purple, bg = 'NONE' })             -- Operator (like =).
+    highlight(0, '@lsp.type.class.dockerfile', { fg = colors.turquoise, bg = 'NONE' })             -- Image.
+    highlight(0, '@lsp.type.property.dockerfile', { fg = colors.purple, bg = 'NONE' })             -- Image properties.
+
 
 
     -------------------------------------------------------------------------------
