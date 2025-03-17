@@ -109,7 +109,7 @@ treesitter.setupHighlighting = function()
     highlight(0, '@lsp.type.variable.dockerfile', { fg = colors.purple, bg = 'NONE' })             -- Variables.
     highlight(0, '@lsp.type.keyword.dockerfile', { fg = colors.blue, bg = 'NONE' })             -- Variables.
     highlight(0, '@operator.dockerfile',         { fg = colors.white, bg = 'NONE' })             -- Operator (like :).
-    highlight(0, '@lsp.type.operator.dockerfile', { fg = colors.purple, bg = 'NONE' })             -- Operator (like =).
+    highlight(0, '@lsp.type.operator.dockerfile', { fg = colors.white, bg = 'NONE' })             -- Operator (like =).
     highlight(0, '@lsp.type.class.dockerfile', { fg = colors.turquoise, bg = 'NONE' })             -- Image.
     highlight(0, '@lsp.type.property.dockerfile', { fg = colors.purple, bg = 'NONE' })             -- Image properties.
 
