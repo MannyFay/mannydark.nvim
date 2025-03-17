@@ -112,6 +112,7 @@ treesitter.setupHighlighting = function()
     highlight(0, '@lsp.type.operator.dockerfile', { fg = colors.white, bg = 'NONE' })             -- Operator (like =).
     highlight(0, '@lsp.type.class.dockerfile', { fg = colors.turquoise, bg = 'NONE' })             -- Image.
     highlight(0, '@lsp.type.property.dockerfile', { fg = colors.purple, bg = 'NONE' })             -- Image properties.
+    highlight(0, '@lsp.type.namespace.dockerfile', { fg = colors.turquoise, bg = 'NONE' })             -- Namespaces.
 
 
 
