@@ -115,6 +115,13 @@ treesitter.setupHighlighting = function()
     highlight(0, '@lsp.type.namespace.dockerfile', { fg = colors.turquoise, bg = 'NONE' })             -- Namespaces.
 
 
+    -------------------------------------------------------------------------------
+    --- YAML
+
+    highlight(0, '@string.yaml', { fg = colors.redLight, bg = 'NONE' })             -- Regular strings.
+    highlight(0, '@string.special.path.bash', { fg = colors.redLight, bg = 'NONE' })             -- Path strings.
+
+
 
     -------------------------------------------------------------------------------
     --- tmux
@@ -180,6 +187,8 @@ treesitter.setupHighlighting = function()
     --- Shell
 
     highlight(0, '@string.regexp.bash', { fg = colors.redLight, bg = 'NONE' }) -- Regular expressions in bash scripts.
+    highlight(0, '@variable.parameter.bash', { fg = colors.white, bg = 'NONE' }) -- Parameters of commands.
+
 
 
     -------------------------------------------------------------------------------
