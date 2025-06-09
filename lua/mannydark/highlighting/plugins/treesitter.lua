@@ -190,6 +190,15 @@ treesitter.setupHighlighting = function()
     highlight(0, '@variable.parameter.bash', { fg = colors.white, bg = 'NONE' }) -- Parameters of commands.
 
 
+    -------------------------------------------------------------------------------
+    --- Rust
+
+    highlight(0, '@lsp.type.macro.rust', { fg = colors.orange, bg = 'NONE' })
+    highlight(0, '@lsp.type.namespace.rust', { fg = colors.blue, bg = 'NONE' })
+    highlight(0, '@lsp.type.struct.rust', { fg = colors.turquoise, bg = 'NONE' })
+    highlight(0, '@lsp.type.decorator.rust', { fg = colors.pink, bg = 'NONE' })
+
+
 
     -------------------------------------------------------------------------------
     --- Markdown
