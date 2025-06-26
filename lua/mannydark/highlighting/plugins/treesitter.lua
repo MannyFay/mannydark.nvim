@@ -160,6 +160,7 @@ treesitter.setupHighlighting = function()
     highlight(0, '@markup.link.gitcommit', { fg = colors.purple, bg = 'NONE' })        -- Branch name in commit window.
     highlight(0, '@string.special.path.gitcommit', { fg = colors.blue, bg = 'NONE' })  -- Path of files in commit window.
     highlight(0, '@keyword.gitcommit', { fg = colors.red, bg = 'NONE' })               -- Words like 'modified'.
+    highlight(0, '@string.special.git_config', { fg = colors.redLight, bg = 'NONE' })               -- Strings in git config files.
 
 
     -- highlight(0, '',              { fg = colors.,     bg = 'NONE'              })  -- .
