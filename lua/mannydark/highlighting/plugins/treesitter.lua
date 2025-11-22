@@ -189,6 +189,7 @@ treesitter.setupHighlighting = function()
 
     highlight(0, '@string.regexp.bash', { fg = colors.redLight, bg = 'NONE' }) -- Regular expressions in bash scripts.
     highlight(0, '@variable.parameter.bash', { fg = colors.white, bg = 'NONE' }) -- Parameters of commands.
+    highlight(0, '@character.special.bash', { fg = colors.blue, bg = 'NONE' }) -- Parameters of commands.
 
 
 

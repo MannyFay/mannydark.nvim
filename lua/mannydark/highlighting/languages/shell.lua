@@ -15,7 +15,7 @@ shell.setupHighlighting = function()
   highlight(0, 'shOption',        { fg = colors.blue,       bg = 'NONE' })  -- Option flags of commands.
   highlight(0, 'shComment',       { fg = colors.red,        bg = 'NONE' })  -- Comments.
   highlight(0, 'shRange',         { fg = colors.white,      bg = 'NONE' })  -- Delimiters like [].
-  highlight(0, 'shExpr',          { fg = colors.purple,     bg = 'NONE' })  -- Array index variables.
+  highlight(0, 'shExpr',          { fg = colors.blue,       bg = 'NONE' })  -- Array index variables (@).
   highlight(0, 'shOperator',      { fg = colors.white,      bg = 'NONE' })  -- Operators like =.
   highlight(0, 'shQuote',         { fg = colors.redLight,   bg = 'NONE' })  -- Quotes of strings.
   highlight(0, 'shSingleQuote',   { fg = colors.redLight,   bg = 'NONE' })  -- Strings.
