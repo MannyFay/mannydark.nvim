@@ -19,6 +19,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.languages.markdown'        ).setupHighlighting()
   require('mannydark.highlighting.languages.php'             ).setupHighlighting()
   require('mannydark.highlighting.languages.react'           ).setupHighlighting()
+  require('mannydark.highlighting.languages.scss'            ).setupHighlighting()
   require('mannydark.highlighting.languages.shell'           ).setupHighlighting()  -- Here is a bug (inside the file?!), but where?
   require('mannydark.highlighting.languages.toml'            ).setupHighlighting()
   require('mannydark.highlighting.languages.typescript'      ).setupHighlighting()
