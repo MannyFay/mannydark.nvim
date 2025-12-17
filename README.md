@@ -1,70 +1,146 @@
-# Mannydark Neovim Color Scheme
-A very dark color scheme - by default :)
-This is a highly customizable color scheme for Neovim written in Lua.
-So is anything annoying for your eyes, you can change it very easy.
+# Mannydark
 
-This project has a MIT license so please feel free to use it wherever you want and change it as you like.
-Fork it, contribute to it or donate to it - everything is possible!
+A dark colorscheme for Neovim written in Lua.
 
----
-<br>
+## Features
 
-# Installation
-## macOS
-Open your Neovim plugin file and paste the plugin.
-Packer:
+- Dark theme optimized for long coding sessions
+- Treesitter support with modern capture names (Neovim 0.9+)
+- LSP semantic token highlighting
+- Terminal colors for embedded terminal
+- Lualine theme included
+- Configurable options (transparent background, italic comments, dim inactive windows)
+
+## Supported Plugins
+
+- Treesitter
+- LSP Diagnostics
+- Telescope
+- nvim-tree
+- nvim-cmp
+- Gitsigns
+- Neogit
+- Fugitive
+- Lualine
+- Mason
+- Lazy.nvim
+- Which-key
+- Hop
+- Diffview
+- nvim-notify
+- Copilot
+
+## Requirements
+
+- Neovim >= 0.8.0
+- `termguicolors` enabled
+- A terminal with true color support
+
+## Installation
+
+### Lazy.nvim
+
 ```lua
--- Set color scheme:
+{
+  'MannyFay/mannydark.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('mannydark').setup({})
+    vim.cmd.colorscheme('mannydark')
+  end,
+}
+```
+
+### Packer
+
+```lua
 use({
   'MannyFay/mannydark.nvim',
-  vim.cmd [[
-    try
-      colorscheme mannydark
-    catch /^Vim\%((\a\+)\)\=:E185/
-      colorscheme default
-      set background=dark
-    endtry
-  ]],
+  config = function()
+    require('mannydark').setup({})
+    vim.cmd.colorscheme('mannydark')
+  end,
 })
 ```
-After that, you can run the following commands in your Neovim command line to
-be up to date. Enter the command line from normal mode with `:`.
-Sync packages:
-```shell
-PackerSync
-```
-Update packages:
-```shell
-PackerUpdate
-```
-You will find the repository on your machine in:
-```shell
-~/.local/share/nvim/site/pack/packer/start/mannydark.nvim
+
+## Configuration
+
+The setup function accepts the following options:
+
+```lua
+require('mannydark').setup({
+  transparent = false,     -- Enable transparent background.
+  italic_comments = true,  -- Render comments in italic.
+  dim_inactive = false,    -- Dim inactive windows.
+})
 ```
 
----
-<br>
+### Options
 
-# Change Color Scheme
-If there are colors you would like to change, go into visual mode and select the character or the word with the color you like to change, then press `:`.
-In command line the Neovim range indicator `'<'>` will be displayed by default.
-Delete it and enter the following command after `:`:
-```shell
-echo synIDattr(synID(line("."), col("."), 1), "name")
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `transparent` | boolean | `false` | Removes background color for transparent terminals. |
+| `italic_comments` | boolean | `true` | Displays comments in italic style. |
+| `dim_inactive` | boolean | `false` | Dims inactive split windows. |
+
+## Lualine
+
+The colorscheme includes a Lualine theme. To use it:
+
+```lua
+require('lualine').setup({
+  options = {
+    theme = 'mannydark',
+  },
+})
 ```
-The color variable will be displayed in the command line.
 
-Do your changes it `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`.
-Save your changes and restart Neovim. You should see them immediately after open the specific file again.
-The colors itself you can change in `/lua/mannydark/palette.lua`.
-If you want to change the color of a part in your document, enter `/lua/mannydark/theme.lua` file. There you will see a list of all highlighting files and their places.
+## Customization
 
-After your changes, save the whole `mannydark.nvim` directory somewhere else on your machine, because if you do `PackerUpdate` or `PackerSync` your changes will be lost in `~/.local/share/nvim/site/pack/packer/start/mannydark.nvim`. Now you can set your scheme.
-I recommend to put it into a GitHb remote repository, so it never gets lost.
+### Changing Colors
 
----
-<br>
+Edit the color palette in `lua/mannydark/palette.lua`:
 
-Have fun and a great time ;)
+```lua
+local colors = {
+  black      = '#191B1C',
+  blue       = '#569CD6',
+  -- ...
+}
+```
 
+### Finding Highlight Groups
 
+To find the highlight group under your cursor, use the `:Inspect` command (Neovim 0.9+).
+
+For older versions:
+
+```vim
+:echo synIDattr(synID(line("."), col("."), 1), "name")
+```
+
+### File Structure
+
+```
+mannydark.nvim/
+├── colors/
+│   └── mannydark.vim           -- Entry point
+├── lua/
+│   ├── mannydark/
+│   │   ├── init.lua            -- Setup and configuration
+│   │   ├── palette.lua         -- Color definitions
+│   │   ├── theme.lua           -- Theme builder
+│   │   └── highlighting/
+│   │       ├── editor/         -- Editor UI highlights
+│   │       ├── languages/      -- Language-specific highlights
+│   │       └── plugins/        -- Plugin highlights
+│   └── lualine/
+│       └── themes/
+│           └── mannydark.lua   -- Lualine theme
+└── README.md
+```
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
