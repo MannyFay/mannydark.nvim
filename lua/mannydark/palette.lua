@@ -1,5 +1,9 @@
 local colors = {
   black      = '#191B1C',
+  ---------------------------------
+  -- Uncomment this to check if working on scheme is possible:
+  -- blue       = '#ED3276',
+  ---------------------------------
   blue       = '#569CD6',
   blueLink   = '#287BDE',
   gray       = '#606366',

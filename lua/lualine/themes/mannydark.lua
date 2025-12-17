@@ -1,11 +1,4 @@
-local colors = {
-  blue      = '#569CD6',
-  turquoise = '#45C8B0',
-  purple    = '#C064C7',
-  orange    = '#E8BF6A',
-  gray      = '#606366',
-  grayDark  = '#252525',
-}
+local colors = require('mannydark.palette')
 
 return {
   normal = {
@@ -41,12 +34,12 @@ return {
     z = { fg = colors.turquoise, bg = colors.grayDark },
   },
   replace = {
-    a = {  },
-    b = {  },
-    c = {  },
-    x = {  },
-    y = {  },
-    z = {  },
+    a = { fg = colors.red, bg = colors.grayDark },
+    b = { fg = colors.red, bg = colors.grayDark },
+    c = { fg = colors.red, bg = colors.grayDark },
+    x = { fg = colors.red, bg = colors.grayDark },
+    y = { fg = colors.red, bg = colors.grayDark },
+    z = { fg = colors.red, bg = colors.grayDark },
   },
   inactive = {
     a = { fg = colors.gray, bg = colors.grayDark },

@@ -23,10 +23,10 @@ todoStuff.setupHighlighting = function()
   highlight(0, 'QuickScopeSecondary', { fg = '#00dfff', bg = 'NONE', underline = true, })
 
   -- Lir
-  highlight(0, 'LirFloatNormal',  { fg = colors.black, bg = colors.whithe                 })
-  highlight(0, 'LirDir',          { fg = colors.black, bg = colors.whithe                 })
-  highlight(0, 'LirSymLink',      { fg = colors.black, bg = colors.whithe                 })
-  highlight(0, 'LirEmptyDirText', { fg = colors.black, bg = colors.whithe, italic = true, })
+  highlight(0, 'LirFloatNormal',  { fg = colors.black, bg = colors.white                 })
+  highlight(0, 'LirDir',          { fg = colors.black, bg = colors.white                 })
+  highlight(0, 'LirSymLink',      { fg = colors.black, bg = colors.white                 })
+  highlight(0, 'LirEmptyDirText', { fg = colors.black, bg = colors.white, italic = true, })
 
   -- IndentBlankline
   --highlight(0, 'IndentBlanklineContextChar',  { fg = colors.green, bg = colors.orange                   })

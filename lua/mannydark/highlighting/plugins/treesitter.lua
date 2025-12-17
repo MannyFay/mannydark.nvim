@@ -55,6 +55,65 @@ treesitter.setupHighlighting = function()
     highlight(0, '@keyword.operator', { fg = colors.blue, bg = 'NONE' })
     highlight(0, '@string.escape', { fg = colors.pink, bg = 'NONE' })
 
+    ---------------------------------------------------------------------------
+    -- Modern Treesitter Captures (Neovim 0.9+)
+    -- These are the new standardized names, linking to the old ones for consistency.
+
+    -- Variables
+    highlight(0, '@variable.parameter', { fg = colors.purple, bg = 'NONE' })   -- Function parameters (was @parameter).
+    highlight(0, '@variable.member', { fg = colors.purple, bg = 'NONE' })      -- Object/struct members (was @field).
+
+    -- Functions
+    highlight(0, '@function.method', { link = 'Function' })                    -- Methods (was @method).
+    highlight(0, '@function.method.call', { link = 'Function' })               -- Method calls (was @method.call).
+
+    -- Keywords
+    highlight(0, '@keyword.conditional', { link = 'Conditional' })             -- if, else, etc. (was @conditional).
+    highlight(0, '@keyword.repeat', { link = 'Keyword' })                      -- for, while, etc. (was @repeat).
+    highlight(0, '@keyword.import', { link = 'Include' })                      -- import, require (was @include).
+    highlight(0, '@keyword.directive', { link = 'PreProc' })                   -- Preprocessor (was @preproc).
+    highlight(0, '@keyword.storage', { fg = colors.blue, bg = 'NONE' })        -- Storage class (was @storageclass).
+    highlight(0, '@keyword.exception', { link = 'Exception' })                 -- try, catch (was @exception).
+
+    -- Types
+    highlight(0, '@type.definition', { fg = colors.turquoise, bg = 'NONE' })   -- Type definitions.
+
+    -- Markup (for Markdown, etc.)
+    highlight(0, '@markup.heading', { link = 'Title' })                        -- Headings (was @text.title).
+    highlight(0, '@markup.heading.1', { fg = colors.blue, bg = 'NONE', bold = true })
+    highlight(0, '@markup.heading.2', { fg = colors.blue, bg = 'NONE', bold = true })
+    highlight(0, '@markup.heading.3', { fg = colors.blue, bg = 'NONE', bold = true })
+    highlight(0, '@markup.heading.4', { fg = colors.blue, bg = 'NONE' })
+    highlight(0, '@markup.heading.5', { fg = colors.blue, bg = 'NONE' })
+    highlight(0, '@markup.heading.6', { fg = colors.blue, bg = 'NONE' })
+    highlight(0, '@markup.strong', { fg = colors.white, bg = 'NONE', bold = true })        -- Bold text.
+    highlight(0, '@markup.italic', { fg = colors.white, bg = 'NONE', italic = true })      -- Italic text.
+    highlight(0, '@markup.underline', { fg = colors.white, bg = 'NONE', underline = true }) -- Underlined text.
+    highlight(0, '@markup.strikethrough', { fg = colors.gray, bg = 'NONE', strikethrough = true }) -- Strikethrough.
+    highlight(0, '@markup.quote', { fg = colors.gray, bg = 'NONE', italic = true })        -- Block quotes.
+    highlight(0, '@markup.math', { fg = colors.greenLight, bg = 'NONE' })                  -- Math environments.
+    highlight(0, '@markup.link', { fg = colors.blueLink, bg = 'NONE' })                    -- Links.
+    highlight(0, '@markup.link.label', { fg = colors.blue, bg = 'NONE' })                  -- Link labels.
+    highlight(0, '@markup.link.url', { fg = colors.blueLink, bg = 'NONE', underline = true }) -- URLs.
+    highlight(0, '@markup.raw', { fg = colors.redLight, bg = 'NONE' })                     -- Inline code.
+    highlight(0, '@markup.raw.block', { fg = colors.redLight, bg = 'NONE' })               -- Code blocks.
+    highlight(0, '@markup.list', { fg = colors.blue, bg = 'NONE' })                        -- List markers.
+    highlight(0, '@markup.list.checked', { fg = colors.green, bg = 'NONE' })               -- Checked checkbox.
+    highlight(0, '@markup.list.unchecked', { fg = colors.gray, bg = 'NONE' })              -- Unchecked checkbox.
+
+    -- Comments
+    highlight(0, '@comment.todo', { fg = colors.orange, bg = 'NONE', bold = true })        -- TODO comments.
+    highlight(0, '@comment.note', { fg = colors.blue, bg = 'NONE', bold = true })          -- NOTE comments.
+    highlight(0, '@comment.warning', { fg = colors.orange, bg = 'NONE', bold = true })     -- WARNING comments.
+    highlight(0, '@comment.error', { fg = colors.red, bg = 'NONE', bold = true })          -- ERROR/FIXME comments.
+
+    -- Diff
+    highlight(0, '@diff.plus', { fg = colors.green, bg = 'NONE' })             -- Added lines in diff.
+    highlight(0, '@diff.minus', { fg = colors.red, bg = 'NONE' })              -- Removed lines in diff.
+    highlight(0, '@diff.delta', { fg = colors.orange, bg = 'NONE' })           -- Changed lines in diff.
+
+    ---------------------------------------------------------------------------
+
     highlight(0, '@lsp.type.variable', { fg = colors.purple, bg = "NONE" })     -- Variables marked by LSP.
     highlight(0, '@lsp.type.type', { fg = colors.blue, bg = "NONE" })           -- Keywords marked by LSP.
     highlight(0, '@lsp.type.function', { fg = colors.orange, bg = "NONE" })     -- Functions marked by LSP.

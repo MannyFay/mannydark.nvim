@@ -53,6 +53,29 @@ environment.setupHighlighting = function()
     highlight(0, 'TabLineFill', { fg = 'NONE', bg = 'NONE' })                                    -- Color of the tab line itself.
     highlight(0, 'qfFileName', { fg = colors.white, bg = 'NONE' })                               -- File name in quick fix list.
 
+    -- Diff (for :diffsplit, git diffs, etc.)
+    highlight(0, 'DiffAdd',    { fg = 'NONE', bg = '#2E4A3E' })                                  -- Added lines.
+    highlight(0, 'DiffChange', { fg = 'NONE', bg = colors.orangeDark })                         -- Changed lines.
+    highlight(0, 'DiffDelete', { fg = colors.red, bg = colors.redDark })                        -- Deleted lines.
+    highlight(0, 'DiffText',   { fg = colors.white, bg = colors.orange, bold = true })          -- Changed text within a line.
+
+    -- Window bar (Neovim 0.8+)
+    highlight(0, 'WinBar',     { fg = colors.white, bg = 'NONE', bold = true })                 -- Window bar (active).
+    highlight(0, 'WinBarNC',   { fg = colors.gray, bg = 'NONE' })                               -- Window bar (inactive).
+
+    -- Floating windows
+    highlight(0, 'FloatTitle', { fg = colors.blue, bg = colors.grayDark, bold = true })         -- Title of floating windows.
+
+    -- Search (Neovim 0.10+)
+    highlight(0, 'CurSearch',  { fg = colors.black, bg = colors.orange })                       -- Current search match under cursor.
+
+    -- Folding
+    highlight(0, 'Folded',     { fg = colors.gray, bg = colors.grayDark })                      -- Folded lines.
+    highlight(0, 'FoldColumn', { fg = colors.gray, bg = 'NONE' })                               -- Fold column on the left.
+
+    -- Match
+    highlight(0, 'MatchParen', { fg = colors.white, bg = colors.gray, bold = true })            -- Matching parenthesis/bracket.
+
     ----------------------- Not used by now:
     highlight(0, 'Cursor', { fg = colors.red, bg = colors.green })
     highlight(0, 'lCursor', { fg = colors.red, bg = colors.green })
@@ -70,7 +93,7 @@ environment.setupHighlighting = function()
     highlight(0, 'TermCursorNC', { fg = colors.white, bg = colors.pink })
     highlight(0, 'Conceal', { fg = colors.orange, bg = colors.purple })
     highlight(0, 'Substitute', { fg = colors.orange, bg = colors.purple })
-    highlight(0, 'NonText', { fg = colors.darkGray, bg = colors.pink })
+    highlight(0, 'NonText', { fg = colors.grayDark, bg = colors.pink })
 end
 
 return environment

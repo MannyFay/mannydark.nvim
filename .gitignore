@@ -1,65 +1,339 @@
-#--------------------------------------------
-# --- Laravel
+#------------------------------------------------------------------------------
+# .gitignore
+#------------------------------------------------------------------------------
 
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
+
+#------------------------------------------------------------------------------
+# AI
+
+.claude
+
+
+#------------------------------------------------------------------------------
+# Ansible
+
+files/ansible-ssh-key
+files/*-key
+!files/*-key.encrypted
+*.retry
+logs/
+.vault_pass
+host_vars/vault_*
+group_vars/vault_*
+
+# SSH keys (never commit these!)
+*.pem
+*.key
+id_rsa*
+ansible_key*
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Ansible Galaxy
+collections/
+roles/downloaded/
+
+# Local testing
+test_inventory.yml
+vagrant/
+
+
+#------------------------------------------------------------------------------
+# Apple macOS
+
+._*
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.directory
+.DocumentRevisions-V100
+.DS_Store
+.DS_Store?
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.Trashes
+.TemporaryItems
+Thumbs.db
+.VolumeIcon.icns
+
+
+#------------------------------------------------------------------------------
+# Backup Files
+
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+
+#------------------------------------------------------------------------------
+# DotENV
+
+.env
+.env*.local
+.env.local
+.env.dev
+.env.prod
+.env.development.local
+.env.production
+.env.production.local
+.env.test.local
+
+
+#------------------------------------------------------------------------------
+# Gradle
+
+**/build/
+.gradle
+.gradletasknamecache
+gradle-app.setting
+!src/**/build/
+!gradle-wrapper.jar
+
+
+#------------------------------------------------------------------------------
+# GPG
+
+secring.*
+
+
+#------------------------------------------------------------------------------
+# JetBrains IDEs
+
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+/.fleet
+/.idea
+.idea/caches/build_file_checksums.ser
+.idea/httpRequests
+.idea_modules/
+.idea/**/mongoSettings.xml
+.idea/replstate.xml
+out/
+
+
+#------------------------------------------------------------------------------
+# JavaScript
+
+.eslintcache
+pids
+*.pid
+*.pid.lock
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+*.seed
+.stylelintcache
+
+#- Bower
+bower_components
+
+#- Coverage Tools
+lib-cov
+coverage
+/coverage
+*.lcov
+.nyc_output
+
+#- Grunt
+.grunt
+
+#- Next.js
+/.next/
+/out/
+.next
+out
+
+#- Node.js
+/build
+build/Release
+logs
+*.log
+.lock-wscript
+jspm_packages/
+/node_modules
+.node_repl_history
+.pnp.*
+/.pnp
+.pnp.js
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+#- NPM
+.npm
+npm-debug.log*
+.pnpm-debug.log*
+*.tgz
+
+#- Nuxt.js
+dist
+.nuxt
+out
+
+#- Parcel
+.cache
+.parcel-cache
+
+#- Snowpack
+web_modules/
+
+#- TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+#- Yarn
+lerna-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn-error.log
+.yarn-integrity
+.yarn/build-state.yml
+.yarn/cache
+.yarn/install-state.gz
+.yarn/unplugged
+
+
+#------------------------------------------------------------------------------
+# Linux
+
+*~
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+
+
+#------------------------------------------------------------------------------
+# Microsoft Visual Studio Code
+
+*.code-workspace.vscode
+/.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.vscode-test
+.vscode
+
+
+#------------------------------------------------------------------------------
+# Microsoft Windows
+
+*.cab
+[Dd]esktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+*.lnk
+*.msi
+*.msix
+*.msm
+*.msp
+$RECYCLE.BIN/
+*.stackdump
+Thumbs.db
+Thumbs.db:encryptable
+
+
+#------------------------------------------------------------------------------
+# PHP
+
+.buildpath
+.phpintel
+private/cache
+
+#- Composer
+composer.phar
+/vendor/
+
+#- Doctrine
+private/cache_doctrine
+
+#- Laravel
+auth.json
 .env
 .env.backup
 .env.production
 Homestead.json
 Homestead.yaml
-auth.json
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
 
+#- PHP CodeSniffer
+/wpcs/*
 
-#--------------------------------------------
-# --- JetBrains IDEs
-
-/.fleet
-/.idea
-
-
-#--------------------------------------------
-# --- Node.js
-
-/node_modules
-npm-debug.log
-yarn-error.log
-
-
-#--------------------------------------------
-# --- OS Generated Files
-
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
-.directory
-
-
-#--------------------------------------------
-# --- PHPUnit
-
+#- PHPUnit
 /.phpunit.cache
 .phpunit.result.cache
 
 
-#--------------------------------------------
-# --- Microsoft Visual Studio Code
+#-------------------------------------------------------------------------------
+# React router
 
-/.vscode
+.react-router/
+/build/
 
 
-#--------------------------------------------
-# --- Vim
+#------------------------------------------------------------------------------
+# SSL
 
-.*.swp
-*.swp
-.*.swo
-*.swo
+#- Privacy Enhanced Mail
+*.pem
+
+
+#------------------------------------------------------------------------------
+# Sublime Text
+
+GitHub.sublime-settings
+*.stTheme.cache
+*.tmlanguage.cache
+*.tmPreferences.cache
+
+
+#------------------------------------------------------------------------------
+# Vercel Cloud
+
+.vercel
+
+
+#------------------------------------------------------------------------------
+# Vim / NeoVim
+
+#- Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]sw[a-p]
+[._]ss[a-gi-z]
+[._]s[a-rt-v][a-z]
+
+#- Session
+Session.vim
+Sessionx.vim
+
+#- Temporary
+*~
+.netrwhist
+
+#- Auto-generated tag files
+tags
+
+#- Persistent undo
+[._]*.un~
+
+
+#------------------------------------------------------------------------------
+# Vite
+
+.vite/
+
+
