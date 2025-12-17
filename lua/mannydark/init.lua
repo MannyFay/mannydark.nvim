@@ -2,10 +2,16 @@
 -- Mannydark Colorscheme
 -------------------------------------------------------------------------------
 
+---@class MannydarkConfig
+---@field transparent boolean Enable transparent background.
+---@field italic_comments boolean Render comments in italic.
+---@field dim_inactive boolean Dim inactive windows.
+
 local M = {}
 local colors = require('mannydark.palette')
 
 -- Default configuration
+---@type MannydarkConfig
 M.config = {
   transparent = false,     -- Transparent background.
   italic_comments = true,  -- Italic comments.
@@ -13,7 +19,7 @@ M.config = {
 }
 
 --- Setup the colorscheme with optional configuration.
---- @param opts table|nil Configuration options
+---@param opts? MannydarkConfig Configuration options.
 M.setup = function(opts)
   -- Merge user options with defaults
   M.config = vim.tbl_deep_extend('force', M.config, opts or {})
@@ -21,7 +27,7 @@ M.setup = function(opts)
   vim.cmd('hi clear')
 
   vim.o.background = 'dark'
-  if vim.fn.exists('syntax_on') then
+  if vim.fn.exists('syntax_on') == 1 then
     vim.cmd('syntax reset')
   end
 
