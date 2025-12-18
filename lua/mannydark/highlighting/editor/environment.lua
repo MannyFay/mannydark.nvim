@@ -15,8 +15,6 @@ environment.setupHighlighting = function()
     --     bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
     -- })
 
-    highlight(0, 'IndentBlanklineChar',
-        { fg = colors.grayDark, bg = 'NONE' })                                                   -- Indent Blank Line plugin vertical lines.
     highlight(0, 'SignColumn', { fg = 'NONE', bg = colors.black })                               -- Sign column left of the line numbers.
     highlight(0, 'ColorColumn', { fg = 'NONE', bg = colors.grayDark })                           -- Vertical visual guide line.
     highlight(0, 'LineNr', { fg = colors.gray, bg = 'NONE', underline = false })                 -- Line numbers.
