@@ -66,9 +66,9 @@ lua.setupHighlighting = function()
   -- Constants & Booleans
   highlight(0, 'luaConstant',             { fg = colors.purple,     bg = 'NONE' })           -- Constants (nil, true, false)
   highlight(0, 'luaNil',                  { fg = colors.purple,     bg = 'NONE' })           -- nil value
-  highlight(0, 'luaTrue',                 { fg = colors.purple,     bg = 'NONE' })           -- true value
-  highlight(0, 'luaFalse',                { fg = colors.purple,     bg = 'NONE' })           -- false value
-  highlight(0, 'luaBoolean',              { fg = colors.purple,     bg = 'NONE' })           -- Boolean values
+  highlight(0, 'luaTrue',                 { fg = colors.blue,       bg = 'NONE' })           -- true value
+  highlight(0, 'luaFalse',                { fg = colors.blue,       bg = 'NONE' })           -- false value
+  highlight(0, 'luaBoolean',              { fg = colors.blue,       bg = 'NONE' })           -- Boolean values
 
   -- Functions
   highlight(0, 'luaFunc',                 { fg = colors.orange,     bg = 'NONE' })           -- Built-in functions
