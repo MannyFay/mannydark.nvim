@@ -25,6 +25,18 @@ local M = {}
 -------------------------------------------------------------------------------
 -- Default Configuration
 
+-- Store user config in _G (global table) so it survives module cache clearing
+-- This is CRITICAL for hot reload to work correctly
+-- Using _G (not vim.g) because vim.g can't store functions (on_colors, on_highlights)
+-- _G persists for the entire Neovim session and survives package.loaded clears
+local function get_user_config()
+  return _G._mannydark_user_config
+end
+
+local function set_user_config(config)
+  _G._mannydark_user_config = config
+end
+
 ---@type MannydarkConfig
 M.config = {
   style = 'dark',            -- "dark" | "light"
@@ -173,35 +185,78 @@ end
 --- Setup the colorscheme with optional configuration.
 ---@param opts? MannydarkConfig Configuration options.
 M.setup = function(opts)
+  -- CRITICAL: Save user config before any cache clearing
+  -- This allows hot reload to preserve user settings
+  if opts then
+    set_user_config(vim.deepcopy(opts))
+  end
+
+  -- Use saved user config if available (for hot reload scenarios)
+  local effective_opts = opts or get_user_config() or {}
+
   -- Merge user options with defaults
-  M.config = vim.tbl_deep_extend('force', M.config, opts or {})
+  M.config = vim.tbl_deep_extend('force', {
+    style = 'dark',
+    transparent = false,
+    dim_inactive = false,
+    terminal_colors = true,
+    styles = {
+      comments  = { italic = true },
+      keywords  = {},
+      functions = {},
+      variables = {},
+      strings   = {},
+      types     = {},
+    },
+    on_colors = nil,
+    on_highlights = nil,
+  }, effective_opts)
 
-  -- Clear highlights
-  vim.cmd('hi clear')
+  -- Clear highlighting module caches FIRST so they reload with new colors
+  for name, _ in pairs(package.loaded) do
+    if name:match('^mannydark%.') and name ~= 'mannydark' then
+      package.loaded[name] = nil
+    end
+  end
 
-  -- Set background based on style
+  -- Load colors for current style BEFORE anything else
+  M.colors = load_colors()
+
+  -- Pre-populate the palette module so require('mannydark.palette') returns correct colors
+  package.loaded['mannydark.palette'] = M.colors
+
+  -- Set termguicolors first (required for true color)
+  vim.o.termguicolors = true
+
+  -- Set background based on style BEFORE clearing (Neovim uses this for hi clear behavior)
   if M.config.style == 'light' then
     vim.o.background = 'light'
   else
     vim.o.background = 'dark'
   end
 
-  -- Reset syntax
+  -- Only clear highlights if a colorscheme was previously active
+  -- This prevents flash on initial load and follows TokyoNight/Gruvbox pattern
+  if vim.g.colors_name then
+    vim.cmd('hi clear')
+  end
+
+  -- Reset syntax if enabled
   if vim.fn.exists('syntax_on') == 1 then
     vim.cmd('syntax reset')
   end
 
-  vim.o.termguicolors = true
+  -- Set the colorscheme name
   vim.g.colors_name = M.config.style == 'light' and 'mannybright' or 'mannydark'
 
-  -- Load colors for current style
-  M.colors = load_colors()
+  -- Apply Normal highlight IMMEDIATELY after clearing to prevent default colorscheme flash
+  -- This is critical for Neovim 0.10+ where hi clear loads the default colorscheme
+  local bg = M.config.transparent and 'NONE' or M.colors.black
+  vim.api.nvim_set_hl(0, 'Normal', { fg = M.colors.white, bg = bg })
+  vim.api.nvim_set_hl(0, 'NormalNC', { fg = M.colors.white, bg = bg })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { fg = M.colors.white, bg = M.colors.grayDark })
 
-  -- Set the palette module to our loaded colors BEFORE loading theme
-  -- This makes require('mannydark.palette') return the correct colors
-  package.loaded['mannydark.palette'] = M.colors
-
-  -- Build theme
+  -- Build theme (loads all highlight modules)
   local theme = require('mannydark.theme')
   theme.buildTheme()
 
@@ -211,6 +266,19 @@ M.setup = function(opts)
   -- Apply terminal colors
   apply_terminal_colors(M.colors)
 
+  -- Re-apply LSP semantic highlights after LspAttach
+  -- This ensures our highlights take precedence over plugins (like lazydev) that set their own
+  vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('MannydarkLspHighlights', { clear = true }),
+    callback = function()
+      vim.schedule(function()
+        require('mannydark.highlighting.languages.languagedefaults').applyLspSemanticHighlights()
+        -- Re-apply config-dependent highlights (styles.comments, etc.) after LSP highlights
+        apply_config(M.colors)
+      end)
+    end,
+  })
+
   -- Apply user highlight overrides (last, so they have final say)
   if M.config.on_highlights then
     local hl = setmetatable({}, {
@@ -219,6 +287,12 @@ M.setup = function(opts)
       end
     })
     M.config.on_highlights(hl, M.colors)
+  end
+
+  -- Refresh nvim-web-devicons if installed (hi clear wipes their highlights)
+  local ok, devicons = pcall(require, 'nvim-web-devicons')
+  if ok and devicons.refresh then
+    devicons.refresh()
   end
 end
 
@@ -240,17 +314,186 @@ M.toggle = function(style)
     M.config.style = M.config.style == 'dark' and 'light' or 'dark'
   end
 
-  -- Clear highlighting module caches so they reload with new colors
+  -- setup() handles all cache clearing now
+  M.setup(M.config)
+end
+
+-------------------------------------------------------------------------------
+-- Development Mode & Commands
+
+local dev_mode_enabled = false
+
+--- Reload the colorscheme (clears all caches and re-applies)
+--- This is the main function for hot reload
+M.reload = function()
+  -- Config is saved in _G._mannydark_user_config, which survives module reload
+  -- So we don't need to save it here - it persists automatically
+
+  -- Clear ALL mannydark modules from cache
   for name, _ in pairs(package.loaded) do
-    if name:match('^mannydark%.highlighting%.') then
+    if name:match('^mannydark') then
       package.loaded[name] = nil
     end
   end
-  package.loaded['mannydark.theme'] = nil
-  package.loaded['mannydark.palette'] = nil
-  package.loaded['mannydark.palette_light'] = nil
 
-  M.setup(M.config)
+  -- Re-require mannydark (fresh module)
+  local ok, mannydark = pcall(require, 'mannydark')
+  if ok then
+    -- setup() will automatically use vim.g.mannydark_user_config
+    mannydark.setup()
+    return true
+  else
+    vim.notify('Mannydark reload failed: ' .. tostring(mannydark), vim.log.levels.ERROR)
+    return false
+  end
+end
+
+--- Enable development mode with auto-reload on save
+--- Call this when working on the colorscheme
+M.dev_mode = function()
+  if dev_mode_enabled then
+    vim.notify('Mannydark dev mode already enabled', vim.log.levels.WARN)
+    return
+  end
+
+  dev_mode_enabled = true
+
+  -- Auto-reload when any mannydark lua file is saved
+  vim.api.nvim_create_autocmd('BufWritePost', {
+    group = vim.api.nvim_create_augroup('MannydarkDevMode', { clear = true }),
+    pattern = { '*/mannydark.nvim/**.lua', '*/mannydark/**.lua' },
+    callback = function(ev)
+      local filepath = ev.file or vim.fn.expand('%:p')
+
+      -- Double-check this is a mannydark file
+      if not filepath:match('mannydark') then
+        return
+      end
+
+      -- Only reload if mannydark colorscheme is active
+      local current = vim.g.colors_name
+      if not current or (current ~= 'mannydark' and current ~= 'mannybright') then
+        return
+      end
+
+      -- Use vim.schedule to avoid issues with autocmd timing
+      vim.schedule(function()
+        if M.reload() then
+          local filename = vim.fn.fnamemodify(filepath, ':t')
+          vim.notify('↻ ' .. filename, vim.log.levels.INFO)
+        end
+      end)
+    end,
+  })
+
+  vim.notify('Mannydark dev mode enabled - auto-reload on save', vim.log.levels.INFO)
+end
+
+--- Disable development mode
+M.dev_mode_off = function()
+  if not dev_mode_enabled then
+    return
+  end
+
+  dev_mode_enabled = false
+  pcall(vim.api.nvim_del_augroup_by_name, 'MannydarkDevMode')
+  vim.notify('Mannydark dev mode disabled', vim.log.levels.INFO)
+end
+
+--- Check if dev mode is enabled
+M.is_dev_mode = function()
+  return dev_mode_enabled
+end
+
+--- Debug function to show current state
+M.debug = function()
+  local user_config = get_user_config()
+  local info = {
+    'Mannydark Debug Info:',
+    '─────────────────────',
+    'colors_name: ' .. tostring(vim.g.colors_name),
+    'dev_mode: ' .. tostring(dev_mode_enabled),
+    'style: ' .. tostring(M.config.style),
+    'transparent: ' .. tostring(M.config.transparent),
+    'user_config exists: ' .. tostring(user_config ~= nil),
+    'user_config.style: ' .. tostring(user_config and user_config.style or 'N/A'),
+    '',
+    'Loaded mannydark modules:',
+  }
+
+  local count = 0
+  for name, _ in pairs(package.loaded) do
+    if name:match('^mannydark') then
+      table.insert(info, '  • ' .. name)
+      count = count + 1
+    end
+  end
+  table.insert(info, 'Total: ' .. count .. ' modules')
+
+  vim.notify(table.concat(info, '\n'), vim.log.levels.INFO)
+end
+
+-------------------------------------------------------------------------------
+-- User Commands
+
+-- Create user commands on first load
+local function create_commands()
+  -- :MannydarkReload - Manual reload
+  vim.api.nvim_create_user_command('MannydarkReload', function()
+    if M.reload() then
+      vim.notify('Mannydark reloaded!', vim.log.levels.INFO)
+    end
+  end, { desc = 'Reload mannydark colorscheme' })
+
+  -- :MannydarkDevMode - Toggle dev mode
+  vim.api.nvim_create_user_command('MannydarkDevMode', function()
+    if dev_mode_enabled then
+      M.dev_mode_off()
+    else
+      M.dev_mode()
+    end
+  end, { desc = 'Toggle mannydark dev mode' })
+
+  -- :MannydarkDebug - Show debug info
+  vim.api.nvim_create_user_command('MannydarkDebug', function()
+    M.debug()
+  end, { desc = 'Show mannydark debug info' })
+
+  -- :MannydarkToggle [dark|light] - Toggle or set style
+  vim.api.nvim_create_user_command('MannydarkToggle', function(opts)
+    if opts.args and opts.args ~= '' then
+      M.toggle(opts.args)
+    else
+      M.toggle()
+    end
+  end, {
+    desc = 'Toggle mannydark dark/light',
+    nargs = '?',
+    complete = function()
+      return { 'dark', 'light' }
+    end,
+  })
+end
+
+-- Create commands immediately
+create_commands()
+
+-------------------------------------------------------------------------------
+-- Auto Dev Mode (like Catppuccin's debug mode)
+-- Set vim.g.mannydark_debug = true BEFORE loading to enable
+
+if vim.g.mannydark_debug then
+  vim.api.nvim_create_autocmd('BufWritePost', {
+    group = vim.api.nvim_create_augroup('MannydarkDebugMode', { clear = true }),
+    pattern = { '*/mannydark.nvim/**.lua', '*/mannydark/**.lua' },
+    callback = function()
+      vim.schedule(function()
+        if M.reload() then
+          vim.notify('Mannydark (debug): reloaded', vim.log.levels.INFO)
+        end
+      end)
+    end,
+  })
 end
 
 return M

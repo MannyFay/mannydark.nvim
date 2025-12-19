@@ -41,13 +41,17 @@ html.setupHighlighting = function()
   highlight(0, 'htmlPreAttr',          { fg = colors.turquoise,  bg = 'NONE'            })  -- DOCTYPE attributes
   highlight(0, 'htmlPreProcAttrName',  { fg = colors.turquoise,  bg = 'NONE'            })  -- Attribute name in DOCTYPE
   highlight(0, 'htmlPreProcAttrError', { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Invalid attribute
+  highlight(0, '@spell.html',            { link = "Normal" })  -- Regular text.
 
   -- Comments
-  highlight(0, 'htmlComment',          { fg = colors.red,        bg = 'NONE'            })  -- <!-- comment -->
-  highlight(0, 'htmlCommentPart',      { fg = colors.red,        bg = 'NONE'            })  -- Comment content
-  highlight(0, 'htmlCommentError',     { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Invalid -- in comment
-  highlight(0, 'htmlCommentNested',    { fg = colors.red,        bg = 'NONE'            })  -- Nested comment
-  highlight(0, 'htmlTodo',             { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
+  highlight(0, 'htmlComment',            { link = "Comment" })  -- <!-- comment -->
+  highlight(0, 'htmlCommentPart',        { link = "Comment" })  -- Comment content
+  highlight(0, 'htmlCommentError',       { link = "Comment" })  -- Invalid -- in comment
+  highlight(0, 'htmlCommentNested',      { link = "Comment" })  -- Nested comment
+  highlight(0, 'htmlTodo',               { link = "Comment" })  -- TODO, FIXME, XXX
+  highlight(0, 'htmlCssStyleComment',    { link = "Comment" })  -- CSS comment in style
+  highlight(0, '@comment.html',          { link = "Comment" })  -- <!-- -->
+  highlight(0, '@lsp.type.comment.html', { link = "Comment" })  -- Comments
 
   -- Special Characters / Entities
   highlight(0, 'htmlSpecialChar',      { fg = colors.pink,       bg = 'NONE'            })  -- &nbsp; &amp; etc.
@@ -96,7 +100,6 @@ html.setupHighlighting = function()
   highlight(0, 'javaScript',           { fg = colors.white,      bg = 'NONE'            })  -- Embedded JavaScript
   highlight(0, 'javaScriptExpression', { fg = colors.white,      bg = 'NONE'            })  -- JS expressions
   highlight(0, 'htmlCssDefinition',    { fg = colors.white,      bg = 'NONE'            })  -- Embedded CSS
-  highlight(0, 'htmlCssStyleComment',  { fg = colors.red,        bg = 'NONE'            })  -- CSS comment in style
 
   -- Errors
   highlight(0, 'htmlError',            { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Syntax error
@@ -279,7 +282,7 @@ html.setupHighlighting = function()
   -- Tags
   highlight(0, '@tag.html',                    { fg = colors.blue,       bg = 'NONE' })  -- Tag names
   highlight(0, '@tag.builtin.html',            { fg = colors.blue,       bg = 'NONE' })  -- Built-in tags
-  highlight(0, '@tag.delimiter.html',          { fg = colors.white,      bg = 'NONE' })  -- < > </ />
+  highlight(0, '@tag.delimiter.html',          { link = "Ignore" })  -- < > </ />
   highlight(0, '@tag.attribute.html',          { fg = colors.turquoise,  bg = 'NONE' })  -- Attribute names
   highlight(0, '@tag.error.html',              { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Invalid tag
 
@@ -288,15 +291,15 @@ html.setupHighlighting = function()
   highlight(0, '@attribute.builtin.html',      { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in attributes
 
   -- Strings
-  highlight(0, '@string.html',                 { fg = colors.redLight,   bg = 'NONE' })  -- Attribute values
-  highlight(0, '@string.special.html',         { fg = colors.pink,       bg = 'NONE' })  -- Special strings
-  highlight(0, '@string.special.url.html',     { fg = colors.blueLink,   bg = 'NONE' })  -- URLs
+  highlight(0, '@string.html',                 { link = "String" })  -- Attribute values
+  highlight(0, '@string.special.html',         { link = "String" })  -- Special strings
+  highlight(0, '@string.special.url.html',     { link = "String" })  -- URLs
 
   -- Constants / Entities
-  highlight(0, '@constant.html',               { fg = colors.gray,       bg = 'NONE' })  -- DOCTYPE
-  highlight(0, '@constant.builtin.html',       { fg = colors.pink,       bg = 'NONE' })  -- Built-in constants
+  highlight(0, '@constant.html',               { link = "Constant" })  -- DOCTYPE
+  highlight(0, '@constant.builtin.html',       { link = "Constant" })  -- Built-in constants
   highlight(0, '@character.html',              { fg = colors.pink,       bg = 'NONE' })  -- Characters
-  highlight(0, '@character.special.html',      { fg = colors.pink,       bg = 'NONE' })  -- &amp; &lt; etc.
+  highlight(0, '@character.special.html',      { link = "keyword"})  -- &amp; &lt; etc.
 
   -- Keywords
   highlight(0, '@keyword.html',                { fg = colors.blue,       bg = 'NONE' })  -- Keywords
@@ -310,8 +313,6 @@ html.setupHighlighting = function()
   highlight(0, '@punctuation.delimiter.html',  { fg = colors.white,      bg = 'NONE' })  -- Delimiters
   highlight(0, '@punctuation.special.html',    { fg = colors.pink,       bg = 'NONE' })  -- & ; in entities
 
-  -- Comments
-  highlight(0, '@comment.html',                { fg = colors.red,        bg = 'NONE' })  -- <!-- -->
 
   -- Text Content
   highlight(0, '@text.html',                   { fg = colors.white,      bg = 'NONE' })  -- Text content
@@ -323,19 +324,19 @@ html.setupHighlighting = function()
   highlight(0, '@text.uri.html',               { fg = colors.blueLink,   bg = 'NONE', underline = true })  -- URLs
 
   -- Markup (for markdown-like rendering)
-  highlight(0, '@markup.heading.html',         { fg = colors.white,      bg = 'NONE', bold = true })  -- Headings
-  highlight(0, '@markup.heading.1.html',       { fg = colors.white,      bg = 'NONE', bold = true })  -- h1
-  highlight(0, '@markup.heading.2.html',       { fg = colors.white,      bg = 'NONE', bold = true })  -- h2
-  highlight(0, '@markup.heading.3.html',       { fg = colors.white,      bg = 'NONE', bold = true })  -- h3
-  highlight(0, '@markup.heading.4.html',       { fg = colors.white,      bg = 'NONE', bold = true })  -- h4
-  highlight(0, '@markup.heading.5.html',       { fg = colors.white,      bg = 'NONE', bold = true })  -- h5
-  highlight(0, '@markup.heading.6.html',       { fg = colors.white,      bg = 'NONE', bold = true })  -- h6
-  highlight(0, '@markup.strong.html',          { fg = colors.white,      bg = 'NONE', bold = true })  -- Bold
-  highlight(0, '@markup.italic.html',          { fg = colors.white,      bg = 'NONE', italic = true })  -- Italic
-  highlight(0, '@markup.underline.html',       { fg = colors.white,      bg = 'NONE', underline = true })  -- Underline
-  highlight(0, '@markup.strikethrough.html',   { fg = colors.white,      bg = 'NONE', strikethrough = true })  -- Strike
-  highlight(0, '@markup.link.html',            { fg = colors.blueLink,   bg = 'NONE', underline = true })  -- Links
-  highlight(0, '@markup.link.label.html',      { fg = colors.turquoise,  bg = 'NONE' })  -- Link text
+  highlight(0, '@markup.heading.html',         { link = "Normal" })  -- Headings
+  highlight(0, '@markup.heading.1.html',       { link = "Normal" })  -- h1
+  highlight(0, '@markup.heading.2.html',       { link = "Normal" })  -- h2
+  highlight(0, '@markup.heading.3.html',       { link = "Normal" })  -- h3
+  highlight(0, '@markup.heading.4.html',       { link = "Normal" })  -- h4
+  highlight(0, '@markup.heading.5.html',       { link = "Normal" })  -- h5
+  highlight(0, '@markup.heading.6.html',       { link = "Normal" })  -- h6
+  highlight(0, '@markup.strong.html',          { link = "Normal" })  -- Bold
+  highlight(0, '@markup.italic.html',          { link = "Normal" })  -- Italic
+  highlight(0, '@markup.underline.html',       { link = "Normal" })  -- Underline
+  highlight(0, '@markup.strikethrough.html',   { link = "Normal" })  -- Strike
+  highlight(0, '@markup.link.html',            { link = "Comment"})  -- Links
+  highlight(0, '@markup.link.label.html',      { link = "Normal" })  -- Link text
   highlight(0, '@markup.link.url.html',        { fg = colors.blueLink,   bg = 'NONE' })  -- Link URL
   highlight(0, '@markup.raw.html',             { fg = colors.redLight,   bg = 'NONE' })  -- <pre>/<code>
   highlight(0, '@markup.list.html',            { fg = colors.white,      bg = 'NONE' })  -- <ul>/<ol>
@@ -351,7 +352,6 @@ html.setupHighlighting = function()
   highlight(0, '@lsp.type.property.html',      { fg = colors.turquoise,  bg = 'NONE' })  -- Attributes
   highlight(0, '@lsp.type.string.html',        { fg = colors.redLight,   bg = 'NONE' })  -- Strings
   highlight(0, '@lsp.type.keyword.html',       { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.html',       { fg = colors.red,        bg = 'NONE' })  -- Comments
   highlight(0, '@lsp.type.class.html',         { fg = colors.turquoise,  bg = 'NONE' })  -- CSS classes
   highlight(0, '@lsp.type.type.html',          { fg = colors.blue,       bg = 'NONE' })  -- Tag types
   highlight(0, '@lsp.type.namespace.html',     { fg = colors.pink,       bg = 'NONE' })  -- Namespaces

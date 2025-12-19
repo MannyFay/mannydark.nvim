@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--
+  Comprehensive HTML Sample - Syntax Highlighting Demonstration
+
+  This file demonstrates all major HTML language features
+  for syntax highlighting purposes.
+-->
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Comprehensive HTML sample for syntax highlighting">
+  <meta name="keywords" content="HTML, sample, syntax highlighting">
+  <meta name="author" content="Sample Author">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="HTML Sample">
+  <meta property="og:description" content="Comprehensive HTML sample">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/sample.html">
+  <meta property="og:image" content="https://example.com/image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTML Sample">
+  <meta name="twitter:description" content="Comprehensive HTML sample">
+
+  <!-- Title -->
+  <title>HTML Sample - Syntax Highlighting Demonstration</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Preconnect and DNS Prefetch -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//example.com">
+  <link rel="preload" href="critical.css" as="style">
+  <link rel="prefetch" href="next-page.html">
+
+  <!-- Inline styles -->
+  <style>
+    /* CSS in HTML */
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2ecc71;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script type="module" src="module.js"></script>
+
+  <!-- Inline script -->
+  <script>
+    // JavaScript in HTML
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded');
+    });
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "HTML Sample",
+      "description": "Comprehensive HTML sample for syntax highlighting"
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="main-header" class="header" role="banner">
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="#home" title="Go to home">Home</a></li>
+        <li><a href="#about" title="About us">About</a></li>
+        <li><a href="#contact" title="Contact us">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Logo with srcset for responsive images -->
+    <picture>
+      <source media="(min-width: 800px)" srcset="logo-large.png">
+      <source media="(min-width: 400px)" srcset="logo-medium.png">
+      <img src="logo-small.png" alt="Company Logo" width="200" height="50" loading="lazy">
+    </picture>
+  </header>
+
+  <!-- Main content -->
+  <main id="main-content" role="main">
+    <!-- Article -->
+    <article class="post" itemscope itemtype="https://schema.org/Article">
+      <header>
+        <h1 itemprop="headline">HTML Sample Document</h1>
+        <p class="meta">
+          <time datetime="2024-01-15T12:00:00Z" itemprop="datePublished">January 15, 2024</time>
+          by <span itemprop="author">Sample Author</span>
+        </p>
+      </header>
+
+      <!-- Sections -->
+      <section id="headings">
+        <h2>Headings</h2>
+        <h1>Heading Level 1</h1>
+        <h2>Heading Level 2</h2>
+        <h3>Heading Level 3</h3>
+        <h4>Heading Level 4</h4>
+        <h5>Heading Level 5</h5>
+        <h6>Heading Level 6</h6>
+      </section>
+
+      <section id="text-elements">
+        <h2>Text Elements</h2>
+        <p>This is a <strong>paragraph</strong> with <em>various</em> text <mark>formatting</mark> options.</p>
+        <p>Including <b>bold</b>, <i>italic</i>, <u>underline</u>, <s>strikethrough</s>, and <small>small</small> text.</p>
+        <p>Also <sub>subscript</sub> and <sup>superscript</sup>, <code>inline code</code>, and <kbd>keyboard input</kbd>.</p>
+        <p><abbr title="HyperText Markup Language">HTML</abbr> is the standard markup language.</p>
+        <p>Use <cite>Citation</cite> for references and <dfn>definition</dfn> for terms.</p>
+        <p><q>This is a short inline quotation.</q></p>
+        <blockquote cite="https://example.com">
+          <p>This is a block quotation from an external source.</p>
+        </blockquote>
+        <address>
+          Contact: <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+      </section>
+
+      <section id="lists">
+        <h2>Lists</h2>
+
+        <!-- Unordered list -->
+        <ul>
+          <li>First item</li>
+          <li>Second item
+            <ul>
+              <li>Nested item 1</li>
+              <li>Nested item 2</li>
+            </ul>
+          </li>
+          <li>Third item</li>
+        </ul>
+
+        <!-- Ordered list -->
+        <ol start="1" type="1">
+          <li>First step</li>
+          <li>Second step</li>
+          <li>Third step</li>
+        </ol>
+
+        <!-- Description list -->
+        <dl>
+          <dt>HTML</dt>
+          <dd>HyperText Markup Language</dd>
+          <dt>CSS</dt>
+          <dd>Cascading Style Sheets</dd>
+          <dt>JS</dt>
+          <dd>JavaScript</dd>
+        </dl>
+      </section>
+
+      <section id="links">
+        <h2>Links</h2>
+        <p>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">External link</a>
+          <a href="/internal-page.html">Internal link</a>
+          <a href="#section">Anchor link</a>
+          <a href="mailto:info@example.com">Email link</a>
+          <a href="tel:+1234567890">Phone link</a>
+          <a href="sms:+1234567890">SMS link</a>
+          <a href="javascript:void(0)" onclick="handleClick()">JavaScript link</a>
+          <a href="/document.pdf" download="document.pdf">Download link</a>
+        </p>
+      </section>
+
+      <section id="media">
+        <h2>Media Elements</h2>
+
+        <!-- Images -->
+        <figure>
+          <img src="image.jpg" alt="Description of image" width="800" height="600" loading="lazy" decoding="async">
+          <figcaption>Image caption</figcaption>
+        </figure>
+
+        <!-- Responsive images -->
+        <img
+          src="image-small.jpg"
+          srcset="image-small.jpg 480w, image-medium.jpg 800w, image-large.jpg 1200w"
+          sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"
+          alt="Responsive image"
+        >
+
+        <!-- Video -->
+        <video controls width="640" height="360" poster="poster.jpg" preload="metadata">
+          <source src="video.mp4" type="video/mp4">
+          <source src="video.webm" type="video/webm">
+          <track kind="captions" src="captions.vtt" srclang="en" label="English">
+          Your browser doesn't support video.
+        </video>
+
+        <!-- Audio -->
+        <audio controls preload="metadata">
+          <source src="audio.mp3" type="audio/mpeg">
+          <source src="audio.ogg" type="audio/ogg">
+          Your browser doesn't support audio.
+        </audio>
+
+        <!-- Canvas -->
+        <canvas id="myCanvas" width="400" height="200">
+          Canvas not supported
+        </canvas>
+
+        <!-- SVG -->
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
+          <text x="50" y="55" text-anchor="middle" fill="white">SVG</text>
+        </svg>
+
+        <!-- Iframe -->
+        <iframe
+          src="https://example.com/embed"
+          width="560"
+          height="315"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin"
+          title="Embedded content"
+        ></iframe>
+
+        <!-- Object and Embed -->
+        <object data="document.pdf" type="application/pdf" width="600" height="400">
+          <embed src="document.pdf" type="application/pdf">
+          <p>PDF cannot be displayed</p>
+        </object>
+      </section>
+
+      <section id="tables">
+        <h2>Tables</h2>
+        <table>
+          <caption>Sample Data Table</caption>
+          <colgroup>
+            <col span="1" style="background-color: #f0f0f0">
+            <col span="2">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Alice</td>
+              <td>alice@example.com</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Bob</td>
+              <td>bob@example.com</td>
+            </tr>
+            <tr>
+              <td colspan="2">Merged cells</td>
+              <td rowspan="2">Spanning rows</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Charlie</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Table footer</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section id="forms">
+        <h2>Forms</h2>
+        <form action="/submit" method="POST" enctype="multipart/form-data" autocomplete="on" novalidate>
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <!-- Text input -->
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+              minlength="2"
+              maxlength="100"
+              pattern="[A-Za-z ]+"
+              autofocus
+            >
+
+            <!-- Email input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+
+            <!-- Password input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+
+            <!-- Number input -->
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="0" max="150" step="1">
+
+            <!-- Range input -->
+            <label for="satisfaction">Satisfaction:</label>
+            <input type="range" id="satisfaction" name="satisfaction" min="0" max="100" value="50">
+            <output for="satisfaction">50</output>
+
+            <!-- Date inputs -->
+            <label for="birthdate">Birth Date:</label>
+            <input type="date" id="birthdate" name="birthdate">
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">
+
+            <label for="datetime">DateTime:</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+
+            <label for="month">Month:</label>
+            <input type="month" id="month" name="month">
+
+            <label for="week">Week:</label>
+            <input type="week" id="week" name="week">
+
+            <!-- Color input -->
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color" value="#3498db">
+
+            <!-- URL input -->
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website" placeholder="https://example.com">
+
+            <!-- Tel input -->
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+            <!-- Search input -->
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search" placeholder="Search...">
+
+            <!-- Hidden input -->
+            <input type="hidden" name="csrf_token" value="abc123">
+
+            <!-- File input -->
+            <label for="file">Upload File:</label>
+            <input type="file" id="file" name="file" accept=".pdf,.doc,.docx" multiple>
+
+            <!-- Textarea -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" cols="50" placeholder="Enter your message"></textarea>
+
+            <!-- Select -->
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+              <optgroup label="North America">
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="mx">Mexico</option>
+              </optgroup>
+              <optgroup label="Europe">
+                <option value="uk">United Kingdom</option>
+                <option value="de">Germany</option>
+                <option value="fr">France</option>
+              </optgroup>
+            </select>
+
+            <!-- Datalist -->
+            <label for="browser">Browser:</label>
+            <input list="browsers" id="browser" name="browser">
+            <datalist id="browsers">
+              <option value="Chrome">
+              <option value="Firefox">
+              <option value="Safari">
+              <option value="Edge">
+            </datalist>
+
+            <!-- Radio buttons -->
+            <fieldset>
+              <legend>Gender</legend>
+              <label><input type="radio" name="gender" value="male"> Male</label>
+              <label><input type="radio" name="gender" value="female"> Female</label>
+              <label><input type="radio" name="gender" value="other"> Other</label>
+            </fieldset>
+
+            <!-- Checkboxes -->
+            <fieldset>
+              <legend>Interests</legend>
+              <label><input type="checkbox" name="interests" value="sports"> Sports</label>
+              <label><input type="checkbox" name="interests" value="music"> Music</label>
+              <label><input type="checkbox" name="interests" value="reading" checked> Reading</label>
+            </fieldset>
+
+            <!-- Progress and Meter -->
+            <label for="progress">Progress:</label>
+            <progress id="progress" value="70" max="100">70%</progress>
+
+            <label for="meter">Disk Usage:</label>
+            <meter id="meter" value="0.7" min="0" max="1" low="0.3" high="0.7" optimum="0.5">70%</meter>
+
+            <!-- Buttons -->
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="handleClick()">Custom Button</button>
+            <input type="submit" value="Submit (input)">
+            <input type="reset" value="Reset (input)">
+            <input type="button" value="Button (input)">
+            <input type="image" src="submit-button.png" alt="Submit">
+          </fieldset>
+        </form>
+      </section>
+
+      <section id="semantic">
+        <h2>Semantic Elements</h2>
+
+        <details>
+          <summary>Click to expand</summary>
+          <p>Hidden content revealed when expanded.</p>
+        </details>
+
+        <dialog id="myDialog">
+          <h3>Dialog Title</h3>
+          <p>Dialog content</p>
+          <button onclick="this.closest('dialog').close()">Close</button>
+        </dialog>
+
+        <template id="myTemplate">
+          <div class="template-content">
+            <h3>Template Content</h3>
+            <p>This won't be rendered initially.</p>
+          </div>
+        </template>
+
+        <slot name="content">Default slot content</slot>
+      </section>
+
+      <section id="interactive">
+        <h2>Interactive Elements</h2>
+
+        <menu>
+          <li><button onclick="action1()">Action 1</button></li>
+          <li><button onclick="action2()">Action 2</button></li>
+        </menu>
+      </section>
+    </article>
+
+    <!-- Aside -->
+    <aside role="complementary">
+      <h3>Related Content</h3>
+      <ul>
+        <li><a href="/related1">Related Article 1</a></li>
+        <li><a href="/related2">Related Article 2</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer" role="contentinfo">
+    <p>&copy; 2024 Sample Company. All rights reserved.</p>
+    <p>
+      HTML entities: &amp; &lt; &gt; &quot; &apos; &nbsp; &copy; &reg; &trade;
+      &mdash; &ndash; &hellip; &euro; &pound; &yen; &cent;
+    </p>
+    <p>
+      Numeric entities: &#169; &#174; &#8482; &#x00A9; &#x00AE;
+    </p>
+  </footer>
+
+  <!-- Web Components -->
+  <script>
+    // Custom element
+    class MyElement extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+      }
+
+      connectedCallback() {
+        this.shadowRoot.innerHTML = `
+          <style>
+            :host { display: block; }
+            ::slotted(*) { color: blue; }
+          </style>
+          <slot></slot>
+        `;
+      }
+    }
+    customElements.define('my-element', MyElement);
+  </script>
+
+  <!-- Custom element usage -->
+  <my-element>
+    <p>Content inside custom element</p>
+  </my-element>
+
+  <!-- Data attributes -->
+  <div
+    id="data-example"
+    data-user-id="123"
+    data-name="Alice"
+    data-active="true"
+    data-options='{"theme":"dark","lang":"en"}'
+  >
+    Element with data attributes
+  </div>
+
+  <!-- ARIA attributes -->
+  <div
+    role="alert"
+    aria-live="polite"
+    aria-atomic="true"
+    aria-labelledby="alert-title"
+    aria-describedby="alert-desc"
+  >
+    <h4 id="alert-title">Alert Title</h4>
+    <p id="alert-desc">Alert description</p>
+  </div>
+
+  <!-- Microdata -->
+  <div itemscope itemtype="https://schema.org/Person">
+    <span itemprop="name">John Doe</span>
+    <span itemprop="jobTitle">Software Developer</span>
+    <a itemprop="url" href="https://example.com">Website</a>
+  </div>
+
+  <!-- Noscript -->
+  <noscript>
+    <p>JavaScript is required for this website to function properly.</p>
+  </noscript>
+</body>
+
+</html>

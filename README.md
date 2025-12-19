@@ -2,6 +2,11 @@
 
 A dark colorscheme for Neovim written in Lua.
 
+  | Keybinding | Funktion                             |
+  |------------|--------------------------------------|
+  | <leader>ut | Toggle dark/light                    |
+  | <leader>ur | Reload colorscheme (für Entwicklung) |
+
 ## Features
 
 - Dark theme optimized for long coding sessions

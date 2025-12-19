@@ -312,45 +312,45 @@ scss.setupHighlighting = function()
   highlight(0, '@character.special.scss',               { fg = colors.blue,       bg = 'NONE' })       -- &, *, etc.
 
   ---------------------------------------------------------------
-  -- Treesitter Captures (@xxx.css) - Inherited
+  -- Treesitter Captures (@xxx.scss)
   ---------------------------------------------------------------
 
-  highlight(0, '@keyword.css',                          { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.directive.css',                { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.import.css',                   { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.operator.css',                 { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.modifier.css',                 { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@keyword.scss',                         { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@keyword.directive.scss',               { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@keyword.import.scss',                  { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@keyword.operator.scss',                { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@keyword.modifier.scss',                { fg = colors.blue,       bg = 'NONE' })
 
-  highlight(0, '@function.css',                         { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@function.builtin.css',                 { fg = colors.orange,     bg = 'NONE' })
+  highlight(0, '@function.scss',                        { fg = colors.orange,     bg = 'NONE' })
+  highlight(0, '@function.builtin.scss',                { fg = colors.orange,     bg = 'NONE' })
 
-  highlight(0, '@variable.css',                         { fg = colors.purple,     bg = 'NONE' })
+  highlight(0, '@variable.scss',                        { fg = colors.purple,     bg = 'NONE' })
 
-  highlight(0, '@property.css',                         { fg = colors.turquoise,  bg = 'NONE' })
+  highlight(0, '@property.scss',                        { fg = colors.turquoise,  bg = 'NONE' })
 
-  highlight(0, '@type.css',                             { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@tag.css',                              { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@tag.attribute.css',                    { fg = colors.turquoise,  bg = 'NONE' })
+  highlight(0, '@type.scss',                            { fg = colors.turquoise,  bg = 'NONE' })
+  highlight(0, '@tag.scss',                             { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@tag.attribute.scss',                   { fg = colors.turquoise,  bg = 'NONE' })
 
-  highlight(0, '@constant.css',                         { fg = colors.purple,     bg = 'NONE' })
+  highlight(0, '@constant.scss',                        { fg = colors.purple,     bg = 'NONE' })
 
-  highlight(0, '@string.css',                           { fg = colors.redLight,   bg = 'NONE' })
+  highlight(0, '@string.scss',                          { fg = colors.redLight,   bg = 'NONE' })
 
-  highlight(0, '@number.css',                           { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@number.float.css',                     { fg = colors.greenLight, bg = 'NONE' })
+  highlight(0, '@number.scss',                          { fg = colors.greenLight, bg = 'NONE' })
+  highlight(0, '@number.float.scss',                    { fg = colors.greenLight, bg = 'NONE' })
 
-  highlight(0, '@operator.css',                         { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@operator.scss',                        { fg = colors.white,      bg = 'NONE' })
 
-  highlight(0, '@punctuation.bracket.css',              { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@punctuation.delimiter.css',            { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@punctuation.bracket.scss',             { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@punctuation.delimiter.scss',           { fg = colors.white,      bg = 'NONE' })
 
-  highlight(0, '@attribute.css',                        { fg = colors.turquoise,  bg = 'NONE' })
+  highlight(0, '@attribute.scss',                       { fg = colors.turquoise,  bg = 'NONE' })
 
-  highlight(0, '@module.css',                           { fg = colors.turquoise,  bg = 'NONE' })
+  highlight(0, '@module.scss',                          { fg = colors.turquoise,  bg = 'NONE' })
 
-  highlight(0, '@comment.css',                          { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@comment.scss',                         { fg = colors.red,        bg = 'NONE' })
 
-  highlight(0, '@character.special.css',                { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@character.special.scss',               { fg = colors.blue,       bg = 'NONE' })
 
   ---------------------------------------------------------------
   -- SCSS Built-in Functions
@@ -474,13 +474,6 @@ scss.setupHighlighting = function()
   highlight(0, '@lsp.type.operator.scss',               { fg = colors.white,      bg = 'NONE' })
   highlight(0, '@lsp.type.comment.scss',                { fg = colors.red,        bg = 'NONE' })
 
-  highlight(0, '@lsp.type.class.css',                   { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@lsp.type.property.css',                { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@lsp.type.function.css',                { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@lsp.type.variable.css',                { fg = colors.purple,     bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.css',                 { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.string.css',                  { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.css',                  { fg = colors.greenLight, bg = 'NONE' })
 
   ---------------------------------------------------------------
   -- Tailwind CSS (commonly used with SCSS)

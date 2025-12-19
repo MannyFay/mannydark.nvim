@@ -15,9 +15,21 @@ react.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Vim Syntax Groups (legacy) - JSX
 
+  -- Comments
+  highlight(0, '@comment.jsx',                { link = "Comment" })  -- Comments (Treesitter).
+  highlight(0, '@comment.tsx',                { link = "Comment" })  -- Comments (Treesitter).
+  highlight(0, 'jsxComment',          { link = "Comment"})  -- {/* comment */} (legacy).
+  highlight(0, 'tsxBlockComment',     { link = "Comment"            })  -- Block comments (legacy).
+  highlight(0, 'tsxLineComment',      { link = "Comment"            })  -- Line comments (legacy).
+  highlight(0, 'tsxCommentInvalid',   { link = "Comment"            })  -- Invalid comment (legacy).
+  highlight(0, '@lsp.type.comment.javascriptreact',      { fg = colors.red,       bg = 'NONE' })  -- Comments.
+  highlight(0, '@lsp.type.comment.typescriptreact',      { fg = colors.red,       bg = 'NONE' })  -- Comments.
+  highlight(0, '@spell.tsx', { link = "Comment" }) -- Comments.
+
+
   -- JSX Tags - Structure
-  highlight(0, 'jsxTag',              { fg = colors.white,      bg = 'NONE'            })  -- Overall tag structure
-  highlight(0, 'jsxTagName',          { fg = colors.blue,       bg = 'NONE'            })  -- HTML tag names (div, span, etc.)
+  highlight(0, 'jsxTag',              { link = "MannydarkFgPink"            })  -- Overall tag structure
+  highlight(0, 'jsxTagName',          { link = "Comment"            })  -- HTML tag names (div, span, etc.)
   highlight(0, 'jsxComponentName',    { fg = colors.turquoise,  bg = 'NONE'            })  -- React component names (PascalCase)
   highlight(0, 'jsxIntrinsicTagName', { fg = colors.blue,       bg = 'NONE'            })  -- Intrinsic HTML elements
 
@@ -45,8 +57,6 @@ react.setupHighlighting = function()
   highlight(0, 'jsxDot',              { fg = colors.white,      bg = 'NONE'            })  -- . for namespaced components (Foo.Bar)
   highlight(0, 'jsxNamespace',        { fg = colors.white,      bg = 'NONE'            })  -- : XML namespace separator
 
-  -- JSX Comments
-  highlight(0, 'jsxComment',          { fg = colors.red,        bg = 'NONE'            })  -- {/* comment */}
 
   -- JSX Text
   highlight(0, 'jsxText',             { fg = colors.white,      bg = 'NONE'            })  -- Text content between tags
@@ -83,10 +93,6 @@ react.setupHighlighting = function()
   -- TSX Fragments
   highlight(0, 'tsxFragment',         { fg = colors.white,      bg = 'NONE'            })  -- <> </> fragments
 
-  -- TSX Comments
-  highlight(0, 'tsxBlockComment',     { fg = colors.red,        bg = 'NONE'            })  -- Block comments
-  highlight(0, 'tsxLineComment',      { fg = colors.red,        bg = 'NONE'            })  -- Line comments
-  highlight(0, 'tsxCommentInvalid',   { fg = colors.red,        bg = 'NONE'            })  -- Invalid comment
 
   -- TSX Namespace
   highlight(0, 'tsxNameSpace',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Namespace prefix
@@ -216,55 +222,52 @@ react.setupHighlighting = function()
   highlight(0, '@punctuation.bracket.tsx',    { fg = colors.white,     bg = 'NONE' })  -- { } in expressions
 
   -- Variables in JSX
-  highlight(0, '@variable.jsx',               { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.tsx',               { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@variable.jsx',               { link = "Constant" })  -- Variables
+  highlight(0, '@variable.tsx',               { link = "Constant" })  -- Variables
 
   -- Functions/Hooks
-  highlight(0, '@function.jsx',               { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@function.tsx',               { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@function.call.jsx',          { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.call.tsx',          { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.jsx',       { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.builtin.tsx',       { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.jsx',               { link = "Function" })  -- Functions
+  highlight(0, '@function.tsx',               { link = "Function" })  -- Functions
+  highlight(0, '@function.call.jsx',          { link = "Function" })  -- Function calls
+  highlight(0, '@function.call.tsx',          { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.jsx',       { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.builtin.tsx',       { link = "Function" })  -- Built-in functions
 
   -- Methods
-  highlight(0, '@function.method.jsx',        { fg = colors.orange,    bg = 'NONE' })  -- Methods
-  highlight(0, '@function.method.tsx',        { fg = colors.orange,    bg = 'NONE' })  -- Methods
-  highlight(0, '@function.method.call.jsx',   { fg = colors.orange,    bg = 'NONE' })  -- Method calls
-  highlight(0, '@function.method.call.tsx',   { fg = colors.orange,    bg = 'NONE' })  -- Method calls
+  highlight(0, '@function.method.jsx',        { link = "Function" })  -- Methods
+  highlight(0, '@function.method.tsx',        { link = "Function" })  -- Methods
+  highlight(0, '@function.method.call.jsx',   { link = "Function" })  -- Method calls
+  highlight(0, '@function.method.call.tsx',   { link = "Function" })  -- Method calls
 
   -- Keywords
-  highlight(0, '@keyword.jsx',                { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.tsx',                { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.function.jsx',       { fg = colors.blue,      bg = 'NONE' })  -- function keyword
-  highlight(0, '@keyword.function.tsx',       { fg = colors.blue,      bg = 'NONE' })  -- function keyword
-  highlight(0, '@keyword.return.jsx',         { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.return.tsx',         { fg = colors.blue,      bg = 'NONE' })  -- return
+  highlight(0, '@keyword.jsx',                { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.tsx',                { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.function.jsx',       { link = "Keyword" })  -- function keyword
+  highlight(0, '@keyword.function.tsx',       { link = "Keyword" })  -- function keyword
+  highlight(0, '@keyword.return.jsx',         { link = "Keyword" })  -- return
+  highlight(0, '@keyword.return.tsx',         { link = "Keyword" })  -- return
 
   -- Types (for TSX)
-  highlight(0, '@type.tsx',                   { fg = colors.turquoise, bg = 'NONE' })  -- Type names
+  highlight(0, '@type.tsx',                   { link = "Type" })  -- Type names
   highlight(0, '@type.builtin.tsx',           { fg = colors.blue,      bg = 'NONE' })  -- Built-in types
   highlight(0, '@type.definition.tsx',        { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
 
   -- Strings
-  highlight(0, '@string.jsx',                 { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.tsx',                 { fg = colors.redLight,  bg = 'NONE' })  -- Strings
+  highlight(0, '@string.jsx',                 { link = "String" })  -- Strings
+  highlight(0, '@string.tsx',                 { link = "String" })  -- Strings
 
   -- Numbers
-  highlight(0, '@number.jsx',                 { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.tsx',                 { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.jsx',                 { link = "Number" })  -- Numbers
+  highlight(0, '@number.tsx',                 { link = "Number" })  -- Numbers
 
   -- Booleans
-  highlight(0, '@boolean.jsx',                { fg = colors.blue,      bg = 'NONE' })  -- true, false
-  highlight(0, '@boolean.tsx',                { fg = colors.blue,      bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.jsx',                { link = "Boolean" })  -- true, false
+  highlight(0, '@boolean.tsx',                { link = "Boolean" })  -- true, false
 
-  -- Comments
-  highlight(0, '@comment.jsx',                { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.tsx',                { fg = colors.red,       bg = 'NONE' })  -- Comments
 
   -- Operators
-  highlight(0, '@operator.jsx',               { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@operator.tsx',               { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.jsx',               { link = "Normal" })  -- Operators
+  highlight(0, '@operator.tsx',               { link = "Normal" })  -- Operators
 
 
   -----------------------------------------------------------------------------
@@ -277,24 +280,23 @@ react.setupHighlighting = function()
   highlight(0, '@lsp.type.enum.javascriptreact',         { fg = colors.turquoise, bg = 'NONE' })  -- Enums
   highlight(0, '@lsp.type.function.javascriptreact',     { fg = colors.orange,    bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.method.javascriptreact',       { fg = colors.orange,    bg = 'NONE' })  -- Methods
-  highlight(0, '@lsp.type.variable.javascriptreact',     { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.javascriptreact',     { link = "Constant"})  -- Variables
   highlight(0, '@lsp.type.parameter.javascriptreact',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.javascriptreact',     { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.keyword.javascriptreact',      { fg = colors.blue,      bg = 'NONE' })  -- Keywords
   highlight(0, '@lsp.type.string.javascriptreact',       { fg = colors.redLight,  bg = 'NONE' })  -- Strings
   highlight(0, '@lsp.type.number.javascriptreact',       { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.javascriptreact',      { fg = colors.red,       bg = 'NONE' })  -- Comments
 
   -- TypeScript React (TSX)
   highlight(0, '@lsp.type.class.typescriptreact',        { fg = colors.turquoise, bg = 'NONE' })  -- Classes/Components
   highlight(0, '@lsp.type.interface.typescriptreact',    { fg = colors.turquoise, bg = 'NONE' })  -- Interfaces
   highlight(0, '@lsp.type.type.typescriptreact',         { fg = colors.turquoise, bg = 'NONE' })  -- Types
-  highlight(0, '@lsp.type.typeParameter.typescriptreact', { fg = colors.turquoise, bg = 'NONE' }) -- Type parameters
+  highlight(0, '@lsp.typemod.typeParameter.typescriptreact', { fg = colors.turquoise, bg = 'NONE' }) -- Type parameters
   highlight(0, '@lsp.type.enum.typescriptreact',         { fg = colors.turquoise, bg = 'NONE' })  -- Enums
   highlight(0, '@lsp.type.enumMember.typescriptreact',   { fg = colors.pink,      bg = 'NONE' })  -- Enum members
   highlight(0, '@lsp.type.function.typescriptreact',     { fg = colors.orange,    bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.method.typescriptreact',       { fg = colors.orange,    bg = 'NONE' })  -- Methods
-  highlight(0, '@lsp.type.variable.typescriptreact',     { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.typescriptreact',     { link = "Constant"})  -- Variables
   highlight(0, '@lsp.type.parameter.typescriptreact',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.typescriptreact',     { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.keyword.typescriptreact',      { fg = colors.blue,      bg = 'NONE' })  -- Keywords
@@ -302,23 +304,23 @@ react.setupHighlighting = function()
   highlight(0, '@lsp.type.decorator.typescriptreact',    { fg = colors.pink,      bg = 'NONE' })  -- Decorators
   highlight(0, '@lsp.type.string.typescriptreact',       { fg = colors.redLight,  bg = 'NONE' })  -- Strings
   highlight(0, '@lsp.type.number.typescriptreact',       { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.typescriptreact',      { fg = colors.red,       bg = 'NONE' })  -- Comments
 
   -- LSP Modifiers - JavaScript React
-  highlight(0, '@lsp.typemod.variable.readonly.javascriptreact',    { fg = colors.pink,      bg = 'NONE' })  -- Constants
-  highlight(0, '@lsp.typemod.function.declaration.javascriptreact', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
-  highlight(0, '@lsp.typemod.function.defaultLibrary.javascriptreact', { fg = colors.orange, bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@lsp.typemod.variable.readonly.javascriptreact',    { link = "Constant" })  -- Constants
+  highlight(0, '@lsp.typemod.function.declaration.javascriptreact', { link = "Function"})  -- Function declarations
+  highlight(0, '@lsp.typemod.function.defaultLibrary.javascriptreact', { link = "Function"})  -- Built-in functions
   highlight(0, '@lsp.typemod.class.declaration.javascriptreact',    { fg = colors.turquoise, bg = 'NONE' })  -- Component declarations
-  highlight(0, '@lsp.typemod.variable.defaultLibrary.javascriptreact', { fg = colors.pink,   bg = 'NONE' })  -- Built-in variables
+  highlight(0, '@lsp.typemod.variable.defaultLibrary.javascriptreact', { link = "Constant"})  -- Built-in variables
 
   -- LSP Modifiers - TypeScript React
-  highlight(0, '@lsp.typemod.variable.readonly.typescriptreact',    { fg = colors.pink,      bg = 'NONE' })  -- Constants
-  highlight(0, '@lsp.typemod.function.declaration.typescriptreact', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
-  highlight(0, '@lsp.typemod.function.defaultLibrary.typescriptreact', { fg = colors.orange, bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@lsp.typemod.variable.readonly.typescriptreact',    { link = "Constant" })  -- Constants
+  highlight(0, '@lsp.typemod.function.declaration.typescriptreact',    { link = "Function"})  -- Function declarations
+  highlight(0, '@lsp.typemod.function.defaultLibrary.typescriptreact', { link = "Function"})  -- Built-in functions
   highlight(0, '@lsp.typemod.class.declaration.typescriptreact',    { fg = colors.turquoise, bg = 'NONE' })  -- Component declarations
-  highlight(0, '@lsp.typemod.variable.defaultLibrary.typescriptreact', { fg = colors.pink,   bg = 'NONE' })  -- Built-in variables
+  highlight(0, '@lsp.typemod.variable.defaultLibrary.typescriptreact', { link = "Constant"})  -- Built-in variables
   highlight(0, '@lsp.typemod.type.declaration.typescriptreact',     { fg = colors.turquoise, bg = 'NONE' })  -- Type declarations
   highlight(0, '@lsp.typemod.interface.declaration.typescriptreact', { fg = colors.turquoise, bg = 'NONE' }) -- Interface declarations
+
 
 
   -----------------------------------------------------------------------------
@@ -330,5 +332,3 @@ react.setupHighlighting = function()
 end
 
 return react
-
-

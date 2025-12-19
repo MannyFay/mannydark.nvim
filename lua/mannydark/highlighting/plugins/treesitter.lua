@@ -11,14 +11,14 @@ local treesitter = {}
 -- Settings
 
 treesitter.setupHighlighting = function()
-    highlight(0, '@comment', { fg = colors.red, bg = 'NONE' })
-    highlight(0, '@variable', { fg = colors.purple, bg = 'NONE' })
+    highlight(0, '@float', { link = 'Float' })
+    highlight(0, '@comment', { link = "Comment" })
+    highlight(0, '@constant', { link = 'Constant' })
+    highlight(0, '@variable', { link = "Constant" })
     highlight(0, '@variable.builtin', { fg = colors.blue, bg = 'NONE' }) -- $this keyword.
     highlight(0, '@string', { link = 'String' })
     highlight(0, '@number', { link = 'Number' })
-    highlight(0, '@float', { link = 'Float' })
     highlight(0, '@boolean', { link = 'Boolean' })
-    highlight(0, '@constant', { link = 'Constant' })
     highlight(0, '@type', { link = 'Type' }) -- Data type (maybe better in turquoise?).
     highlight(0, '@function', { link = 'Function' })
     highlight(0, '@keyword', { link = 'Keyword' })
@@ -42,12 +42,12 @@ treesitter.setupHighlighting = function()
     highlight(0, '@constant.builtin', { fg = colors.purple, bg = 'NONE' }) -- Constants like __FILE__.          })
     highlight(0, '@type.builtin', { fg = colors.blue, bg = 'NONE' })       -- Return types:
     highlight(0, '@parameter', { fg = 'NONE', bg = 'NONE' })               -- In PHP, every parameter with it's data type.
-    highlight(0, '@constructor', { fg = colors.orange, bg = 'NONE' })
+    highlight(0, '@constructor', { link = "Function" })
     highlight(0, '@type.qualifier', { fg = colors.blue, bg = 'NONE' })
     highlight(0, '@storageclass', { fg = colors.blue, bg = 'NONE' })
     highlight(0, '@none', { fg = 'NONE', bg = 'NONE' })
     highlight(0, '@tag.attribute', { fg = colors.turquoise, bg = 'NONE' })
-    highlight(0, '@namespace', { fg = colors.white, bg = 'NONE' }) -- Path of namespaces.
+    highlight(0, '@namespace', { link = "Keyword" }) -- Path of namespaces.
     highlight(0, '@function.builtin', { fg = colors.orange, bg = 'NONE' })
     highlight(0, '@attribute', { fg = colors.blue, bg = 'NONE' })  -- In PHP the @stuff in a doc block:
     highlight(0, '@property', { fg = colors.purple, bg = 'NONE' }) -- All properties (css classes too):
@@ -70,7 +70,7 @@ treesitter.setupHighlighting = function()
     -- Keywords
     highlight(0, '@keyword.conditional', { link = 'Conditional' })             -- if, else, etc. (was @conditional).
     highlight(0, '@keyword.repeat', { link = 'Keyword' })                      -- for, while, etc. (was @repeat).
-    highlight(0, '@keyword.import', { link = 'Include' })                      -- import, require (was @include).
+    highlight(0, '@keyword.import', { link = 'Keyword' })                      -- import, require (was @include).
     highlight(0, '@keyword.directive', { link = 'PreProc' })                   -- Preprocessor (was @preproc).
     highlight(0, '@keyword.storage', { fg = colors.blue, bg = 'NONE' })        -- Storage class (was @storageclass).
     highlight(0, '@keyword.exception', { link = 'Exception' })                 -- try, catch (was @exception).

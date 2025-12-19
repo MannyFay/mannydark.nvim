@@ -23,6 +23,9 @@ local colors = {
   -- Keywords, control flow (darker blue for light bg)
   blue       = '#0550AE',
 
+  -- LSP references, subtle blue backgrounds
+  blueLight  = '#D0E8FF',
+
   -- Links, references
   blueLink   = '#0969DA',
 

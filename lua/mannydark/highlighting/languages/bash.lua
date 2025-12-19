@@ -20,7 +20,7 @@ bash.setupHighlighting = function()
   highlight(0, 'bashAdminStatement',   { fg = colors.orange,     bg = 'NONE'            })  -- reload, restart, start, status, stop (init script commands)
 
   -- Bash Special Variables
-  highlight(0, 'bashSpecialVariables', { fg = colors.pink,       bg = 'NONE'            })  -- BASH, BASH_ALIASES, BASH_ARGC, BASH_ARGV, BASH_COMMAND, BASH_ENV, etc.
+  highlight(0, 'bashSpecialVariables', { link = "Constant"            })  -- BASH, BASH_ALIASES, BASH_ARGC, BASH_ARGV, BASH_COMMAND, BASH_ENV, etc.
 
   -- Coproc
   highlight(0, 'bashCoproc',           { fg = colors.blue,       bg = 'NONE'            })  -- coproc keyword
@@ -37,11 +37,11 @@ bash.setupHighlighting = function()
   highlight(0, 'shDo',                 { fg = colors.blue,       bg = 'NONE'            })  -- do, done
 
   -- Keywords - Function Definition
-  highlight(0, 'shFunctionKey',        { fg = colors.blue,       bg = 'NONE'            })  -- function keyword
-  highlight(0, 'shFunction',           { fg = colors.orange,     bg = 'NONE'            })  -- Function names
-  highlight(0, 'shFunctionName',       { fg = colors.orange,     bg = 'NONE'            })  -- Function names
-  highlight(0, 'shFunctionOne',        { fg = colors.orange,     bg = 'NONE'            })  -- Function definitions
-  highlight(0, 'shFunctionTwo',        { fg = colors.orange,     bg = 'NONE'            })  -- Function definitions (alternate)
+  highlight(0, 'shFunctionKey',        { link = "Function"            })  -- function keyword
+  highlight(0, 'shFunction',           { link = "Function"            })  -- Function names
+  highlight(0, 'shFunctionName',       { link = "Function"            })  -- Function names
+  highlight(0, 'shFunctionOne',        { link = "Function"            })  -- Function definitions
+  highlight(0, 'shFunctionTwo',        { link = "Function"            })  -- Function definitions (alternate)
 
   -- Built-in Commands
   highlight(0, 'shStatement',          { fg = colors.orange,     bg = 'NONE'            })  -- echo, read, printf, test, etc.
@@ -214,15 +214,15 @@ bash.setupHighlighting = function()
   highlight(0, '@function.builtin.bash',      { fg = colors.orange,    bg = 'NONE' })  -- echo, read, printf, test, trap, etc.
 
   -- Keywords
-  highlight(0, '@keyword.bash',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.bash',      { fg = colors.blue,      bg = 'NONE' })  -- function
-  highlight(0, '@keyword.operator.bash',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@keyword.return.bash',        { fg = colors.blue,      bg = 'NONE' })  -- return, exit
-  highlight(0, '@keyword.repeat.bash',        { fg = colors.blue,      bg = 'NONE' })  -- for, while, until, do, done, select
-  highlight(0, '@keyword.conditional.bash',   { fg = colors.blue,      bg = 'NONE' })  -- if, then, else, elif, fi, case, esac, in
-  highlight(0, '@keyword.conditional.ternary.bash', { fg = colors.white, bg = 'NONE' })  -- ? : in arithmetic
-  highlight(0, '@keyword.import.bash',        { fg = colors.pink,      bg = 'NONE' })  -- export, source, .
-  highlight(0, '@keyword.directive.bash',     { fg = colors.pink,      bg = 'NONE' })  -- Shebang
+  highlight(0, '@keyword.bash',                     { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.bash',            { link = "Keyword" })  -- function
+  highlight(0, '@keyword.operator.bash',            { link = "Keyword" })  -- Operators
+  highlight(0, '@keyword.return.bash',              { link = "Keyword" })  -- return, exit
+  highlight(0, '@keyword.repeat.bash',              { link = "Keyword" })  -- for, while, until, do, done, select
+  highlight(0, '@keyword.conditional.bash',         { link = "Keyword" })  -- if, then, else, elif, fi, case, esac, in
+  highlight(0, '@keyword.conditional.ternary.bash', { link = "Keyword" })  -- ? : in arithmetic
+  highlight(0, '@keyword.import.bash',              { link = "Keyword" })  -- export, source, .
+  highlight(0, '@keyword.directive.bash',           { link = "Keyword" })  -- Shebang
 
   -- Labels
   highlight(0, '@label.bash',                 { fg = colors.pink,      bg = 'NONE' })  -- Heredoc markers
@@ -261,8 +261,8 @@ bash.setupHighlighting = function()
   highlight(0, '@lsp.type.parameter.shellscript', { fg = colors.purple,    bg = 'NONE' })
   highlight(0, '@lsp.type.function.bash',         { fg = colors.orange,    bg = 'NONE' })
   highlight(0, '@lsp.type.function.shellscript',  { fg = colors.orange,    bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.bash',          { fg = colors.blue,      bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.shellscript',   { fg = colors.blue,      bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.bash',          { link = "Keyword"            })
+  highlight(0, '@lsp.type.keyword.shellscript',   { link = "Keyword"            })
   highlight(0, '@lsp.type.operator.bash',         { fg = colors.white,     bg = 'NONE' })
   highlight(0, '@lsp.type.operator.shellscript',  { fg = colors.white,     bg = 'NONE' })
   highlight(0, '@lsp.type.string.bash',           { fg = colors.redLight,  bg = 'NONE' })

@@ -62,7 +62,7 @@ malbolge.setupHighlighting = function()
 
   -- Generic Instruction Groups
   highlight(0, 'malbolgeInstruction',          { fg = colors.white,      bg = 'NONE'            })  -- Any instruction
-  highlight(0, 'malbolgeInstructionEncrypted', { fg = colors.white,      bg = colors.grayBlue  })  -- Encrypted form
+  highlight(0, 'malbolgeInstructionEncrypted', { fg = colors.white,      bg = colors.blueLight  })  -- Encrypted form
   highlight(0, 'malbolgeInstructionNormalized',{ fg = colors.white,      bg = 'NONE', bold = true })  -- Normalized form
 
 

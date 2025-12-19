@@ -1,0 +1,562 @@
+# ==============================================================================
+# Comprehensive YAML Sample - Syntax Highlighting Demonstration
+# ==============================================================================
+
+# This file demonstrates all major YAML language features
+# for syntax highlighting purposes.
+
+# YAML version directive
+%YAML 1.2
+---
+
+# ==============================================================================
+# Scalars - Strings
+# ==============================================================================
+
+# Plain scalars (unquoted)
+plain_string: Hello World
+plain_with_special: Hello: World
+
+# Single-quoted (no escape sequences except '')
+single_quoted: 'Hello ''World'''
+single_with_newline: 'Line 1
+  Line 2'
+
+# Double-quoted (with escape sequences)
+double_quoted: "Hello \"World\""
+double_with_escapes: "Line 1\nLine 2\tTabbed"
+double_with_unicode: "Hello, 世界! \u0048\u0065\u006C\u006C\u006F"
+double_with_hex: "\x48\x65\x6C\x6C\x6F"
+
+# Literal block scalar (preserves newlines)
+literal_block: |
+  This is a literal block.
+  Newlines are preserved.
+  Indentation is significant.
+
+# Literal with clip indicator (default)
+literal_clip: |
+  Line 1
+  Line 2
+
+# Literal with strip indicator (remove trailing newlines)
+literal_strip: |-
+  Line 1
+  Line 2
+
+# Literal with keep indicator (keep trailing newlines)
+literal_keep: |+
+  Line 1
+  Line 2
+
+# Folded block scalar (newlines become spaces)
+folded_block: >
+  This is a folded block.
+  Newlines become spaces.
+
+  Blank lines create paragraphs.
+
+# Folded with strip
+folded_strip: >-
+  Line 1
+  Line 2
+
+# Folded with keep
+folded_keep: >+
+  Line 1
+  Line 2
+
+# Indentation indicator
+literal_indent_2: |2
+    Two spaces of indentation
+    are stripped.
+
+# ==============================================================================
+# Scalars - Numbers
+# ==============================================================================
+
+# Integers
+integer: 42
+negative_integer: -17
+zero: 0
+
+# Octal
+octal: 0o755
+
+# Hexadecimal
+hex: 0xFF
+
+# Floats
+float: 3.14159
+negative_float: -2.71828
+scientific: 6.022e23
+scientific_negative: 1.0e-10
+
+# Infinity and NaN
+positive_infinity: .inf
+negative_infinity: -.inf
+not_a_number: .nan
+
+# ==============================================================================
+# Scalars - Boolean and Null
+# ==============================================================================
+
+# Boolean values
+bool_true: true
+bool_false: false
+bool_yes: yes
+bool_no: no
+bool_on: on
+bool_off: off
+
+# Null values
+null_tilde: ~
+null_word: null
+null_empty:
+
+# ==============================================================================
+# Scalars - Dates and Times
+# ==============================================================================
+
+# ISO 8601 formats
+date: 2024-01-15
+datetime: 2024-01-15T12:00:00Z
+datetime_offset: 2024-01-15T12:00:00+05:30
+datetime_space: 2024-01-15 12:00:00
+
+# ==============================================================================
+# Collections - Sequences (Arrays)
+# ==============================================================================
+
+# Block sequence
+simple_sequence:
+  - item1
+  - item2
+  - item3
+
+# Inline/flow sequence
+inline_sequence: [item1, item2, item3]
+
+# Nested sequences
+nested_sequence:
+  - - nested1
+    - nested2
+  - - nested3
+    - nested4
+
+# Mixed content
+mixed_sequence:
+  - string value
+  - 42
+  - true
+  - null
+  - [nested, array]
+  - key: value
+
+# Sequence of mappings
+sequence_of_maps:
+  - id: 1
+    name: First
+  - id: 2
+    name: Second
+  - id: 3
+    name: Third
+
+# ==============================================================================
+# Collections - Mappings (Objects)
+# ==============================================================================
+
+# Block mapping
+simple_mapping:
+  key1: value1
+  key2: value2
+  key3: value3
+
+# Inline/flow mapping
+inline_mapping: {key1: value1, key2: value2}
+
+# Nested mappings
+nested_mapping:
+  level1:
+    level2:
+      level3:
+        deep_value: found
+
+# Complex keys
+? complex key with spaces
+: value for complex key
+
+? [sequence, as, key]
+: value for sequence key
+
+? {mapping: as key}
+: value for mapping key
+
+# Multiline key
+? |
+  multiline
+  key
+: value
+
+# ==============================================================================
+# Anchors and Aliases
+# ==============================================================================
+
+# Anchor definition
+defaults: &defaults
+  adapter: postgres
+  host: localhost
+  port: 5432
+
+# Alias usage
+development:
+  <<: *defaults
+  database: dev_db
+
+production:
+  <<: *defaults
+  database: prod_db
+  host: db.example.com
+
+# Scalar anchor
+color: &primary_color "#3498db"
+
+theme:
+  primary: *primary_color
+  button_bg: *primary_color
+
+# Sequence anchor
+common_tags: &tags
+  - yaml
+  - sample
+  - demo
+
+post1:
+  title: First Post
+  tags: *tags
+
+post2:
+  title: Second Post
+  tags: *tags
+
+# ==============================================================================
+# Tags
+# ==============================================================================
+
+# Explicit typing
+explicit_string: !!str 42
+explicit_int: !!int "42"
+explicit_float: !!float "3.14"
+explicit_bool: !!bool "yes"
+explicit_null: !!null ""
+
+# Binary data
+binary_data: !!binary |
+  R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+
+# Custom tags
+custom_date: !custom/date 2024-01-15
+custom_type: !myapp/user
+  name: Alice
+  role: admin
+
+# ==============================================================================
+# Multi-document
+# ==============================================================================
+
+# Document end marker (before new document)
+# ...
+
+# Multiple documents in one file
+---
+document: first
+content: This is the first document
+---
+document: second
+content: This is the second document
+
+# ==============================================================================
+# Complex Example - Application Configuration
+# ==============================================================================
+
+---
+application:
+  name: MyApplication
+  version: "1.0.0"
+  description: >
+    A comprehensive application demonstrating
+    YAML configuration capabilities.
+
+server:
+  host: 0.0.0.0
+  port: 8080
+  ssl:
+    enabled: true
+    certificate: /etc/ssl/certs/server.crt
+    key: /etc/ssl/private/server.key
+  cors:
+    enabled: true
+    origins:
+      - https://example.com
+      - https://api.example.com
+    methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    headers:
+      - Authorization
+      - Content-Type
+
+database:
+  primary: &db_config
+    driver: postgresql
+    host: localhost
+    port: 5432
+    username: app_user
+    password: ${DB_PASSWORD}
+    pool:
+      min: 5
+      max: 20
+      idle_timeout: 30000
+    options:
+      charset: utf8mb4
+      timezone: UTC
+
+  replica:
+    <<: *db_config
+    host: replica.example.com
+    read_only: true
+
+cache:
+  type: redis
+  host: localhost
+  port: 6379
+  ttl: 3600
+  prefix: "myapp:"
+
+logging:
+  level: info
+  format: json
+  outputs:
+    - type: console
+      colorize: true
+    - type: file
+      path: /var/log/myapp/app.log
+      rotate:
+        max_size: 100MB
+        max_files: 10
+        compress: true
+
+features:
+  authentication:
+    enabled: true
+    providers:
+      - name: local
+        enabled: true
+      - name: oauth
+        enabled: true
+        config:
+          google:
+            client_id: ${GOOGLE_CLIENT_ID}
+            client_secret: ${GOOGLE_CLIENT_SECRET}
+          github:
+            client_id: ${GITHUB_CLIENT_ID}
+            client_secret: ${GITHUB_CLIENT_SECRET}
+
+  rate_limiting:
+    enabled: true
+    requests_per_minute: 100
+    burst: 50
+
+  feature_flags:
+    new_dashboard: true
+    beta_features: false
+    experimental_api: false
+
+environments:
+  development:
+    debug: true
+    hot_reload: true
+    mock_services: true
+
+  staging:
+    debug: false
+    hot_reload: false
+    mock_services: false
+
+  production:
+    debug: false
+    hot_reload: false
+    mock_services: false
+    monitoring:
+      enabled: true
+      endpoint: https://monitoring.example.com
+
+# ==============================================================================
+# Kubernetes-style Configuration
+# ==============================================================================
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: production
+  labels:
+    app: myapp
+    tier: backend
+  annotations:
+    description: "Main application deployment"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myapp
+          image: myapp:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: url
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+
+# ==============================================================================
+# Docker Compose Style
+# ==============================================================================
+
+---
+version: "3.9"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: production
+    ports:
+      - "80:8080"
+    environment:
+      - DATABASE_URL=postgres://db:5432/myapp
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./config:/app/config:ro
+      - data:/app/data
+    networks:
+      - frontend
+      - backend
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: myapp
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    secrets:
+      - db_password
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+volumes:
+  data:
+  postgres_data:
+  redis_data:
+
+networks:
+  frontend:
+  backend:
+    internal: true
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+
+# ==============================================================================
+# GitHub Actions Style
+# ==============================================================================
+
+---
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "20"
+  REGISTRY: ghcr.io
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t ${{ env.REGISTRY }}/${{ github.repository }}:${{ github.sha }} .
+      - name: Push image
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+          docker push ${{ env.REGISTRY }}/${{ github.repository }}:${{ github.sha }}
+...

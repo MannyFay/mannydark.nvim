@@ -1,13 +1,13 @@
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 -- CSS
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 
 local colors    = require('mannydark.palette')
 local highlight = vim.api.nvim_set_hl
 local css       = {}
 
 
---------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Settings
 
 css.setupHighlighting = function()
@@ -18,10 +18,10 @@ css.setupHighlighting = function()
   -------------------------------------------------------------------------
 
   -- At-Rules
-  highlight(0, 'cssAtKeyword',              { fg = colors.blue,       bg = 'NONE'            })  -- @keyword
-  highlight(0, 'cssAtRule',                 { fg = colors.blue,       bg = 'NONE'            })  -- @media, @keyframes, etc.
-  highlight(0, 'cssAtRuleLogical',          { fg = colors.blue,       bg = 'NONE'            })  -- and, or, not in @media
-  highlight(0, 'cssCharset',                { fg = colors.blue,       bg = 'NONE'            })  -- @charset
+  highlight(0, 'cssAtKeyword',              { link = "Keyword"            })  -- @keyword
+  highlight(0, 'cssAtRule',                 { link = "Keyword"            })  -- @media, @keyframes, etc.
+  highlight(0, 'cssAtRuleLogical',          { link = "Keyword"            })  -- and, or, not in @media
+  highlight(0, 'cssCharset',                { link = "Keyword"            })  -- @charset
   highlight(0, 'cssImportant',              { fg = colors.pink,       bg = 'NONE'            })  -- !important
   highlight(0, 'cssInclude',                { fg = colors.blue,       bg = 'NONE'            })  -- @import
   highlight(0, 'cssIncludeKeyword',         { fg = colors.blue,       bg = 'NONE'            })  -- @import keyword
@@ -58,11 +58,11 @@ css.setupHighlighting = function()
   highlight(0, 'cssCombinator',             { fg = colors.white,      bg = 'NONE'            })  -- Combinators (>, +, ~, space)
 
   -- Pseudo-classes and Pseudo-elements
-  highlight(0, 'cssPseudoClass',            { fg = colors.pink,       bg = 'NONE'            })  -- :hover, :active, :focus, etc.
-  highlight(0, 'cssPseudoClassId',          { fg = colors.pink,       bg = 'NONE'            })  -- Pseudo-class names
-  highlight(0, 'cssPseudoClassFn',          { fg = colors.pink,       bg = 'NONE'            })  -- :nth-child(), :not(), etc.
-  highlight(0, 'cssPseudoClassLang',        { fg = colors.pink,       bg = 'NONE'            })  -- :lang()
-  highlight(0, 'cssPseudoElement',          { fg = colors.pink,       bg = 'NONE'            })  -- ::before, ::after, etc.
+  highlight(0, 'cssPseudoClass',            { link = "Keyword"            })  -- :hover, :active, :focus, etc.
+  highlight(0, 'cssPseudoClassId',          { link = "Keyword"            })  -- Pseudo-class names
+  highlight(0, 'cssPseudoClassFn',          { link = "Keyword"            })  -- :nth-child(), :not(), etc.
+  highlight(0, 'cssPseudoClassLang',        { link = "Keyword"            })  -- :lang()
+  highlight(0, 'cssPseudoElement',          { link = "Keyword"            })  -- ::before, ::after, etc.
   highlight(0, 'cssNot',                    { fg = colors.pink,       bg = 'NONE'            })  -- :not()
   highlight(0, 'cssIs',                     { fg = colors.pink,       bg = 'NONE'            })  -- :is()
   highlight(0, 'cssWhere',                  { fg = colors.pink,       bg = 'NONE'            })  -- :where()
@@ -224,9 +224,9 @@ css.setupHighlighting = function()
   highlight(0, 'cssRepeat',                 { fg = colors.orange,     bg = 'NONE'            })  -- repeat()
 
   -- Custom Properties (CSS Variables)
-  highlight(0, 'cssCustomProp',             { fg = colors.purple,     bg = 'NONE'            })  -- --custom-property
-  highlight(0, 'cssCustomProperty',         { fg = colors.purple,     bg = 'NONE'            })  -- --custom-property
-  highlight(0, 'cssVariable',               { fg = colors.purple,     bg = 'NONE'            })  -- CSS variable
+  highlight(0, 'cssCustomProp',             { link = "Constant"            })  -- --custom-property
+  highlight(0, 'cssCustomProperty',         { link = "Keyword"            })  -- --custom-property
+  highlight(0, 'cssVariable',               { link = "Constant"            })  -- CSS variable
   highlight(0, 'cssVariableValue',          { fg = colors.white,      bg = 'NONE'            })  -- Variable value
 
   -- Strings
@@ -238,7 +238,7 @@ css.setupHighlighting = function()
   highlight(0, 'cssSpecialCharQQ',          { fg = colors.pink,       bg = 'NONE'            })  -- Special char in double-quoted
 
   -- Comments
-  highlight(0, 'cssComment',                { fg = colors.gray,       bg = 'NONE', italic = true })  -- /* comment */
+  highlight(0, 'cssComment',                { link = "Comment" })  -- /* comment */
 
   -- Operators and Punctuation
   highlight(0, 'cssNoise',                  { fg = colors.white,      bg = 'NONE'            })  -- Noise characters
@@ -248,7 +248,7 @@ css.setupHighlighting = function()
   highlight(0, 'cssSemicolon',              { fg = colors.white,      bg = 'NONE'            })  -- ;
   highlight(0, 'cssColon',                  { fg = colors.white,      bg = 'NONE'            })  -- :
   highlight(0, 'cssComma',                  { fg = colors.white,      bg = 'NONE'            })  -- ,
-  highlight(0, 'cssOperator',               { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, 'cssOperator',               { link = "Constant"})  -- Operators
   highlight(0, 'cssDefinition',             { fg = colors.white,      bg = 'NONE'            })  -- Definition context
 
   -- Vendor Prefixes
@@ -276,19 +276,19 @@ css.setupHighlighting = function()
   -------------------------------------------------------------------------
 
   -- Keywords
-  highlight(0, '@keyword.css',              { fg = colors.blue,       bg = 'NONE'            })  -- Generic keyword
-  highlight(0, '@keyword.directive.css',    { fg = colors.blue,       bg = 'NONE'            })  -- @-rules
-  highlight(0, '@keyword.import.css',       { fg = colors.blue,       bg = 'NONE'            })  -- @import
-  highlight(0, '@keyword.operator.css',     { fg = colors.white,      bg = 'NONE'            })  -- and, or, not
+  highlight(0, '@keyword.css',              { link = "Keyword"            })  -- Generic keyword
+  highlight(0, '@keyword.directive.css',    { link = "Keyword"            })  -- @-rules
+  highlight(0, '@keyword.import.css',       { link = "Keyword"            })  -- @import
+  highlight(0, '@keyword.operator.css',     { link = "Keyword"            })  -- and, or, not
   highlight(0, '@keyword.modifier.css',     { fg = colors.pink,       bg = 'NONE'            })  -- !important
 
   -- Tags and Types
-  highlight(0, '@tag.css',                  { fg = colors.blue,       bg = 'NONE'            })  -- HTML element names
-  highlight(0, '@type.css',                 { fg = colors.turquoise,  bg = 'NONE'            })  -- Class/ID selectors
-  highlight(0, '@constant.css',             { fg = colors.turquoise,  bg = 'NONE'            })  -- Named constants
+  highlight(0, '@tag.css',                  { link = "Keyword"})  -- HTML element names
+  highlight(0, '@type.css',                 { link = "Type"            })  -- Class/ID selectors
+  highlight(0, '@constant.css',             { link = "Constant"            })  -- Named constants
 
   -- Properties
-  highlight(0, '@property.css',             { fg = colors.blue,       bg = 'NONE'            })  -- CSS properties
+  highlight(0, '@property.css',             { link = "Constant"            })  -- CSS properties like font-size.
 
   -- Functions
   highlight(0, '@function.css',             { fg = colors.orange,     bg = 'NONE'            })  -- CSS functions
@@ -304,14 +304,14 @@ css.setupHighlighting = function()
   highlight(0, '@number.float.css',         { fg = colors.greenLight, bg = 'NONE'            })  -- Floating point numbers
 
   -- Attributes
-  highlight(0, '@attribute.css',            { fg = colors.turquoise,  bg = 'NONE'            })  -- Attribute selectors
-  highlight(0, '@tag.attribute.css',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Tag attributes
+  highlight(0, '@attribute.css',            { link = "Keyword"            })  -- Attribute selectors
+  highlight(0, '@tag.attribute.css',        { link = "Keyword"            })  -- Tag attributes
 
   -- Modules
   highlight(0, '@module.css',               { fg = colors.turquoise,  bg = 'NONE'            })  -- Namespace/module
 
   -- Operators
-  highlight(0, '@operator.css',             { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, '@operator.css',             { link = "Keyword"            })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.css',  { fg = colors.white,      bg = 'NONE'            })  -- Brackets, braces, parens
@@ -321,8 +321,9 @@ css.setupHighlighting = function()
   highlight(0, '@character.special.css',    { fg = colors.pink,       bg = 'NONE'            })  -- Special characters
 
   -- Comments
-  highlight(0, '@comment.css',              { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
-  highlight(0, '@spell.css',                { link = '@comment.css'                          })  -- Spell check in comments
+  highlight(0, '@comment.css',              { link = "Pink" })  -- ??? Comments
+  highlight(0, '@lsp.type.comment.css',     { link = "Pink" })  -- ??? Comments
+  highlight(0, '@spell.css',                { link = "Comment"                          })  -- Comments.
 
 
   -------------------------------------------------------------------------
@@ -331,13 +332,12 @@ css.setupHighlighting = function()
 
   highlight(0, '@lsp.type.class.css',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Class selectors
   highlight(0, '@lsp.type.property.css',    { fg = colors.blue,       bg = 'NONE'            })  -- Properties
-  highlight(0, '@lsp.type.variable.css',    { fg = colors.purple,     bg = 'NONE'            })  -- Variables
+  highlight(0, '@lsp.type.variable.css',    { link = "Constant"            })  -- Variables
   highlight(0, '@lsp.type.function.css',    { fg = colors.orange,     bg = 'NONE'            })  -- Functions
   highlight(0, '@lsp.type.string.css',      { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
   highlight(0, '@lsp.type.number.css',      { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
   highlight(0, '@lsp.type.keyword.css',     { fg = colors.blue,       bg = 'NONE'            })  -- Keywords
   highlight(0, '@lsp.type.operator.css',    { fg = colors.white,      bg = 'NONE'            })  -- Operators
-  highlight(0, '@lsp.type.comment.css',     { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
 
 end
 

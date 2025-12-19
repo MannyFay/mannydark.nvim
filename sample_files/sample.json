@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/sample.json",
+
+  "string": "Hello, JSON!",
+  "stringWithEscapes": "Line 1\nLine 2\tTabbed",
+  "stringWithUnicode": "Hello, 世界! \u0048\u0065\u006C\u006C\u006F",
+  "emptyString": "",
+
+  "integer": 42,
+  "negativeInteger": -17,
+  "float": 3.14159,
+  "scientific": 6.022e23,
+  "negativeFloat": -2.71828,
+  "zero": 0,
+  "negativeZero": -0,
+
+  "booleanTrue": true,
+  "booleanFalse": false,
+
+  "nullValue": null,
+
+  "simpleArray": [1, 2, 3, 4, 5],
+  "emptyArray": [],
+  "mixedArray": [1, "two", true, null, 3.14],
+  "nestedArray": [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ],
+
+  "object": {
+    "name": "Alice",
+    "age": 30,
+    "email": "alice@example.com"
+  },
+  "emptyObject": {},
+  "nestedObject": {
+    "user": {
+      "profile": {
+        "firstName": "Bob",
+        "lastName": "Smith",
+        "contact": {
+          "email": "bob@example.com",
+          "phone": "+1-555-0123"
+        }
+      }
+    }
+  },
+
+  "arrayOfObjects": [
+    {
+      "id": 1,
+      "name": "Item 1",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Item 2",
+      "active": false
+    },
+    {
+      "id": 3,
+      "name": "Item 3",
+      "active": true
+    }
+  ],
+
+  "complexStructure": {
+    "metadata": {
+      "version": "1.0.0",
+      "author": "Sample Author",
+      "created": "2024-01-15T12:00:00Z",
+      "tags": ["sample", "json", "syntax"]
+    },
+    "configuration": {
+      "debug": true,
+      "maxRetries": 3,
+      "timeout": 5000,
+      "endpoints": {
+        "api": "https://api.example.com",
+        "auth": "https://auth.example.com",
+        "cdn": "https://cdn.example.com"
+      }
+    },
+    "features": [
+      {
+        "name": "feature1",
+        "enabled": true,
+        "config": {
+          "option1": "value1",
+          "option2": 100
+        }
+      },
+      {
+        "name": "feature2",
+        "enabled": false,
+        "config": null
+      }
+    ]
+  },
+
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "myapp_production",
+    "credentials": {
+      "username": "admin",
+      "password": "********"
+    },
+    "pool": {
+      "min": 5,
+      "max": 20,
+      "idleTimeout": 30000
+    },
+    "ssl": {
+      "enabled": true,
+      "rejectUnauthorized": true,
+      "ca": "/path/to/ca.pem"
+    }
+  },
+
+  "users": [
+    {
+      "id": 1,
+      "username": "alice",
+      "email": "alice@example.com",
+      "roles": ["admin", "user"],
+      "profile": {
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "avatar": "https://example.com/avatars/alice.png",
+        "bio": "Software developer and open source enthusiast."
+      },
+      "settings": {
+        "theme": "dark",
+        "language": "en",
+        "notifications": {
+          "email": true,
+          "push": false,
+          "sms": false
+        }
+      },
+      "createdAt": "2023-01-15T08:30:00Z",
+      "updatedAt": "2024-01-10T15:45:00Z"
+    },
+    {
+      "id": 2,
+      "username": "bob",
+      "email": "bob@example.com",
+      "roles": ["user"],
+      "profile": {
+        "firstName": "Bob",
+        "lastName": "Smith",
+        "avatar": null,
+        "bio": ""
+      },
+      "settings": {
+        "theme": "light",
+        "language": "de",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": true
+        }
+      },
+      "createdAt": "2023-06-20T14:00:00Z",
+      "updatedAt": "2024-01-05T09:30:00Z"
+    }
+  ],
+
+  "apiResponse": {
+    "status": 200,
+    "message": "Success",
+    "data": {
+      "items": [
+        {"id": 1, "value": "First"},
+        {"id": 2, "value": "Second"},
+        {"id": 3, "value": "Third"}
+      ],
+      "pagination": {
+        "page": 1,
+        "perPage": 10,
+        "total": 100,
+        "totalPages": 10
+      }
+    },
+    "meta": {
+      "requestId": "abc123def456",
+      "timestamp": "2024-01-15T12:00:00.000Z",
+      "duration": 45
+    }
+  },
+
+  "geojson": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-122.4194, 37.7749]
+        },
+        "properties": {
+          "name": "San Francisco",
+          "population": 884363
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-122.5, 37.7],
+              [-122.3, 37.7],
+              [-122.3, 37.9],
+              [-122.5, 37.9],
+              [-122.5, 37.7]
+            ]
+          ]
+        },
+        "properties": {
+          "name": "Area",
+          "type": "boundary"
+        }
+      }
+    ]
+  },
+
+  "jsonSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "age": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 150
+      },
+      "email": {
+        "type": "string",
+        "format": "email"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      }
+    },
+    "required": ["name", "email"],
+    "additionalProperties": false
+  },
+
+  "i18n": {
+    "en": {
+      "greeting": "Hello",
+      "farewell": "Goodbye",
+      "welcome": "Welcome, {{name}}!"
+    },
+    "de": {
+      "greeting": "Hallo",
+      "farewell": "Auf Wiedersehen",
+      "welcome": "Willkommen, {{name}}!"
+    },
+    "ja": {
+      "greeting": "こんにちは",
+      "farewell": "さようなら",
+      "welcome": "ようこそ、{{name}}さん!"
+    }
+  },
+
+  "veryLongString": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+  "largeNumber": 9007199254740991,
+  "preciseFloat": 0.1234567890123456789,
+
+  "specialCharacters": {
+    "quotes": "He said, \"Hello!\"",
+    "backslash": "C:\\Users\\Name\\Documents",
+    "forwardSlash": "/usr/local/bin",
+    "tabs": "Column1\tColumn2\tColumn3",
+    "newlines": "Line1\nLine2\nLine3",
+    "carriageReturn": "Line1\r\nLine2",
+    "formFeed": "Page1\fPage2",
+    "backspace": "Back\bspace",
+    "unicodeEscapes": "\u0048\u0065\u006C\u006C\u006F"
+  }
+}

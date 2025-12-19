@@ -1,83 +1,179 @@
--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 -- Language Defaults
 -- Default/fallback highlighting for all languages.
 -- These groups are used when no specific language highlighting is defined.
--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+-- Color → Semantic Highlight Group     | Color Anchor
+--
+-- red        = Comment                  | MannydarkRed
+-- redLight   = String                   | MannydarkRedLight
+-- orange     = Warning                  | MannydarkOrange
+-- yellow     = -                        | MannydarkYellow
+-- green      = DiagnosticOk             | MannydarkGreen
+-- greenLight = Number                   | MannydarkGreenLight
+-- blue       = Label                    | MannydarkBlue
+-- blueLight  = -              (bg)      | MannydarkBlueLight (bg)
+-- blueLink   = Underlined               | MannydarkBlueLink
+-- purple     = Constant                 | MannydarkPurple
+-- pink       = PreProc                  | MannydarkPink
+-- turquoise  = Type                     | MannydarkTurquoise
+-- white      = Operator                 | MannydarkWhite
+-- gray       = Ignore                   | MannydarkGray
+-- grayLight  = NonText                  | MannydarkGrayLight
+-- grayDark   = ColorColumn  (bg)        | MannydarkGrayDark (bg)
+-- black      = Normal       (bg)        | MannydarkBlack (bg)
 
 local colors           = require('mannydark.palette')
 local highlight        = vim.api.nvim_set_hl
 local languageDefaults = {}
 
-
--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 -- Settings
 
 languageDefaults.setupHighlighting = function()
   -----------------------------------------------------------------------------
+  -- Color Anchors (Mannydark*)
+  -- Direct color links without semantic meaning. Use: { link = 'MannydarkOrange' }
+
+  highlight(0, 'MannydarkFgBlack',      { fg = colors.black,      bg = "NONE" })
+  highlight(0, 'MannydarkFgBlue',       { fg = colors.blue,       bg = 'NONE' })
+  -- highlight(0, 'MannydarkBlueLight',  { fg = colors.blueLight,  bg = 'NONE' })
+  highlight(0, 'MannydarkFgBlueLink',   { fg = colors.blueLink,   bg = 'NONE' })
+  highlight(0, 'MannydarkFgGray',       { fg = colors.gray,       bg = 'NONE' })
+  highlight(0, 'MannydarkFgGrayDark',   { fg = colors.grayDark,   bg = "NONE" })
+  highlight(0, 'MannydarkFgGrayLight',  { fg = colors.grayLight,  bg = 'NONE' })
+  highlight(0, 'MannydarkFgGreen',      { fg = colors.green,      bg = 'NONE' })
+  highlight(0, 'MannydarkFgGreenLight', { fg = colors.greenLight, bg = 'NONE' })
+  highlight(0, 'MannydarkFgOrange',     { fg = colors.orange,     bg = 'NONE' })
+  highlight(0, 'MannydarkFgPink',       { fg = colors.pink,       bg = 'NONE' })
+  highlight(0, 'MannydarkFgPurple',     { fg = colors.purple,     bg = 'NONE' })
+  highlight(0, 'MannydarkFgRed',        { fg = colors.red,        bg = 'NONE' })
+  highlight(0, 'MannydarkFgRedLight',   { fg = colors.redLight,   bg = 'NONE' })
+  highlight(0, 'MannydarkFgTurquoise',  { fg = colors.turquoise,  bg = 'NONE' })
+  highlight(0, 'MannydarkFgWhite',      { fg = colors.white,      bg = 'NONE' })
+  highlight(0, 'MannydarkFgYellow',     { fg = colors.yellow,     bg = 'NONE' })
+
+
+  -----------------------------------------------------------------------------
   -- Standard Vim Syntax Groups
-  -- These are the fundamental groups that language syntaxes link to
+  -- These are the fundamental groups that language syntaxes link to.
 
   -- Comments
-  highlight(0, 'Comment',        { fg = colors.red,        bg = 'NONE'            })  -- Any comment
+  highlight(0, 'Comment',        { link = "MannydarkFgRed"            })  -- Any comment
 
   -- Constants
-  highlight(0, 'Constant',       { fg = colors.purple,     bg = 'NONE'            })  -- Any constant
-  highlight(0, 'String',         { fg = colors.redLight,   bg = 'NONE'            })  -- String literals
+  highlight(0, 'Constant',       { link = "MannydarkFgPurple"           })  -- Any constant
+  highlight(0, 'String',         { link = "MannydarkFgRedLight"            })  -- String literals
   highlight(0, 'Character',      { fg = colors.redLight,   bg = 'NONE'            })  -- Character literals 'c'
-  highlight(0, 'Number',         { fg = colors.greenLight, bg = 'NONE'            })  -- Numeric literals
-  highlight(0, 'Float',          { fg = colors.greenLight, bg = 'NONE'            })  -- Floating point
-  highlight(0, 'Boolean',        { fg = colors.blue,       bg = 'NONE'            })  -- true, false
+  highlight(0, 'Number',         { link = "MannydarkFgGreenLight"            })  -- Numeric literals
+  highlight(0, 'Float',          { link = "MannydarkFgGreenLight"            })  -- Floating point
+  highlight(0, 'Boolean',        { link = "MannydarkFgBlue"            })  -- true, false
 
   -- Identifiers
-  highlight(0, 'Identifier',     { fg = colors.white,      bg = 'NONE'            })  -- Variable names
-  highlight(0, 'Function',       { fg = colors.orange,     bg = 'NONE'            })  -- Function names
+  highlight(0, 'Identifier',     { link = "MannydarkFgPurple"            })  -- Variable names
+  highlight(0, 'Function',       { link = "MannydarkFgOrange"            })  -- Function names
 
   -- Statements
-  highlight(0, 'Statement',      { fg = colors.blue,       bg = 'NONE'            })  -- Any statement
-  highlight(0, 'Conditional',    { fg = colors.blue,       bg = 'NONE'            })  -- if, then, else, switch
-  highlight(0, 'Repeat',         { fg = colors.blue,       bg = 'NONE'            })  -- for, while, do
-  highlight(0, 'Label',          { fg = colors.blue,       bg = 'NONE'            })  -- case, default, goto labels
-  highlight(0, 'Operator',       { fg = colors.white,      bg = 'NONE'            })  -- +, -, *, /, =, etc.
-  highlight(0, 'Keyword',        { fg = colors.blue,       bg = 'NONE'            })  -- Any keyword
-  highlight(0, 'Exception',      { fg = colors.blue,       bg = 'NONE'            })  -- try, catch, throw
+  highlight(0, 'Statement',      { link = "MannydarkFgBlue"          })  -- Any statement
+  highlight(0, 'Conditional',    { link = "MannydarkFgBlue"            })  -- if, then, else, switch
+  highlight(0, 'Repeat',         { link = "MannydarkFgBlue"             })  -- for, while, do
+  highlight(0, 'Label',          { link = "MannydarkFgBlue"            })  -- case, default, goto labels
+  highlight(0, 'Operator',       { link = "MannydarkFgWhite"            })  -- +, -, *, /, =, etc.
+  highlight(0, 'Keyword',        { link = "MannydarkFgBlue"            })  -- Any keyword
+  highlight(0, 'Exception',      { link = "MannydarkFgBlue"            })  -- try, catch, throw
 
   -- Preprocessor
   highlight(0, 'PreProc',        { fg = colors.pink,       bg = 'NONE'            })  -- Generic preprocessor
-  highlight(0, 'Include',        { fg = colors.pink,       bg = 'NONE'            })  -- #include, import
-  highlight(0, 'Define',         { fg = colors.pink,       bg = 'NONE'            })  -- #define
+  highlight(0, 'Include',        { link = "MannydarkFgBlue"            })  -- #include, import
+  highlight(0, 'Define',         { link = "MannydarkFgBlue"            })  -- #define
   highlight(0, 'Macro',          { fg = colors.pink,       bg = 'NONE'            })  -- Macros
-  highlight(0, 'PreCondit',      { fg = colors.pink,       bg = 'NONE'            })  -- #if, #ifdef, #endif
+  highlight(0, 'PreCondit',      { link = "MannydarkFgBlue"            })  -- #if, #ifdef, #endif
 
   -- Types
-  highlight(0, 'Type',           { fg = colors.turquoise,  bg = 'NONE'            })  -- int, long, char
-  highlight(0, 'StorageClass',   { fg = colors.turquoise,  bg = 'NONE'            })  -- static, const, volatile
-  highlight(0, 'Structure',      { fg = colors.turquoise,  bg = 'NONE'            })  -- struct, union, enum
-  highlight(0, 'Typedef',        { fg = colors.turquoise,  bg = 'NONE'            })  -- typedef
+  highlight(0, 'Type',           { link = "MannydarkFgTurquoise"           })  -- int, long, char
+  highlight(0, 'StorageClass',   { link = "MannydarkFgTurquoise"           })  -- static, const, volatile
+  highlight(0, 'Structure',      { link = "MannydarkFgTurquoise"           })  -- struct, union, enum
+  highlight(0, 'Typedef',        { link = "MannydarkFgTurquoise"           })  -- typedef
 
   -- Special
-  highlight(0, 'Special',        { fg = colors.pink,       bg = 'NONE'            })  -- Any special symbol
-  highlight(0, 'SpecialChar',    { fg = colors.pink,       bg = 'NONE'            })  -- \n, \t, etc.
-  highlight(0, 'Tag',            { fg = colors.blue,       bg = 'NONE'            })  -- HTML/XML tags
-  highlight(0, 'Delimiter',      { fg = colors.white,      bg = 'NONE'            })  -- Delimiters
-  highlight(0, 'SpecialComment', { fg = colors.red,        bg = 'NONE', italic = true })  -- Special comments
+  highlight(0, 'Special',        { link = "MannydarkFgPink"           })  -- Any special symbol
+  highlight(0, 'SpecialChar',    { link = "MannydarkFgPink"           })  -- \n, \t, etc.
+  highlight(0, 'Tag',            { link = "MannydarkFgBlue"            })  -- HTML/XML tags
+  highlight(0, 'Delimiter',      { link = "MannydarkFgWhite"          })  -- Delimiters
+  highlight(0, 'SpecialComment', { link = "Comment" })  -- Special comments
   highlight(0, 'Debug',          { fg = colors.orange,     bg = 'NONE'            })  -- Debug statements
 
   -- Other
-  highlight(0, 'Underlined',     { fg = colors.blueLink,   bg = 'NONE', underline = true })  -- Underlined text
-  highlight(0, 'Ignore',         { fg = colors.gray,       bg = 'NONE'            })  -- Hidden/ignored
-  highlight(0, 'Error',          { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Errors
-  highlight(0, 'Todo',           { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
+  highlight(0, 'Underlined',     { link = "MannydarkFgBlueLink", underline = true })  -- Underlined text
+  highlight(0, 'Ignore',         { link = "MannydarkFgGray"        })  -- Hidden/ignored
+  highlight(0, 'Error',          { link = "MannydarkFgRed", undercurl = true })  -- Errors
+  highlight(0, 'Todo',           { link = "MannydarkFgRed" })  -- TODO, FIXME, XXX
+  highlight(0, 'Warning',        { link = "MannydarkFgOrange"})  -- Warnings (orange)
+  highlight(0, 'NonText',        { fg = colors.grayLight,  bg = 'NONE'            })  -- NonText, EOB, etc.
 
   -- Text Formatting
   highlight(0, 'Bold',           { fg = 'NONE',            bg = 'NONE', bold = true })
   highlight(0, 'Italic',         { fg = 'NONE',            bg = 'NONE', italic = true })
-  highlight(0, 'Title',          { fg = colors.white,      bg = 'NONE', bold = true })  -- Titles
+  highlight(0, 'Title',          { link = "MannydarkFgWhite",      bg = 'NONE', bold = true })  -- Titles
 
   -- Additional Standard Groups
-  highlight(0, 'Normal',         { fg = colors.white,      bg = colors.black      })  -- Normal text
+  highlight(0, 'Normal',         { link = "MannydarkFgWhite"     })  -- Normal text
   highlight(0, 'MatchParen',     { fg = colors.white,      bg = colors.gray       })  -- Matching parenthesis
-  highlight(0, 'Variable',       { fg = colors.white,      bg = 'NONE'            })  -- Variables
+  highlight(0, 'Variable',       { link = "MannydarkFgPurple"     })  -- Variables
   highlight(0, 'Conceal',        { fg = colors.gray,       bg = 'NONE'            })  -- Concealed text
+  highlight(0, 'ColorColumn',    { fg = 'NONE',            bg = colors.grayDark   })  -- ColorColumn (grayDark bg)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+-- LSP Semantic Token Highlights
+-- Extracted into separate function so it can be re-applied after LspAttach
+-- (to override plugins like lazydev that set their own highlights)
+
+languageDefaults.applyLspSemanticHighlights = function()
+  -----------------------------------------------------------------------------
+  -- LSP Semantic Token Types (@lsp.type.xxx)
+
+  highlight(0, '@lsp.type.class',              { fg = colors.turquoise,  bg = 'NONE' })  -- Class types
+  highlight(0, '@lsp.type.comment',            { link = "Comment" })  -- Comments
+  highlight(0, '@lsp.type.decorator',          { fg = colors.purple,     bg = 'NONE' })  -- Decorators
+  highlight(0, '@lsp.type.enum',               { fg = colors.turquoise,  bg = 'NONE' })  -- Enum types
+  highlight(0, '@lsp.type.enumMember',         { fg = colors.purple,     bg = 'NONE' })  -- Enum members
+  highlight(0, '@lsp.type.event',              { fg = colors.orange,     bg = 'NONE' })  -- Events
+  highlight(0, '@lsp.type.function',           { fg = colors.orange,     bg = 'NONE' })  -- Functions
+  highlight(0, '@lsp.type.interface',          { fg = colors.turquoise,  bg = 'NONE' })  -- Interfaces
+  highlight(0, '@lsp.type.keyword',            { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.macro',              { fg = colors.pink,       bg = 'NONE' })  -- Macros
+  highlight(0, '@lsp.type.method',             { fg = colors.orange,     bg = 'NONE' })  -- Methods
+  highlight(0, '@lsp.type.modifier',           { fg = colors.blue,       bg = 'NONE' })  -- Modifiers
+  highlight(0, '@lsp.type.namespace',          { fg = colors.blue,       bg = 'NONE' })  -- Namespaces
+  highlight(0, '@lsp.type.number',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@lsp.type.operator',           { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@lsp.type.parameter',          { link = 'Constant' })  -- Parameters
+  highlight(0, '@lsp.type.property',           { link = 'Constant' })  -- Properties
+  highlight(0, '@lsp.type.regexp',             { fg = colors.orange,     bg = 'NONE' })  -- Regexes
+  highlight(0, '@lsp.type.string',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, '@lsp.type.struct',             { fg = colors.turquoise,  bg = 'NONE' })  -- Structs
+  highlight(0, '@lsp.type.type',               { fg = colors.turquoise,  bg = 'NONE' })  -- Types
+  highlight(0, '@lsp.type.typeParameter',      { link = 'Constant' })  -- Type parameters
+  highlight(0, '@lsp.type.variable',           { link = 'Constant' })  -- Variables
+
+  -----------------------------------------------------------------------------
+  -- LSP Semantic Token Modifiers (@lsp.mod.xxx)
+
+  highlight(0, '@lsp.mod.abstract',            { fg = 'NONE',            bg = 'NONE', italic = true })  -- Abstract
+  highlight(0, '@lsp.mod.async',               { fg = 'NONE',            bg = 'NONE', italic = true })  -- Async
+  highlight(0, '@lsp.mod.declaration',         { fg = 'NONE',            bg = 'NONE' })  -- Declarations
+  highlight(0, '@lsp.mod.defaultLibrary',      { fg = 'NONE',            bg = 'NONE' })  -- Standard library
+  highlight(0, '@lsp.mod.definition',          { fg = 'NONE',            bg = 'NONE' })  -- Definitions
+  highlight(0, '@lsp.mod.deprecated',          { fg = 'NONE',            bg = 'NONE', strikethrough = true })  -- Deprecated
+  highlight(0, '@lsp.mod.documentation',       { fg = 'NONE',            bg = 'NONE' })  -- Documentation
+  highlight(0, '@lsp.mod.modification',        { fg = 'NONE',            bg = 'NONE' })  -- Modifications
+  highlight(0, '@lsp.mod.readonly',            { fg = 'NONE',            bg = 'NONE' })  -- Readonly
+  highlight(0, '@lsp.mod.static',              { fg = 'NONE',            bg = 'NONE', italic = true })  -- Static
+end
+
 
 
   -----------------------------------------------------------------------------
@@ -85,16 +181,16 @@ languageDefaults.setupHighlighting = function()
   -- These are fallbacks for any language
 
   -- Variables
-  highlight(0, '@variable',                    { fg = colors.white,      bg = 'NONE' })  -- Various variable names
+  highlight(0, '@variable',                    { link = "Variable" })  -- Various variable names
   highlight(0, '@variable.builtin',            { fg = colors.purple,     bg = 'NONE' })  -- Built-in variables (self, this)
   highlight(0, '@variable.parameter',          { fg = colors.white,      bg = 'NONE' })  -- Function parameters
   highlight(0, '@variable.parameter.builtin',  { fg = colors.purple,     bg = 'NONE' })  -- Special parameters (_)
   highlight(0, '@variable.member',             { fg = colors.white,      bg = 'NONE' })  -- Object/struct fields
 
   -- Constants
-  highlight(0, '@constant',                    { fg = colors.purple,     bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin',            { fg = colors.purple,     bg = 'NONE' })  -- Built-in constants (nil, true)
-  highlight(0, '@constant.macro',              { fg = colors.purple,     bg = 'NONE' })  -- Preprocessor constants
+  highlight(0, '@constant',                    { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin',            { link = "Constant" })  -- Built-in constants (nil, true)
+  highlight(0, '@constant.macro',              { link = "Constant" })  -- Preprocessor constants
 
   -- Modules/Namespaces
   highlight(0, '@module',                      { fg = colors.white,      bg = 'NONE' })  -- Modules/namespaces
@@ -118,7 +214,7 @@ languageDefaults.setupHighlighting = function()
   highlight(0, '@character.special',           { fg = colors.pink,       bg = 'NONE' })  -- Special characters
 
   -- Numbers
-  highlight(0, '@number',                      { fg = colors.greenLight, bg = 'NONE' })  -- Numeric literals
+  highlight(0, '@number',                      { link = "Number" })  -- Numeric literals
   highlight(0, '@number.float',                { fg = colors.greenLight, bg = 'NONE' })  -- Floating point
 
   -- Booleans
@@ -156,7 +252,7 @@ languageDefaults.setupHighlighting = function()
   highlight(0, '@keyword.coroutine',           { fg = colors.blue,       bg = 'NONE' })  -- Coroutine keywords
   highlight(0, '@keyword.function',            { fg = colors.blue,       bg = 'NONE' })  -- function, def, fn
   highlight(0, '@keyword.operator',            { fg = colors.blue,       bg = 'NONE' })  -- and, or, not
-  highlight(0, '@keyword.import',              { fg = colors.pink,       bg = 'NONE' })  -- import, include, require
+  highlight(0, '@keyword.import',              { fg = colors.blue,       bg = 'NONE' })  -- import, include, require
   highlight(0, '@keyword.type',                { fg = colors.blue,       bg = 'NONE' })  -- class, struct, enum
   highlight(0, '@keyword.modifier',            { fg = colors.blue,       bg = 'NONE' })  -- public, private, static
   highlight(0, '@keyword.repeat',              { fg = colors.blue,       bg = 'NONE' })  -- for, while, loop
@@ -165,7 +261,7 @@ languageDefaults.setupHighlighting = function()
   highlight(0, '@keyword.exception',           { fg = colors.blue,       bg = 'NONE' })  -- try, catch, throw
   highlight(0, '@keyword.conditional',         { fg = colors.blue,       bg = 'NONE' })  -- if, else, switch
   highlight(0, '@keyword.conditional.ternary', { fg = colors.white,      bg = 'NONE' })  -- ? :
-  highlight(0, '@keyword.directive',           { fg = colors.pink,       bg = 'NONE' })  -- Preprocessor directives
+  highlight(0, '@keyword.directive',           { fg = colors.blue,       bg = 'NONE' })  -- Preprocessor directives
   highlight(0, '@keyword.directive.define',    { fg = colors.pink,       bg = 'NONE' })  -- #define
   highlight(0, '@keyword.storage',             { fg = colors.blue,       bg = 'NONE' })  -- Storage keywords
 
@@ -175,11 +271,11 @@ languageDefaults.setupHighlighting = function()
   highlight(0, '@punctuation.special',         { fg = colors.pink,       bg = 'NONE' })  -- Interpolation ${}
 
   -- Comments
-  highlight(0, '@comment',                     { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation',       { fg = colors.red,        bg = 'NONE' })  -- Doc comments
-  highlight(0, '@comment.error',               { fg = colors.red,        bg = 'NONE', bold = true })  -- ERROR, FIXME
+  highlight(0, '@comment',                     { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation',       { link = "Comment" })  -- Doc comments
+  highlight(0, '@comment.error',               { link = "Comment" })  -- ERROR, FIXME
   highlight(0, '@comment.warning',             { fg = colors.orange,     bg = 'NONE', bold = true })  -- WARNING, HACK
-  highlight(0, '@comment.todo',                { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, WIP
+  highlight(0, '@comment.todo',                { link = "Comment" })  -- TODO, WIP
   highlight(0, '@comment.note',                { fg = colors.turquoise,  bg = 'NONE', bold = true })  -- NOTE, INFO, XXX
 
   -- Markup (Markdown, etc.)
@@ -208,7 +304,7 @@ languageDefaults.setupHighlighting = function()
   -- Diff
   highlight(0, '@diff.plus',                   { fg = colors.green,      bg = 'NONE' })  -- Added lines
   highlight(0, '@diff.minus',                  { fg = colors.red,        bg = 'NONE' })  -- Removed lines
-  highlight(0, '@diff.delta',                  { fg = colors.yellow,     bg = 'NONE' })  -- Changed lines
+  highlight(0, '@diff.delta',                  { fg = colors.orange,     bg = 'NONE' })  -- Changed lines
 
   -- Tags (HTML, XML, JSX)
   highlight(0, '@tag',                         { fg = colors.blue,       bg = 'NONE' })  -- Tag names
@@ -225,54 +321,18 @@ languageDefaults.setupHighlighting = function()
 
 
   -----------------------------------------------------------------------------
-  -- LSP Semantic Token Types (@lsp.type.xxx)
+  -- LSP Semantic Token Types and Modifiers
+  -- Applied via separate function to allow re-application after LspAttach
 
-  highlight(0, '@lsp.type.class',              { fg = colors.turquoise,  bg = 'NONE' })  -- Class types
-  highlight(0, '@lsp.type.comment',            { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, '@lsp.type.decorator',          { fg = colors.purple,     bg = 'NONE' })  -- Decorators
-  highlight(0, '@lsp.type.enum',               { fg = colors.turquoise,  bg = 'NONE' })  -- Enum types
-  highlight(0, '@lsp.type.enumMember',         { fg = colors.purple,     bg = 'NONE' })  -- Enum members
-  highlight(0, '@lsp.type.event',              { fg = colors.orange,     bg = 'NONE' })  -- Events
-  highlight(0, '@lsp.type.function',           { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.interface',          { fg = colors.turquoise,  bg = 'NONE' })  -- Interfaces
-  highlight(0, '@lsp.type.keyword',            { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.macro',              { fg = colors.pink,       bg = 'NONE' })  -- Macros
-  highlight(0, '@lsp.type.method',             { fg = colors.orange,     bg = 'NONE' })  -- Methods
-  highlight(0, '@lsp.type.modifier',           { fg = colors.blue,       bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.namespace',          { fg = colors.white,      bg = 'NONE' })  -- Namespaces
-  highlight(0, '@lsp.type.number',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.operator',           { fg = colors.white,      bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.parameter',          { fg = colors.white,      bg = 'NONE' })  -- Parameters
-  highlight(0, '@lsp.type.property',           { fg = colors.white,      bg = 'NONE' })  -- Properties
-  highlight(0, '@lsp.type.regexp',             { fg = colors.orange,     bg = 'NONE' })  -- Regexes
-  highlight(0, '@lsp.type.string',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.struct',             { fg = colors.turquoise,  bg = 'NONE' })  -- Structs
-  highlight(0, '@lsp.type.type',               { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@lsp.type.typeParameter',      { fg = colors.turquoise,  bg = 'NONE' })  -- Type parameters
-  highlight(0, '@lsp.type.variable',           { fg = colors.white,      bg = 'NONE' })  -- Variables
-
-
-  -----------------------------------------------------------------------------
-  -- LSP Semantic Token Modifiers (@lsp.mod.xxx)
-
-  highlight(0, '@lsp.mod.abstract',            { fg = 'NONE',            bg = 'NONE', italic = true })  -- Abstract
-  highlight(0, '@lsp.mod.async',               { fg = 'NONE',            bg = 'NONE', italic = true })  -- Async
-  highlight(0, '@lsp.mod.declaration',         { fg = 'NONE',            bg = 'NONE' })  -- Declarations
-  highlight(0, '@lsp.mod.defaultLibrary',      { fg = 'NONE',            bg = 'NONE' })  -- Standard library
-  highlight(0, '@lsp.mod.definition',          { fg = 'NONE',            bg = 'NONE' })  -- Definitions
-  highlight(0, '@lsp.mod.deprecated',          { fg = 'NONE',            bg = 'NONE', strikethrough = true })  -- Deprecated
-  highlight(0, '@lsp.mod.documentation',       { fg = 'NONE',            bg = 'NONE' })  -- Documentation
-  highlight(0, '@lsp.mod.modification',        { fg = 'NONE',            bg = 'NONE' })  -- Modifications
-  highlight(0, '@lsp.mod.readonly',            { fg = 'NONE',            bg = 'NONE' })  -- Readonly
-  highlight(0, '@lsp.mod.static',              { fg = 'NONE',            bg = 'NONE', italic = true })  -- Static
+  languageDefaults.applyLspSemanticHighlights()
 
 
   -----------------------------------------------------------------------------
   -- LSP Reference Highlighting
 
-  highlight(0, 'LspReferenceText',             { fg = 'NONE',            bg = colors.grayBlue })  -- References
-  highlight(0, 'LspReferenceRead',             { fg = 'NONE',            bg = colors.grayBlue })  -- Read references
-  highlight(0, 'LspReferenceWrite',            { fg = 'NONE',            bg = colors.grayBlue })  -- Write references
+  highlight(0, 'LspReferenceText',             { fg = 'NONE',            bg = colors.blueLight })  -- References
+  highlight(0, 'LspReferenceRead',             { fg = 'NONE',            bg = colors.blueLight })  -- Read references
+  highlight(0, 'LspReferenceWrite',            { fg = 'NONE',            bg = colors.blueLight })  -- Write references
 
 
   -----------------------------------------------------------------------------
@@ -327,7 +387,7 @@ languageDefaults.setupHighlighting = function()
 
   -- Signs
   highlight(0, 'DiagnosticSignError',          { fg = colors.red,        bg = 'NONE' })
-  highlight(0, 'DiagnosticSignWarn',           { fg = colors.yellow,     bg = 'NONE' })
+  highlight(0, 'DiagnosticSignWarn',           { fg = colors.orange,     bg = 'NONE' })
   highlight(0, 'DiagnosticSignInfo',           { fg = colors.blue,       bg = 'NONE' })
   highlight(0, 'DiagnosticSignHint',           { fg = colors.turquoise,  bg = 'NONE' })
   highlight(0, 'DiagnosticSignOk',             { fg = colors.green,      bg = 'NONE' })

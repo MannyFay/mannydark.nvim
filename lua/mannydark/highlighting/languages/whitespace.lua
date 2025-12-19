@@ -84,10 +84,10 @@ whitespace.setupHighlighting = function()
 
   -- Visual Representation Characters
   -- When Whitespace is displayed as visible characters (S, T, L or [Space], [Tab], [LF])
-  highlight(0, 'whitespaceVisualSpace',        { fg = colors.blue,       bg = colors.grayBlue  })  -- Visual Space (S)
-  highlight(0, 'whitespaceVisualTab',          { fg = colors.green,      bg = colors.grayBlue  })  -- Visual Tab (T)
-  highlight(0, 'whitespaceVisualLF',           { fg = colors.purple,     bg = colors.grayBlue  })  -- Visual Linefeed (L)
-  highlight(0, 'whitespaceVisual',             { fg = colors.white,      bg = colors.grayBlue  })  -- Any visual marker
+  highlight(0, 'whitespaceVisualSpace',        { fg = colors.blue,       bg = colors.blueLight  })  -- Visual Space (S)
+  highlight(0, 'whitespaceVisualTab',          { fg = colors.green,      bg = colors.blueLight  })  -- Visual Tab (T)
+  highlight(0, 'whitespaceVisualLF',           { fg = colors.purple,     bg = colors.blueLight  })  -- Visual Linefeed (L)
+  highlight(0, 'whitespaceVisual',             { fg = colors.white,      bg = colors.blueLight  })  -- Any visual marker
 
 
   -----------------------------------------------------------------------------
@@ -156,8 +156,8 @@ whitespace.setupHighlighting = function()
   highlight(0, '@label.whitespace',                    { fg = colors.yellow,     bg = 'NONE' })  -- Labels
 
   -- Whitespace Characters (when made visible)
-  highlight(0, '@character.whitespace',                { fg = colors.white,      bg = colors.grayBlue })  -- Visual char
-  highlight(0, '@character.special.whitespace',        { fg = colors.purple,     bg = colors.grayBlue })  -- Special marker
+  highlight(0, '@character.whitespace',                { fg = colors.white,      bg = colors.blueLight })  -- Visual char
+  highlight(0, '@character.special.whitespace',        { fg = colors.purple,     bg = colors.blueLight })  -- Special marker
 
   -- Comments
   highlight(0, '@comment.whitespace',                  { fg = colors.red,        bg = 'NONE' })  -- Non-whitespace

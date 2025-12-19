@@ -17,74 +17,74 @@ javascript.setupHighlighting = function()
 
   -- Keywords - Storage/Declaration
   highlight(0, 'jsStorageClass',          { fg = colors.blue,       bg = 'NONE'            })  -- const, let, var
-  highlight(0, 'jsVariableDef',           { fg = colors.purple,     bg = 'NONE'            })  -- Variable names in declarations
+  highlight(0, 'jsVariableDef',           { link = "Constant"})  -- Variable names in declarations
 
   -- Keywords - Control Flow
-  highlight(0, 'jsConditional',           { fg = colors.blue,       bg = 'NONE'            })  -- if, else, switch, case
-  highlight(0, 'jsRepeat',                { fg = colors.blue,       bg = 'NONE'            })  -- for, while, do
-  highlight(0, 'jsStatement',             { fg = colors.blue,       bg = 'NONE'            })  -- break, continue, debugger
-  highlight(0, 'jsReturn',                { fg = colors.blue,       bg = 'NONE'            })  -- return
-  highlight(0, 'jsBranch',                { fg = colors.blue,       bg = 'NONE'            })  -- break, continue
+  highlight(0, 'jsConditional',           { link = "Keyword"            })  -- if, else, switch, case
+  highlight(0, 'jsRepeat',                { link = "Keyword"            })  -- for, while, do
+  highlight(0, 'jsStatement',             { link = "Keyword"            })  -- break, continue, debugger
+  highlight(0, 'jsReturn',                { link = "Keyword"            })  -- return
+  highlight(0, 'jsBranch',                { link = "Keyword"            })  -- break, continue
   highlight(0, 'jsLabel',                 { fg = colors.turquoise,  bg = 'NONE'            })  -- Label names
   highlight(0, 'jsBlockLabel',            { fg = colors.turquoise,  bg = 'NONE'            })  -- Block labels
   highlight(0, 'jsBlockLabelKey',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Block label keys
 
   -- Keywords - Exception Handling
-  highlight(0, 'jsTry',                   { fg = colors.blue,       bg = 'NONE'            })  -- try
-  highlight(0, 'jsCatch',                 { fg = colors.blue,       bg = 'NONE'            })  -- catch
-  highlight(0, 'jsFinally',               { fg = colors.blue,       bg = 'NONE'            })  -- finally
-  highlight(0, 'jsException',             { fg = colors.blue,       bg = 'NONE'            })  -- throw
+  highlight(0, 'jsTry',                   { link = "Keyword"            })  -- try
+  highlight(0, 'jsCatch',                 { link = "Keyword"            })  -- catch
+  highlight(0, 'jsFinally',               { link = "Keyword"            })  -- finally
+  highlight(0, 'jsException',             { link = "Keyword"            })  -- throw
   highlight(0, 'jsExceptions',            { fg = colors.turquoise,  bg = 'NONE'            })  -- Error, TypeError, etc.
 
   -- Keywords - Loops
-  highlight(0, 'jsFor',                   { fg = colors.blue,       bg = 'NONE'            })  -- for
-  highlight(0, 'jsForAwait',              { fg = colors.blue,       bg = 'NONE'            })  -- for await
-  highlight(0, 'jsWhile',                 { fg = colors.blue,       bg = 'NONE'            })  -- while
-  highlight(0, 'jsDo',                    { fg = colors.blue,       bg = 'NONE'            })  -- do
-  highlight(0, 'jsOf',                    { fg = colors.blue,       bg = 'NONE'            })  -- of (for...of)
+  highlight(0, 'jsFor',                   { link = "Keyword"  })  -- for
+  highlight(0, 'jsForAwait',              { link = "Keyword"  })  -- for await
+  highlight(0, 'jsWhile',                 { link = "Keyword"  })  -- while
+  highlight(0, 'jsDo',                    { link = "Keyword"  })  -- do
+  highlight(0, 'jsOf',                    { link = "Keyword"  })  -- of (for...of)
 
   -- Keywords - Switch
-  highlight(0, 'jsSwitchCase',            { fg = colors.blue,       bg = 'NONE'            })  -- case, default
-  highlight(0, 'jsSwitchColon',           { fg = colors.white,      bg = 'NONE'            })  -- : in switch
+  highlight(0, 'jsSwitchCase',            { link = "Keyword" })  -- case, default
+  highlight(0, 'jsSwitchColon',           { link = "Normal" })  -- : in switch
 
   -- Keywords - Class
-  highlight(0, 'jsClassKeyword',          { fg = colors.blue,       bg = 'NONE'            })  -- class
+  highlight(0, 'jsClassKeyword',          { link = "Keyword"            })  -- class
+  highlight(0, 'jsExtendsKeyword',        { link = "Keyword"            })  -- extends
+  highlight(0, 'jsClassMethodType',       { link = "Keyword"            })  -- static, get, set
+  highlight(0, 'jsSuper',                 { link = "Keyword"            })  -- super
   highlight(0, 'jsClassDefinition',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Class names
-  highlight(0, 'jsExtendsKeyword',        { fg = colors.blue,       bg = 'NONE'            })  -- extends
-  highlight(0, 'jsClassMethodType',       { fg = colors.blue,       bg = 'NONE'            })  -- static, get, set
-  highlight(0, 'jsSuper',                 { fg = colors.blue,       bg = 'NONE'            })  -- super
 
   -- Keywords - Function
-  highlight(0, 'jsFunction',              { fg = colors.blue,       bg = 'NONE'            })  -- function
-  highlight(0, 'jsArrowFunction',         { fg = colors.white,      bg = 'NONE'            })  -- => arrow
-  highlight(0, 'jsGenerator',             { fg = colors.blue,       bg = 'NONE'            })  -- function* generator
-  highlight(0, 'jsAsyncKeyword',          { fg = colors.blue,       bg = 'NONE'            })  -- async, await
+  highlight(0, 'jsFunction',              { link = "Keyword"          })  -- function
+  highlight(0, 'jsGenerator',             { link = "Keyword"          })  -- function* generator
+  highlight(0, 'jsAsyncKeyword',          { link = "Keyword"          })  -- async, await
+  highlight(0, 'jsArrowFunction',         { link = "Normal"           })  -- => arrow
 
   -- Keywords - Operators
-  highlight(0, 'jsOperatorKeyword',       { fg = colors.blue,       bg = 'NONE'            })  -- new, delete, typeof, instanceof, in, void
-  highlight(0, 'jsThis',                  { fg = colors.blue,       bg = 'NONE'            })  -- this
+  highlight(0, 'jsOperatorKeyword',       { link = "Keyword"      })  -- new, delete, typeof, instanceof, in, void
+  highlight(0, 'jsThis',                  { link = "Keyword"      })  -- this
 
   -- Keywords - Module
-  highlight(0, 'jsImport',                { fg = colors.blue,       bg = 'NONE'            })  -- import
-  highlight(0, 'jsExport',                { fg = colors.blue,       bg = 'NONE'            })  -- export
-  highlight(0, 'jsExportDefault',         { fg = colors.blue,       bg = 'NONE'            })  -- export default
-  highlight(0, 'jsFrom',                  { fg = colors.blue,       bg = 'NONE'            })  -- from
-  highlight(0, 'jsModuleAs',              { fg = colors.blue,       bg = 'NONE'            })  -- as
+  highlight(0, 'jsImport',                { link = "Keyword"        })  -- import
+  highlight(0, 'jsExport',                { link = "Keyword"        })  -- export
+  highlight(0, 'jsExportDefault',         { link = "Keyword"        })  -- export default
+  highlight(0, 'jsFrom',                  { link = "Keyword"        })  -- from
+  highlight(0, 'jsModuleAs',              { link = "Keyword"        })  -- as
   highlight(0, 'jsModuleKeyword',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Module/import names
-  highlight(0, 'jsModuleAsterisk',        { fg = colors.white,      bg = 'NONE'            })  -- * in imports
+  highlight(0, 'jsModuleAsterisk',        { link = "Keyword" })  -- * in imports
 
   -- Functions
-  highlight(0, 'jsFuncName',              { fg = colors.orange,     bg = 'NONE'            })  -- Function names
-  highlight(0, 'jsFuncCall',              { fg = colors.orange,     bg = 'NONE'            })  -- Function calls
-  highlight(0, 'jsClassFuncName',         { fg = colors.orange,     bg = 'NONE'            })  -- Method names
-  highlight(0, 'jsObjectFuncName',        { fg = colors.orange,     bg = 'NONE'            })  -- Object method names
-  highlight(0, 'jsFunctionKey',           { fg = colors.orange,     bg = 'NONE'            })  -- Function as object key
+  highlight(0, 'jsFuncName',              { link = "Function" }) -- Function names
+  highlight(0, 'jsFuncCall',              { link = "Function" }) -- Function calls
+  highlight(0, 'jsClassFuncName',         { link = "Function" }) -- Method names
+  highlight(0, 'jsObjectFuncName',        { link = "Function" }) -- Object method names
+  highlight(0, 'jsFunctionKey',           { link = "Function" }) -- Function as object key
 
   -- Function Parameters
-  highlight(0, 'jsFuncArgs',              { fg = colors.purple,     bg = 'NONE'            })  -- Function parameters
-  highlight(0, 'jsArrowFuncArgs',         { fg = colors.purple,     bg = 'NONE'            })  -- Arrow function parameters
-  highlight(0, 'jsFuncArgExpression',     { fg = colors.purple,     bg = 'NONE'            })  -- Parameter expressions
-  highlight(0, 'jsArguments',             { fg = colors.pink,       bg = 'NONE'            })  -- arguments object
+  highlight(0, 'jsFuncArgs',              { link = "Constant"           })  -- Function parameters
+  highlight(0, 'jsArrowFuncArgs',         { link = "Constant"           })  -- Arrow function parameters
+  highlight(0, 'jsFuncArgExpression',     { link = "Constant"           })  -- Parameter expressions
+  highlight(0, 'jsArguments',             { link = "Constant"           })  -- arguments object
   highlight(0, 'jsFuncArgOperator',       { fg = colors.white,      bg = 'NONE'            })  -- = in default params
 
   -- Variables/Properties
@@ -318,7 +318,7 @@ javascript.setupHighlighting = function()
   highlight(0, '@keyword.import.javascript',        { fg = colors.blue,      bg = 'NONE' })  -- import, export, from
   highlight(0, '@keyword.coroutine.javascript',     { fg = colors.blue,      bg = 'NONE' })  -- async, await, yield
   highlight(0, '@keyword.type.javascript',          { fg = colors.blue,      bg = 'NONE' })  -- class, interface
-  highlight(0, '@keyword.directive.javascript',     { fg = colors.pink,      bg = 'NONE' })  -- "use strict"
+  highlight(0, '@keyword.directive.javascript',     { link = "Keyword"})  -- "use strict"
 
   -- Attributes (Decorators)
   highlight(0, '@attribute.javascript',             { fg = colors.pink,      bg = 'NONE' })  -- @decorators
@@ -341,7 +341,7 @@ javascript.setupHighlighting = function()
 
   -- Comments
   highlight(0, '@comment.javascript',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.javascript', { fg = colors.red,       bg = 'NONE' })  -- JSDoc comments
+  highlight(0, '@comment.documentation.javascript', { link = "Ignore" })  -- JSDoc comments
 
   -- Operators and Punctuation
   highlight(0, '@operator.javascript',              { fg = colors.white,     bg = 'NONE' })  -- +, -, =, etc.
@@ -362,10 +362,10 @@ javascript.setupHighlighting = function()
   highlight(0, '@lsp.type.enum.javascript',         { fg = colors.turquoise, bg = 'NONE' })  -- Enums
   highlight(0, '@lsp.type.enumMember.javascript',   { fg = colors.pink,      bg = 'NONE' })  -- Enum members
   highlight(0, '@lsp.type.function.javascript',     { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.method.javascript',       { fg = colors.orange,    bg = 'NONE' })  -- Methods
-  highlight(0, '@lsp.type.variable.javascript',     { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@lsp.type.parameter.javascript',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
-  highlight(0, '@lsp.type.property.javascript',     { fg = colors.purple,    bg = 'NONE' })  -- Properties
+  highlight(0, '@lsp.type.method.javascript',       { link = "Function" })  -- Methods
+  highlight(0, '@lsp.type.variable.javascript',     { link = "Constant" })  -- Variables
+  highlight(0, '@lsp.type.parameter.javascript',    { link = "Constant" })  -- Parameters
+  highlight(0, '@lsp.type.property.javascript',     { link = "Constant" })  -- Properties
   highlight(0, '@lsp.type.namespace.javascript',    { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
   highlight(0, '@lsp.type.keyword.javascript',      { fg = colors.blue,      bg = 'NONE' })  -- Keywords
   highlight(0, '@lsp.type.decorator.javascript',    { fg = colors.pink,      bg = 'NONE' })  -- Decorators
@@ -375,14 +375,14 @@ javascript.setupHighlighting = function()
   highlight(0, '@lsp.type.comment.javascript',      { fg = colors.red,       bg = 'NONE' })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.javascript',    { fg = colors.pink,      bg = 'NONE' })  -- const variables
-  highlight(0, '@lsp.typemod.variable.defaultLibrary.javascript', { fg = colors.pink,   bg = 'NONE' })  -- Built-in variables
-  highlight(0, '@lsp.typemod.function.declaration.javascript', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
-  highlight(0, '@lsp.typemod.function.defaultLibrary.javascript', { fg = colors.orange, bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@lsp.typemod.variable.readonly.javascript',       { link = "Constant" })  -- const variables
+  highlight(0, '@lsp.typemod.variable.defaultLibrary.javascript', { link = "Constant" })  -- Built-in variables
+  highlight(0, '@lsp.typemod.function.declaration.javascript',    { link = "Function" })  -- Function declarations
+  highlight(0, '@lsp.typemod.function.defaultLibrary.javascript', { link = "Function" })  -- Built-in functions
   highlight(0, '@lsp.typemod.class.declaration.javascript',    { fg = colors.turquoise, bg = 'NONE' })  -- Class declarations
   highlight(0, '@lsp.typemod.class.defaultLibrary.javascript', { fg = colors.turquoise, bg = 'NONE' })  -- Built-in classes
-  highlight(0, '@lsp.typemod.property.declaration.javascript', { fg = colors.purple,    bg = 'NONE' })  -- Property declarations
-  highlight(0, '@lsp.typemod.parameter.declaration.javascript', { fg = colors.purple,   bg = 'NONE' })  -- Parameter declarations
+  highlight(0, '@lsp.typemod.property.declaration.javascript',  { link = "Constant" })  -- Property declarations
+  highlight(0, '@lsp.typemod.parameter.declaration.javascript', { link = "Constant"})  -- Parameter declarations
 end
 
 return javascript
