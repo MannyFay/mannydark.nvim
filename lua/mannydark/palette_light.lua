@@ -6,8 +6,8 @@ local colors = {
   ------------------------------------------------------------------------------
   -- Base Colors (inverted for light theme)
 
-  black      = '#FFFFFF',  -- Main background (white)
-  white      = '#383A42',  -- Main foreground text (dark gray)
+  black      = '#FEFEFE',  -- Main background (white)
+  white      = '#404040',  -- Main foreground text (dark gray)
 
   ------------------------------------------------------------------------------
   -- Grays (adjusted for light background)
@@ -20,7 +20,7 @@ local colors = {
   -- Syntax Highlighting (adjusted for readability on light background)
 
   -- Keywords, control flow (darker blue)
-  blue       = '#4078F2',
+  blue       = '#569CD6',
 
   -- LSP references, subtle blue backgrounds
   blueLight  = '#D6E4FF',
@@ -32,10 +32,11 @@ local colors = {
   green      = '#2E8B57',
 
   -- Numbers, numeric literals
-  greenLight = '#50A14F',
+  -- greenLight = '#50A14F',
+  greenLight = '#A5C25C',
 
   -- Functions, method names
-  orange     = '#C18401',
+  orange     = '#E8BF6A',
 
   -- Warning backgrounds, subtle highlights
   orangeDark = '#FFF3CD',
@@ -44,16 +45,16 @@ local colors = {
   pink       = '#D63384',
 
   -- Variables, parameters
-  purple     = '#A626A4',
+  purple     = '#C064C7',
 
   -- Comments (mannydark signature red comments)
-  red        = '#E60000',
+  red        = '#FF0000',
 
   -- Error backgrounds, diff removed backgrounds
   redDark    = '#FFE5E5',
 
   -- Strings
-  redLight   = '#986801',
+  redLight   = '#CE9178',
 
   -- Types, classes, interfaces
   turquoise  = '#0997B3',
