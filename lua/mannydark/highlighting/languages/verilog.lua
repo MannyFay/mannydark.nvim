@@ -18,7 +18,7 @@ verilog.setupHighlighting = function()
 
   -- Module/Primitive Definition
   highlight(0, 'verilogStatement',      { fg = colors.blue,       bg = 'NONE' })  -- General statements
-  highlight(0, 'verilogKeyword',        { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, 'verilogKeyword',        { link = "Keyword" })  -- Keywords
   highlight(0, 'verilogModule',         { fg = colors.blue,       bg = 'NONE' })  -- module keyword
   highlight(0, 'verilogEndmodule',      { fg = colors.blue,       bg = 'NONE' })  -- endmodule keyword
   highlight(0, 'verilogMacromodule',    { fg = colors.blue,       bg = 'NONE' })  -- macromodule keyword
@@ -62,7 +62,7 @@ verilog.setupHighlighting = function()
   highlight(0, 'verilogRelease',        { fg = colors.blue,       bg = 'NONE' })  -- release keyword
 
   -- Control Flow
-  highlight(0, 'verilogConditional',    { fg = colors.blue,       bg = 'NONE' })  -- if, else
+  highlight(0, 'verilogConditional',    { link = "Conditional" })  -- if, else
   highlight(0, 'verilogCase',           { fg = colors.blue,       bg = 'NONE' })  -- case, casex, casez, endcase
   highlight(0, 'verilogDefault',        { fg = colors.blue,       bg = 'NONE' })  -- default keyword
   highlight(0, 'verilogRepeat',         { fg = colors.blue,       bg = 'NONE' })  -- for, while, repeat, forever
@@ -74,7 +74,7 @@ verilog.setupHighlighting = function()
   highlight(0, 'verilogJoin',           { fg = colors.blue,       bg = 'NONE' })  -- join keyword
 
   -- Functions/Tasks
-  highlight(0, 'verilogFunction',       { fg = colors.blue,       bg = 'NONE' })  -- function keyword
+  highlight(0, 'verilogFunction',       { link = "Function" })  -- function keyword
   highlight(0, 'verilogEndfunction',    { fg = colors.blue,       bg = 'NONE' })  -- endfunction keyword
   highlight(0, 'verilogTask',           { fg = colors.blue,       bg = 'NONE' })  -- task keyword
   highlight(0, 'verilogEndtask',        { fg = colors.blue,       bg = 'NONE' })  -- endtask keyword
@@ -130,7 +130,7 @@ verilog.setupHighlighting = function()
 
   -- Data Types (Extended)
   highlight(0, 'systemverilogStatement', { fg = colors.blue,      bg = 'NONE' })  -- General statements
-  highlight(0, 'systemverilogTypeDef',   { fg = colors.blue,      bg = 'NONE' })  -- Type definitions
+  highlight(0, 'systemverilogTypeDef',   { link = "Type" })  -- Type definitions
   highlight(0, 'systemverilogLogic',     { fg = colors.blue,      bg = 'NONE' })  -- logic keyword
   highlight(0, 'systemverilogBit',       { fg = colors.blue,      bg = 'NONE' })  -- bit keyword
   highlight(0, 'systemverilogByte',      { fg = colors.blue,      bg = 'NONE' })  -- byte keyword
@@ -138,7 +138,7 @@ verilog.setupHighlighting = function()
   highlight(0, 'systemverilogInt',       { fg = colors.blue,      bg = 'NONE' })  -- int keyword
   highlight(0, 'systemverilogLongint',   { fg = colors.blue,      bg = 'NONE' })  -- longint keyword
   highlight(0, 'systemverilogShortreal', { fg = colors.blue,      bg = 'NONE' })  -- shortreal keyword
-  highlight(0, 'systemverilogString',    { fg = colors.blue,      bg = 'NONE' })  -- string type keyword
+  highlight(0, 'systemverilogString',    { link = "String" })  -- string type keyword
   highlight(0, 'systemverilogVoid',      { fg = colors.blue,      bg = 'NONE' })  -- void keyword
   highlight(0, 'systemverilogChandle',   { fg = colors.blue,      bg = 'NONE' })  -- chandle keyword
 
@@ -146,7 +146,7 @@ verilog.setupHighlighting = function()
   highlight(0, 'systemverilogStruct',    { fg = colors.blue,      bg = 'NONE' })  -- struct keyword
   highlight(0, 'systemverilogUnion',     { fg = colors.blue,      bg = 'NONE' })  -- union keyword
   highlight(0, 'systemverilogEnum',      { fg = colors.blue,      bg = 'NONE' })  -- enum keyword
-  highlight(0, 'systemverilogTypedef',   { fg = colors.blue,      bg = 'NONE' })  -- typedef keyword
+  highlight(0, 'systemverilogTypedef',   { link = "Type" })  -- typedef keyword
   highlight(0, 'systemverilogPacked',    { fg = colors.blue,      bg = 'NONE' })  -- packed keyword
   highlight(0, 'systemverilogTagged',    { fg = colors.blue,      bg = 'NONE' })  -- tagged keyword
 
@@ -201,7 +201,7 @@ verilog.setupHighlighting = function()
   highlight(0, 'systemverilogAlwaysLatch', { fg = colors.blue,    bg = 'NONE' })  -- always_latch keyword
 
   -- Control Flow (Extended)
-  highlight(0, 'systemverilogConditional', { fg = colors.blue,    bg = 'NONE' })  -- if, else, unique, priority
+  highlight(0, 'systemverilogConditional', { link = "Conditional" })  -- if, else, unique, priority
   highlight(0, 'systemverilogRepeat',    { fg = colors.blue,      bg = 'NONE' })  -- for, foreach, while, do, repeat, forever
   highlight(0, 'systemverilogForeach',   { fg = colors.blue,      bg = 'NONE' })  -- foreach keyword
   highlight(0, 'systemverilogReturn',    { fg = colors.blue,      bg = 'NONE' })  -- return keyword
@@ -284,17 +284,17 @@ verilog.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Types
 
-  highlight(0, 'verilogType',           { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, 'systemverilogType',     { fg = colors.turquoise,  bg = 'NONE' })  -- SV Type names
+  highlight(0, 'verilogType',           { link = "Type" })  -- Type names
+  highlight(0, 'systemverilogType',     { link = "Type" })  -- SV Type names
 
   -- Net Types
-  highlight(0, 'verilogNetType',        { fg = colors.turquoise,  bg = 'NONE' })  -- wire, reg, tri, etc.
+  highlight(0, 'verilogNetType',        { link = "Type" })  -- wire, reg, tri, etc.
 
   -- Variable Types
-  highlight(0, 'verilogVarType',        { fg = colors.turquoise,  bg = 'NONE' })  -- integer, real, time, etc.
+  highlight(0, 'verilogVarType',        { link = "Type" })  -- integer, real, time, etc.
 
   -- SystemVerilog Types
-  highlight(0, 'systemverilogDataType', { fg = colors.turquoise,  bg = 'NONE' })  -- logic, bit, byte, int, etc.
+  highlight(0, 'systemverilogDataType', { link = "Type" })  -- logic, bit, byte, int, etc.
 
 
   -----------------------------------------------------------------------------
@@ -308,22 +308,22 @@ verilog.setupHighlighting = function()
   -- Constants and Literals
 
   -- Numbers
-  highlight(0, 'verilogNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'verilogNumber',         { link = "Number" })  -- Numbers
   highlight(0, 'verilogBinary',         { fg = colors.greenLight, bg = 'NONE' })  -- Binary (4'b1010)
   highlight(0, 'verilogOctal',          { fg = colors.greenLight, bg = 'NONE' })  -- Octal (8'o77)
   highlight(0, 'verilogDecimal',        { fg = colors.greenLight, bg = 'NONE' })  -- Decimal (8'd255)
   highlight(0, 'verilogHex',            { fg = colors.greenLight, bg = 'NONE' })  -- Hex (8'hFF)
   highlight(0, 'verilogReal',           { fg = colors.greenLight, bg = 'NONE' })  -- Real numbers
-  highlight(0, 'systemverilogNumber',   { fg = colors.greenLight, bg = 'NONE' })  -- SV numbers
+  highlight(0, 'systemverilogNumber',   { link = "Number" })  -- SV numbers
 
   -- Constants
-  highlight(0, 'verilogConstant',       { fg = colors.purple,     bg = 'NONE' })  -- Constants
+  highlight(0, 'verilogConstant',       { link = "Constant" })  -- Constants
   highlight(0, 'verilogGlobal',         { fg = colors.purple,     bg = 'NONE' })  -- Global constants
 
   -- Strings
-  highlight(0, 'verilogString',         { fg = colors.redLight,   bg = 'NONE' })  -- String literals
+  highlight(0, 'verilogString',         { link = "String" })  -- String literals
   highlight(0, 'verilogEscape',         { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences (\n, \t)
-  highlight(0, 'systemverilogBlockString', { fg = colors.redLight, bg = 'NONE' }) -- SV block strings
+  highlight(0, 'systemverilogBlockString', { link = "String" }) -- SV block strings
 
   -- Characters
   highlight(0, 'verilogCharacter',      { fg = colors.redLight,   bg = 'NONE' })  -- Character constants
@@ -335,8 +335,8 @@ verilog.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Operators
 
-  highlight(0, 'verilogOperator',       { fg = colors.white,      bg = 'NONE' })  -- Operators
-  highlight(0, 'systemverilogOperator', { fg = colors.white,      bg = 'NONE' })  -- SV operators
+  highlight(0, 'verilogOperator',       { link = "Operator" })  -- Operators
+  highlight(0, 'systemverilogOperator', { link = "Operator" })  -- SV operators
 
   -- Bitwise Operators
   highlight(0, 'verilogBitwiseOp',      { fg = colors.white,      bg = 'NONE' })  -- &, |, ^, ~
@@ -386,7 +386,7 @@ verilog.setupHighlighting = function()
   -- System Tasks and Functions
 
   highlight(0, 'verilogSystemTask',     { fg = colors.orange,     bg = 'NONE' })  -- System tasks ($xxx)
-  highlight(0, 'verilogSystemFunction', { fg = colors.orange,     bg = 'NONE' })  -- System functions
+  highlight(0, 'verilogSystemFunction', { link = "Function" })  -- System functions
 
   -- Display Tasks
   highlight(0, 'verilogDisplay',        { fg = colors.orange,     bg = 'NONE' })  -- $display, $displayb, $displayh, $displayo
@@ -422,7 +422,7 @@ verilog.setupHighlighting = function()
   highlight(0, 'verilogExit',           { fg = colors.orange,     bg = 'NONE' })  -- $exit
 
   -- Time Functions
-  highlight(0, 'verilogTimeFunc',       { fg = colors.orange,     bg = 'NONE' })  -- $time, $stime, $realtime
+  highlight(0, 'verilogTimeFunc',       { link = "Function" })  -- $time, $stime, $realtime
 
   -- Random Functions
   highlight(0, 'verilogRandom',         { fg = colors.orange,     bg = 'NONE' })  -- $random
@@ -463,7 +463,7 @@ verilog.setupHighlighting = function()
   highlight(0, 'verilogAsinh',          { fg = colors.orange,     bg = 'NONE' })  -- $asinh, $acosh, $atanh
 
   -- Array Query Functions (SystemVerilog)
-  highlight(0, 'systemverilogArrayFunc', { fg = colors.orange,    bg = 'NONE' })  -- $size, $dimensions, etc.
+  highlight(0, 'systemverilogArrayFunc', { link = "Function" })  -- $size, $dimensions, etc.
   highlight(0, 'verilogSize',           { fg = colors.orange,     bg = 'NONE' })  -- $size
   highlight(0, 'verilogDimensions',     { fg = colors.orange,     bg = 'NONE' })  -- $dimensions
   highlight(0, 'verilogUnpacked',       { fg = colors.orange,     bg = 'NONE' })  -- $unpacked_dimensions
@@ -485,12 +485,12 @@ verilog.setupHighlighting = function()
   highlight(0, 'verilogCountones',      { fg = colors.orange,     bg = 'NONE' })  -- $countones
 
   -- Type Functions
-  highlight(0, 'verilogTypename',       { fg = colors.orange,     bg = 'NONE' })  -- $typename
+  highlight(0, 'verilogTypename',       { link = "Type" })  -- $typename
   highlight(0, 'verilogBits',           { fg = colors.orange,     bg = 'NONE' })  -- $bits
   highlight(0, 'verilogCast',           { fg = colors.orange,     bg = 'NONE' })  -- $cast
 
   -- Coverage Functions
-  highlight(0, 'verilogCoverageFunc',   { fg = colors.orange,     bg = 'NONE' })  -- $coverage_control, etc.
+  highlight(0, 'verilogCoverageFunc',   { link = "Function" })  -- $coverage_control, etc.
 
   -- Randomization Methods
   highlight(0, 'verilogRandomize',      { fg = colors.orange,     bg = 'NONE' })  -- randomize()
@@ -498,20 +498,20 @@ verilog.setupHighlighting = function()
   highlight(0, 'verilogPostRandomize',  { fg = colors.orange,     bg = 'NONE' })  -- post_randomize()
 
   -- String Methods (SystemVerilog)
-  highlight(0, 'systemverilogStringMethod', { fg = colors.orange, bg = 'NONE' })  -- len, putc, getc, substr, etc.
+  highlight(0, 'systemverilogStringMethod', { link = "String" })  -- len, putc, getc, substr, etc.
 
   -- Array Methods (SystemVerilog)
-  highlight(0, 'systemverilogArrayMethod', { fg = colors.orange,  bg = 'NONE' })  -- find, sort, reverse, shuffle, etc.
+  highlight(0, 'systemverilogArrayMethod', { link = "Function" })  -- find, sort, reverse, shuffle, etc.
 
 
   -----------------------------------------------------------------------------
   -- Comments
 
-  highlight(0, 'verilogComment',        { fg = colors.red,        bg = 'NONE' })  -- // and /* */ comments
-  highlight(0, 'verilogLineComment',    { fg = colors.red,        bg = 'NONE' })  -- // comments
-  highlight(0, 'verilogBlockComment',   { fg = colors.red,        bg = 'NONE' })  -- /* */ comments
+  highlight(0, 'verilogComment',        { link = "Comment" })  -- // and /* */ comments
+  highlight(0, 'verilogLineComment',    { link = "Comment" })  -- // comments
+  highlight(0, 'verilogBlockComment',   { link = "Comment" })  -- /* */ comments
   highlight(0, 'verilogTodo',           { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO
-  highlight(0, 'systemverilogComment',  { fg = colors.red,        bg = 'NONE' })  -- SV comments
+  highlight(0, 'systemverilogComment',  { link = "Comment" })  -- SV comments
 
 
   -----------------------------------------------------------------------------
@@ -528,7 +528,7 @@ verilog.setupHighlighting = function()
 
   highlight(0, 'verilogIdentifier',     { fg = colors.white,      bg = 'NONE' })  -- Identifiers
   highlight(0, 'verilogSignalName',     { fg = colors.white,      bg = 'NONE' })  -- Signal names
-  highlight(0, 'verilogFunctionName',   { fg = colors.orange,     bg = 'NONE' })  -- Function names
+  highlight(0, 'verilogFunctionName',   { link = "Function" })  -- Function names
   highlight(0, 'verilogTaskName',       { fg = colors.orange,     bg = 'NONE' })  -- Task names
 
 
@@ -542,39 +542,39 @@ verilog.setupHighlighting = function()
   -- Treesitter Groups (@xxx.verilog)
 
   -- Variables
-  highlight(0, '@variable.verilog',              { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.verilog',      { fg = colors.purple,     bg = 'NONE' })  -- Built-in variables
-  highlight(0, '@variable.member.verilog',       { fg = colors.purple,     bg = 'NONE' })  -- Struct members
-  highlight(0, '@variable.parameter.verilog',    { fg = colors.purple,     bg = 'NONE' })  -- Parameters
+  highlight(0, '@variable.verilog',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.verilog',      { link = "Variable" })  -- Built-in variables
+  highlight(0, '@variable.member.verilog',       { link = "Variable" })  -- Struct members
+  highlight(0, '@variable.parameter.verilog',    { link = "Variable" })  -- Parameters
 
   -- Constants
-  highlight(0, '@constant.verilog',              { fg = colors.purple,     bg = 'NONE' })  -- Constants
+  highlight(0, '@constant.verilog',              { link = "Constant" })  -- Constants
 
   -- Types
-  highlight(0, '@type.verilog',                  { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.verilog',          { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.verilog',       { fg = colors.turquoise,  bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.verilog',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.verilog',          { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.verilog',       { link = "Type" })  -- Type definitions
 
   -- Functions
-  highlight(0, '@function.verilog',              { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.verilog',         { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.verilog',      { fg = colors.orange,     bg = 'NONE' })  -- System tasks/functions
+  highlight(0, '@function.verilog',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.verilog',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.verilog',      { link = "Function" })  -- System tasks/functions
 
   -- Constructors
   highlight(0, '@constructor.verilog',           { fg = colors.turquoise,  bg = 'NONE' })  -- new()
 
   -- Keywords
-  highlight(0, '@keyword.verilog',               { fg = colors.blue,       bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.type.verilog',          { fg = colors.blue,       bg = 'NONE' })  -- wire, reg, logic, etc.
-  highlight(0, '@keyword.function.verilog',      { fg = colors.blue,       bg = 'NONE' })  -- function, task
-  highlight(0, '@keyword.return.verilog',        { fg = colors.blue,       bg = 'NONE' })  -- return
-  highlight(0, '@keyword.repeat.verilog',        { fg = colors.blue,       bg = 'NONE' })  -- for, while, repeat, forever
-  highlight(0, '@keyword.conditional.verilog',   { fg = colors.blue,       bg = 'NONE' })  -- if, else, case
-  highlight(0, '@keyword.conditional.ternary.verilog', { fg = colors.white, bg = 'NONE' })  -- ? :
-  highlight(0, '@keyword.operator.verilog',      { fg = colors.white,      bg = 'NONE' })  -- and, or, not (gate)
-  highlight(0, '@keyword.modifier.verilog',      { fg = colors.blue,       bg = 'NONE' })  -- signed, unsigned
-  highlight(0, '@keyword.import.verilog',        { fg = colors.pink,       bg = 'NONE' })  -- import
-  highlight(0, '@keyword.directive.define.verilog', { fg = colors.pink,    bg = 'NONE' })  -- `define, `include
+  highlight(0, '@keyword.verilog',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.type.verilog',          { link = "Keyword" })  -- wire, reg, logic, etc.
+  highlight(0, '@keyword.function.verilog',      { link = "Keyword" })  -- function, task
+  highlight(0, '@keyword.return.verilog',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.repeat.verilog',        { link = "Keyword" })  -- for, while, repeat, forever
+  highlight(0, '@keyword.conditional.verilog',   { link = "Conditional" })  -- if, else, case
+  highlight(0, '@keyword.conditional.ternary.verilog', { link = "Conditional" })  -- ? :
+  highlight(0, '@keyword.operator.verilog',      { link = "Operator" })  -- and, or, not (gate)
+  highlight(0, '@keyword.modifier.verilog',      { link = "Keyword" })  -- signed, unsigned
+  highlight(0, '@keyword.import.verilog',        { link = "Keyword" })  -- import
+  highlight(0, '@keyword.directive.define.verilog', { link = "Keyword" })  -- `define, `include
 
   -- Modules
   highlight(0, '@module.verilog',                { fg = colors.turquoise,  bg = 'NONE' })  -- Module names
@@ -586,69 +586,69 @@ verilog.setupHighlighting = function()
   highlight(0, '@attribute.verilog',             { fg = colors.pink,       bg = 'NONE' })  -- (* attributes *)
 
   -- Strings
-  highlight(0, '@string.verilog',                { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.special.path.verilog',   { fg = colors.redLight,   bg = 'NONE' })  -- Include paths
+  highlight(0, '@string.verilog',                { link = "String" })  -- Strings
+  highlight(0, '@string.special.path.verilog',   { link = "String" })  -- Include paths
 
   -- Numbers
-  highlight(0, '@number.verilog',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.verilog',                { link = "Number" })  -- Numbers
 
   -- Operators
-  highlight(0, '@operator.verilog',              { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.verilog',              { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.verilog',   { fg = colors.white,      bg = 'NONE' })  -- ( ) [ ] { }
-  highlight(0, '@punctuation.delimiter.verilog', { fg = colors.white,      bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.verilog', { link = "Delimiter" })  -- , ; :
 
   -- Comments
-  highlight(0, '@comment.verilog',               { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.verilog',               { link = "Comment" })  -- Comments
 
 
   -----------------------------------------------------------------------------
   -- Treesitter Groups (@xxx.systemverilog) - extends verilog
 
-  highlight(0, '@variable.systemverilog',            { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@variable.builtin.systemverilog',    { fg = colors.purple,     bg = 'NONE' })  -- this, super
-  highlight(0, '@variable.member.systemverilog',     { fg = colors.purple,     bg = 'NONE' })
-  highlight(0, '@variable.parameter.systemverilog',  { fg = colors.purple,     bg = 'NONE' })
+  highlight(0, '@variable.systemverilog',            { link = "Variable" })
+  highlight(0, '@variable.builtin.systemverilog',    { link = "Variable" })  -- this, super
+  highlight(0, '@variable.member.systemverilog',     { link = "Variable" })
+  highlight(0, '@variable.parameter.systemverilog',  { link = "Variable" })
 
-  highlight(0, '@type.systemverilog',                { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@type.builtin.systemverilog',        { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@type.definition.systemverilog',     { fg = colors.turquoise,  bg = 'NONE' })
+  highlight(0, '@type.systemverilog',                { link = "Type" })
+  highlight(0, '@type.builtin.systemverilog',        { link = "Type" })
+  highlight(0, '@type.definition.systemverilog',     { link = "Type" })
 
-  highlight(0, '@function.systemverilog',            { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@function.call.systemverilog',       { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@function.builtin.systemverilog',    { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@function.method.systemverilog',     { fg = colors.orange,     bg = 'NONE' })
+  highlight(0, '@function.systemverilog',            { link = "Function" })
+  highlight(0, '@function.call.systemverilog',       { link = "Function" })
+  highlight(0, '@function.builtin.systemverilog',    { link = "Function" })
+  highlight(0, '@function.method.systemverilog',     { link = "Function" })
 
   highlight(0, '@constructor.systemverilog',         { fg = colors.turquoise,  bg = 'NONE' })
 
-  highlight(0, '@keyword.systemverilog',             { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.type.systemverilog',        { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.function.systemverilog',    { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.return.systemverilog',      { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.repeat.systemverilog',      { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.conditional.systemverilog', { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.modifier.systemverilog',    { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.import.systemverilog',      { fg = colors.pink,       bg = 'NONE' })
+  highlight(0, '@keyword.systemverilog',             { link = "Keyword" })
+  highlight(0, '@keyword.type.systemverilog',        { link = "Keyword" })
+  highlight(0, '@keyword.function.systemverilog',    { link = "Keyword" })
+  highlight(0, '@keyword.return.systemverilog',      { link = "Keyword" })
+  highlight(0, '@keyword.repeat.systemverilog',      { link = "Keyword" })
+  highlight(0, '@keyword.conditional.systemverilog', { link = "Conditional" })
+  highlight(0, '@keyword.modifier.systemverilog',    { link = "Keyword" })
+  highlight(0, '@keyword.import.systemverilog',      { link = "Keyword" })
 
   highlight(0, '@module.systemverilog',              { fg = colors.turquoise,  bg = 'NONE' })
   highlight(0, '@label.systemverilog',               { fg = colors.orange,     bg = 'NONE' })
   highlight(0, '@attribute.systemverilog',           { fg = colors.pink,       bg = 'NONE' })
 
-  highlight(0, '@string.systemverilog',              { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@number.systemverilog',              { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@operator.systemverilog',            { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@string.systemverilog',              { link = "String" })
+  highlight(0, '@number.systemverilog',              { link = "Number" })
+  highlight(0, '@operator.systemverilog',            { link = "Operator" })
 
   highlight(0, '@punctuation.bracket.systemverilog', { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@punctuation.delimiter.systemverilog', { fg = colors.white,    bg = 'NONE' })
+  highlight(0, '@punctuation.delimiter.systemverilog', { link = "Delimiter" })
 
-  highlight(0, '@comment.systemverilog',             { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@comment.systemverilog',             { link = "Comment" })
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.verilog)
 
-  highlight(0, '@lsp.type.variable.verilog',      { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.verilog',      { link = "Variable" })
   highlight(0, '@lsp.type.parameter.verilog',     { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.property.verilog',      { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.function.verilog',      { fg = colors.orange,     bg = 'NONE' })
@@ -659,16 +659,16 @@ verilog.setupHighlighting = function()
   highlight(0, '@lsp.type.enum.verilog',          { fg = colors.turquoise,  bg = 'NONE' })
   highlight(0, '@lsp.type.enumMember.verilog',    { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.namespace.verilog',     { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.verilog',       { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.verilog',       { link = "Keyword" })
   highlight(0, '@lsp.type.modifier.verilog',      { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.operator.verilog',      { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@lsp.type.string.verilog',        { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.verilog',        { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.verilog',       { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.operator.verilog',      { link = "Operator" })
+  highlight(0, '@lsp.type.string.verilog',        { link = "String" })
+  highlight(0, '@lsp.type.number.verilog',        { link = "Number" })
+  highlight(0, '@lsp.type.comment.verilog',       { link = "Comment" })
   highlight(0, '@lsp.type.macro.verilog',         { fg = colors.pink,       bg = 'NONE' })
 
   -- LSP Semantic Tokens (@lsp.type.xxx.systemverilog)
-  highlight(0, '@lsp.type.variable.systemverilog',   { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.systemverilog',   { link = "Variable" })
   highlight(0, '@lsp.type.parameter.systemverilog',  { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.property.systemverilog',   { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.function.systemverilog',   { fg = colors.orange,     bg = 'NONE' })
@@ -679,12 +679,12 @@ verilog.setupHighlighting = function()
   highlight(0, '@lsp.type.enum.systemverilog',       { fg = colors.turquoise,  bg = 'NONE' })
   highlight(0, '@lsp.type.enumMember.systemverilog', { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.namespace.systemverilog',  { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.systemverilog',    { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.systemverilog',    { link = "Keyword" })
   highlight(0, '@lsp.type.modifier.systemverilog',   { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.operator.systemverilog',   { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@lsp.type.string.systemverilog',     { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.systemverilog',     { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.systemverilog',    { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.operator.systemverilog',   { link = "Operator" })
+  highlight(0, '@lsp.type.string.systemverilog',     { link = "String" })
+  highlight(0, '@lsp.type.number.systemverilog',     { link = "Number" })
+  highlight(0, '@lsp.type.comment.systemverilog',    { link = "Comment" })
   highlight(0, '@lsp.type.macro.systemverilog',      { fg = colors.pink,       bg = 'NONE' })
 
 

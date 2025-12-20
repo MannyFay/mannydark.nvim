@@ -17,18 +17,18 @@ starlark.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Comments
-  highlight(0, 'starlarkComment',          { fg = colors.red,        bg = 'NONE' })  -- # comments
+  highlight(0, 'starlarkComment',          { link = "Comment" })  -- # comments
   highlight(0, 'starlarkTodo',             { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Keywords
-  highlight(0, 'starlarkKeyword',          { fg = colors.pink,       bg = 'NONE' })  -- def, if, for, etc.
+  highlight(0, 'starlarkKeyword',          { link = "Keyword" })  -- def, if, for, etc.
   highlight(0, 'starlarkDef',              { fg = colors.pink,       bg = 'NONE' })  -- def
   highlight(0, 'starlarkLambda',           { fg = colors.pink,       bg = 'NONE' })  -- lambda
   highlight(0, 'starlarkReturn',           { fg = colors.pink,       bg = 'NONE' })  -- return
   highlight(0, 'starlarkPass',             { fg = colors.pink,       bg = 'NONE' })  -- pass
 
   -- Control Flow
-  highlight(0, 'starlarkConditional',      { fg = colors.pink,       bg = 'NONE' })  -- if, elif, else
+  highlight(0, 'starlarkConditional',      { link = "Conditional" })  -- if, elif, else
   highlight(0, 'starlarkIf',               { fg = colors.pink,       bg = 'NONE' })  -- if
   highlight(0, 'starlarkElif',             { fg = colors.pink,       bg = 'NONE' })  -- elif
   highlight(0, 'starlarkElse',             { fg = colors.pink,       bg = 'NONE' })  -- else
@@ -39,7 +39,7 @@ starlark.setupHighlighting = function()
   highlight(0, 'starlarkContinue',         { fg = colors.pink,       bg = 'NONE' })  -- continue
 
   -- Logical Operators (keywords)
-  highlight(0, 'starlarkOperatorKeyword',  { fg = colors.pink,       bg = 'NONE' })  -- and, or, not
+  highlight(0, 'starlarkOperatorKeyword',  { link = "Operator" })  -- and, or, not
   highlight(0, 'starlarkAnd',              { fg = colors.pink,       bg = 'NONE' })  -- and
   highlight(0, 'starlarkOr',               { fg = colors.pink,       bg = 'NONE' })  -- or
   highlight(0, 'starlarkNot',              { fg = colors.pink,       bg = 'NONE' })  -- not
@@ -51,26 +51,26 @@ starlark.setupHighlighting = function()
   highlight(0, 'starlarkReserved',         { fg = colors.gray,       bg = 'NONE' })  -- class, try, etc.
 
   -- Boolean and None
-  highlight(0, 'starlarkBoolean',          { fg = colors.blue,       bg = 'NONE' })  -- True, False
+  highlight(0, 'starlarkBoolean',          { link = "Boolean" })  -- True, False
   highlight(0, 'starlarkTrue',             { fg = colors.blue,       bg = 'NONE' })  -- True
   highlight(0, 'starlarkFalse',            { fg = colors.blue,       bg = 'NONE' })  -- False
   highlight(0, 'starlarkNone',             { fg = colors.blue,       bg = 'NONE' })  -- None
 
   -- Numbers
-  highlight(0, 'starlarkNumber',           { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'starlarkNumber',           { link = "Number" })  -- Numbers
   highlight(0, 'starlarkInteger',          { fg = colors.greenLight, bg = 'NONE' })  -- Integers
   highlight(0, 'starlarkFloat',            { fg = colors.greenLight, bg = 'NONE' })  -- Floats
-  highlight(0, 'starlarkHexNumber',        { fg = colors.greenLight, bg = 'NONE' })  -- 0xFF
-  highlight(0, 'starlarkOctNumber',        { fg = colors.greenLight, bg = 'NONE' })  -- 0o77
-  highlight(0, 'starlarkBinNumber',        { fg = colors.greenLight, bg = 'NONE' })  -- 0b1010
+  highlight(0, 'starlarkHexNumber',        { link = "Number" })  -- 0xFF
+  highlight(0, 'starlarkOctNumber',        { link = "Number" })  -- 0o77
+  highlight(0, 'starlarkBinNumber',        { link = "Number" })  -- 0b1010
 
   -- Strings
-  highlight(0, 'starlarkString',           { fg = colors.redLight,   bg = 'NONE' })  -- "string"
-  highlight(0, 'starlarkStringDouble',     { fg = colors.redLight,   bg = 'NONE' })  -- "double"
-  highlight(0, 'starlarkStringSingle',     { fg = colors.redLight,   bg = 'NONE' })  -- 'single'
-  highlight(0, 'starlarkStringTriple',     { fg = colors.redLight,   bg = 'NONE' })  -- """triple"""
-  highlight(0, 'starlarkRawString',        { fg = colors.redLight,   bg = 'NONE' })  -- r"raw"
-  highlight(0, 'starlarkDocstring',        { fg = colors.red,        bg = 'NONE' })  -- Docstrings
+  highlight(0, 'starlarkString',           { link = "String" })  -- "string"
+  highlight(0, 'starlarkStringDouble',     { link = "String" })  -- "double"
+  highlight(0, 'starlarkStringSingle',     { link = "String" })  -- 'single'
+  highlight(0, 'starlarkStringTriple',     { link = "String" })  -- """triple"""
+  highlight(0, 'starlarkRawString',        { link = "String" })  -- r"raw"
+  highlight(0, 'starlarkDocstring',        { link = "String" })  -- Docstrings
 
   -- Escape Sequences
   highlight(0, 'starlarkEscape',           { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, \\, etc.
@@ -82,11 +82,11 @@ starlark.setupHighlighting = function()
 
   -- Identifiers and Variables
   highlight(0, 'starlarkIdentifier',       { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, 'starlarkVariable',         { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, 'starlarkVariable',         { link = "Variable" })  -- Variables
 
   -- Functions
-  highlight(0, 'starlarkFunction',         { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, 'starlarkFunctionCall',     { fg = colors.orange,     bg = 'NONE' })  -- Function calls
+  highlight(0, 'starlarkFunction',         { link = "Function" })  -- Function definitions
+  highlight(0, 'starlarkFunctionCall',     { link = "Function" })  -- Function calls
   highlight(0, 'starlarkParameter',        { fg = colors.purple,     bg = 'NONE' })  -- Function parameters
 
   -- Attributes/Members
@@ -94,7 +94,7 @@ starlark.setupHighlighting = function()
   highlight(0, 'starlarkMember',           { fg = colors.blue,       bg = 'NONE' })  -- obj.member
 
   -- Operators
-  highlight(0, 'starlarkOperator',         { fg = colors.white,      bg = 'NONE' })  -- General operators
+  highlight(0, 'starlarkOperator',         { link = "Operator" })  -- General operators
   highlight(0, 'starlarkArithmeticOp',     { fg = colors.white,      bg = 'NONE' })  -- + - * / // %
   highlight(0, 'starlarkComparisonOp',     { fg = colors.white,      bg = 'NONE' })  -- == != < > <= >=
   highlight(0, 'starlarkBitwiseOp',        { fg = colors.white,      bg = 'NONE' })  -- & | ^ ~ << >>
@@ -113,7 +113,7 @@ starlark.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Built-in Functions
 
-  highlight(0, 'starlarkBuiltin',          { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, 'starlarkBuiltin',          { link = "Function" })  -- Built-in functions
 
   -- Core Built-ins
   highlight(0, 'starlarkBuiltinAbs',       { fg = colors.orange,     bg = 'NONE' })  -- abs
@@ -142,7 +142,7 @@ starlark.setupHighlighting = function()
   highlight(0, 'starlarkBuiltinSorted',    { fg = colors.orange,     bg = 'NONE' })  -- sorted
   highlight(0, 'starlarkBuiltinStr',       { fg = colors.orange,     bg = 'NONE' })  -- str
   highlight(0, 'starlarkBuiltinTuple',     { fg = colors.orange,     bg = 'NONE' })  -- tuple
-  highlight(0, 'starlarkBuiltinType',      { fg = colors.orange,     bg = 'NONE' })  -- type
+  highlight(0, 'starlarkBuiltinType',      { link = "Type" })  -- type
   highlight(0, 'starlarkBuiltinZip',       { fg = colors.orange,     bg = 'NONE' })  -- zip
 
   -- Struct
@@ -153,7 +153,7 @@ starlark.setupHighlighting = function()
   -- Bazel-specific Functions (BUILD files)
 
   -- Global BUILD Functions
-  highlight(0, 'bazelFunction',            { fg = colors.orange,     bg = 'NONE' })  -- Bazel functions
+  highlight(0, 'bazelFunction',            { link = "Function" })  -- Bazel functions
   highlight(0, 'bazelGlob',                { fg = colors.orange,     bg = 'NONE' })  -- glob
   highlight(0, 'bazelSelect',              { fg = colors.orange,     bg = 'NONE' })  -- select
   highlight(0, 'bazelPackage',             { fg = colors.orange,     bg = 'NONE' })  -- package
@@ -173,7 +173,7 @@ starlark.setupHighlighting = function()
 
   -- Native Module
   highlight(0, 'bazelNative',              { fg = colors.purple,     bg = 'NONE' })  -- native
-  highlight(0, 'bazelNativeFunc',          { fg = colors.orange,     bg = 'NONE' })  -- native.* functions
+  highlight(0, 'bazelNativeFunc',          { link = "Function" })  -- native.* functions
 
 
   -----------------------------------------------------------------------------
@@ -192,7 +192,7 @@ starlark.setupHighlighting = function()
   -- Platform Rules
   highlight(0, 'bazelPlatform',            { fg = colors.turquoise,  bg = 'NONE' })  -- platform
   highlight(0, 'bazelToolchain',           { fg = colors.turquoise,  bg = 'NONE' })  -- toolchain
-  highlight(0, 'bazelToolchainType',       { fg = colors.turquoise,  bg = 'NONE' })  -- toolchain_type
+  highlight(0, 'bazelToolchainType',       { link = "Type" })  -- toolchain_type
   highlight(0, 'bazelConstraintSetting',   { fg = colors.turquoise,  bg = 'NONE' })  -- constraint_setting
   highlight(0, 'bazelConstraintValue',     { fg = colors.turquoise,  bg = 'NONE' })  -- constraint_value
 
@@ -323,7 +323,7 @@ starlark.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- WORKSPACE Functions
 
-  highlight(0, 'bazelWorkspaceFunc',       { fg = colors.orange,     bg = 'NONE' })  -- WORKSPACE functions
+  highlight(0, 'bazelWorkspaceFunc',       { link = "Function" })  -- WORKSPACE functions
   highlight(0, 'bazelWorkspace',           { fg = colors.orange,     bg = 'NONE' })  -- workspace
   highlight(0, 'bazelBind',                { fg = colors.orange,     bg = 'NONE' })  -- bind
   highlight(0, 'bazelRegisterToolchains', { fg = colors.orange,     bg = 'NONE' })  -- register_toolchains
@@ -342,7 +342,7 @@ starlark.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- MODULE.bazel Functions (Bzlmod)
 
-  highlight(0, 'bazelModuleFunc',          { fg = colors.orange,     bg = 'NONE' })  -- MODULE.bazel functions
+  highlight(0, 'bazelModuleFunc',          { link = "Function" })  -- MODULE.bazel functions
   highlight(0, 'bazelModule',              { fg = colors.orange,     bg = 'NONE' })  -- module
   highlight(0, 'bazelBazelDep',            { fg = colors.orange,     bg = 'NONE' })  -- bazel_dep
   highlight(0, 'bazelUseRepoRule',         { fg = colors.orange,     bg = 'NONE' })  -- use_repo_rule
@@ -376,10 +376,10 @@ starlark.setupHighlighting = function()
   highlight(0, 'starlarkAttrLabelKeyedStr',{ fg = colors.orange,     bg = 'NONE' })  -- attr.label_keyed_string_dict
   highlight(0, 'starlarkAttrOutput',       { fg = colors.orange,     bg = 'NONE' })  -- attr.output
   highlight(0, 'starlarkAttrOutputList',   { fg = colors.orange,     bg = 'NONE' })  -- attr.output_list
-  highlight(0, 'starlarkAttrString',       { fg = colors.orange,     bg = 'NONE' })  -- attr.string
-  highlight(0, 'starlarkAttrStringList',   { fg = colors.orange,     bg = 'NONE' })  -- attr.string_list
-  highlight(0, 'starlarkAttrStringDict',   { fg = colors.orange,     bg = 'NONE' })  -- attr.string_dict
-  highlight(0, 'starlarkAttrStringListDict', { fg = colors.orange,   bg = 'NONE' })  -- attr.string_list_dict
+  highlight(0, 'starlarkAttrString',       { link = "String" })  -- attr.string
+  highlight(0, 'starlarkAttrStringList',   { link = "String" })  -- attr.string_list
+  highlight(0, 'starlarkAttrStringDict',   { link = "String" })  -- attr.string_dict
+  highlight(0, 'starlarkAttrStringListDict', { link = "String" })  -- attr.string_list_dict
 
   -- ctx (Context) Object
   highlight(0, 'starlarkCtx',              { fg = colors.purple,     bg = 'NONE' })  -- ctx
@@ -407,7 +407,7 @@ starlark.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- String Methods
 
-  highlight(0, 'starlarkStringMethod',     { fg = colors.orange,     bg = 'NONE' })  -- String methods
+  highlight(0, 'starlarkStringMethod',     { link = "String" })  -- String methods
   highlight(0, 'starlarkStrCapitalize',    { fg = colors.orange,     bg = 'NONE' })  -- capitalize
   highlight(0, 'starlarkStrCount',         { fg = colors.orange,     bg = 'NONE' })  -- count
   highlight(0, 'starlarkStrEndswith',      { fg = colors.orange,     bg = 'NONE' })  -- endswith
@@ -433,7 +433,7 @@ starlark.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- List Methods
 
-  highlight(0, 'starlarkListMethod',       { fg = colors.orange,     bg = 'NONE' })  -- List methods
+  highlight(0, 'starlarkListMethod',       { link = "Function" })  -- List methods
   highlight(0, 'starlarkListAppend',       { fg = colors.orange,     bg = 'NONE' })  -- append
   highlight(0, 'starlarkListClear',        { fg = colors.orange,     bg = 'NONE' })  -- clear
   highlight(0, 'starlarkListExtend',       { fg = colors.orange,     bg = 'NONE' })  -- extend
@@ -446,7 +446,7 @@ starlark.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Dict Methods
 
-  highlight(0, 'starlarkDictMethod',       { fg = colors.orange,     bg = 'NONE' })  -- Dict methods
+  highlight(0, 'starlarkDictMethod',       { link = "Function" })  -- Dict methods
   highlight(0, 'starlarkDictClear',        { fg = colors.orange,     bg = 'NONE' })  -- clear
   highlight(0, 'starlarkDictGet',          { fg = colors.orange,     bg = 'NONE' })  -- get
   highlight(0, 'starlarkDictItems',        { fg = colors.orange,     bg = 'NONE' })  -- items
@@ -462,34 +462,34 @@ starlark.setupHighlighting = function()
   -- Treesitter Groups (@xxx.starlark)
 
   -- Comments
-  highlight(0, '@comment.starlark',              { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, '@string.documentation.starlark', { fg = colors.red,        bg = 'NONE' })  -- Docstrings
+  highlight(0, '@comment.starlark',              { link = "Comment" })  -- Comments
+  highlight(0, '@string.documentation.starlark', { link = "String" })  -- Docstrings
 
   -- Keywords
-  highlight(0, '@keyword.starlark',              { fg = colors.pink,       bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.starlark',     { fg = colors.pink,       bg = 'NONE' })  -- def, lambda
-  highlight(0, '@keyword.operator.starlark',     { fg = colors.pink,       bg = 'NONE' })  -- and, or, not, in
-  highlight(0, '@keyword.return.starlark',       { fg = colors.pink,       bg = 'NONE' })  -- return
-  highlight(0, '@keyword.conditional.starlark',  { fg = colors.pink,       bg = 'NONE' })  -- if, elif, else
-  highlight(0, '@keyword.repeat.starlark',       { fg = colors.pink,       bg = 'NONE' })  -- for, break, continue
-  highlight(0, '@keyword.import.starlark',       { fg = colors.pink,       bg = 'NONE' })  -- load
+  highlight(0, '@keyword.starlark',              { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.starlark',     { link = "Keyword" })  -- def, lambda
+  highlight(0, '@keyword.operator.starlark',     { link = "Operator" })  -- and, or, not, in
+  highlight(0, '@keyword.return.starlark',       { link = "Keyword" })  -- return
+  highlight(0, '@keyword.conditional.starlark',  { link = "Conditional" })  -- if, elif, else
+  highlight(0, '@keyword.repeat.starlark',       { link = "Keyword" })  -- for, break, continue
+  highlight(0, '@keyword.import.starlark',       { link = "Keyword" })  -- load
 
   -- Types
-  highlight(0, '@type.starlark',                 { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@type.builtin.starlark',         { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
+  highlight(0, '@type.starlark',                 { link = "Type" })  -- Types
+  highlight(0, '@type.builtin.starlark',         { link = "Type" })  -- Built-in types
 
   -- Variables
-  highlight(0, '@variable.starlark',             { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, '@variable.builtin.starlark',     { fg = colors.purple,     bg = 'NONE' })  -- self, cls
-  highlight(0, '@variable.member.starlark',      { fg = colors.blue,       bg = 'NONE' })  -- Attributes
-  highlight(0, '@variable.parameter.starlark',   { fg = colors.purple,     bg = 'NONE' })  -- Parameters
+  highlight(0, '@variable.starlark',             { link = "Variable" })  -- Identifiers
+  highlight(0, '@variable.builtin.starlark',     { link = "Variable" })  -- self, cls
+  highlight(0, '@variable.member.starlark',      { link = "Variable" })  -- Attributes
+  highlight(0, '@variable.parameter.starlark',   { link = "Variable" })  -- Parameters
 
   -- Functions
-  highlight(0, '@function.starlark',             { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.starlark',        { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.starlark',     { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.method.call.starlark', { fg = colors.orange,     bg = 'NONE' })  -- Method calls
-  highlight(0, '@function.macro.starlark',       { fg = colors.orange,     bg = 'NONE' })  -- Type conversions
+  highlight(0, '@function.starlark',             { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.starlark',        { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.starlark',     { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.method.call.starlark', { link = "Function" })  -- Method calls
+  highlight(0, '@function.macro.starlark',       { link = "Function" })  -- Type conversions
   highlight(0, '@constructor.starlark',          { fg = colors.turquoise,  bg = 'NONE' })  -- Constructors
 
   -- Decorators
@@ -497,43 +497,43 @@ starlark.setupHighlighting = function()
   highlight(0, '@attribute.builtin.starlark',    { fg = colors.pink,       bg = 'NONE' })  -- Built-in decorators
 
   -- Strings
-  highlight(0, '@string.starlark',               { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.starlark',        { fg = colors.pink,       bg = 'NONE' })  -- Escapes
+  highlight(0, '@string.starlark',               { link = "String" })  -- Strings
+  highlight(0, '@string.escape.starlark',        { link = "String" })  -- Escapes
 
   -- Numbers
-  highlight(0, '@number.starlark',               { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.starlark',         { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.starlark',               { link = "Number" })  -- Integers
+  highlight(0, '@number.float.starlark',         { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.starlark',              { fg = colors.blue,       bg = 'NONE' })  -- True, False
+  highlight(0, '@boolean.starlark',              { link = "Boolean" })  -- True, False
 
   -- Constants
-  highlight(0, '@constant.starlark',             { fg = colors.blue,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.starlark',     { fg = colors.blue,       bg = 'NONE' })  -- None, etc.
+  highlight(0, '@constant.starlark',             { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.starlark',     { link = "Constant" })  -- None, etc.
 
   -- None
   highlight(0, '@none.starlark',                 { fg = colors.blue,       bg = 'NONE' })  -- None
 
   -- Operators
-  highlight(0, '@operator.starlark',             { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.starlark',             { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.starlark',  { fg = colors.white,      bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.starlark',{ fg = colors.white,      bg = 'NONE' })  -- , . : ;
+  highlight(0, '@punctuation.delimiter.starlark',{ link = "Delimiter" })  -- , . : ;
   highlight(0, '@punctuation.special.starlark',  { fg = colors.pink,       bg = 'NONE' })  -- F-string braces
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.starlark)
 
-  highlight(0, '@lsp.type.variable.starlark',    { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.starlark',    { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.starlark',   { fg = colors.purple,     bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.starlark',    { fg = colors.blue,       bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.function.starlark',    { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.string.starlark',      { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.starlark',      { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.starlark',     { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.starlark',     { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.starlark',      { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.starlark',      { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.starlark',     { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.starlark',     { link = "Comment" })  -- Comments
 
 
   -----------------------------------------------------------------------------

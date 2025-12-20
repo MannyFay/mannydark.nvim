@@ -84,9 +84,9 @@ objc.setupHighlighting = function()
   highlight(0, 'objcClassAttr',         { fg = colors.pink,       bg = 'NONE'            })  -- class (for class properties)
 
   -- Keywords (C inherited)
-  highlight(0, 'objcKeyword',           { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
+  highlight(0, 'objcKeyword',           { link = "Keyword" })  -- General keywords
   highlight(0, 'objcStatement',         { fg = colors.blue,       bg = 'NONE'            })  -- return, break, continue, goto
-  highlight(0, 'objcConditional',       { fg = colors.blue,       bg = 'NONE'            })  -- if, else, switch
+  highlight(0, 'objcConditional',       { link = "Conditional" })  -- if, else, switch
   highlight(0, 'objcRepeat',            { fg = colors.blue,       bg = 'NONE'            })  -- for, while, do
   highlight(0, 'objcLabel',             { fg = colors.blue,       bg = 'NONE'            })  -- case, default
   highlight(0, 'objcStorageClass',      { fg = colors.blue,       bg = 'NONE'            })  -- static, extern, register, auto
@@ -107,52 +107,52 @@ objc.setupHighlighting = function()
   highlight(0, 'objcBlockCaret',        { fg = colors.white,      bg = 'NONE'            })  -- ^ (block start)
 
   -- Types - Objective-C Specific
-  highlight(0, 'objcType',              { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
-  highlight(0, 'objcIdType',            { fg = colors.turquoise,  bg = 'NONE'            })  -- id
-  highlight(0, 'objcClassType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Class
-  highlight(0, 'objcSELType',           { fg = colors.turquoise,  bg = 'NONE'            })  -- SEL
-  highlight(0, 'objcIMPType',           { fg = colors.turquoise,  bg = 'NONE'            })  -- IMP
-  highlight(0, 'objcBOOLType',          { fg = colors.turquoise,  bg = 'NONE'            })  -- BOOL
+  highlight(0, 'objcType',              { link = "Type" })  -- Type names
+  highlight(0, 'objcIdType',            { link = "Type" })  -- id
+  highlight(0, 'objcClassType',         { link = "Type" })  -- Class
+  highlight(0, 'objcSELType',           { link = "Type" })  -- SEL
+  highlight(0, 'objcIMPType',           { link = "Type" })  -- IMP
+  highlight(0, 'objcBOOLType',          { link = "Type" })  -- BOOL
   highlight(0, 'objcInstancetype',      { fg = colors.turquoise,  bg = 'NONE'            })  -- instancetype
 
   -- Types - C Inherited
-  highlight(0, 'objcBuiltinType',       { fg = colors.turquoise,  bg = 'NONE'            })  -- int, char, float, double, void, etc.
-  highlight(0, 'objcSizeType',          { fg = colors.turquoise,  bg = 'NONE'            })  -- NSInteger, NSUInteger, CGFloat
+  highlight(0, 'objcBuiltinType',       { link = "Type" })  -- int, char, float, double, void, etc.
+  highlight(0, 'objcSizeType',          { link = "Type" })  -- NSInteger, NSUInteger, CGFloat
 
   -- Types - Foundation Classes
-  highlight(0, 'objcFoundationType',    { fg = colors.turquoise,  bg = 'NONE'            })  -- NSObject, NSString, NSArray, etc.
-  highlight(0, 'objcProtocolType',      { fg = colors.turquoise,  bg = 'NONE'            })  -- Protocol types <NSCopying>
+  highlight(0, 'objcFoundationType',    { link = "Type" })  -- NSObject, NSString, NSArray, etc.
+  highlight(0, 'objcProtocolType',      { link = "Type" })  -- Protocol types <NSCopying>
 
   -- Functions/Methods
-  highlight(0, 'objcMethodName',        { fg = colors.orange,     bg = 'NONE'            })  -- Method names
-  highlight(0, 'objcMethodCall',        { fg = colors.orange,     bg = 'NONE'            })  -- Method calls [obj method]
-  highlight(0, 'objcFunction',          { fg = colors.orange,     bg = 'NONE'            })  -- C functions
-  highlight(0, 'objcBuiltinFunc',       { fg = colors.orange,     bg = 'NONE'            })  -- NSLog, etc.
-  highlight(0, 'objcInstanceMethod',    { fg = colors.orange,     bg = 'NONE'            })  -- - instance methods
-  highlight(0, 'objcClassMethod',       { fg = colors.orange,     bg = 'NONE'            })  -- + class methods
-  highlight(0, 'objcMethodIndicator',   { fg = colors.white,      bg = 'NONE'            })  -- - + method indicators
+  highlight(0, 'objcMethodName',        { link = "Function" })  -- Method names
+  highlight(0, 'objcMethodCall',        { link = "Function" })  -- Method calls [obj method]
+  highlight(0, 'objcFunction',          { link = "Function" })  -- C functions
+  highlight(0, 'objcBuiltinFunc',       { link = "Function" })  -- NSLog, etc.
+  highlight(0, 'objcInstanceMethod',    { link = "Function" })  -- - instance methods
+  highlight(0, 'objcClassMethod',       { link = "Function" })  -- + class methods
+  highlight(0, 'objcMethodIndicator',   { link = "Function" })  -- - + method indicators
 
   -- Variables
   highlight(0, 'objcIdentifier',        { fg = colors.purple,     bg = 'NONE'            })  -- Identifiers
   highlight(0, 'objcParameter',         { fg = colors.purple,     bg = 'NONE'            })  -- Method parameters
-  highlight(0, 'objcIvar',              { fg = colors.purple,     bg = 'NONE'            })  -- Instance variables
+  highlight(0, 'objcIvar',              { link = "Variable" })  -- Instance variables
   highlight(0, 'objcPropertyName',      { fg = colors.purple,     bg = 'NONE'            })  -- Property names
 
   -- Constants
-  highlight(0, 'objcConstant',          { fg = colors.purple,     bg = 'NONE'            })  -- Constants
-  highlight(0, 'objcBoolean',           { fg = colors.blue,       bg = 'NONE'            })  -- YES, NO
+  highlight(0, 'objcConstant',          { link = "Constant" })  -- Constants
+  highlight(0, 'objcBoolean',           { link = "Boolean" })  -- YES, NO
   highlight(0, 'objcNil',               { fg = colors.blue,       bg = 'NONE'            })  -- nil, Nil, NULL
-  highlight(0, 'objcEnumConstant',      { fg = colors.purple,     bg = 'NONE'            })  -- Enum values
+  highlight(0, 'objcEnumConstant',      { link = "Constant" })  -- Enum values
 
   -- Literals - Strings
-  highlight(0, 'objcString',            { fg = colors.redLight,   bg = 'NONE'            })  -- @"strings"
-  highlight(0, 'objcCString',           { fg = colors.redLight,   bg = 'NONE'            })  -- "C strings"
+  highlight(0, 'objcString',            { link = "String" })  -- @"strings"
+  highlight(0, 'objcCString',           { link = "String" })  -- "C strings"
   highlight(0, 'objcCharacter',         { fg = colors.redLight,   bg = 'NONE'            })  -- 'c'
-  highlight(0, 'objcStringEscape',      { fg = colors.pink,       bg = 'NONE'            })  -- \n, \t, etc.
+  highlight(0, 'objcStringEscape',      { link = "String" })  -- \n, \t, etc.
   highlight(0, 'objcFormat',            { fg = colors.pink,       bg = 'NONE'            })  -- %@, %d, %s, etc.
 
   -- Literals - Numbers
-  highlight(0, 'objcNumber',            { fg = colors.greenLight, bg = 'NONE'            })  -- @42, numbers
+  highlight(0, 'objcNumber',            { link = "Number" })  -- @42, numbers
   highlight(0, 'objcInteger',           { fg = colors.greenLight, bg = 'NONE'            })  -- Integer literals
   highlight(0, 'objcFloat',             { fg = colors.greenLight, bg = 'NONE'            })  -- Float literals
   highlight(0, 'objcHex',               { fg = colors.greenLight, bg = 'NONE'            })  -- 0xFF hex
@@ -164,7 +164,7 @@ objc.setupHighlighting = function()
   highlight(0, 'objcBoxedExpr',         { fg = colors.redLight,   bg = 'NONE'            })  -- @()
 
   -- Operators
-  highlight(0, 'objcOperator',          { fg = colors.white,      bg = 'NONE'            })  -- + - * / % = < > ! & | ^ ~
+  highlight(0, 'objcOperator',          { link = "Operator" })  -- + - * / % = < > ! & | ^ ~
   highlight(0, 'objcPointerOp',         { fg = colors.white,      bg = 'NONE'            })  -- * & pointer operators
   highlight(0, 'objcMemberAccess',      { fg = colors.white,      bg = 'NONE'            })  -- . -> member access
   highlight(0, 'objcMsgBracket',        { fg = colors.white,      bg = 'NONE'            })  -- [ ] message brackets
@@ -178,9 +178,9 @@ objc.setupHighlighting = function()
   highlight(0, 'objcPragma',            { fg = colors.pink,       bg = 'NONE'            })  -- #pragma
 
   -- Comments
-  highlight(0, 'objcComment',           { fg = colors.red,        bg = 'NONE'            })  -- /* */ and // comments
-  highlight(0, 'objcCommentL',          { fg = colors.red,        bg = 'NONE'            })  -- // line comments
-  highlight(0, 'objcDocComment',        { fg = colors.red,        bg = 'NONE'            })  -- Documentation comments
+  highlight(0, 'objcComment',           { link = "Comment" })  -- /* */ and // comments
+  highlight(0, 'objcCommentL',          { link = "Comment" })  -- // line comments
+  highlight(0, 'objcDocComment',        { link = "Comment" })  -- Documentation comments
   highlight(0, 'objcTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Special
@@ -192,63 +192,63 @@ objc.setupHighlighting = function()
   -- Treesitter Groups (@xxx.objc)
 
   -- Variables
-  highlight(0, '@variable.objc',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.objc',      { fg = colors.blue,      bg = 'NONE' })  -- self, super
-  highlight(0, '@variable.parameter.objc',    { fg = colors.purple,    bg = 'NONE' })  -- Method parameters
-  highlight(0, '@variable.parameter.builtin.objc', { fg = colors.blue, bg = 'NONE' })  -- _cmd
-  highlight(0, '@variable.member.objc',       { fg = colors.purple,    bg = 'NONE' })  -- Instance variables
+  highlight(0, '@variable.objc',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.objc',      { link = "Variable" })  -- self, super
+  highlight(0, '@variable.parameter.objc',    { link = "Variable" })  -- Method parameters
+  highlight(0, '@variable.parameter.builtin.objc', { link = "Variable" })  -- _cmd
+  highlight(0, '@variable.member.objc',       { link = "Variable" })  -- Instance variables
 
   -- Constants
-  highlight(0, '@constant.objc',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.objc',      { fg = colors.blue,      bg = 'NONE' })  -- YES, NO, nil, Nil, NULL
-  highlight(0, '@constant.macro.objc',        { fg = colors.pink,      bg = 'NONE' })  -- Macro constants
+  highlight(0, '@constant.objc',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.objc',      { link = "Constant" })  -- YES, NO, nil, Nil, NULL
+  highlight(0, '@constant.macro.objc',        { link = "Constant" })  -- Macro constants
 
   -- Functions/Methods
-  highlight(0, '@function.objc',              { fg = colors.orange,    bg = 'NONE' })  -- C functions
-  highlight(0, '@function.builtin.objc',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.method.objc',       { fg = colors.orange,    bg = 'NONE' })  -- Method definitions
-  highlight(0, '@function.method.call.objc',  { fg = colors.orange,    bg = 'NONE' })  -- Method calls
-  highlight(0, '@function.macro.objc',        { fg = colors.pink,      bg = 'NONE' })  -- Macro functions
+  highlight(0, '@function.objc',              { link = "Function" })  -- C functions
+  highlight(0, '@function.builtin.objc',      { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.method.objc',       { link = "Function" })  -- Method definitions
+  highlight(0, '@function.method.call.objc',  { link = "Function" })  -- Method calls
+  highlight(0, '@function.macro.objc',        { link = "Function" })  -- Macro functions
   highlight(0, '@constructor.objc',           { fg = colors.orange,    bg = 'NONE' })  -- init methods
 
   -- Types
-  highlight(0, '@type.objc',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.objc',          { fg = colors.turquoise, bg = 'NONE' })  -- id, Class, SEL, BOOL, etc.
-  highlight(0, '@type.definition.objc',       { fg = colors.turquoise, bg = 'NONE' })  -- typedef definitions
-  highlight(0, '@type.qualifier.objc',        { fg = colors.blue,      bg = 'NONE' })  -- const, volatile, etc.
+  highlight(0, '@type.objc',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.objc',          { link = "Type" })  -- id, Class, SEL, BOOL, etc.
+  highlight(0, '@type.definition.objc',       { link = "Type" })  -- typedef definitions
+  highlight(0, '@type.qualifier.objc',        { link = "Type" })  -- const, volatile, etc.
 
   -- Modules
   highlight(0, '@module.objc',                { fg = colors.turquoise, bg = 'NONE' })  -- Framework/module names
 
   -- Keywords
-  highlight(0, '@keyword.objc',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.directive.objc',     { fg = colors.pink,      bg = 'NONE' })  -- @ directives
-  highlight(0, '@keyword.import.objc',        { fg = colors.pink,      bg = 'NONE' })  -- #import, #include
-  highlight(0, '@keyword.modifier.objc',      { fg = colors.pink,      bg = 'NONE' })  -- Property attributes, visibility
-  highlight(0, '@keyword.type.objc',          { fg = colors.blue,      bg = 'NONE' })  -- struct, union, enum
-  highlight(0, '@keyword.function.objc',      { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.operator.objc',      { fg = colors.blue,      bg = 'NONE' })  -- sizeof, typeof
-  highlight(0, '@keyword.coroutine.objc',     { fg = colors.blue,      bg = 'NONE' })  -- @autoreleasepool
-  highlight(0, '@keyword.exception.objc',     { fg = colors.blue,      bg = 'NONE' })  -- @try, @catch, @finally, @throw
-  highlight(0, '@keyword.conditional.objc',   { fg = colors.blue,      bg = 'NONE' })  -- if, else, switch
-  highlight(0, '@keyword.repeat.objc',        { fg = colors.blue,      bg = 'NONE' })  -- for, while, do
+  highlight(0, '@keyword.objc',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.directive.objc',     { link = "Keyword" })  -- @ directives
+  highlight(0, '@keyword.import.objc',        { link = "Keyword" })  -- #import, #include
+  highlight(0, '@keyword.modifier.objc',      { link = "Keyword" })  -- Property attributes, visibility
+  highlight(0, '@keyword.type.objc',          { link = "Keyword" })  -- struct, union, enum
+  highlight(0, '@keyword.function.objc',      { link = "Keyword" })  -- return
+  highlight(0, '@keyword.operator.objc',      { link = "Operator" })  -- sizeof, typeof
+  highlight(0, '@keyword.coroutine.objc',     { link = "Keyword" })  -- @autoreleasepool
+  highlight(0, '@keyword.exception.objc',     { link = "Keyword" })  -- @try, @catch, @finally, @throw
+  highlight(0, '@keyword.conditional.objc',   { link = "Conditional" })  -- if, else, switch
+  highlight(0, '@keyword.repeat.objc',        { link = "Keyword" })  -- for, while, do
 
   -- Strings
-  highlight(0, '@string.objc',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.objc',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.objc',        { fg = colors.pink,      bg = 'NONE' })  -- Format specifiers
+  highlight(0, '@string.objc',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.objc',         { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.objc',        { link = "String" })  -- Format specifiers
   highlight(0, '@character.objc',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
 
   -- Numbers
-  highlight(0, '@number.objc',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.objc',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.objc',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.objc',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.objc',               { fg = colors.blue,      bg = 'NONE' })  -- YES, NO
+  highlight(0, '@boolean.objc',               { link = "Boolean" })  -- YES, NO
 
   -- Comments
-  highlight(0, '@comment.objc',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.objc', { fg = colors.red,       bg = 'NONE' })  -- Doc comments
+  highlight(0, '@comment.objc',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.objc', { link = "Comment" })  -- Doc comments
 
   -- Labels
   highlight(0, '@label.objc',                 { fg = colors.blue,      bg = 'NONE' })  -- Labels
@@ -260,16 +260,16 @@ objc.setupHighlighting = function()
   highlight(0, '@property.objc',              { fg = colors.purple,    bg = 'NONE' })  -- Properties
 
   -- Operators and Punctuation
-  highlight(0, '@operator.objc',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.objc',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.objc',   { fg = colors.white,     bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.objc', { fg = colors.white,     bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.objc', { link = "Delimiter" })  -- , ; :
   highlight(0, '@punctuation.special.objc',   { fg = colors.pink,      bg = 'NONE' })  -- @ prefix
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.objc)
 
-  highlight(0, '@lsp.type.variable.objc',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.objc',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.objc',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.objc',      { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.function.objc',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
@@ -282,17 +282,17 @@ objc.setupHighlighting = function()
   highlight(0, '@lsp.type.enumMember.objc',    { fg = colors.purple,    bg = 'NONE' })  -- Enum values
   highlight(0, '@lsp.type.namespace.objc',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces/frameworks
   highlight(0, '@lsp.type.typeParameter.objc', { fg = colors.turquoise, bg = 'NONE' })  -- Generics (<ObjectType>)
-  highlight(0, '@lsp.type.keyword.objc',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.objc',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.objc',      { fg = colors.pink,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.objc',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.objc',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.objc',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.objc',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.objc',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.objc',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.objc',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.objc',       { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.decorator.objc',     { fg = colors.pink,      bg = 'NONE' })  -- Attributes
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.objc',    { fg = colors.purple,    bg = 'NONE' })  -- const variables
-  highlight(0, '@lsp.typemod.variable.static.objc',      { fg = colors.purple,    bg = 'NONE' })  -- static variables
+  highlight(0, '@lsp.typemod.variable.readonly.objc',    { link = "Variable" })  -- const variables
+  highlight(0, '@lsp.typemod.variable.static.objc',      { link = "Variable" })  -- static variables
   highlight(0, '@lsp.typemod.function.declaration.objc', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
   highlight(0, '@lsp.typemod.method.declaration.objc',   { fg = colors.orange,    bg = 'NONE' })  -- Method declarations
   highlight(0, '@lsp.typemod.method.static.objc',        { fg = colors.orange,    bg = 'NONE' })  -- Class methods (+)

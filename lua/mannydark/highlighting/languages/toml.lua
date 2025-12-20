@@ -26,11 +26,11 @@ toml.setupHighlighting = function()
   highlight(0, 'tomlTableArray',        { fg = colors.turquoise,  bg = 'NONE' })  -- [[array_of_tables]] headers
 
   -- Strings
-  highlight(0, 'tomlString',            { fg = colors.redLight,   bg = 'NONE' })  -- Basic strings "..."
-  highlight(0, 'tomlStringBasic',       { fg = colors.redLight,   bg = 'NONE' })  -- Basic strings
-  highlight(0, 'tomlStringBasicMulti',  { fg = colors.redLight,   bg = 'NONE' })  -- Multi-line basic """..."""
-  highlight(0, 'tomlStringLiteral',     { fg = colors.redLight,   bg = 'NONE' })  -- Literal strings '...'
-  highlight(0, 'tomlStringLiteralMulti',{ fg = colors.redLight,   bg = 'NONE' })  -- Multi-line literal '''...'''
+  highlight(0, 'tomlString',            { link = "String" })  -- Basic strings "..."
+  highlight(0, 'tomlStringBasic',       { link = "String" })  -- Basic strings
+  highlight(0, 'tomlStringBasicMulti',  { link = "String" })  -- Multi-line basic """..."""
+  highlight(0, 'tomlStringLiteral',     { link = "String" })  -- Literal strings '...'
+  highlight(0, 'tomlStringLiteralMulti',{ link = "String" })  -- Multi-line literal '''...'''
 
   -- Escape Sequences
   highlight(0, 'tomlEscape',            { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, \\, \", etc.
@@ -50,7 +50,7 @@ toml.setupHighlighting = function()
   highlight(0, 'tomlNan',               { fg = colors.greenLight, bg = 'NONE' })  -- nan, +nan, -nan
 
   -- Booleans
-  highlight(0, 'tomlBoolean',           { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'tomlBoolean',           { link = "Boolean" })  -- true, false
 
   -- Date/Time
   highlight(0, 'tomlDate',              { fg = colors.greenLight, bg = 'NONE' })  -- Date (YYYY-MM-DD)
@@ -63,24 +63,24 @@ toml.setupHighlighting = function()
 
   -- Arrays
   highlight(0, 'tomlArray',             { fg = colors.white,      bg = 'NONE' })  -- Array brackets []
-  highlight(0, 'tomlArrayDelim',        { fg = colors.white,      bg = 'NONE' })  -- Commas in arrays
+  highlight(0, 'tomlArrayDelim',        { link = "Delimiter" })  -- Commas in arrays
 
   -- Inline Tables
   highlight(0, 'tomlInlineTable',       { fg = colors.white,      bg = 'NONE' })  -- Inline table { }
-  highlight(0, 'tomlInlineTableDelim',  { fg = colors.white,      bg = 'NONE' })  -- Commas in inline tables
+  highlight(0, 'tomlInlineTableDelim',  { link = "Delimiter" })  -- Commas in inline tables
 
   -- Operators
   highlight(0, 'tomlAssignment',        { fg = colors.white,      bg = 'NONE' })  -- = operator
 
   -- Delimiters / Punctuation
-  highlight(0, 'tomlDelimiter',         { fg = colors.white,      bg = 'NONE' })  -- General delimiters
+  highlight(0, 'tomlDelimiter',         { link = "Delimiter" })  -- General delimiters
   highlight(0, 'tomlBracket',           { fg = colors.white,      bg = 'NONE' })  -- [ ] brackets
   highlight(0, 'tomlBrace',             { fg = colors.white,      bg = 'NONE' })  -- { } braces
   highlight(0, 'tomlComma',             { fg = colors.white,      bg = 'NONE' })  -- ,
   highlight(0, 'tomlDot',               { fg = colors.white,      bg = 'NONE' })  -- .
 
   -- Comments
-  highlight(0, 'tomlComment',           { fg = colors.red,        bg = 'NONE' })  -- # comments
+  highlight(0, 'tomlComment',           { link = "Comment" })  -- # comments
   highlight(0, 'tomlTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX, BUG
 
   -- Errors
@@ -94,46 +94,46 @@ toml.setupHighlighting = function()
   highlight(0, '@property.toml',            { fg = colors.blue,       bg = 'NONE' })  -- Key names
 
   -- Strings
-  highlight(0, '@string.toml',              { fg = colors.redLight,   bg = 'NONE' })  -- String values
-  highlight(0, '@string.escape.toml',       { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.toml',      { fg = colors.turquoise,  bg = 'NONE' })  -- Table/array headers
+  highlight(0, '@string.toml',              { link = "String" })  -- String values
+  highlight(0, '@string.escape.toml',       { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.toml',      { link = "String" })  -- Table/array headers
 
   -- Numbers
-  highlight(0, '@number.toml',              { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.toml',        { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.toml',              { link = "Number" })  -- Integers
+  highlight(0, '@number.float.toml',        { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.toml',             { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.toml',             { link = "Boolean" })  -- true, false
 
   -- Constants
-  highlight(0, '@constant.toml',            { fg = colors.blue,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.toml',    { fg = colors.greenLight, bg = 'NONE' })  -- inf, nan
+  highlight(0, '@constant.toml',            { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.toml',    { link = "Constant" })  -- inf, nan
 
   -- Comments
-  highlight(0, '@comment.toml',             { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.toml',             { link = "Comment" })  -- Comments
 
   -- Operators
-  highlight(0, '@operator.toml',            { fg = colors.white,      bg = 'NONE' })  -- = operator
+  highlight(0, '@operator.toml',            { link = "Operator" })  -- = operator
 
   -- Punctuation
-  highlight(0, '@punctuation.delimiter.toml', { fg = colors.white,    bg = 'NONE' })  -- , .
+  highlight(0, '@punctuation.delimiter.toml', { link = "Delimiter" })  -- , .
   highlight(0, '@punctuation.bracket.toml', { fg = colors.white,      bg = 'NONE' })  -- [ ] { }
 
   -- Types (for table headers)
-  highlight(0, '@type.toml',                { fg = colors.turquoise,  bg = 'NONE' })  -- Table names
+  highlight(0, '@type.toml',                { link = "Type" })  -- Table names
 
   -- Variables
-  highlight(0, '@variable.toml',            { fg = colors.white,      bg = 'NONE' })  -- Values
+  highlight(0, '@variable.toml',            { link = "Variable" })  -- Values
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.toml)
 
   highlight(0, '@lsp.type.property.toml',   { fg = colors.blue,       bg = 'NONE' })  -- Keys
-  highlight(0, '@lsp.type.string.toml',     { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.toml',     { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.toml',    { fg = colors.blue,       bg = 'NONE' })  -- true, false
-  highlight(0, '@lsp.type.comment.toml',    { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.toml',     { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.toml',     { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.toml',    { link = "Keyword" })  -- true, false
+  highlight(0, '@lsp.type.comment.toml',    { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.namespace.toml',  { fg = colors.turquoise,  bg = 'NONE' })  -- Table names
 
 

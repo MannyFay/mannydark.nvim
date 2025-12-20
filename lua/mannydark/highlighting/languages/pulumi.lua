@@ -16,7 +16,7 @@ pulumi.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Comments (YAML style)
-  highlight(0, 'pulumiComment',            { fg = colors.red,        bg = 'NONE' })  -- # comments
+  highlight(0, 'pulumiComment',            { link = "Comment" })  -- # comments
   highlight(0, 'pulumiTodo',               { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
   -- Top-Level Project Keys
@@ -33,7 +33,7 @@ pulumi.setupHighlighting = function()
   highlight(0, 'pulumiSection',            { fg = colors.pink,       bg = 'NONE' })  -- Main sections
   highlight(0, 'pulumiConfig',             { fg = colors.pink,       bg = 'NONE' })  -- config
   highlight(0, 'pulumiResources',          { fg = colors.pink,       bg = 'NONE' })  -- resources
-  highlight(0, 'pulumiVariables',          { fg = colors.pink,       bg = 'NONE' })  -- variables
+  highlight(0, 'pulumiVariables',          { link = "Variable" })  -- variables
   highlight(0, 'pulumiOutputs',            { fg = colors.pink,       bg = 'NONE' })  -- outputs
 
   -- Runtime Values
@@ -49,8 +49,8 @@ pulumi.setupHighlighting = function()
   highlight(0, 'pulumiResourceName',       { fg = colors.turquoise,  bg = 'NONE' })  -- Logical resource names
 
   -- Resource Type
-  highlight(0, 'pulumiType',               { fg = colors.blue,       bg = 'NONE' })  -- type key
-  highlight(0, 'pulumiResourceType',       { fg = colors.turquoise,  bg = 'NONE' })  -- provider:module:Resource
+  highlight(0, 'pulumiType',               { link = "Type" })  -- type key
+  highlight(0, 'pulumiResourceType',       { link = "Type" })  -- provider:module:Resource
 
   -- Properties
   highlight(0, 'pulumiProperties',         { fg = colors.blue,       bg = 'NONE' })  -- properties key
@@ -94,24 +94,24 @@ pulumi.setupHighlighting = function()
   -- Config Options
 
   highlight(0, 'pulumiConfigOption',       { fg = colors.blue,       bg = 'NONE' })  -- Config options
-  highlight(0, 'pulumiConfigType',         { fg = colors.blue,       bg = 'NONE' })  -- type
+  highlight(0, 'pulumiConfigType',         { link = "Type" })  -- type
   highlight(0, 'pulumiConfigDefault',      { fg = colors.blue,       bg = 'NONE' })  -- default
   highlight(0, 'pulumiConfigSecret',       { fg = colors.blue,       bg = 'NONE' })  -- secret
 
   -- Config Types
-  highlight(0, 'pulumiConfigTypeValue',    { fg = colors.turquoise,  bg = 'NONE' })  -- Type values
-  highlight(0, 'pulumiTypeString',         { fg = colors.turquoise,  bg = 'NONE' })  -- String
-  highlight(0, 'pulumiTypeNumber',         { fg = colors.turquoise,  bg = 'NONE' })  -- Number
-  highlight(0, 'pulumiTypeInteger',        { fg = colors.turquoise,  bg = 'NONE' })  -- Integer
-  highlight(0, 'pulumiTypeBoolean',        { fg = colors.turquoise,  bg = 'NONE' })  -- Boolean
-  highlight(0, 'pulumiTypeListString',     { fg = colors.turquoise,  bg = 'NONE' })  -- List<String>
-  highlight(0, 'pulumiTypeListNumber',     { fg = colors.turquoise,  bg = 'NONE' })  -- List<Number>
+  highlight(0, 'pulumiConfigTypeValue',    { link = "Type" })  -- Type values
+  highlight(0, 'pulumiTypeString',         { link = "String" })  -- String
+  highlight(0, 'pulumiTypeNumber',         { link = "Number" })  -- Number
+  highlight(0, 'pulumiTypeInteger',        { link = "Type" })  -- Integer
+  highlight(0, 'pulumiTypeBoolean',        { link = "Boolean" })  -- Boolean
+  highlight(0, 'pulumiTypeListString',     { link = "String" })  -- List<String>
+  highlight(0, 'pulumiTypeListNumber',     { link = "Number" })  -- List<Number>
 
 
   -----------------------------------------------------------------------------
   -- Built-in Functions (fn::*)
 
-  highlight(0, 'pulumiFunction',           { fg = colors.orange,     bg = 'NONE' })  -- fn::* functions
+  highlight(0, 'pulumiFunction',           { link = "Function" })  -- fn::* functions
   highlight(0, 'pulumiFnPrefix',           { fg = colors.pink,       bg = 'NONE' })  -- fn::
 
   -- String Functions
@@ -124,13 +124,13 @@ pulumi.setupHighlighting = function()
 
   -- Invoke Function
   highlight(0, 'pulumiFnInvoke',           { fg = colors.orange,     bg = 'NONE' })  -- fn::invoke
-  highlight(0, 'pulumiInvokeFunction',     { fg = colors.blue,       bg = 'NONE' })  -- function key in invoke
+  highlight(0, 'pulumiInvokeFunction',     { link = "Function" })  -- function key in invoke
   highlight(0, 'pulumiInvokeArguments',    { fg = colors.blue,       bg = 'NONE' })  -- arguments key
   highlight(0, 'pulumiInvokeReturn',       { fg = colors.blue,       bg = 'NONE' })  -- return key
 
   -- Asset Functions
   highlight(0, 'pulumiFnFileAsset',        { fg = colors.orange,     bg = 'NONE' })  -- fn::fileAsset
-  highlight(0, 'pulumiFnStringAsset',      { fg = colors.orange,     bg = 'NONE' })  -- fn::stringAsset
+  highlight(0, 'pulumiFnStringAsset',      { link = "String" })  -- fn::stringAsset
   highlight(0, 'pulumiFnRemoteAsset',      { fg = colors.orange,     bg = 'NONE' })  -- fn::remoteAsset
 
   -- Archive Functions
@@ -148,15 +148,15 @@ pulumi.setupHighlighting = function()
   -- Interpolation
 
   highlight(0, 'pulumiInterpolation',      { fg = colors.purple,     bg = 'NONE' })  -- ${...} content
-  highlight(0, 'pulumiInterpDelim',        { fg = colors.pink,       bg = 'NONE' })  -- ${ and }
-  highlight(0, 'pulumiInterpVariable',     { fg = colors.white,      bg = 'NONE' })  -- Variable in ${...}
+  highlight(0, 'pulumiInterpDelim',        { link = "Delimiter" })  -- ${ and }
+  highlight(0, 'pulumiInterpVariable',     { link = "Variable" })  -- Variable in ${...}
   highlight(0, 'pulumiInterpProperty',     { fg = colors.blue,       bg = 'NONE' })  -- Property access in ${...}
 
 
   -----------------------------------------------------------------------------
   -- Built-in Variables
 
-  highlight(0, 'pulumiBuiltinVar',         { fg = colors.purple,     bg = 'NONE' })  -- Built-in variables
+  highlight(0, 'pulumiBuiltinVar',         { link = "Variable" })  -- Built-in variables
   highlight(0, 'pulumiPulumiNamespace',    { fg = colors.purple,     bg = 'NONE' })  -- pulumi.*
   highlight(0, 'pulumiCwd',                { fg = colors.purple,     bg = 'NONE' })  -- pulumi.cwd
   highlight(0, 'pulumiOrganization',       { fg = colors.purple,     bg = 'NONE' })  -- pulumi.organization
@@ -168,7 +168,7 @@ pulumi.setupHighlighting = function()
   -- Values
 
   -- Booleans
-  highlight(0, 'pulumiBoolean',            { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'pulumiBoolean',            { link = "Boolean" })  -- true, false
   highlight(0, 'pulumiTrue',               { fg = colors.blue,       bg = 'NONE' })  -- true
   highlight(0, 'pulumiFalse',              { fg = colors.blue,       bg = 'NONE' })  -- false
 
@@ -176,15 +176,15 @@ pulumi.setupHighlighting = function()
   highlight(0, 'pulumiNull',               { fg = colors.blue,       bg = 'NONE' })  -- null, ~
 
   -- Numbers
-  highlight(0, 'pulumiNumber',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'pulumiNumber',             { link = "Number" })  -- Numbers
   highlight(0, 'pulumiInteger',            { fg = colors.greenLight, bg = 'NONE' })  -- Integers
   highlight(0, 'pulumiFloat',              { fg = colors.greenLight, bg = 'NONE' })  -- Floats
 
   -- Strings
-  highlight(0, 'pulumiString',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, 'pulumiStringQuoted',       { fg = colors.redLight,   bg = 'NONE' })  -- "quoted"
-  highlight(0, 'pulumiStringPlain',        { fg = colors.redLight,   bg = 'NONE' })  -- plain string
-  highlight(0, 'pulumiStringBlock',        { fg = colors.redLight,   bg = 'NONE' })  -- | or > block
+  highlight(0, 'pulumiString',             { link = "String" })  -- Strings
+  highlight(0, 'pulumiStringQuoted',       { link = "String" })  -- "quoted"
+  highlight(0, 'pulumiStringPlain',        { link = "String" })  -- plain string
+  highlight(0, 'pulumiStringBlock',        { link = "String" })  -- | or > block
 
   -- Escape Sequences
   highlight(0, 'pulumiEscape',             { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, etc.
@@ -237,7 +237,7 @@ pulumi.setupHighlighting = function()
   highlight(0, 'pulumiAzureNetwork',       { fg = colors.turquoise,  bg = 'NONE' })  -- azure-native:network:*
   highlight(0, 'pulumiAzureWeb',           { fg = colors.turquoise,  bg = 'NONE' })  -- azure-native:web:*
   highlight(0, 'pulumiAzureContainerService', { fg = colors.turquoise, bg = 'NONE' })  -- azure-native:containerservice:*
-  highlight(0, 'pulumiAzureFunctions',     { fg = colors.turquoise,  bg = 'NONE' })  -- azure-native:web:WebApp
+  highlight(0, 'pulumiAzureFunctions',     { link = "Function" })  -- azure-native:web:WebApp
   highlight(0, 'pulumiAzureSQL',           { fg = colors.turquoise,  bg = 'NONE' })  -- azure-native:sql:*
   highlight(0, 'pulumiAzureCosmosDB',      { fg = colors.turquoise,  bg = 'NONE' })  -- azure-native:documentdb:*
 
@@ -249,7 +249,7 @@ pulumi.setupHighlighting = function()
   highlight(0, 'pulumiGCPStorage',         { fg = colors.turquoise,  bg = 'NONE' })  -- gcp:storage:*
   highlight(0, 'pulumiGCPCompute',         { fg = colors.turquoise,  bg = 'NONE' })  -- gcp:compute:*
   highlight(0, 'pulumiGCPContainer',       { fg = colors.turquoise,  bg = 'NONE' })  -- gcp:container:*
-  highlight(0, 'pulumiGCPCloudFunctions',  { fg = colors.turquoise,  bg = 'NONE' })  -- gcp:cloudfunctions:*
+  highlight(0, 'pulumiGCPCloudFunctions',  { link = "Function" })  -- gcp:cloudfunctions:*
   highlight(0, 'pulumiGCPCloudRun',        { fg = colors.turquoise,  bg = 'NONE' })  -- gcp:cloudrun:*
   highlight(0, 'pulumiGCPBigQuery',        { fg = colors.turquoise,  bg = 'NONE' })  -- gcp:bigquery:*
   highlight(0, 'pulumiGCPPubSub',          { fg = colors.turquoise,  bg = 'NONE' })  -- gcp:pubsub:*
@@ -285,17 +285,17 @@ pulumi.setupHighlighting = function()
   -- Random Provider
   highlight(0, 'pulumiRandom',             { fg = colors.turquoise,  bg = 'NONE' })  -- random
   highlight(0, 'pulumiRandomResource',     { fg = colors.turquoise,  bg = 'NONE' })  -- random:index:*
-  highlight(0, 'pulumiRandomString',       { fg = colors.turquoise,  bg = 'NONE' })  -- RandomString
+  highlight(0, 'pulumiRandomString',       { link = "String" })  -- RandomString
   highlight(0, 'pulumiRandomPassword',     { fg = colors.turquoise,  bg = 'NONE' })  -- RandomPassword
   highlight(0, 'pulumiRandomUuid',         { fg = colors.turquoise,  bg = 'NONE' })  -- RandomUuid
 
   -- Command Provider
-  highlight(0, 'pulumiCommand',            { fg = colors.turquoise,  bg = 'NONE' })  -- command
+  highlight(0, 'pulumiCommand',            { link = "Function" })  -- command
   highlight(0, 'pulumiCommandLocal',       { fg = colors.turquoise,  bg = 'NONE' })  -- command:local:*
   highlight(0, 'pulumiCommandRemote',      { fg = colors.turquoise,  bg = 'NONE' })  -- command:remote:*
 
   -- Pulumi Provider (internal)
-  highlight(0, 'pulumiProviderType',       { fg = colors.turquoise,  bg = 'NONE' })  -- pulumi:providers:*
+  highlight(0, 'pulumiProviderType',       { link = "Type" })  -- pulumi:providers:*
   highlight(0, 'pulumiStackReference',     { fg = colors.turquoise,  bg = 'NONE' })  -- pulumi:pulumi:StackReference
 
 
@@ -318,7 +318,7 @@ pulumi.setupHighlighting = function()
   highlight(0, 'pulumiCidrBlock',          { fg = colors.blue,       bg = 'NONE' })  -- cidrBlock
 
   -- Compute
-  highlight(0, 'pulumiInstanceType',       { fg = colors.blue,       bg = 'NONE' })  -- instanceType
+  highlight(0, 'pulumiInstanceType',       { link = "Type" })  -- instanceType
   highlight(0, 'pulumiAmi',                { fg = colors.blue,       bg = 'NONE' })  -- ami
   highlight(0, 'pulumiKeyName',            { fg = colors.blue,       bg = 'NONE' })  -- keyName
 
@@ -336,16 +336,16 @@ pulumi.setupHighlighting = function()
   -- Treesitter Groups (extends YAML)
 
   -- Since Pulumi YAML is YAML, we add Pulumi-specific captures
-  highlight(0, '@keyword.pulumi',              { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@function.pulumi',             { fg = colors.orange,     bg = 'NONE' })  -- fn::* functions
-  highlight(0, '@function.builtin.pulumi',     { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@variable.pulumi',             { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.pulumi',     { fg = colors.purple,     bg = 'NONE' })  -- pulumi.* vars
-  highlight(0, '@type.pulumi',                 { fg = colors.turquoise,  bg = 'NONE' })  -- Resource types
+  highlight(0, '@keyword.pulumi',              { link = "Keyword" })  -- Keywords
+  highlight(0, '@function.pulumi',             { link = "Function" })  -- fn::* functions
+  highlight(0, '@function.builtin.pulumi',     { link = "Function" })  -- Built-in functions
+  highlight(0, '@variable.pulumi',             { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.pulumi',     { link = "Variable" })  -- pulumi.* vars
+  highlight(0, '@type.pulumi',                 { link = "Type" })  -- Resource types
   highlight(0, '@property.pulumi',             { fg = colors.blue,       bg = 'NONE' })  -- Properties
-  highlight(0, '@string.pulumi',               { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@number.pulumi',               { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@boolean.pulumi',              { fg = colors.blue,       bg = 'NONE' })  -- Booleans
+  highlight(0, '@string.pulumi',               { link = "String" })  -- Strings
+  highlight(0, '@number.pulumi',               { link = "Number" })  -- Numbers
+  highlight(0, '@boolean.pulumi',              { link = "Boolean" })  -- Booleans
   highlight(0, '@punctuation.special.pulumi',  { fg = colors.pink,       bg = 'NONE' })  -- ${ }
 
 
@@ -353,11 +353,11 @@ pulumi.setupHighlighting = function()
   -- LSP Semantic Tokens
 
   highlight(0, '@lsp.type.property.pulumi',    { fg = colors.blue,       bg = 'NONE' })  -- Properties
-  highlight(0, '@lsp.type.variable.pulumi',    { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.pulumi',    { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.pulumi',    { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.string.pulumi',      { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.pulumi',      { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.pulumi',     { fg = colors.pink,       bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.string.pulumi',      { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.pulumi',      { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.pulumi',     { link = "Keyword" })  -- Keywords
 
 
   -----------------------------------------------------------------------------
@@ -375,7 +375,7 @@ pulumi.setupHighlighting = function()
   -- Component Resources
 
   highlight(0, 'pulumiComponent',          { fg = colors.turquoise,  bg = 'NONE' })  -- Component resources
-  highlight(0, 'pulumiComponentType',      { fg = colors.turquoise,  bg = 'NONE' })  -- pkg:index:Component
+  highlight(0, 'pulumiComponentType',      { link = "Type" })  -- pkg:index:Component
 
 
   -----------------------------------------------------------------------------

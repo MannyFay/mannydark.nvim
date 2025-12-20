@@ -16,9 +16,9 @@ ada.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords - Control Flow
-  highlight(0, 'adaKeyword',            { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
+  highlight(0, 'adaKeyword',            { link = "Keyword" })  -- General keywords
   highlight(0, 'adaStatement',          { fg = colors.blue,       bg = 'NONE'            })  -- return, goto, exit
-  highlight(0, 'adaConditional',        { fg = colors.blue,       bg = 'NONE'            })  -- if, then, else, elsif, case, when
+  highlight(0, 'adaConditional',        { link = "Conditional" })  -- if, then, else, elsif, case, when
   highlight(0, 'adaRepeat',             { fg = colors.blue,       bg = 'NONE'            })  -- loop, for, while, reverse
   highlight(0, 'adaLabel',              { fg = colors.blue,       bg = 'NONE'            })  -- Labels (<<label>>)
   highlight(0, 'adaException',          { fg = colors.blue,       bg = 'NONE'            })  -- exception, raise, others
@@ -32,7 +32,7 @@ ada.setupHighlighting = function()
 
   -- Keywords - Declarations
   highlight(0, 'adaProcedure',          { fg = colors.blue,       bg = 'NONE'            })  -- procedure
-  highlight(0, 'adaFunction',           { fg = colors.blue,       bg = 'NONE'            })  -- function
+  highlight(0, 'adaFunction',           { link = "Function" })  -- function
   highlight(0, 'adaPackage',            { fg = colors.blue,       bg = 'NONE'            })  -- package
   highlight(0, 'adaBody',               { fg = colors.blue,       bg = 'NONE'            })  -- body
   highlight(0, 'adaGeneric',            { fg = colors.blue,       bg = 'NONE'            })  -- generic
@@ -42,7 +42,7 @@ ada.setupHighlighting = function()
   highlight(0, 'adaOverriding',         { fg = colors.blue,       bg = 'NONE'            })  -- overriding
 
   -- Keywords - Types
-  highlight(0, 'adaTypeKeyword',        { fg = colors.blue,       bg = 'NONE'            })  -- type keyword
+  highlight(0, 'adaTypeKeyword',        { link = "Keyword" })  -- type keyword
   highlight(0, 'adaRecord',             { fg = colors.blue,       bg = 'NONE'            })  -- record
   highlight(0, 'adaArray',              { fg = colors.blue,       bg = 'NONE'            })  -- array
   highlight(0, 'adaAccess',             { fg = colors.blue,       bg = 'NONE'            })  -- access
@@ -56,7 +56,7 @@ ada.setupHighlighting = function()
   highlight(0, 'adaDelta',              { fg = colors.blue,       bg = 'NONE'            })  -- delta
   highlight(0, 'adaDigits',             { fg = colors.blue,       bg = 'NONE'            })  -- digits
   highlight(0, 'adaAliased',            { fg = colors.blue,       bg = 'NONE'            })  -- aliased
-  highlight(0, 'adaConstant',           { fg = colors.blue,       bg = 'NONE'            })  -- constant
+  highlight(0, 'adaConstant',           { link = "Constant" })  -- constant
 
   -- Keywords - Tasking
   highlight(0, 'adaTask',               { fg = colors.blue,       bg = 'NONE'            })  -- task
@@ -84,50 +84,50 @@ ada.setupHighlighting = function()
   highlight(0, 'adaUse',                { fg = colors.pink,       bg = 'NONE'            })  -- use
 
   -- Operators (word-based)
-  highlight(0, 'adaOperator',           { fg = colors.blue,       bg = 'NONE'            })  -- and, or, not, xor, mod, rem, abs
+  highlight(0, 'adaOperator',           { link = "Operator" })  -- and, or, not, xor, mod, rem, abs
   highlight(0, 'adaAndThen',            { fg = colors.blue,       bg = 'NONE'            })  -- and then (short-circuit)
   highlight(0, 'adaOrElse',             { fg = colors.blue,       bg = 'NONE'            })  -- or else (short-circuit)
-  highlight(0, 'adaInOperator',         { fg = colors.blue,       bg = 'NONE'            })  -- in (membership test)
+  highlight(0, 'adaInOperator',         { link = "Operator" })  -- in (membership test)
   highlight(0, 'adaNotIn',              { fg = colors.blue,       bg = 'NONE'            })  -- not in
 
   -- Types
-  highlight(0, 'adaType',               { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
-  highlight(0, 'adaBuiltinType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Integer, Float, Boolean, Character, String
+  highlight(0, 'adaType',               { link = "Type" })  -- Type names
+  highlight(0, 'adaBuiltinType',        { link = "Type" })  -- Integer, Float, Boolean, Character, String
   highlight(0, 'adaSubtypeName',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Natural, Positive, etc.
-  highlight(0, 'adaGenericType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Generic formal types
+  highlight(0, 'adaGenericType',        { link = "Type" })  -- Generic formal types
   highlight(0, 'adaClassWide',          { fg = colors.turquoise,  bg = 'NONE'            })  -- Type'Class
 
   -- Functions
-  highlight(0, 'adaFunctionName',       { fg = colors.orange,     bg = 'NONE'            })  -- Function/procedure names
-  highlight(0, 'adaFunctionCall',       { fg = colors.orange,     bg = 'NONE'            })  -- Function calls
-  highlight(0, 'adaBuiltinFunc',        { fg = colors.orange,     bg = 'NONE'            })  -- Put, Get, Put_Line, etc.
+  highlight(0, 'adaFunctionName',       { link = "Function" })  -- Function/procedure names
+  highlight(0, 'adaFunctionCall',       { link = "Function" })  -- Function calls
+  highlight(0, 'adaBuiltinFunc',        { link = "Function" })  -- Put, Get, Put_Line, etc.
   highlight(0, 'adaEntryName',          { fg = colors.orange,     bg = 'NONE'            })  -- Entry names
 
   -- Variables and Identifiers
-  highlight(0, 'adaIdentifier',         { fg = colors.purple,     bg = 'NONE'            })  -- Identifiers
-  highlight(0, 'adaParameter',          { fg = colors.purple,     bg = 'NONE'            })  -- Parameters
-  highlight(0, 'adaComponent',          { fg = colors.purple,     bg = 'NONE'            })  -- Record components
-  highlight(0, 'adaEnumLiteral',        { fg = colors.purple,     bg = 'NONE'            })  -- Enumeration literals
+  highlight(0, 'adaIdentifier',         { link = "Variable"         })  -- Identifiers
+  highlight(0, 'adaParameter',          { link = "Variable"         })  -- Parameters
+  highlight(0, 'adaComponent',          { link = "Variable"         })  -- Record components
+  highlight(0, 'adaEnumLiteral',        { link = "Variable"         })  -- Enumeration literals
 
   -- Constants
-  highlight(0, 'adaConstantValue',      { fg = colors.purple,     bg = 'NONE'            })  -- Named constants
-  highlight(0, 'adaBoolean',            { fg = colors.blue,       bg = 'NONE'            })  -- True, False
+  highlight(0, 'adaConstantValue',      { link = "Constant" })  -- Named constants
+  highlight(0, 'adaBoolean',            { link = "Boolean" })  -- True, False
   highlight(0, 'adaNull',               { fg = colors.blue,       bg = 'NONE'            })  -- null
 
   -- Strings
-  highlight(0, 'adaString',             { fg = colors.redLight,   bg = 'NONE'            })  -- "strings"
+  highlight(0, 'adaString',             { link = "String" })  -- "strings"
   highlight(0, 'adaCharacter',          { fg = colors.redLight,   bg = 'NONE'            })  -- 'c' character literals
-  highlight(0, 'adaStringEscape',       { fg = colors.pink,       bg = 'NONE'            })  -- "" (doubled quotes)
+  highlight(0, 'adaStringEscape',       { link = "String" })  -- "" (doubled quotes)
 
   -- Numbers
-  highlight(0, 'adaNumber',             { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'adaNumber',             { link = "Number" })  -- Numbers
   highlight(0, 'adaInteger',            { fg = colors.greenLight, bg = 'NONE'            })  -- Integer literals
   highlight(0, 'adaFloat',              { fg = colors.greenLight, bg = 'NONE'            })  -- Float literals
-  highlight(0, 'adaBasedNumber',        { fg = colors.greenLight, bg = 'NONE'            })  -- 16#FF#, 2#1010#, etc.
+  highlight(0, 'adaBasedNumber',        { link = "Number" })  -- 16#FF#, 2#1010#, etc.
   highlight(0, 'adaExponent',           { fg = colors.greenLight, bg = 'NONE'            })  -- E+10, E-5
 
   -- Operators (symbol-based)
-  highlight(0, 'adaOperatorSign',       { fg = colors.white,      bg = 'NONE'            })  -- + - * / = < > & :=
+  highlight(0, 'adaOperatorSign',       { link = "Operator" })  -- + - * / = < > & :=
   highlight(0, 'adaAssignment',         { fg = colors.white,      bg = 'NONE'            })  -- :=
   highlight(0, 'adaArrow',              { fg = colors.white,      bg = 'NONE'            })  -- =>
   highlight(0, 'adaBox',                { fg = colors.white,      bg = 'NONE'            })  -- <>
@@ -164,8 +164,8 @@ ada.setupHighlighting = function()
   highlight(0, 'adaAspectContract',     { fg = colors.pink,       bg = 'NONE'            })  -- Contract_Cases
 
   -- Comments
-  highlight(0, 'adaComment',            { fg = colors.red,        bg = 'NONE'            })  -- -- comments
-  highlight(0, 'adaDocComment',         { fg = colors.red,        bg = 'NONE'            })  -- Documentation comments
+  highlight(0, 'adaComment',            { link = "Comment" })  -- -- comments
+  highlight(0, 'adaDocComment',         { link = "Comment" })  -- Documentation comments
   highlight(0, 'adaTodo',               { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Packages and Modules
@@ -180,38 +180,38 @@ ada.setupHighlighting = function()
   -- Treesitter Groups (@xxx.ada)
 
   -- Variables
-  highlight(0, '@variable.ada',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.ada',      { fg = colors.blue,      bg = 'NONE' })  -- Built-in variables
-  highlight(0, '@variable.parameter.ada',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
-  highlight(0, '@variable.member.ada',       { fg = colors.purple,    bg = 'NONE' })  -- Record components
+  highlight(0, '@variable.ada',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.ada',      { link = "Variable" })  -- Built-in variables
+  highlight(0, '@variable.parameter.ada',    { link = "Variable" })  -- Parameters
+  highlight(0, '@variable.member.ada',       { link = "Variable" })  -- Record components
 
   -- Constants
-  highlight(0, '@constant.ada',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.ada',      { fg = colors.blue,      bg = 'NONE' })  -- True, False, null
+  highlight(0, '@constant.ada',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.ada',      { link = "Constant" })  -- True, False, null
 
   -- Functions
-  highlight(0, '@function.ada',              { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.ada',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.ada',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.ada',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.ada',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.ada',      { link = "Function" })  -- Built-in functions
 
   -- Types
-  highlight(0, '@type.ada',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.ada',          { fg = colors.turquoise, bg = 'NONE' })  -- Integer, Float, Boolean, etc.
-  highlight(0, '@type.definition.ada',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
-  highlight(0, '@type.qualifier.ada',        { fg = colors.blue,      bg = 'NONE' })  -- aliased, constant, limited, abstract
+  highlight(0, '@type.ada',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.ada',          { link = "Type" })  -- Integer, Float, Boolean, etc.
+  highlight(0, '@type.definition.ada',       { link = "Type" })  -- Type definitions
+  highlight(0, '@type.qualifier.ada',        { link = "Type" })  -- aliased, constant, limited, abstract
 
   -- Keywords
-  highlight(0, '@keyword.ada',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.ada',      { fg = colors.blue,      bg = 'NONE' })  -- procedure, function
-  highlight(0, '@keyword.type.ada',          { fg = colors.blue,      bg = 'NONE' })  -- type, subtype, record, array
-  highlight(0, '@keyword.modifier.ada',      { fg = colors.blue,      bg = 'NONE' })  -- aliased, constant, renames, limited
-  highlight(0, '@keyword.return.ada',        { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.repeat.ada',        { fg = colors.blue,      bg = 'NONE' })  -- loop, for, while
-  highlight(0, '@keyword.conditional.ada',   { fg = colors.blue,      bg = 'NONE' })  -- if, then, else, elsif, case, when
-  highlight(0, '@keyword.operator.ada',      { fg = colors.blue,      bg = 'NONE' })  -- and, or, not, xor, mod, rem, abs
-  highlight(0, '@keyword.exception.ada',     { fg = colors.blue,      bg = 'NONE' })  -- exception, raise
-  highlight(0, '@keyword.import.ada',        { fg = colors.pink,      bg = 'NONE' })  -- with, use
-  highlight(0, '@keyword.directive.ada',     { fg = colors.pink,      bg = 'NONE' })  -- pragma
+  highlight(0, '@keyword.ada',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.ada',      { link = "Keyword" })  -- procedure, function
+  highlight(0, '@keyword.type.ada',          { link = "Keyword" })  -- type, subtype, record, array
+  highlight(0, '@keyword.modifier.ada',      { link = "Keyword" })  -- aliased, constant, renames, limited
+  highlight(0, '@keyword.return.ada',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.repeat.ada',        { link = "Keyword" })  -- loop, for, while
+  highlight(0, '@keyword.conditional.ada',   { link = "Conditional" })  -- if, then, else, elsif, case, when
+  highlight(0, '@keyword.operator.ada',      { link = "Operator" })  -- and, or, not, xor, mod, rem, abs
+  highlight(0, '@keyword.exception.ada',     { link = "Keyword" })  -- exception, raise
+  highlight(0, '@keyword.import.ada',        { link = "Keyword" })  -- with, use
+  highlight(0, '@keyword.directive.ada',     { link = "Keyword" })  -- pragma
 
   -- Includes
   highlight(0, '@include.ada',               { fg = colors.pink,      bg = 'NONE' })  -- with, use
@@ -220,25 +220,25 @@ ada.setupHighlighting = function()
   highlight(0, '@module.ada',                { fg = colors.turquoise, bg = 'NONE' })  -- Package names
 
   -- Conditionals and Loops
-  highlight(0, '@conditional.ada',           { fg = colors.blue,      bg = 'NONE' })  -- if, elsif, else, case, when
+  highlight(0, '@conditional.ada',           { link = "Conditional" })  -- if, elsif, else, case, when
   highlight(0, '@repeat.ada',                { fg = colors.blue,      bg = 'NONE' })  -- loop, for, while
   highlight(0, '@exception.ada',             { fg = colors.blue,      bg = 'NONE' })  -- exception, raise
 
   -- Strings
-  highlight(0, '@string.ada',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.ada',         { fg = colors.pink,      bg = 'NONE' })  -- "" escape
+  highlight(0, '@string.ada',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.ada',         { link = "String" })  -- "" escape
   highlight(0, '@character.ada',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
 
   -- Numbers
-  highlight(0, '@number.ada',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.ada',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.ada',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.ada',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.ada',               { fg = colors.blue,      bg = 'NONE' })  -- True, False
+  highlight(0, '@boolean.ada',               { link = "Boolean" })  -- True, False
 
   -- Comments
-  highlight(0, '@comment.ada',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.ada', { fg = colors.red,       bg = 'NONE' })  -- Doc comments
+  highlight(0, '@comment.ada',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.ada', { link = "Comment" })  -- Doc comments
 
   -- Labels
   highlight(0, '@label.ada',                 { fg = colors.blue,      bg = 'NONE' })  -- <<labels>>
@@ -250,43 +250,43 @@ ada.setupHighlighting = function()
   highlight(0, '@property.ada',              { fg = colors.purple,    bg = 'NONE' })  -- Record fields
 
   -- Operators and Punctuation
-  highlight(0, '@operator.ada',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.ada',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.ada',   { fg = colors.white,     bg = 'NONE' })  -- (), []
-  highlight(0, '@punctuation.delimiter.ada', { fg = colors.white,     bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.ada', { link = "Delimiter" })  -- , ; :
   highlight(0, '@punctuation.special.ada',   { fg = colors.pink,      bg = 'NONE' })  -- ' (attribute tick)
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.ada)
 
-  highlight(0, '@lsp.type.variable.ada',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@lsp.type.parameter.ada',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
-  highlight(0, '@lsp.type.property.ada',      { fg = colors.purple,    bg = 'NONE' })  -- Record components
-  highlight(0, '@lsp.type.function.ada',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.method.ada',        { fg = colors.orange,    bg = 'NONE' })  -- Procedures (as methods)
-  highlight(0, '@lsp.type.type.ada',          { fg = colors.turquoise, bg = 'NONE' })  -- Types
-  highlight(0, '@lsp.type.class.ada',         { fg = colors.turquoise, bg = 'NONE' })  -- Tagged types (classes)
-  highlight(0, '@lsp.type.enum.ada',          { fg = colors.turquoise, bg = 'NONE' })  -- Enumeration types
+  highlight(0, '@lsp.type.variable.ada',      { link = "Variable" })  -- Variables
+  highlight(0, '@lsp.type.parameter.ada',     { link = "Variable" })  -- Parameters
+  highlight(0, '@lsp.type.property.ada',      { link = "Variable" })  -- Record components
+  highlight(0, '@lsp.type.function.ada',      { link = "Function" })  -- Functions
+  highlight(0, '@lsp.type.method.ada',        { link = "Function" })  -- Procedures (as methods)
+  highlight(0, '@lsp.type.type.ada',          { link = "Type" })  -- Types
+  highlight(0, '@lsp.type.class.ada',         { link = "Type" })  -- Tagged types (classes)
+  highlight(0, '@lsp.type.enum.ada',          { link = "Type" })  -- Enumeration types
   highlight(0, '@lsp.type.enumMember.ada',    { fg = colors.purple,    bg = 'NONE' })  -- Enum literals
   highlight(0, '@lsp.type.interface.ada',     { fg = colors.turquoise, bg = 'NONE' })  -- Interfaces
   highlight(0, '@lsp.type.namespace.ada',     { fg = colors.turquoise, bg = 'NONE' })  -- Packages
   highlight(0, '@lsp.type.typeParameter.ada', { fg = colors.turquoise, bg = 'NONE' })  -- Generic formal types
-  highlight(0, '@lsp.type.keyword.ada',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.ada',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.ada',      { fg = colors.blue,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.ada',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.ada',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.ada',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.ada',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.ada',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.ada',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.ada',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.ada',       { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.decorator.ada',     { fg = colors.pink,      bg = 'NONE' })  -- Aspects/Pragmas
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.ada',    { fg = colors.purple,    bg = 'NONE' })  -- constant variables
-  highlight(0, '@lsp.typemod.variable.declaration.ada', { fg = colors.purple,    bg = 'NONE' })  -- Variable declarations
-  highlight(0, '@lsp.typemod.function.declaration.ada', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
-  highlight(0, '@lsp.typemod.function.definition.ada',  { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@lsp.typemod.type.declaration.ada',     { fg = colors.turquoise, bg = 'NONE' })  -- Type declarations
-  highlight(0, '@lsp.typemod.type.defaultLibrary.ada',  { fg = colors.turquoise, bg = 'NONE' })  -- Standard types
-  highlight(0, '@lsp.typemod.type.abstract.ada',        { fg = colors.turquoise, bg = 'NONE' })  -- Abstract types
+  highlight(0, '@lsp.typemod.variable.readonly.ada',    { link = "Variable" })  -- constant variables
+  highlight(0, '@lsp.typemod.variable.declaration.ada', { link = "Variable" })  -- Variable declarations
+  highlight(0, '@lsp.typemod.function.declaration.ada', { link = "Function" })  -- Function declarations
+  highlight(0, '@lsp.typemod.function.definition.ada',  { link = "Function" })  -- Function definitions
+  highlight(0, '@lsp.typemod.type.declaration.ada',     { link = "Type" })  -- Type declarations
+  highlight(0, '@lsp.typemod.type.defaultLibrary.ada',  { link = "Type" })  -- Standard types
+  highlight(0, '@lsp.typemod.type.abstract.ada',        { link = "Type" })  -- Abstract types
 end
 
 return ada

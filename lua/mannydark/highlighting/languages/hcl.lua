@@ -16,12 +16,12 @@ hcl.setupHighlighting = function()
   -- Vim Syntax Groups (legacy) - HCL Base
 
   -- Comments
-  highlight(0, 'hclComment',               { fg = colors.red,        bg = 'NONE' })  -- # and // comments
-  highlight(0, 'hclBlockComment',          { fg = colors.red,        bg = 'NONE' })  -- /* */ block comments
+  highlight(0, 'hclComment',               { link = "Comment" })  -- # and // comments
+  highlight(0, 'hclBlockComment',          { link = "Comment" })  -- /* */ block comments
   highlight(0, 'hclTodo',                  { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX, BUG
 
   -- Block Types
-  highlight(0, 'hclBlockType',             { fg = colors.pink,       bg = 'NONE' })  -- resource, variable, etc.
+  highlight(0, 'hclBlockType',             { link = "Type" })  -- resource, variable, etc.
   highlight(0, 'hclBlockLabel',            { fg = colors.turquoise,  bg = 'NONE' })  -- Block labels/names
   highlight(0, 'hclBlockBody',             { fg = colors.white,      bg = 'NONE' })  -- Block content
 
@@ -37,19 +37,19 @@ hcl.setupHighlighting = function()
   highlight(0, 'hclValueFloat',            { fg = colors.greenLight, bg = 'NONE' })  -- Float numbers
 
   -- Strings
-  highlight(0, 'hclValueString',           { fg = colors.redLight,   bg = 'NONE' })  -- "string"
-  highlight(0, 'hclStringInterp',          { fg = colors.purple,     bg = 'NONE' })  -- ${...} interpolation
+  highlight(0, 'hclValueString',           { link = "String" })  -- "string"
+  highlight(0, 'hclStringInterp',          { link = "String" })  -- ${...} interpolation
   highlight(0, 'hclTemplateInterp',        { fg = colors.purple,     bg = 'NONE' })  -- %{...} template directive
   highlight(0, 'hclHereDoc',               { fg = colors.redLight,   bg = 'NONE' })  -- <<EOF heredocs
   highlight(0, 'hclHereDocText',           { fg = colors.redLight,   bg = 'NONE' })  -- Heredoc content
-  highlight(0, 'hclHereDocDelim',          { fg = colors.pink,       bg = 'NONE' })  -- EOF delimiter
+  highlight(0, 'hclHereDocDelim',          { link = "Delimiter" })  -- EOF delimiter
 
   -- Escape Sequences
   highlight(0, 'hclEscape',                { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, \\, etc.
-  highlight(0, 'hclStringEscape',          { fg = colors.pink,       bg = 'NONE' })  -- Escape in strings
+  highlight(0, 'hclStringEscape',          { link = "String" })  -- Escape in strings
 
   -- Functions
-  highlight(0, 'hclFunction',              { fg = colors.orange,     bg = 'NONE' })  -- Function calls
+  highlight(0, 'hclFunction',              { link = "Function" })  -- Function calls
 
   -- Brackets and Delimiters
   highlight(0, 'hclBraces',                { fg = colors.white,      bg = 'NONE' })  -- { } [ ]
@@ -71,7 +71,7 @@ hcl.setupHighlighting = function()
 
   -- Control Flow (for expressions)
   highlight(0, 'hclRepeat',                { fg = colors.pink,       bg = 'NONE' })  -- for, in
-  highlight(0, 'hclConditional',           { fg = colors.pink,       bg = 'NONE' })  -- if, else
+  highlight(0, 'hclConditional',           { link = "Conditional" })  -- if, else
   highlight(0, 'hclForExpr',               { fg = colors.pink,       bg = 'NONE' })  -- for expression
   highlight(0, 'hclEndfor',                { fg = colors.pink,       bg = 'NONE' })  -- endfor
   highlight(0, 'hclEndif',                 { fg = colors.pink,       bg = 'NONE' })  -- endif
@@ -81,21 +81,21 @@ hcl.setupHighlighting = function()
   -- Terraform-specific Vim Syntax Groups
 
   -- Block Types (Terraform)
-  highlight(0, 'terraBlockType',           { fg = colors.pink,       bg = 'NONE' })  -- resource, data, module, etc.
-  highlight(0, 'terraResourceType',        { fg = colors.turquoise,  bg = 'NONE' })  -- aws_instance, google_compute, etc.
+  highlight(0, 'terraBlockType',           { link = "Type" })  -- resource, data, module, etc.
+  highlight(0, 'terraResourceType',        { link = "Type" })  -- aws_instance, google_compute, etc.
   highlight(0, 'terraResourceName',        { fg = colors.turquoise,  bg = 'NONE' })  -- Resource name label
   highlight(0, 'terraDataSource',          { fg = colors.turquoise,  bg = 'NONE' })  -- Data source type
 
   -- Types
-  highlight(0, 'terraType',                { fg = colors.turquoise,  bg = 'NONE' })  -- string, bool, number, etc.
-  highlight(0, 'terraPrimitiveType',       { fg = colors.turquoise,  bg = 'NONE' })  -- string, bool, number
-  highlight(0, 'terraCollectionType',      { fg = colors.turquoise,  bg = 'NONE' })  -- list, map, set
-  highlight(0, 'terraStructuralType',      { fg = colors.turquoise,  bg = 'NONE' })  -- object, tuple
-  highlight(0, 'terraAnyType',             { fg = colors.turquoise,  bg = 'NONE' })  -- any
+  highlight(0, 'terraType',                { link = "Type" })  -- string, bool, number, etc.
+  highlight(0, 'terraPrimitiveType',       { link = "Type" })  -- string, bool, number
+  highlight(0, 'terraCollectionType',      { link = "Type" })  -- list, map, set
+  highlight(0, 'terraStructuralType',      { link = "Type" })  -- object, tuple
+  highlight(0, 'terraAnyType',             { link = "Type" })  -- any
 
   -- Built-in Variables
-  highlight(0, 'terraBuiltinVar',          { fg = colors.purple,     bg = 'NONE' })  -- var, local, module, data
-  highlight(0, 'terraVarRef',              { fg = colors.purple,     bg = 'NONE' })  -- var.name
+  highlight(0, 'terraBuiltinVar',          { link = "Variable" })  -- var, local, module, data
+  highlight(0, 'terraVarRef',              { link = "Variable" })  -- var.name
   highlight(0, 'terraLocalRef',            { fg = colors.purple,     bg = 'NONE' })  -- local.name
   highlight(0, 'terraModuleRef',           { fg = colors.purple,     bg = 'NONE' })  -- module.name
   highlight(0, 'terraDataRef',             { fg = colors.purple,     bg = 'NONE' })  -- data.type.name
@@ -126,11 +126,11 @@ hcl.setupHighlighting = function()
   -- Variable Block Attributes
   highlight(0, 'terraVarAttr',             { fg = colors.blue,       bg = 'NONE' })  -- default, type, description
   highlight(0, 'terraVarDefault',          { fg = colors.blue,       bg = 'NONE' })  -- default
-  highlight(0, 'terraVarType',             { fg = colors.blue,       bg = 'NONE' })  -- type
+  highlight(0, 'terraVarType',             { link = "Type" })  -- type
   highlight(0, 'terraVarDescription',      { fg = colors.blue,       bg = 'NONE' })  -- description
   highlight(0, 'terraVarValidation',       { fg = colors.blue,       bg = 'NONE' })  -- validation
   highlight(0, 'terraVarSensitive',        { fg = colors.blue,       bg = 'NONE' })  -- sensitive
-  highlight(0, 'terraVarNullable',         { fg = colors.blue,       bg = 'NONE' })  -- nullable
+  highlight(0, 'terraVarNullable',         { link = "Variable" })  -- nullable
   highlight(0, 'terraVarEphemeral',        { fg = colors.blue,       bg = 'NONE' })  -- ephemeral (v1.10+)
 
   -- Output Block Attributes
@@ -140,7 +140,7 @@ hcl.setupHighlighting = function()
 
   -- Provisioners
   highlight(0, 'terraProvisioner',         { fg = colors.pink,       bg = 'NONE' })  -- provisioner block
-  highlight(0, 'terraProvisionerType',     { fg = colors.turquoise,  bg = 'NONE' })  -- local-exec, remote-exec
+  highlight(0, 'terraProvisionerType',     { link = "Type" })  -- local-exec, remote-exec
   highlight(0, 'terraProvisionerAttr',     { fg = colors.blue,       bg = 'NONE' })  -- command, inline, script
   highlight(0, 'terraConnection',          { fg = colors.pink,       bg = 'NONE' })  -- connection block
 
@@ -149,47 +149,47 @@ hcl.setupHighlighting = function()
   -- Treesitter Groups (@xxx.hcl)
 
   -- Comments
-  highlight(0, '@comment.hcl',             { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.hcl',             { link = "Comment" })  -- Comments
 
   -- Keywords
-  highlight(0, '@keyword.hcl',             { fg = colors.pink,       bg = 'NONE' })  -- Block identifiers
-  highlight(0, '@keyword.repeat.hcl',      { fg = colors.pink,       bg = 'NONE' })  -- for, endfor, in
-  highlight(0, '@keyword.conditional.hcl', { fg = colors.pink,       bg = 'NONE' })  -- if, else, endif
+  highlight(0, '@keyword.hcl',             { link = "Keyword" })  -- Block identifiers
+  highlight(0, '@keyword.repeat.hcl',      { link = "Keyword" })  -- for, endfor, in
+  highlight(0, '@keyword.conditional.hcl', { link = "Conditional" })  -- if, else, endif
 
   -- Types
-  highlight(0, '@type.hcl',                { fg = colors.turquoise,  bg = 'NONE' })  -- Nested block identifiers
-  highlight(0, '@type.builtin.hcl',        { fg = colors.turquoise,  bg = 'NONE' })  -- Type keywords
+  highlight(0, '@type.hcl',                { link = "Type" })  -- Nested block identifiers
+  highlight(0, '@type.builtin.hcl',        { link = "Type" })  -- Type keywords
 
   -- Variables
-  highlight(0, '@variable.hcl',            { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, '@variable.builtin.hcl',    { fg = colors.purple,     bg = 'NONE' })  -- var, data, local, module
-  highlight(0, '@variable.member.hcl',     { fg = colors.blue,       bg = 'NONE' })  -- Object attributes/keys
+  highlight(0, '@variable.hcl',            { link = "Variable" })  -- Identifiers
+  highlight(0, '@variable.builtin.hcl',    { link = "Variable" })  -- var, data, local, module
+  highlight(0, '@variable.member.hcl',     { link = "Variable" })  -- Object attributes/keys
 
   -- Functions
-  highlight(0, '@function.hcl',            { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.hcl',    { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.hcl',            { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.hcl',    { link = "Function" })  -- Built-in functions
 
   -- Strings
-  highlight(0, '@string.hcl',              { fg = colors.redLight,   bg = 'NONE' })  -- String literals
-  highlight(0, '@string.escape.hcl',       { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.hcl',              { link = "String" })  -- String literals
+  highlight(0, '@string.escape.hcl',       { link = "String" })  -- Escape sequences
 
   -- Numbers
-  highlight(0, '@number.hcl',              { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.hcl',        { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.hcl',              { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.hcl',        { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.hcl',             { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.hcl',             { link = "Boolean" })  -- true, false
 
   -- Constants
-  highlight(0, '@constant.hcl',            { fg = colors.blue,       bg = 'NONE' })  -- null and other constants
-  highlight(0, '@constant.builtin.hcl',    { fg = colors.blue,       bg = 'NONE' })  -- null
+  highlight(0, '@constant.hcl',            { link = "Constant" })  -- null and other constants
+  highlight(0, '@constant.builtin.hcl',    { link = "Constant" })  -- null
 
   -- Operators
-  highlight(0, '@operator.hcl',            { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.hcl',            { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.hcl', { fg = colors.white,      bg = 'NONE' })  -- {}, [], ()
-  highlight(0, '@punctuation.delimiter.hcl', { fg = colors.white,    bg = 'NONE' })  -- , . [*] .*
+  highlight(0, '@punctuation.delimiter.hcl', { link = "Delimiter" })  -- , . [*] .*
   highlight(0, '@punctuation.special.hcl', { fg = colors.pink,       bg = 'NONE' })  -- ..., ?, =>
 
   -- None (assignment)
@@ -200,45 +200,45 @@ hcl.setupHighlighting = function()
   -- Treesitter Groups (@xxx.terraform)
 
   -- Comments
-  highlight(0, '@comment.terraform',             { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.terraform',             { link = "Comment" })  -- Comments
 
   -- Keywords
-  highlight(0, '@keyword.terraform',             { fg = colors.pink,       bg = 'NONE' })  -- Block types
-  highlight(0, '@keyword.repeat.terraform',      { fg = colors.pink,       bg = 'NONE' })  -- for, in
-  highlight(0, '@keyword.conditional.terraform', { fg = colors.pink,       bg = 'NONE' })  -- if, else
+  highlight(0, '@keyword.terraform',             { link = "Keyword" })  -- Block types
+  highlight(0, '@keyword.repeat.terraform',      { link = "Keyword" })  -- for, in
+  highlight(0, '@keyword.conditional.terraform', { link = "Conditional" })  -- if, else
 
   -- Types
-  highlight(0, '@type.terraform',                { fg = colors.turquoise,  bg = 'NONE' })  -- Resource types, labels
-  highlight(0, '@type.builtin.terraform',        { fg = colors.turquoise,  bg = 'NONE' })  -- bool, string, number, etc.
+  highlight(0, '@type.terraform',                { link = "Type" })  -- Resource types, labels
+  highlight(0, '@type.builtin.terraform',        { link = "Type" })  -- bool, string, number, etc.
 
   -- Variables
-  highlight(0, '@variable.terraform',            { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, '@variable.builtin.terraform',    { fg = colors.purple,     bg = 'NONE' })  -- var, local, module, data, path, terraform
-  highlight(0, '@variable.member.terraform',     { fg = colors.blue,       bg = 'NONE' })  -- Attributes
+  highlight(0, '@variable.terraform',            { link = "Variable" })  -- Identifiers
+  highlight(0, '@variable.builtin.terraform',    { link = "Variable" })  -- var, local, module, data, path, terraform
+  highlight(0, '@variable.member.terraform',     { link = "Variable" })  -- Attributes
 
   -- Functions
-  highlight(0, '@function.terraform',            { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.terraform',    { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.terraform',            { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.terraform',    { link = "Function" })  -- Built-in functions
 
   -- Strings
-  highlight(0, '@string.terraform',              { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.terraform',       { fg = colors.pink,       bg = 'NONE' })  -- Escapes
+  highlight(0, '@string.terraform',              { link = "String" })  -- Strings
+  highlight(0, '@string.escape.terraform',       { link = "String" })  -- Escapes
 
   -- Numbers
-  highlight(0, '@number.terraform',              { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.terraform',              { link = "Number" })  -- Numbers
 
   -- Booleans
-  highlight(0, '@boolean.terraform',             { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.terraform',             { link = "Boolean" })  -- true, false
 
   -- Constants
-  highlight(0, '@constant.builtin.terraform',    { fg = colors.blue,       bg = 'NONE' })  -- null
+  highlight(0, '@constant.builtin.terraform',    { link = "Constant" })  -- null
 
   -- Operators
-  highlight(0, '@operator.terraform',            { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.terraform',            { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.terraform', { fg = colors.white,      bg = 'NONE' })  -- {}, [], ()
-  highlight(0, '@punctuation.delimiter.terraform', { fg = colors.white,    bg = 'NONE' })  -- , .
+  highlight(0, '@punctuation.delimiter.terraform', { link = "Delimiter" })  -- , .
   highlight(0, '@punctuation.special.terraform', { fg = colors.pink,       bg = 'NONE' })  -- ..., ?, =>
 
 
@@ -248,22 +248,22 @@ hcl.setupHighlighting = function()
   -- HCL LSP
   highlight(0, '@lsp.type.property.hcl',     { fg = colors.blue,       bg = 'NONE' })  -- Attributes
   highlight(0, '@lsp.type.type.hcl',         { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@lsp.type.variable.hcl',     { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.hcl',     { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.hcl',     { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.string.hcl',       { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.hcl',       { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.hcl',      { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.hcl',      { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.hcl',       { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.hcl',       { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.hcl',      { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.hcl',      { link = "Comment" })  -- Comments
 
   -- Terraform LSP
   highlight(0, '@lsp.type.property.terraform',  { fg = colors.blue,       bg = 'NONE' })  -- Attributes
   highlight(0, '@lsp.type.type.terraform',      { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@lsp.type.variable.terraform',  { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.terraform',  { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.terraform',  { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.string.terraform',    { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.terraform',    { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.terraform',   { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.terraform',   { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.terraform',    { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.terraform',    { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.terraform',   { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.terraform',   { link = "Comment" })  -- Comments
 
 
   -----------------------------------------------------------------------------
@@ -272,7 +272,7 @@ hcl.setupHighlighting = function()
   -- Core Block Types
   highlight(0, 'terraBlockResource',       { fg = colors.pink,       bg = 'NONE' })  -- resource
   highlight(0, 'terraBlockData',           { fg = colors.pink,       bg = 'NONE' })  -- data
-  highlight(0, 'terraBlockVariable',       { fg = colors.pink,       bg = 'NONE' })  -- variable
+  highlight(0, 'terraBlockVariable',       { link = "Variable" })  -- variable
   highlight(0, 'terraBlockOutput',         { fg = colors.pink,       bg = 'NONE' })  -- output
   highlight(0, 'terraBlockLocals',         { fg = colors.pink,       bg = 'NONE' })  -- locals
   highlight(0, 'terraBlockModule',         { fg = colors.pink,       bg = 'NONE' })  -- module
@@ -297,136 +297,136 @@ hcl.setupHighlighting = function()
   -- Terraform Built-in Functions (categorized)
 
   -- Numeric Functions
-  highlight(0, 'terraFuncNumeric',         { fg = colors.orange,     bg = 'NONE' })  -- abs, ceil, floor, etc.
-  highlight(0, 'terraFuncAbs',             { fg = colors.orange,     bg = 'NONE' })  -- abs
-  highlight(0, 'terraFuncCeil',            { fg = colors.orange,     bg = 'NONE' })  -- ceil
-  highlight(0, 'terraFuncFloor',           { fg = colors.orange,     bg = 'NONE' })  -- floor
-  highlight(0, 'terraFuncLog',             { fg = colors.orange,     bg = 'NONE' })  -- log
-  highlight(0, 'terraFuncMax',             { fg = colors.orange,     bg = 'NONE' })  -- max
-  highlight(0, 'terraFuncMin',             { fg = colors.orange,     bg = 'NONE' })  -- min
-  highlight(0, 'terraFuncParseint',        { fg = colors.orange,     bg = 'NONE' })  -- parseint
-  highlight(0, 'terraFuncPow',             { fg = colors.orange,     bg = 'NONE' })  -- pow
-  highlight(0, 'terraFuncSignum',          { fg = colors.orange,     bg = 'NONE' })  -- signum
+  highlight(0, 'terraFuncNumeric',         { link = "Function" })  -- abs, ceil, floor, etc.
+  highlight(0, 'terraFuncAbs',             { link = "Function" })  -- abs
+  highlight(0, 'terraFuncCeil',            { link = "Function" })  -- ceil
+  highlight(0, 'terraFuncFloor',           { link = "Function" })  -- floor
+  highlight(0, 'terraFuncLog',             { link = "Function" })  -- log
+  highlight(0, 'terraFuncMax',             { link = "Function" })  -- max
+  highlight(0, 'terraFuncMin',             { link = "Function" })  -- min
+  highlight(0, 'terraFuncParseint',        { link = "Function" })  -- parseint
+  highlight(0, 'terraFuncPow',             { link = "Function" })  -- pow
+  highlight(0, 'terraFuncSignum',          { link = "Function" })  -- signum
 
   -- String Functions
-  highlight(0, 'terraFuncString',          { fg = colors.orange,     bg = 'NONE' })  -- String functions
-  highlight(0, 'terraFuncChomp',           { fg = colors.orange,     bg = 'NONE' })  -- chomp
-  highlight(0, 'terraFuncFormat',          { fg = colors.orange,     bg = 'NONE' })  -- format
-  highlight(0, 'terraFuncFormatlist',      { fg = colors.orange,     bg = 'NONE' })  -- formatlist
-  highlight(0, 'terraFuncIndent',          { fg = colors.orange,     bg = 'NONE' })  -- indent
-  highlight(0, 'terraFuncJoin',            { fg = colors.orange,     bg = 'NONE' })  -- join
-  highlight(0, 'terraFuncLower',           { fg = colors.orange,     bg = 'NONE' })  -- lower
-  highlight(0, 'terraFuncUpper',           { fg = colors.orange,     bg = 'NONE' })  -- upper
-  highlight(0, 'terraFuncRegex',           { fg = colors.orange,     bg = 'NONE' })  -- regex
-  highlight(0, 'terraFuncRegexall',        { fg = colors.orange,     bg = 'NONE' })  -- regexall
-  highlight(0, 'terraFuncReplace',         { fg = colors.orange,     bg = 'NONE' })  -- replace
-  highlight(0, 'terraFuncSplit',           { fg = colors.orange,     bg = 'NONE' })  -- split
-  highlight(0, 'terraFuncStrrev',          { fg = colors.orange,     bg = 'NONE' })  -- strrev
-  highlight(0, 'terraFuncSubstr',          { fg = colors.orange,     bg = 'NONE' })  -- substr
-  highlight(0, 'terraFuncTitle',           { fg = colors.orange,     bg = 'NONE' })  -- title
-  highlight(0, 'terraFuncTrim',            { fg = colors.orange,     bg = 'NONE' })  -- trim
-  highlight(0, 'terraFuncTrimprefix',      { fg = colors.orange,     bg = 'NONE' })  -- trimprefix
-  highlight(0, 'terraFuncTrimsuffix',      { fg = colors.orange,     bg = 'NONE' })  -- trimsuffix
-  highlight(0, 'terraFuncTrimspace',       { fg = colors.orange,     bg = 'NONE' })  -- trimspace
+  highlight(0, 'terraFuncString',          { link = "String" })  -- String functions
+  highlight(0, 'terraFuncChomp',           { link = "Function" })  -- chomp
+  highlight(0, 'terraFuncFormat',          { link = "Function" })  -- format
+  highlight(0, 'terraFuncFormatlist',      { link = "Function" })  -- formatlist
+  highlight(0, 'terraFuncIndent',          { link = "Function" })  -- indent
+  highlight(0, 'terraFuncJoin',            { link = "Function" })  -- join
+  highlight(0, 'terraFuncLower',           { link = "Function" })  -- lower
+  highlight(0, 'terraFuncUpper',           { link = "Function" })  -- upper
+  highlight(0, 'terraFuncRegex',           { link = "Function" })  -- regex
+  highlight(0, 'terraFuncRegexall',        { link = "Function" })  -- regexall
+  highlight(0, 'terraFuncReplace',         { link = "Function" })  -- replace
+  highlight(0, 'terraFuncSplit',           { link = "Function" })  -- split
+  highlight(0, 'terraFuncStrrev',          { link = "Function" })  -- strrev
+  highlight(0, 'terraFuncSubstr',          { link = "Function" })  -- substr
+  highlight(0, 'terraFuncTitle',           { link = "Function" })  -- title
+  highlight(0, 'terraFuncTrim',            { link = "Function" })  -- trim
+  highlight(0, 'terraFuncTrimprefix',      { link = "Function" })  -- trimprefix
+  highlight(0, 'terraFuncTrimsuffix',      { link = "Function" })  -- trimsuffix
+  highlight(0, 'terraFuncTrimspace',       { link = "Function" })  -- trimspace
 
   -- Collection Functions
-  highlight(0, 'terraFuncCollection',      { fg = colors.orange,     bg = 'NONE' })  -- Collection functions
-  highlight(0, 'terraFuncAlltrue',         { fg = colors.orange,     bg = 'NONE' })  -- alltrue
-  highlight(0, 'terraFuncAnytrue',         { fg = colors.orange,     bg = 'NONE' })  -- anytrue
-  highlight(0, 'terraFuncChunklist',       { fg = colors.orange,     bg = 'NONE' })  -- chunklist
-  highlight(0, 'terraFuncCoalesce',        { fg = colors.orange,     bg = 'NONE' })  -- coalesce
-  highlight(0, 'terraFuncCoalescelist',    { fg = colors.orange,     bg = 'NONE' })  -- coalescelist
-  highlight(0, 'terraFuncCompact',         { fg = colors.orange,     bg = 'NONE' })  -- compact
-  highlight(0, 'terraFuncConcat',          { fg = colors.orange,     bg = 'NONE' })  -- concat
-  highlight(0, 'terraFuncContains',        { fg = colors.orange,     bg = 'NONE' })  -- contains
-  highlight(0, 'terraFuncDistinct',        { fg = colors.orange,     bg = 'NONE' })  -- distinct
-  highlight(0, 'terraFuncElement',         { fg = colors.orange,     bg = 'NONE' })  -- element
-  highlight(0, 'terraFuncFlatten',         { fg = colors.orange,     bg = 'NONE' })  -- flatten
-  highlight(0, 'terraFuncIndex',           { fg = colors.orange,     bg = 'NONE' })  -- index
-  highlight(0, 'terraFuncKeys',            { fg = colors.orange,     bg = 'NONE' })  -- keys
-  highlight(0, 'terraFuncLength',          { fg = colors.orange,     bg = 'NONE' })  -- length
-  highlight(0, 'terraFuncLookup',          { fg = colors.orange,     bg = 'NONE' })  -- lookup
-  highlight(0, 'terraFuncMatchkeys',       { fg = colors.orange,     bg = 'NONE' })  -- matchkeys
-  highlight(0, 'terraFuncMerge',           { fg = colors.orange,     bg = 'NONE' })  -- merge
-  highlight(0, 'terraFuncOne',             { fg = colors.orange,     bg = 'NONE' })  -- one
-  highlight(0, 'terraFuncRange',           { fg = colors.orange,     bg = 'NONE' })  -- range
-  highlight(0, 'terraFuncReverse',         { fg = colors.orange,     bg = 'NONE' })  -- reverse
-  highlight(0, 'terraFuncSetintersection', { fg = colors.orange,     bg = 'NONE' })  -- setintersection
-  highlight(0, 'terraFuncSetproduct',      { fg = colors.orange,     bg = 'NONE' })  -- setproduct
-  highlight(0, 'terraFuncSetsubtract',     { fg = colors.orange,     bg = 'NONE' })  -- setsubtract
-  highlight(0, 'terraFuncSetunion',        { fg = colors.orange,     bg = 'NONE' })  -- setunion
-  highlight(0, 'terraFuncSlice',           { fg = colors.orange,     bg = 'NONE' })  -- slice
-  highlight(0, 'terraFuncSort',            { fg = colors.orange,     bg = 'NONE' })  -- sort
-  highlight(0, 'terraFuncSum',             { fg = colors.orange,     bg = 'NONE' })  -- sum
-  highlight(0, 'terraFuncTranspose',       { fg = colors.orange,     bg = 'NONE' })  -- transpose
-  highlight(0, 'terraFuncValues',          { fg = colors.orange,     bg = 'NONE' })  -- values
-  highlight(0, 'terraFuncZipmap',          { fg = colors.orange,     bg = 'NONE' })  -- zipmap
+  highlight(0, 'terraFuncCollection',      { link = "Function" })  -- Collection functions
+  highlight(0, 'terraFuncAlltrue',         { link = "Function" })  -- alltrue
+  highlight(0, 'terraFuncAnytrue',         { link = "Function" })  -- anytrue
+  highlight(0, 'terraFuncChunklist',       { link = "Function" })  -- chunklist
+  highlight(0, 'terraFuncCoalesce',        { link = "Function" })  -- coalesce
+  highlight(0, 'terraFuncCoalescelist',    { link = "Function" })  -- coalescelist
+  highlight(0, 'terraFuncCompact',         { link = "Function" })  -- compact
+  highlight(0, 'terraFuncConcat',          { link = "Function" })  -- concat
+  highlight(0, 'terraFuncContains',        { link = "Function" })  -- contains
+  highlight(0, 'terraFuncDistinct',        { link = "Function" })  -- distinct
+  highlight(0, 'terraFuncElement',         { link = "Function" })  -- element
+  highlight(0, 'terraFuncFlatten',         { link = "Function" })  -- flatten
+  highlight(0, 'terraFuncIndex',           { link = "Function" })  -- index
+  highlight(0, 'terraFuncKeys',            { link = "Function" })  -- keys
+  highlight(0, 'terraFuncLength',          { link = "Function" })  -- length
+  highlight(0, 'terraFuncLookup',          { link = "Function" })  -- lookup
+  highlight(0, 'terraFuncMatchkeys',       { link = "Function" })  -- matchkeys
+  highlight(0, 'terraFuncMerge',           { link = "Function" })  -- merge
+  highlight(0, 'terraFuncOne',             { link = "Function" })  -- one
+  highlight(0, 'terraFuncRange',           { link = "Function" })  -- range
+  highlight(0, 'terraFuncReverse',         { link = "Function" })  -- reverse
+  highlight(0, 'terraFuncSetintersection', { link = "Function" })  -- setintersection
+  highlight(0, 'terraFuncSetproduct',      { link = "Function" })  -- setproduct
+  highlight(0, 'terraFuncSetsubtract',     { link = "Function" })  -- setsubtract
+  highlight(0, 'terraFuncSetunion',        { link = "Function" })  -- setunion
+  highlight(0, 'terraFuncSlice',           { link = "Function" })  -- slice
+  highlight(0, 'terraFuncSort',            { link = "Function" })  -- sort
+  highlight(0, 'terraFuncSum',             { link = "Function" })  -- sum
+  highlight(0, 'terraFuncTranspose',       { link = "Function" })  -- transpose
+  highlight(0, 'terraFuncValues',          { link = "Function" })  -- values
+  highlight(0, 'terraFuncZipmap',          { link = "Function" })  -- zipmap
 
   -- Encoding Functions
-  highlight(0, 'terraFuncEncoding',        { fg = colors.orange,     bg = 'NONE' })  -- Encoding functions
-  highlight(0, 'terraFuncBase64encode',    { fg = colors.orange,     bg = 'NONE' })  -- base64encode
-  highlight(0, 'terraFuncBase64decode',    { fg = colors.orange,     bg = 'NONE' })  -- base64decode
-  highlight(0, 'terraFuncBase64gzip',      { fg = colors.orange,     bg = 'NONE' })  -- base64gzip
-  highlight(0, 'terraFuncCsvdecode',       { fg = colors.orange,     bg = 'NONE' })  -- csvdecode
-  highlight(0, 'terraFuncJsonencode',      { fg = colors.orange,     bg = 'NONE' })  -- jsonencode
-  highlight(0, 'terraFuncJsondecode',      { fg = colors.orange,     bg = 'NONE' })  -- jsondecode
-  highlight(0, 'terraFuncUrlencode',       { fg = colors.orange,     bg = 'NONE' })  -- urlencode
-  highlight(0, 'terraFuncYamlencode',      { fg = colors.orange,     bg = 'NONE' })  -- yamlencode
-  highlight(0, 'terraFuncYamldecode',      { fg = colors.orange,     bg = 'NONE' })  -- yamldecode
-  highlight(0, 'terraFuncTextencodebase64',{ fg = colors.orange,     bg = 'NONE' })  -- textencodebase64
-  highlight(0, 'terraFuncTextdecodebase64',{ fg = colors.orange,     bg = 'NONE' })  -- textdecodebase64
+  highlight(0, 'terraFuncEncoding',        { link = "Function" })  -- Encoding functions
+  highlight(0, 'terraFuncBase64encode',    { link = "Function" })  -- base64encode
+  highlight(0, 'terraFuncBase64decode',    { link = "Function" })  -- base64decode
+  highlight(0, 'terraFuncBase64gzip',      { link = "Function" })  -- base64gzip
+  highlight(0, 'terraFuncCsvdecode',       { link = "Function" })  -- csvdecode
+  highlight(0, 'terraFuncJsonencode',      { link = "Function" })  -- jsonencode
+  highlight(0, 'terraFuncJsondecode',      { link = "Function" })  -- jsondecode
+  highlight(0, 'terraFuncUrlencode',       { link = "Function" })  -- urlencode
+  highlight(0, 'terraFuncYamlencode',      { link = "Function" })  -- yamlencode
+  highlight(0, 'terraFuncYamldecode',      { link = "Function" })  -- yamldecode
+  highlight(0, 'terraFuncTextencodebase64',{ link = "Function" })  -- textencodebase64
+  highlight(0, 'terraFuncTextdecodebase64',{ link = "Function" })  -- textdecodebase64
 
   -- Filesystem Functions
-  highlight(0, 'terraFuncFilesystem',      { fg = colors.orange,     bg = 'NONE' })  -- Filesystem functions
-  highlight(0, 'terraFuncFile',            { fg = colors.orange,     bg = 'NONE' })  -- file
-  highlight(0, 'terraFuncFileexists',      { fg = colors.orange,     bg = 'NONE' })  -- fileexists
-  highlight(0, 'terraFuncFileset',         { fg = colors.orange,     bg = 'NONE' })  -- fileset
-  highlight(0, 'terraFuncFilebase64',      { fg = colors.orange,     bg = 'NONE' })  -- filebase64
-  highlight(0, 'terraFuncTemplatefile',    { fg = colors.orange,     bg = 'NONE' })  -- templatefile
-  highlight(0, 'terraFuncPathexpand',      { fg = colors.orange,     bg = 'NONE' })  -- pathexpand
-  highlight(0, 'terraFuncDirname',         { fg = colors.orange,     bg = 'NONE' })  -- dirname
-  highlight(0, 'terraFuncBasename',        { fg = colors.orange,     bg = 'NONE' })  -- basename
-  highlight(0, 'terraFuncAbspath',         { fg = colors.orange,     bg = 'NONE' })  -- abspath
+  highlight(0, 'terraFuncFilesystem',      { link = "Function" })  -- Filesystem functions
+  highlight(0, 'terraFuncFile',            { link = "Function" })  -- file
+  highlight(0, 'terraFuncFileexists',      { link = "Function" })  -- fileexists
+  highlight(0, 'terraFuncFileset',         { link = "Function" })  -- fileset
+  highlight(0, 'terraFuncFilebase64',      { link = "Function" })  -- filebase64
+  highlight(0, 'terraFuncTemplatefile',    { link = "Function" })  -- templatefile
+  highlight(0, 'terraFuncPathexpand',      { link = "Function" })  -- pathexpand
+  highlight(0, 'terraFuncDirname',         { link = "Function" })  -- dirname
+  highlight(0, 'terraFuncBasename',        { link = "Function" })  -- basename
+  highlight(0, 'terraFuncAbspath',         { link = "Function" })  -- abspath
 
   -- Date/Time Functions
-  highlight(0, 'terraFuncDatetime',        { fg = colors.orange,     bg = 'NONE' })  -- Date/time functions
-  highlight(0, 'terraFuncFormatdate',      { fg = colors.orange,     bg = 'NONE' })  -- formatdate
-  highlight(0, 'terraFuncTimeadd',         { fg = colors.orange,     bg = 'NONE' })  -- timeadd
-  highlight(0, 'terraFuncTimecmp',         { fg = colors.orange,     bg = 'NONE' })  -- timecmp
-  highlight(0, 'terraFuncTimestamp',       { fg = colors.orange,     bg = 'NONE' })  -- timestamp
-  highlight(0, 'terraFuncPlantimestamp',   { fg = colors.orange,     bg = 'NONE' })  -- plantimestamp
+  highlight(0, 'terraFuncDatetime',        { link = "Function" })  -- Date/time functions
+  highlight(0, 'terraFuncFormatdate',      { link = "Function" })  -- formatdate
+  highlight(0, 'terraFuncTimeadd',         { link = "Function" })  -- timeadd
+  highlight(0, 'terraFuncTimecmp',         { link = "Function" })  -- timecmp
+  highlight(0, 'terraFuncTimestamp',       { link = "Function" })  -- timestamp
+  highlight(0, 'terraFuncPlantimestamp',   { link = "Function" })  -- plantimestamp
 
   -- Hash/Crypto Functions
-  highlight(0, 'terraFuncHash',            { fg = colors.orange,     bg = 'NONE' })  -- Hash functions
-  highlight(0, 'terraFuncMd5',             { fg = colors.orange,     bg = 'NONE' })  -- md5
-  highlight(0, 'terraFuncSha1',            { fg = colors.orange,     bg = 'NONE' })  -- sha1
-  highlight(0, 'terraFuncSha256',          { fg = colors.orange,     bg = 'NONE' })  -- sha256
-  highlight(0, 'terraFuncSha512',          { fg = colors.orange,     bg = 'NONE' })  -- sha512
-  highlight(0, 'terraFuncBcrypt',          { fg = colors.orange,     bg = 'NONE' })  -- bcrypt
-  highlight(0, 'terraFuncRsadecrypt',      { fg = colors.orange,     bg = 'NONE' })  -- rsadecrypt
-  highlight(0, 'terraFuncUuid',            { fg = colors.orange,     bg = 'NONE' })  -- uuid
-  highlight(0, 'terraFuncUuidv5',          { fg = colors.orange,     bg = 'NONE' })  -- uuidv5
+  highlight(0, 'terraFuncHash',            { link = "Function" })  -- Hash functions
+  highlight(0, 'terraFuncMd5',             { link = "Function" })  -- md5
+  highlight(0, 'terraFuncSha1',            { link = "Function" })  -- sha1
+  highlight(0, 'terraFuncSha256',          { link = "Function" })  -- sha256
+  highlight(0, 'terraFuncSha512',          { link = "Function" })  -- sha512
+  highlight(0, 'terraFuncBcrypt',          { link = "Function" })  -- bcrypt
+  highlight(0, 'terraFuncRsadecrypt',      { link = "Function" })  -- rsadecrypt
+  highlight(0, 'terraFuncUuid',            { link = "Function" })  -- uuid
+  highlight(0, 'terraFuncUuidv5',          { link = "Function" })  -- uuidv5
 
   -- IP Network Functions
-  highlight(0, 'terraFuncNetwork',         { fg = colors.orange,     bg = 'NONE' })  -- Network functions
-  highlight(0, 'terraFuncCidrhost',        { fg = colors.orange,     bg = 'NONE' })  -- cidrhost
-  highlight(0, 'terraFuncCidrnetmask',     { fg = colors.orange,     bg = 'NONE' })  -- cidrnetmask
-  highlight(0, 'terraFuncCidrsubnet',      { fg = colors.orange,     bg = 'NONE' })  -- cidrsubnet
-  highlight(0, 'terraFuncCidrsubnets',     { fg = colors.orange,     bg = 'NONE' })  -- cidrsubnets
+  highlight(0, 'terraFuncNetwork',         { link = "Function" })  -- Network functions
+  highlight(0, 'terraFuncCidrhost',        { link = "Function" })  -- cidrhost
+  highlight(0, 'terraFuncCidrnetmask',     { link = "Function" })  -- cidrnetmask
+  highlight(0, 'terraFuncCidrsubnet',      { link = "Function" })  -- cidrsubnet
+  highlight(0, 'terraFuncCidrsubnets',     { link = "Function" })  -- cidrsubnets
 
   -- Type Conversion Functions
-  highlight(0, 'terraFuncTypeConv',        { fg = colors.orange,     bg = 'NONE' })  -- Type conversion functions
-  highlight(0, 'terraFuncCan',             { fg = colors.orange,     bg = 'NONE' })  -- can
-  highlight(0, 'terraFuncNonsensitive',    { fg = colors.orange,     bg = 'NONE' })  -- nonsensitive
-  highlight(0, 'terraFuncSensitive',       { fg = colors.orange,     bg = 'NONE' })  -- sensitive
-  highlight(0, 'terraFuncTobool',          { fg = colors.orange,     bg = 'NONE' })  -- tobool
-  highlight(0, 'terraFuncTolist',          { fg = colors.orange,     bg = 'NONE' })  -- tolist
-  highlight(0, 'terraFuncTomap',           { fg = colors.orange,     bg = 'NONE' })  -- tomap
-  highlight(0, 'terraFuncTonumber',        { fg = colors.orange,     bg = 'NONE' })  -- tonumber
-  highlight(0, 'terraFuncToset',           { fg = colors.orange,     bg = 'NONE' })  -- toset
-  highlight(0, 'terraFuncTostring',        { fg = colors.orange,     bg = 'NONE' })  -- tostring
-  highlight(0, 'terraFuncTry',             { fg = colors.orange,     bg = 'NONE' })  -- try
-  highlight(0, 'terraFuncType',            { fg = colors.orange,     bg = 'NONE' })  -- type
+  highlight(0, 'terraFuncTypeConv',        { link = "Type" })  -- Type conversion functions
+  highlight(0, 'terraFuncCan',             { link = "Function" })  -- can
+  highlight(0, 'terraFuncNonsensitive',    { link = "Function" })  -- nonsensitive
+  highlight(0, 'terraFuncSensitive',       { link = "Function" })  -- sensitive
+  highlight(0, 'terraFuncTobool',          { link = "Function" })  -- tobool
+  highlight(0, 'terraFuncTolist',          { link = "Function" })  -- tolist
+  highlight(0, 'terraFuncTomap',           { link = "Function" })  -- tomap
+  highlight(0, 'terraFuncTonumber',        { link = "Number" })  -- tonumber
+  highlight(0, 'terraFuncToset',           { link = "Function" })  -- toset
+  highlight(0, 'terraFuncTostring',        { link = "String" })  -- tostring
+  highlight(0, 'terraFuncTry',             { link = "Function" })  -- try
+  highlight(0, 'terraFuncType',            { link = "Type" })  -- type
 
 
   -----------------------------------------------------------------------------
@@ -477,8 +477,8 @@ hcl.setupHighlighting = function()
   highlight(0, 'packerBlockPacker',        { fg = colors.pink,       bg = 'NONE' })  -- packer
   highlight(0, 'packerBlockData',          { fg = colors.pink,       bg = 'NONE' })  -- data
   highlight(0, 'packerBlockLocals',        { fg = colors.pink,       bg = 'NONE' })  -- locals
-  highlight(0, 'packerBlockVariable',      { fg = colors.pink,       bg = 'NONE' })  -- variable
-  highlight(0, 'packerSourceType',         { fg = colors.turquoise,  bg = 'NONE' })  -- amazon-ebs, docker, etc.
+  highlight(0, 'packerBlockVariable',      { link = "Variable" })  -- variable
+  highlight(0, 'packerSourceType',         { link = "Type" })  -- amazon-ebs, docker, etc.
 
   -- Vault Policy
   highlight(0, 'vaultBlockPath',           { fg = colors.pink,       bg = 'NONE' })  -- path block
@@ -513,7 +513,7 @@ hcl.setupHighlighting = function()
 
   highlight(0, 'tfstateVersion',           { fg = colors.greenLight, bg = 'NONE' })  -- version
   highlight(0, 'tfstateSerial',            { fg = colors.greenLight, bg = 'NONE' })  -- serial
-  highlight(0, 'tfstateResourceType',      { fg = colors.turquoise,  bg = 'NONE' })  -- Resource types
+  highlight(0, 'tfstateResourceType',      { link = "Type" })  -- Resource types
   highlight(0, 'tfstateResourceName',      { fg = colors.blue,       bg = 'NONE' })  -- Resource names
   highlight(0, 'tfstateAttributeKey',      { fg = colors.blue,       bg = 'NONE' })  -- Attribute keys
 

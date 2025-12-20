@@ -17,8 +17,8 @@ graphql.setupHighlighting = function()
   -- Operations
   ---------------------------------------------------------------------------
 
-  highlight(0, 'graphqlKeyword',           { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, 'graphqlOperationKeyword',  { fg = colors.blue,       bg = 'NONE' })  -- query, mutation, subscription
+  highlight(0, 'graphqlKeyword',           { link = "Keyword" })  -- Keywords
+  highlight(0, 'graphqlOperationKeyword',  { link = "Keyword" })  -- query, mutation, subscription
 
   -- Query
   highlight(0, 'graphqlQuery',             { fg = colors.blue,       bg = 'NONE' })  -- query keyword
@@ -39,12 +39,12 @@ graphql.setupHighlighting = function()
 
   -- Schema
   highlight(0, 'graphqlSchema',            { fg = colors.blue,       bg = 'NONE' })  -- schema keyword
-  highlight(0, 'graphqlSchemaKeyword',     { fg = colors.blue,       bg = 'NONE' })  -- schema keyword
+  highlight(0, 'graphqlSchemaKeyword',     { link = "Keyword" })  -- schema keyword
 
   -- Type Definition
   highlight(0, 'graphqlStructure',         { fg = colors.blue,       bg = 'NONE' })  -- type, input, interface, etc.
-  highlight(0, 'graphqlTypeKeyword',       { fg = colors.blue,       bg = 'NONE' })  -- type keyword
-  highlight(0, 'graphqlTypeName',          { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
+  highlight(0, 'graphqlTypeKeyword',       { link = "Keyword" })  -- type keyword
+  highlight(0, 'graphqlTypeName',          { link = "Type" })  -- Type names
 
   -- Input Type
   highlight(0, 'graphqlInput',             { fg = colors.blue,       bg = 'NONE' })  -- input keyword
@@ -77,20 +77,20 @@ graphql.setupHighlighting = function()
   -- Types
   ---------------------------------------------------------------------------
 
-  highlight(0, 'graphqlType',              { fg = colors.turquoise,  bg = 'NONE' })  -- Type references
+  highlight(0, 'graphqlType',              { link = "Type" })  -- Type references
 
   -- Built-in Scalar Types
-  highlight(0, 'graphqlBuiltinType',       { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
-  highlight(0, 'graphqlTypeInt',           { fg = colors.turquoise,  bg = 'NONE' })  -- Int
-  highlight(0, 'graphqlTypeFloat',         { fg = colors.turquoise,  bg = 'NONE' })  -- Float
-  highlight(0, 'graphqlTypeString',        { fg = colors.turquoise,  bg = 'NONE' })  -- String
-  highlight(0, 'graphqlTypeBoolean',       { fg = colors.turquoise,  bg = 'NONE' })  -- Boolean
-  highlight(0, 'graphqlTypeID',            { fg = colors.turquoise,  bg = 'NONE' })  -- ID
+  highlight(0, 'graphqlBuiltinType',       { link = "Type" })  -- Built-in types
+  highlight(0, 'graphqlTypeInt',           { link = "Type" })  -- Int
+  highlight(0, 'graphqlTypeFloat',         { link = "Type" })  -- Float
+  highlight(0, 'graphqlTypeString',        { link = "String" })  -- String
+  highlight(0, 'graphqlTypeBoolean',       { link = "Boolean" })  -- Boolean
+  highlight(0, 'graphqlTypeID',            { link = "Type" })  -- ID
 
   -- Type Modifiers
   highlight(0, 'graphqlNonNull',           { fg = colors.white,      bg = 'NONE' })  -- ! (non-null)
   highlight(0, 'graphqlList',              { fg = colors.white,      bg = 'NONE' })  -- [] (list)
-  highlight(0, 'graphqlListType',          { fg = colors.turquoise,  bg = 'NONE' })  -- List type
+  highlight(0, 'graphqlListType',          { link = "Type" })  -- List type
 
 
   ---------------------------------------------------------------------------
@@ -117,10 +117,10 @@ graphql.setupHighlighting = function()
   -- Variables
   ---------------------------------------------------------------------------
 
-  highlight(0, 'graphqlVariable',          { fg = colors.purple,     bg = 'NONE' })  -- $variable
-  highlight(0, 'graphqlVariableName',      { fg = colors.purple,     bg = 'NONE' })  -- Variable names
-  highlight(0, 'graphqlVariableDefinition', { fg = colors.purple,    bg = 'NONE' })  -- Variable definitions
-  highlight(0, 'graphqlVariableDefault',   { fg = colors.white,      bg = 'NONE' })  -- Default values
+  highlight(0, 'graphqlVariable',          { link = "Variable" })  -- $variable
+  highlight(0, 'graphqlVariableName',      { link = "Variable" })  -- Variable names
+  highlight(0, 'graphqlVariableDefinition', { link = "Variable" })  -- Variable definitions
+  highlight(0, 'graphqlVariableDefault',   { link = "Variable" })  -- Default values
 
 
   ---------------------------------------------------------------------------
@@ -151,7 +151,7 @@ graphql.setupHighlighting = function()
 
   -- Directive Locations (for directive definitions)
   highlight(0, 'graphqlExecutableLocation', { fg = colors.pink,      bg = 'NONE' })  -- QUERY, MUTATION, etc.
-  highlight(0, 'graphqlTypeSystemLocation', { fg = colors.pink,      bg = 'NONE' })  -- SCHEMA, SCALAR, etc.
+  highlight(0, 'graphqlTypeSystemLocation', { link = "Type" })  -- SCHEMA, SCALAR, etc.
 
 
   ---------------------------------------------------------------------------
@@ -159,18 +159,18 @@ graphql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Strings
-  highlight(0, 'graphqlString',            { fg = colors.redLight,   bg = 'NONE' })  -- "string"
-  highlight(0, 'graphqlStringContent',     { fg = colors.redLight,   bg = 'NONE' })  -- String content
-  highlight(0, 'graphqlBlockString',       { fg = colors.redLight,   bg = 'NONE' })  -- """block string"""
+  highlight(0, 'graphqlString',            { link = "String" })  -- "string"
+  highlight(0, 'graphqlStringContent',     { link = "String" })  -- String content
+  highlight(0, 'graphqlBlockString',       { link = "String" })  -- """block string"""
   highlight(0, 'graphqlEscape',            { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
 
   -- Numbers
-  highlight(0, 'graphqlNumber',            { fg = colors.greenLight, bg = 'NONE' })  -- Numeric literals
+  highlight(0, 'graphqlNumber',            { link = "Number" })  -- Numeric literals
   highlight(0, 'graphqlIntValue',          { fg = colors.greenLight, bg = 'NONE' })  -- Integer values
   highlight(0, 'graphqlFloatValue',        { fg = colors.greenLight, bg = 'NONE' })  -- Float values
 
   -- Booleans
-  highlight(0, 'graphqlBoolean',           { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'graphqlBoolean',           { link = "Boolean" })  -- true, false
 
   -- Null
   highlight(0, 'graphqlNull',              { fg = colors.pink,       bg = 'NONE' })  -- null
@@ -189,16 +189,16 @@ graphql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   highlight(0, 'graphqlMetaFields',        { fg = colors.pink,       bg = 'NONE' })  -- __typename, __schema, __type
-  highlight(0, 'graphqlTypename',          { fg = colors.pink,       bg = 'NONE' })  -- __typename
+  highlight(0, 'graphqlTypename',          { link = "Type" })  -- __typename
   highlight(0, 'graphqlSchemaIntrospect',  { fg = colors.pink,       bg = 'NONE' })  -- __schema
-  highlight(0, 'graphqlTypeIntrospect',    { fg = colors.pink,       bg = 'NONE' })  -- __type
+  highlight(0, 'graphqlTypeIntrospect',    { link = "Type" })  -- __type
 
 
   ---------------------------------------------------------------------------
   -- Operators & Punctuation
   ---------------------------------------------------------------------------
 
-  highlight(0, 'graphqlOperator',          { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'graphqlOperator',          { link = "Operator" })  -- Operators
   highlight(0, 'graphqlEquals',            { fg = colors.white,      bg = 'NONE' })  -- =
   highlight(0, 'graphqlColon',             { fg = colors.white,      bg = 'NONE' })  -- :
   highlight(0, 'graphqlPipe',              { fg = colors.white,      bg = 'NONE' })  -- | (union separator)
@@ -211,7 +211,7 @@ graphql.setupHighlighting = function()
   highlight(0, 'graphqlBraces',            { fg = colors.white,      bg = 'NONE' })  -- { }
   highlight(0, 'graphqlParens',            { fg = colors.white,      bg = 'NONE' })  -- ( )
   highlight(0, 'graphqlBrackets',          { fg = colors.white,      bg = 'NONE' })  -- [ ]
-  highlight(0, 'graphqlDelimiter',         { fg = colors.white,      bg = 'NONE' })  -- General delimiters
+  highlight(0, 'graphqlDelimiter',         { link = "Delimiter" })  -- General delimiters
   highlight(0, 'graphqlComma',             { fg = colors.white,      bg = 'NONE' })  -- ,
 
 
@@ -219,7 +219,7 @@ graphql.setupHighlighting = function()
   -- Comments
   ---------------------------------------------------------------------------
 
-  highlight(0, 'graphqlComment',           { fg = colors.red,        bg = 'NONE' })  -- # comments
+  highlight(0, 'graphqlComment',           { link = "Comment" })  -- # comments
   highlight(0, 'graphqlDescription',       { fg = colors.red,        bg = 'NONE' })  -- """descriptions"""
   highlight(0, 'graphqlTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
@@ -235,7 +235,7 @@ graphql.setupHighlighting = function()
   -- Template Strings (JS/TS embedded GraphQL)
   ---------------------------------------------------------------------------
 
-  highlight(0, 'graphqlTemplateString',    { fg = colors.redLight,   bg = 'NONE' })  -- Template string content
+  highlight(0, 'graphqlTemplateString',    { link = "String" })  -- Template string content
   highlight(0, 'graphqlTaggedTemplate',    { fg = colors.orange,     bg = 'NONE' })  -- gql`...` tag
   highlight(0, 'graphqlTemplateExpression', { fg = colors.purple,    bg = 'NONE' })  -- ${expression} interpolation
 
@@ -252,18 +252,18 @@ graphql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Keywords
-  highlight(0, '@keyword.graphql',                 { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.type.graphql',            { fg = colors.blue,       bg = 'NONE' })  -- type, input, etc.
-  highlight(0, '@keyword.operator.graphql',        { fg = colors.blue,       bg = 'NONE' })  -- on, implements
+  highlight(0, '@keyword.graphql',                 { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.type.graphql',            { link = "Keyword" })  -- type, input, etc.
+  highlight(0, '@keyword.operator.graphql',        { link = "Operator" })  -- on, implements
 
   -- Types
-  highlight(0, '@type.graphql',                    { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.graphql',            { fg = colors.turquoise,  bg = 'NONE' })  -- Int, Float, String, Boolean, ID
-  highlight(0, '@type.definition.graphql',         { fg = colors.turquoise,  bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.graphql',                    { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.graphql',            { link = "Type" })  -- Int, Float, String, Boolean, ID
+  highlight(0, '@type.definition.graphql',         { link = "Type" })  -- Type definitions
 
   -- Variables
-  highlight(0, '@variable.graphql',                { fg = colors.purple,     bg = 'NONE' })  -- $variables
-  highlight(0, '@variable.parameter.graphql',      { fg = colors.orange,     bg = 'NONE' })  -- Parameters
+  highlight(0, '@variable.graphql',                { link = "Variable" })  -- $variables
+  highlight(0, '@variable.parameter.graphql',      { link = "Variable" })  -- Parameters
 
   -- Properties (Fields)
   highlight(0, '@property.graphql',                { fg = colors.white,      bg = 'NONE' })  -- Fields
@@ -273,27 +273,27 @@ graphql.setupHighlighting = function()
   highlight(0, '@attribute.graphql',               { fg = colors.pink,       bg = 'NONE' })  -- @directives
 
   -- Strings
-  highlight(0, '@string.graphql',                  { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.documentation.graphql',    { fg = colors.red,        bg = 'NONE' })  -- """descriptions"""
+  highlight(0, '@string.graphql',                  { link = "String" })  -- Strings
+  highlight(0, '@string.documentation.graphql',    { link = "String" })  -- """descriptions"""
 
   -- Numbers
-  highlight(0, '@number.graphql',                  { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.graphql',            { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.graphql',                  { link = "Number" })  -- Integers
+  highlight(0, '@number.float.graphql',            { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.graphql',                 { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.graphql',                 { link = "Boolean" })  -- true, false
 
   -- Constants
-  highlight(0, '@constant.graphql',                { fg = colors.pink,       bg = 'NONE' })  -- Enum values
-  highlight(0, '@constant.builtin.graphql',        { fg = colors.pink,       bg = 'NONE' })  -- null
+  highlight(0, '@constant.graphql',                { link = "Constant" })  -- Enum values
+  highlight(0, '@constant.builtin.graphql',        { link = "Constant" })  -- null
 
   -- Comments
-  highlight(0, '@comment.graphql',                 { fg = colors.red,        bg = 'NONE' })  -- # comments
+  highlight(0, '@comment.graphql',                 { link = "Comment" })  -- # comments
 
   -- Operators & Punctuation
-  highlight(0, '@operator.graphql',                { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.graphql',                { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.graphql',     { fg = colors.white,      bg = 'NONE' })  -- { } ( ) [ ]
-  highlight(0, '@punctuation.delimiter.graphql',   { fg = colors.white,      bg = 'NONE' })  -- : , |
+  highlight(0, '@punctuation.delimiter.graphql',   { link = "Delimiter" })  -- : , |
   highlight(0, '@punctuation.special.graphql',     { fg = colors.white,      bg = 'NONE' })  -- ... ! @
 
 
@@ -307,12 +307,12 @@ graphql.setupHighlighting = function()
   highlight(0, '@lsp.type.enum.graphql',           { fg = colors.turquoise,  bg = 'NONE' })  -- Enums
   highlight(0, '@lsp.type.enumMember.graphql',     { fg = colors.pink,       bg = 'NONE' })  -- Enum values
   highlight(0, '@lsp.type.property.graphql',       { fg = colors.white,      bg = 'NONE' })  -- Fields
-  highlight(0, '@lsp.type.variable.graphql',       { fg = colors.purple,     bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.graphql',       { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.graphql',      { fg = colors.orange,     bg = 'NONE' })  -- Arguments
-  highlight(0, '@lsp.type.keyword.graphql',        { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.string.graphql',         { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.graphql',         { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.comment.graphql',        { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.keyword.graphql',        { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.string.graphql',         { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.graphql',         { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.comment.graphql',        { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.decorator.graphql',      { fg = colors.pink,       bg = 'NONE' })  -- Directives
 
 
@@ -320,7 +320,7 @@ graphql.setupHighlighting = function()
   -- Introspection Types
   ---------------------------------------------------------------------------
 
-  highlight(0, 'graphqlIntrospectionType', { fg = colors.pink,       bg = 'NONE' })  -- __Type
+  highlight(0, 'graphqlIntrospectionType', { link = "Type" })  -- __Type
   highlight(0, 'graphqlIntrospectionField', { fg = colors.pink,      bg = 'NONE' })  -- __Field
   highlight(0, 'graphqlIntrospectionInputValue', { fg = colors.pink, bg = 'NONE' })  -- __InputValue
   highlight(0, 'graphqlIntrospectionEnumValue', { fg = colors.pink,  bg = 'NONE' })  -- __EnumValue
@@ -348,7 +348,7 @@ graphql.setupHighlighting = function()
   highlight(0, 'graphqlLocFragmentDef',    { fg = colors.pink,       bg = 'NONE' })  -- FRAGMENT_DEFINITION
   highlight(0, 'graphqlLocFragmentSpread', { fg = colors.pink,       bg = 'NONE' })  -- FRAGMENT_SPREAD
   highlight(0, 'graphqlLocInlineFragment', { fg = colors.pink,       bg = 'NONE' })  -- INLINE_FRAGMENT
-  highlight(0, 'graphqlLocVariableDef',    { fg = colors.pink,       bg = 'NONE' })  -- VARIABLE_DEFINITION
+  highlight(0, 'graphqlLocVariableDef',    { link = "Variable" })  -- VARIABLE_DEFINITION
 
   -- Directive Locations (Type System)
   highlight(0, 'graphqlLocSchema',         { fg = colors.pink,       bg = 'NONE' })  -- SCHEMA

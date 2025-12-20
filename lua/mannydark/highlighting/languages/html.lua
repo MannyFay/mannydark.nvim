@@ -25,7 +25,7 @@ html.setupHighlighting = function()
 
   -- Attributes
   highlight(0, 'htmlArg',              { fg = colors.turquoise,  bg = 'NONE'            })  -- Attribute names
-  highlight(0, 'htmlString',           { fg = colors.redLight,   bg = 'NONE'            })  -- "attribute values"
+  highlight(0, 'htmlString',           { link = "String" })  -- "attribute values"
   highlight(0, 'htmlValue',            { fg = colors.redLight,   bg = 'NONE'            })  -- Attribute values
   highlight(0, 'htmlEqual',            { fg = colors.white,      bg = 'NONE'            })  -- = in attributes
 
@@ -56,7 +56,7 @@ html.setupHighlighting = function()
   -- Special Characters / Entities
   highlight(0, 'htmlSpecialChar',      { fg = colors.pink,       bg = 'NONE'            })  -- &nbsp; &amp; etc.
   highlight(0, 'htmlEntity',           { fg = colors.pink,       bg = 'NONE'            })  -- Named entities
-  highlight(0, 'htmlEntityNumber',     { fg = colors.pink,       bg = 'NONE'            })  -- &#123; &#x7B;
+  highlight(0, 'htmlEntityNumber',     { link = "Number" })  -- &#123; &#x7B;
 
   -- Headings
   highlight(0, 'htmlH1',               { fg = colors.white,      bg = 'NONE', bold = true })  -- <h1>
@@ -223,10 +223,10 @@ html.setupHighlighting = function()
   -- Form-specific Attributes
 
   highlight(0, 'htmlArgAction',        { fg = colors.turquoise,  bg = 'NONE'            })  -- action=""
-  highlight(0, 'htmlArgMethod',        { fg = colors.turquoise,  bg = 'NONE'            })  -- method=""
+  highlight(0, 'htmlArgMethod',        { link = "Function" })  -- method=""
   highlight(0, 'htmlArgName',          { fg = colors.turquoise,  bg = 'NONE'            })  -- name=""
   highlight(0, 'htmlArgValue',         { fg = colors.turquoise,  bg = 'NONE'            })  -- value=""
-  highlight(0, 'htmlArgType',          { fg = colors.turquoise,  bg = 'NONE'            })  -- type=""
+  highlight(0, 'htmlArgType',          { link = "Type" })  -- type=""
   highlight(0, 'htmlArgPlaceholder',   { fg = colors.turquoise,  bg = 'NONE'            })  -- placeholder=""
   highlight(0, 'htmlArgRequired',      { fg = colors.turquoise,  bg = 'NONE'            })  -- required
   highlight(0, 'htmlArgDisabled',      { fg = colors.turquoise,  bg = 'NONE'            })  -- disabled
@@ -280,15 +280,15 @@ html.setupHighlighting = function()
   -- Treesitter Groups (@xxx.html)
 
   -- Tags
-  highlight(0, '@tag.html',                    { fg = colors.blue,       bg = 'NONE' })  -- Tag names
-  highlight(0, '@tag.builtin.html',            { fg = colors.blue,       bg = 'NONE' })  -- Built-in tags
+  highlight(0, '@tag.html',                    { link = "Keyword" })  -- Tag names
+  highlight(0, '@tag.builtin.html',            { link = "Keyword" })  -- Built-in tags
   highlight(0, '@tag.delimiter.html',          { link = "Ignore" })  -- < > </ />
-  highlight(0, '@tag.attribute.html',          { fg = colors.turquoise,  bg = 'NONE' })  -- Attribute names
-  highlight(0, '@tag.error.html',              { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Invalid tag
+  highlight(0, '@tag.attribute.html',          { link = "Type"})  -- Attribute names
+  highlight(0, '@tag.error.html',              { link = "Error"})  -- Invalid tag
 
   -- Attributes (alternative captures)
-  highlight(0, '@attribute.html',              { fg = colors.turquoise,  bg = 'NONE' })  -- Attributes
-  highlight(0, '@attribute.builtin.html',      { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in attributes
+  highlight(0, '@attribute.html',              { link = "Type" })  -- Attributes
+  highlight(0, '@attribute.builtin.html',      { link = "Type" })  -- Built-in attributes
 
   -- Strings
   highlight(0, '@string.html',                 { link = "String" })  -- Attribute values
@@ -302,15 +302,15 @@ html.setupHighlighting = function()
   highlight(0, '@character.special.html',      { link = "keyword"})  -- &amp; &lt; etc.
 
   -- Keywords
-  highlight(0, '@keyword.html',                { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.directive.html',      { fg = colors.gray,       bg = 'NONE' })  -- DOCTYPE directive
+  highlight(0, '@keyword.html',                { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.directive.html',      { link = "Keyword" })  -- DOCTYPE directive
 
   -- Operators
-  highlight(0, '@operator.html',               { fg = colors.white,      bg = 'NONE' })  -- = operator
+  highlight(0, '@operator.html',               { link = "Operator" })  -- = operator
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.html',    { fg = colors.white,      bg = 'NONE' })  -- < >
-  highlight(0, '@punctuation.delimiter.html',  { fg = colors.white,      bg = 'NONE' })  -- Delimiters
+  highlight(0, '@punctuation.delimiter.html',  { link = "Delimiter" })  -- Delimiters
   highlight(0, '@punctuation.special.html',    { fg = colors.pink,       bg = 'NONE' })  -- & ; in entities
 
 
@@ -350,8 +350,8 @@ html.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.html)
 
   highlight(0, '@lsp.type.property.html',      { fg = colors.turquoise,  bg = 'NONE' })  -- Attributes
-  highlight(0, '@lsp.type.string.html',        { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.keyword.html',       { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.string.html',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.keyword.html',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.class.html',         { fg = colors.turquoise,  bg = 'NONE' })  -- CSS classes
   highlight(0, '@lsp.type.type.html',          { fg = colors.blue,       bg = 'NONE' })  -- Tag types
   highlight(0, '@lsp.type.namespace.html',     { fg = colors.pink,       bg = 'NONE' })  -- Namespaces
@@ -386,8 +386,8 @@ html.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Template Syntax (for server-side templating indicators)
 
-  highlight(0, 'htmlTemplateDelim',    { fg = colors.orange,     bg = 'NONE'            })  -- {{ }} <% %>
-  highlight(0, 'htmlTemplateVar',      { fg = colors.purple,     bg = 'NONE'            })  -- Template variables
+  highlight(0, 'htmlTemplateDelim',    { link = "Delimiter" })  -- {{ }} <% %>
+  highlight(0, 'htmlTemplateVar',      { link = "Variable" })  -- Template variables
   highlight(0, 'htmlTemplateExpr',     { fg = colors.white,      bg = 'NONE'            })  -- Template expressions
 
 

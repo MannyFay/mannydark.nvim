@@ -18,20 +18,20 @@ css.setupHighlighting = function()
   -------------------------------------------------------------------------
 
   -- At-Rules
-  highlight(0, 'cssAtKeyword',              { link = "Keyword"            })  -- @keyword
+  highlight(0, 'cssAtKeyword',              { link = "Keyword" })  -- @keyword
   highlight(0, 'cssAtRule',                 { link = "Keyword"            })  -- @media, @keyframes, etc.
   highlight(0, 'cssAtRuleLogical',          { link = "Keyword"            })  -- and, or, not in @media
   highlight(0, 'cssCharset',                { link = "Keyword"            })  -- @charset
   highlight(0, 'cssImportant',              { fg = colors.pink,       bg = 'NONE'            })  -- !important
   highlight(0, 'cssInclude',                { fg = colors.blue,       bg = 'NONE'            })  -- @import
-  highlight(0, 'cssIncludeKeyword',         { fg = colors.blue,       bg = 'NONE'            })  -- @import keyword
+  highlight(0, 'cssIncludeKeyword',         { link = "Keyword" })  -- @import keyword
   highlight(0, 'cssKeyFrame',               { fg = colors.blue,       bg = 'NONE'            })  -- @keyframes
   highlight(0, 'cssKeyFrameSelector',       { fg = colors.turquoise,  bg = 'NONE'            })  -- from, to, percentage
   highlight(0, 'cssKeyFrameProp',           { fg = colors.greenLight, bg = 'NONE'            })  -- Keyframe percentage values
   highlight(0, 'cssMedia',                  { fg = colors.blue,       bg = 'NONE'            })  -- @media
-  highlight(0, 'cssMediaType',              { fg = colors.turquoise,  bg = 'NONE'            })  -- screen, print, all
+  highlight(0, 'cssMediaType',              { link = "Type" })  -- screen, print, all
   highlight(0, 'cssMediaComma',             { fg = colors.white,      bg = 'NONE'            })  -- Comma in media queries
-  highlight(0, 'cssMediaKeyword',           { fg = colors.blue,       bg = 'NONE'            })  -- and, not, only
+  highlight(0, 'cssMediaKeyword',           { link = "Keyword" })  -- and, not, only
   highlight(0, 'cssPage',                   { fg = colors.blue,       bg = 'NONE'            })  -- @page
   highlight(0, 'cssPagePseudo',             { fg = colors.pink,       bg = 'NONE'            })  -- :first, :left, :right in @page
   highlight(0, 'cssPageMarginProp',         { fg = colors.blue,       bg = 'NONE'            })  -- @page margin properties
@@ -157,7 +157,7 @@ css.setupHighlighting = function()
   -- Values
   highlight(0, 'cssValue',                  { fg = colors.white,      bg = 'NONE'            })  -- Generic value
   highlight(0, 'cssValueInteger',           { fg = colors.greenLight, bg = 'NONE'            })  -- Integer values
-  highlight(0, 'cssValueNumber',            { fg = colors.greenLight, bg = 'NONE'            })  -- Numeric values
+  highlight(0, 'cssValueNumber',            { link = "Number" })  -- Numeric values
   highlight(0, 'cssValueLength',            { fg = colors.greenLight, bg = 'NONE'            })  -- Length values (10px, 2em, etc.)
   highlight(0, 'cssValueAngle',             { fg = colors.greenLight, bg = 'NONE'            })  -- Angle values (45deg, 1turn)
   highlight(0, 'cssValueTime',              { fg = colors.greenLight, bg = 'NONE'            })  -- Time values (1s, 500ms)
@@ -166,19 +166,19 @@ css.setupHighlighting = function()
   highlight(0, 'cssValueResolution',        { fg = colors.greenLight, bg = 'NONE'            })  -- Resolution values (dpi, dpcm, dppx)
   highlight(0, 'cssUnitDecorators',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Units (px, em, rem, %, etc.)
   highlight(0, 'cssUnit',                   { fg = colors.turquoise,  bg = 'NONE'            })  -- Units
-  highlight(0, 'cssNumber',                 { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'cssNumber',                 { link = "Number" })  -- Numbers
 
   -- Colors
   highlight(0, 'cssColor',                  { fg = colors.greenLight, bg = 'NONE'            })  -- Color values
   highlight(0, 'cssColorHex',               { fg = colors.greenLight, bg = 'NONE'            })  -- Hex colors (#fff, #ffffff)
-  highlight(0, 'cssColorKeyword',           { fg = colors.turquoise,  bg = 'NONE'            })  -- Named colors (red, blue, etc.)
+  highlight(0, 'cssColorKeyword',           { link = "Keyword" })  -- Named colors (red, blue, etc.)
   highlight(0, 'cssNamedColor',             { fg = colors.turquoise,  bg = 'NONE'            })  -- Named colors
   highlight(0, 'cssSystemColor',            { fg = colors.turquoise,  bg = 'NONE'            })  -- System colors (Canvas, CanvasText)
 
   -- Functions
-  highlight(0, 'cssFunction',               { fg = colors.orange,     bg = 'NONE'            })  -- Generic function
-  highlight(0, 'cssFunctionName',           { fg = colors.orange,     bg = 'NONE'            })  -- Function name
-  highlight(0, 'cssFunctionComma',          { fg = colors.white,      bg = 'NONE'            })  -- Commas in functions
+  highlight(0, 'cssFunction',               { link = "Function" })  -- Generic function
+  highlight(0, 'cssFunctionName',           { link = "Function" })  -- Function name
+  highlight(0, 'cssFunctionComma',          { link = "Function" })  -- Commas in functions
   highlight(0, 'cssURL',                    { fg = colors.orange,     bg = 'NONE'            })  -- url()
   highlight(0, 'cssURLContainer',           { fg = colors.white,      bg = 'NONE'            })  -- url() container
   highlight(0, 'cssMathGroup',              { fg = colors.orange,     bg = 'NONE'            })  -- calc(), min(), max(), clamp()
@@ -187,25 +187,25 @@ css.setupHighlighting = function()
   highlight(0, 'cssMin',                    { fg = colors.orange,     bg = 'NONE'            })  -- min()
   highlight(0, 'cssMax',                    { fg = colors.orange,     bg = 'NONE'            })  -- max()
   highlight(0, 'cssClamp',                  { fg = colors.orange,     bg = 'NONE'            })  -- clamp()
-  highlight(0, 'cssVar',                    { fg = colors.orange,     bg = 'NONE'            })  -- var()
+  highlight(0, 'cssVar',                    { link = "Variable" })  -- var()
   highlight(0, 'cssEnv',                    { fg = colors.orange,     bg = 'NONE'            })  -- env()
   highlight(0, 'cssAttr',                   { fg = colors.orange,     bg = 'NONE'            })  -- attr()
   highlight(0, 'cssImage',                  { fg = colors.orange,     bg = 'NONE'            })  -- image()
   highlight(0, 'cssImageSet',               { fg = colors.orange,     bg = 'NONE'            })  -- image-set()
-  highlight(0, 'cssGradientFunc',           { fg = colors.orange,     bg = 'NONE'            })  -- linear-gradient(), radial-gradient()
+  highlight(0, 'cssGradientFunc',           { link = "Function" })  -- linear-gradient(), radial-gradient()
   highlight(0, 'cssLinearGradient',         { fg = colors.orange,     bg = 'NONE'            })  -- linear-gradient()
   highlight(0, 'cssRadialGradient',         { fg = colors.orange,     bg = 'NONE'            })  -- radial-gradient()
   highlight(0, 'cssConicGradient',          { fg = colors.orange,     bg = 'NONE'            })  -- conic-gradient()
   highlight(0, 'cssRepeatingGradient',      { fg = colors.orange,     bg = 'NONE'            })  -- repeating-*-gradient()
-  highlight(0, 'cssFilterFunc',             { fg = colors.orange,     bg = 'NONE'            })  -- blur(), brightness(), etc.
-  highlight(0, 'cssTransformFunc',          { fg = colors.orange,     bg = 'NONE'            })  -- rotate(), scale(), translate(), etc.
+  highlight(0, 'cssFilterFunc',             { link = "Function" })  -- blur(), brightness(), etc.
+  highlight(0, 'cssTransformFunc',          { link = "Function" })  -- rotate(), scale(), translate(), etc.
   highlight(0, 'cssRotate',                 { fg = colors.orange,     bg = 'NONE'            })  -- rotate()
   highlight(0, 'cssScale',                  { fg = colors.orange,     bg = 'NONE'            })  -- scale()
   highlight(0, 'cssTranslate',              { fg = colors.orange,     bg = 'NONE'            })  -- translate()
   highlight(0, 'cssSkew',                   { fg = colors.orange,     bg = 'NONE'            })  -- skew()
   highlight(0, 'cssMatrix',                 { fg = colors.orange,     bg = 'NONE'            })  -- matrix()
   highlight(0, 'cssPerspective',            { fg = colors.orange,     bg = 'NONE'            })  -- perspective()
-  highlight(0, 'cssColorFunc',              { fg = colors.orange,     bg = 'NONE'            })  -- rgb(), hsl(), etc.
+  highlight(0, 'cssColorFunc',              { link = "Function" })  -- rgb(), hsl(), etc.
   highlight(0, 'cssRgb',                    { fg = colors.orange,     bg = 'NONE'            })  -- rgb(), rgba()
   highlight(0, 'cssHsl',                    { fg = colors.orange,     bg = 'NONE'            })  -- hsl(), hsla()
   highlight(0, 'cssHwb',                    { fg = colors.orange,     bg = 'NONE'            })  -- hwb()
@@ -216,8 +216,8 @@ css.setupHighlighting = function()
   highlight(0, 'cssColorMix',               { fg = colors.orange,     bg = 'NONE'            })  -- color-mix()
   highlight(0, 'cssColor',                  { fg = colors.orange,     bg = 'NONE'            })  -- color()
   highlight(0, 'cssLightDark',              { fg = colors.orange,     bg = 'NONE'            })  -- light-dark()
-  highlight(0, 'cssCounterFunc',            { fg = colors.orange,     bg = 'NONE'            })  -- counter(), counters()
-  highlight(0, 'cssShapeFunc',              { fg = colors.orange,     bg = 'NONE'            })  -- circle(), ellipse(), polygon(), inset()
+  highlight(0, 'cssCounterFunc',            { link = "Function" })  -- counter(), counters()
+  highlight(0, 'cssShapeFunc',              { link = "Function" })  -- circle(), ellipse(), polygon(), inset()
   highlight(0, 'cssPath',                   { fg = colors.orange,     bg = 'NONE'            })  -- path()
   highlight(0, 'cssFit',                    { fg = colors.orange,     bg = 'NONE'            })  -- fit-content()
   highlight(0, 'cssMinmax',                 { fg = colors.orange,     bg = 'NONE'            })  -- minmax()
@@ -226,13 +226,13 @@ css.setupHighlighting = function()
   -- Custom Properties (CSS Variables)
   highlight(0, 'cssCustomProp',             { link = "Constant"            })  -- --custom-property
   highlight(0, 'cssCustomProperty',         { link = "Keyword"            })  -- --custom-property
-  highlight(0, 'cssVariable',               { link = "Constant"            })  -- CSS variable
-  highlight(0, 'cssVariableValue',          { fg = colors.white,      bg = 'NONE'            })  -- Variable value
+  highlight(0, 'cssVariable',               { link = "Variable" })  -- CSS variable
+  highlight(0, 'cssVariableValue',          { link = "Variable" })  -- Variable value
 
   -- Strings
-  highlight(0, 'cssStringQ',                { fg = colors.redLight,   bg = 'NONE'            })  -- Single-quoted string
-  highlight(0, 'cssStringQQ',               { fg = colors.redLight,   bg = 'NONE'            })  -- Double-quoted string
-  highlight(0, 'cssString',                 { fg = colors.redLight,   bg = 'NONE'            })  -- Generic string
+  highlight(0, 'cssStringQ',                { link = "String" })  -- Single-quoted string
+  highlight(0, 'cssStringQQ',               { link = "String" })  -- Double-quoted string
+  highlight(0, 'cssString',                 { link = "String" })  -- Generic string
   highlight(0, 'cssQuote',                  { fg = colors.white,      bg = 'NONE'            })  -- Quote characters
   highlight(0, 'cssSpecialCharQ',           { fg = colors.pink,       bg = 'NONE'            })  -- Special char in single-quoted
   highlight(0, 'cssSpecialCharQQ',          { fg = colors.pink,       bg = 'NONE'            })  -- Special char in double-quoted
@@ -248,7 +248,7 @@ css.setupHighlighting = function()
   highlight(0, 'cssSemicolon',              { fg = colors.white,      bg = 'NONE'            })  -- ;
   highlight(0, 'cssColon',                  { fg = colors.white,      bg = 'NONE'            })  -- :
   highlight(0, 'cssComma',                  { fg = colors.white,      bg = 'NONE'            })  -- ,
-  highlight(0, 'cssOperator',               { link = "Constant"})  -- Operators
+  highlight(0, 'cssOperator',               { link = "Operator" })  -- Operators
   highlight(0, 'cssDefinition',             { fg = colors.white,      bg = 'NONE'            })  -- Definition context
 
   -- Vendor Prefixes
@@ -276,32 +276,32 @@ css.setupHighlighting = function()
   -------------------------------------------------------------------------
 
   -- Keywords
-  highlight(0, '@keyword.css',              { link = "Keyword"            })  -- Generic keyword
-  highlight(0, '@keyword.directive.css',    { link = "Keyword"            })  -- @-rules
-  highlight(0, '@keyword.import.css',       { link = "Keyword"            })  -- @import
-  highlight(0, '@keyword.operator.css',     { link = "Keyword"            })  -- and, or, not
-  highlight(0, '@keyword.modifier.css',     { fg = colors.pink,       bg = 'NONE'            })  -- !important
+  highlight(0, '@keyword.css',              { link = "Keyword" })  -- Generic keyword
+  highlight(0, '@keyword.directive.css',    { link = "Keyword" })  -- @-rules
+  highlight(0, '@keyword.import.css',       { link = "Keyword" })  -- @import
+  highlight(0, '@keyword.operator.css',     { link = "Operator" })  -- and, or, not
+  highlight(0, '@keyword.modifier.css',     { link = "Keyword" })  -- !important
 
   -- Tags and Types
   highlight(0, '@tag.css',                  { link = "Keyword"})  -- HTML element names
-  highlight(0, '@type.css',                 { link = "Type"            })  -- Class/ID selectors
-  highlight(0, '@constant.css',             { link = "Constant"            })  -- Named constants
+  highlight(0, '@type.css',                 { link = "Type" })  -- Class/ID selectors
+  highlight(0, '@constant.css',             { link = "Constant" })  -- Named constants
 
   -- Properties
   highlight(0, '@property.css',             { link = "Constant"            })  -- CSS properties like font-size.
 
   -- Functions
-  highlight(0, '@function.css',             { fg = colors.orange,     bg = 'NONE'            })  -- CSS functions
+  highlight(0, '@function.css',             { link = "Function" })  -- CSS functions
 
   -- Variables
-  highlight(0, '@variable.css',             { fg = colors.purple,     bg = 'NONE'            })  -- CSS custom properties
+  highlight(0, '@variable.css',             { link = "Variable" })  -- CSS custom properties
 
   -- Strings
-  highlight(0, '@string.css',               { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
+  highlight(0, '@string.css',               { link = "String" })  -- Strings
 
   -- Numbers
-  highlight(0, '@number.css',               { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
-  highlight(0, '@number.float.css',         { fg = colors.greenLight, bg = 'NONE'            })  -- Floating point numbers
+  highlight(0, '@number.css',               { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.css',         { link = "Number" })  -- Floating point numbers
 
   -- Attributes
   highlight(0, '@attribute.css',            { link = "Keyword"            })  -- Attribute selectors
@@ -311,18 +311,18 @@ css.setupHighlighting = function()
   highlight(0, '@module.css',               { fg = colors.turquoise,  bg = 'NONE'            })  -- Namespace/module
 
   -- Operators
-  highlight(0, '@operator.css',             { link = "Keyword"            })  -- Operators
+  highlight(0, '@operator.css',             { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.css',  { fg = colors.white,      bg = 'NONE'            })  -- Brackets, braces, parens
-  highlight(0, '@punctuation.delimiter.css', { fg = colors.white,     bg = 'NONE'            })  -- Semicolons, colons, commas
+  highlight(0, '@punctuation.delimiter.css', { link = "Delimiter" })  -- Semicolons, colons, commas
 
   -- Special Characters
   highlight(0, '@character.special.css',    { fg = colors.pink,       bg = 'NONE'            })  -- Special characters
 
   -- Comments
-  highlight(0, '@comment.css',              { link = "Pink" })  -- ??? Comments
-  highlight(0, '@lsp.type.comment.css',     { link = "Pink" })  -- ??? Comments
+  highlight(0, '@comment.css',              { link = "Comment" })  -- ??? Comments
+  highlight(0, '@lsp.type.comment.css',     { link = "Comment" })  -- ??? Comments
   highlight(0, '@spell.css',                { link = "Comment"                          })  -- Comments.
 
 
@@ -332,12 +332,12 @@ css.setupHighlighting = function()
 
   highlight(0, '@lsp.type.class.css',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Class selectors
   highlight(0, '@lsp.type.property.css',    { fg = colors.blue,       bg = 'NONE'            })  -- Properties
-  highlight(0, '@lsp.type.variable.css',    { link = "Constant"            })  -- Variables
+  highlight(0, '@lsp.type.variable.css',    { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.css',    { fg = colors.orange,     bg = 'NONE'            })  -- Functions
-  highlight(0, '@lsp.type.string.css',      { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
-  highlight(0, '@lsp.type.number.css',      { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
-  highlight(0, '@lsp.type.keyword.css',     { fg = colors.blue,       bg = 'NONE'            })  -- Keywords
-  highlight(0, '@lsp.type.operator.css',    { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, '@lsp.type.string.css',      { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.css',      { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.css',     { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.operator.css',    { link = "Operator" })  -- Operators
 
 end
 

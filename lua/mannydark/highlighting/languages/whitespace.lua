@@ -69,10 +69,10 @@ whitespace.setupHighlighting = function()
   highlight(0, 'whitespaceIO',                 { fg = colors.orange,     bg = 'NONE'            })  -- Generic I/O
 
   -- Numbers (binary encoded: Space=0, Tab=1)
-  highlight(0, 'whitespaceNumber',             { fg = colors.greenLight, bg = 'NONE'            })  -- Encoded number
-  highlight(0, 'whitespaceNumberSign',         { fg = colors.greenLight, bg = 'NONE'            })  -- Sign (Space=+, Tab=-)
-  highlight(0, 'whitespaceNumberBit',          { fg = colors.greenLight, bg = 'NONE'            })  -- Binary digit
-  highlight(0, 'whitespaceNumberTerminator',   { fg = colors.greenLight, bg = 'NONE'            })  -- LF terminator
+  highlight(0, 'whitespaceNumber',             { link = "Number" })  -- Encoded number
+  highlight(0, 'whitespaceNumberSign',         { link = "Number" })  -- Sign (Space=+, Tab=-)
+  highlight(0, 'whitespaceNumberBit',          { link = "Number" })  -- Binary digit
+  highlight(0, 'whitespaceNumberTerminator',   { link = "Number" })  -- LF terminator
 
   -- Labels (sequence of Space/Tab terminated by LF)
   highlight(0, 'whitespaceLabel',              { fg = colors.yellow,     bg = 'NONE'            })  -- Label definition/reference
@@ -80,7 +80,7 @@ whitespace.setupHighlighting = function()
   highlight(0, 'whitespaceLabelRef',           { fg = colors.yellow,     bg = 'NONE'            })  -- Label reference (at jump/call)
 
   -- Comments (all non-whitespace characters are comments!)
-  highlight(0, 'whitespaceComment',            { fg = colors.red,        bg = 'NONE'            })  -- Non-whitespace characters
+  highlight(0, 'whitespaceComment',            { link = "Comment" })  -- Non-whitespace characters
 
   -- Visual Representation Characters
   -- When Whitespace is displayed as visible characters (S, T, L or [Space], [Tab], [LF])
@@ -129,9 +129,9 @@ whitespace.setupHighlighting = function()
   highlight(0, 'wsasmInNum',                   { fg = colors.orange,     bg = 'NONE'            })  -- innum, readi, getn
 
   -- Assembly Operands
-  highlight(0, 'wsasmNumber',                  { fg = colors.greenLight, bg = 'NONE'            })  -- Numeric literal
+  highlight(0, 'wsasmNumber',                  { link = "Number" })  -- Numeric literal
   highlight(0, 'wsasmLabelName',               { fg = colors.yellow,     bg = 'NONE'            })  -- Label name/identifier
-  highlight(0, 'wsasmComment',                 { fg = colors.red,        bg = 'NONE'            })  -- Assembly comment
+  highlight(0, 'wsasmComment',                 { link = "Comment" })  -- Assembly comment
   highlight(0, 'wsasmDirective',               { fg = colors.pink,       bg = 'NONE'            })  -- Assembler directive
 
 
@@ -139,20 +139,20 @@ whitespace.setupHighlighting = function()
   -- Treesitter Groups (@xxx.whitespace)
 
   -- Instruction Categories
-  highlight(0, '@keyword.whitespace',                  { fg = colors.blue,       bg = 'NONE' })  -- General instruction
-  highlight(0, '@keyword.operator.whitespace',         { fg = colors.green,      bg = 'NONE' })  -- Arithmetic ops
-  highlight(0, '@keyword.storage.whitespace',          { fg = colors.purple,     bg = 'NONE' })  -- Heap access
-  highlight(0, '@keyword.control.whitespace',          { fg = colors.turquoise,  bg = 'NONE' })  -- Flow control
-  highlight(0, '@keyword.function.whitespace',         { fg = colors.turquoise,  bg = 'NONE' })  -- Call/Return
+  highlight(0, '@keyword.whitespace',                  { link = "Keyword" })  -- General instruction
+  highlight(0, '@keyword.operator.whitespace',         { link = "Operator" })  -- Arithmetic ops
+  highlight(0, '@keyword.storage.whitespace',          { link = "Keyword" })  -- Heap access
+  highlight(0, '@keyword.control.whitespace',          { link = "Keyword" })  -- Flow control
+  highlight(0, '@keyword.function.whitespace',         { link = "Keyword" })  -- Call/Return
 
   -- Stack Operations
-  highlight(0, '@function.builtin.whitespace',         { fg = colors.blue,       bg = 'NONE' })  -- Stack operations
+  highlight(0, '@function.builtin.whitespace',         { link = "Function" })  -- Stack operations
 
   -- I/O
-  highlight(0, '@function.whitespace',                 { fg = colors.orange,     bg = 'NONE' })  -- I/O operations
+  highlight(0, '@function.whitespace',                 { link = "Function" })  -- I/O operations
 
   -- Data
-  highlight(0, '@number.whitespace',                   { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.whitespace',                   { link = "Number" })  -- Numbers
   highlight(0, '@label.whitespace',                    { fg = colors.yellow,     bg = 'NONE' })  -- Labels
 
   -- Whitespace Characters (when made visible)
@@ -160,7 +160,7 @@ whitespace.setupHighlighting = function()
   highlight(0, '@character.special.whitespace',        { fg = colors.purple,     bg = colors.blueLight })  -- Special marker
 
   -- Comments
-  highlight(0, '@comment.whitespace',                  { fg = colors.red,        bg = 'NONE' })  -- Non-whitespace
+  highlight(0, '@comment.whitespace',                  { link = "Comment" })  -- Non-whitespace
 
   -- Punctuation (terminators)
   highlight(0, '@punctuation.whitespace',              { fg = colors.gray,       bg = 'NONE' })  -- Terminators
@@ -193,7 +193,7 @@ whitespace.setupHighlighting = function()
   highlight(0, 'whitelipsInstruction',         { fg = colors.blue,       bg = 'NONE', bold = true })  -- Instruction
   highlight(0, 'whitelipsOperand',             { fg = colors.greenLight, bg = 'NONE'            })  -- Operand
   highlight(0, 'whitelipsLabel',               { fg = colors.yellow,     bg = 'NONE'            })  -- Label
-  highlight(0, 'whitelipsComment',             { fg = colors.red,        bg = 'NONE'            })  -- Comment
+  highlight(0, 'whitelipsComment',             { link = "Comment" })  -- Comment
 
 
   -----------------------------------------------------------------------------
@@ -237,12 +237,12 @@ whitespace.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.whitespace)
 
   highlight(0, '@lsp.type.function.whitespace',        { fg = colors.orange,     bg = 'NONE' })  -- I/O function
-  highlight(0, '@lsp.type.keyword.whitespace',         { fg = colors.blue,       bg = 'NONE' })  -- Instruction
-  highlight(0, '@lsp.type.operator.whitespace',        { fg = colors.green,      bg = 'NONE' })  -- Arithmetic
-  highlight(0, '@lsp.type.variable.whitespace',        { fg = colors.purple,     bg = 'NONE' })  -- Heap variable
-  highlight(0, '@lsp.type.number.whitespace',          { fg = colors.greenLight, bg = 'NONE' })  -- Number
+  highlight(0, '@lsp.type.keyword.whitespace',         { link = "Keyword" })  -- Instruction
+  highlight(0, '@lsp.type.operator.whitespace',        { link = "Operator" })  -- Arithmetic
+  highlight(0, '@lsp.type.variable.whitespace',        { link = "Variable" })  -- Heap variable
+  highlight(0, '@lsp.type.number.whitespace',          { link = "Number" })  -- Number
   highlight(0, '@lsp.type.label.whitespace',           { fg = colors.yellow,     bg = 'NONE' })  -- Label
-  highlight(0, '@lsp.type.comment.whitespace',         { fg = colors.red,        bg = 'NONE' })  -- Comment
+  highlight(0, '@lsp.type.comment.whitespace',         { link = "Comment" })  -- Comment
 
 
   -----------------------------------------------------------------------------
@@ -251,10 +251,10 @@ whitespace.setupHighlighting = function()
   highlight(0, 'wsSpace',              { link = 'whitespaceVisualSpace'    })
   highlight(0, 'wsTab',                { link = 'whitespaceVisualTab'      })
   highlight(0, 'wsLF',                 { link = 'whitespaceVisualLF'       })
-  highlight(0, 'wsCommand',            { link = 'whitespaceStack'          })
-  highlight(0, 'wsNumber',             { link = 'whitespaceNumber'         })
+  highlight(0, 'wsCommand',            { link = "Function" })
+  highlight(0, 'wsNumber',             { link = "Number" })
   highlight(0, 'wsLabel',              { link = 'whitespaceLabel'          })
-  highlight(0, 'wsComment',            { link = 'whitespaceComment'        })
+  highlight(0, 'wsComment',            { link = "Comment" })
 end
 
 return whitespace

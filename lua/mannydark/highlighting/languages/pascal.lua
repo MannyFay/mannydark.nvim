@@ -17,9 +17,9 @@ pascal.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords - Control Flow
-  highlight(0, 'pascalKeyword',         { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
+  highlight(0, 'pascalKeyword',         { link = "Keyword" })  -- General keywords
   highlight(0, 'pascalStatement',       { fg = colors.blue,       bg = 'NONE'            })  -- goto, exit
-  highlight(0, 'pascalConditional',     { fg = colors.blue,       bg = 'NONE'            })  -- if, then, else, case, of
+  highlight(0, 'pascalConditional',     { link = "Conditional" })  -- if, then, else, case, of
   highlight(0, 'pascalRepeat',          { fg = colors.blue,       bg = 'NONE'            })  -- for, while, repeat, until, do, to, downto
   highlight(0, 'pascalLabel',           { fg = colors.blue,       bg = 'NONE'            })  -- label
 
@@ -32,11 +32,11 @@ pascal.setupHighlighting = function()
 
   -- Keywords - Declarations
   highlight(0, 'pascalProcedure',       { fg = colors.blue,       bg = 'NONE'            })  -- procedure
-  highlight(0, 'pascalFunction',        { fg = colors.blue,       bg = 'NONE'            })  -- function
-  highlight(0, 'pascalVar',             { fg = colors.blue,       bg = 'NONE'            })  -- var
+  highlight(0, 'pascalFunction',        { link = "Function" })  -- function
+  highlight(0, 'pascalVar',             { link = "Variable" })  -- var
   highlight(0, 'pascalConst',           { fg = colors.blue,       bg = 'NONE'            })  -- const
-  highlight(0, 'pascalType',            { fg = colors.blue,       bg = 'NONE'            })  -- type keyword
-  highlight(0, 'pascalResourcestring',  { fg = colors.blue,       bg = 'NONE'            })  -- resourcestring
+  highlight(0, 'pascalType',            { link = "Type" })  -- type keyword
+  highlight(0, 'pascalResourcestring',  { link = "String" })  -- resourcestring
   highlight(0, 'pascalThreadvar',       { fg = colors.blue,       bg = 'NONE'            })  -- threadvar
 
   -- Keywords - Unit Structure
@@ -53,7 +53,7 @@ pascal.setupHighlighting = function()
   highlight(0, 'pascalSet',             { fg = colors.blue,       bg = 'NONE'            })  -- set
   highlight(0, 'pascalFile',            { fg = colors.blue,       bg = 'NONE'            })  -- file
   highlight(0, 'pascalPacked',          { fg = colors.blue,       bg = 'NONE'            })  -- packed
-  highlight(0, 'pascalString',          { fg = colors.blue,       bg = 'NONE'            })  -- string (as type)
+  highlight(0, 'pascalString',          { link = "String" })  -- string (as type)
   highlight(0, 'pascalOf',              { fg = colors.blue,       bg = 'NONE'            })  -- of
 
   -- Keywords - Object Pascal/OOP
@@ -74,7 +74,7 @@ pascal.setupHighlighting = function()
   highlight(0, 'pascalOn',              { fg = colors.blue,       bg = 'NONE'            })  -- on (exception filter)
 
   -- Keywords - Operators (word-based)
-  highlight(0, 'pascalOperator',        { fg = colors.blue,       bg = 'NONE'            })  -- and, or, not, xor, div, mod, shl, shr, in, is, as
+  highlight(0, 'pascalOperator',        { link = "Operator" })  -- and, or, not, xor, div, mod, shl, shr, in, is, as
   highlight(0, 'pascalAnd',             { fg = colors.blue,       bg = 'NONE'            })  -- and
   highlight(0, 'pascalOr',              { fg = colors.blue,       bg = 'NONE'            })  -- or
   highlight(0, 'pascalNot',             { fg = colors.blue,       bg = 'NONE'            })  -- not
@@ -92,7 +92,7 @@ pascal.setupHighlighting = function()
   highlight(0, 'pascalGoto',            { fg = colors.blue,       bg = 'NONE'            })  -- goto
   highlight(0, 'pascalOut',             { fg = colors.blue,       bg = 'NONE'            })  -- out (parameter mode)
   highlight(0, 'pascalInline',          { fg = colors.blue,       bg = 'NONE'            })  -- inline
-  highlight(0, 'pascalOperatorKw',      { fg = colors.blue,       bg = 'NONE'            })  -- operator (overloading)
+  highlight(0, 'pascalOperatorKw',      { link = "Operator" })  -- operator (overloading)
   highlight(0, 'pascalAbsolute',        { fg = colors.blue,       bg = 'NONE'            })  -- absolute
   highlight(0, 'pascalAsm',             { fg = colors.blue,       bg = 'NONE'            })  -- asm
 
@@ -143,18 +143,18 @@ pascal.setupHighlighting = function()
   highlight(0, 'pascalMessage',         { fg = colors.pink,       bg = 'NONE'            })  -- message
 
   -- Types
-  highlight(0, 'pascalTypeName',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
-  highlight(0, 'pascalBuiltinType',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Integer, Real, Boolean, Char, String, etc.
-  highlight(0, 'pascalPointerType',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Pointer, ^Type
-  highlight(0, 'pascalRangeType',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Subrange types
-  highlight(0, 'pascalEnumType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Enumeration types
-  highlight(0, 'pascalClassType',       { fg = colors.turquoise,  bg = 'NONE'            })  -- TObject, TComponent, etc.
+  highlight(0, 'pascalTypeName',        { link = "Type" })  -- Type names
+  highlight(0, 'pascalBuiltinType',     { link = "Type" })  -- Integer, Real, Boolean, Char, String, etc.
+  highlight(0, 'pascalPointerType',     { link = "Type" })  -- Pointer, ^Type
+  highlight(0, 'pascalRangeType',       { link = "Type" })  -- Subrange types
+  highlight(0, 'pascalEnumType',        { link = "Type" })  -- Enumeration types
+  highlight(0, 'pascalClassType',       { link = "Type" })  -- TObject, TComponent, etc.
 
   -- Functions
-  highlight(0, 'pascalFunctionName',    { fg = colors.orange,     bg = 'NONE'            })  -- Function/procedure names
-  highlight(0, 'pascalFunctionCall',    { fg = colors.orange,     bg = 'NONE'            })  -- Function calls
-  highlight(0, 'pascalBuiltinFunc',     { fg = colors.orange,     bg = 'NONE'            })  -- WriteLn, ReadLn, Inc, Dec, etc.
-  highlight(0, 'pascalMethodName',      { fg = colors.orange,     bg = 'NONE'            })  -- Method names
+  highlight(0, 'pascalFunctionName',    { link = "Function" })  -- Function/procedure names
+  highlight(0, 'pascalFunctionCall',    { link = "Function" })  -- Function calls
+  highlight(0, 'pascalBuiltinFunc',     { link = "Function" })  -- WriteLn, ReadLn, Inc, Dec, etc.
+  highlight(0, 'pascalMethodName',      { link = "Function" })  -- Method names
 
   -- Variables and Identifiers
   highlight(0, 'pascalIdentifier',      { fg = colors.purple,     bg = 'NONE'            })  -- Identifiers
@@ -163,18 +163,18 @@ pascal.setupHighlighting = function()
   highlight(0, 'pascalEnumValue',       { fg = colors.purple,     bg = 'NONE'            })  -- Enumeration values
 
   -- Constants
-  highlight(0, 'pascalConstant',        { fg = colors.purple,     bg = 'NONE'            })  -- Named constants
-  highlight(0, 'pascalBoolean',         { fg = colors.blue,       bg = 'NONE'            })  -- True, False
+  highlight(0, 'pascalConstant',        { link = "Constant" })  -- Named constants
+  highlight(0, 'pascalBoolean',         { link = "Boolean" })  -- True, False
   highlight(0, 'pascalNil',             { fg = colors.blue,       bg = 'NONE'            })  -- nil
   highlight(0, 'pascalResult',          { fg = colors.blue,       bg = 'NONE'            })  -- Result (implicit return)
 
   -- Strings
-  highlight(0, 'pascalStringLiteral',   { fg = colors.redLight,   bg = 'NONE'            })  -- 'strings'
+  highlight(0, 'pascalStringLiteral',   { link = "String" })  -- 'strings'
   highlight(0, 'pascalCharLiteral',     { fg = colors.redLight,   bg = 'NONE'            })  -- 'c', #65
   highlight(0, 'pascalCharCode',        { fg = colors.redLight,   bg = 'NONE'            })  -- #65, #$41
 
   -- Numbers
-  highlight(0, 'pascalNumber',          { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'pascalNumber',          { link = "Number" })  -- Numbers
   highlight(0, 'pascalInteger',         { fg = colors.greenLight, bg = 'NONE'            })  -- Integer literals
   highlight(0, 'pascalFloat',           { fg = colors.greenLight, bg = 'NONE'            })  -- Float literals
   highlight(0, 'pascalHex',             { fg = colors.greenLight, bg = 'NONE'            })  -- $FF hex
@@ -182,12 +182,12 @@ pascal.setupHighlighting = function()
   highlight(0, 'pascalOctal',           { fg = colors.greenLight, bg = 'NONE'            })  -- &77 octal
 
   -- Operators (symbol-based)
-  highlight(0, 'pascalOperatorSign',    { fg = colors.white,      bg = 'NONE'            })  -- + - * / = < > @ ^
+  highlight(0, 'pascalOperatorSign',    { link = "Operator" })  -- + - * / = < > @ ^
   highlight(0, 'pascalAssignment',      { fg = colors.white,      bg = 'NONE'            })  -- :=
   highlight(0, 'pascalComparison',      { fg = colors.white,      bg = 'NONE'            })  -- = <> < > <= >=
   highlight(0, 'pascalRange',           { fg = colors.white,      bg = 'NONE'            })  -- ..
   highlight(0, 'pascalPointerOp',       { fg = colors.white,      bg = 'NONE'            })  -- @ ^
-  highlight(0, 'pascalDelimiter',       { fg = colors.white,      bg = 'NONE'            })  -- ; , : .
+  highlight(0, 'pascalDelimiter',       { link = "Delimiter" })  -- ; , : .
 
   -- Compiler Directives
   highlight(0, 'pascalDirective',       { fg = colors.pink,       bg = 'NONE'            })  -- {$...} directives
@@ -197,10 +197,10 @@ pascal.setupHighlighting = function()
   highlight(0, 'pascalMode',            { fg = colors.pink,       bg = 'NONE'            })  -- {$MODE ...}
 
   -- Comments
-  highlight(0, 'pascalComment',         { fg = colors.red,        bg = 'NONE'            })  -- { }, (* *), //
-  highlight(0, 'pascalBraceComment',    { fg = colors.red,        bg = 'NONE'            })  -- { }
-  highlight(0, 'pascalParenComment',    { fg = colors.red,        bg = 'NONE'            })  -- (* *)
-  highlight(0, 'pascalLineComment',     { fg = colors.red,        bg = 'NONE'            })  -- //
+  highlight(0, 'pascalComment',         { link = "Comment" })  -- { }, (* *), //
+  highlight(0, 'pascalBraceComment',    { link = "Comment" })  -- { }
+  highlight(0, 'pascalParenComment',    { link = "Comment" })  -- (* *)
+  highlight(0, 'pascalLineComment',     { link = "Comment" })  -- //
   highlight(0, 'pascalTodo',            { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Error
@@ -211,66 +211,66 @@ pascal.setupHighlighting = function()
   -- Treesitter Groups (@xxx.pascal)
 
   -- Variables
-  highlight(0, '@variable.pascal',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.pascal',      { fg = colors.blue,      bg = 'NONE' })  -- Self, Result
-  highlight(0, '@variable.parameter.pascal',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
-  highlight(0, '@variable.member.pascal',       { fg = colors.purple,    bg = 'NONE' })  -- Record/object fields
+  highlight(0, '@variable.pascal',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.pascal',      { link = "Variable" })  -- Self, Result
+  highlight(0, '@variable.parameter.pascal',    { link = "Variable" })  -- Parameters
+  highlight(0, '@variable.member.pascal',       { link = "Variable" })  -- Record/object fields
 
   -- Constants
-  highlight(0, '@constant.pascal',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.pascal',      { fg = colors.blue,      bg = 'NONE' })  -- True, False, nil
+  highlight(0, '@constant.pascal',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.pascal',      { link = "Constant" })  -- True, False, nil
 
   -- Functions
-  highlight(0, '@function.pascal',              { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.pascal',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.pascal',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.method.pascal',       { fg = colors.orange,    bg = 'NONE' })  -- Method definitions
-  highlight(0, '@method.pascal',                { fg = colors.orange,    bg = 'NONE' })  -- Methods
-  highlight(0, '@method.call.pascal',           { fg = colors.orange,    bg = 'NONE' })  -- Method calls
+  highlight(0, '@function.pascal',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.pascal',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.pascal',      { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.method.pascal',       { link = "Function" })  -- Method definitions
+  highlight(0, '@method.pascal',                { link = "Function" })  -- Methods
+  highlight(0, '@method.call.pascal',           { link = "Function" })  -- Method calls
   highlight(0, '@constructor.pascal',           { fg = colors.orange,    bg = 'NONE' })  -- Constructors
 
   -- Types
-  highlight(0, '@type.pascal',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.pascal',          { fg = colors.turquoise, bg = 'NONE' })  -- Integer, String, Boolean, etc.
-  highlight(0, '@type.definition.pascal',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
-  highlight(0, '@type.qualifier.pascal',        { fg = colors.blue,      bg = 'NONE' })  -- packed
+  highlight(0, '@type.pascal',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.pascal',          { link = "Type" })  -- Integer, String, Boolean, etc.
+  highlight(0, '@type.definition.pascal',       { link = "Type" })  -- Type definitions
+  highlight(0, '@type.qualifier.pascal',        { link = "Type" })  -- packed
 
   -- Keywords
-  highlight(0, '@keyword.pascal',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.pascal',      { fg = colors.blue,      bg = 'NONE' })  -- procedure, function
-  highlight(0, '@keyword.type.pascal',          { fg = colors.blue,      bg = 'NONE' })  -- type, record, class, object
-  highlight(0, '@keyword.modifier.pascal',      { fg = colors.pink,      bg = 'NONE' })  -- virtual, override, private, etc.
-  highlight(0, '@keyword.return.pascal',        { fg = colors.blue,      bg = 'NONE' })  -- exit
-  highlight(0, '@keyword.repeat.pascal',        { fg = colors.blue,      bg = 'NONE' })  -- for, while, repeat
-  highlight(0, '@keyword.conditional.pascal',   { fg = colors.blue,      bg = 'NONE' })  -- if, then, else, case
-  highlight(0, '@keyword.operator.pascal',      { fg = colors.blue,      bg = 'NONE' })  -- and, or, not, xor, div, mod
-  highlight(0, '@keyword.exception.pascal',     { fg = colors.blue,      bg = 'NONE' })  -- try, except, finally, raise
-  highlight(0, '@keyword.import.pascal',        { fg = colors.pink,      bg = 'NONE' })  -- uses
-  highlight(0, '@keyword.directive.pascal',     { fg = colors.pink,      bg = 'NONE' })  -- Compiler directives
+  highlight(0, '@keyword.pascal',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.pascal',      { link = "Keyword" })  -- procedure, function
+  highlight(0, '@keyword.type.pascal',          { link = "Keyword" })  -- type, record, class, object
+  highlight(0, '@keyword.modifier.pascal',      { link = "Keyword" })  -- virtual, override, private, etc.
+  highlight(0, '@keyword.return.pascal',        { link = "Keyword" })  -- exit
+  highlight(0, '@keyword.repeat.pascal',        { link = "Keyword" })  -- for, while, repeat
+  highlight(0, '@keyword.conditional.pascal',   { link = "Conditional" })  -- if, then, else, case
+  highlight(0, '@keyword.operator.pascal',      { link = "Operator" })  -- and, or, not, xor, div, mod
+  highlight(0, '@keyword.exception.pascal',     { link = "Keyword" })  -- try, except, finally, raise
+  highlight(0, '@keyword.import.pascal',        { link = "Keyword" })  -- uses
+  highlight(0, '@keyword.directive.pascal',     { link = "Keyword" })  -- Compiler directives
 
   -- Includes
   highlight(0, '@include.pascal',               { fg = colors.pink,      bg = 'NONE' })  -- uses
 
   -- Conditionals and Loops
-  highlight(0, '@conditional.pascal',           { fg = colors.blue,      bg = 'NONE' })  -- if, then, else, case
+  highlight(0, '@conditional.pascal',           { link = "Conditional" })  -- if, then, else, case
   highlight(0, '@repeat.pascal',                { fg = colors.blue,      bg = 'NONE' })  -- for, while, repeat
   highlight(0, '@exception.pascal',             { fg = colors.blue,      bg = 'NONE' })  -- try, except, finally, raise
 
   -- Strings
-  highlight(0, '@string.pascal',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.pascal',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.pascal',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.pascal',         { link = "String" })  -- Escape sequences
   highlight(0, '@character.pascal',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
 
   -- Numbers
-  highlight(0, '@number.pascal',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.pascal',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.pascal',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.pascal',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.pascal',               { fg = colors.blue,      bg = 'NONE' })  -- True, False
+  highlight(0, '@boolean.pascal',               { link = "Boolean" })  -- True, False
 
   -- Comments
-  highlight(0, '@comment.pascal',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.pascal', { fg = colors.red,       bg = 'NONE' })  -- Doc comments
+  highlight(0, '@comment.pascal',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.pascal', { link = "Comment" })  -- Doc comments
 
   -- Labels
   highlight(0, '@label.pascal',                 { fg = colors.blue,      bg = 'NONE' })  -- Labels
@@ -282,16 +282,16 @@ pascal.setupHighlighting = function()
   highlight(0, '@property.pascal',              { fg = colors.purple,    bg = 'NONE' })  -- Properties and fields
 
   -- Operators and Punctuation
-  highlight(0, '@operator.pascal',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.pascal',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.pascal',   { fg = colors.white,     bg = 'NONE' })  -- (), []
-  highlight(0, '@punctuation.delimiter.pascal', { fg = colors.white,     bg = 'NONE' })  -- , ; : .
+  highlight(0, '@punctuation.delimiter.pascal', { link = "Delimiter" })  -- , ; : .
   highlight(0, '@punctuation.special.pascal',   { fg = colors.pink,      bg = 'NONE' })  -- {$ } directive brackets
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.pascal)
 
-  highlight(0, '@lsp.type.variable.pascal',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.pascal',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.pascal',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.pascal',      { fg = colors.purple,    bg = 'NONE' })  -- Properties/fields
   highlight(0, '@lsp.type.function.pascal',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
@@ -303,17 +303,17 @@ pascal.setupHighlighting = function()
   highlight(0, '@lsp.type.interface.pascal',     { fg = colors.turquoise, bg = 'NONE' })  -- Interfaces
   highlight(0, '@lsp.type.namespace.pascal',     { fg = colors.turquoise, bg = 'NONE' })  -- Units
   highlight(0, '@lsp.type.typeParameter.pascal', { fg = colors.turquoise, bg = 'NONE' })  -- Generic type parameters
-  highlight(0, '@lsp.type.keyword.pascal',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.pascal',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.pascal',      { fg = colors.pink,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.pascal',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.pascal',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.pascal',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.pascal',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.pascal',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.pascal',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.pascal',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.pascal',       { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.decorator.pascal',     { fg = colors.pink,      bg = 'NONE' })  -- Attributes/directives
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.pascal',    { fg = colors.purple,    bg = 'NONE' })  -- const variables
-  highlight(0, '@lsp.typemod.variable.declaration.pascal', { fg = colors.purple,    bg = 'NONE' })  -- Variable declarations
+  highlight(0, '@lsp.typemod.variable.readonly.pascal',    { link = "Variable" })  -- const variables
+  highlight(0, '@lsp.typemod.variable.declaration.pascal', { link = "Variable" })  -- Variable declarations
   highlight(0, '@lsp.typemod.function.declaration.pascal', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
   highlight(0, '@lsp.typemod.function.definition.pascal',  { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
   highlight(0, '@lsp.typemod.method.virtual.pascal',       { fg = colors.orange,    bg = 'NONE' })  -- Virtual methods

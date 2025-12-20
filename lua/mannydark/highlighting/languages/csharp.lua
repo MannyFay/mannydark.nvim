@@ -16,9 +16,9 @@ csharp.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords - Control Flow
-  highlight(0, 'csKeyword',             { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
+  highlight(0, 'csKeyword',             { link = "Keyword" })  -- General keywords
   highlight(0, 'csStatement',           { fg = colors.blue,       bg = 'NONE'            })  -- return, break, continue, goto
-  highlight(0, 'csConditional',         { fg = colors.blue,       bg = 'NONE'            })  -- if, else, switch, case, default
+  highlight(0, 'csConditional',         { link = "Conditional" })  -- if, else, switch, case, default
   highlight(0, 'csRepeat',              { fg = colors.blue,       bg = 'NONE'            })  -- for, foreach, while, do
   highlight(0, 'csLabel',               { fg = colors.blue,       bg = 'NONE'            })  -- case, default, labels
 
@@ -70,22 +70,22 @@ csharp.setupHighlighting = function()
   highlight(0, 'csYield',               { fg = colors.blue,       bg = 'NONE'            })  -- yield
 
   -- Keywords - Operators
-  highlight(0, 'csOperatorKeyword',     { fg = colors.blue,       bg = 'NONE'            })  -- is, as, typeof, sizeof, nameof
+  highlight(0, 'csOperatorKeyword',     { link = "Operator" })  -- is, as, typeof, sizeof, nameof
   highlight(0, 'csIs',                  { fg = colors.blue,       bg = 'NONE'            })  -- is
   highlight(0, 'csAs',                  { fg = colors.blue,       bg = 'NONE'            })  -- as
-  highlight(0, 'csTypeof',              { fg = colors.blue,       bg = 'NONE'            })  -- typeof
+  highlight(0, 'csTypeof',              { link = "Type" })  -- typeof
   highlight(0, 'csSizeof',              { fg = colors.blue,       bg = 'NONE'            })  -- sizeof
   highlight(0, 'csNameof',              { fg = colors.blue,       bg = 'NONE'            })  -- nameof
   highlight(0, 'csDefault',             { fg = colors.blue,       bg = 'NONE'            })  -- default
   highlight(0, 'csStackalloc',          { fg = colors.blue,       bg = 'NONE'            })  -- stackalloc
 
   -- Keywords - Pattern Matching (C# 9+)
-  highlight(0, 'csPatternKeyword',      { fg = colors.blue,       bg = 'NONE'            })  -- and, or, not, when
+  highlight(0, 'csPatternKeyword',      { link = "Keyword" })  -- and, or, not, when
   highlight(0, 'csAnd',                 { fg = colors.blue,       bg = 'NONE'            })  -- and
   highlight(0, 'csOr',                  { fg = colors.blue,       bg = 'NONE'            })  -- or
   highlight(0, 'csNot',                 { fg = colors.blue,       bg = 'NONE'            })  -- not
   highlight(0, 'csWhen',                { fg = colors.blue,       bg = 'NONE'            })  -- when
-  highlight(0, 'csVar',                 { fg = colors.blue,       bg = 'NONE'            })  -- var
+  highlight(0, 'csVar',                 { link = "Variable" })  -- var
   highlight(0, 'csWith',                { fg = colors.blue,       bg = 'NONE'            })  -- with
 
   -- Keywords - Unsafe
@@ -102,7 +102,7 @@ csharp.setupHighlighting = function()
   -- Keywords - Conversions
   highlight(0, 'csExplicit',            { fg = colors.blue,       bg = 'NONE'            })  -- explicit
   highlight(0, 'csImplicit',            { fg = colors.blue,       bg = 'NONE'            })  -- implicit
-  highlight(0, 'csOperator',            { fg = colors.blue,       bg = 'NONE'            })  -- operator
+  highlight(0, 'csOperator',            { link = "Operator" })  -- operator
 
   -- Property Accessors
   highlight(0, 'csGet',                 { fg = colors.blue,       bg = 'NONE'            })  -- get
@@ -129,29 +129,29 @@ csharp.setupHighlighting = function()
   highlight(0, 'csLet',                 { fg = colors.blue,       bg = 'NONE'            })  -- let
 
   -- Types - Value Types
-  highlight(0, 'csType',                { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
-  highlight(0, 'csBuiltinType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- int, long, float, double, etc.
-  highlight(0, 'csIntType',             { fg = colors.turquoise,  bg = 'NONE'            })  -- int, uint, long, ulong, short, ushort, byte, sbyte
-  highlight(0, 'csFloatType',           { fg = colors.turquoise,  bg = 'NONE'            })  -- float, double, decimal
-  highlight(0, 'csBoolType',            { fg = colors.turquoise,  bg = 'NONE'            })  -- bool
-  highlight(0, 'csCharType',            { fg = colors.turquoise,  bg = 'NONE'            })  -- char
-  highlight(0, 'csVoidType',            { fg = colors.turquoise,  bg = 'NONE'            })  -- void
-  highlight(0, 'csObjectType',          { fg = colors.turquoise,  bg = 'NONE'            })  -- object
-  highlight(0, 'csStringType',          { fg = colors.turquoise,  bg = 'NONE'            })  -- string
-  highlight(0, 'csDynamicType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- dynamic
-  highlight(0, 'csNintType',            { fg = colors.turquoise,  bg = 'NONE'            })  -- nint, nuint (C# 9+)
+  highlight(0, 'csType',                { link = "Type" })  -- Type names
+  highlight(0, 'csBuiltinType',         { link = "Type" })  -- int, long, float, double, etc.
+  highlight(0, 'csIntType',             { link = "Type" })  -- int, uint, long, ulong, short, ushort, byte, sbyte
+  highlight(0, 'csFloatType',           { link = "Type" })  -- float, double, decimal
+  highlight(0, 'csBoolType',            { link = "Type" })  -- bool
+  highlight(0, 'csCharType',            { link = "Type" })  -- char
+  highlight(0, 'csVoidType',            { link = "Type" })  -- void
+  highlight(0, 'csObjectType',          { link = "Type" })  -- object
+  highlight(0, 'csStringType',          { link = "String" })  -- string
+  highlight(0, 'csDynamicType',         { link = "Type" })  -- dynamic
+  highlight(0, 'csNintType',            { link = "Type" })  -- nint, nuint (C# 9+)
 
   -- Types - Generic/Nullable
-  highlight(0, 'csGenericType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Generic type parameters <T>
-  highlight(0, 'csNullableType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Nullable types int?, string?
+  highlight(0, 'csGenericType',         { link = "Type" })  -- Generic type parameters <T>
+  highlight(0, 'csNullableType',        { link = "Type" })  -- Nullable types int?, string?
   highlight(0, 'csClassName',           { fg = colors.turquoise,  bg = 'NONE'            })  -- Class names
 
   -- Functions/Methods
-  highlight(0, 'csMethod',              { fg = colors.orange,     bg = 'NONE'            })  -- Method definitions
-  highlight(0, 'csMethodCall',          { fg = colors.orange,     bg = 'NONE'            })  -- Method calls
+  highlight(0, 'csMethod',              { link = "Function" })  -- Method definitions
+  highlight(0, 'csMethodCall',          { link = "Function" })  -- Method calls
   highlight(0, 'csConstructor',         { fg = colors.orange,     bg = 'NONE'            })  -- Constructor
   highlight(0, 'csDestructor',          { fg = colors.orange,     bg = 'NONE'            })  -- Destructor ~ClassName
-  highlight(0, 'csBuiltinMethod',       { fg = colors.orange,     bg = 'NONE'            })  -- ToString, GetType, etc.
+  highlight(0, 'csBuiltinMethod',       { link = "Function" })  -- ToString, GetType, etc.
 
   -- Variables
   highlight(0, 'csIdentifier',          { fg = colors.purple,     bg = 'NONE'            })  -- Identifiers
@@ -161,23 +161,23 @@ csharp.setupHighlighting = function()
   highlight(0, 'csLocal',               { fg = colors.purple,     bg = 'NONE'            })  -- Local variables
 
   -- Constants
-  highlight(0, 'csConstant',            { fg = colors.purple,     bg = 'NONE'            })  -- Constants
-  highlight(0, 'csBoolean',             { fg = colors.blue,       bg = 'NONE'            })  -- true, false
+  highlight(0, 'csConstant',            { link = "Constant" })  -- Constants
+  highlight(0, 'csBoolean',             { link = "Boolean" })  -- true, false
   highlight(0, 'csNull',                { fg = colors.blue,       bg = 'NONE'            })  -- null
   highlight(0, 'csEnumMember',          { fg = colors.purple,     bg = 'NONE'            })  -- Enum values
 
   -- Strings
-  highlight(0, 'csString',              { fg = colors.redLight,   bg = 'NONE'            })  -- "strings"
-  highlight(0, 'csVerbatimString',      { fg = colors.redLight,   bg = 'NONE'            })  -- @"verbatim strings"
-  highlight(0, 'csInterpolatedString',  { fg = colors.redLight,   bg = 'NONE'            })  -- $"interpolated {var}"
-  highlight(0, 'csRawString',           { fg = colors.redLight,   bg = 'NONE'            })  -- """raw strings""" (C# 11+)
+  highlight(0, 'csString',              { link = "String" })  -- "strings"
+  highlight(0, 'csVerbatimString',      { link = "String" })  -- @"verbatim strings"
+  highlight(0, 'csInterpolatedString',  { link = "String" })  -- $"interpolated {var}"
+  highlight(0, 'csRawString',           { link = "String" })  -- """raw strings""" (C# 11+)
   highlight(0, 'csInterpolation',       { fg = colors.pink,       bg = 'NONE'            })  -- {expression} in interpolated
   highlight(0, 'csInterpolationBrace',  { fg = colors.pink,       bg = 'NONE'            })  -- { } in interpolated
-  highlight(0, 'csStringEscape',        { fg = colors.pink,       bg = 'NONE'            })  -- \n, \t, \", \\
+  highlight(0, 'csStringEscape',        { link = "String" })  -- \n, \t, \", \\
   highlight(0, 'csCharacter',           { fg = colors.redLight,   bg = 'NONE'            })  -- 'c' character literals
 
   -- Numbers
-  highlight(0, 'csNumber',              { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'csNumber',              { link = "Number" })  -- Numbers
   highlight(0, 'csInteger',             { fg = colors.greenLight, bg = 'NONE'            })  -- Integer literals
   highlight(0, 'csFloat',               { fg = colors.greenLight, bg = 'NONE'            })  -- Float literals
   highlight(0, 'csHex',                 { fg = colors.greenLight, bg = 'NONE'            })  -- 0xFF hex
@@ -185,11 +185,11 @@ csharp.setupHighlighting = function()
   highlight(0, 'csNumericSuffix',       { fg = colors.greenLight, bg = 'NONE'            })  -- f, d, m, L, U, UL
 
   -- Operators
-  highlight(0, 'csOperatorSign',        { fg = colors.white,      bg = 'NONE'            })  -- + - * / % = < > ! & | ^ ~
+  highlight(0, 'csOperatorSign',        { link = "Operator" })  -- + - * / % = < > ! & | ^ ~
   highlight(0, 'csAssignment',          { fg = colors.white,      bg = 'NONE'            })  -- = += -= *= /= etc.
   highlight(0, 'csComparison',          { fg = colors.white,      bg = 'NONE'            })  -- == != < > <= >=
   highlight(0, 'csLogical',             { fg = colors.white,      bg = 'NONE'            })  -- && || !
-  highlight(0, 'csNullConditional',     { fg = colors.white,      bg = 'NONE'            })  -- ?. ?[] ?.
+  highlight(0, 'csNullConditional',     { link = "Conditional" })  -- ?. ?[] ?.
   highlight(0, 'csNullCoalescing',      { fg = colors.white,      bg = 'NONE'            })  -- ?? ??=
   highlight(0, 'csRange',               { fg = colors.white,      bg = 'NONE'            })  -- .. ^
   highlight(0, 'csLambda',              { fg = colors.white,      bg = 'NONE'            })  -- =>
@@ -212,10 +212,10 @@ csharp.setupHighlighting = function()
   highlight(0, 'csLine',                { fg = colors.pink,       bg = 'NONE'            })  -- #line
 
   -- Comments
-  highlight(0, 'csComment',             { fg = colors.red,        bg = 'NONE'            })  -- // and /* */ comments
-  highlight(0, 'csLineComment',         { fg = colors.red,        bg = 'NONE'            })  -- // comments
-  highlight(0, 'csBlockComment',        { fg = colors.red,        bg = 'NONE'            })  -- /* */ comments
-  highlight(0, 'csXmlComment',          { fg = colors.red,        bg = 'NONE'            })  -- /// XML doc comments
+  highlight(0, 'csComment',             { link = "Comment" })  -- // and /* */ comments
+  highlight(0, 'csLineComment',         { link = "Comment" })  -- // comments
+  highlight(0, 'csBlockComment',        { link = "Comment" })  -- /* */ comments
+  highlight(0, 'csXmlComment',          { link = "Comment" })  -- /// XML doc comments
   highlight(0, 'csXmlTag',              { fg = colors.green,      bg = 'NONE'            })  -- <summary>, <param>, etc.
   highlight(0, 'csXmlTagName',          { fg = colors.green,      bg = 'NONE'            })  -- Tag names
   highlight(0, 'csXmlAttribute',        { fg = colors.green,      bg = 'NONE'            })  -- name="value"
@@ -229,26 +229,26 @@ csharp.setupHighlighting = function()
   -- Treesitter Groups (@xxx.c_sharp)
 
   -- Variables
-  highlight(0, '@variable.c_sharp',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.c_sharp',      { fg = colors.blue,      bg = 'NONE' })  -- this, base, value
-  highlight(0, '@variable.parameter.c_sharp',    { fg = colors.purple,    bg = 'NONE' })  -- Method parameters
-  highlight(0, '@variable.member.c_sharp',       { fg = colors.purple,    bg = 'NONE' })  -- Fields
+  highlight(0, '@variable.c_sharp',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.c_sharp',      { link = "Variable" })  -- this, base, value
+  highlight(0, '@variable.parameter.c_sharp',    { link = "Variable" })  -- Method parameters
+  highlight(0, '@variable.member.c_sharp',       { link = "Variable" })  -- Fields
 
   -- Constants
-  highlight(0, '@constant.c_sharp',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.c_sharp',      { fg = colors.blue,      bg = 'NONE' })  -- true, false, null
-  highlight(0, '@constant.macro.c_sharp',        { fg = colors.pink,      bg = 'NONE' })  -- Preprocessor symbols
+  highlight(0, '@constant.c_sharp',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.c_sharp',      { link = "Constant" })  -- true, false, null
+  highlight(0, '@constant.macro.c_sharp',        { link = "Constant" })  -- Preprocessor symbols
 
   -- Functions/Methods
-  highlight(0, '@function.c_sharp',              { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.method.c_sharp',       { fg = colors.orange,    bg = 'NONE' })  -- Method definitions
-  highlight(0, '@function.method.call.c_sharp',  { fg = colors.orange,    bg = 'NONE' })  -- Method calls
+  highlight(0, '@function.c_sharp',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.method.c_sharp',       { link = "Function" })  -- Method definitions
+  highlight(0, '@function.method.call.c_sharp',  { link = "Function" })  -- Method calls
   highlight(0, '@constructor.c_sharp',           { fg = colors.orange,    bg = 'NONE' })  -- Constructors
 
   -- Types
-  highlight(0, '@type.c_sharp',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.c_sharp',          { fg = colors.turquoise, bg = 'NONE' })  -- int, string, bool, etc.
-  highlight(0, '@type.definition.c_sharp',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.c_sharp',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.c_sharp',          { link = "Type" })  -- int, string, bool, etc.
+  highlight(0, '@type.definition.c_sharp',       { link = "Type" })  -- Type definitions
 
   -- Modules/Namespaces
   highlight(0, '@module.c_sharp',                { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
@@ -257,55 +257,55 @@ csharp.setupHighlighting = function()
   highlight(0, '@property.c_sharp',              { fg = colors.purple,    bg = 'NONE' })  -- Properties
 
   -- Keywords
-  highlight(0, '@keyword.c_sharp',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.type.c_sharp',          { fg = colors.blue,      bg = 'NONE' })  -- class, struct, interface, enum
-  highlight(0, '@keyword.modifier.c_sharp',      { fg = colors.blue,      bg = 'NONE' })  -- public, private, static, etc.
-  highlight(0, '@keyword.function.c_sharp',      { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.operator.c_sharp',      { fg = colors.blue,      bg = 'NONE' })  -- is, as, typeof, sizeof, nameof
-  highlight(0, '@keyword.return.c_sharp',        { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.repeat.c_sharp',        { fg = colors.blue,      bg = 'NONE' })  -- for, foreach, while, do
-  highlight(0, '@keyword.conditional.c_sharp',   { fg = colors.blue,      bg = 'NONE' })  -- if, else, switch, case
-  highlight(0, '@keyword.exception.c_sharp',     { fg = colors.blue,      bg = 'NONE' })  -- try, catch, finally, throw
-  highlight(0, '@keyword.import.c_sharp',        { fg = colors.pink,      bg = 'NONE' })  -- using
-  highlight(0, '@keyword.coroutine.c_sharp',     { fg = colors.blue,      bg = 'NONE' })  -- async, await
-  highlight(0, '@keyword.directive.c_sharp',     { fg = colors.pink,      bg = 'NONE' })  -- Preprocessor directives
-  highlight(0, '@keyword.directive.define.c_sharp', { fg = colors.pink,   bg = 'NONE' })  -- #define, #if
+  highlight(0, '@keyword.c_sharp',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.type.c_sharp',          { link = "Keyword" })  -- class, struct, interface, enum
+  highlight(0, '@keyword.modifier.c_sharp',      { link = "Keyword" })  -- public, private, static, etc.
+  highlight(0, '@keyword.function.c_sharp',      { link = "Keyword" })  -- return
+  highlight(0, '@keyword.operator.c_sharp',      { link = "Operator" })  -- is, as, typeof, sizeof, nameof
+  highlight(0, '@keyword.return.c_sharp',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.repeat.c_sharp',        { link = "Keyword" })  -- for, foreach, while, do
+  highlight(0, '@keyword.conditional.c_sharp',   { link = "Conditional" })  -- if, else, switch, case
+  highlight(0, '@keyword.exception.c_sharp',     { link = "Keyword" })  -- try, catch, finally, throw
+  highlight(0, '@keyword.import.c_sharp',        { link = "Keyword" })  -- using
+  highlight(0, '@keyword.coroutine.c_sharp',     { link = "Keyword" })  -- async, await
+  highlight(0, '@keyword.directive.c_sharp',     { link = "Keyword" })  -- Preprocessor directives
+  highlight(0, '@keyword.directive.define.c_sharp', { link = "Keyword" })  -- #define, #if
 
   -- Labels
   highlight(0, '@label.c_sharp',                 { fg = colors.blue,      bg = 'NONE' })  -- Labels
 
   -- Strings
-  highlight(0, '@string.c_sharp',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.c_sharp',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.c_sharp',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.c_sharp',         { link = "String" })  -- Escape sequences
   highlight(0, '@character.c_sharp',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
   highlight(0, '@character.special.c_sharp',     { fg = colors.pink,      bg = 'NONE' })  -- Escape chars
 
   -- Numbers
-  highlight(0, '@number.c_sharp',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.c_sharp',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.c_sharp',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.c_sharp',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.c_sharp',               { fg = colors.blue,      bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.c_sharp',               { link = "Boolean" })  -- true, false
 
   -- Comments
-  highlight(0, '@comment.c_sharp',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.c_sharp', { fg = colors.red,       bg = 'NONE' })  -- XML doc comments
+  highlight(0, '@comment.c_sharp',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.c_sharp', { link = "Comment" })  -- XML doc comments
 
   -- Attributes
   highlight(0, '@attribute.c_sharp',             { fg = colors.pink,      bg = 'NONE' })  -- [Attribute]
   highlight(0, '@attribute.builtin.c_sharp',     { fg = colors.pink,      bg = 'NONE' })  -- [Serializable], etc.
 
   -- Operators and Punctuation
-  highlight(0, '@operator.c_sharp',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.c_sharp',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.c_sharp',   { fg = colors.white,     bg = 'NONE' })  -- (), [], {}, <>
-  highlight(0, '@punctuation.delimiter.c_sharp', { fg = colors.white,     bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.c_sharp', { link = "Delimiter" })  -- , ; :
   highlight(0, '@punctuation.special.c_sharp',   { fg = colors.pink,      bg = 'NONE' })  -- $ in interpolation, # in directives
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.cs)
 
-  highlight(0, '@lsp.type.variable.cs',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.cs',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.cs',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.cs',      { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.field.cs',         { fg = colors.purple,    bg = 'NONE' })  -- Fields
@@ -321,19 +321,19 @@ csharp.setupHighlighting = function()
   highlight(0, '@lsp.type.event.cs',         { fg = colors.purple,    bg = 'NONE' })  -- Events
   highlight(0, '@lsp.type.namespace.cs',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
   highlight(0, '@lsp.type.typeParameter.cs', { fg = colors.turquoise, bg = 'NONE' })  -- Generic type parameters
-  highlight(0, '@lsp.type.keyword.cs',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.cs',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.cs',      { fg = colors.blue,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.cs',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.cs',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.cs',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.cs',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.cs',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.cs',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.cs',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.cs',       { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.regexp.cs',        { fg = colors.redLight,  bg = 'NONE' })  -- Regex
-  highlight(0, '@lsp.type.xmlDocCommentName.cs', { fg = colors.green, bg = 'NONE' })  -- XML tag names
-  highlight(0, '@lsp.type.xmlDocCommentText.cs', { fg = colors.red,   bg = 'NONE' })  -- XML doc text
+  highlight(0, '@lsp.type.xmlDocCommentName.cs', { link = "Comment" })  -- XML tag names
+  highlight(0, '@lsp.type.xmlDocCommentText.cs', { link = "Comment" })  -- XML doc text
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.cs',    { fg = colors.purple,    bg = 'NONE' })  -- readonly fields
-  highlight(0, '@lsp.typemod.variable.static.cs',      { fg = colors.purple,    bg = 'NONE' })  -- static fields
+  highlight(0, '@lsp.typemod.variable.readonly.cs',    { link = "Variable" })  -- readonly fields
+  highlight(0, '@lsp.typemod.variable.static.cs',      { link = "Variable" })  -- static fields
   highlight(0, '@lsp.typemod.method.declaration.cs',   { fg = colors.orange,    bg = 'NONE' })  -- Method declarations
   highlight(0, '@lsp.typemod.method.static.cs',        { fg = colors.orange,    bg = 'NONE' })  -- Static methods
   highlight(0, '@lsp.typemod.method.async.cs',         { fg = colors.orange,    bg = 'NONE' })  -- Async methods

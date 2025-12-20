@@ -20,12 +20,12 @@ coffeescript.setupHighlighting = function()
   -- Statements and Control Flow
   highlight(0, 'coffeeStatement',         { fg = colors.blue,       bg = 'NONE'            })  -- return, break, continue, throw
   highlight(0, 'coffeeRepeat',            { fg = colors.blue,       bg = 'NONE'            })  -- for, while, until, loop
-  highlight(0, 'coffeeConditional',       { fg = colors.blue,       bg = 'NONE'            })  -- if, else, unless, switch, when, then
+  highlight(0, 'coffeeConditional',       { link = "Conditional" })  -- if, else, unless, switch, when, then
   highlight(0, 'coffeeException',         { fg = colors.blue,       bg = 'NONE'            })  -- try, catch, finally
-  highlight(0, 'coffeeKeyword',           { fg = colors.blue,       bg = 'NONE'            })  -- new, in, of, class, extends, super, yield, await, do, by
+  highlight(0, 'coffeeKeyword',           { link = "Keyword" })  -- new, in, of, class, extends, super, yield, await, do, by
 
   -- Operators
-  highlight(0, 'coffeeOperator',          { fg = colors.blue,       bg = 'NONE'            })  -- instanceof, typeof, delete, and, or, not, is, isnt
+  highlight(0, 'coffeeOperator',          { link = "Operator" })  -- instanceof, typeof, delete, and, or, not, is, isnt
   highlight(0, 'coffeeExtendedOp',        { fg = colors.white,      bg = 'NONE'            })  -- Symbol operators: + - * / % = < > ! & | ^ ~
   highlight(0, 'coffeeSpecialOp',         { fg = colors.white,      bg = 'NONE'            })  -- Commas and semicolons
   highlight(0, 'coffeeAssign',            { fg = colors.white,      bg = 'NONE'            })  -- Assignment operators: = += -= *= /= etc.
@@ -38,46 +38,46 @@ coffeescript.setupHighlighting = function()
   highlight(0, 'coffeeSoak',              { fg = colors.pink,       bg = 'NONE'            })  -- ?. (soak/optional chaining)
 
   -- Constants and Literals
-  highlight(0, 'coffeeBoolean',           { fg = colors.turquoise,  bg = 'NONE'            })  -- true, false, on, off, yes, no
+  highlight(0, 'coffeeBoolean',           { link = "Boolean" })  -- true, false, on, off, yes, no
   highlight(0, 'coffeeGlobal',            { fg = colors.turquoise,  bg = 'NONE'            })  -- null, undefined
   highlight(0, 'coffeeNull',              { fg = colors.turquoise,  bg = 'NONE'            })  -- null
   highlight(0, 'coffeeUndefined',         { fg = colors.turquoise,  bg = 'NONE'            })  -- undefined
-  highlight(0, 'coffeeConstant',          { fg = colors.turquoise,  bg = 'NONE'            })  -- SCREAMING_CAPS constants
+  highlight(0, 'coffeeConstant',          { link = "Constant" })  -- SCREAMING_CAPS constants
 
   -- Numbers
-  highlight(0, 'coffeeNumber',            { fg = colors.greenLight, bg = 'NONE'            })  -- Integer literals
+  highlight(0, 'coffeeNumber',            { link = "Number" })  -- Integer literals
   highlight(0, 'coffeeFloat',             { fg = colors.greenLight, bg = 'NONE'            })  -- Floating-point numbers
-  highlight(0, 'coffeeHexNumber',         { fg = colors.greenLight, bg = 'NONE'            })  -- Hexadecimal: 0x1A
-  highlight(0, 'coffeeBinaryNumber',      { fg = colors.greenLight, bg = 'NONE'            })  -- Binary: 0b1010
-  highlight(0, 'coffeeOctalNumber',       { fg = colors.greenLight, bg = 'NONE'            })  -- Octal: 0o17
+  highlight(0, 'coffeeHexNumber',         { link = "Number" })  -- Hexadecimal: 0x1A
+  highlight(0, 'coffeeBinaryNumber',      { link = "Number" })  -- Binary: 0b1010
+  highlight(0, 'coffeeOctalNumber',       { link = "Number" })  -- Octal: 0o17
 
   -- Strings
-  highlight(0, 'coffeeString',            { fg = colors.redLight,   bg = 'NONE'            })  -- String literals (single and double-quoted)
-  highlight(0, 'coffeeSingleString',      { fg = colors.redLight,   bg = 'NONE'            })  -- Single-quoted strings
-  highlight(0, 'coffeeDoubleString',      { fg = colors.redLight,   bg = 'NONE'            })  -- Double-quoted strings
+  highlight(0, 'coffeeString',            { link = "String" })  -- String literals (single and double-quoted)
+  highlight(0, 'coffeeSingleString',      { link = "String" })  -- Single-quoted strings
+  highlight(0, 'coffeeDoubleString',      { link = "String" })  -- Double-quoted strings
   highlight(0, 'coffeeHeredoc',           { fg = colors.redLight,   bg = 'NONE'            })  -- Heredoc strings (""" or ''')
-  highlight(0, 'coffeeStringDelimiter',   { fg = colors.redLight,   bg = 'NONE'            })  -- String delimiters
+  highlight(0, 'coffeeStringDelimiter',   { link = "Delimiter" })  -- String delimiters
   highlight(0, 'coffeeEscape',            { fg = colors.pink,       bg = 'NONE'            })  -- String escape sequences: \n, \t, etc.
   highlight(0, 'coffeeInterp',            { fg = colors.pink,       bg = 'NONE'            })  -- String interpolations: #{...}
-  highlight(0, 'coffeeInterpDelim',       { fg = colors.pink,       bg = 'NONE'            })  -- Interpolation delimiters: #{ }
+  highlight(0, 'coffeeInterpDelim',       { link = "Delimiter" })  -- Interpolation delimiters: #{ }
 
   -- Regular Expressions
   highlight(0, 'coffeeRegex',             { fg = colors.orange,     bg = 'NONE'            })  -- Regular expression literals: /pattern/
   highlight(0, 'coffeeHeregex',           { fg = colors.orange,     bg = 'NONE'            })  -- Multi-line regex (heredoc-style): ///pattern///
-  highlight(0, 'coffeeHeregexComment',    { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments within heregex
+  highlight(0, 'coffeeHeregexComment',    { link = "Comment" })  -- Comments within heregex
   highlight(0, 'coffeeRegexFlags',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Regex flags: g, i, m, etc.
   highlight(0, 'coffeeRegexEscape',       { fg = colors.pink,       bg = 'NONE'            })  -- Regex escape sequences
   highlight(0, 'coffeeRegexCharClass',    { fg = colors.turquoise,  bg = 'NONE'            })  -- Character classes: [a-z]
 
   -- Variables and Identifiers
-  highlight(0, 'coffeeSpecialVar',        { fg = colors.pink,       bg = 'NONE'            })  -- this, prototype, arguments
+  highlight(0, 'coffeeSpecialVar',        { link = "Variable" })  -- this, prototype, arguments
   highlight(0, 'coffeeThis',              { fg = colors.pink,       bg = 'NONE'            })  -- this
   highlight(0, 'coffeePrototype',         { fg = colors.pink,       bg = 'NONE'            })  -- prototype
   highlight(0, 'coffeeArguments',         { fg = colors.pink,       bg = 'NONE'            })  -- arguments
   highlight(0, 'coffeeSpecialIdent',      { fg = colors.purple,     bg = 'NONE'            })  -- Instance variables: @property
   highlight(0, 'coffeeAtSign',            { fg = colors.purple,     bg = 'NONE'            })  -- @ sign for instance variables
   highlight(0, 'coffeeIdentifier',        { fg = colors.white,      bg = 'NONE'            })  -- Regular identifiers
-  highlight(0, 'coffeeVariable',          { fg = colors.white,      bg = 'NONE'            })  -- Variables
+  highlight(0, 'coffeeVariable',          { link = "Variable" })  -- Variables
 
   -- Objects and Classes
   highlight(0, 'coffeeObject',            { fg = colors.turquoise,  bg = 'NONE'            })  -- Capitalized identifiers (class-like names)
@@ -91,20 +91,20 @@ coffeescript.setupHighlighting = function()
   highlight(0, 'coffeeProtoAccess',       { fg = colors.white,      bg = 'NONE'            })  -- Prototype access via :: operator
 
   -- Functions
-  highlight(0, 'coffeeFunction',          { fg = colors.orange,     bg = 'NONE'            })  -- Function definitions
-  highlight(0, 'coffeeFunctionName',      { fg = colors.orange,     bg = 'NONE'            })  -- Function name
-  highlight(0, 'coffeeMethod',            { fg = colors.orange,     bg = 'NONE'            })  -- Method definitions
-  highlight(0, 'coffeeMethodName',        { fg = colors.orange,     bg = 'NONE'            })  -- Method name
+  highlight(0, 'coffeeFunction',          { link = "Function" })  -- Function definitions
+  highlight(0, 'coffeeFunctionName',      { link = "Function" })  -- Function name
+  highlight(0, 'coffeeMethod',            { link = "Function" })  -- Method definitions
+  highlight(0, 'coffeeMethodName',        { link = "Function" })  -- Method name
   highlight(0, 'coffeeParam',             { fg = colors.white,      bg = 'NONE'            })  -- Function parameters
   highlight(0, 'coffeeParamDefault',      { fg = colors.white,      bg = 'NONE'            })  -- Default parameter values
 
   -- Embedded JavaScript
   highlight(0, 'coffeeEmbed',             { fg = colors.orange,     bg = 'NONE'            })  -- Embedded JavaScript code: `js code`
-  highlight(0, 'coffeeEmbedDelim',        { fg = colors.orange,     bg = 'NONE'            })  -- Backticks for embedded JS
+  highlight(0, 'coffeeEmbedDelim',        { link = "Delimiter" })  -- Backticks for embedded JS
 
   -- Comments
-  highlight(0, 'coffeeComment',           { fg = colors.gray,       bg = 'NONE', italic = true })  -- Single-line comments: #
-  highlight(0, 'coffeeBlockComment',      { fg = colors.gray,       bg = 'NONE', italic = true })  -- Multi-line comments: ###...###
+  highlight(0, 'coffeeComment',           { link = "Comment" })  -- Single-line comments: #
+  highlight(0, 'coffeeBlockComment',      { link = "Comment" })  -- Multi-line comments: ###...###
   highlight(0, 'coffeeTodo',              { fg = colors.pink,       bg = 'NONE', bold = true })  -- TODO, FIXME, XXX markers
   highlight(0, 'coffeeShebang',           { fg = colors.gray,       bg = 'NONE'            })  -- Shebang line: #!/usr/bin/env coffee
 
@@ -135,7 +135,7 @@ coffeescript.setupHighlighting = function()
 
   -- Built-in Objects and Functions
   highlight(0, 'coffeeBuiltinObject',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Array, Object, Function, String, Number, Boolean
-  highlight(0, 'coffeeBuiltinFunction',   { fg = colors.orange,     bg = 'NONE'            })  -- console, Math, JSON, etc.
+  highlight(0, 'coffeeBuiltinFunction',   { link = "Function" })  -- console, Math, JSON, etc.
   highlight(0, 'coffeeConsole',           { fg = colors.turquoise,  bg = 'NONE'            })  -- console
   highlight(0, 'coffeeMath',              { fg = colors.turquoise,  bg = 'NONE'            })  -- Math
   highlight(0, 'coffeeJSON',              { fg = colors.turquoise,  bg = 'NONE'            })  -- JSON
@@ -147,8 +147,8 @@ coffeescript.setupHighlighting = function()
   highlight(0, 'coffeeSet',               { fg = colors.turquoise,  bg = 'NONE'            })  -- Set
 
   -- Array/String Methods (commonly used in CoffeeScript)
-  highlight(0, 'coffeeArrayMethod',       { fg = colors.orange,     bg = 'NONE'            })  -- map, filter, reduce, forEach, etc.
-  highlight(0, 'coffeeStringMethod',      { fg = colors.orange,     bg = 'NONE'            })  -- split, join, replace, etc.
+  highlight(0, 'coffeeArrayMethod',       { link = "Function" })  -- map, filter, reduce, forEach, etc.
+  highlight(0, 'coffeeStringMethod',      { link = "String" })  -- split, join, replace, etc.
 
 
   -------------------------------------------------------------------------
@@ -159,32 +159,32 @@ coffeescript.setupHighlighting = function()
   -- These captures are defined for future compatibility if a parser is added
 
   -- Keywords
-  highlight(0, '@keyword.coffee',                { fg = colors.blue,       bg = 'NONE'            })  -- Keywords
-  highlight(0, '@keyword.function.coffee',       { fg = colors.blue,       bg = 'NONE'            })  -- Function keywords
-  highlight(0, '@keyword.operator.coffee',       { fg = colors.blue,       bg = 'NONE'            })  -- Operator keywords (and, or, not, is, isnt)
-  highlight(0, '@keyword.return.coffee',         { fg = colors.blue,       bg = 'NONE'            })  -- return
-  highlight(0, '@keyword.conditional.coffee',    { fg = colors.blue,       bg = 'NONE'            })  -- if, else, unless, switch, when, then
-  highlight(0, '@keyword.repeat.coffee',         { fg = colors.blue,       bg = 'NONE'            })  -- for, while, until, loop
-  highlight(0, '@keyword.exception.coffee',      { fg = colors.blue,       bg = 'NONE'            })  -- try, catch, finally
-  highlight(0, '@keyword.import.coffee',         { fg = colors.blue,       bg = 'NONE'            })  -- import, from (CoffeeScript 2)
-  highlight(0, '@keyword.export.coffee',         { fg = colors.blue,       bg = 'NONE'            })  -- export (CoffeeScript 2)
+  highlight(0, '@keyword.coffee',                { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.function.coffee',       { link = "Keyword" })  -- Function keywords
+  highlight(0, '@keyword.operator.coffee',       { link = "Operator" })  -- Operator keywords (and, or, not, is, isnt)
+  highlight(0, '@keyword.return.coffee',         { link = "Keyword" })  -- return
+  highlight(0, '@keyword.conditional.coffee',    { link = "Conditional" })  -- if, else, unless, switch, when, then
+  highlight(0, '@keyword.repeat.coffee',         { link = "Keyword" })  -- for, while, until, loop
+  highlight(0, '@keyword.exception.coffee',      { link = "Keyword" })  -- try, catch, finally
+  highlight(0, '@keyword.import.coffee',         { link = "Keyword" })  -- import, from (CoffeeScript 2)
+  highlight(0, '@keyword.export.coffee',         { link = "Keyword" })  -- export (CoffeeScript 2)
 
   -- Functions
-  highlight(0, '@function.coffee',               { fg = colors.orange,     bg = 'NONE'            })  -- Function names
-  highlight(0, '@function.call.coffee',          { fg = colors.orange,     bg = 'NONE'            })  -- Function calls
-  highlight(0, '@function.method.coffee',        { fg = colors.orange,     bg = 'NONE'            })  -- Method names
-  highlight(0, '@function.method.call.coffee',   { fg = colors.orange,     bg = 'NONE'            })  -- Method calls
-  highlight(0, '@function.builtin.coffee',       { fg = colors.orange,     bg = 'NONE'            })  -- Built-in functions
+  highlight(0, '@function.coffee',               { link = "Function" })  -- Function names
+  highlight(0, '@function.call.coffee',          { link = "Function" })  -- Function calls
+  highlight(0, '@function.method.coffee',        { link = "Function" })  -- Method names
+  highlight(0, '@function.method.call.coffee',   { link = "Function" })  -- Method calls
+  highlight(0, '@function.builtin.coffee',       { link = "Function" })  -- Built-in functions
 
   -- Variables
-  highlight(0, '@variable.coffee',               { fg = colors.white,      bg = 'NONE'            })  -- Variables
-  highlight(0, '@variable.builtin.coffee',       { fg = colors.pink,       bg = 'NONE'            })  -- this, arguments
-  highlight(0, '@variable.member.coffee',        { fg = colors.purple,     bg = 'NONE'            })  -- @property (instance variables)
-  highlight(0, '@variable.parameter.coffee',     { fg = colors.white,      bg = 'NONE'            })  -- Function parameters
+  highlight(0, '@variable.coffee',               { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.coffee',       { link = "Variable" })  -- this, arguments
+  highlight(0, '@variable.member.coffee',        { link = "Variable" })  -- @property (instance variables)
+  highlight(0, '@variable.parameter.coffee',     { link = "Variable" })  -- Function parameters
 
   -- Types and Classes
-  highlight(0, '@type.coffee',                   { fg = colors.turquoise,  bg = 'NONE'            })  -- Types
-  highlight(0, '@type.builtin.coffee',           { fg = colors.turquoise,  bg = 'NONE'            })  -- Built-in types
+  highlight(0, '@type.coffee',                   { link = "Type" })  -- Types
+  highlight(0, '@type.builtin.coffee',           { link = "Type" })  -- Built-in types
   highlight(0, '@constructor.coffee',            { fg = colors.turquoise,  bg = 'NONE'            })  -- Class names (constructors)
 
   -- Properties
@@ -192,31 +192,31 @@ coffeescript.setupHighlighting = function()
   highlight(0, '@field.coffee',                  { fg = colors.blue,       bg = 'NONE'            })  -- Object fields
 
   -- Constants
-  highlight(0, '@constant.coffee',               { fg = colors.turquoise,  bg = 'NONE'            })  -- Constants (SCREAMING_CAPS)
-  highlight(0, '@constant.builtin.coffee',       { fg = colors.turquoise,  bg = 'NONE'            })  -- true, false, null, undefined
-  highlight(0, '@boolean.coffee',                { fg = colors.turquoise,  bg = 'NONE'            })  -- Booleans
+  highlight(0, '@constant.coffee',               { link = "Constant" })  -- Constants (SCREAMING_CAPS)
+  highlight(0, '@constant.builtin.coffee',       { link = "Constant" })  -- true, false, null, undefined
+  highlight(0, '@boolean.coffee',                { link = "Boolean" })  -- Booleans
 
   -- Numbers
-  highlight(0, '@number.coffee',                 { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
-  highlight(0, '@number.float.coffee',           { fg = colors.greenLight, bg = 'NONE'            })  -- Floating point numbers
+  highlight(0, '@number.coffee',                 { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.coffee',           { link = "Number" })  -- Floating point numbers
 
   -- Strings
-  highlight(0, '@string.coffee',                 { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
-  highlight(0, '@string.escape.coffee',          { fg = colors.pink,       bg = 'NONE'            })  -- Escape sequences
-  highlight(0, '@string.special.coffee',         { fg = colors.pink,       bg = 'NONE'            })  -- Interpolations
-  highlight(0, '@string.regex.coffee',           { fg = colors.orange,     bg = 'NONE'            })  -- Regular expressions
+  highlight(0, '@string.coffee',                 { link = "String" })  -- Strings
+  highlight(0, '@string.escape.coffee',          { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.coffee',         { link = "String" })  -- Interpolations
+  highlight(0, '@string.regex.coffee',           { link = "String" })  -- Regular expressions
 
   -- Comments
-  highlight(0, '@comment.coffee',                { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
-  highlight(0, '@comment.block.coffee',          { fg = colors.gray,       bg = 'NONE', italic = true })  -- Block comments
-  highlight(0, '@comment.todo.coffee',           { fg = colors.pink,       bg = 'NONE', bold = true })  -- TODO comments
+  highlight(0, '@comment.coffee',                { link = "Comment" })  -- Comments
+  highlight(0, '@comment.block.coffee',          { link = "Comment" })  -- Block comments
+  highlight(0, '@comment.todo.coffee',           { link = "Comment" })  -- TODO comments
 
   -- Operators
-  highlight(0, '@operator.coffee',               { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, '@operator.coffee',               { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.coffee',    { fg = colors.white,      bg = 'NONE'            })  -- Brackets: ( ) [ ] { }
-  highlight(0, '@punctuation.delimiter.coffee',  { fg = colors.white,      bg = 'NONE'            })  -- Delimiters: , ; :
+  highlight(0, '@punctuation.delimiter.coffee',  { link = "Delimiter" })  -- Delimiters: , ; :
   highlight(0, '@punctuation.special.coffee',    { fg = colors.pink,       bg = 'NONE'            })  -- Special: @ # #{ }
 
   -- Embedded JavaScript
@@ -231,13 +231,13 @@ coffeescript.setupHighlighting = function()
   highlight(0, '@lsp.type.function.coffee',      { fg = colors.orange,     bg = 'NONE'            })  -- Functions
   highlight(0, '@lsp.type.method.coffee',        { fg = colors.orange,     bg = 'NONE'            })  -- Methods
   highlight(0, '@lsp.type.property.coffee',      { fg = colors.blue,       bg = 'NONE'            })  -- Properties
-  highlight(0, '@lsp.type.variable.coffee',      { fg = colors.white,      bg = 'NONE'            })  -- Variables
+  highlight(0, '@lsp.type.variable.coffee',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.coffee',     { fg = colors.white,      bg = 'NONE'            })  -- Parameters
-  highlight(0, '@lsp.type.string.coffee',        { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
-  highlight(0, '@lsp.type.number.coffee',        { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
-  highlight(0, '@lsp.type.keyword.coffee',       { fg = colors.blue,       bg = 'NONE'            })  -- Keywords
-  highlight(0, '@lsp.type.operator.coffee',      { fg = colors.white,      bg = 'NONE'            })  -- Operators
-  highlight(0, '@lsp.type.comment.coffee',       { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
+  highlight(0, '@lsp.type.string.coffee',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.coffee',        { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.coffee',       { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.operator.coffee',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.comment.coffee',       { link = "Comment" })  -- Comments
 
   highlight(0, '@lsp.mod.readonly.coffee',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Read-only variables
   highlight(0, '@lsp.mod.defaultLibrary.coffee', { fg = colors.turquoise,  bg = 'NONE'            })  -- Default library

@@ -34,9 +34,9 @@ cobol.setupHighlighting = function()
   highlight(0, 'cobolParagraphName',    { fg = colors.orange,     bg = 'NONE'            })  -- User-defined paragraph names
 
   -- Keywords
-  highlight(0, 'cobolKeyword',          { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
+  highlight(0, 'cobolKeyword',          { link = "Keyword" })  -- General keywords
   highlight(0, 'cobolStatement',        { fg = colors.blue,       bg = 'NONE'            })  -- Statements
-  highlight(0, 'cobolConditional',      { fg = colors.blue,       bg = 'NONE'            })  -- IF, ELSE, END-IF, EVALUATE, WHEN, END-EVALUATE
+  highlight(0, 'cobolConditional',      { link = "Conditional" })  -- IF, ELSE, END-IF, EVALUATE, WHEN, END-EVALUATE
   highlight(0, 'cobolRepeat',           { fg = colors.blue,       bg = 'NONE'            })  -- PERFORM, TIMES, UNTIL, VARYING, END-PERFORM
   highlight(0, 'cobolGoto',             { fg = colors.blue,       bg = 'NONE'            })  -- GO TO
   highlight(0, 'cobolStop',             { fg = colors.blue,       bg = 'NONE'            })  -- STOP RUN, GOBACK, EXIT
@@ -44,7 +44,7 @@ cobol.setupHighlighting = function()
   highlight(0, 'cobolReturn',           { fg = colors.blue,       bg = 'NONE'            })  -- RETURN
 
   -- Data Division Keywords
-  highlight(0, 'cobolDataKeyword',      { fg = colors.blue,       bg = 'NONE'            })  -- Data description keywords
+  highlight(0, 'cobolDataKeyword',      { link = "Keyword" })  -- Data description keywords
   highlight(0, 'cobolPicture',          { fg = colors.blue,       bg = 'NONE'            })  -- PIC, PICTURE
   highlight(0, 'cobolPictureClause',    { fg = colors.pink,       bg = 'NONE'            })  -- Picture strings (9, X, A, V, S, etc.)
   highlight(0, 'cobolUsage',            { fg = colors.blue,       bg = 'NONE'            })  -- USAGE, COMP, COMP-3, BINARY, PACKED-DECIMAL, DISPLAY
@@ -54,7 +54,7 @@ cobol.setupHighlighting = function()
   highlight(0, 'cobolFiller',           { fg = colors.gray,       bg = 'NONE'            })  -- FILLER
 
   -- Level Numbers
-  highlight(0, 'cobolLevelNumber',      { fg = colors.greenLight, bg = 'NONE'            })  -- 01, 05, 10, 15, etc.
+  highlight(0, 'cobolLevelNumber',      { link = "Number" })  -- 01, 05, 10, 15, etc.
   highlight(0, 'cobolLevel77',          { fg = colors.greenLight, bg = 'NONE'            })  -- 77 level
   highlight(0, 'cobolLevel88',          { fg = colors.greenLight, bg = 'NONE'            })  -- 88 level (condition names)
   highlight(0, 'cobolLevel66',          { fg = colors.greenLight, bg = 'NONE'            })  -- 66 level (RENAMES)
@@ -66,7 +66,7 @@ cobol.setupHighlighting = function()
   highlight(0, 'cobolSet',              { fg = colors.blue,       bg = 'NONE'            })  -- SET
 
   -- String Handling
-  highlight(0, 'cobolStringVerb',       { fg = colors.blue,       bg = 'NONE'            })  -- STRING, UNSTRING, INSPECT
+  highlight(0, 'cobolStringVerb',       { link = "String" })  -- STRING, UNSTRING, INSPECT
   highlight(0, 'cobolInspect',          { fg = colors.blue,       bg = 'NONE'            })  -- TALLYING, REPLACING, CONVERTING
 
   -- File I/O
@@ -96,19 +96,19 @@ cobol.setupHighlighting = function()
   highlight(0, 'cobolConditionName',    { fg = colors.purple,     bg = 'NONE'            })  -- 88-level condition names
 
   -- Constants
-  highlight(0, 'cobolConstant',         { fg = colors.purple,     bg = 'NONE'            })  -- Constants
+  highlight(0, 'cobolConstant',         { link = "Constant" })  -- Constants
   highlight(0, 'cobolFigurative',       { fg = colors.blue,       bg = 'NONE'            })  -- ZERO, ZEROS, ZEROES, SPACE, SPACES, HIGH-VALUE, LOW-VALUE, QUOTE, ALL
 
   -- Strings
-  highlight(0, 'cobolString',           { fg = colors.redLight,   bg = 'NONE'            })  -- "strings" and 'strings'
-  highlight(0, 'cobolStringDelim',      { fg = colors.redLight,   bg = 'NONE'            })  -- String delimiters
+  highlight(0, 'cobolString',           { link = "String" })  -- "strings" and 'strings'
+  highlight(0, 'cobolStringDelim',      { link = "Delimiter" })  -- String delimiters
 
   -- Numbers
-  highlight(0, 'cobolNumber',           { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'cobolNumber',           { link = "Number" })  -- Numbers
   highlight(0, 'cobolDecimal',          { fg = colors.greenLight, bg = 'NONE'            })  -- Decimal numbers
 
   -- Operators
-  highlight(0, 'cobolOperator',         { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, 'cobolOperator',         { link = "Operator" })  -- Operators
   highlight(0, 'cobolArithOp',          { fg = colors.white,      bg = 'NONE'            })  -- +, -, *, /
   highlight(0, 'cobolRelation',         { fg = colors.blue,       bg = 'NONE'            })  -- EQUAL, GREATER, LESS, NOT, AND, OR
   highlight(0, 'cobolRelationSymbol',   { fg = colors.white,      bg = 'NONE'            })  -- =, <, >, >=, <=
@@ -117,8 +117,8 @@ cobol.setupHighlighting = function()
   highlight(0, 'cobolSpecialRegister',  { fg = colors.blue,       bg = 'NONE'            })  -- RETURN-CODE, SORT-STATUS, etc.
 
   -- Comments
-  highlight(0, 'cobolComment',          { fg = colors.red,        bg = 'NONE'            })  -- * in column 7 or *> inline
-  highlight(0, 'cobolCommentLine',      { fg = colors.red,        bg = 'NONE'            })  -- Full line comments
+  highlight(0, 'cobolComment',          { link = "Comment" })  -- * in column 7 or *> inline
+  highlight(0, 'cobolCommentLine',      { link = "Comment" })  -- Full line comments
   highlight(0, 'cobolTodo',             { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, etc.
 
   -- Area Indicators
@@ -134,47 +134,47 @@ cobol.setupHighlighting = function()
   -- Treesitter Groups (@xxx.cobol)
 
   -- Variables
-  highlight(0, '@variable.cobol',              { fg = colors.purple,    bg = 'NONE' })  -- Data names
-  highlight(0, '@variable.builtin.cobol',      { fg = colors.blue,      bg = 'NONE' })  -- Special registers
-  highlight(0, '@variable.parameter.cobol',    { fg = colors.purple,    bg = 'NONE' })  -- USING parameters
-  highlight(0, '@variable.member.cobol',       { fg = colors.purple,    bg = 'NONE' })  -- Group item members
+  highlight(0, '@variable.cobol',              { link = "Variable" })  -- Data names
+  highlight(0, '@variable.builtin.cobol',      { link = "Variable" })  -- Special registers
+  highlight(0, '@variable.parameter.cobol',    { link = "Variable" })  -- USING parameters
+  highlight(0, '@variable.member.cobol',       { link = "Variable" })  -- Group item members
 
   -- Constants
-  highlight(0, '@constant.cobol',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.cobol',      { fg = colors.blue,      bg = 'NONE' })  -- ZERO, SPACE, HIGH-VALUE, etc.
+  highlight(0, '@constant.cobol',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.cobol',      { link = "Constant" })  -- ZERO, SPACE, HIGH-VALUE, etc.
 
   -- Functions (Paragraphs/Sections)
-  highlight(0, '@function.cobol',              { fg = colors.orange,    bg = 'NONE' })  -- Paragraph definitions
-  highlight(0, '@function.call.cobol',         { fg = colors.orange,    bg = 'NONE' })  -- PERFORM paragraph-name
-  highlight(0, '@function.builtin.cobol',      { fg = colors.orange,    bg = 'NONE' })  -- Intrinsic functions
+  highlight(0, '@function.cobol',              { link = "Function" })  -- Paragraph definitions
+  highlight(0, '@function.call.cobol',         { link = "Function" })  -- PERFORM paragraph-name
+  highlight(0, '@function.builtin.cobol',      { link = "Function" })  -- Intrinsic functions
   highlight(0, '@constructor.cobol',           { fg = colors.turquoise, bg = 'NONE' })  -- Record constructors
 
   -- Types
-  highlight(0, '@type.cobol',                  { fg = colors.turquoise, bg = 'NONE' })  -- Record/file names
-  highlight(0, '@type.builtin.cobol',          { fg = colors.turquoise, bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.cobol',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.cobol',                  { link = "Type" })  -- Record/file names
+  highlight(0, '@type.builtin.cobol',          { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.cobol',       { link = "Type" })  -- Type definitions
 
   -- Keywords
-  highlight(0, '@keyword.cobol',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.cobol',      { fg = colors.blue,      bg = 'NONE' })  -- PERFORM, CALL
-  highlight(0, '@keyword.type.cobol',          { fg = colors.blue,      bg = 'NONE' })  -- PIC, USAGE
-  highlight(0, '@keyword.modifier.cobol',      { fg = colors.blue,      bg = 'NONE' })  -- COMP, BINARY, PACKED-DECIMAL
-  highlight(0, '@keyword.return.cobol',        { fg = colors.blue,      bg = 'NONE' })  -- GOBACK, STOP RUN
-  highlight(0, '@keyword.import.cobol',        { fg = colors.pink,      bg = 'NONE' })  -- COPY
-  highlight(0, '@keyword.repeat.cobol',        { fg = colors.blue,      bg = 'NONE' })  -- PERFORM UNTIL/TIMES/VARYING
-  highlight(0, '@keyword.conditional.cobol',   { fg = colors.blue,      bg = 'NONE' })  -- IF, ELSE, EVALUATE, WHEN
-  highlight(0, '@keyword.operator.cobol',      { fg = colors.blue,      bg = 'NONE' })  -- AND, OR, NOT
+  highlight(0, '@keyword.cobol',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.cobol',      { link = "Keyword" })  -- PERFORM, CALL
+  highlight(0, '@keyword.type.cobol',          { link = "Keyword" })  -- PIC, USAGE
+  highlight(0, '@keyword.modifier.cobol',      { link = "Keyword" })  -- COMP, BINARY, PACKED-DECIMAL
+  highlight(0, '@keyword.return.cobol',        { link = "Keyword" })  -- GOBACK, STOP RUN
+  highlight(0, '@keyword.import.cobol',        { link = "Keyword" })  -- COPY
+  highlight(0, '@keyword.repeat.cobol',        { link = "Keyword" })  -- PERFORM UNTIL/TIMES/VARYING
+  highlight(0, '@keyword.conditional.cobol',   { link = "Conditional" })  -- IF, ELSE, EVALUATE, WHEN
+  highlight(0, '@keyword.operator.cobol',      { link = "Operator" })  -- AND, OR, NOT
 
   -- Strings
-  highlight(0, '@string.cobol',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.special.cobol',        { fg = colors.pink,      bg = 'NONE' })  -- Picture clauses
+  highlight(0, '@string.cobol',                { link = "String" })  -- Strings
+  highlight(0, '@string.special.cobol',        { link = "String" })  -- Picture clauses
 
   -- Numbers
-  highlight(0, '@number.cobol',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.cobol',                { link = "Number" })  -- Numbers
 
   -- Comments
-  highlight(0, '@comment.cobol',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.cobol', { fg = colors.red,       bg = 'NONE' })  -- Doc comments
+  highlight(0, '@comment.cobol',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.cobol', { link = "Comment" })  -- Doc comments
 
   -- Modules
   highlight(0, '@module.cobol',                { fg = colors.turquoise, bg = 'NONE' })  -- Program names
@@ -182,15 +182,15 @@ cobol.setupHighlighting = function()
   highlight(0, '@property.cobol',              { fg = colors.purple,    bg = 'NONE' })  -- Data item properties
 
   -- Operators and Punctuation
-  highlight(0, '@operator.cobol',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.cobol',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.cobol',   { fg = colors.white,     bg = 'NONE' })  -- ()
-  highlight(0, '@punctuation.delimiter.cobol', { fg = colors.white,     bg = 'NONE' })  -- , .
+  highlight(0, '@punctuation.delimiter.cobol', { link = "Delimiter" })  -- , .
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.cobol)
 
-  highlight(0, '@lsp.type.variable.cobol',      { fg = colors.purple,    bg = 'NONE' })  -- Data names
+  highlight(0, '@lsp.type.variable.cobol',      { link = "Variable" })  -- Data names
   highlight(0, '@lsp.type.parameter.cobol',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.cobol',      { fg = colors.purple,    bg = 'NONE' })  -- Data item properties
   highlight(0, '@lsp.type.function.cobol',      { fg = colors.orange,    bg = 'NONE' })  -- Paragraphs
@@ -198,15 +198,15 @@ cobol.setupHighlighting = function()
   highlight(0, '@lsp.type.type.cobol',          { fg = colors.turquoise, bg = 'NONE' })  -- Record types
   highlight(0, '@lsp.type.class.cobol',         { fg = colors.turquoise, bg = 'NONE' })  -- File/record definitions
   highlight(0, '@lsp.type.namespace.cobol',     { fg = colors.turquoise, bg = 'NONE' })  -- Program ID
-  highlight(0, '@lsp.type.keyword.cobol',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.cobol',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.cobol',      { fg = colors.blue,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.cobol',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.cobol',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.cobol',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.cobol',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.cobol',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.cobol',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.cobol',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.cobol',       { link = "Comment" })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.cobol',    { fg = colors.purple,    bg = 'NONE' })  -- Constants
+  highlight(0, '@lsp.typemod.variable.readonly.cobol',    { link = "Variable" })  -- Constants
   highlight(0, '@lsp.typemod.function.declaration.cobol', { fg = colors.orange,    bg = 'NONE' })  -- Paragraph definitions
   highlight(0, '@lsp.typemod.type.declaration.cobol',     { fg = colors.turquoise, bg = 'NONE' })  -- Type declarations
 end

@@ -20,7 +20,7 @@ bash.setupHighlighting = function()
   highlight(0, 'bashAdminStatement',   { fg = colors.orange,     bg = 'NONE'            })  -- reload, restart, start, status, stop (init script commands)
 
   -- Bash Special Variables
-  highlight(0, 'bashSpecialVariables', { link = "Constant"            })  -- BASH, BASH_ALIASES, BASH_ARGC, BASH_ARGV, BASH_COMMAND, BASH_ENV, etc.
+  highlight(0, 'bashSpecialVariables', { link = "Variable" })  -- BASH, BASH_ALIASES, BASH_ARGC, BASH_ARGV, BASH_COMMAND, BASH_ENV, etc.
 
   -- Coproc
   highlight(0, 'bashCoproc',           { fg = colors.blue,       bg = 'NONE'            })  -- coproc keyword
@@ -28,20 +28,20 @@ bash.setupHighlighting = function()
   -- Shell Common Groups (sh* prefix - shared with shell.lua but comprehensive here)
 
   -- Keywords - Control Flow
-  highlight(0, 'shConditional',        { fg = colors.blue,       bg = 'NONE'            })  -- if, then, else, elif, fi
-  highlight(0, 'shCase',               { fg = colors.blue,       bg = 'NONE'            })  -- case, esac, in
-  highlight(0, 'shCaseIn',             { fg = colors.blue,       bg = 'NONE'            })  -- in (case)
-  highlight(0, 'shLoop',               { fg = colors.blue,       bg = 'NONE'            })  -- for, while, until, do, done
-  highlight(0, 'shRepeat',             { fg = colors.blue,       bg = 'NONE'            })  -- for, while, until, select
-  highlight(0, 'shFor',                { fg = colors.blue,       bg = 'NONE'            })  -- for
-  highlight(0, 'shDo',                 { fg = colors.blue,       bg = 'NONE'            })  -- do, done
+  highlight(0, 'shConditional',        { link = "Conditional" })  -- if, then, else, elif, fi
+  highlight(0, 'shCase',               { link = "Keyword"      })  -- case, esac, in
+  highlight(0, 'shCaseIn',             { link = "Keyword"      })  -- in (case)
+  highlight(0, 'shLoop',               { link = "Keyword"      })  -- for, while, until, do, done
+  highlight(0, 'shRepeat',             { link = "Keyword"      })  -- for, while, until, select
+  highlight(0, 'shFor',                { link = "Keyword"      })  -- for
+  highlight(0, 'shDo',                 { link = "Keyword"      })  -- do, done
 
   -- Keywords - Function Definition
-  highlight(0, 'shFunctionKey',        { link = "Function"            })  -- function keyword
-  highlight(0, 'shFunction',           { link = "Function"            })  -- Function names
-  highlight(0, 'shFunctionName',       { link = "Function"            })  -- Function names
-  highlight(0, 'shFunctionOne',        { link = "Function"            })  -- Function definitions
-  highlight(0, 'shFunctionTwo',        { link = "Function"            })  -- Function definitions (alternate)
+  highlight(0, 'shFunctionKey',        { link = "Function" })  -- function keyword
+  highlight(0, 'shFunction',           { link = "Function" })  -- Function names
+  highlight(0, 'shFunctionName',       { link = "Function" })  -- Function names
+  highlight(0, 'shFunctionOne',        { link = "Function" })  -- Function definitions
+  highlight(0, 'shFunctionTwo',        { link = "Function" })  -- Function definitions (alternate)
 
   -- Built-in Commands
   highlight(0, 'shStatement',          { fg = colors.orange,     bg = 'NONE'            })  -- echo, read, printf, test, etc.
@@ -53,31 +53,31 @@ bash.setupHighlighting = function()
   highlight(0, 'shTouchCmd',           { fg = colors.orange,     bg = 'NONE'            })  -- touch command
 
   -- Variables - Declaration/Assignment
-  highlight(0, 'shVariable',           { fg = colors.purple,     bg = 'NONE'            })  -- Variable names in assignments
-  highlight(0, 'shVar',                { fg = colors.purple,     bg = 'NONE'            })  -- Variable names
-  highlight(0, 'shVarAssign',          { fg = colors.purple,     bg = 'NONE'            })  -- Variable assignments
+  highlight(0, 'shVariable',           { link = "Variable" })  -- Variable names in assignments
+  highlight(0, 'shVar',                { link = "Variable" })  -- Variable names
+  highlight(0, 'shVarAssign',          { link = "Variable" })  -- Variable assignments
 
   -- Variables - Dereferencing
-  highlight(0, 'shDeref',              { fg = colors.white,      bg = 'NONE'            })  -- ${} braces
-  highlight(0, 'shDerefVar',           { fg = colors.purple,     bg = 'NONE'            })  -- $variable
-  highlight(0, 'shDerefSimple',        { fg = colors.purple,     bg = 'NONE'            })  -- $var (simple dereference)
-  highlight(0, 'shDerefVarArray',      { fg = colors.purple,     bg = 'NONE'            })  -- ${array[index]}
-  highlight(0, 'shDerefSpecial',       { fg = colors.pink,       bg = 'NONE'            })  -- $?, $$, $!, $#, $*, $@, $-, $_
-  highlight(0, 'shDerefPattern',       { fg = colors.pink,       bg = 'NONE'            })  -- ${var#pattern}, ${var%pattern}
-  highlight(0, 'shDerefString',        { fg = colors.redLight,   bg = 'NONE'            })  -- String in parameter expansion
-  highlight(0, 'shDerefLen',           { fg = colors.pink,       bg = 'NONE'            })  -- ${#var}
-  highlight(0, 'shDerefOp',            { fg = colors.white,      bg = 'NONE'            })  -- Operators in ${var:-default}
-  highlight(0, 'shDerefOffset',        { fg = colors.greenLight, bg = 'NONE'            })  -- ${var:offset:length}
-  highlight(0, 'shDerefEscape',        { fg = colors.pink,       bg = 'NONE'            })  -- Escapes in dereferences
-  highlight(0, 'shDerefDelim',         { fg = colors.white,      bg = 'NONE'            })  -- Delimiters in dereferences
+  highlight(0, 'shDeref',              { link = "Variable" })  -- ${} braces
+  highlight(0, 'shDerefVar',           { link = "Variable" })  -- $variable
+  highlight(0, 'shDerefSimple',        { link = "Variable" })  -- $var (simple dereference)
+  highlight(0, 'shDerefVarArray',      { link = "Variable" })  -- ${array[index]}
+  highlight(0, 'shDerefSpecial',       { link = "Variable" })  -- $?, $$, $!, $#, $*, $@, $-, $_
+  highlight(0, 'shDerefPattern',       { link = "Variable" })  -- ${var#pattern}, ${var%pattern}
+  highlight(0, 'shDerefString',        { link = "String" })  -- String in parameter expansion
+  highlight(0, 'shDerefLen',           { link = "Variable" })  -- ${#var}
+  highlight(0, 'shDerefOp',            { link = "Variable" })  -- Operators in ${var:-default}
+  highlight(0, 'shDerefOffset',        { link = "Variable" })  -- ${var:offset:length}
+  highlight(0, 'shDerefEscape',        { link = "Variable" })  -- Escapes in dereferences
+  highlight(0, 'shDerefDelim',         { link = "Delimiter" })  -- Delimiters in dereferences
 
   -- Variables - Shell Built-in Variables
-  highlight(0, 'shShellVariables',     { fg = colors.pink,       bg = 'NONE'            })  -- HOME, PATH, PS1, PS2, etc.
-  highlight(0, 'shSpecialVar',         { fg = colors.pink,       bg = 'NONE'            })  -- $0, $1, $2, ... $9
-  highlight(0, 'shPosnParm',           { fg = colors.pink,       bg = 'NONE'            })  -- Positional parameters
+  highlight(0, 'shShellVariables',     { link = "Variable" })  -- HOME, PATH, PS1, PS2, etc.
+  highlight(0, 'shSpecialVar',         { link = "Variable" })  -- $0, $1, $2, ... $9
+  highlight(0, 'shPosnParm',           { link = "Variable" })  -- Positional parameters
 
   -- Strings - Double Quoted
-  highlight(0, 'shDoubleQuote',        { fg = colors.redLight,   bg = 'NONE'            })  -- "string"
+  highlight(0, 'shDoubleQuote',        { link = "String"})  -- "string"
   highlight(0, 'shSpecialDQ',          { fg = colors.pink,       bg = 'NONE'            })  -- Special chars in double quotes
 
   -- Strings - Single Quoted
@@ -87,20 +87,20 @@ bash.setupHighlighting = function()
   -- Strings - Special Quoting
   highlight(0, 'shExSingleQuote',      { fg = colors.redLight,   bg = 'NONE'            })  -- $'...' ANSI-C quoting
   highlight(0, 'shExDoubleQuote',      { fg = colors.redLight,   bg = 'NONE'            })  -- $"..." locale translation
-  highlight(0, 'shString',             { fg = colors.redLight,   bg = 'NONE'            })  -- General strings
-  highlight(0, 'shStringSpecial',      { fg = colors.pink,       bg = 'NONE'            })  -- Special in strings
+  highlight(0, 'shString',             { link = "String" })  -- General strings
+  highlight(0, 'shStringSpecial',      { link = "String" })  -- Special in strings
 
   -- Heredoc
   highlight(0, 'shHereDoc',            { fg = colors.redLight,   bg = 'NONE'            })  -- <<EOF heredoc content
-  highlight(0, 'shHereString',         { fg = colors.redLight,   bg = 'NONE'            })  -- <<< here-string
+  highlight(0, 'shHereString',         { link = "String" })  -- <<< here-string
   highlight(0, 'shBeginHere',          { fg = colors.pink,       bg = 'NONE'            })  -- Heredoc start marker
   highlight(0, 'shHerePayload',        { fg = colors.redLight,   bg = 'NONE'            })  -- Heredoc content
 
   -- Numbers
-  highlight(0, 'shNumber',             { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'shNumber',             { link = "Number" })  -- Numbers
 
   -- Operators
-  highlight(0, 'shOperator',           { fg = colors.white,      bg = 'NONE'            })  -- = == != < > etc.
+  highlight(0, 'shOperator',           { link = "Operator" })  -- = == != < > etc.
   highlight(0, 'shTestOpr',            { fg = colors.blue,       bg = 'NONE'            })  -- -eq, -ne, -lt, -gt, -le, -ge, -z, -n, -f, -d, -e, etc.
   highlight(0, 'shArithOpr',           { fg = colors.white,      bg = 'NONE'            })  -- Arithmetic operators
   highlight(0, 'shBoolLogic',          { fg = colors.white,      bg = 'NONE'            })  -- && ||
@@ -176,11 +176,11 @@ bash.setupHighlighting = function()
   highlight(0, 'shBrackets',           { fg = colors.white,      bg = 'NONE'            })  -- [ ]
 
   -- Line Continuation
-  highlight(0, 'shWrapLineOperator',   { fg = colors.pink,       bg = 'NONE'            })  -- \ at end of line
+  highlight(0, 'shWrapLineOperator',   { link = "Operator" })  -- \ at end of line
 
   -- Comments
-  highlight(0, 'shComment',            { fg = colors.red,        bg = 'NONE'            })  -- # comments
-  highlight(0, 'shQuickComment',       { fg = colors.red,        bg = 'NONE'            })  -- Quick comments
+  highlight(0, 'shComment',            { link = "Comment" })  -- # comments
+  highlight(0, 'shQuickComment',       { link = "Comment" })  -- Quick comments
   highlight(0, 'shTodo',               { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Error
@@ -200,27 +200,27 @@ bash.setupHighlighting = function()
   -- Treesitter Groups (@xxx.bash)
 
   -- Variables
-  highlight(0, '@variable.bash',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.bash',      { fg = colors.pink,      bg = 'NONE' })  -- BASH, BASH_SOURCE, FUNCNAME, LINENO, etc.
-  highlight(0, '@variable.parameter.bash',    { fg = colors.purple,    bg = 'NONE' })  -- Function parameters
+  highlight(0, '@variable.bash',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.bash',      { link = "Variable" })  -- BASH, BASH_SOURCE, FUNCNAME, LINENO, etc.
+  highlight(0, '@variable.parameter.bash',    { link = "Variable" })  -- Function parameters
 
   -- Constants
-  highlight(0, '@constant.bash',              { fg = colors.purple,    bg = 'NONE' })  -- UPPERCASE variables (convention)
-  highlight(0, '@constant.builtin.bash',      { fg = colors.pink,      bg = 'NONE' })  -- Signal names (SIGHUP, SIGTERM, etc.)
+  highlight(0, '@constant.bash',              { link = "Constant" })  -- UPPERCASE variables (convention)
+  highlight(0, '@constant.builtin.bash',      { link = "Constant" })  -- Signal names (SIGHUP, SIGTERM, etc.)
 
   -- Functions
-  highlight(0, '@function.bash',              { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.bash',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.bash',      { fg = colors.orange,    bg = 'NONE' })  -- echo, read, printf, test, trap, etc.
+  highlight(0, '@function.bash',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.bash',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.bash',      { link = "Function" })  -- echo, read, printf, test, trap, etc.
 
   -- Keywords
   highlight(0, '@keyword.bash',                     { link = "Keyword" })  -- General keywords
   highlight(0, '@keyword.function.bash',            { link = "Keyword" })  -- function
-  highlight(0, '@keyword.operator.bash',            { link = "Keyword" })  -- Operators
+  highlight(0, '@keyword.operator.bash',            { link = "Operator" })  -- Operators
   highlight(0, '@keyword.return.bash',              { link = "Keyword" })  -- return, exit
   highlight(0, '@keyword.repeat.bash',              { link = "Keyword" })  -- for, while, until, do, done, select
-  highlight(0, '@keyword.conditional.bash',         { link = "Keyword" })  -- if, then, else, elif, fi, case, esac, in
-  highlight(0, '@keyword.conditional.ternary.bash', { link = "Keyword" })  -- ? : in arithmetic
+  highlight(0, '@keyword.conditional.bash',         { link = "Conditional" })  -- if, then, else, elif, fi, case, esac, in
+  highlight(0, '@keyword.conditional.ternary.bash', { link = "Conditional" })  -- ? : in arithmetic
   highlight(0, '@keyword.import.bash',              { link = "Keyword" })  -- export, source, .
   highlight(0, '@keyword.directive.bash',           { link = "Keyword" })  -- Shebang
 
@@ -228,26 +228,26 @@ bash.setupHighlighting = function()
   highlight(0, '@label.bash',                 { fg = colors.pink,      bg = 'NONE' })  -- Heredoc markers
 
   -- Strings
-  highlight(0, '@string.bash',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.regexp.bash',         { fg = colors.redLight,  bg = 'NONE' })  -- Regex patterns, globs
-  highlight(0, '@string.escape.bash',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.bash',        { fg = colors.pink,      bg = 'NONE' })  -- Special strings
+  highlight(0, '@string.bash',                { link = "String" })  -- Strings
+  highlight(0, '@string.regexp.bash',         { link = "String" })  -- Regex patterns, globs
+  highlight(0, '@string.escape.bash',         { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.bash',        { link = "String" })  -- Special strings
   highlight(0, '@character.bash',             { fg = colors.redLight,  bg = 'NONE' })  -- Characters
   highlight(0, '@character.special.bash',     { fg = colors.pink,      bg = 'NONE' })  -- Special characters
 
   -- Numbers
-  highlight(0, '@number.bash',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.bash',                { link = "Number" })  -- Numbers
 
   -- Booleans
-  highlight(0, '@boolean.bash',               { fg = colors.blue,      bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.bash',               { link = "Boolean" })  -- true, false
 
   -- Comments
-  highlight(0, '@comment.bash',               { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.bash',               { link = "Comment" })  -- Comments
 
   -- Operators and Punctuation
-  highlight(0, '@operator.bash',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.bash',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.bash',   { fg = colors.white,     bg = 'NONE' })  -- (), [], {}, [[]], (())
-  highlight(0, '@punctuation.delimiter.bash', { fg = colors.white,     bg = 'NONE' })  -- ; ;; ;& ;;& &
+  highlight(0, '@punctuation.delimiter.bash', { link = "Delimiter" })  -- ; ;; ;& ;;& &
   highlight(0, '@punctuation.special.bash',   { fg = colors.pink,      bg = 'NONE' })  -- $ in expansions, # in comments
 
 
@@ -255,26 +255,26 @@ bash.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.bash / @lsp.type.xxx.shellscript)
 
   -- Note: bash-language-server uses 'shellscript' as the language identifier
-  highlight(0, '@lsp.type.variable.bash',         { fg = colors.purple,    bg = 'NONE' })
-  highlight(0, '@lsp.type.variable.shellscript',  { fg = colors.purple,    bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.bash',         { link = "Variable" })
+  highlight(0, '@lsp.type.variable.shellscript',  { link = "Variable" })
   highlight(0, '@lsp.type.parameter.bash',        { fg = colors.purple,    bg = 'NONE' })
   highlight(0, '@lsp.type.parameter.shellscript', { fg = colors.purple,    bg = 'NONE' })
   highlight(0, '@lsp.type.function.bash',         { fg = colors.orange,    bg = 'NONE' })
   highlight(0, '@lsp.type.function.shellscript',  { fg = colors.orange,    bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.bash',          { link = "Keyword"            })
-  highlight(0, '@lsp.type.keyword.shellscript',   { link = "Keyword"            })
-  highlight(0, '@lsp.type.operator.bash',         { fg = colors.white,     bg = 'NONE' })
-  highlight(0, '@lsp.type.operator.shellscript',  { fg = colors.white,     bg = 'NONE' })
-  highlight(0, '@lsp.type.string.bash',           { fg = colors.redLight,  bg = 'NONE' })
-  highlight(0, '@lsp.type.string.shellscript',    { fg = colors.redLight,  bg = 'NONE' })
-  highlight(0, '@lsp.type.number.bash',           { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.number.shellscript',    { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.bash',          { fg = colors.red,       bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.shellscript',   { fg = colors.red,       bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.bash',          { link = "Keyword" })
+  highlight(0, '@lsp.type.keyword.shellscript',   { link = "Keyword" })
+  highlight(0, '@lsp.type.operator.bash',         { link = "Operator" })
+  highlight(0, '@lsp.type.operator.shellscript',  { link = "Operator" })
+  highlight(0, '@lsp.type.string.bash',           { link = "String" })
+  highlight(0, '@lsp.type.string.shellscript',    { link = "String" })
+  highlight(0, '@lsp.type.number.bash',           { link = "Number" })
+  highlight(0, '@lsp.type.number.shellscript',    { link = "Number" })
+  highlight(0, '@lsp.type.comment.bash',          { link = "Comment" })
+  highlight(0, '@lsp.type.comment.shellscript',   { link = "Comment" })
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.bash',        { fg = colors.pink,   bg = 'NONE' })
-  highlight(0, '@lsp.typemod.variable.readonly.shellscript', { fg = colors.pink,   bg = 'NONE' })
+  highlight(0, '@lsp.typemod.variable.readonly.bash',        { link = "Variable" })
+  highlight(0, '@lsp.typemod.variable.readonly.shellscript', { link = "Variable" })
   highlight(0, '@lsp.typemod.function.declaration.bash',     { fg = colors.orange, bg = 'NONE' })
   highlight(0, '@lsp.typemod.function.declaration.shellscript', { fg = colors.orange, bg = 'NONE' })
   highlight(0, '@lsp.typemod.function.defaultLibrary.bash',  { fg = colors.orange, bg = 'NONE' })

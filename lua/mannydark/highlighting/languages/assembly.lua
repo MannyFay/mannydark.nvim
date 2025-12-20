@@ -31,7 +31,7 @@ asm.setupHighlighting = function()
   highlight(0, 'asmMacro',              { fg = colors.pink,       bg = 'NONE' })  -- .macro, .endm
 
   -- Types/Storage
-  highlight(0, 'asmType',               { fg = colors.turquoise,  bg = 'NONE' })  -- .long, .byte, .word, .ascii, etc.
+  highlight(0, 'asmType',               { link = "Type" })  -- .long, .byte, .word, .ascii, etc.
 
   -- Registers
   highlight(0, 'asmRegister',           { fg = colors.purple,     bg = 'NONE' })  -- %eax, %rsp, etc.
@@ -44,11 +44,11 @@ asm.setupHighlighting = function()
   highlight(0, 'asmFloat',              { fg = colors.greenLight, bg = 'NONE' })  -- Floating point
 
   -- Strings
-  highlight(0, 'asmString',             { fg = colors.redLight,   bg = 'NONE' })  -- "strings"
+  highlight(0, 'asmString',             { link = "String" })  -- "strings"
   highlight(0, 'asmCharacter',          { fg = colors.redLight,   bg = 'NONE' })  -- 'c' characters
 
   -- Comments
-  highlight(0, 'asmComment',            { fg = colors.red,        bg = 'NONE' })  -- ; # // /* */ comments
+  highlight(0, 'asmComment',            { link = "Comment" })  -- ; # // /* */ comments
   highlight(0, 'asmTodo',               { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
   -- Special
@@ -103,7 +103,7 @@ asm.setupHighlighting = function()
 
   -- Storage/Types
   highlight(0, 'nasmStorage',           { fg = colors.turquoise,  bg = 'NONE' })  -- section, segment
-  highlight(0, 'nasmType',              { fg = colors.turquoise,  bg = 'NONE' })  -- db, dw, dd, dq, resb, resw
+  highlight(0, 'nasmType',              { link = "Type" })  -- db, dw, dd, dq, resb, resw
   highlight(0, 'nasmStructure',         { fg = colors.turquoise,  bg = 'NONE' })  -- struc, endstruc
 
   -- Registers (8-bit, 16-bit, 32-bit, 64-bit)
@@ -123,34 +123,34 @@ asm.setupHighlighting = function()
   highlight(0, 'nasmTestRegister',      { fg = colors.purple,     bg = 'NONE' })  -- tr0-tr7
 
   -- Numbers
-  highlight(0, 'nasmBinNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- 1010b binary
-  highlight(0, 'nasmOctNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- 777o/q octal
-  highlight(0, 'nasmDecNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- 123 decimal
-  highlight(0, 'nasmHexNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- 0x1F, 1Fh hex
+  highlight(0, 'nasmBinNumber',         { link = "Number" })  -- 1010b binary
+  highlight(0, 'nasmOctNumber',         { link = "Number" })  -- 777o/q octal
+  highlight(0, 'nasmDecNumber',         { link = "Number" })  -- 123 decimal
+  highlight(0, 'nasmHexNumber',         { link = "Number" })  -- 0x1F, 1Fh hex
   highlight(0, 'nasmBinFloat',          { fg = colors.greenLight, bg = 'NONE' })  -- Binary floats
   highlight(0, 'nasmOctFloat',          { fg = colors.greenLight, bg = 'NONE' })  -- Octal floats
   highlight(0, 'nasmDecFloat',          { fg = colors.greenLight, bg = 'NONE' })  -- Decimal floats
   highlight(0, 'nasmHexFloat',          { fg = colors.greenLight, bg = 'NONE' })  -- Hex floats
   highlight(0, 'nasmSpecFloat',         { fg = colors.greenLight, bg = 'NONE' })  -- Special floats (inf, nan)
   highlight(0, 'nasmBcdConst',          { fg = colors.greenLight, bg = 'NONE' })  -- BCD constants
-  highlight(0, 'nasmNumber',            { fg = colors.greenLight, bg = 'NONE' })  -- Generic numbers
+  highlight(0, 'nasmNumber',            { link = "Number" })  -- Generic numbers
 
   -- Strings
-  highlight(0, 'nasmString',            { fg = colors.redLight,   bg = 'NONE' })  -- "strings", 'strings'
-  highlight(0, 'nasmCString',           { fg = colors.redLight,   bg = 'NONE' })  -- C-style strings
-  highlight(0, 'nasmCStringEscape',     { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, etc.
-  highlight(0, 'nasmCStringFormat',     { fg = colors.pink,       bg = 'NONE' })  -- %d, %s, etc.
+  highlight(0, 'nasmString',            { link = "String" })  -- "strings", 'strings'
+  highlight(0, 'nasmCString',           { link = "String" })  -- C-style strings
+  highlight(0, 'nasmCStringEscape',     { link = "String" })  -- \n, \t, etc.
+  highlight(0, 'nasmCStringFormat',     { link = "String" })  -- %d, %s, etc.
 
   -- Comments
-  highlight(0, 'nasmComment',           { fg = colors.red,        bg = 'NONE' })  -- ; comments
-  highlight(0, 'nasmSpecialComment',    { fg = colors.red,        bg = 'NONE' })  -- Special comments
-  highlight(0, 'nasmInCommentTodo',     { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO in comments
+  highlight(0, 'nasmComment',           { link = "Comment" })  -- ; comments
+  highlight(0, 'nasmSpecialComment',    { link = "Comment" })  -- Special comments
+  highlight(0, 'nasmInCommentTodo',     { link = "Comment" })  -- TODO in comments
 
   -- Errors
   highlight(0, 'nasmLabelError',        { fg = colors.red,        bg = 'NONE', undercurl = true })
-  highlight(0, 'nasmNumberError',       { fg = colors.red,        bg = 'NONE', undercurl = true })
-  highlight(0, 'nasmStringError',       { fg = colors.red,        bg = 'NONE', undercurl = true })
-  highlight(0, 'nasmTypeError',         { fg = colors.red,        bg = 'NONE', undercurl = true })
+  highlight(0, 'nasmNumberError',       { link = "Number" })
+  highlight(0, 'nasmStringError',       { link = "String" })
+  highlight(0, 'nasmTypeError',         { link = "Type" })
   highlight(0, 'nasmRegisterError',     { fg = colors.red,        bg = 'NONE', undercurl = true })
   highlight(0, 'nasmInstructnError',    { fg = colors.red,        bg = 'NONE', undercurl = true })
   highlight(0, 'nasmPreProcError',      { fg = colors.red,        bg = 'NONE', undercurl = true })
@@ -172,8 +172,8 @@ asm.setupHighlighting = function()
   highlight(0, 'masmDirective',         { fg = colors.blue,       bg = 'NONE' })  -- Directives
 
   -- Types/Operators
-  highlight(0, 'masmType',              { fg = colors.turquoise,  bg = 'NONE' })  -- db, dw, dd, dq, byte, word, etc.
-  highlight(0, 'masmOperator',          { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'masmType',              { link = "Type" })  -- db, dw, dd, dq, byte, word, etc.
+  highlight(0, 'masmOperator',          { link = "Operator" })  -- Operators
 
   -- Registers
   highlight(0, 'masmRegister',          { fg = colors.purple,     bg = 'NONE' })  -- Registers
@@ -197,10 +197,10 @@ asm.setupHighlighting = function()
   highlight(0, 'masmFloat',             { fg = colors.greenLight, bg = 'NONE' })  -- Float
 
   -- Strings
-  highlight(0, 'masmString',            { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'masmString',            { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'masmComment',           { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'masmComment',           { link = "Comment" })  -- ; comments
 
   -- Title/Text areas
   highlight(0, 'masmTitle',             { fg = colors.redLight,   bg = 'NONE' })  -- TITLE directive content
@@ -230,22 +230,22 @@ asm.setupHighlighting = function()
   highlight(0, 'fasmRegister',          { fg = colors.purple,     bg = 'NONE' })  -- Registers
 
   -- Operators
-  highlight(0, 'fasmOperator',          { fg = colors.white,      bg = 'NONE' })  -- Operators
-  highlight(0, 'fasmNumericOperator',   { fg = colors.white,      bg = 'NONE' })  -- Numeric operators
-  highlight(0, 'fasmLogicalOperator',   { fg = colors.white,      bg = 'NONE' })  -- Logical operators
+  highlight(0, 'fasmOperator',          { link = "Operator" })  -- Operators
+  highlight(0, 'fasmNumericOperator',   { link = "Operator" })  -- Numeric operators
+  highlight(0, 'fasmLogicalOperator',   { link = "Operator" })  -- Logical operators
 
   -- Numbers
-  highlight(0, 'fasmBinaryNumber',      { fg = colors.greenLight, bg = 'NONE' })  -- Binary
-  highlight(0, 'fasmOctalNumber',       { fg = colors.greenLight, bg = 'NONE' })  -- Octal
-  highlight(0, 'fasmDecimalNumber',     { fg = colors.greenLight, bg = 'NONE' })  -- Decimal
-  highlight(0, 'fasmHexNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- Hexadecimal
-  highlight(0, 'fasmFPUNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- FPU numbers
+  highlight(0, 'fasmBinaryNumber',      { link = "Number" })  -- Binary
+  highlight(0, 'fasmOctalNumber',       { link = "Number" })  -- Octal
+  highlight(0, 'fasmDecimalNumber',     { link = "Number" })  -- Decimal
+  highlight(0, 'fasmHexNumber',         { link = "Number" })  -- Hexadecimal
+  highlight(0, 'fasmFPUNumber',         { link = "Number" })  -- FPU numbers
 
   -- Strings
-  highlight(0, 'fasmString',            { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'fasmString',            { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'fasmComment',           { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'fasmComment',           { link = "Comment" })  -- ; comments
 
   -- Special
   highlight(0, 'fasmSymbol',            { fg = colors.white,      bg = 'NONE' })  -- Symbols
@@ -276,10 +276,10 @@ asm.setupHighlighting = function()
   highlight(0, 'tasmBin',               { fg = colors.greenLight, bg = 'NONE' })  -- Binary
 
   -- Strings
-  highlight(0, 'tasmString',            { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'tasmString',            { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'tasmComment',           { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'tasmComment',           { link = "Comment" })  -- ; comments
 
 
   -----------------------------------------------------------------------------
@@ -305,13 +305,13 @@ asm.setupHighlighting = function()
   highlight(0, 'asm68kImmediate',       { fg = colors.greenLight, bg = 'NONE' })  -- Immediate data (#)
 
   -- Strings
-  highlight(0, 'asm68kString',          { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'asm68kString',          { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'asm68kComment',         { fg = colors.red,        bg = 'NONE' })  -- ; or * comments
+  highlight(0, 'asm68kComment',         { link = "Comment" })  -- ; or * comments
 
   -- Operators
-  highlight(0, 'asm68kOperator',        { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'asm68kOperator',        { link = "Operator" })  -- Operators
 
 
   -----------------------------------------------------------------------------
@@ -334,13 +334,13 @@ asm.setupHighlighting = function()
   highlight(0, 'z8aIdentifier',         { fg = colors.white,      bg = 'NONE' })  -- Identifiers
 
   -- Numbers
-  highlight(0, 'z8aNumber',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'z8aNumber',             { link = "Number" })  -- Numbers
 
   -- Strings
-  highlight(0, 'z8aString',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'z8aString',             { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'z8aComment',            { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'z8aComment',            { link = "Comment" })  -- ; comments
 
 
   -----------------------------------------------------------------------------
@@ -369,15 +369,15 @@ asm.setupHighlighting = function()
   highlight(0, 'ia64Float',             { fg = colors.greenLight, bg = 'NONE' })  -- Float
 
   -- Strings
-  highlight(0, 'ia64string',            { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'ia64string',            { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'ia64Comment',           { fg = colors.red,        bg = 'NONE' })  -- // and /* */ comments
+  highlight(0, 'ia64Comment',           { link = "Comment" })  -- // and /* */ comments
   highlight(0, 'ia64Todo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO
 
   -- Operators
-  highlight(0, 'ia64delimiter',         { fg = colors.white,      bg = 'NONE' })  -- Delimiters
-  highlight(0, 'ia64operator',          { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'ia64delimiter',         { link = "Delimiter" })  -- Delimiters
+  highlight(0, 'ia64operator',          { link = "Operator" })  -- Operators
 
   -- Identifiers
   highlight(0, 'ia64Identifier',        { fg = colors.white,      bg = 'NONE' })  -- Identifiers
@@ -410,14 +410,14 @@ asm.setupHighlighting = function()
   highlight(0, 'armRegister',           { fg = colors.purple,     bg = 'NONE' })  -- Registers
 
   -- Numbers
-  highlight(0, 'armNumber',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'armNumber',             { link = "Number" })  -- Numbers
   highlight(0, 'armImmediate',          { fg = colors.greenLight, bg = 'NONE' })  -- Immediate values (#)
 
   -- Strings
-  highlight(0, 'armString',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'armString',             { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'armComment',            { fg = colors.red,        bg = 'NONE' })  -- ; @ comments
+  highlight(0, 'armComment',            { link = "Comment" })  -- ; @ comments
 
 
   -----------------------------------------------------------------------------
@@ -436,13 +436,13 @@ asm.setupHighlighting = function()
   highlight(0, 'mipsRegister',          { fg = colors.purple,     bg = 'NONE' })  -- Registers
 
   -- Numbers
-  highlight(0, 'mipsNumber',            { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'mipsNumber',            { link = "Number" })  -- Numbers
 
   -- Strings
-  highlight(0, 'mipsString',            { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'mipsString',            { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'mipsComment',           { fg = colors.red,        bg = 'NONE' })  -- # comments
+  highlight(0, 'mipsComment',           { link = "Comment" })  -- # comments
 
 
   -----------------------------------------------------------------------------
@@ -462,13 +462,13 @@ asm.setupHighlighting = function()
   highlight(0, 'riscvRegister',         { fg = colors.purple,     bg = 'NONE' })  -- Registers
 
   -- Numbers
-  highlight(0, 'riscvNumber',           { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'riscvNumber',           { link = "Number" })  -- Numbers
 
   -- Strings
-  highlight(0, 'riscvString',           { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'riscvString',           { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'riscvComment',          { fg = colors.red,        bg = 'NONE' })  -- # comments
+  highlight(0, 'riscvComment',          { link = "Comment" })  -- # comments
 
 
   -----------------------------------------------------------------------------
@@ -541,7 +541,7 @@ asm.setupHighlighting = function()
   highlight(0, 'asmStackInstr',         { fg = colors.pink,       bg = 'NONE' })  -- push, pop, pusha, popa, enter, leave
 
   -- String operations
-  highlight(0, 'asmStringInstr',        { fg = colors.pink,       bg = 'NONE' })  -- movs, cmps, scas, lods, stos, rep, repz, repnz
+  highlight(0, 'asmStringInstr',        { link = "String" })  -- movs, cmps, scas, lods, stos, rep, repz, repnz
 
   -- FPU instructions
   highlight(0, 'asmFpuInstr',           { fg = colors.pink,       bg = 'NONE' })  -- fld, fst, fadd, fsub, fmul, fdiv, fsin, fcos, fsqrt
@@ -563,52 +563,52 @@ asm.setupHighlighting = function()
   highlight(0, '@label.asm',                   { fg = colors.orange,     bg = 'NONE' })  -- Labels
 
   -- Variables/Registers
-  highlight(0, '@variable.asm',                { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.asm',        { fg = colors.purple,     bg = 'NONE' })  -- Registers
+  highlight(0, '@variable.asm',                { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.asm',        { link = "Variable" })  -- Registers
 
   -- Functions
-  highlight(0, '@function.asm',                { fg = colors.orange,     bg = 'NONE' })  -- Labels as functions
-  highlight(0, '@function.builtin.asm',        { fg = colors.pink,       bg = 'NONE' })  -- Instructions/meta
+  highlight(0, '@function.asm',                { link = "Function" })  -- Labels as functions
+  highlight(0, '@function.builtin.asm',        { link = "Function" })  -- Instructions/meta
 
   -- Constants
-  highlight(0, '@constant.asm',                { fg = colors.purple,     bg = 'NONE' })  -- Named constants
+  highlight(0, '@constant.asm',                { link = "Constant" })  -- Named constants
 
   -- Keywords
-  highlight(0, '@keyword.asm',                 { fg = colors.turquoise,  bg = 'NONE' })  -- byte, word, dword, ptr, etc.
-  highlight(0, '@keyword.directive.asm',       { fg = colors.blue,       bg = 'NONE' })  -- Directives
+  highlight(0, '@keyword.asm',                 { link = "Keyword" })  -- byte, word, dword, ptr, etc.
+  highlight(0, '@keyword.directive.asm',       { link = "Keyword" })  -- Directives
 
   -- Operators
-  highlight(0, '@operator.asm',                { fg = colors.white,      bg = 'NONE' })  -- +, -, *, /, etc.
+  highlight(0, '@operator.asm',                { link = "Operator" })  -- +, -, *, /, etc.
 
   -- Numbers
-  highlight(0, '@number.asm',                  { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.asm',            { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.asm',                  { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.asm',            { link = "Number" })  -- Floats
 
   -- Strings
-  highlight(0, '@string.asm',                  { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, '@string.asm',                  { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, '@comment.asm',                 { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, '@spell.asm',                   { fg = colors.red,        bg = 'NONE' })  -- Spell check in comments
+  highlight(0, '@comment.asm',                 { link = "Comment" })  -- Comments
+  highlight(0, '@spell.asm',                   { link = "Normal" })  -- Spell check in comments
 
   -- Punctuation
-  highlight(0, '@punctuation.bracket.asm',     { fg = colors.white,      bg = 'NONE' })  -- [], ()
-  highlight(0, '@punctuation.delimiter.asm',   { fg = colors.white,      bg = 'NONE' })  -- , :
+  highlight(0, '@punctuation.bracket.asm',     { link = "Normal" })  -- [], ()
+  highlight(0, '@punctuation.delimiter.asm',   { link = "Delimiter" })  -- , :
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.asm)
 
-  highlight(0, '@lsp.type.variable.asm',       { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@lsp.type.parameter.asm',      { fg = colors.purple,     bg = 'NONE' })  -- Parameters
-  highlight(0, '@lsp.type.function.asm',       { fg = colors.orange,     bg = 'NONE' })  -- Labels
-  highlight(0, '@lsp.type.keyword.asm',        { fg = colors.pink,       bg = 'NONE' })  -- Instructions
+  highlight(0, '@lsp.type.variable.asm',       { link = "Variable" })  -- Variables
+  highlight(0, '@lsp.type.parameter.asm',      { link = "Variable" })  -- Parameters
+  highlight(0, '@lsp.type.function.asm',       { link = "Function" })  -- Labels
+  highlight(0, '@lsp.type.keyword.asm',        { link = "Keyword" })  -- Instructions
   highlight(0, '@lsp.type.macro.asm',          { fg = colors.pink,       bg = 'NONE' })  -- Macros
-  highlight(0, '@lsp.type.type.asm',           { fg = colors.turquoise,  bg = 'NONE' })  -- Types/sizes
-  highlight(0, '@lsp.type.operator.asm',       { fg = colors.white,      bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.asm',         { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.asm',         { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.comment.asm',        { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.type.asm',           { link = "Type"})  -- Types/sizes
+  highlight(0, '@lsp.type.operator.asm',       { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.asm',         { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.asm',         { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.comment.asm',        { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.register.asm',       { fg = colors.purple,     bg = 'NONE' })  -- Registers
 
 
@@ -618,62 +618,61 @@ asm.setupHighlighting = function()
   -- PowerPC Assembly
   highlight(0, 'ppcOpcode',             { fg = colors.pink,       bg = 'NONE' })  -- PowerPC opcodes
   highlight(0, 'ppcRegister',           { fg = colors.purple,     bg = 'NONE' })  -- r0-r31, f0-f31
-  highlight(0, 'ppcDirective',          { fg = colors.blue,       bg = 'NONE' })  -- Directives
-  highlight(0, 'ppcComment',            { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, 'ppcDirective',          { link = "Keyword"})  -- Directives
+  highlight(0, 'ppcComment',            { link = "Comment" })  -- Comments
 
   -- SPARC Assembly
   highlight(0, 'sparcOpcode',           { fg = colors.pink,       bg = 'NONE' })  -- SPARC opcodes
   highlight(0, 'sparcRegister',         { fg = colors.purple,     bg = 'NONE' })  -- %g0-%g7, %o0-%o7, %l0-%l7, %i0-%i7
-  highlight(0, 'sparcDirective',        { fg = colors.blue,       bg = 'NONE' })  -- Directives
-  highlight(0, 'sparcComment',          { fg = colors.red,        bg = 'NONE' })  -- ! comments
-
+  highlight(0, 'sparcDirective',        { link = "Keyword"})  -- Directives
+  highlight(0, 'sparcComment',          { link = "Comment" })  -- ! comments
   -- AVR Assembly
   highlight(0, 'avrOpcode',             { fg = colors.pink,       bg = 'NONE' })  -- AVR opcodes
   highlight(0, 'avrRegister',           { fg = colors.purple,     bg = 'NONE' })  -- r0-r31
-  highlight(0, 'avrDirective',          { fg = colors.blue,       bg = 'NONE' })  -- Directives
-  highlight(0, 'avrComment',            { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'avrDirective',          { link = "Keyword" })  -- Directives
+  highlight(0, 'avrComment',            { link = "Comment" })  -- ; comments
 
   -- 6502 Assembly
   highlight(0, 'asm6502Opcode',         { fg = colors.pink,       bg = 'NONE' })  -- 6502 opcodes
   highlight(0, 'asm6502Register',       { fg = colors.purple,     bg = 'NONE' })  -- A, X, Y
-  highlight(0, 'asm6502Directive',      { fg = colors.blue,       bg = 'NONE' })  -- Directives
-  highlight(0, 'asm6502Comment',        { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'asm6502Directive',      { link = "Keyword"})  -- Directives
+  highlight(0, 'asm6502Comment',        { link = "Comment" })  -- ; comments
 
   -- 8051 Assembly
   highlight(0, 'asm8051Opcode',         { fg = colors.pink,       bg = 'NONE' })  -- 8051 opcodes
   highlight(0, 'asm8051Register',       { fg = colors.purple,     bg = 'NONE' })  -- R0-R7, A, B, DPTR
-  highlight(0, 'asm8051Directive',      { fg = colors.blue,       bg = 'NONE' })  -- Directives
-  highlight(0, 'asm8051Comment',        { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'asm8051Directive',      { link = "Keyword" })  -- Directives
+  highlight(0, 'asm8051Comment',        { link = "Comment" })  -- ; comments
 
   -- PIC Assembly
   highlight(0, 'picOpcode',             { fg = colors.pink,       bg = 'NONE' })  -- PIC opcodes
   highlight(0, 'picRegister',           { fg = colors.purple,     bg = 'NONE' })  -- W, F, registers
-  highlight(0, 'picDirective',          { fg = colors.blue,       bg = 'NONE' })  -- Directives
-  highlight(0, 'picComment',            { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'picDirective',          { link = "Keyword" })  -- Directives
+  highlight(0, 'picComment',            { link = "Comment" })  -- ; comments
 
 
   -----------------------------------------------------------------------------
   -- WebAssembly Text Format (WAT) - included here for completeness
 
   -- Keywords
-  highlight(0, 'watKeyword',            { fg = colors.pink,       bg = 'NONE' })  -- module, func, param, result, local, etc.
-  highlight(0, 'watInstruction',        { fg = colors.pink,       bg = 'NONE' })  -- i32.add, f64.mul, call, etc.
+  highlight(0, 'watKeyword',            { link = "Keyword" })  -- module, func, param, result, local, etc.
+  highlight(0, 'watInstruction',        { link = "Keyword" })  -- i32.add, f64.mul, call, etc.
 
   -- Types
-  highlight(0, 'watType',               { fg = colors.turquoise,  bg = 'NONE' })  -- i32, i64, f32, f64, funcref, externref
+  highlight(0, 'watType',               { link = "Type" })  -- i32, i64, f32, f64, funcref, externref
 
   -- Identifiers
   highlight(0, 'watIdentifier',         { fg = colors.orange,     bg = 'NONE' })  -- $func_name, $local_name
 
   -- Numbers
-  highlight(0, 'watNumber',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'watNumber',             { link = "Number" })  -- Numbers
 
   -- Strings
-  highlight(0, 'watString',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'watString',             { link = "String" })  -- Strings
 
   -- Comments
-  highlight(0, 'watComment',            { fg = colors.red,        bg = 'NONE' })  -- ;; comments
-  highlight(0, 'watBlockComment',       { fg = colors.red,        bg = 'NONE' })  -- (; ;) block comments
+  highlight(0, 'watComment',            { link = "Comment" })  -- ;; comments
+  highlight(0, 'watBlockComment',       { link = "Comment" })  -- (; ;) block comments
 
 end
 

@@ -17,7 +17,7 @@ vhdl.setupHighlighting = function()
 
   -- Keywords - General Statements
   highlight(0, 'vhdlStatement',         { fg = colors.blue,       bg = 'NONE' })  -- General keywords
-  highlight(0, 'vhdlKeyword',           { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, 'vhdlKeyword',           { link = "Keyword" })  -- Keywords
 
   -- Keywords - Structural
   highlight(0, 'vhdlStructure',         { fg = colors.blue,       bg = 'NONE' })  -- architecture, entity, component
@@ -33,12 +33,12 @@ vhdl.setupHighlighting = function()
   -- Keywords - Process/Procedure/Function
   highlight(0, 'vhdlProcess',           { fg = colors.blue,       bg = 'NONE' })  -- process keyword
   highlight(0, 'vhdlProcedure',         { fg = colors.blue,       bg = 'NONE' })  -- procedure keyword
-  highlight(0, 'vhdlFunction',          { fg = colors.blue,       bg = 'NONE' })  -- function keyword
+  highlight(0, 'vhdlFunction',          { link = "Function" })  -- function keyword
   highlight(0, 'vhdlImpure',            { fg = colors.blue,       bg = 'NONE' })  -- impure keyword
   highlight(0, 'vhdlPure',              { fg = colors.blue,       bg = 'NONE' })  -- pure keyword
 
   -- Keywords - Control Flow
-  highlight(0, 'vhdlConditional',       { fg = colors.blue,       bg = 'NONE' })  -- if, then, else, elsif, case, when
+  highlight(0, 'vhdlConditional',       { link = "Conditional" })  -- if, then, else, elsif, case, when
   highlight(0, 'vhdlRepeat',            { fg = colors.blue,       bg = 'NONE' })  -- for, while, loop, next, exit
   highlight(0, 'vhdlLabel',             { fg = colors.orange,     bg = 'NONE' })  -- Labels
 
@@ -49,8 +49,8 @@ vhdl.setupHighlighting = function()
 
   -- Keywords - Signal/Variable/Constant
   highlight(0, 'vhdlSignal',            { fg = colors.blue,       bg = 'NONE' })  -- signal keyword
-  highlight(0, 'vhdlVariable',          { fg = colors.blue,       bg = 'NONE' })  -- variable keyword
-  highlight(0, 'vhdlConstant',          { fg = colors.blue,       bg = 'NONE' })  -- constant keyword
+  highlight(0, 'vhdlVariable',          { link = "Variable" })  -- variable keyword
+  highlight(0, 'vhdlConstant',          { link = "Constant" })  -- constant keyword
   highlight(0, 'vhdlFile',              { fg = colors.blue,       bg = 'NONE' })  -- file keyword
   highlight(0, 'vhdlAlias',             { fg = colors.blue,       bg = 'NONE' })  -- alias keyword
   highlight(0, 'vhdlShared',            { fg = colors.blue,       bg = 'NONE' })  -- shared keyword
@@ -74,7 +74,7 @@ vhdl.setupHighlighting = function()
   highlight(0, 'vhdlTo',                { fg = colors.blue,       bg = 'NONE' })  -- to keyword
 
   -- Keywords - Type Definition
-  highlight(0, 'vhdlTypedef',           { fg = colors.blue,       bg = 'NONE' })  -- type, subtype keywords
+  highlight(0, 'vhdlTypedef',           { link = "Type" })  -- type, subtype keywords
   highlight(0, 'vhdlRecord',            { fg = colors.blue,       bg = 'NONE' })  -- record keyword
   highlight(0, 'vhdlArray',             { fg = colors.blue,       bg = 'NONE' })  -- array keyword
   highlight(0, 'vhdlAccess',            { fg = colors.blue,       bg = 'NONE' })  -- access keyword
@@ -145,59 +145,59 @@ vhdl.setupHighlighting = function()
   -- Types
 
   -- Standard Types
-  highlight(0, 'vhdlType',              { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, 'vhdlStdType',           { fg = colors.turquoise,  bg = 'NONE' })  -- Standard types
+  highlight(0, 'vhdlType',              { link = "Type" })  -- Type names
+  highlight(0, 'vhdlStdType',           { link = "Type" })  -- Standard types
 
   -- Basic Types (std.standard)
-  highlight(0, 'vhdlTypeBit',           { fg = colors.turquoise,  bg = 'NONE' })  -- bit
-  highlight(0, 'vhdlTypeBoolean',       { fg = colors.turquoise,  bg = 'NONE' })  -- boolean
-  highlight(0, 'vhdlTypeCharacter',     { fg = colors.turquoise,  bg = 'NONE' })  -- character
-  highlight(0, 'vhdlTypeInteger',       { fg = colors.turquoise,  bg = 'NONE' })  -- integer
-  highlight(0, 'vhdlTypeNatural',       { fg = colors.turquoise,  bg = 'NONE' })  -- natural
-  highlight(0, 'vhdlTypePositive',      { fg = colors.turquoise,  bg = 'NONE' })  -- positive
-  highlight(0, 'vhdlTypeReal',          { fg = colors.turquoise,  bg = 'NONE' })  -- real
-  highlight(0, 'vhdlTypeTime',          { fg = colors.turquoise,  bg = 'NONE' })  -- time
-  highlight(0, 'vhdlTypeString',        { fg = colors.turquoise,  bg = 'NONE' })  -- string
-  highlight(0, 'vhdlTypeLine',          { fg = colors.turquoise,  bg = 'NONE' })  -- line
-  highlight(0, 'vhdlTypeText',          { fg = colors.turquoise,  bg = 'NONE' })  -- text
-  highlight(0, 'vhdlTypeSide',          { fg = colors.turquoise,  bg = 'NONE' })  -- side
-  highlight(0, 'vhdlTypeWidth',         { fg = colors.turquoise,  bg = 'NONE' })  -- width
+  highlight(0, 'vhdlTypeBit',           { link = "Type" })  -- bit
+  highlight(0, 'vhdlTypeBoolean',       { link = "Boolean" })  -- boolean
+  highlight(0, 'vhdlTypeCharacter',     { link = "Type" })  -- character
+  highlight(0, 'vhdlTypeInteger',       { link = "Type" })  -- integer
+  highlight(0, 'vhdlTypeNatural',       { link = "Type" })  -- natural
+  highlight(0, 'vhdlTypePositive',      { link = "Type" })  -- positive
+  highlight(0, 'vhdlTypeReal',          { link = "Type" })  -- real
+  highlight(0, 'vhdlTypeTime',          { link = "Type" })  -- time
+  highlight(0, 'vhdlTypeString',        { link = "String" })  -- string
+  highlight(0, 'vhdlTypeLine',          { link = "Type" })  -- line
+  highlight(0, 'vhdlTypeText',          { link = "Type" })  -- text
+  highlight(0, 'vhdlTypeSide',          { link = "Type" })  -- side
+  highlight(0, 'vhdlTypeWidth',         { link = "Type" })  -- width
 
   -- Vector Types
   highlight(0, 'vhdlVector',            { fg = colors.turquoise,  bg = 'NONE' })  -- Vector types
-  highlight(0, 'vhdlTypeBitVector',     { fg = colors.turquoise,  bg = 'NONE' })  -- bit_vector
-  highlight(0, 'vhdlTypeBooleanVector', { fg = colors.turquoise,  bg = 'NONE' })  -- boolean_vector
-  highlight(0, 'vhdlTypeIntegerVector', { fg = colors.turquoise,  bg = 'NONE' })  -- integer_vector
-  highlight(0, 'vhdlTypeRealVector',    { fg = colors.turquoise,  bg = 'NONE' })  -- real_vector
-  highlight(0, 'vhdlTypeTimeVector',    { fg = colors.turquoise,  bg = 'NONE' })  -- time_vector
+  highlight(0, 'vhdlTypeBitVector',     { link = "Type" })  -- bit_vector
+  highlight(0, 'vhdlTypeBooleanVector', { link = "Boolean" })  -- boolean_vector
+  highlight(0, 'vhdlTypeIntegerVector', { link = "Type" })  -- integer_vector
+  highlight(0, 'vhdlTypeRealVector',    { link = "Type" })  -- real_vector
+  highlight(0, 'vhdlTypeTimeVector',    { link = "Type" })  -- time_vector
 
   -- IEEE std_logic_1164 Types
-  highlight(0, 'vhdlTypeStdUlogic',         { fg = colors.turquoise,  bg = 'NONE' })  -- std_ulogic
-  highlight(0, 'vhdlTypeStdLogic',          { fg = colors.turquoise,  bg = 'NONE' })  -- std_logic
-  highlight(0, 'vhdlTypeStdUlogicVector',   { fg = colors.turquoise,  bg = 'NONE' })  -- std_ulogic_vector
-  highlight(0, 'vhdlTypeStdLogicVector',    { fg = colors.turquoise,  bg = 'NONE' })  -- std_logic_vector
+  highlight(0, 'vhdlTypeStdUlogic',         { link = "Type" })  -- std_ulogic
+  highlight(0, 'vhdlTypeStdLogic',          { link = "Type" })  -- std_logic
+  highlight(0, 'vhdlTypeStdUlogicVector',   { link = "Type" })  -- std_ulogic_vector
+  highlight(0, 'vhdlTypeStdLogicVector',    { link = "Type" })  -- std_logic_vector
 
   -- IEEE numeric_std Types
-  highlight(0, 'vhdlTypeSigned',            { fg = colors.turquoise,  bg = 'NONE' })  -- signed
-  highlight(0, 'vhdlTypeUnsigned',          { fg = colors.turquoise,  bg = 'NONE' })  -- unsigned
-  highlight(0, 'vhdlTypeUnresolvedSigned',  { fg = colors.turquoise,  bg = 'NONE' })  -- unresolved_signed
-  highlight(0, 'vhdlTypeUnresolvedUnsigned', { fg = colors.turquoise, bg = 'NONE' })  -- unresolved_unsigned
-  highlight(0, 'vhdlTypeUSigned',           { fg = colors.turquoise,  bg = 'NONE' })  -- u_signed
-  highlight(0, 'vhdlTypeUUnsigned',         { fg = colors.turquoise,  bg = 'NONE' })  -- u_unsigned
+  highlight(0, 'vhdlTypeSigned',            { link = "Type" })  -- signed
+  highlight(0, 'vhdlTypeUnsigned',          { link = "Type" })  -- unsigned
+  highlight(0, 'vhdlTypeUnresolvedSigned',  { link = "Type" })  -- unresolved_signed
+  highlight(0, 'vhdlTypeUnresolvedUnsigned', { link = "Type" })  -- unresolved_unsigned
+  highlight(0, 'vhdlTypeUSigned',           { link = "Type" })  -- u_signed
+  highlight(0, 'vhdlTypeUUnsigned',         { link = "Type" })  -- u_unsigned
 
   -- IEEE std_logic_1164 Subtypes
-  highlight(0, 'vhdlTypeX01',           { fg = colors.turquoise,  bg = 'NONE' })  -- X01
-  highlight(0, 'vhdlTypeX01Z',          { fg = colors.turquoise,  bg = 'NONE' })  -- X01Z
-  highlight(0, 'vhdlTypeUX01',          { fg = colors.turquoise,  bg = 'NONE' })  -- UX01
-  highlight(0, 'vhdlTypeUX01Z',         { fg = colors.turquoise,  bg = 'NONE' })  -- UX01Z
+  highlight(0, 'vhdlTypeX01',           { link = "Type" })  -- X01
+  highlight(0, 'vhdlTypeX01Z',          { link = "Type" })  -- X01Z
+  highlight(0, 'vhdlTypeUX01',          { link = "Type" })  -- UX01
+  highlight(0, 'vhdlTypeUX01Z',         { link = "Type" })  -- UX01Z
 
   -- IEEE fixed/float Types
-  highlight(0, 'vhdlTypeSfixed',        { fg = colors.turquoise,  bg = 'NONE' })  -- sfixed
-  highlight(0, 'vhdlTypeUfixed',        { fg = colors.turquoise,  bg = 'NONE' })  -- ufixed
-  highlight(0, 'vhdlTypeFloat',         { fg = colors.turquoise,  bg = 'NONE' })  -- float
-  highlight(0, 'vhdlTypeFloat32',       { fg = colors.turquoise,  bg = 'NONE' })  -- float32
-  highlight(0, 'vhdlTypeFloat64',       { fg = colors.turquoise,  bg = 'NONE' })  -- float64
-  highlight(0, 'vhdlTypeFloat128',      { fg = colors.turquoise,  bg = 'NONE' })  -- float128
+  highlight(0, 'vhdlTypeSfixed',        { link = "Type" })  -- sfixed
+  highlight(0, 'vhdlTypeUfixed',        { link = "Type" })  -- ufixed
+  highlight(0, 'vhdlTypeFloat',         { link = "Type" })  -- float
+  highlight(0, 'vhdlTypeFloat32',       { link = "Type" })  -- float32
+  highlight(0, 'vhdlTypeFloat64',       { link = "Type" })  -- float64
+  highlight(0, 'vhdlTypeFloat128',      { link = "Type" })  -- float128
 
 
   -----------------------------------------------------------------------------
@@ -255,7 +255,7 @@ vhdl.setupHighlighting = function()
   -- Constants and Literals
 
   -- Boolean Values
-  highlight(0, 'vhdlBoolean',           { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'vhdlBoolean',           { link = "Boolean" })  -- true, false
 
   -- Severity Levels
   highlight(0, 'vhdlSeverityLevel',     { fg = colors.blue,       bg = 'NONE' })  -- note, warning, error, failure
@@ -267,7 +267,7 @@ vhdl.setupHighlighting = function()
   highlight(0, 'vhdlLogicValue',        { fg = colors.greenLight, bg = 'NONE' })  -- Logic values
 
   -- Numbers
-  highlight(0, 'vhdlNumber',            { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'vhdlNumber',            { link = "Number" })  -- Numbers
   highlight(0, 'vhdlInteger',           { fg = colors.greenLight, bg = 'NONE' })  -- Integer literals
   highlight(0, 'vhdlReal',              { fg = colors.greenLight, bg = 'NONE' })  -- Real literals
   highlight(0, 'vhdlBased',             { fg = colors.greenLight, bg = 'NONE' })  -- Based literals (2#1010#, 16#FF#)
@@ -280,16 +280,16 @@ vhdl.setupHighlighting = function()
   highlight(0, 'vhdlCharacter',         { fg = colors.redLight,   bg = 'NONE' })  -- Character literals
 
   -- Strings
-  highlight(0, 'vhdlString',            { fg = colors.redLight,   bg = 'NONE' })  -- String literals
+  highlight(0, 'vhdlString',            { link = "String" })  -- String literals
 
   -- Bit String Literals
-  highlight(0, 'vhdlBitString',         { fg = colors.greenLight, bg = 'NONE' })  -- B"1010", X"FF", O"777"
+  highlight(0, 'vhdlBitString',         { link = "String" })  -- B"1010", X"FF", O"777"
 
 
   -----------------------------------------------------------------------------
   -- Operators
 
-  highlight(0, 'vhdlOperator',          { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'vhdlOperator',          { link = "Operator" })  -- Operators
 
   -- Logical Operators
   highlight(0, 'vhdlLogicalOp',         { fg = colors.blue,       bg = 'NONE' })  -- and, or, nand, nor, xor, xnor, not
@@ -314,14 +314,14 @@ vhdl.setupHighlighting = function()
   -- Special Characters
 
   highlight(0, 'vhdlSpecial',           { fg = colors.pink,       bg = 'NONE' })  -- Special characters
-  highlight(0, 'vhdlDelimiter',         { fg = colors.white,      bg = 'NONE' })  -- Delimiters (, ; :)
+  highlight(0, 'vhdlDelimiter',         { link = "Delimiter" })  -- Delimiters (, ; :)
   highlight(0, 'vhdlBracket',           { fg = colors.white,      bg = 'NONE' })  -- Brackets ( ) [ ]
 
 
   -----------------------------------------------------------------------------
   -- Functions and Procedures (User-defined)
 
-  highlight(0, 'vhdlFunctionName',      { fg = colors.orange,     bg = 'NONE' })  -- Function names
+  highlight(0, 'vhdlFunctionName',      { link = "Function" })  -- Function names
   highlight(0, 'vhdlProcedureName',     { fg = colors.orange,     bg = 'NONE' })  -- Procedure names
 
 
@@ -329,76 +329,76 @@ vhdl.setupHighlighting = function()
   -- IEEE Library Functions
 
   -- std_logic_1164 Functions
-  highlight(0, 'vhdlStd1164Func',       { fg = colors.orange,     bg = 'NONE' })  -- std_logic_1164 functions
+  highlight(0, 'vhdlStd1164Func',       { link = "Function" })  -- std_logic_1164 functions
 
   -- Conversion Functions
-  highlight(0, 'vhdlFuncToBit',         { fg = colors.orange,     bg = 'NONE' })  -- to_bit
-  highlight(0, 'vhdlFuncToBitVector',   { fg = colors.orange,     bg = 'NONE' })  -- to_bitvector
-  highlight(0, 'vhdlFuncToStdUlogic',   { fg = colors.orange,     bg = 'NONE' })  -- to_stdulogic
-  highlight(0, 'vhdlFuncToStdLogicVector',   { fg = colors.orange, bg = 'NONE' })  -- to_stdlogicvector
-  highlight(0, 'vhdlFuncToStdUlogicVector',  { fg = colors.orange, bg = 'NONE' })  -- to_stdulogicvector
-  highlight(0, 'vhdlFuncToX01',         { fg = colors.orange,     bg = 'NONE' })  -- to_x01
-  highlight(0, 'vhdlFuncToX01Z',        { fg = colors.orange,     bg = 'NONE' })  -- to_x01z
-  highlight(0, 'vhdlFuncToUX01',        { fg = colors.orange,     bg = 'NONE' })  -- to_ux01
+  highlight(0, 'vhdlFuncToBit',         { link = "Function" })  -- to_bit
+  highlight(0, 'vhdlFuncToBitVector',   { link = "Function" })  -- to_bitvector
+  highlight(0, 'vhdlFuncToStdUlogic',   { link = "Function" })  -- to_stdulogic
+  highlight(0, 'vhdlFuncToStdLogicVector',   { link = "Function" })  -- to_stdlogicvector
+  highlight(0, 'vhdlFuncToStdUlogicVector',  { link = "Function" })  -- to_stdulogicvector
+  highlight(0, 'vhdlFuncToX01',         { link = "Function" })  -- to_x01
+  highlight(0, 'vhdlFuncToX01Z',        { link = "Function" })  -- to_x01z
+  highlight(0, 'vhdlFuncToUX01',        { link = "Function" })  -- to_ux01
 
   -- Edge Detection Functions
-  highlight(0, 'vhdlFuncRisingEdge',    { fg = colors.orange,     bg = 'NONE' })  -- rising_edge
-  highlight(0, 'vhdlFuncFallingEdge',   { fg = colors.orange,     bg = 'NONE' })  -- falling_edge
+  highlight(0, 'vhdlFuncRisingEdge',    { link = "Function" })  -- rising_edge
+  highlight(0, 'vhdlFuncFallingEdge',   { link = "Function" })  -- falling_edge
 
   -- Unknown Detection Functions
-  highlight(0, 'vhdlFuncIsX',           { fg = colors.orange,     bg = 'NONE' })  -- is_x
+  highlight(0, 'vhdlFuncIsX',           { link = "Function" })  -- is_x
 
   -- numeric_std Functions
-  highlight(0, 'vhdlNumericFunc',       { fg = colors.orange,     bg = 'NONE' })  -- numeric_std functions
+  highlight(0, 'vhdlNumericFunc',       { link = "Function" })  -- numeric_std functions
 
   -- Conversion Functions
-  highlight(0, 'vhdlFuncToInteger',     { fg = colors.orange,     bg = 'NONE' })  -- to_integer
-  highlight(0, 'vhdlFuncToUnsigned',    { fg = colors.orange,     bg = 'NONE' })  -- to_unsigned
-  highlight(0, 'vhdlFuncToSigned',      { fg = colors.orange,     bg = 'NONE' })  -- to_signed
+  highlight(0, 'vhdlFuncToInteger',     { link = "Function" })  -- to_integer
+  highlight(0, 'vhdlFuncToUnsigned',    { link = "Function" })  -- to_unsigned
+  highlight(0, 'vhdlFuncToSigned',      { link = "Function" })  -- to_signed
 
   -- Resize Function
-  highlight(0, 'vhdlFuncResize',        { fg = colors.orange,     bg = 'NONE' })  -- resize
+  highlight(0, 'vhdlFuncResize',        { link = "Function" })  -- resize
 
   -- Shift/Rotate Functions
-  highlight(0, 'vhdlFuncShiftLeft',     { fg = colors.orange,     bg = 'NONE' })  -- shift_left
-  highlight(0, 'vhdlFuncShiftRight',    { fg = colors.orange,     bg = 'NONE' })  -- shift_right
-  highlight(0, 'vhdlFuncRotateLeft',    { fg = colors.orange,     bg = 'NONE' })  -- rotate_left
-  highlight(0, 'vhdlFuncRotateRight',   { fg = colors.orange,     bg = 'NONE' })  -- rotate_right
+  highlight(0, 'vhdlFuncShiftLeft',     { link = "Function" })  -- shift_left
+  highlight(0, 'vhdlFuncShiftRight',    { link = "Function" })  -- shift_right
+  highlight(0, 'vhdlFuncRotateLeft',    { link = "Function" })  -- rotate_left
+  highlight(0, 'vhdlFuncRotateRight',   { link = "Function" })  -- rotate_right
 
   -- Match Functions
-  highlight(0, 'vhdlFuncStdMatch',      { fg = colors.orange,     bg = 'NONE' })  -- std_match
+  highlight(0, 'vhdlFuncStdMatch',      { link = "Function" })  -- std_match
 
   -- To01 Function
-  highlight(0, 'vhdlFuncTo01',          { fg = colors.orange,     bg = 'NONE' })  -- to_01
+  highlight(0, 'vhdlFuncTo01',          { link = "Function" })  -- to_01
 
   -- numeric_std_unsigned Functions
-  highlight(0, 'vhdlFuncMaximum',       { fg = colors.orange,     bg = 'NONE' })  -- maximum
-  highlight(0, 'vhdlFuncMinimum',       { fg = colors.orange,     bg = 'NONE' })  -- minimum
+  highlight(0, 'vhdlFuncMaximum',       { link = "Function" })  -- maximum
+  highlight(0, 'vhdlFuncMinimum',       { link = "Function" })  -- minimum
 
   -- math_real Functions
-  highlight(0, 'vhdlMathFunc',          { fg = colors.orange,     bg = 'NONE' })  -- Math functions
-  highlight(0, 'vhdlFuncCeil',          { fg = colors.orange,     bg = 'NONE' })  -- ceil
-  highlight(0, 'vhdlFuncFloor',         { fg = colors.orange,     bg = 'NONE' })  -- floor
-  highlight(0, 'vhdlFuncRound',         { fg = colors.orange,     bg = 'NONE' })  -- round
-  highlight(0, 'vhdlFuncTrunc',         { fg = colors.orange,     bg = 'NONE' })  -- trunc
-  highlight(0, 'vhdlFuncSign',          { fg = colors.orange,     bg = 'NONE' })  -- sign
-  highlight(0, 'vhdlFuncSqrt',          { fg = colors.orange,     bg = 'NONE' })  -- sqrt
-  highlight(0, 'vhdlFuncCbrt',          { fg = colors.orange,     bg = 'NONE' })  -- cbrt
-  highlight(0, 'vhdlFuncExp',           { fg = colors.orange,     bg = 'NONE' })  -- exp
-  highlight(0, 'vhdlFuncLog',           { fg = colors.orange,     bg = 'NONE' })  -- log, log2, log10
-  highlight(0, 'vhdlFuncSin',           { fg = colors.orange,     bg = 'NONE' })  -- sin, sinh, arcsin, arcsinh
-  highlight(0, 'vhdlFuncCos',           { fg = colors.orange,     bg = 'NONE' })  -- cos, cosh, arccos, arccosh
-  highlight(0, 'vhdlFuncTan',           { fg = colors.orange,     bg = 'NONE' })  -- tan, tanh, arctan, arctanh
+  highlight(0, 'vhdlMathFunc',          { link = "Function" })  -- Math functions
+  highlight(0, 'vhdlFuncCeil',          { link = "Function" })  -- ceil
+  highlight(0, 'vhdlFuncFloor',         { link = "Function" })  -- floor
+  highlight(0, 'vhdlFuncRound',         { link = "Function" })  -- round
+  highlight(0, 'vhdlFuncTrunc',         { link = "Function" })  -- trunc
+  highlight(0, 'vhdlFuncSign',          { link = "Function" })  -- sign
+  highlight(0, 'vhdlFuncSqrt',          { link = "Function" })  -- sqrt
+  highlight(0, 'vhdlFuncCbrt',          { link = "Function" })  -- cbrt
+  highlight(0, 'vhdlFuncExp',           { link = "Function" })  -- exp
+  highlight(0, 'vhdlFuncLog',           { link = "Function" })  -- log, log2, log10
+  highlight(0, 'vhdlFuncSin',           { link = "Function" })  -- sin, sinh, arcsin, arcsinh
+  highlight(0, 'vhdlFuncCos',           { link = "Function" })  -- cos, cosh, arccos, arccosh
+  highlight(0, 'vhdlFuncTan',           { link = "Function" })  -- tan, tanh, arctan, arctanh
 
   -- math_real Constants
-  highlight(0, 'vhdlMathConst',         { fg = colors.purple,     bg = 'NONE' })  -- MATH_E, MATH_PI, etc.
+  highlight(0, 'vhdlMathConst',         { link = "Constant" })  -- MATH_E, MATH_PI, etc.
 
 
   -----------------------------------------------------------------------------
   -- Comments
 
-  highlight(0, 'vhdlComment',           { fg = colors.red,        bg = 'NONE' })  -- -- comments
-  highlight(0, 'vhdlBlockComment',      { fg = colors.red,        bg = 'NONE' })  -- /* */ comments (VHDL-2008)
+  highlight(0, 'vhdlComment',           { link = "Comment" })  -- -- comments
+  highlight(0, 'vhdlBlockComment',      { link = "Comment" })  -- /* */ comments (VHDL-2008)
   highlight(0, 'vhdlTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO
   highlight(0, 'vhdlFixme',             { fg = colors.red,        bg = 'NONE', bold = true })  -- FIXME
 
@@ -431,8 +431,8 @@ vhdl.setupHighlighting = function()
   -- Signal/Variable/Constant Names
 
   highlight(0, 'vhdlSignalName',        { fg = colors.white,      bg = 'NONE' })  -- Signal names
-  highlight(0, 'vhdlVariableName',      { fg = colors.white,      bg = 'NONE' })  -- Variable names
-  highlight(0, 'vhdlConstantName',      { fg = colors.purple,     bg = 'NONE' })  -- Constant names
+  highlight(0, 'vhdlVariableName',      { link = "Variable" })  -- Variable names
+  highlight(0, 'vhdlConstantName',      { link = "Constant" })  -- Constant names
   highlight(0, 'vhdlPortName',          { fg = colors.purple,     bg = 'NONE' })  -- Port names
   highlight(0, 'vhdlGenericName',       { fg = colors.purple,     bg = 'NONE' })  -- Generic names
 
@@ -455,42 +455,42 @@ vhdl.setupHighlighting = function()
   -- Treesitter Groups (@xxx.vhdl)
 
   -- Variables
-  highlight(0, '@variable.vhdl',              { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.member.vhdl',       { fg = colors.purple,     bg = 'NONE' })  -- Record members
-  highlight(0, '@variable.parameter.vhdl',    { fg = colors.purple,     bg = 'NONE' })  -- Parameters
+  highlight(0, '@variable.vhdl',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.member.vhdl',       { link = "Variable" })  -- Record members
+  highlight(0, '@variable.parameter.vhdl',    { link = "Variable" })  -- Parameters
 
   -- Constants
-  highlight(0, '@constant.vhdl',              { fg = colors.purple,     bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.vhdl',      { fg = colors.blue,       bg = 'NONE' })  -- true, false, null
-  highlight(0, '@constant.macro.vhdl',        { fg = colors.pink,       bg = 'NONE' })  -- Macro constants
+  highlight(0, '@constant.vhdl',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.vhdl',      { link = "Constant" })  -- true, false, null
+  highlight(0, '@constant.macro.vhdl',        { link = "Constant" })  -- Macro constants
 
   -- Types
-  highlight(0, '@type.vhdl',                  { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.vhdl',          { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.vhdl',       { fg = colors.turquoise,  bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.vhdl',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.vhdl',          { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.vhdl',       { link = "Type" })  -- Type definitions
 
   -- Functions
-  highlight(0, '@function.vhdl',              { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.builtin.vhdl',      { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.method.vhdl',       { fg = colors.orange,     bg = 'NONE' })  -- Procedures
+  highlight(0, '@function.vhdl',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.builtin.vhdl',      { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.method.vhdl',       { link = "Function" })  -- Procedures
 
   -- Constructors
   highlight(0, '@constructor.vhdl',           { fg = colors.turquoise,  bg = 'NONE' })  -- Aggregate constructors
 
   -- Keywords
-  highlight(0, '@keyword.vhdl',               { fg = colors.blue,       bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.vhdl',      { fg = colors.blue,       bg = 'NONE' })  -- function, procedure
-  highlight(0, '@keyword.operator.vhdl',      { fg = colors.blue,       bg = 'NONE' })  -- and, or, not, etc.
-  highlight(0, '@keyword.import.vhdl',        { fg = colors.pink,       bg = 'NONE' })  -- library, use
-  highlight(0, '@keyword.type.vhdl',          { fg = colors.blue,       bg = 'NONE' })  -- type, subtype
-  highlight(0, '@keyword.modifier.vhdl',      { fg = colors.blue,       bg = 'NONE' })  -- signal, variable, constant
-  highlight(0, '@keyword.repeat.vhdl',        { fg = colors.blue,       bg = 'NONE' })  -- for, while, loop
-  highlight(0, '@keyword.return.vhdl',        { fg = colors.blue,       bg = 'NONE' })  -- return
-  highlight(0, '@keyword.conditional.vhdl',   { fg = colors.blue,       bg = 'NONE' })  -- if, then, else, case, when
-  highlight(0, '@keyword.conditional.ternary.vhdl', { fg = colors.blue, bg = 'NONE' })  -- when/else expressions
-  highlight(0, '@keyword.coroutine.vhdl',     { fg = colors.blue,       bg = 'NONE' })  -- process, wait
-  highlight(0, '@keyword.debug.vhdl',         { fg = colors.blue,       bg = 'NONE' })  -- assert, report
-  highlight(0, '@keyword.directive.vhdl',     { fg = colors.pink,       bg = 'NONE' })  -- Preprocessor
+  highlight(0, '@keyword.vhdl',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.vhdl',      { link = "Keyword" })  -- function, procedure
+  highlight(0, '@keyword.operator.vhdl',      { link = "Operator" })  -- and, or, not, etc.
+  highlight(0, '@keyword.import.vhdl',        { link = "Keyword" })  -- library, use
+  highlight(0, '@keyword.type.vhdl',          { link = "Keyword" })  -- type, subtype
+  highlight(0, '@keyword.modifier.vhdl',      { link = "Keyword" })  -- signal, variable, constant
+  highlight(0, '@keyword.repeat.vhdl',        { link = "Keyword" })  -- for, while, loop
+  highlight(0, '@keyword.return.vhdl',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.conditional.vhdl',   { link = "Conditional" })  -- if, then, else, case, when
+  highlight(0, '@keyword.conditional.ternary.vhdl', { link = "Conditional" })  -- when/else expressions
+  highlight(0, '@keyword.coroutine.vhdl',     { link = "Keyword" })  -- process, wait
+  highlight(0, '@keyword.debug.vhdl',         { link = "Keyword" })  -- assert, report
+  highlight(0, '@keyword.directive.vhdl',     { link = "Keyword" })  -- Preprocessor
 
   -- Modules
   highlight(0, '@module.vhdl',                { fg = colors.turquoise,  bg = 'NONE' })  -- Entity/Architecture names
@@ -507,31 +507,31 @@ vhdl.setupHighlighting = function()
   highlight(0, '@property.vhdl',              { fg = colors.purple,     bg = 'NONE' })  -- Record fields
 
   -- Strings
-  highlight(0, '@string.vhdl',                { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, '@string.vhdl',                { link = "String" })  -- Strings
 
   -- Characters
   highlight(0, '@character.vhdl',             { fg = colors.redLight,   bg = 'NONE' })  -- Characters
 
   -- Numbers
-  highlight(0, '@number.vhdl',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.vhdl',          { fg = colors.greenLight, bg = 'NONE' })  -- Reals
+  highlight(0, '@number.vhdl',                { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.vhdl',          { link = "Number" })  -- Reals
 
   -- Booleans
-  highlight(0, '@boolean.vhdl',               { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.vhdl',               { link = "Boolean" })  -- true, false
 
   -- Operators
-  highlight(0, '@operator.vhdl',              { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.vhdl',              { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.vhdl',   { fg = colors.white,      bg = 'NONE' })  -- ( )
-  highlight(0, '@punctuation.delimiter.vhdl', { fg = colors.white,      bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.vhdl', { link = "Delimiter" })  -- , ; :
   highlight(0, '@punctuation.special.vhdl',   { fg = colors.pink,       bg = 'NONE' })  -- ' for attributes
 
   -- Comments
-  highlight(0, '@comment.vhdl',               { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.vhdl', { fg = colors.red,        bg = 'NONE' })  -- Doc comments
-  highlight(0, '@comment.error.vhdl',         { fg = colors.red,        bg = 'NONE', bold = true })  -- Error comments
-  highlight(0, '@comment.warning.vhdl',       { fg = colors.red,        bg = 'NONE', bold = true })  -- Warning comments
+  highlight(0, '@comment.vhdl',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.vhdl', { link = "Comment" })  -- Doc comments
+  highlight(0, '@comment.error.vhdl',         { link = "Comment" })  -- Error comments
+  highlight(0, '@comment.warning.vhdl',       { link = "Comment" })  -- Warning comments
 
   -- Spell
   highlight(0, '@spell.vhdl',                 { fg = colors.red,        bg = 'NONE' })  -- Spell check
@@ -540,7 +540,7 @@ vhdl.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.vhdl)
 
-  highlight(0, '@lsp.type.variable.vhdl',      { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.vhdl',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.vhdl',     { fg = colors.purple,     bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.vhdl',      { fg = colors.purple,     bg = 'NONE' })  -- Record fields
   highlight(0, '@lsp.type.function.vhdl',      { fg = colors.orange,     bg = 'NONE' })  -- Functions
@@ -551,16 +551,16 @@ vhdl.setupHighlighting = function()
   highlight(0, '@lsp.type.enum.vhdl',          { fg = colors.turquoise,  bg = 'NONE' })  -- Enum types
   highlight(0, '@lsp.type.enumMember.vhdl',    { fg = colors.purple,     bg = 'NONE' })  -- Enum values
   highlight(0, '@lsp.type.namespace.vhdl',     { fg = colors.turquoise,  bg = 'NONE' })  -- Libraries/packages
-  highlight(0, '@lsp.type.keyword.vhdl',       { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.vhdl',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.vhdl',      { fg = colors.blue,       bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.vhdl',      { fg = colors.white,      bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.vhdl',        { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.vhdl',        { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.comment.vhdl',       { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.vhdl',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.vhdl',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.vhdl',        { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.comment.vhdl',       { link = "Comment" })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.vhdl',    { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@lsp.typemod.variable.declaration.vhdl', { fg = colors.white,     bg = 'NONE' })  -- Declarations
+  highlight(0, '@lsp.typemod.variable.readonly.vhdl',    { link = "Variable" })  -- Constants
+  highlight(0, '@lsp.typemod.variable.declaration.vhdl', { link = "Variable" })  -- Declarations
   highlight(0, '@lsp.typemod.function.declaration.vhdl', { fg = colors.orange,    bg = 'NONE' })  -- Function defs
   highlight(0, '@lsp.typemod.type.declaration.vhdl',     { fg = colors.turquoise, bg = 'NONE' })  -- Type defs
   highlight(0, '@lsp.typemod.type.defaultLibrary.vhdl',  { fg = colors.turquoise, bg = 'NONE' })  -- IEEE types

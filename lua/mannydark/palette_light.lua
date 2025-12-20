@@ -1,81 +1,80 @@
 -------------------------------------------------------------------------------
--- Mannybright Color Palette (Light Theme)
--- Companion to mannydark - same semantic colors, optimized for light backgrounds
+-- Mannydark Color Palette (Light Theme)
 -------------------------------------------------------------------------------
 
 local colors = {
   ------------------------------------------------------------------------------
-  -- Base Colors (inverted from dark theme)
+  -- Base Colors (inverted for light theme)
 
-  black      = '#FAFAFA',  -- Main background (light)
-  white      = '#333333',  -- Main foreground text (dark)
+  black      = '#FFFFFF',  -- Main background (white)
+  white      = '#383A42',  -- Main foreground text (dark gray)
 
   ------------------------------------------------------------------------------
-  -- Grays (adjusted for light theme)
+  -- Grays (adjusted for light background)
 
-  gray       = '#6E7781',  -- Muted text, line numbers, inactive elements
+  gray       = '#A0A1A7',  -- Muted text, line numbers, inactive elements
   grayDark   = '#F0F0F0',  -- Secondary backgrounds (sidebars, panels)
-  grayLight  = '#E1E4E8',  -- Borders, subtle dividers (NEW - for light theme)
+  grayLight  = '#D3D3D3',  -- Borders, subtle dividers
 
   ------------------------------------------------------------------------------
-  -- Syntax Highlighting (adjusted for contrast on light backgrounds)
+  -- Syntax Highlighting (adjusted for readability on light background)
 
-  -- Keywords, control flow (darker blue for light bg)
-  blue       = '#0550AE',
+  -- Keywords, control flow (darker blue)
+  blue       = '#4078F2',
 
   -- LSP references, subtle blue backgrounds
-  blueLight  = '#D0E8FF',
+  blueLight  = '#D6E4FF',
 
   -- Links, references
-  blueLink   = '#0969DA',
+  blueLink   = '#1A5FB4',
 
-  -- Success states, git added, diff added
-  green      = '#1A7F37',
+  -- Success states, git added
+  green      = '#2E8B57',
 
-  -- Numbers, numeric literals (teal, good contrast on light)
-  greenLight = '#098658',
+  -- Numbers, numeric literals
+  greenLight = '#50A14F',
 
-  -- Functions, method names (brown/amber - VS Code style)
-  orange     = '#795E26',
+  -- Functions, method names
+  orange     = '#C18401',
 
   -- Warning backgrounds, subtle highlights
-  orangeDark = '#FFF8C5',
+  orangeDark = '#FFF3CD',
 
-  -- Special keywords, decorators, important markers
-  pink       = '#BF3989',
+  -- Special keywords, decorators
+  pink       = '#D63384',
 
   -- Variables, parameters
-  purple     = '#6F42C1',
+  purple     = '#A626A4',
 
-  -- Comments (keeping red as mannydark signature, but darker for light bg)
-  red        = '#C41E3A',
+  -- Comments (mannydark signature red comments)
+  red        = '#E60000',
 
   -- Error backgrounds, diff removed backgrounds
-  redDark    = '#FFEBE9',
+  redDark    = '#FFE5E5',
 
-  -- Strings (classic maroon/red for light themes)
-  redLight   = '#A31515',
+  -- Strings
+  redLight   = '#986801',
 
   -- Types, classes, interfaces
-  turquoise  = '#0969DA',
+  turquoise  = '#0997B3',
 
-  -- Warnings, deprecated (darker yellow/gold for light bg)
-  yellow     = '#9A6700',
+  -- Warnings, deprecated
+  yellow     = '#B8860B',
 
   ------------------------------------------------------------------------------
-  -- Additional Light-Theme Specific Colors
+  -- Additional UI Colors
 
-  -- Cursor line, current line highlight (subtle)
-  cursorLine = '#F3F4F6',
+  -- Cursor line, current line highlight
+  cursorLine = '#F5F5F5',
 
   -- Selection background
-  selection  = '#B4D7FF',
+  selection  = '#ADD6FF',
 
   -- Search highlight
-  search     = '#FFDF5D',
+  search     = '#FFECB3',
 
   -- Matching brackets
-  matchParen = '#C9DEF1',
+  matchParen = '#B4D7FF',
 }
 
 return colors

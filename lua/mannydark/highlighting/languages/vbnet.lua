@@ -17,7 +17,7 @@ vbnet.setupHighlighting = function()
 
   -- Keywords - Control Flow
   highlight(0, 'vbnetStatement',       { fg = colors.blue,       bg = 'NONE'            })  -- General statements
-  highlight(0, 'vbnetConditional',     { fg = colors.blue,       bg = 'NONE'            })  -- If, Then, Else, ElseIf, End If, Select, Case
+  highlight(0, 'vbnetConditional',     { link = "Conditional" })  -- If, Then, Else, ElseIf, End If, Select, Case
   highlight(0, 'vbnetRepeat',          { fg = colors.blue,       bg = 'NONE'            })  -- For, Next, Each, In, To, Step, While, Do, Loop, Until
   highlight(0, 'vbnetBranch',          { fg = colors.blue,       bg = 'NONE'            })  -- GoTo, Return, Exit, Stop, Continue
 
@@ -34,12 +34,12 @@ vbnet.setupHighlighting = function()
   highlight(0, 'vbnetNamespace',       { fg = colors.blue,       bg = 'NONE'            })  -- Namespace
   highlight(0, 'vbnetNew',             { fg = colors.blue,       bg = 'NONE'            })  -- New
   highlight(0, 'vbnetSelf',            { fg = colors.blue,       bg = 'NONE'            })  -- Me, MyBase, MyClass
-  highlight(0, 'vbnetInheritsKeyword', { fg = colors.blue,       bg = 'NONE'            })  -- Inherits
+  highlight(0, 'vbnetInheritsKeyword', { link = "Keyword" })  -- Inherits
   highlight(0, 'vbnetImplements',      { fg = colors.blue,       bg = 'NONE'            })  -- Implements
 
   -- Keywords - Access Modifiers
   highlight(0, 'vbnetAccessModifier',  { fg = colors.blue,       bg = 'NONE'            })  -- Public, Private, Protected, Friend, Protected Friend
-  highlight(0, 'vbnetTypeAccess',      { fg = colors.blue,       bg = 'NONE'            })  -- Access in type declarations
+  highlight(0, 'vbnetTypeAccess',      { link = "Type" })  -- Access in type declarations
 
   -- Keywords - Modifiers
   highlight(0, 'vbnetModifier',        { fg = colors.blue,       bg = 'NONE'            })  -- Shared, Static, ReadOnly, WriteOnly, etc.
@@ -61,7 +61,7 @@ vbnet.setupHighlighting = function()
 
   -- Keywords - Procedures
   highlight(0, 'vbnetSubWords',        { fg = colors.blue,       bg = 'NONE'            })  -- Sub, End Sub
-  highlight(0, 'vbnetFunctionWords',   { fg = colors.blue,       bg = 'NONE'            })  -- Function, End Function
+  highlight(0, 'vbnetFunctionWords',   { link = "Function" })  -- Function, End Function
   highlight(0, 'vbnetPropertyWords',   { fg = colors.blue,       bg = 'NONE'            })  -- Property, End Property, Get, Set
   highlight(0, 'vbnetGetterWords',     { fg = colors.blue,       bg = 'NONE'            })  -- Get
   highlight(0, 'vbnetSetterWords',     { fg = colors.blue,       bg = 'NONE'            })  -- Set
@@ -78,14 +78,14 @@ vbnet.setupHighlighting = function()
   -- Keywords - Events
   highlight(0, 'vbnetEvent',           { fg = colors.blue,       bg = 'NONE'            })  -- Event
   highlight(0, 'vbnetEventHandler',    { fg = colors.blue,       bg = 'NONE'            })  -- AddHandler, RemoveHandler, RaiseEvent
-  highlight(0, 'vbnetHandlesKeyword',  { fg = colors.blue,       bg = 'NONE'            })  -- Handles
+  highlight(0, 'vbnetHandlesKeyword',  { link = "Keyword" })  -- Handles
 
   -- Keywords - Array
   highlight(0, 'vbnetArrayHandler',    { fg = colors.blue,       bg = 'NONE'            })  -- ReDim, Erase, Preserve
 
   -- Keywords - Operators
-  highlight(0, 'vbnetOperatorKeyword', { fg = colors.blue,       bg = 'NONE'            })  -- And, Or, Not, Xor, Mod, Is, IsNot, Like, AndAlso, OrElse
-  highlight(0, 'vbnetGetType',         { fg = colors.blue,       bg = 'NONE'            })  -- GetType, TypeOf...Is
+  highlight(0, 'vbnetOperatorKeyword', { link = "Operator" })  -- And, Or, Not, Xor, Mod, Is, IsNot, Like, AndAlso, OrElse
+  highlight(0, 'vbnetGetType',         { link = "Type" })  -- GetType, TypeOf...Is
   highlight(0, 'vbnetAddressOf',       { fg = colors.blue,       bg = 'NONE'            })  -- AddressOf
   highlight(0, 'vbnetNameOf',          { fg = colors.blue,       bg = 'NONE'            })  -- NameOf
 
@@ -137,57 +137,57 @@ vbnet.setupHighlighting = function()
   highlight(0, 'vbnetImports',         { fg = colors.pink,       bg = 'NONE'            })  -- Imports
 
   -- Types - Built-in
-  highlight(0, 'vbnetBuiltinType',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Boolean, Byte, Char, Date, Decimal, Double, Integer, etc.
-  highlight(0, 'vbnetSystemType',      { fg = colors.turquoise,  bg = 'NONE'            })  -- System.* types
-  highlight(0, 'vbnetType',            { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
+  highlight(0, 'vbnetBuiltinType',     { link = "Type" })  -- Boolean, Byte, Char, Date, Decimal, Double, Integer, etc.
+  highlight(0, 'vbnetSystemType',      { link = "Type" })  -- System.* types
+  highlight(0, 'vbnetType',            { link = "Type" })  -- Type names
   highlight(0, 'vbnetClassName',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Class names
-  highlight(0, 'vbnetGenericType',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Generic type parameters (Of T)
-  highlight(0, 'vbnetNullableType',    { fg = colors.turquoise,  bg = 'NONE'            })  -- Nullable types (T?)
+  highlight(0, 'vbnetGenericType',     { link = "Type" })  -- Generic type parameters (Of T)
+  highlight(0, 'vbnetNullableType',    { link = "Type" })  -- Nullable types (T?)
 
   -- Functions/Methods
-  highlight(0, 'vbnetFunction',        { fg = colors.orange,     bg = 'NONE'            })  -- Function names
-  highlight(0, 'vbnetMethod',          { fg = colors.orange,     bg = 'NONE'            })  -- Method names
-  highlight(0, 'vbnetMethodCall',      { fg = colors.orange,     bg = 'NONE'            })  -- Method calls
+  highlight(0, 'vbnetFunction',        { link = "Function" })  -- Function names
+  highlight(0, 'vbnetMethod',          { link = "Function" })  -- Method names
+  highlight(0, 'vbnetMethodCall',      { link = "Function" })  -- Method calls
   highlight(0, 'vbnetConstructor',     { fg = colors.orange,     bg = 'NONE'            })  -- New
-  highlight(0, 'vbnetMSFunction',      { fg = colors.orange,     bg = 'NONE'            })  -- Microsoft.VisualBasic functions
+  highlight(0, 'vbnetMSFunction',      { link = "Function" })  -- Microsoft.VisualBasic functions
 
   -- Variables/Identifiers
   highlight(0, 'vbnetIdentifier',      { fg = colors.purple,     bg = 'NONE'            })  -- Identifiers
-  highlight(0, 'vbnetVariable',        { fg = colors.purple,     bg = 'NONE'            })  -- Variables
+  highlight(0, 'vbnetVariable',        { link = "Variable" })  -- Variables
   highlight(0, 'vbnetField',           { fg = colors.purple,     bg = 'NONE'            })  -- Fields
   highlight(0, 'vbnetProperty',        { fg = colors.purple,     bg = 'NONE'            })  -- Properties
   highlight(0, 'vbnetLocal',           { fg = colors.purple,     bg = 'NONE'            })  -- Local variables
 
   -- Constants
-  highlight(0, 'vbnetConstant',        { fg = colors.purple,     bg = 'NONE'            })  -- Constants
-  highlight(0, 'vbnetBoolean',         { fg = colors.blue,       bg = 'NONE'            })  -- True, False
+  highlight(0, 'vbnetConstant',        { link = "Constant" })  -- Constants
+  highlight(0, 'vbnetBoolean',         { link = "Boolean" })  -- True, False
   highlight(0, 'vbnetNothing',         { fg = colors.blue,       bg = 'NONE'            })  -- Nothing
   highlight(0, 'vbnetEnumMember',      { fg = colors.purple,     bg = 'NONE'            })  -- Enum values
 
   -- Strings
-  highlight(0, 'vbnetString',          { fg = colors.redLight,   bg = 'NONE'            })  -- "strings"
+  highlight(0, 'vbnetString',          { link = "String" })  -- "strings"
   highlight(0, 'vbnetCharacter',       { fg = colors.redLight,   bg = 'NONE'            })  -- Character literals "x"c
 
   -- Numbers
-  highlight(0, 'vbnetNumber',          { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'vbnetNumber',          { link = "Number" })  -- Numbers
   highlight(0, 'vbnetInteger',         { fg = colors.greenLight, bg = 'NONE'            })  -- Integers
   highlight(0, 'vbnetFloat',           { fg = colors.greenLight, bg = 'NONE'            })  -- Floating-point
   highlight(0, 'vbnetHex',             { fg = colors.greenLight, bg = 'NONE'            })  -- &HFF hex
   highlight(0, 'vbnetOctal',           { fg = colors.greenLight, bg = 'NONE'            })  -- &O octal
   highlight(0, 'vbnetBinary',          { fg = colors.greenLight, bg = 'NONE'            })  -- &B binary (VB14+)
-  highlight(0, 'vbnetTypeSpecifier',   { fg = colors.greenLight, bg = 'NONE'            })  -- Type suffixes !, #, $, %, &, @
+  highlight(0, 'vbnetTypeSpecifier',   { link = "Type" })  -- Type suffixes !, #, $, %, &, @
 
   -- Date Literals
   highlight(0, 'vbnetDate',            { fg = colors.greenLight, bg = 'NONE'            })  -- #1/1/2024#
 
   -- Operators
-  highlight(0, 'vbnetOperator',        { fg = colors.white,      bg = 'NONE'            })  -- + - * / \ ^ = < > & etc.
+  highlight(0, 'vbnetOperator',        { link = "Operator" })  -- + - * / \ ^ = < > & etc.
   highlight(0, 'vbnetAssignment',      { fg = colors.white,      bg = 'NONE'            })  -- = += -= *= /= \= ^= &= etc.
   highlight(0, 'vbnetComparison',      { fg = colors.white,      bg = 'NONE'            })  -- = <> < > <= >=
   highlight(0, 'vbnetConcatenation',   { fg = colors.white,      bg = 'NONE'            })  -- & +
   highlight(0, 'vbnetArithmetic',      { fg = colors.white,      bg = 'NONE'            })  -- + - * / \ Mod ^
   highlight(0, 'vbnetBitShift',        { fg = colors.white,      bg = 'NONE'            })  -- << >>
-  highlight(0, 'vbnetNullConditional', { fg = colors.white,      bg = 'NONE'            })  -- ?. (VB14+)
+  highlight(0, 'vbnetNullConditional', { link = "Conditional" })  -- ?. (VB14+)
   highlight(0, 'vbnetNullCoalescing',  { fg = colors.white,      bg = 'NONE'            })  -- If() null-coalescing pattern
 
   -- Attributes
@@ -212,15 +212,15 @@ vbnet.setupHighlighting = function()
   highlight(0, 'vbnetXmlNamespace',    { fg = colors.turquoise,  bg = 'NONE'            })  -- xmlns declarations
 
   -- Comments
-  highlight(0, 'vbnetComment',         { fg = colors.red,        bg = 'NONE'            })  -- ' comments and REM
-  highlight(0, 'vbnetXmlComment',      { fg = colors.red,        bg = 'NONE'            })  -- ''' XML doc comments
+  highlight(0, 'vbnetComment',         { link = "Comment" })  -- ' comments and REM
+  highlight(0, 'vbnetXmlComment',      { link = "Comment" })  -- ''' XML doc comments
   highlight(0, 'vbnetXmlDocTag',       { fg = colors.green,      bg = 'NONE'            })  -- <summary>, <param>, etc.
   highlight(0, 'vbnetXmlDocTagName',   { fg = colors.green,      bg = 'NONE'            })  -- Tag names in doc
   highlight(0, 'vbnetXmlDocAttribute', { fg = colors.green,      bg = 'NONE'            })  -- name="value" in doc
   highlight(0, 'vbnetTodo',            { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Obsolete/Error Keywords
-  highlight(0, 'vbnetKeywordError',    { fg = colors.red,        bg = 'NONE'            })  -- EndIf, GoSub, Let, Variant, Wend
+  highlight(0, 'vbnetKeywordError',    { link = "Keyword" })  -- EndIf, GoSub, Let, Variant, Wend
 
   -- Error
   highlight(0, 'vbnetErrorHighlight',  { fg = colors.red,        bg = 'NONE'            })  -- Errors
@@ -233,28 +233,28 @@ vbnet.setupHighlighting = function()
   -- Treesitter Groups (@xxx.vb)
 
   -- Variables
-  highlight(0, '@variable.vb',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.vb',      { fg = colors.blue,      bg = 'NONE' })  -- Me, MyBase, MyClass
-  highlight(0, '@variable.parameter.vb',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
-  highlight(0, '@variable.member.vb',       { fg = colors.purple,    bg = 'NONE' })  -- Fields
+  highlight(0, '@variable.vb',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.vb',      { link = "Variable" })  -- Me, MyBase, MyClass
+  highlight(0, '@variable.parameter.vb',    { link = "Variable" })  -- Parameters
+  highlight(0, '@variable.member.vb',       { link = "Variable" })  -- Fields
 
   -- Constants
-  highlight(0, '@constant.vb',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.vb',      { fg = colors.blue,      bg = 'NONE' })  -- True, False, Nothing
+  highlight(0, '@constant.vb',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.vb',      { link = "Constant" })  -- True, False, Nothing
 
   -- Functions/Methods
-  highlight(0, '@function.vb',              { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.vb',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.method.vb',       { fg = colors.orange,    bg = 'NONE' })  -- Method definitions
-  highlight(0, '@function.method.call.vb',  { fg = colors.orange,    bg = 'NONE' })  -- Method calls
-  highlight(0, '@function.builtin.vb',      { fg = colors.orange,    bg = 'NONE' })  -- CBool, CInt, etc.
+  highlight(0, '@function.vb',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.vb',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.method.vb',       { link = "Function" })  -- Method definitions
+  highlight(0, '@function.method.call.vb',  { link = "Function" })  -- Method calls
+  highlight(0, '@function.builtin.vb',      { link = "Function" })  -- CBool, CInt, etc.
   highlight(0, '@constructor.vb',           { fg = colors.orange,    bg = 'NONE' })  -- Constructors (New)
 
   -- Types
-  highlight(0, '@type.vb',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.vb',          { fg = colors.turquoise, bg = 'NONE' })  -- Integer, String, Boolean, etc.
-  highlight(0, '@type.definition.vb',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
-  highlight(0, '@type.qualifier.vb',        { fg = colors.blue,      bg = 'NONE' })  -- Type modifiers
+  highlight(0, '@type.vb',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.vb',          { link = "Type" })  -- Integer, String, Boolean, etc.
+  highlight(0, '@type.definition.vb',       { link = "Type" })  -- Type definitions
+  highlight(0, '@type.qualifier.vb',        { link = "Type" })  -- Type modifiers
 
   -- Modules/Namespaces
   highlight(0, '@module.vb',                { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
@@ -264,58 +264,58 @@ vbnet.setupHighlighting = function()
   highlight(0, '@property.vb',              { fg = colors.purple,    bg = 'NONE' })  -- Properties
 
   -- Keywords
-  highlight(0, '@keyword.vb',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.type.vb',          { fg = colors.blue,      bg = 'NONE' })  -- Class, Structure, Module, Interface, Enum
-  highlight(0, '@keyword.modifier.vb',      { fg = colors.blue,      bg = 'NONE' })  -- Public, Private, Shared, etc.
-  highlight(0, '@keyword.function.vb',      { fg = colors.blue,      bg = 'NONE' })  -- Sub, Function, Property
-  highlight(0, '@keyword.operator.vb',      { fg = colors.blue,      bg = 'NONE' })  -- And, Or, Not, Is, IsNot, Like, Mod, TypeOf
-  highlight(0, '@keyword.return.vb',        { fg = colors.blue,      bg = 'NONE' })  -- Return
-  highlight(0, '@keyword.repeat.vb',        { fg = colors.blue,      bg = 'NONE' })  -- For, While, Do, Loop, Each
-  highlight(0, '@keyword.conditional.vb',   { fg = colors.blue,      bg = 'NONE' })  -- If, Then, Else, ElseIf, Select, Case
-  highlight(0, '@keyword.exception.vb',     { fg = colors.blue,      bg = 'NONE' })  -- Try, Catch, Finally, Throw
-  highlight(0, '@keyword.import.vb',        { fg = colors.pink,      bg = 'NONE' })  -- Imports
-  highlight(0, '@keyword.coroutine.vb',     { fg = colors.blue,      bg = 'NONE' })  -- Async, Await
-  highlight(0, '@keyword.directive.vb',     { fg = colors.pink,      bg = 'NONE' })  -- Preprocessor directives
+  highlight(0, '@keyword.vb',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.type.vb',          { link = "Keyword" })  -- Class, Structure, Module, Interface, Enum
+  highlight(0, '@keyword.modifier.vb',      { link = "Keyword" })  -- Public, Private, Shared, etc.
+  highlight(0, '@keyword.function.vb',      { link = "Keyword" })  -- Sub, Function, Property
+  highlight(0, '@keyword.operator.vb',      { link = "Operator" })  -- And, Or, Not, Is, IsNot, Like, Mod, TypeOf
+  highlight(0, '@keyword.return.vb',        { link = "Keyword" })  -- Return
+  highlight(0, '@keyword.repeat.vb',        { link = "Keyword" })  -- For, While, Do, Loop, Each
+  highlight(0, '@keyword.conditional.vb',   { link = "Conditional" })  -- If, Then, Else, ElseIf, Select, Case
+  highlight(0, '@keyword.exception.vb',     { link = "Keyword" })  -- Try, Catch, Finally, Throw
+  highlight(0, '@keyword.import.vb',        { link = "Keyword" })  -- Imports
+  highlight(0, '@keyword.coroutine.vb',     { link = "Keyword" })  -- Async, Await
+  highlight(0, '@keyword.directive.vb',     { link = "Keyword" })  -- Preprocessor directives
 
   -- Labels
   highlight(0, '@label.vb',                 { fg = colors.blue,      bg = 'NONE' })  -- Labels
 
   -- Strings
-  highlight(0, '@string.vb',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.vb',         { fg = colors.pink,      bg = 'NONE' })  -- "" (escaped quote)
+  highlight(0, '@string.vb',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.vb',         { link = "String" })  -- "" (escaped quote)
   highlight(0, '@character.vb',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
 
   -- Numbers
-  highlight(0, '@number.vb',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.vb',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.vb',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.vb',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.vb',               { fg = colors.blue,      bg = 'NONE' })  -- True, False
+  highlight(0, '@boolean.vb',               { link = "Boolean" })  -- True, False
 
   -- Comments
-  highlight(0, '@comment.vb',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.vb', { fg = colors.red,       bg = 'NONE' })  -- XML doc comments
+  highlight(0, '@comment.vb',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.vb', { link = "Comment" })  -- XML doc comments
 
   -- Attributes
   highlight(0, '@attribute.vb',             { fg = colors.pink,      bg = 'NONE' })  -- <Attribute()>
   highlight(0, '@attribute.builtin.vb',     { fg = colors.pink,      bg = 'NONE' })  -- <Obsolete>, <STAThread>, etc.
 
   -- Operators and Punctuation
-  highlight(0, '@operator.vb',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.vb',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.vb',   { fg = colors.white,     bg = 'NONE' })  -- (), {}
-  highlight(0, '@punctuation.delimiter.vb', { fg = colors.white,     bg = 'NONE' })  -- , :
+  highlight(0, '@punctuation.delimiter.vb', { link = "Delimiter" })  -- , :
   highlight(0, '@punctuation.special.vb',   { fg = colors.pink,      bg = 'NONE' })  -- # in directives
 
   -- XML (VB.NET specific)
   highlight(0, '@tag.vb',                   { fg = colors.blue,      bg = 'NONE' })  -- XML tags
   highlight(0, '@tag.attribute.vb',         { fg = colors.purple,    bg = 'NONE' })  -- XML attributes
-  highlight(0, '@tag.delimiter.vb',         { fg = colors.white,     bg = 'NONE' })  -- < > /> in XML
+  highlight(0, '@tag.delimiter.vb',         { link = "Delimiter" })  -- < > /> in XML
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.vb)
 
-  highlight(0, '@lsp.type.variable.vb',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.vb',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.vb',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.vb',      { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.field.vb',         { fg = colors.purple,    bg = 'NONE' })  -- Fields
@@ -332,20 +332,20 @@ vbnet.setupHighlighting = function()
   highlight(0, '@lsp.type.module.vb',        { fg = colors.turquoise, bg = 'NONE' })  -- Modules
   highlight(0, '@lsp.type.namespace.vb',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
   highlight(0, '@lsp.type.typeParameter.vb', { fg = colors.turquoise, bg = 'NONE' })  -- Generic type parameters
-  highlight(0, '@lsp.type.keyword.vb',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.vb',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.vb',      { fg = colors.blue,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.vb',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.vb',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.vb',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.vb',       { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@lsp.type.xmlDocCommentName.vb', { fg = colors.green, bg = 'NONE' })  -- XML tag names
-  highlight(0, '@lsp.type.xmlDocCommentText.vb', { fg = colors.red,   bg = 'NONE' })  -- XML doc text
+  highlight(0, '@lsp.type.operator.vb',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.vb',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.vb',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.vb',       { link = "Comment" })  -- Comments
+  highlight(0, '@lsp.type.xmlDocCommentName.vb', { link = "Comment" })  -- XML tag names
+  highlight(0, '@lsp.type.xmlDocCommentText.vb', { link = "Comment" })  -- XML doc text
   highlight(0, '@lsp.type.xmlLiteralName.vb',    { fg = colors.blue,  bg = 'NONE' })  -- XML literal tag names
   highlight(0, '@lsp.type.xmlLiteralText.vb',    { fg = colors.redLight, bg = 'NONE' }) -- XML literal text
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.vb',    { fg = colors.purple,    bg = 'NONE' })  -- ReadOnly fields
-  highlight(0, '@lsp.typemod.variable.static.vb',      { fg = colors.purple,    bg = 'NONE' })  -- Shared fields
+  highlight(0, '@lsp.typemod.variable.readonly.vb',    { link = "Variable" })  -- ReadOnly fields
+  highlight(0, '@lsp.typemod.variable.static.vb',      { link = "Variable" })  -- Shared fields
   highlight(0, '@lsp.typemod.method.declaration.vb',   { fg = colors.orange,    bg = 'NONE' })  -- Method declarations
   highlight(0, '@lsp.typemod.method.static.vb',        { fg = colors.orange,    bg = 'NONE' })  -- Shared methods
   highlight(0, '@lsp.typemod.method.async.vb',         { fg = colors.orange,    bg = 'NONE' })  -- Async methods

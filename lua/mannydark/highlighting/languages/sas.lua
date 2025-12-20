@@ -24,7 +24,7 @@ sas.setupHighlighting = function()
   highlight(0, 'sasEndsas',             { fg = colors.blue,       bg = 'NONE', bold = true })  -- ENDSAS
 
   -- Control Flow
-  highlight(0, 'sasConditional',        { fg = colors.blue,       bg = 'NONE' })  -- IF, THEN, ELSE
+  highlight(0, 'sasConditional',        { link = "Conditional" })  -- IF, THEN, ELSE
   highlight(0, 'sasRepeat',             { fg = colors.blue,       bg = 'NONE' })  -- DO, END, WHILE, UNTIL, TO, BY
   highlight(0, 'sasSelect',             { fg = colors.blue,       bg = 'NONE' })  -- SELECT, WHEN, OTHERWISE
   highlight(0, 'sasGoto',               { fg = colors.blue,       bg = 'NONE' })  -- GO, GOTO, LINK, RETURN
@@ -106,10 +106,10 @@ sas.setupHighlighting = function()
 
   -- Macro Language
   highlight(0, 'sasMacro',              { fg = colors.pink,       bg = 'NONE' })  -- %MACRO, %MEND
-  highlight(0, 'sasMacroKeyword',       { fg = colors.pink,       bg = 'NONE' })  -- Macro keywords
-  highlight(0, 'sasMacroVar',           { fg = colors.pink,       bg = 'NONE' })  -- &macrovar
-  highlight(0, 'sasMacroVarRef',        { fg = colors.pink,       bg = 'NONE' })  -- &var references
-  highlight(0, 'sasMacroFunc',          { fg = colors.pink,       bg = 'NONE' })  -- %function()
+  highlight(0, 'sasMacroKeyword',       { link = "Keyword" })  -- Macro keywords
+  highlight(0, 'sasMacroVar',           { link = "Variable" })  -- &macrovar
+  highlight(0, 'sasMacroVarRef',        { link = "Variable" })  -- &var references
+  highlight(0, 'sasMacroFunc',          { link = "Function" })  -- %function()
   highlight(0, 'sasMacroLet',           { fg = colors.pink,       bg = 'NONE' })  -- %LET
   highlight(0, 'sasMacroIf',            { fg = colors.pink,       bg = 'NONE' })  -- %IF, %THEN, %ELSE
   highlight(0, 'sasMacroDo',            { fg = colors.pink,       bg = 'NONE' })  -- %DO, %END, %TO, %BY, %WHILE, %UNTIL
@@ -126,27 +126,27 @@ sas.setupHighlighting = function()
   highlight(0, 'sasMacroSysdel',        { fg = colors.pink,       bg = 'NONE' })  -- %SYMDEL
 
   -- Functions
-  highlight(0, 'sasFunction',           { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, 'sasFuncCall',           { fg = colors.orange,     bg = 'NONE' })  -- CALL routines
+  highlight(0, 'sasFunction',           { link = "Function" })  -- Functions
+  highlight(0, 'sasFuncCall',           { link = "Function" })  -- CALL routines
 
   -- Math Functions
-  highlight(0, 'sasFuncMath',           { fg = colors.orange,     bg = 'NONE' })  -- ABS, SQRT, EXP, LOG, etc.
+  highlight(0, 'sasFuncMath',           { link = "Function" })  -- ABS, SQRT, EXP, LOG, etc.
 
   -- String Functions
-  highlight(0, 'sasFuncString',         { fg = colors.orange,     bg = 'NONE' })  -- SUBSTR, TRIM, STRIP, COMPRESS, etc.
+  highlight(0, 'sasFuncString',         { link = "String" })  -- SUBSTR, TRIM, STRIP, COMPRESS, etc.
 
   -- Date/Time Functions
-  highlight(0, 'sasFuncDateTime',       { fg = colors.orange,     bg = 'NONE' })  -- TODAY, DATE, TIME, MDY, etc.
+  highlight(0, 'sasFuncDateTime',       { link = "Function" })  -- TODAY, DATE, TIME, MDY, etc.
 
   -- Statistical Functions
-  highlight(0, 'sasFuncStat',           { fg = colors.orange,     bg = 'NONE' })  -- MEAN, SUM, MIN, MAX, etc.
+  highlight(0, 'sasFuncStat',           { link = "Function" })  -- MEAN, SUM, MIN, MAX, etc.
 
   -- Special Functions
-  highlight(0, 'sasFuncSpecial',        { fg = colors.orange,     bg = 'NONE' })  -- LAG, DIF, INPUT, PUT, etc.
+  highlight(0, 'sasFuncSpecial',        { link = "Function" })  -- LAG, DIF, INPUT, PUT, etc.
 
   -- Hash Object
   highlight(0, 'sasHash',               { fg = colors.turquoise,  bg = 'NONE' })  -- HASH, HITER
-  highlight(0, 'sasHashMethod',         { fg = colors.orange,     bg = 'NONE' })  -- Hash methods
+  highlight(0, 'sasHashMethod',         { link = "Function" })  -- Hash methods
   highlight(0, 'sasHashAttr',           { fg = colors.purple,     bg = 'NONE' })  -- Hash attributes
 
   -- Declare/DCL
@@ -154,7 +154,7 @@ sas.setupHighlighting = function()
   highlight(0, 'sasJavaobj',            { fg = colors.turquoise,  bg = 'NONE' })  -- JAVAOBJ
 
   -- Operators
-  highlight(0, 'sasOperator',           { fg = colors.white,      bg = 'NONE' })  -- General operators
+  highlight(0, 'sasOperator',           { link = "Operator" })  -- General operators
   highlight(0, 'sasArithOp',            { fg = colors.white,      bg = 'NONE' })  -- +, -, *, /, **
   highlight(0, 'sasCompareOp',          { fg = colors.white,      bg = 'NONE' })  -- =, ^=, ~=, <, >, <=, >=
   highlight(0, 'sasCompareWord',        { fg = colors.blue,       bg = 'NONE' })  -- EQ, NE, LT, GT, LE, GE
@@ -165,12 +165,12 @@ sas.setupHighlighting = function()
   highlight(0, 'sasOfOp',               { fg = colors.blue,       bg = 'NONE' })  -- OF (in array functions)
 
   -- Variables / Parameters
-  highlight(0, 'sasVariable',           { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, 'sasVariable',           { link = "Variable" })  -- Variables
   highlight(0, 'sasParameter',          { fg = colors.purple,     bg = 'NONE' })  -- Parameters
   highlight(0, 'sasDatasetOption',      { fg = colors.purple,     bg = 'NONE' })  -- Dataset options
 
   -- Special Variables
-  highlight(0, 'sasAutoVar',            { fg = colors.blue,       bg = 'NONE' })  -- _N_, _ERROR_, FIRST., LAST.
+  highlight(0, 'sasAutoVar',            { link = "Variable" })  -- _N_, _ERROR_, FIRST., LAST.
   highlight(0, 'sasReserved',           { fg = colors.blue,       bg = 'NONE' })  -- _NULL_, _DATA_, _ALL_, etc.
 
   -- Formats / Informats
@@ -180,8 +180,8 @@ sas.setupHighlighting = function()
   highlight(0, 'sasFormatDate',         { fg = colors.turquoise,  bg = 'NONE' })  -- DATE9., DATETIME., MMDDYY., etc.
 
   -- Strings
-  highlight(0, 'sasString',             { fg = colors.redLight,   bg = 'NONE' })  -- 'string' or "string"
-  highlight(0, 'sasStringDelim',        { fg = colors.redLight,   bg = 'NONE' })  -- String delimiters
+  highlight(0, 'sasString',             { link = "String" })  -- 'string' or "string"
+  highlight(0, 'sasStringDelim',        { link = "Delimiter" })  -- String delimiters
   highlight(0, 'sasEscapeSeq',          { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
 
   -- Date/Time Literals
@@ -190,7 +190,7 @@ sas.setupHighlighting = function()
   highlight(0, 'sasDatetimeLiteral',    { fg = colors.greenLight, bg = 'NONE' })  -- '01JAN2020:12:30:00'dt
 
   -- Numbers
-  highlight(0, 'sasNumber',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'sasNumber',             { link = "Number" })  -- Numbers
   highlight(0, 'sasFloat',              { fg = colors.greenLight, bg = 'NONE' })  -- Floats
   highlight(0, 'sasSciNotation',        { fg = colors.greenLight, bg = 'NONE' })  -- Scientific notation
   highlight(0, 'sasHex',                { fg = colors.greenLight, bg = 'NONE' })  -- Hex constants
@@ -200,14 +200,14 @@ sas.setupHighlighting = function()
   highlight(0, 'sasMissingSpecial',     { fg = colors.blue,       bg = 'NONE' })  -- .A-.Z, ._
 
   -- Comments
-  highlight(0, 'sasComment',            { fg = colors.red,        bg = 'NONE' })  -- /* comment */
-  highlight(0, 'sasLineComment',        { fg = colors.red,        bg = 'NONE' })  -- * comment;
-  highlight(0, 'sasMacroComment',       { fg = colors.red,        bg = 'NONE' })  -- %* comment;
-  highlight(0, 'sasBlockComment',       { fg = colors.red,        bg = 'NONE' })  -- /* block */
+  highlight(0, 'sasComment',            { link = "Comment" })  -- /* comment */
+  highlight(0, 'sasLineComment',        { link = "Comment" })  -- * comment;
+  highlight(0, 'sasMacroComment',       { link = "Comment" })  -- %* comment;
+  highlight(0, 'sasBlockComment',       { link = "Comment" })  -- /* block */
   highlight(0, 'sasTodo',               { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, TBD
 
   -- Delimiters / Punctuation
-  highlight(0, 'sasDelimiter',          { fg = colors.white,      bg = 'NONE' })  -- General delimiters
+  highlight(0, 'sasDelimiter',          { link = "Delimiter" })  -- General delimiters
   highlight(0, 'sasSemicolon',          { fg = colors.white,      bg = 'NONE' })  -- ;
   highlight(0, 'sasParen',              { fg = colors.white,      bg = 'NONE' })  -- ()
   highlight(0, 'sasComma',              { fg = colors.white,      bg = 'NONE' })  -- ,
@@ -226,160 +226,160 @@ sas.setupHighlighting = function()
   -- Treesitter Groups (@xxx.sas) - If available
 
   -- Variables
-  highlight(0, '@variable.sas',              { fg = colors.white,     bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.sas',      { fg = colors.blue,      bg = 'NONE' })  -- _N_, _ERROR_, etc.
-  highlight(0, '@variable.parameter.sas',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
+  highlight(0, '@variable.sas',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.sas',      { link = "Variable" })  -- _N_, _ERROR_, etc.
+  highlight(0, '@variable.parameter.sas',    { link = "Variable" })  -- Parameters
 
   -- Constants
-  highlight(0, '@constant.sas',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.sas',      { fg = colors.blue,      bg = 'NONE' })  -- _NULL_, _DATA_, etc.
+  highlight(0, '@constant.sas',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.sas',      { link = "Constant" })  -- _NULL_, _DATA_, etc.
 
   -- Functions
-  highlight(0, '@function.sas',              { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@function.call.sas',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.sas',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.macro.sas',        { fg = colors.pink,      bg = 'NONE' })  -- Macro functions
+  highlight(0, '@function.sas',              { link = "Function" })  -- Functions
+  highlight(0, '@function.call.sas',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.sas',      { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.macro.sas',        { link = "Function" })  -- Macro functions
 
   -- Types
-  highlight(0, '@type.sas',                  { fg = colors.turquoise, bg = 'NONE' })  -- Types
-  highlight(0, '@type.builtin.sas',          { fg = colors.turquoise, bg = 'NONE' })  -- Built-in types
+  highlight(0, '@type.sas',                  { link = "Type" })  -- Types
+  highlight(0, '@type.builtin.sas',          { link = "Type" })  -- Built-in types
 
   -- Keywords
-  highlight(0, '@keyword.sas',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.sas',      { fg = colors.blue,      bg = 'NONE' })  -- DATA, PROC
-  highlight(0, '@keyword.return.sas',        { fg = colors.blue,      bg = 'NONE' })  -- RETURN
-  highlight(0, '@keyword.conditional.sas',   { fg = colors.blue,      bg = 'NONE' })  -- IF, THEN, ELSE
-  highlight(0, '@keyword.repeat.sas',        { fg = colors.blue,      bg = 'NONE' })  -- DO, END, WHILE, UNTIL
-  highlight(0, '@keyword.operator.sas',      { fg = colors.blue,      bg = 'NONE' })  -- AND, OR, NOT, IN, EQ, etc.
+  highlight(0, '@keyword.sas',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.sas',      { link = "Keyword" })  -- DATA, PROC
+  highlight(0, '@keyword.return.sas',        { link = "Keyword" })  -- RETURN
+  highlight(0, '@keyword.conditional.sas',   { link = "Conditional" })  -- IF, THEN, ELSE
+  highlight(0, '@keyword.repeat.sas',        { link = "Keyword" })  -- DO, END, WHILE, UNTIL
+  highlight(0, '@keyword.operator.sas',      { link = "Operator" })  -- AND, OR, NOT, IN, EQ, etc.
 
   -- Strings
-  highlight(0, '@string.sas',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.sas',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.sas',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.sas',         { link = "String" })  -- Escape sequences
 
   -- Numbers
-  highlight(0, '@number.sas',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.sas',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.sas',                { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.sas',          { link = "Number" })  -- Floats
 
   -- Comments
-  highlight(0, '@comment.sas',               { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.sas',               { link = "Comment" })  -- Comments
 
   -- Operators
-  highlight(0, '@operator.sas',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.sas',              { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.sas',   { fg = colors.white,     bg = 'NONE' })  -- ()
-  highlight(0, '@punctuation.delimiter.sas', { fg = colors.white,     bg = 'NONE' })  -- ; ,
+  highlight(0, '@punctuation.delimiter.sas', { link = "Delimiter" })  -- ; ,
   highlight(0, '@punctuation.special.sas',   { fg = colors.pink,      bg = 'NONE' })  -- & %
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.sas)
 
-  highlight(0, '@lsp.type.variable.sas',      { fg = colors.white,     bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.sas',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.sas',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.function.sas',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.macro.sas',         { fg = colors.pink,      bg = 'NONE' })  -- Macros
-  highlight(0, '@lsp.type.keyword.sas',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.operator.sas',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.comment.sas',       { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@lsp.type.string.sas',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.sas',        { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@lsp.type.keyword.sas',       { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.operator.sas',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.comment.sas',       { link = "Comment" })  -- Comments
+  highlight(0, '@lsp.type.string.sas',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.sas',        { link = "Number" })  -- Numbers
 
 
   -----------------------------------------------------------------------------
   -- Data Step Functions (Custom highlight groups)
 
   -- Mathematical Functions
-  highlight(0, 'sasFuncAbs',            { fg = colors.orange,     bg = 'NONE' })  -- ABS
-  highlight(0, 'sasFuncSqrt',           { fg = colors.orange,     bg = 'NONE' })  -- SQRT
-  highlight(0, 'sasFuncExp',            { fg = colors.orange,     bg = 'NONE' })  -- EXP
-  highlight(0, 'sasFuncLog',            { fg = colors.orange,     bg = 'NONE' })  -- LOG, LOG2, LOG10
-  highlight(0, 'sasFuncRound',          { fg = colors.orange,     bg = 'NONE' })  -- ROUND, CEIL, FLOOR, INT
-  highlight(0, 'sasFuncMod',            { fg = colors.orange,     bg = 'NONE' })  -- MOD
-  highlight(0, 'sasFuncSign',           { fg = colors.orange,     bg = 'NONE' })  -- SIGN
-  highlight(0, 'sasFuncTrig',           { fg = colors.orange,     bg = 'NONE' })  -- SIN, COS, TAN, ATAN, etc.
+  highlight(0, 'sasFuncAbs',            { link = "Function" })  -- ABS
+  highlight(0, 'sasFuncSqrt',           { link = "Function" })  -- SQRT
+  highlight(0, 'sasFuncExp',            { link = "Function" })  -- EXP
+  highlight(0, 'sasFuncLog',            { link = "Function" })  -- LOG, LOG2, LOG10
+  highlight(0, 'sasFuncRound',          { link = "Function" })  -- ROUND, CEIL, FLOOR, INT
+  highlight(0, 'sasFuncMod',            { link = "Function" })  -- MOD
+  highlight(0, 'sasFuncSign',           { link = "Function" })  -- SIGN
+  highlight(0, 'sasFuncTrig',           { link = "Function" })  -- SIN, COS, TAN, ATAN, etc.
 
   -- String Functions
-  highlight(0, 'sasFuncSubstr',         { fg = colors.orange,     bg = 'NONE' })  -- SUBSTR
-  highlight(0, 'sasFuncTrim',           { fg = colors.orange,     bg = 'NONE' })  -- TRIM, STRIP, COMPRESS
-  highlight(0, 'sasFuncUpcase',         { fg = colors.orange,     bg = 'NONE' })  -- UPCASE, LOWCASE, PROPCASE
-  highlight(0, 'sasFuncIndex',          { fg = colors.orange,     bg = 'NONE' })  -- INDEX, FIND, INDEXC
-  highlight(0, 'sasFuncLength',         { fg = colors.orange,     bg = 'NONE' })  -- LENGTH, LENGTHN, LENGTHC
-  highlight(0, 'sasFuncScan',           { fg = colors.orange,     bg = 'NONE' })  -- SCAN
-  highlight(0, 'sasFuncCat',            { fg = colors.orange,     bg = 'NONE' })  -- CAT, CATS, CATT, CATX
-  highlight(0, 'sasFuncTranslate',      { fg = colors.orange,     bg = 'NONE' })  -- TRANSLATE, TRANWRD
-  highlight(0, 'sasFuncReverse',        { fg = colors.orange,     bg = 'NONE' })  -- REVERSE
-  highlight(0, 'sasFuncRepeat',         { fg = colors.orange,     bg = 'NONE' })  -- REPEAT
-  highlight(0, 'sasFuncVerify',         { fg = colors.orange,     bg = 'NONE' })  -- VERIFY
-  highlight(0, 'sasFuncQuote',          { fg = colors.orange,     bg = 'NONE' })  -- QUOTE, DEQUOTE
+  highlight(0, 'sasFuncSubstr',         { link = "Function" })  -- SUBSTR
+  highlight(0, 'sasFuncTrim',           { link = "Function" })  -- TRIM, STRIP, COMPRESS
+  highlight(0, 'sasFuncUpcase',         { link = "Function" })  -- UPCASE, LOWCASE, PROPCASE
+  highlight(0, 'sasFuncIndex',          { link = "Function" })  -- INDEX, FIND, INDEXC
+  highlight(0, 'sasFuncLength',         { link = "Function" })  -- LENGTH, LENGTHN, LENGTHC
+  highlight(0, 'sasFuncScan',           { link = "Function" })  -- SCAN
+  highlight(0, 'sasFuncCat',            { link = "Function" })  -- CAT, CATS, CATT, CATX
+  highlight(0, 'sasFuncTranslate',      { link = "Function" })  -- TRANSLATE, TRANWRD
+  highlight(0, 'sasFuncReverse',        { link = "Function" })  -- REVERSE
+  highlight(0, 'sasFuncRepeat',         { link = "Function" })  -- REPEAT
+  highlight(0, 'sasFuncVerify',         { link = "Function" })  -- VERIFY
+  highlight(0, 'sasFuncQuote',          { link = "Function" })  -- QUOTE, DEQUOTE
 
   -- Date/Time Functions
-  highlight(0, 'sasFuncToday',          { fg = colors.orange,     bg = 'NONE' })  -- TODAY, DATE
-  highlight(0, 'sasFuncTime',           { fg = colors.orange,     bg = 'NONE' })  -- TIME
-  highlight(0, 'sasFuncDatetime',       { fg = colors.orange,     bg = 'NONE' })  -- DATETIME
-  highlight(0, 'sasFuncMdy',            { fg = colors.orange,     bg = 'NONE' })  -- MDY
-  highlight(0, 'sasFuncYmd',            { fg = colors.orange,     bg = 'NONE' })  -- YMD
-  highlight(0, 'sasFuncHms',            { fg = colors.orange,     bg = 'NONE' })  -- HMS
-  highlight(0, 'sasFuncDhms',           { fg = colors.orange,     bg = 'NONE' })  -- DHMS
-  highlight(0, 'sasFuncYear',           { fg = colors.orange,     bg = 'NONE' })  -- YEAR
-  highlight(0, 'sasFuncMonth',          { fg = colors.orange,     bg = 'NONE' })  -- MONTH
-  highlight(0, 'sasFuncDay',            { fg = colors.orange,     bg = 'NONE' })  -- DAY
-  highlight(0, 'sasFuncWeekday',        { fg = colors.orange,     bg = 'NONE' })  -- WEEKDAY
-  highlight(0, 'sasFuncQtr',            { fg = colors.orange,     bg = 'NONE' })  -- QTR
-  highlight(0, 'sasFuncWeek',           { fg = colors.orange,     bg = 'NONE' })  -- WEEK
-  highlight(0, 'sasFuncHour',           { fg = colors.orange,     bg = 'NONE' })  -- HOUR
-  highlight(0, 'sasFuncMinute',         { fg = colors.orange,     bg = 'NONE' })  -- MINUTE
-  highlight(0, 'sasFuncSecond',         { fg = colors.orange,     bg = 'NONE' })  -- SECOND
-  highlight(0, 'sasFuncDatepart',       { fg = colors.orange,     bg = 'NONE' })  -- DATEPART
-  highlight(0, 'sasFuncTimepart',       { fg = colors.orange,     bg = 'NONE' })  -- TIMEPART
-  highlight(0, 'sasFuncIntck',          { fg = colors.orange,     bg = 'NONE' })  -- INTCK
-  highlight(0, 'sasFuncIntnx',          { fg = colors.orange,     bg = 'NONE' })  -- INTNX
+  highlight(0, 'sasFuncToday',          { link = "Function" })  -- TODAY, DATE
+  highlight(0, 'sasFuncTime',           { link = "Function" })  -- TIME
+  highlight(0, 'sasFuncDatetime',       { link = "Function" })  -- DATETIME
+  highlight(0, 'sasFuncMdy',            { link = "Function" })  -- MDY
+  highlight(0, 'sasFuncYmd',            { link = "Function" })  -- YMD
+  highlight(0, 'sasFuncHms',            { link = "Function" })  -- HMS
+  highlight(0, 'sasFuncDhms',           { link = "Function" })  -- DHMS
+  highlight(0, 'sasFuncYear',           { link = "Function" })  -- YEAR
+  highlight(0, 'sasFuncMonth',          { link = "Function" })  -- MONTH
+  highlight(0, 'sasFuncDay',            { link = "Function" })  -- DAY
+  highlight(0, 'sasFuncWeekday',        { link = "Function" })  -- WEEKDAY
+  highlight(0, 'sasFuncQtr',            { link = "Function" })  -- QTR
+  highlight(0, 'sasFuncWeek',           { link = "Function" })  -- WEEK
+  highlight(0, 'sasFuncHour',           { link = "Function" })  -- HOUR
+  highlight(0, 'sasFuncMinute',         { link = "Function" })  -- MINUTE
+  highlight(0, 'sasFuncSecond',         { link = "Function" })  -- SECOND
+  highlight(0, 'sasFuncDatepart',       { link = "Function" })  -- DATEPART
+  highlight(0, 'sasFuncTimepart',       { link = "Function" })  -- TIMEPART
+  highlight(0, 'sasFuncIntck',          { link = "Function" })  -- INTCK
+  highlight(0, 'sasFuncIntnx',          { link = "Function" })  -- INTNX
 
   -- Numeric/Statistical Functions
-  highlight(0, 'sasFuncSum',            { fg = colors.orange,     bg = 'NONE' })  -- SUM
-  highlight(0, 'sasFuncMean',           { fg = colors.orange,     bg = 'NONE' })  -- MEAN
-  highlight(0, 'sasFuncMin',            { fg = colors.orange,     bg = 'NONE' })  -- MIN
-  highlight(0, 'sasFuncMax',            { fg = colors.orange,     bg = 'NONE' })  -- MAX
-  highlight(0, 'sasFuncN',              { fg = colors.orange,     bg = 'NONE' })  -- N
-  highlight(0, 'sasFuncNmiss',          { fg = colors.orange,     bg = 'NONE' })  -- NMISS
-  highlight(0, 'sasFuncStd',            { fg = colors.orange,     bg = 'NONE' })  -- STD
-  highlight(0, 'sasFuncVar',            { fg = colors.orange,     bg = 'NONE' })  -- VAR
-  highlight(0, 'sasFuncRange',          { fg = colors.orange,     bg = 'NONE' })  -- RANGE
-  highlight(0, 'sasFuncMedian',         { fg = colors.orange,     bg = 'NONE' })  -- MEDIAN
-  highlight(0, 'sasFuncOrdinal',        { fg = colors.orange,     bg = 'NONE' })  -- ORDINAL
-  highlight(0, 'sasFuncPctl',           { fg = colors.orange,     bg = 'NONE' })  -- PCTL
+  highlight(0, 'sasFuncSum',            { link = "Function" })  -- SUM
+  highlight(0, 'sasFuncMean',           { link = "Function" })  -- MEAN
+  highlight(0, 'sasFuncMin',            { link = "Function" })  -- MIN
+  highlight(0, 'sasFuncMax',            { link = "Function" })  -- MAX
+  highlight(0, 'sasFuncN',              { link = "Function" })  -- N
+  highlight(0, 'sasFuncNmiss',          { link = "Function" })  -- NMISS
+  highlight(0, 'sasFuncStd',            { link = "Function" })  -- STD
+  highlight(0, 'sasFuncVar',            { link = "Function" })  -- VAR
+  highlight(0, 'sasFuncRange',          { link = "Function" })  -- RANGE
+  highlight(0, 'sasFuncMedian',         { link = "Function" })  -- MEDIAN
+  highlight(0, 'sasFuncOrdinal',        { link = "Function" })  -- ORDINAL
+  highlight(0, 'sasFuncPctl',           { link = "Function" })  -- PCTL
 
   -- Type Conversion Functions
-  highlight(0, 'sasFuncInput',          { fg = colors.orange,     bg = 'NONE' })  -- INPUT
-  highlight(0, 'sasFuncPut',            { fg = colors.orange,     bg = 'NONE' })  -- PUT
-  highlight(0, 'sasFuncInputc',         { fg = colors.orange,     bg = 'NONE' })  -- INPUTC, INPUTN
-  highlight(0, 'sasFuncPutc',           { fg = colors.orange,     bg = 'NONE' })  -- PUTC, PUTN
+  highlight(0, 'sasFuncInput',          { link = "Function" })  -- INPUT
+  highlight(0, 'sasFuncPut',            { link = "Function" })  -- PUT
+  highlight(0, 'sasFuncInputc',         { link = "Function" })  -- INPUTC, INPUTN
+  highlight(0, 'sasFuncPutc',           { link = "Function" })  -- PUTC, PUTN
 
   -- Logical/Missing Functions
-  highlight(0, 'sasFuncMissing',        { fg = colors.orange,     bg = 'NONE' })  -- MISSING
-  highlight(0, 'sasFuncCoalesce',       { fg = colors.orange,     bg = 'NONE' })  -- COALESCE, COALESCEC
-  highlight(0, 'sasFuncIfn',            { fg = colors.orange,     bg = 'NONE' })  -- IFN, IFC
-  highlight(0, 'sasFuncChoose',         { fg = colors.orange,     bg = 'NONE' })  -- CHOOSE, CHOOSEC, CHOOSEN
+  highlight(0, 'sasFuncMissing',        { link = "Function" })  -- MISSING
+  highlight(0, 'sasFuncCoalesce',       { link = "Function" })  -- COALESCE, COALESCEC
+  highlight(0, 'sasFuncIfn',            { link = "Function" })  -- IFN, IFC
+  highlight(0, 'sasFuncChoose',         { link = "Function" })  -- CHOOSE, CHOOSEC, CHOOSEN
 
   -- Random Number Functions
-  highlight(0, 'sasFuncRand',           { fg = colors.orange,     bg = 'NONE' })  -- RAND
-  highlight(0, 'sasFuncRanuni',         { fg = colors.orange,     bg = 'NONE' })  -- RANUNI
-  highlight(0, 'sasFuncRannor',         { fg = colors.orange,     bg = 'NONE' })  -- RANNOR
+  highlight(0, 'sasFuncRand',           { link = "Function" })  -- RAND
+  highlight(0, 'sasFuncRanuni',         { link = "Function" })  -- RANUNI
+  highlight(0, 'sasFuncRannor',         { link = "Function" })  -- RANNOR
 
   -- Lag/Diff Functions
-  highlight(0, 'sasFuncLag',            { fg = colors.orange,     bg = 'NONE' })  -- LAG, LAG1-LAGn
-  highlight(0, 'sasFuncDif',            { fg = colors.orange,     bg = 'NONE' })  -- DIF, DIF1-DIFn
+  highlight(0, 'sasFuncLag',            { link = "Function" })  -- LAG, LAG1-LAGn
+  highlight(0, 'sasFuncDif',            { link = "Function" })  -- DIF, DIF1-DIFn
 
   -- Array Functions
-  highlight(0, 'sasFuncDim',            { fg = colors.orange,     bg = 'NONE' })  -- DIM
-  highlight(0, 'sasFuncHbound',         { fg = colors.orange,     bg = 'NONE' })  -- HBOUND
-  highlight(0, 'sasFuncLbound',         { fg = colors.orange,     bg = 'NONE' })  -- LBOUND
+  highlight(0, 'sasFuncDim',            { link = "Function" })  -- DIM
+  highlight(0, 'sasFuncHbound',         { link = "Function" })  -- HBOUND
+  highlight(0, 'sasFuncLbound',         { link = "Function" })  -- LBOUND
 
   -- Regular Expression Functions
-  highlight(0, 'sasFuncPrxmatch',       { fg = colors.orange,     bg = 'NONE' })  -- PRXMATCH
-  highlight(0, 'sasFuncPrxparse',       { fg = colors.orange,     bg = 'NONE' })  -- PRXPARSE
-  highlight(0, 'sasFuncPrxchange',      { fg = colors.orange,     bg = 'NONE' })  -- PRXCHANGE
-  highlight(0, 'sasFuncPrxposn',        { fg = colors.orange,     bg = 'NONE' })  -- PRXPOSN
+  highlight(0, 'sasFuncPrxmatch',       { link = "Function" })  -- PRXMATCH
+  highlight(0, 'sasFuncPrxparse',       { link = "Function" })  -- PRXPARSE
+  highlight(0, 'sasFuncPrxchange',      { link = "Function" })  -- PRXCHANGE
+  highlight(0, 'sasFuncPrxposn',        { link = "Function" })  -- PRXPOSN
 
 
   -----------------------------------------------------------------------------
@@ -400,15 +400,15 @@ sas.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Special SAS Variables
 
-  highlight(0, 'sasVarN',               { fg = colors.blue,       bg = 'NONE' })  -- _N_ (observation number)
-  highlight(0, 'sasVarError',           { fg = colors.blue,       bg = 'NONE' })  -- _ERROR_
-  highlight(0, 'sasVarFirst',           { fg = colors.blue,       bg = 'NONE' })  -- FIRST.variable
-  highlight(0, 'sasVarLast',            { fg = colors.blue,       bg = 'NONE' })  -- LAST.variable
-  highlight(0, 'sasVarIORC',            { fg = colors.blue,       bg = 'NONE' })  -- _IORC_
-  highlight(0, 'sasVarMsg',             { fg = colors.blue,       bg = 'NONE' })  -- _MSG_
-  highlight(0, 'sasVarCmd',             { fg = colors.blue,       bg = 'NONE' })  -- _CMD_
-  highlight(0, 'sasVarFile',            { fg = colors.blue,       bg = 'NONE' })  -- _FILE_
-  highlight(0, 'sasVarInfile',          { fg = colors.blue,       bg = 'NONE' })  -- _INFILE_
+  highlight(0, 'sasVarN',               { link = "Variable" })  -- _N_ (observation number)
+  highlight(0, 'sasVarError',           { link = "Variable" })  -- _ERROR_
+  highlight(0, 'sasVarFirst',           { link = "Variable" })  -- FIRST.variable
+  highlight(0, 'sasVarLast',            { link = "Variable" })  -- LAST.variable
+  highlight(0, 'sasVarIORC',            { link = "Variable" })  -- _IORC_
+  highlight(0, 'sasVarMsg',             { link = "Variable" })  -- _MSG_
+  highlight(0, 'sasVarCmd',             { link = "Variable" })  -- _CMD_
+  highlight(0, 'sasVarFile',            { link = "Variable" })  -- _FILE_
+  highlight(0, 'sasVarInfile',          { link = "Variable" })  -- _INFILE_
 
 
   -----------------------------------------------------------------------------
@@ -463,8 +463,8 @@ sas.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- PROC IML Specific
 
-  highlight(0, 'sasIMLKeyword',         { fg = colors.blue,       bg = 'NONE' })  -- IML keywords
-  highlight(0, 'sasIMLFunction',        { fg = colors.orange,     bg = 'NONE' })  -- IML functions
+  highlight(0, 'sasIMLKeyword',         { link = "Keyword" })  -- IML keywords
+  highlight(0, 'sasIMLFunction',        { link = "Function" })  -- IML functions
   highlight(0, 'sasIMLMatrix',          { fg = colors.turquoise,  bg = 'NONE' })  -- Matrix operations
 
 

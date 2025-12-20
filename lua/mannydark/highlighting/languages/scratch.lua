@@ -92,7 +92,7 @@ scratch.setupHighlighting = function()
   highlight(0, 'scratchblocksUsername',       { fg = colors.turquoise,  bg = 'NONE' })  -- (username)
 
   -- Operators blocks (green in Scratch)
-  highlight(0, 'scratchblocksOperators',      { fg = colors.green,      bg = 'NONE' })  -- Operators blocks
+  highlight(0, 'scratchblocksOperators',      { link = "Operator" })  -- Operators blocks
   highlight(0, 'scratchblocksAdd',            { fg = colors.green,      bg = 'NONE' })  -- (() + ())
   highlight(0, 'scratchblocksSubtract',       { fg = colors.green,      bg = 'NONE' })  -- (() - ())
   highlight(0, 'scratchblocksMultiply',       { fg = colors.green,      bg = 'NONE' })  -- (() * ())
@@ -113,11 +113,11 @@ scratch.setupHighlighting = function()
   highlight(0, 'scratchblocksMathOp',         { fg = colors.green,      bg = 'NONE' })  -- ([] of ()) - abs, floor, ceiling, sqrt, sin, cos, tan, etc.
 
   -- Variables blocks (orange in Scratch)
-  highlight(0, 'scratchblocksVariables',      { fg = colors.orange,     bg = 'NONE' })  -- Variables blocks
-  highlight(0, 'scratchblocksVariable',       { fg = colors.orange,     bg = 'NONE' })  -- (variable)
-  highlight(0, 'scratchblocksSetVar',         { fg = colors.orange,     bg = 'NONE' })  -- set [] to ()
-  highlight(0, 'scratchblocksChangeVar',      { fg = colors.orange,     bg = 'NONE' })  -- change [] by ()
-  highlight(0, 'scratchblocksShowVar',        { fg = colors.orange,     bg = 'NONE' })  -- show variable [], hide variable []
+  highlight(0, 'scratchblocksVariables',      { link = "Variable" })  -- Variables blocks
+  highlight(0, 'scratchblocksVariable',       { link = "Variable" })  -- (variable)
+  highlight(0, 'scratchblocksSetVar',         { link = "Variable" })  -- set [] to ()
+  highlight(0, 'scratchblocksChangeVar',      { link = "Variable" })  -- change [] by ()
+  highlight(0, 'scratchblocksShowVar',        { link = "Variable" })  -- show variable [], hide variable []
 
   -- List blocks (orange/red in Scratch)
   highlight(0, 'scratchblocksLists',          { fg = colors.orange,     bg = 'NONE' })  -- List blocks
@@ -168,9 +168,9 @@ scratch.setupHighlighting = function()
   -- Scratchblocks Syntax Elements
 
   -- Arguments
-  highlight(0, 'scratchblocksNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- (10) - number arguments
-  highlight(0, 'scratchblocksString',         { fg = colors.redLight,   bg = 'NONE' })  -- [text] - string arguments
-  highlight(0, 'scratchblocksBoolean',        { fg = colors.turquoise,  bg = 'NONE' })  -- <condition> - boolean arguments
+  highlight(0, 'scratchblocksNumber',         { link = "Number" })  -- (10) - number arguments
+  highlight(0, 'scratchblocksString',         { link = "String" })  -- [text] - string arguments
+  highlight(0, 'scratchblocksBoolean',        { link = "Boolean" })  -- <condition> - boolean arguments
   highlight(0, 'scratchblocksReporter',       { fg = colors.orange,     bg = 'NONE' })  -- (reporter) - reporter blocks
 
   -- Dropdown menus
@@ -181,7 +181,7 @@ scratch.setupHighlighting = function()
   highlight(0, 'scratchblocksColor',          { fg = colors.purple,     bg = 'NONE' })  -- [#1540bf] - color hex
 
   -- Comments
-  highlight(0, 'scratchblocksComment',        { fg = colors.red,        bg = 'NONE' })  -- // comment
+  highlight(0, 'scratchblocksComment',        { link = "Comment" })  -- // comment
 
   -- Special syntax
   highlight(0, 'scratchblocksCategory',       { fg = colors.pink,       bg = 'NONE' })  -- :: motion, :: looks, etc.
@@ -212,11 +212,11 @@ scratch.setupHighlighting = function()
   -- Target properties
   highlight(0, 'scratchJsonIsStage',          { fg = colors.purple,     bg = 'NONE' })  -- "isStage"
   highlight(0, 'scratchJsonName',             { fg = colors.purple,     bg = 'NONE' })  -- "name"
-  highlight(0, 'scratchJsonVariables',        { fg = colors.purple,     bg = 'NONE' })  -- "variables"
+  highlight(0, 'scratchJsonVariables',        { link = "Variable" })  -- "variables"
   highlight(0, 'scratchJsonLists',            { fg = colors.purple,     bg = 'NONE' })  -- "lists"
   highlight(0, 'scratchJsonBroadcasts',       { fg = colors.purple,     bg = 'NONE' })  -- "broadcasts"
   highlight(0, 'scratchJsonBlocks',           { fg = colors.purple,     bg = 'NONE' })  -- "blocks"
-  highlight(0, 'scratchJsonComments',         { fg = colors.purple,     bg = 'NONE' })  -- "comments"
+  highlight(0, 'scratchJsonComments',         { link = "Comment" })  -- "comments"
   highlight(0, 'scratchJsonCostumes',         { fg = colors.purple,     bg = 'NONE' })  -- "costumes"
   highlight(0, 'scratchJsonSounds',           { fg = colors.purple,     bg = 'NONE' })  -- "sounds"
   highlight(0, 'scratchJsonCurrentCostume',   { fg = colors.purple,     bg = 'NONE' })  -- "currentCostume"
@@ -249,7 +249,7 @@ scratch.setupHighlighting = function()
   highlight(0, 'scratchOpcodeEvent',          { fg = colors.orange,     bg = 'NONE' })  -- event_*
   highlight(0, 'scratchOpcodeControl',        { fg = colors.orange,     bg = 'NONE' })  -- control_*
   highlight(0, 'scratchOpcodeSensing',        { fg = colors.turquoise,  bg = 'NONE' })  -- sensing_*
-  highlight(0, 'scratchOpcodeOperator',       { fg = colors.green,      bg = 'NONE' })  -- operator_*
+  highlight(0, 'scratchOpcodeOperator',       { link = "Operator" })  -- operator_*
   highlight(0, 'scratchOpcodeData',           { fg = colors.orange,     bg = 'NONE' })  -- data_*
   highlight(0, 'scratchOpcodeProcedures',     { fg = colors.pink,       bg = 'NONE' })  -- procedures_*
   highlight(0, 'scratchOpcodePen',            { fg = colors.turquoise,  bg = 'NONE' })  -- pen_*
@@ -278,7 +278,7 @@ scratch.setupHighlighting = function()
   highlight(0, 'scratchHatBlock',             { fg = colors.orange,     bg = 'NONE' })  -- Hat block
   highlight(0, 'scratchStackBlock',           { fg = colors.blue,       bg = 'NONE' })  -- Stack block
   highlight(0, 'scratchReporterBlock',        { fg = colors.green,      bg = 'NONE' })  -- Reporter block
-  highlight(0, 'scratchBooleanBlock',         { fg = colors.turquoise,  bg = 'NONE' })  -- Boolean block
+  highlight(0, 'scratchBooleanBlock',         { link = "Boolean" })  -- Boolean block
   highlight(0, 'scratchCBlock',               { fg = colors.orange,     bg = 'NONE' })  -- C block
   highlight(0, 'scratchCapBlock',             { fg = colors.orange,     bg = 'NONE' })  -- Cap block
 
@@ -286,41 +286,41 @@ scratch.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Treesitter Groups (for potential future parsers)
 
-  highlight(0, '@keyword.scratch',            { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.control.scratch',    { fg = colors.orange,     bg = 'NONE' })  -- Control keywords
-  highlight(0, '@keyword.event.scratch',      { fg = colors.orange,     bg = 'NONE' })  -- Event keywords
+  highlight(0, '@keyword.scratch',            { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.control.scratch',    { link = "Keyword" })  -- Control keywords
+  highlight(0, '@keyword.event.scratch',      { link = "Keyword" })  -- Event keywords
 
-  highlight(0, '@function.scratch',           { fg = colors.orange,     bg = 'NONE' })  -- Functions/blocks
-  highlight(0, '@function.builtin.scratch',   { fg = colors.pink,       bg = 'NONE' })  -- Built-in blocks
-  highlight(0, '@function.custom.scratch',    { fg = colors.pink,       bg = 'NONE' })  -- Custom blocks
+  highlight(0, '@function.scratch',           { link = "Function" })  -- Functions/blocks
+  highlight(0, '@function.builtin.scratch',   { link = "Function" })  -- Built-in blocks
+  highlight(0, '@function.custom.scratch',    { link = "Function" })  -- Custom blocks
 
-  highlight(0, '@variable.scratch',           { fg = colors.orange,     bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.list.scratch',      { fg = colors.orange,     bg = 'NONE' })  -- Lists
+  highlight(0, '@variable.scratch',           { link = "Variable" })  -- Variables
+  highlight(0, '@variable.list.scratch',      { link = "Variable" })  -- Lists
 
-  highlight(0, '@constant.scratch',           { fg = colors.purple,     bg = 'NONE' })  -- Constants
+  highlight(0, '@constant.scratch',           { link = "Constant" })  -- Constants
 
-  highlight(0, '@number.scratch',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.scratch',             { link = "Number" })  -- Numbers
 
-  highlight(0, '@string.scratch',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, '@string.scratch',             { link = "String" })  -- Strings
 
-  highlight(0, '@operator.scratch',           { fg = colors.green,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.scratch',           { link = "Operator" })  -- Operators
 
   highlight(0, '@punctuation.bracket.scratch', { fg = colors.white,     bg = 'NONE' })  -- Brackets
-  highlight(0, '@punctuation.delimiter.scratch', { fg = colors.white,   bg = 'NONE' })  -- Delimiters
+  highlight(0, '@punctuation.delimiter.scratch', { link = "Delimiter" })  -- Delimiters
 
-  highlight(0, '@comment.scratch',            { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.scratch',            { link = "Comment" })  -- Comments
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens
 
-  highlight(0, '@lsp.type.variable.scratch',  { fg = colors.orange,     bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.scratch',  { link = "Variable" })
   highlight(0, '@lsp.type.function.scratch',  { fg = colors.pink,       bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.scratch',   { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.operator.scratch',  { fg = colors.green,      bg = 'NONE' })
-  highlight(0, '@lsp.type.string.scratch',    { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.scratch',    { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.scratch',   { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.scratch',   { link = "Keyword" })
+  highlight(0, '@lsp.type.operator.scratch',  { link = "Operator" })
+  highlight(0, '@lsp.type.string.scratch',    { link = "String" })
+  highlight(0, '@lsp.type.number.scratch',    { link = "Number" })
+  highlight(0, '@lsp.type.comment.scratch',   { link = "Comment" })
 
 
   -----------------------------------------------------------------------------
@@ -329,7 +329,7 @@ scratch.setupHighlighting = function()
   highlight(0, 'snapblocksRing',              { fg = colors.pink,       bg = 'NONE' })  -- Ring (lambda)
   highlight(0, 'snapblocksUnevaluated',       { fg = colors.orange,     bg = 'NONE' })  -- Unevaluated inputs
   highlight(0, 'snapblocksMultiline',         { fg = colors.redLight,   bg = 'NONE' })  -- Multiline text
-  highlight(0, 'snapblocksUpvar',             { fg = colors.orange,     bg = 'NONE' })  -- Script variables
+  highlight(0, 'snapblocksUpvar',             { link = "Variable" })  -- Script variables
 
 
   -----------------------------------------------------------------------------
@@ -337,7 +337,7 @@ scratch.setupHighlighting = function()
 
   highlight(0, 'gpBlocksStatement',           { fg = colors.blue,       bg = 'NONE' })  -- GP statements
   highlight(0, 'gpBlocksReporter',            { fg = colors.green,      bg = 'NONE' })  -- GP reporters
-  highlight(0, 'gpBlocksBoolean',             { fg = colors.turquoise,  bg = 'NONE' })  -- GP booleans
+  highlight(0, 'gpBlocksBoolean',             { link = "Boolean" })  -- GP booleans
 
 end
 

@@ -21,7 +21,7 @@ labview.setupHighlighting = function()
   -- Used in MathScript Window and MathScript Node
 
   -- Keywords - Control Flow
-  highlight(0, 'labviewMathScriptKeyword',    { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, 'labviewMathScriptKeyword',    { link = "Keyword" })  -- Keywords
   highlight(0, 'labviewMathScriptIf',         { fg = colors.blue,       bg = 'NONE' })  -- if
   highlight(0, 'labviewMathScriptElse',       { fg = colors.blue,       bg = 'NONE' })  -- else, elseif
   highlight(0, 'labviewMathScriptEnd',        { fg = colors.blue,       bg = 'NONE' })  -- end
@@ -33,12 +33,12 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptTry',        { fg = colors.blue,       bg = 'NONE' })  -- try, catch
 
   -- Keywords - Functions
-  highlight(0, 'labviewMathScriptFunction',   { fg = colors.blue,       bg = 'NONE' })  -- function keyword
+  highlight(0, 'labviewMathScriptFunction',   { link = "Function" })  -- function keyword
   highlight(0, 'labviewMathScriptGlobal',     { fg = colors.blue,       bg = 'NONE' })  -- global keyword
   highlight(0, 'labviewMathScriptPersistent', { fg = colors.blue,       bg = 'NONE' })  -- persistent keyword
 
   -- Built-in Variables
-  highlight(0, 'labviewMathScriptBuiltinVar', { fg = colors.purple,     bg = 'NONE' })  -- Built-in variables
+  highlight(0, 'labviewMathScriptBuiltinVar', { link = "Variable" })  -- Built-in variables
   highlight(0, 'labviewMathScriptAns',        { fg = colors.purple,     bg = 'NONE' })  -- ans
   highlight(0, 'labviewMathScriptPi',         { fg = colors.purple,     bg = 'NONE' })  -- pi
   highlight(0, 'labviewMathScriptInf',        { fg = colors.purple,     bg = 'NONE' })  -- inf, Inf
@@ -49,7 +49,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptFalse',      { fg = colors.blue,       bg = 'NONE' })  -- false
 
   -- Matrix/Vector Creation Functions
-  highlight(0, 'labviewMathScriptMatrixFunc', { fg = colors.orange,     bg = 'NONE' })  -- Matrix functions
+  highlight(0, 'labviewMathScriptMatrixFunc', { link = "Function" })  -- Matrix functions
   highlight(0, 'labviewMathScriptZeros',      { fg = colors.orange,     bg = 'NONE' })  -- zeros
   highlight(0, 'labviewMathScriptOnes',       { fg = colors.orange,     bg = 'NONE' })  -- ones
   highlight(0, 'labviewMathScriptEye',        { fg = colors.orange,     bg = 'NONE' })  -- eye
@@ -61,7 +61,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptReshape',    { fg = colors.orange,     bg = 'NONE' })  -- reshape
 
   -- Math Functions
-  highlight(0, 'labviewMathScriptMathFunc',   { fg = colors.orange,     bg = 'NONE' })  -- Math functions
+  highlight(0, 'labviewMathScriptMathFunc',   { link = "Function" })  -- Math functions
   highlight(0, 'labviewMathScriptSqrt',       { fg = colors.orange,     bg = 'NONE' })  -- sqrt
   highlight(0, 'labviewMathScriptAbs',        { fg = colors.orange,     bg = 'NONE' })  -- abs
   highlight(0, 'labviewMathScriptExp',        { fg = colors.orange,     bg = 'NONE' })  -- exp
@@ -90,7 +90,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptNorm',       { fg = colors.orange,     bg = 'NONE' })  -- norm
 
   -- Control System Functions
-  highlight(0, 'labviewMathScriptControlFunc', { fg = colors.orange,    bg = 'NONE' })  -- Control functions
+  highlight(0, 'labviewMathScriptControlFunc', { link = "Function" })  -- Control functions
   highlight(0, 'labviewMathScriptTf',         { fg = colors.orange,     bg = 'NONE' })  -- tf
   highlight(0, 'labviewMathScriptZpk',        { fg = colors.orange,     bg = 'NONE' })  -- zpk
   highlight(0, 'labviewMathScriptSs',         { fg = colors.orange,     bg = 'NONE' })  -- ss
@@ -105,7 +105,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptPade',       { fg = colors.orange,     bg = 'NONE' })  -- pade
 
   -- Signal Processing Functions
-  highlight(0, 'labviewMathScriptSignalFunc', { fg = colors.orange,     bg = 'NONE' })  -- Signal processing
+  highlight(0, 'labviewMathScriptSignalFunc', { link = "Function" })  -- Signal processing
   highlight(0, 'labviewMathScriptFft',        { fg = colors.orange,     bg = 'NONE' })  -- fft, ifft
   highlight(0, 'labviewMathScriptFilter',     { fg = colors.orange,     bg = 'NONE' })  -- filter
   highlight(0, 'labviewMathScriptConv',       { fg = colors.orange,     bg = 'NONE' })  -- conv
@@ -113,7 +113,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptInterp',     { fg = colors.orange,     bg = 'NONE' })  -- interp1, interp2
 
   -- Plotting Functions
-  highlight(0, 'labviewMathScriptPlotFunc',   { fg = colors.orange,     bg = 'NONE' })  -- Plotting functions
+  highlight(0, 'labviewMathScriptPlotFunc',   { link = "Function" })  -- Plotting functions
   highlight(0, 'labviewMathScriptPlot',       { fg = colors.orange,     bg = 'NONE' })  -- plot
   highlight(0, 'labviewMathScriptStem',       { fg = colors.orange,     bg = 'NONE' })  -- stem
   highlight(0, 'labviewMathScriptBar',        { fg = colors.orange,     bg = 'NONE' })  -- bar
@@ -131,7 +131,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptSemilogx',   { fg = colors.orange,     bg = 'NONE' })  -- semilogx, semilogy, loglog
 
   -- File I/O Functions
-  highlight(0, 'labviewMathScriptFileFunc',   { fg = colors.orange,     bg = 'NONE' })  -- File functions
+  highlight(0, 'labviewMathScriptFileFunc',   { link = "Function" })  -- File functions
   highlight(0, 'labviewMathScriptLoad',       { fg = colors.orange,     bg = 'NONE' })  -- load
   highlight(0, 'labviewMathScriptSave',       { fg = colors.orange,     bg = 'NONE' })  -- save
   highlight(0, 'labviewMathScriptFopen',      { fg = colors.orange,     bg = 'NONE' })  -- fopen
@@ -158,7 +158,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptDir',        { fg = colors.orange,     bg = 'NONE' })  -- dir, ls
 
   -- Operators
-  highlight(0, 'labviewMathScriptOperator',   { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'labviewMathScriptOperator',   { link = "Operator" })  -- Operators
   highlight(0, 'labviewMathScriptArithOp',    { fg = colors.white,      bg = 'NONE' })  -- +, -, *, /, ^
   highlight(0, 'labviewMathScriptDotOp',      { fg = colors.white,      bg = 'NONE' })  -- .*, ./, .^
   highlight(0, 'labviewMathScriptCompareOp',  { fg = colors.white,      bg = 'NONE' })  -- ==, ~=, <, >, <=, >=
@@ -167,20 +167,20 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewMathScriptTransposeOp', { fg = colors.white,     bg = 'NONE' })  -- ' transpose
 
   -- Numbers
-  highlight(0, 'labviewMathScriptNumber',     { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'labviewMathScriptNumber',     { link = "Number" })  -- Numbers
   highlight(0, 'labviewMathScriptFloat',      { fg = colors.greenLight, bg = 'NONE' })  -- Floats
   highlight(0, 'labviewMathScriptComplex',    { fg = colors.greenLight, bg = 'NONE' })  -- Complex numbers
 
   -- Strings
-  highlight(0, 'labviewMathScriptString',     { fg = colors.redLight,   bg = 'NONE' })  -- 'strings'
+  highlight(0, 'labviewMathScriptString',     { link = "String" })  -- 'strings'
 
   -- Comments
-  highlight(0, 'labviewMathScriptComment',    { fg = colors.red,        bg = 'NONE' })  -- % comments
-  highlight(0, 'labviewMathScriptBlockComment', { fg = colors.red,      bg = 'NONE' })  -- %{ %}
+  highlight(0, 'labviewMathScriptComment',    { link = "Comment" })  -- % comments
+  highlight(0, 'labviewMathScriptBlockComment', { link = "Comment" })  -- %{ %}
   highlight(0, 'labviewMathScriptTodo',       { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO
 
   -- Delimiters
-  highlight(0, 'labviewMathScriptDelimiter',  { fg = colors.white,      bg = 'NONE' })  -- ; , ( ) [ ] { }
+  highlight(0, 'labviewMathScriptDelimiter',  { link = "Delimiter" })  -- ; , ( ) [ ] { }
   highlight(0, 'labviewMathScriptSemicolon',  { fg = colors.white,      bg = 'NONE' })  -- ; suppresses output
 
 
@@ -189,7 +189,7 @@ labview.setupHighlighting = function()
   -- Used in Formula Node structure on block diagrams
 
   -- Keywords
-  highlight(0, 'labviewFormulaKeyword',       { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, 'labviewFormulaKeyword',       { link = "Keyword" })  -- Keywords
   highlight(0, 'labviewFormulaIf',            { fg = colors.blue,       bg = 'NONE' })  -- if
   highlight(0, 'labviewFormulaElse',          { fg = colors.blue,       bg = 'NONE' })  -- else
   highlight(0, 'labviewFormulaFor',           { fg = colors.blue,       bg = 'NONE' })  -- for
@@ -202,7 +202,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewFormulaContinue',      { fg = colors.blue,       bg = 'NONE' })  -- continue
 
   -- Built-in Functions
-  highlight(0, 'labviewFormulaFunction',      { fg = colors.orange,     bg = 'NONE' })  -- Functions
+  highlight(0, 'labviewFormulaFunction',      { link = "Function" })  -- Functions
   highlight(0, 'labviewFormulaAbs',           { fg = colors.orange,     bg = 'NONE' })  -- abs
   highlight(0, 'labviewFormulaAcos',          { fg = colors.orange,     bg = 'NONE' })  -- acos, acosh
   highlight(0, 'labviewFormulaAsin',          { fg = colors.orange,     bg = 'NONE' })  -- asin, asinh
@@ -232,11 +232,11 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewFormulaTan',           { fg = colors.orange,     bg = 'NONE' })  -- tan, tanh
 
   -- Constants
-  highlight(0, 'labviewFormulaConstant',      { fg = colors.purple,     bg = 'NONE' })  -- Constants
+  highlight(0, 'labviewFormulaConstant',      { link = "Constant" })  -- Constants
   highlight(0, 'labviewFormulaPi',            { fg = colors.purple,     bg = 'NONE' })  -- pi
 
   -- Operators
-  highlight(0, 'labviewFormulaOperator',      { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'labviewFormulaOperator',      { link = "Operator" })  -- Operators
   highlight(0, 'labviewFormulaArithOp',       { fg = colors.white,      bg = 'NONE' })  -- +, -, *, /, %
   highlight(0, 'labviewFormulaCompareOp',     { fg = colors.white,      bg = 'NONE' })  -- ==, !=, <, >, <=, >=
   highlight(0, 'labviewFormulaLogicalOp',     { fg = colors.white,      bg = 'NONE' })  -- &&, ||, !
@@ -246,21 +246,21 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewFormulaIncDecOp',      { fg = colors.white,      bg = 'NONE' })  -- ++, --
 
   -- Numbers
-  highlight(0, 'labviewFormulaNumber',        { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'labviewFormulaNumber',        { link = "Number" })  -- Numbers
   highlight(0, 'labviewFormulaFloat',         { fg = colors.greenLight, bg = 'NONE' })  -- Floats
   highlight(0, 'labviewFormulaHex',           { fg = colors.greenLight, bg = 'NONE' })  -- 0xFF hex
 
   -- Strings
-  highlight(0, 'labviewFormulaString',        { fg = colors.redLight,   bg = 'NONE' })  -- "strings"
+  highlight(0, 'labviewFormulaString',        { link = "String" })  -- "strings"
 
   -- Comments
-  highlight(0, 'labviewFormulaComment',       { fg = colors.red,        bg = 'NONE' })  -- // and /* */ comments
-  highlight(0, 'labviewFormulaLineComment',   { fg = colors.red,        bg = 'NONE' })  -- // comments
-  highlight(0, 'labviewFormulaBlockComment',  { fg = colors.red,        bg = 'NONE' })  -- /* */ comments
+  highlight(0, 'labviewFormulaComment',       { link = "Comment" })  -- // and /* */ comments
+  highlight(0, 'labviewFormulaLineComment',   { link = "Comment" })  -- // comments
+  highlight(0, 'labviewFormulaBlockComment',  { link = "Comment" })  -- /* */ comments
   highlight(0, 'labviewFormulaTodo',          { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO
 
   -- Delimiters
-  highlight(0, 'labviewFormulaDelimiter',     { fg = colors.white,      bg = 'NONE' })  -- ; , ( ) [ ] { }
+  highlight(0, 'labviewFormulaDelimiter',     { link = "Delimiter" })  -- ; , ( ) [ ] { }
   highlight(0, 'labviewFormulaSemicolon',     { fg = colors.white,      bg = 'NONE' })  -- ; statement end
 
 
@@ -274,8 +274,8 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewXmlEndTag',            { fg = colors.pink,       bg = 'NONE' })  -- </tag>
   highlight(0, 'labviewXmlAttribute',         { fg = colors.orange,     bg = 'NONE' })  -- Attribute names
   highlight(0, 'labviewXmlAttributeValue',    { fg = colors.redLight,   bg = 'NONE' })  -- Attribute values
-  highlight(0, 'labviewXmlString',            { fg = colors.redLight,   bg = 'NONE' })  -- String content
-  highlight(0, 'labviewXmlComment',           { fg = colors.red,        bg = 'NONE' })  -- <!-- comments -->
+  highlight(0, 'labviewXmlString',            { link = "String" })  -- String content
+  highlight(0, 'labviewXmlComment',           { link = "Comment" })  -- <!-- comments -->
   highlight(0, 'labviewXmlCdata',             { fg = colors.redLight,   bg = 'NONE' })  -- CDATA sections
   highlight(0, 'labviewXmlDeclaration',       { fg = colors.pink,       bg = 'NONE' })  -- <?xml ?>
   highlight(0, 'labviewXmlEntity',            { fg = colors.purple,     bg = 'NONE' })  -- &amp; &lt; &gt;
@@ -290,7 +290,7 @@ labview.setupHighlighting = function()
 
   -- Property Names
   highlight(0, 'labviewProjPropName',         { fg = colors.purple,     bg = 'NONE' })  -- Property names
-  highlight(0, 'labviewProjPropType',         { fg = colors.turquoise,  bg = 'NONE' })  -- Property types
+  highlight(0, 'labviewProjPropType',         { link = "Type" })  -- Property types
   highlight(0, 'labviewProjPropValue',        { fg = colors.redLight,   bg = 'NONE' })  -- Property values
 
 
@@ -307,46 +307,46 @@ labview.setupHighlighting = function()
   -- Treesitter Groups (for potential future parsers)
 
   -- MathScript
-  highlight(0, '@keyword.labview',            { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.function.labview',   { fg = colors.blue,       bg = 'NONE' })  -- function
-  highlight(0, '@keyword.return.labview',     { fg = colors.blue,       bg = 'NONE' })  -- return
-  highlight(0, '@keyword.repeat.labview',     { fg = colors.blue,       bg = 'NONE' })  -- for, while
-  highlight(0, '@keyword.conditional.labview', { fg = colors.blue,      bg = 'NONE' })  -- if, else, switch
+  highlight(0, '@keyword.labview',            { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.function.labview',   { link = "Keyword" })  -- function
+  highlight(0, '@keyword.return.labview',     { link = "Keyword" })  -- return
+  highlight(0, '@keyword.repeat.labview',     { link = "Keyword" })  -- for, while
+  highlight(0, '@keyword.conditional.labview', { link = "Conditional" })  -- if, else, switch
 
-  highlight(0, '@function.labview',           { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@function.builtin.labview',   { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.call.labview',      { fg = colors.orange,     bg = 'NONE' })  -- Function calls
+  highlight(0, '@function.labview',           { link = "Function" })  -- Functions
+  highlight(0, '@function.builtin.labview',   { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.call.labview',      { link = "Function" })  -- Function calls
 
-  highlight(0, '@variable.labview',           { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.labview',   { fg = colors.purple,     bg = 'NONE' })  -- ans, pi, inf, etc.
+  highlight(0, '@variable.labview',           { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.labview',   { link = "Variable" })  -- ans, pi, inf, etc.
 
-  highlight(0, '@constant.labview',           { fg = colors.purple,     bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.labview',   { fg = colors.purple,     bg = 'NONE' })  -- pi, inf, nan
+  highlight(0, '@constant.labview',           { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.labview',   { link = "Constant" })  -- pi, inf, nan
 
-  highlight(0, '@number.labview',             { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.labview',       { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.labview',             { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.labview',       { link = "Number" })  -- Floats
 
-  highlight(0, '@string.labview',             { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, '@string.labview',             { link = "String" })  -- Strings
 
-  highlight(0, '@operator.labview',           { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.labview',           { link = "Operator" })  -- Operators
 
   highlight(0, '@punctuation.bracket.labview', { fg = colors.white,     bg = 'NONE' })  -- ( ) [ ] { }
-  highlight(0, '@punctuation.delimiter.labview', { fg = colors.white,   bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.labview', { link = "Delimiter" })  -- , ; :
 
-  highlight(0, '@comment.labview',            { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.labview',            { link = "Comment" })  -- Comments
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens
 
-  highlight(0, '@lsp.type.variable.labview',  { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.labview',  { link = "Variable" })
   highlight(0, '@lsp.type.parameter.labview', { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.function.labview',  { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.labview',   { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.operator.labview',  { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@lsp.type.string.labview',    { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.labview',    { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.labview',   { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.labview',   { link = "Keyword" })
+  highlight(0, '@lsp.type.operator.labview',  { link = "Operator" })
+  highlight(0, '@lsp.type.string.labview',    { link = "String" })
+  highlight(0, '@lsp.type.number.labview',    { link = "Number" })
+  highlight(0, '@lsp.type.comment.labview',   { link = "Comment" })
 
 
   -----------------------------------------------------------------------------
@@ -370,7 +370,7 @@ labview.setupHighlighting = function()
   highlight(0, 'labviewExpressVI',            { fg = colors.orange,     bg = 'NONE' })  -- Express VI
   highlight(0, 'labviewPolymorphicVI',        { fg = colors.orange,     bg = 'NONE' })  -- Polymorphic VI
   highlight(0, 'labviewGlobalVI',             { fg = colors.purple,     bg = 'NONE' })  -- Global VI
-  highlight(0, 'labviewFunctionalGlobal',     { fg = colors.purple,     bg = 'NONE' })  -- Functional Global
+  highlight(0, 'labviewFunctionalGlobal',     { link = "Function" })  -- Functional Global
 
   -- Structures
   highlight(0, 'labviewStructure',            { fg = colors.blue,       bg = 'NONE' })  -- Structures
@@ -385,10 +385,10 @@ labview.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Data Types (as they appear in text descriptions)
 
-  highlight(0, 'labviewDataType',             { fg = colors.turquoise,  bg = 'NONE' })  -- Data types
-  highlight(0, 'labviewBoolean',              { fg = colors.turquoise,  bg = 'NONE' })  -- Boolean
+  highlight(0, 'labviewDataType',             { link = "Type" })  -- Data types
+  highlight(0, 'labviewBoolean',              { link = "Boolean" })  -- Boolean
   highlight(0, 'labviewNumeric',              { fg = colors.turquoise,  bg = 'NONE' })  -- Numeric types
-  highlight(0, 'labviewString',               { fg = colors.turquoise,  bg = 'NONE' })  -- String type
+  highlight(0, 'labviewString',               { link = "String" })  -- String type
   highlight(0, 'labviewArray',                { fg = colors.turquoise,  bg = 'NONE' })  -- Array type
   highlight(0, 'labviewCluster',              { fg = colors.turquoise,  bg = 'NONE' })  -- Cluster type
   highlight(0, 'labviewWaveform',             { fg = colors.turquoise,  bg = 'NONE' })  -- Waveform type

@@ -16,18 +16,18 @@ jsonnet.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Comments
-  highlight(0, 'jsonnetComment',           { fg = colors.red,        bg = 'NONE' })  -- // and # comments
-  highlight(0, 'jsonnetBlockComment',      { fg = colors.red,        bg = 'NONE' })  -- /* */ block comments
+  highlight(0, 'jsonnetComment',           { link = "Comment" })  -- // and # comments
+  highlight(0, 'jsonnetBlockComment',      { link = "Comment" })  -- /* */ block comments
   highlight(0, 'jsonnetTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Keywords
-  highlight(0, 'jsonnetKeyword',           { fg = colors.pink,       bg = 'NONE' })  -- local, function, etc.
+  highlight(0, 'jsonnetKeyword',           { link = "Keyword" })  -- local, function, etc.
   highlight(0, 'jsonnetLocal',             { fg = colors.pink,       bg = 'NONE' })  -- local
-  highlight(0, 'jsonnetFunction',          { fg = colors.pink,       bg = 'NONE' })  -- function
+  highlight(0, 'jsonnetFunction',          { link = "Function" })  -- function
   highlight(0, 'jsonnetTailstrict',        { fg = colors.pink,       bg = 'NONE' })  -- tailstrict
 
   -- Control Flow
-  highlight(0, 'jsonnetConditional',       { fg = colors.pink,       bg = 'NONE' })  -- if, then, else
+  highlight(0, 'jsonnetConditional',       { link = "Conditional" })  -- if, then, else
   highlight(0, 'jsonnetIf',                { fg = colors.pink,       bg = 'NONE' })  -- if
   highlight(0, 'jsonnetThen',              { fg = colors.pink,       bg = 'NONE' })  -- then
   highlight(0, 'jsonnetElse',              { fg = colors.pink,       bg = 'NONE' })  -- else
@@ -50,24 +50,24 @@ jsonnet.setupHighlighting = function()
   highlight(0, 'jsonnetDollar',            { fg = colors.purple,     bg = 'NONE' })  -- $ (outer self)
 
   -- Boolean and Null
-  highlight(0, 'jsonnetBoolean',           { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'jsonnetBoolean',           { link = "Boolean" })  -- true, false
   highlight(0, 'jsonnetTrue',              { fg = colors.blue,       bg = 'NONE' })  -- true
   highlight(0, 'jsonnetFalse',             { fg = colors.blue,       bg = 'NONE' })  -- false
   highlight(0, 'jsonnetNull',              { fg = colors.blue,       bg = 'NONE' })  -- null
 
   -- Numbers
-  highlight(0, 'jsonnetNumber',            { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'jsonnetNumber',            { link = "Number" })  -- Numbers
   highlight(0, 'jsonnetInteger',           { fg = colors.greenLight, bg = 'NONE' })  -- Integers
   highlight(0, 'jsonnetFloat',             { fg = colors.greenLight, bg = 'NONE' })  -- Floats
   highlight(0, 'jsonnetExponent',          { fg = colors.greenLight, bg = 'NONE' })  -- Scientific notation
 
   -- Strings
-  highlight(0, 'jsonnetString',            { fg = colors.redLight,   bg = 'NONE' })  -- "string" and 'string'
-  highlight(0, 'jsonnetStringDouble',      { fg = colors.redLight,   bg = 'NONE' })  -- "double quoted"
-  highlight(0, 'jsonnetStringSingle',      { fg = colors.redLight,   bg = 'NONE' })  -- 'single quoted'
+  highlight(0, 'jsonnetString',            { link = "String" })  -- "string" and 'string'
+  highlight(0, 'jsonnetStringDouble',      { link = "String" })  -- "double quoted"
+  highlight(0, 'jsonnetStringSingle',      { link = "String" })  -- 'single quoted'
   highlight(0, 'jsonnetTextBlock',         { fg = colors.redLight,   bg = 'NONE' })  -- ||| text blocks
-  highlight(0, 'jsonnetTextBlockDelim',    { fg = colors.pink,       bg = 'NONE' })  -- ||| delimiters
-  highlight(0, 'jsonnetVerbatimString',    { fg = colors.redLight,   bg = 'NONE' })  -- @"verbatim string"
+  highlight(0, 'jsonnetTextBlockDelim',    { link = "Delimiter" })  -- ||| delimiters
+  highlight(0, 'jsonnetVerbatimString',    { link = "String" })  -- @"verbatim string"
 
   -- Escape Sequences
   highlight(0, 'jsonnetEscape',            { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, \\, etc.
@@ -93,7 +93,7 @@ jsonnet.setupHighlighting = function()
   highlight(0, 'jsonnetFieldInheritForced',{ fg = colors.pink,       bg = 'NONE' })  -- +::: (inherit forced)
 
   -- Operators
-  highlight(0, 'jsonnetOperator',          { fg = colors.white,      bg = 'NONE' })  -- General operators
+  highlight(0, 'jsonnetOperator',          { link = "Operator" })  -- General operators
   highlight(0, 'jsonnetArithmeticOp',      { fg = colors.white,      bg = 'NONE' })  -- + - * / %
   highlight(0, 'jsonnetComparisonOp',      { fg = colors.white,      bg = 'NONE' })  -- == != < > <= >=
   highlight(0, 'jsonnetLogicalOp',         { fg = colors.white,      bg = 'NONE' })  -- && || !
@@ -109,13 +109,13 @@ jsonnet.setupHighlighting = function()
   highlight(0, 'jsonnetDot',               { fg = colors.white,      bg = 'NONE' })  -- .
 
   -- Functions
-  highlight(0, 'jsonnetFunctionCall',      { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, 'jsonnetFunctionDef',       { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
+  highlight(0, 'jsonnetFunctionCall',      { link = "Function" })  -- Function calls
+  highlight(0, 'jsonnetFunctionDef',       { link = "Function" })  -- Function definitions
   highlight(0, 'jsonnetParameter',         { fg = colors.purple,     bg = 'NONE' })  -- Function parameters
   highlight(0, 'jsonnetNamedArg',          { fg = colors.blue,       bg = 'NONE' })  -- Named arguments
 
   -- Variables
-  highlight(0, 'jsonnetVariable',          { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, 'jsonnetVariable',          { link = "Variable" })  -- Variables
   highlight(0, 'jsonnetIdentifier',        { fg = colors.white,      bg = 'NONE' })  -- Identifiers
 
 
@@ -126,13 +126,13 @@ jsonnet.setupHighlighting = function()
   highlight(0, 'jsonnetStd',               { fg = colors.purple,     bg = 'NONE' })  -- std
 
   -- Type/Reflection Functions
-  highlight(0, 'jsonnetStdType',           { fg = colors.orange,     bg = 'NONE' })  -- std.type
+  highlight(0, 'jsonnetStdType',           { link = "Type" })  -- std.type
   highlight(0, 'jsonnetStdIsArray',        { fg = colors.orange,     bg = 'NONE' })  -- std.isArray
-  highlight(0, 'jsonnetStdIsBoolean',      { fg = colors.orange,     bg = 'NONE' })  -- std.isBoolean
-  highlight(0, 'jsonnetStdIsFunction',     { fg = colors.orange,     bg = 'NONE' })  -- std.isFunction
-  highlight(0, 'jsonnetStdIsNumber',       { fg = colors.orange,     bg = 'NONE' })  -- std.isNumber
+  highlight(0, 'jsonnetStdIsBoolean',      { link = "Boolean" })  -- std.isBoolean
+  highlight(0, 'jsonnetStdIsFunction',     { link = "Function" })  -- std.isFunction
+  highlight(0, 'jsonnetStdIsNumber',       { link = "Number" })  -- std.isNumber
   highlight(0, 'jsonnetStdIsObject',       { fg = colors.orange,     bg = 'NONE' })  -- std.isObject
-  highlight(0, 'jsonnetStdIsString',       { fg = colors.orange,     bg = 'NONE' })  -- std.isString
+  highlight(0, 'jsonnetStdIsString',       { link = "String" })  -- std.isString
   highlight(0, 'jsonnetStdLength',         { fg = colors.orange,     bg = 'NONE' })  -- std.length
   highlight(0, 'jsonnetStdPrune',          { fg = colors.orange,     bg = 'NONE' })  -- std.prune
   highlight(0, 'jsonnetStdThisFile',       { fg = colors.orange,     bg = 'NONE' })  -- std.thisFile
@@ -161,12 +161,12 @@ jsonnet.setupHighlighting = function()
   highlight(0, 'jsonnetStdPi',             { fg = colors.greenLight, bg = 'NONE' })  -- std.pi (constant)
 
   -- String Functions
-  highlight(0, 'jsonnetStdString',         { fg = colors.orange,     bg = 'NONE' })  -- String functions
-  highlight(0, 'jsonnetStdToString',       { fg = colors.orange,     bg = 'NONE' })  -- std.toString
+  highlight(0, 'jsonnetStdString',         { link = "String" })  -- String functions
+  highlight(0, 'jsonnetStdToString',       { link = "String" })  -- std.toString
   highlight(0, 'jsonnetStdCodepoint',      { fg = colors.orange,     bg = 'NONE' })  -- std.codepoint
   highlight(0, 'jsonnetStdChar',           { fg = colors.orange,     bg = 'NONE' })  -- std.char
-  highlight(0, 'jsonnetStdSubstr',         { fg = colors.orange,     bg = 'NONE' })  -- std.substr
-  highlight(0, 'jsonnetStdFindSubstr',     { fg = colors.orange,     bg = 'NONE' })  -- std.findSubstr
+  highlight(0, 'jsonnetStdSubstr',         { link = "Variable" })  -- std.substr
+  highlight(0, 'jsonnetStdFindSubstr',     { link = "Variable" })  -- std.findSubstr
   highlight(0, 'jsonnetStdStartsWith',     { fg = colors.orange,     bg = 'NONE' })  -- std.startsWith
   highlight(0, 'jsonnetStdEndsWith',       { fg = colors.orange,     bg = 'NONE' })  -- std.endsWith
   highlight(0, 'jsonnetStdSplit',          { fg = colors.orange,     bg = 'NONE' })  -- std.split
@@ -178,7 +178,7 @@ jsonnet.setupHighlighting = function()
   highlight(0, 'jsonnetStdStripChars',     { fg = colors.orange,     bg = 'NONE' })  -- std.stripChars
   highlight(0, 'jsonnetStdFormat',         { fg = colors.orange,     bg = 'NONE' })  -- std.format
   highlight(0, 'jsonnetStdIsEmpty',        { fg = colors.orange,     bg = 'NONE' })  -- std.isEmpty
-  highlight(0, 'jsonnetStdStringChars',    { fg = colors.orange,     bg = 'NONE' })  -- std.stringChars
+  highlight(0, 'jsonnetStdStringChars',    { link = "String" })  -- std.stringChars
 
   -- Escape Functions
   highlight(0, 'jsonnetStdEscape',         { fg = colors.orange,     bg = 'NONE' })  -- Escape functions
@@ -269,7 +269,7 @@ jsonnet.setupHighlighting = function()
   highlight(0, 'jsonnetStdDecodeUTF8',     { fg = colors.orange,     bg = 'NONE' })  -- std.decodeUTF8
 
   -- External Variables
-  highlight(0, 'jsonnetStdExtVar',         { fg = colors.orange,     bg = 'NONE' })  -- std.extVar
+  highlight(0, 'jsonnetStdExtVar',         { link = "Variable" })  -- std.extVar
 
   -- Assertions and Debugging
   highlight(0, 'jsonnetStdAssertEqual',    { fg = colors.orange,     bg = 'NONE' })  -- std.assertEqual
@@ -287,50 +287,50 @@ jsonnet.setupHighlighting = function()
   -- Treesitter Groups (@xxx.jsonnet)
 
   -- Comments
-  highlight(0, '@comment.jsonnet',             { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.jsonnet',             { link = "Comment" })  -- Comments
   highlight(0, '@spell.jsonnet',               { fg = colors.red,        bg = 'NONE' })  -- Spell-checkable text
 
   -- Keywords
-  highlight(0, '@keyword.jsonnet',             { fg = colors.pink,       bg = 'NONE' })  -- local, tailstrict, function
-  highlight(0, '@keyword.function.jsonnet',    { fg = colors.pink,       bg = 'NONE' })  -- function
-  highlight(0, '@keyword.repeat.jsonnet',      { fg = colors.pink,       bg = 'NONE' })  -- for
-  highlight(0, '@keyword.operator.jsonnet',    { fg = colors.pink,       bg = 'NONE' })  -- in
-  highlight(0, '@keyword.conditional.jsonnet', { fg = colors.pink,       bg = 'NONE' })  -- if, then, else
-  highlight(0, '@keyword.exception.jsonnet',   { fg = colors.pink,       bg = 'NONE' })  -- assert, error
-  highlight(0, '@keyword.import.jsonnet',      { fg = colors.pink,       bg = 'NONE' })  -- import, importstr
+  highlight(0, '@keyword.jsonnet',             { link = "Keyword" })  -- local, tailstrict, function
+  highlight(0, '@keyword.function.jsonnet',    { link = "Keyword" })  -- function
+  highlight(0, '@keyword.repeat.jsonnet',      { link = "Keyword" })  -- for
+  highlight(0, '@keyword.operator.jsonnet',    { link = "Operator" })  -- in
+  highlight(0, '@keyword.conditional.jsonnet', { link = "Conditional" })  -- if, then, else
+  highlight(0, '@keyword.exception.jsonnet',   { link = "Keyword" })  -- assert, error
+  highlight(0, '@keyword.import.jsonnet',      { link = "Keyword" })  -- import, importstr
 
   -- Variables
-  highlight(0, '@variable.jsonnet',            { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, '@variable.builtin.jsonnet',    { fg = colors.purple,     bg = 'NONE' })  -- $, self, super, std
-  highlight(0, '@variable.member.jsonnet',     { fg = colors.blue,       bg = 'NONE' })  -- Field names
-  highlight(0, '@variable.parameter.jsonnet',  { fg = colors.purple,     bg = 'NONE' })  -- Function parameters
+  highlight(0, '@variable.jsonnet',            { link = "Variable" })  -- Identifiers
+  highlight(0, '@variable.builtin.jsonnet',    { link = "Variable" })  -- $, self, super, std
+  highlight(0, '@variable.member.jsonnet',     { link = "Variable" })  -- Field names
+  highlight(0, '@variable.parameter.jsonnet',  { link = "Variable" })  -- Function parameters
 
   -- Functions
-  highlight(0, '@function.jsonnet',            { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.jsonnet',       { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.jsonnet',    { fg = colors.orange,     bg = 'NONE' })  -- std.* functions
+  highlight(0, '@function.jsonnet',            { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.jsonnet',       { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.jsonnet',    { link = "Function" })  -- std.* functions
 
   -- Strings
-  highlight(0, '@string.jsonnet',              { fg = colors.redLight,   bg = 'NONE' })  -- String values
-  highlight(0, '@string.escape.jsonnet',       { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.jsonnet',              { link = "String" })  -- String values
+  highlight(0, '@string.escape.jsonnet',       { link = "String" })  -- Escape sequences
 
   -- Numbers
-  highlight(0, '@number.jsonnet',              { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.jsonnet',        { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.jsonnet',              { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.jsonnet',        { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.jsonnet',             { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.jsonnet',             { link = "Boolean" })  -- true, false
 
   -- Constants
-  highlight(0, '@constant.jsonnet',            { fg = colors.blue,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.jsonnet',    { fg = colors.blue,       bg = 'NONE' })  -- null
+  highlight(0, '@constant.jsonnet',            { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.jsonnet',    { link = "Constant" })  -- null
 
   -- Operators
-  highlight(0, '@operator.jsonnet',            { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.jsonnet',            { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.jsonnet', { fg = colors.white,      bg = 'NONE' })  -- [ ] { } ( )
-  highlight(0, '@punctuation.delimiter.jsonnet', { fg = colors.white,    bg = 'NONE' })  -- . , ; :
+  highlight(0, '@punctuation.delimiter.jsonnet', { link = "Delimiter" })  -- . , ; :
   highlight(0, '@punctuation.special.jsonnet', { fg = colors.pink,       bg = 'NONE' })  -- :: ::: +: +::: field +
 
 
@@ -338,13 +338,13 @@ jsonnet.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.jsonnet)
 
   highlight(0, '@lsp.type.property.jsonnet',   { fg = colors.blue,       bg = 'NONE' })  -- Fields
-  highlight(0, '@lsp.type.variable.jsonnet',   { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.jsonnet',   { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.jsonnet',   { fg = colors.orange,     bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.parameter.jsonnet',  { fg = colors.purple,     bg = 'NONE' })  -- Parameters
-  highlight(0, '@lsp.type.string.jsonnet',     { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.jsonnet',     { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.jsonnet',    { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.jsonnet',    { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.jsonnet',     { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.jsonnet',     { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.jsonnet',    { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.jsonnet',    { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.namespace.jsonnet',  { fg = colors.turquoise,  bg = 'NONE' })  -- Namespaces
 
 
@@ -400,7 +400,7 @@ jsonnet.setupHighlighting = function()
   -- Error Highlighting
 
   highlight(0, 'jsonnetSyntaxError',       { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Syntax errors
-  highlight(0, 'jsonnetUndefinedVar',      { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Undefined variables
+  highlight(0, 'jsonnetUndefinedVar',      { link = "Variable" })  -- Undefined variables
 end
 
 return jsonnet

@@ -26,7 +26,7 @@ xml.setupHighlighting = function()
   highlight(0, 'xmlEqual',              { fg = colors.white,      bg = 'NONE' })  -- = in attributes
 
   -- Attribute Values / Strings
-  highlight(0, 'xmlString',             { fg = colors.redLight,   bg = 'NONE' })  -- "attribute values"
+  highlight(0, 'xmlString',             { link = "String" })  -- "attribute values"
 
   -- Namespaces
   highlight(0, 'xmlNamespace',          { fg = colors.pink,       bg = 'NONE' })  -- Namespace prefixes (xmlns:)
@@ -38,7 +38,7 @@ xml.setupHighlighting = function()
 
   -- Processing Instructions
   highlight(0, 'xmlProcessing',         { fg = colors.gray,       bg = 'NONE' })  -- <?...?> content
-  highlight(0, 'xmlProcessingDelim',    { fg = colors.gray,       bg = 'NONE' })  -- <? and ?>
+  highlight(0, 'xmlProcessingDelim',    { link = "Delimiter" })  -- <? and ?>
 
   -- XML Declaration
   highlight(0, 'xmlDecl',               { fg = colors.gray,       bg = 'NONE' })  -- <?xml ... ?>
@@ -46,9 +46,9 @@ xml.setupHighlighting = function()
   highlight(0, 'xmlDeclEncoding',       { fg = colors.turquoise,  bg = 'NONE' })  -- encoding attribute
 
   -- DOCTYPE
-  highlight(0, 'xmlDocType',            { fg = colors.pink,       bg = 'NONE' })  -- DOCTYPE declaration
-  highlight(0, 'xmlDocTypeDecl',        { fg = colors.pink,       bg = 'NONE' })  -- DOCTYPE content
-  highlight(0, 'xmlDocTypeKeyword',     { fg = colors.blue,       bg = 'NONE' })  -- DOCTYPE, PUBLIC, SYSTEM
+  highlight(0, 'xmlDocType',            { link = "Type" })  -- DOCTYPE declaration
+  highlight(0, 'xmlDocTypeDecl',        { link = "Type" })  -- DOCTYPE content
+  highlight(0, 'xmlDocTypeKeyword',     { link = "Keyword" })  -- DOCTYPE, PUBLIC, SYSTEM
 
   -- DTD (Document Type Definition)
   highlight(0, 'xmlInlineDTD',          { fg = colors.gray,       bg = 'NONE' })  -- Inline DTD content
@@ -60,11 +60,11 @@ xml.setupHighlighting = function()
   highlight(0, 'xmlCdataCdata',         { fg = colors.gray,       bg = 'NONE' })  -- CDATA keyword
 
   -- Comments
-  highlight(0, 'xmlComment',            { fg = colors.red,        bg = 'NONE' })  -- <!-- comment -->
-  highlight(0, 'xmlCommentStart',       { fg = colors.red,        bg = 'NONE' })  -- <!--
-  highlight(0, 'xmlCommentEnd',         { fg = colors.red,        bg = 'NONE' })  -- -->
-  highlight(0, 'xmlCommentPart',        { fg = colors.red,        bg = 'NONE' })  -- Comment content
-  highlight(0, 'xmlCommentError',       { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Invalid comment chars
+  highlight(0, 'xmlComment',            { link = "Comment" })  -- <!-- comment -->
+  highlight(0, 'xmlCommentStart',       { link = "Comment" })  -- <!--
+  highlight(0, 'xmlCommentEnd',         { link = "Comment" })  -- -->
+  highlight(0, 'xmlCommentPart',        { link = "Comment" })  -- Comment content
+  highlight(0, 'xmlCommentError',       { link = "Comment" })  -- Invalid comment chars
   highlight(0, 'xmlTodo',               { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Text Content
@@ -79,54 +79,54 @@ xml.setupHighlighting = function()
 
   -- Tags
   highlight(0, '@tag.xml',                  { fg = colors.blue,       bg = 'NONE' })  -- Tag names
-  highlight(0, '@tag.delimiter.xml',        { fg = colors.blue,       bg = 'NONE' })  -- < > </ />
+  highlight(0, '@tag.delimiter.xml',        { link = "Delimiter" })  -- < > </ />
   highlight(0, '@tag.attribute.xml',        { fg = colors.turquoise,  bg = 'NONE' })  -- Attribute names
 
   -- Attributes (alternative captures)
   highlight(0, '@attribute.xml',            { fg = colors.turquoise,  bg = 'NONE' })  -- Attributes
 
   -- Strings
-  highlight(0, '@string.xml',               { fg = colors.redLight,   bg = 'NONE' })  -- Attribute values
-  highlight(0, '@string.special.xml',       { fg = colors.pink,       bg = 'NONE' })  -- Special strings
-  highlight(0, '@string.special.url.xml',   { fg = colors.redLight,   bg = 'NONE' })  -- URLs in attributes
+  highlight(0, '@string.xml',               { link = "String" })  -- Attribute values
+  highlight(0, '@string.special.xml',       { link = "String" })  -- Special strings
+  highlight(0, '@string.special.url.xml',   { link = "String" })  -- URLs in attributes
 
   -- Namespaces
   highlight(0, '@module.xml',               { fg = colors.pink,       bg = 'NONE' })  -- Namespace prefixes
   highlight(0, '@label.xml',                { fg = colors.pink,       bg = 'NONE' })  -- Labels
 
   -- Constants / Entities
-  highlight(0, '@constant.xml',             { fg = colors.pink,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.xml',     { fg = colors.pink,       bg = 'NONE' })  -- Built-in entities
+  highlight(0, '@constant.xml',             { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.xml',     { link = "Constant" })  -- Built-in entities
   highlight(0, '@character.xml',            { fg = colors.pink,       bg = 'NONE' })  -- Character references
   highlight(0, '@character.special.xml',    { fg = colors.pink,       bg = 'NONE' })  -- &amp; &lt; &gt; etc.
 
   -- Keywords / Directives
-  highlight(0, '@keyword.xml',              { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.directive.xml',    { fg = colors.gray,       bg = 'NONE' })  -- Processing instructions
-  highlight(0, '@keyword.directive.define.xml', { fg = colors.pink,   bg = 'NONE' })  -- DTD definitions
-  highlight(0, '@keyword.modifier.xml',     { fg = colors.pink,       bg = 'NONE' })  -- Modifiers
+  highlight(0, '@keyword.xml',              { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.directive.xml',    { link = "Keyword" })  -- Processing instructions
+  highlight(0, '@keyword.directive.define.xml', { link = "Keyword" })  -- DTD definitions
+  highlight(0, '@keyword.modifier.xml',     { link = "Keyword" })  -- Modifiers
 
   -- Types
-  highlight(0, '@type.xml',                 { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@type.builtin.xml',         { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.xml',      { fg = colors.turquoise,  bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.xml',                 { link = "Type" })  -- Types
+  highlight(0, '@type.builtin.xml',         { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.xml',      { link = "Type" })  -- Type definitions
 
   -- Operators
-  highlight(0, '@operator.xml',             { fg = colors.white,      bg = 'NONE' })  -- = operator
+  highlight(0, '@operator.xml',             { link = "Operator" })  -- = operator
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.xml',  { fg = colors.white,      bg = 'NONE' })  -- [ ] { }
-  highlight(0, '@punctuation.delimiter.xml', { fg = colors.white,     bg = 'NONE' })  -- Delimiters
+  highlight(0, '@punctuation.delimiter.xml', { link = "Delimiter" })  -- Delimiters
 
   -- Functions/Macros
-  highlight(0, '@function.macro.xml',       { fg = colors.orange,     bg = 'NONE' })  -- Macro-like constructs
+  highlight(0, '@function.macro.xml',       { link = "Function" })  -- Macro-like constructs
 
   -- Numbers / Booleans
-  highlight(0, '@number.xml',               { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@boolean.xml',              { fg = colors.blue,       bg = 'NONE' })  -- Booleans
+  highlight(0, '@number.xml',               { link = "Number" })  -- Numbers
+  highlight(0, '@boolean.xml',              { link = "Boolean" })  -- Booleans
 
   -- Comments
-  highlight(0, '@comment.xml',              { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.xml',              { link = "Comment" })  -- Comments
 
   -- Markup
   highlight(0, '@markup.raw.xml',           { fg = colors.redLight,   bg = 'NONE' })  -- CDATA content
@@ -139,9 +139,9 @@ xml.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.xml)
 
   highlight(0, '@lsp.type.property.xml',    { fg = colors.turquoise,  bg = 'NONE' })  -- Attributes
-  highlight(0, '@lsp.type.string.xml',      { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.keyword.xml',     { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.xml',     { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.xml',      { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.keyword.xml',     { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.xml',     { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.namespace.xml',   { fg = colors.pink,       bg = 'NONE' })  -- Namespaces
   highlight(0, '@lsp.type.type.xml',        { fg = colors.turquoise,  bg = 'NONE' })  -- Types
 
@@ -167,7 +167,7 @@ xml.setupHighlighting = function()
   highlight(0, 'svgTransform',          { fg = colors.orange,     bg = 'NONE' })  -- transform=""
   highlight(0, 'svgStyle',              { fg = colors.redLight,   bg = 'NONE' })  -- style=""
   highlight(0, 'svgColor',              { fg = colors.greenLight, bg = 'NONE' })  -- Color values
-  highlight(0, 'svgNumber',             { fg = colors.greenLight, bg = 'NONE' })  -- Numeric values
+  highlight(0, 'svgNumber',             { link = "Number" })  -- Numeric values
   highlight(0, 'svgUnit',               { fg = colors.turquoise,  bg = 'NONE' })  -- px, em, %, etc.
 
 
@@ -179,7 +179,7 @@ xml.setupHighlighting = function()
   highlight(0, 'xsltNamespace',         { fg = colors.pink,       bg = 'NONE' })  -- xsl: prefix
   highlight(0, 'xsltAttrib',            { fg = colors.turquoise,  bg = 'NONE' })  -- match, select, name
   highlight(0, 'xsltXPath',             { fg = colors.orange,     bg = 'NONE' })  -- XPath expressions
-  highlight(0, 'xsltVariable',          { fg = colors.purple,     bg = 'NONE' })  -- Variables $var
+  highlight(0, 'xsltVariable',          { link = "Variable" })  -- Variables $var
 
 
   -----------------------------------------------------------------------------
@@ -189,8 +189,8 @@ xml.setupHighlighting = function()
   highlight(0, 'xsdTagName',            { fg = colors.blue,       bg = 'NONE' })  -- element, complexType, etc.
   highlight(0, 'xsdNamespace',          { fg = colors.pink,       bg = 'NONE' })  -- xs: or xsd: prefix
   highlight(0, 'xsdAttrib',             { fg = colors.turquoise,  bg = 'NONE' })  -- name, type, minOccurs, etc.
-  highlight(0, 'xsdType',               { fg = colors.turquoise,  bg = 'NONE' })  -- Type definitions
-  highlight(0, 'xsdBuiltinType',        { fg = colors.turquoise,  bg = 'NONE' })  -- xs:string, xs:integer, etc.
+  highlight(0, 'xsdType',               { link = "Type" })  -- Type definitions
+  highlight(0, 'xsdBuiltinType',        { link = "Type" })  -- xs:string, xs:integer, etc.
 
 
   -----------------------------------------------------------------------------
@@ -227,7 +227,7 @@ xml.setupHighlighting = function()
   highlight(0, 'msbuildTag',            { fg = colors.blue,       bg = 'NONE' })  -- MSBuild tags
   highlight(0, 'msbuildProperty',       { fg = colors.turquoise,  bg = 'NONE' })  -- Property names
   highlight(0, 'msbuildCondition',      { fg = colors.orange,     bg = 'NONE' })  -- Condition=""
-  highlight(0, 'msbuildVariable',       { fg = colors.purple,     bg = 'NONE' })  -- $(Variable)
+  highlight(0, 'msbuildVariable',       { link = "Variable" })  -- $(Variable)
   highlight(0, 'msbuildItemGroup',      { fg = colors.blue,       bg = 'NONE' })  -- ItemGroup
 
 
@@ -247,10 +247,10 @@ xml.setupHighlighting = function()
 
   highlight(0, 'plistTag',              { fg = colors.blue,       bg = 'NONE' })  -- plist tags
   highlight(0, 'plistKey',              { fg = colors.blue,       bg = 'NONE' })  -- <key>
-  highlight(0, 'plistString',           { fg = colors.redLight,   bg = 'NONE' })  -- <string>
+  highlight(0, 'plistString',           { link = "String" })  -- <string>
   highlight(0, 'plistInteger',          { fg = colors.greenLight, bg = 'NONE' })  -- <integer>
   highlight(0, 'plistReal',             { fg = colors.greenLight, bg = 'NONE' })  -- <real>
-  highlight(0, 'plistBoolean',          { fg = colors.blue,       bg = 'NONE' })  -- <true/>, <false/>
+  highlight(0, 'plistBoolean',          { link = "Boolean" })  -- <true/>, <false/>
   highlight(0, 'plistDate',             { fg = colors.greenLight, bg = 'NONE' })  -- <date>
   highlight(0, 'plistData',             { fg = colors.redLight,   bg = 'NONE' })  -- <data>
   highlight(0, 'plistDict',             { fg = colors.blue,       bg = 'NONE' })  -- <dict>

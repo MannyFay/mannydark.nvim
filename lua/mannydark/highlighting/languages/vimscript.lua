@@ -17,11 +17,11 @@ vimscript.setupHighlighting = function()
   ---------------------------------------------------------------
 
   -- General Commands
-  highlight(0, 'vimCommand',                    { fg = colors.blue,       bg = 'NONE' })           -- General commands
+  highlight(0, 'vimCommand',                    { link = "Function" })           -- General commands
   highlight(0, 'vimStatement',                  { fg = colors.blue,       bg = 'NONE' })           -- Statements
   highlight(0, 'vimIsCommand',                  { fg = colors.blue,       bg = 'NONE' })           -- Is a command
   highlight(0, 'vimExtCmd',                     { fg = colors.blue,       bg = 'NONE' })           -- External commands
-  highlight(0, 'vimNotFunc',                    { fg = colors.blue,       bg = 'NONE' })           -- Not a function
+  highlight(0, 'vimNotFunc',                    { link = "Function" })           -- Not a function
 
   -- Abbreviations
   highlight(0, 'vimAbb',                        { fg = colors.blue,       bg = 'NONE' })           -- Abbreviation commands
@@ -61,20 +61,20 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vimEchon',                      { fg = colors.blue,       bg = 'NONE' })           -- echon
 
   -- Function Definition
-  highlight(0, 'vimFunction',                   { fg = colors.blue,       bg = 'NONE' })           -- function keyword
-  highlight(0, 'vimFunctionError',              { fg = colors.red,        bg = 'NONE' })           -- Function errors
-  highlight(0, 'vimFuncKey',                    { fg = colors.blue,       bg = 'NONE' })           -- function keyword
-  highlight(0, 'vimFuncName',                   { fg = colors.orange,     bg = 'NONE' })           -- Function name
-  highlight(0, 'vimFuncSID',                    { fg = colors.orange,     bg = 'NONE' })           -- <SID> prefix
-  highlight(0, 'vimFuncVar',                    { fg = colors.purple,     bg = 'NONE' })           -- Function variable
-  highlight(0, 'vimFuncParam',                  { fg = colors.purple,     bg = 'NONE' })           -- Function parameter
-  highlight(0, 'vimFuncParamName',              { fg = colors.purple,     bg = 'NONE' })           -- Parameter name
-  highlight(0, 'vimFuncBody',                   { fg = colors.white,      bg = 'NONE' })           -- Function body
-  highlight(0, 'vimFuncFold',                   { fg = colors.blue,       bg = 'NONE' })           -- Folded function
+  highlight(0, 'vimFunction',                   { link = "Function" })           -- function keyword
+  highlight(0, 'vimFunctionError',              { link = "Function" })           -- Function errors
+  highlight(0, 'vimFuncKey',                    { link = "Function" })           -- function keyword
+  highlight(0, 'vimFuncName',                   { link = "Function" })           -- Function name
+  highlight(0, 'vimFuncSID',                    { link = "Function" })           -- <SID> prefix
+  highlight(0, 'vimFuncVar',                    { link = "Function" })           -- Function variable
+  highlight(0, 'vimFuncParam',                  { link = "Function" })           -- Function parameter
+  highlight(0, 'vimFuncParamName',              { link = "Function" })           -- Parameter name
+  highlight(0, 'vimFuncBody',                   { link = "Function" })           -- Function body
+  highlight(0, 'vimFuncFold',                   { link = "Function" })           -- Folded function
   highlight(0, 'vimEndfunction',                { fg = colors.blue,       bg = 'NONE' })           -- endfunction
-  highlight(0, 'vimUserFunc',                   { fg = colors.orange,     bg = 'NONE' })           -- User function
-  highlight(0, 'vimFunc',                       { fg = colors.orange,     bg = 'NONE' })           -- Function call
-  highlight(0, 'vimFuncBlank',                  { fg = colors.white,      bg = 'NONE' })           -- Function blank
+  highlight(0, 'vimUserFunc',                   { link = "Function" })           -- User function
+  highlight(0, 'vimFunc',                       { link = "Function" })           -- Function call
+  highlight(0, 'vimFuncBlank',                  { link = "Function" })           -- Function blank
 
   -- Def (Vim9)
   highlight(0, 'vimDef',                        { fg = colors.blue,       bg = 'NONE' })           -- def keyword
@@ -114,7 +114,7 @@ vimscript.setupHighlighting = function()
 
   -- Let & Const
   highlight(0, 'vimLet',                        { fg = colors.blue,       bg = 'NONE' })           -- let command
-  highlight(0, 'vimLetVar',                     { fg = colors.white,      bg = 'NONE' })           -- Variable in let
+  highlight(0, 'vimLetVar',                     { link = "Variable" })           -- Variable in let
   highlight(0, 'vimLetHereDoc',                 { fg = colors.redLight,   bg = 'NONE' })           -- Here document
   highlight(0, 'vimLetHereDocStart',            { fg = colors.blue,       bg = 'NONE' })           -- Here doc start
   highlight(0, 'vimLetHereDocStop',             { fg = colors.blue,       bg = 'NONE' })           -- Here doc stop
@@ -159,7 +159,7 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vimSetEqual',                   { fg = colors.white,      bg = 'NONE' })           -- = in set
   highlight(0, 'vimSetMod',                     { fg = colors.turquoise,  bg = 'NONE' })           -- Set modifier
   highlight(0, 'vimSetSep',                     { fg = colors.white,      bg = 'NONE' })           -- Separator
-  highlight(0, 'vimSetString',                  { fg = colors.redLight,   bg = 'NONE' })           -- String value
+  highlight(0, 'vimSetString',                  { link = "String" })           -- String value
 
   -- Sleep Command
   highlight(0, 'vimSleep',                      { fg = colors.blue,       bg = 'NONE' })           -- sleep command
@@ -175,7 +175,7 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vimSynError',                   { fg = colors.red,        bg = 'NONE' })           -- Syntax error
   highlight(0, 'vimSynKeyContainedin',          { fg = colors.turquoise,  bg = 'NONE' })           -- containedin=
   highlight(0, 'vimSynKeyOpt',                  { fg = colors.turquoise,  bg = 'NONE' })           -- Keyword option
-  highlight(0, 'vimSynKeyword',                 { fg = colors.blue,       bg = 'NONE' })           -- syntax keyword
+  highlight(0, 'vimSynKeyword',                 { link = "Keyword" })           -- syntax keyword
   highlight(0, 'vimSynMatch',                   { fg = colors.blue,       bg = 'NONE' })           -- syntax match
   highlight(0, 'vimSynMatchOpt',                { fg = colors.turquoise,  bg = 'NONE' })           -- Match option
   highlight(0, 'vimSynMtchCchar',               { fg = colors.turquoise,  bg = 'NONE' })           -- Conceal char
@@ -190,7 +190,7 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vimSynRegOpt',                  { fg = colors.turquoise,  bg = 'NONE' })           -- Region option
   highlight(0, 'vimSynRegPat',                  { fg = colors.redLight,   bg = 'NONE' })           -- Region pattern
   highlight(0, 'vimSynReg',                     { fg = colors.blue,       bg = 'NONE' })           -- syn region
-  highlight(0, 'vimSynType',                    { fg = colors.blue,       bg = 'NONE' })           -- Syntax type
+  highlight(0, 'vimSynType',                    { link = "Type" })           -- Syntax type
   highlight(0, 'vimSyncC',                      { fg = colors.blue,       bg = 'NONE' })           -- sync
   highlight(0, 'vimSyncError',                  { fg = colors.red,        bg = 'NONE' })           -- Sync error
   highlight(0, 'vimSyncGroup',                  { fg = colors.turquoise,  bg = 'NONE' })           -- Sync group
@@ -225,11 +225,11 @@ vimscript.setupHighlighting = function()
   -- Variables & Scope
   ---------------------------------------------------------------
 
-  highlight(0, 'vimVar',                        { fg = colors.white,      bg = 'NONE' })           -- Variable
-  highlight(0, 'vimVarScope',                   { fg = colors.purple,     bg = 'NONE' })           -- Scope prefix (g:, b:, etc.)
-  highlight(0, 'vimVimVar',                     { fg = colors.purple,     bg = 'NONE' })           -- v: variables
-  highlight(0, 'vimFBVar',                      { fg = colors.purple,     bg = 'NONE' })           -- Function body var
-  highlight(0, 'vimEnvvar',                     { fg = colors.purple,     bg = 'NONE' })           -- $ENVVAR
+  highlight(0, 'vimVar',                        { link = "Variable" })           -- Variable
+  highlight(0, 'vimVarScope',                   { link = "Variable" })           -- Scope prefix (g:, b:, etc.)
+  highlight(0, 'vimVimVar',                     { link = "Variable" })           -- v: variables
+  highlight(0, 'vimFBVar',                      { link = "Variable" })           -- Function body var
+  highlight(0, 'vimEnvvar',                     { link = "Variable" })           -- $ENVVAR
   highlight(0, 'vimLetRegister',                { fg = colors.purple,     bg = 'NONE' })           -- Register in let
 
   ---------------------------------------------------------------
@@ -237,8 +237,8 @@ vimscript.setupHighlighting = function()
   ---------------------------------------------------------------
 
   highlight(0, 'vimOption',                     { fg = colors.turquoise,  bg = 'NONE' })           -- Vim options
-  highlight(0, 'vimOptionVar',                  { fg = colors.turquoise,  bg = 'NONE' })           -- &option
-  highlight(0, 'vimOptionVarName',              { fg = colors.turquoise,  bg = 'NONE' })           -- Option name
+  highlight(0, 'vimOptionVar',                  { link = "Variable" })           -- &option
+  highlight(0, 'vimOptionVarName',              { link = "Variable" })           -- Option name
 
   ---------------------------------------------------------------
   -- Control Flow
@@ -260,9 +260,9 @@ vimscript.setupHighlighting = function()
   -- Strings & Patterns
   ---------------------------------------------------------------
 
-  highlight(0, 'vimString',                     { fg = colors.redLight,   bg = 'NONE' })           -- Strings
-  highlight(0, 'vimStringCont',                 { fg = colors.redLight,   bg = 'NONE' })           -- Continued string
-  highlight(0, 'vimStringEnd',                  { fg = colors.redLight,   bg = 'NONE' })           -- String end
+  highlight(0, 'vimString',                     { link = "String" })           -- Strings
+  highlight(0, 'vimStringCont',                 { link = "String" })           -- Continued string
+  highlight(0, 'vimStringEnd',                  { link = "String" })           -- String end
   highlight(0, 'vimEscape',                     { fg = colors.purple,     bg = 'NONE' })           -- Escape sequences
   highlight(0, 'vimEscapeBrace',                { fg = colors.purple,     bg = 'NONE' })           -- Escaped brace
   highlight(0, 'vimPatSep',                     { fg = colors.blue,       bg = 'NONE' })           -- Pattern separator
@@ -271,26 +271,26 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vimPatSepR',                    { fg = colors.blue,       bg = 'NONE' })           -- Pattern sep R
   highlight(0, 'vimPatSepZ',                    { fg = colors.blue,       bg = 'NONE' })           -- Pattern sep Z
   highlight(0, 'vimPatSepZone',                 { fg = colors.blue,       bg = 'NONE' })           -- Pattern sep zone
-  highlight(0, 'vimSubst',                      { fg = colors.blue,       bg = 'NONE' })           -- Substitution
-  highlight(0, 'vimSubstDelim',                 { fg = colors.blue,       bg = 'NONE' })           -- Subst delimiter
-  highlight(0, 'vimSubstPat',                   { fg = colors.redLight,   bg = 'NONE' })           -- Subst pattern
-  highlight(0, 'vimSubstRange',                 { fg = colors.redLight,   bg = 'NONE' })           -- Subst range
-  highlight(0, 'vimSubstRep',                   { fg = colors.redLight,   bg = 'NONE' })           -- Subst replacement
-  highlight(0, 'vimSubstRep4',                  { fg = colors.redLight,   bg = 'NONE' })           -- Subst rep 4
-  highlight(0, 'vimSubstFlags',                 { fg = colors.turquoise,  bg = 'NONE' })           -- Subst flags
-  highlight(0, 'vimSubstSubstr',                { fg = colors.purple,     bg = 'NONE' })           -- Subst substring
-  highlight(0, 'vimSubstTwoBS',                 { fg = colors.purple,     bg = 'NONE' })           -- Subst two backslash
+  highlight(0, 'vimSubst',                      { link = "Variable" })           -- Substitution
+  highlight(0, 'vimSubstDelim',                 { link = "Delimiter" })           -- Subst delimiter
+  highlight(0, 'vimSubstPat',                   { link = "Variable" })           -- Subst pattern
+  highlight(0, 'vimSubstRange',                 { link = "Variable" })           -- Subst range
+  highlight(0, 'vimSubstRep',                   { link = "Variable" })           -- Subst replacement
+  highlight(0, 'vimSubstRep4',                  { link = "Variable" })           -- Subst rep 4
+  highlight(0, 'vimSubstFlags',                 { link = "Variable" })           -- Subst flags
+  highlight(0, 'vimSubstSubstr',                { link = "Variable" })           -- Subst substring
+  highlight(0, 'vimSubstTwoBS',                 { link = "Variable" })           -- Subst two backslash
   highlight(0, 'vimCollection',                 { fg = colors.redLight,   bg = 'NONE' })           -- Collection
 
   ---------------------------------------------------------------
   -- Numbers
   ---------------------------------------------------------------
 
-  highlight(0, 'vimNumber',                     { fg = colors.greenLight, bg = 'NONE' })           -- Numbers
+  highlight(0, 'vimNumber',                     { link = "Number" })           -- Numbers
   highlight(0, 'vimFloat',                      { fg = colors.greenLight, bg = 'NONE' })           -- Float
-  highlight(0, 'vimHexNumber',                  { fg = colors.greenLight, bg = 'NONE' })           -- Hex number
-  highlight(0, 'vimOctNumber',                  { fg = colors.greenLight, bg = 'NONE' })           -- Octal number
-  highlight(0, 'vimBinNumber',                  { fg = colors.greenLight, bg = 'NONE' })           -- Binary number
+  highlight(0, 'vimHexNumber',                  { link = "Number" })           -- Hex number
+  highlight(0, 'vimOctNumber',                  { link = "Number" })           -- Octal number
+  highlight(0, 'vimBinNumber',                  { link = "Number" })           -- Binary number
 
   ---------------------------------------------------------------
   -- Operators & Punctuation
@@ -314,12 +314,12 @@ vimscript.setupHighlighting = function()
   -- Comments
   ---------------------------------------------------------------
 
-  highlight(0, 'vimComment',                    { fg = colors.red,        bg = 'NONE' })           -- " comments
-  highlight(0, 'vimLineComment',                { fg = colors.red,        bg = 'NONE' })           -- Line comment
-  highlight(0, 'vimCommentString',              { fg = colors.red,        bg = 'NONE' })           -- String in comment
-  highlight(0, 'vimCommentTitle',               { fg = colors.red,        bg = 'NONE', bold = true })  -- Comment title
+  highlight(0, 'vimComment',                    { link = "Comment" })           -- " comments
+  highlight(0, 'vimLineComment',                { link = "Comment" })           -- Line comment
+  highlight(0, 'vimCommentString',              { link = "Comment" })           -- String in comment
+  highlight(0, 'vimCommentTitle',               { link = "Comment" })  -- Comment title
   highlight(0, 'vimTodo',                       { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO/FIXME
-  highlight(0, 'vimScriptDelim',                { fg = colors.red,        bg = 'NONE', bold = true })  -- Script delimiter
+  highlight(0, 'vimScriptDelim',                { link = "Delimiter" })  -- Script delimiter
 
   ---------------------------------------------------------------
   -- Special Notation
@@ -328,7 +328,7 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vimNotation',                   { fg = colors.turquoise,  bg = 'NONE' })           -- <CR>, <Esc>, etc.
   highlight(0, 'vimBracketNotation',            { fg = colors.turquoise,  bg = 'NONE' })           -- Bracket notation
   highlight(0, 'vimCtrlChar',                   { fg = colors.turquoise,  bg = 'NONE' })           -- Control chars
-  highlight(0, 'vimNotFunc',                    { fg = colors.blue,       bg = 'NONE' })           -- Not function
+  highlight(0, 'vimNotFunc',                    { link = "Function" })           -- Not function
   highlight(0, 'vimSpecFile',                   { fg = colors.turquoise,  bg = 'NONE' })           -- Special file
   highlight(0, 'vimSpecFileMod',                { fg = colors.turquoise,  bg = 'NONE' })           -- File modifier
 
@@ -346,7 +346,7 @@ vimscript.setupHighlighting = function()
   -- Line Continuation
   ---------------------------------------------------------------
 
-  highlight(0, 'vimContinueComment',            { fg = colors.red,        bg = 'NONE' })           -- Continued comment
+  highlight(0, 'vimContinueComment',            { link = "Comment" })           -- Continued comment
   highlight(0, 'vimLineContinue',               { fg = colors.blue,       bg = 'NONE' })           -- Line continuation \
 
   ---------------------------------------------------------------
@@ -356,11 +356,11 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vim9Script',                    { fg = colors.blue,       bg = 'NONE' })           -- vim9script
   highlight(0, 'vim9ScriptArg',                 { fg = colors.turquoise,  bg = 'NONE' })           -- noclear
   highlight(0, 'vim9Cmd',                       { fg = colors.blue,       bg = 'NONE' })           -- vim9cmd
-  highlight(0, 'vim9Comment',                   { fg = colors.red,        bg = 'NONE' })           -- # comments
-  highlight(0, 'vim9LineComment',               { fg = colors.red,        bg = 'NONE' })           -- # line comments
+  highlight(0, 'vim9Comment',                   { link = "Comment" })           -- # comments
+  highlight(0, 'vim9LineComment',               { link = "Comment" })           -- # line comments
   highlight(0, 'vim9Block',                     { fg = colors.white,      bg = 'NONE' })           -- Code block
   highlight(0, 'vim9Continue',                  { fg = colors.blue,       bg = 'NONE' })           -- Continuation
-  highlight(0, 'vim9Type',                      { fg = colors.turquoise,  bg = 'NONE' })           -- Type annotations
+  highlight(0, 'vim9Type',                      { link = "Type" })           -- Type annotations
   highlight(0, 'vim9Import',                    { fg = colors.blue,       bg = 'NONE' })           -- import
   highlight(0, 'vim9Export',                    { fg = colors.blue,       bg = 'NONE' })           -- export
   highlight(0, 'vim9Autoload',                  { fg = colors.blue,       bg = 'NONE' })           -- autoload
@@ -382,7 +382,7 @@ vimscript.setupHighlighting = function()
   highlight(0, 'vimRegion',                     { fg = colors.white,      bg = 'NONE' })           -- Region
   highlight(0, 'vimStdPlugin',                  { fg = colors.turquoise,  bg = 'NONE' })           -- Standard plugin
   highlight(0, 'vimSearch',                     { fg = colors.redLight,   bg = 'NONE' })           -- Search pattern
-  highlight(0, 'vimSearchDelim',                { fg = colors.blue,       bg = 'NONE' })           -- Search delimiter
+  highlight(0, 'vimSearchDelim',                { link = "Delimiter" })           -- Search delimiter
   highlight(0, 'vimSynSpell',                   { fg = colors.redLight,   bg = 'NONE' })           -- Spell check
   highlight(0, 'vimInsert',                     { fg = colors.white,      bg = 'NONE' })           -- Insert text
   highlight(0, 'vimFiletype',                   { fg = colors.turquoise,  bg = 'NONE' })           -- Filetype
@@ -393,46 +393,46 @@ vimscript.setupHighlighting = function()
   ---------------------------------------------------------------
 
   -- Variables
-  highlight(0, '@variable.vim',                         { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@variable.builtin.vim',                 { fg = colors.purple,     bg = 'NONE' })       -- v:, g:, etc.
-  highlight(0, '@variable.parameter.vim',               { fg = colors.purple,     bg = 'NONE' })       -- Function params
+  highlight(0, '@variable.vim',                         { link = "Variable" })
+  highlight(0, '@variable.builtin.vim',                 { link = "Variable" })       -- v:, g:, etc.
+  highlight(0, '@variable.parameter.vim',               { link = "Variable" })       -- Function params
 
   -- Constants
-  highlight(0, '@constant.vim',                         { fg = colors.purple,     bg = 'NONE' })
-  highlight(0, '@constant.builtin.vim',                 { fg = colors.purple,     bg = 'NONE' })       -- v:true, v:false
+  highlight(0, '@constant.vim',                         { link = "Constant" })
+  highlight(0, '@constant.builtin.vim',                 { link = "Constant" })       -- v:true, v:false
 
   -- Numbers
-  highlight(0, '@number.vim',                           { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@number.float.vim',                     { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@boolean.vim',                          { fg = colors.purple,     bg = 'NONE' })       -- true, false
+  highlight(0, '@number.vim',                           { link = "Number" })
+  highlight(0, '@number.float.vim',                     { link = "Number" })
+  highlight(0, '@boolean.vim',                          { link = "Boolean" })       -- true, false
 
   -- Strings
-  highlight(0, '@string.vim',                           { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@string.special.vim',                   { fg = colors.purple,     bg = 'NONE' })       -- Special strings
-  highlight(0, '@string.special.path.vim',              { fg = colors.redLight,   bg = 'NONE' })       -- File paths
-  highlight(0, '@string.regexp.vim',                    { fg = colors.redLight,   bg = 'NONE' })       -- Regex patterns
-  highlight(0, '@string.escape.vim',                    { fg = colors.purple,     bg = 'NONE' })       -- Escape sequences
+  highlight(0, '@string.vim',                           { link = "String" })
+  highlight(0, '@string.special.vim',                   { link = "String" })       -- Special strings
+  highlight(0, '@string.special.path.vim',              { link = "String" })       -- File paths
+  highlight(0, '@string.regexp.vim',                    { link = "String" })       -- Regex patterns
+  highlight(0, '@string.escape.vim',                    { link = "String" })       -- Escape sequences
 
   -- Functions
-  highlight(0, '@function.vim',                         { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@function.call.vim',                    { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@function.builtin.vim',                 { fg = colors.orange,     bg = 'NONE' })       -- Built-in functions
-  highlight(0, '@function.macro.vim',                   { fg = colors.orange,     bg = 'NONE' })       -- Macros
+  highlight(0, '@function.vim',                         { link = "Function" })
+  highlight(0, '@function.call.vim',                    { link = "Function" })
+  highlight(0, '@function.builtin.vim',                 { link = "Function" })       -- Built-in functions
+  highlight(0, '@function.macro.vim',                   { link = "Function" })       -- Macros
 
   -- Keywords
-  highlight(0, '@keyword.vim',                          { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.function.vim',                 { fg = colors.blue,       bg = 'NONE' })       -- function, def
-  highlight(0, '@keyword.return.vim',                   { fg = colors.blue,       bg = 'NONE' })       -- return
-  highlight(0, '@keyword.conditional.vim',              { fg = colors.blue,       bg = 'NONE' })       -- if, else, elseif
-  highlight(0, '@keyword.conditional.ternary.vim',      { fg = colors.white,      bg = 'NONE' })       -- ?:
-  highlight(0, '@keyword.repeat.vim',                   { fg = colors.blue,       bg = 'NONE' })       -- for, while
-  highlight(0, '@keyword.exception.vim',                { fg = colors.blue,       bg = 'NONE' })       -- try, catch, throw
-  highlight(0, '@keyword.operator.vim',                 { fg = colors.blue,       bg = 'NONE' })       -- is, isnot
-  highlight(0, '@keyword.import.vim',                   { fg = colors.blue,       bg = 'NONE' })       -- import, source
+  highlight(0, '@keyword.vim',                          { link = "Keyword" })
+  highlight(0, '@keyword.function.vim',                 { link = "Keyword" })       -- function, def
+  highlight(0, '@keyword.return.vim',                   { link = "Keyword" })       -- return
+  highlight(0, '@keyword.conditional.vim',              { link = "Conditional" })       -- if, else, elseif
+  highlight(0, '@keyword.conditional.ternary.vim',      { link = "Conditional" })       -- ?:
+  highlight(0, '@keyword.repeat.vim',                   { link = "Keyword" })       -- for, while
+  highlight(0, '@keyword.exception.vim',                { link = "Keyword" })       -- try, catch, throw
+  highlight(0, '@keyword.operator.vim',                 { link = "Operator" })       -- is, isnot
+  highlight(0, '@keyword.import.vim',                   { link = "Keyword" })       -- import, source
 
   -- Types
-  highlight(0, '@type.vim',                             { fg = colors.turquoise,  bg = 'NONE' })       -- Type annotations
-  highlight(0, '@type.builtin.vim',                     { fg = colors.turquoise,  bg = 'NONE' })       -- Built-in types
+  highlight(0, '@type.vim',                             { link = "Type" })       -- Type annotations
+  highlight(0, '@type.builtin.vim',                     { link = "Type" })       -- Built-in types
 
   -- Modules
   highlight(0, '@module.vim',                           { fg = colors.turquoise,  bg = 'NONE' })       -- Module names
@@ -441,19 +441,19 @@ vimscript.setupHighlighting = function()
   highlight(0, '@property.vim',                         { fg = colors.turquoise,  bg = 'NONE' })       -- Properties
 
   -- Operators
-  highlight(0, '@operator.vim',                         { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@operator.vim',                         { link = "Operator" })
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.vim',              { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@punctuation.delimiter.vim',            { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@punctuation.delimiter.vim',            { link = "Delimiter" })
   highlight(0, '@punctuation.special.vim',              { fg = colors.blue,       bg = 'NONE' })
 
   -- Labels
   highlight(0, '@label.vim',                            { fg = colors.yellow,     bg = 'NONE' })       -- Labels
 
   -- Comments
-  highlight(0, '@comment.vim',                          { fg = colors.red,        bg = 'NONE' })
-  highlight(0, '@comment.documentation.vim',            { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@comment.vim',                          { link = "Comment" })
+  highlight(0, '@comment.documentation.vim',            { link = "Comment" })
   highlight(0, '@spell.vim',                            { fg = 'NONE',            bg = 'NONE' })
 
   -- Character Special
@@ -463,136 +463,136 @@ vimscript.setupHighlighting = function()
   -- LSP Semantic Tokens
   ---------------------------------------------------------------
 
-  highlight(0, '@lsp.type.variable.vim',                { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.vim',                { link = "Variable" })
   highlight(0, '@lsp.type.function.vim',                { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.vim',                 { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.string.vim',                  { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.vim',                  { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.operator.vim',                { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.vim',                 { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.vim',                 { link = "Keyword" })
+  highlight(0, '@lsp.type.string.vim',                  { link = "String" })
+  highlight(0, '@lsp.type.number.vim',                  { link = "Number" })
+  highlight(0, '@lsp.type.operator.vim',                { link = "Operator" })
+  highlight(0, '@lsp.type.comment.vim',                 { link = "Comment" })
 
   ---------------------------------------------------------------
   -- Built-in Functions Categories
   ---------------------------------------------------------------
 
   -- Buffer/Window Functions
-  highlight(0, 'vimFuncBufnr',                  { fg = colors.orange,     bg = 'NONE' })           -- bufnr()
-  highlight(0, 'vimFuncWinnr',                  { fg = colors.orange,     bg = 'NONE' })           -- winnr()
-  highlight(0, 'vimFuncTabpagenr',              { fg = colors.orange,     bg = 'NONE' })           -- tabpagenr()
-  highlight(0, 'vimFuncBufname',                { fg = colors.orange,     bg = 'NONE' })           -- bufname()
-  highlight(0, 'vimFuncBufexists',              { fg = colors.orange,     bg = 'NONE' })           -- bufexists()
-  highlight(0, 'vimFuncBufloaded',              { fg = colors.orange,     bg = 'NONE' })           -- bufloaded()
-  highlight(0, 'vimFuncBufwinnr',               { fg = colors.orange,     bg = 'NONE' })           -- bufwinnr()
-  highlight(0, 'vimFuncGetbufline',             { fg = colors.orange,     bg = 'NONE' })           -- getbufline()
-  highlight(0, 'vimFuncSetbufline',             { fg = colors.orange,     bg = 'NONE' })           -- setbufline()
+  highlight(0, 'vimFuncBufnr',                  { link = "Function" })           -- bufnr()
+  highlight(0, 'vimFuncWinnr',                  { link = "Function" })           -- winnr()
+  highlight(0, 'vimFuncTabpagenr',              { link = "Function" })           -- tabpagenr()
+  highlight(0, 'vimFuncBufname',                { link = "Function" })           -- bufname()
+  highlight(0, 'vimFuncBufexists',              { link = "Function" })           -- bufexists()
+  highlight(0, 'vimFuncBufloaded',              { link = "Function" })           -- bufloaded()
+  highlight(0, 'vimFuncBufwinnr',               { link = "Function" })           -- bufwinnr()
+  highlight(0, 'vimFuncGetbufline',             { link = "Function" })           -- getbufline()
+  highlight(0, 'vimFuncSetbufline',             { link = "Function" })           -- setbufline()
 
   -- String Functions
-  highlight(0, 'vimFuncStrlen',                 { fg = colors.orange,     bg = 'NONE' })           -- strlen()
-  highlight(0, 'vimFuncSubstitute',             { fg = colors.orange,     bg = 'NONE' })           -- substitute()
-  highlight(0, 'vimFuncMatchstr',               { fg = colors.orange,     bg = 'NONE' })           -- matchstr()
-  highlight(0, 'vimFuncSplit',                  { fg = colors.orange,     bg = 'NONE' })           -- split()
-  highlight(0, 'vimFuncJoin',                   { fg = colors.orange,     bg = 'NONE' })           -- join()
-  highlight(0, 'vimFuncTolower',                { fg = colors.orange,     bg = 'NONE' })           -- tolower()
-  highlight(0, 'vimFuncToupper',                { fg = colors.orange,     bg = 'NONE' })           -- toupper()
-  highlight(0, 'vimFuncTrim',                   { fg = colors.orange,     bg = 'NONE' })           -- trim()
-  highlight(0, 'vimFuncEscape',                 { fg = colors.orange,     bg = 'NONE' })           -- escape()
-  highlight(0, 'vimFuncShellescape',            { fg = colors.orange,     bg = 'NONE' })           -- shellescape()
-  highlight(0, 'vimFuncFnameescape',            { fg = colors.orange,     bg = 'NONE' })           -- fnameescape()
-  highlight(0, 'vimFuncPrintf',                 { fg = colors.orange,     bg = 'NONE' })           -- printf()
+  highlight(0, 'vimFuncStrlen',                 { link = "Function" })           -- strlen()
+  highlight(0, 'vimFuncSubstitute',             { link = "Function" })           -- substitute()
+  highlight(0, 'vimFuncMatchstr',               { link = "Function" })           -- matchstr()
+  highlight(0, 'vimFuncSplit',                  { link = "Function" })           -- split()
+  highlight(0, 'vimFuncJoin',                   { link = "Function" })           -- join()
+  highlight(0, 'vimFuncTolower',                { link = "Function" })           -- tolower()
+  highlight(0, 'vimFuncToupper',                { link = "Function" })           -- toupper()
+  highlight(0, 'vimFuncTrim',                   { link = "Function" })           -- trim()
+  highlight(0, 'vimFuncEscape',                 { link = "Function" })           -- escape()
+  highlight(0, 'vimFuncShellescape',            { link = "Function" })           -- shellescape()
+  highlight(0, 'vimFuncFnameescape',            { link = "Function" })           -- fnameescape()
+  highlight(0, 'vimFuncPrintf',                 { link = "Function" })           -- printf()
 
   -- List Functions
-  highlight(0, 'vimFuncLen',                    { fg = colors.orange,     bg = 'NONE' })           -- len()
-  highlight(0, 'vimFuncEmpty',                  { fg = colors.orange,     bg = 'NONE' })           -- empty()
-  highlight(0, 'vimFuncRange',                  { fg = colors.orange,     bg = 'NONE' })           -- range()
-  highlight(0, 'vimFuncAdd',                    { fg = colors.orange,     bg = 'NONE' })           -- add()
-  highlight(0, 'vimFuncRemove',                 { fg = colors.orange,     bg = 'NONE' })           -- remove()
-  highlight(0, 'vimFuncFilter',                 { fg = colors.orange,     bg = 'NONE' })           -- filter()
-  highlight(0, 'vimFuncMap',                    { fg = colors.orange,     bg = 'NONE' })           -- map()
-  highlight(0, 'vimFuncSort',                   { fg = colors.orange,     bg = 'NONE' })           -- sort()
-  highlight(0, 'vimFuncReverse',                { fg = colors.orange,     bg = 'NONE' })           -- reverse()
-  highlight(0, 'vimFuncUniq',                   { fg = colors.orange,     bg = 'NONE' })           -- uniq()
-  highlight(0, 'vimFuncIndex',                  { fg = colors.orange,     bg = 'NONE' })           -- index()
-  highlight(0, 'vimFuncCount',                  { fg = colors.orange,     bg = 'NONE' })           -- count()
-  highlight(0, 'vimFuncExtend',                 { fg = colors.orange,     bg = 'NONE' })           -- extend()
-  highlight(0, 'vimFuncCopy',                   { fg = colors.orange,     bg = 'NONE' })           -- copy()
-  highlight(0, 'vimFuncDeepcopy',               { fg = colors.orange,     bg = 'NONE' })           -- deepcopy()
+  highlight(0, 'vimFuncLen',                    { link = "Function" })           -- len()
+  highlight(0, 'vimFuncEmpty',                  { link = "Function" })           -- empty()
+  highlight(0, 'vimFuncRange',                  { link = "Function" })           -- range()
+  highlight(0, 'vimFuncAdd',                    { link = "Function" })           -- add()
+  highlight(0, 'vimFuncRemove',                 { link = "Function" })           -- remove()
+  highlight(0, 'vimFuncFilter',                 { link = "Function" })           -- filter()
+  highlight(0, 'vimFuncMap',                    { link = "Function" })           -- map()
+  highlight(0, 'vimFuncSort',                   { link = "Function" })           -- sort()
+  highlight(0, 'vimFuncReverse',                { link = "Function" })           -- reverse()
+  highlight(0, 'vimFuncUniq',                   { link = "Function" })           -- uniq()
+  highlight(0, 'vimFuncIndex',                  { link = "Function" })           -- index()
+  highlight(0, 'vimFuncCount',                  { link = "Function" })           -- count()
+  highlight(0, 'vimFuncExtend',                 { link = "Function" })           -- extend()
+  highlight(0, 'vimFuncCopy',                   { link = "Function" })           -- copy()
+  highlight(0, 'vimFuncDeepcopy',               { link = "Function" })           -- deepcopy()
 
   -- Dictionary Functions
-  highlight(0, 'vimFuncHas_key',                { fg = colors.orange,     bg = 'NONE' })           -- has_key()
-  highlight(0, 'vimFuncKeys',                   { fg = colors.orange,     bg = 'NONE' })           -- keys()
-  highlight(0, 'vimFuncValues',                 { fg = colors.orange,     bg = 'NONE' })           -- values()
-  highlight(0, 'vimFuncItems',                  { fg = colors.orange,     bg = 'NONE' })           -- items()
-  highlight(0, 'vimFuncGet',                    { fg = colors.orange,     bg = 'NONE' })           -- get()
+  highlight(0, 'vimFuncHas_key',                { link = "Function" })           -- has_key()
+  highlight(0, 'vimFuncKeys',                   { link = "Function" })           -- keys()
+  highlight(0, 'vimFuncValues',                 { link = "Function" })           -- values()
+  highlight(0, 'vimFuncItems',                  { link = "Function" })           -- items()
+  highlight(0, 'vimFuncGet',                    { link = "Function" })           -- get()
 
   -- File Functions
-  highlight(0, 'vimFuncFilereadable',           { fg = colors.orange,     bg = 'NONE' })           -- filereadable()
-  highlight(0, 'vimFuncFilewritable',           { fg = colors.orange,     bg = 'NONE' })           -- filewritable()
-  highlight(0, 'vimFuncIsdirectory',            { fg = colors.orange,     bg = 'NONE' })           -- isdirectory()
-  highlight(0, 'vimFuncFnamemodify',            { fg = colors.orange,     bg = 'NONE' })           -- fnamemodify()
-  highlight(0, 'vimFuncGlob',                   { fg = colors.orange,     bg = 'NONE' })           -- glob()
-  highlight(0, 'vimFuncGlobpath',               { fg = colors.orange,     bg = 'NONE' })           -- globpath()
-  highlight(0, 'vimFuncReadfile',               { fg = colors.orange,     bg = 'NONE' })           -- readfile()
-  highlight(0, 'vimFuncWritefile',              { fg = colors.orange,     bg = 'NONE' })           -- writefile()
-  highlight(0, 'vimFuncExpand',                 { fg = colors.orange,     bg = 'NONE' })           -- expand()
-  highlight(0, 'vimFuncResolve',                { fg = colors.orange,     bg = 'NONE' })           -- resolve()
+  highlight(0, 'vimFuncFilereadable',           { link = "Function" })           -- filereadable()
+  highlight(0, 'vimFuncFilewritable',           { link = "Function" })           -- filewritable()
+  highlight(0, 'vimFuncIsdirectory',            { link = "Function" })           -- isdirectory()
+  highlight(0, 'vimFuncFnamemodify',            { link = "Function" })           -- fnamemodify()
+  highlight(0, 'vimFuncGlob',                   { link = "Function" })           -- glob()
+  highlight(0, 'vimFuncGlobpath',               { link = "Function" })           -- globpath()
+  highlight(0, 'vimFuncReadfile',               { link = "Function" })           -- readfile()
+  highlight(0, 'vimFuncWritefile',              { link = "Function" })           -- writefile()
+  highlight(0, 'vimFuncExpand',                 { link = "Function" })           -- expand()
+  highlight(0, 'vimFuncResolve',                { link = "Function" })           -- resolve()
 
   -- Type Functions
-  highlight(0, 'vimFuncType',                   { fg = colors.orange,     bg = 'NONE' })           -- type()
-  highlight(0, 'vimFuncTypename',               { fg = colors.orange,     bg = 'NONE' })           -- typename()
-  highlight(0, 'vimFuncString',                 { fg = colors.orange,     bg = 'NONE' })           -- string()
-  highlight(0, 'vimFuncStr2nr',                 { fg = colors.orange,     bg = 'NONE' })           -- str2nr()
-  highlight(0, 'vimFuncStr2float',              { fg = colors.orange,     bg = 'NONE' })           -- str2float()
-  highlight(0, 'vimFuncFloat2nr',               { fg = colors.orange,     bg = 'NONE' })           -- float2nr()
+  highlight(0, 'vimFuncType',                   { link = "Type" })           -- type()
+  highlight(0, 'vimFuncTypename',               { link = "Type" })           -- typename()
+  highlight(0, 'vimFuncString',                 { link = "String" })           -- string()
+  highlight(0, 'vimFuncStr2nr',                 { link = "Function" })           -- str2nr()
+  highlight(0, 'vimFuncStr2float',              { link = "Function" })           -- str2float()
+  highlight(0, 'vimFuncFloat2nr',               { link = "Function" })           -- float2nr()
 
   -- System Functions
-  highlight(0, 'vimFuncSystem',                 { fg = colors.orange,     bg = 'NONE' })           -- system()
-  highlight(0, 'vimFuncSystemlist',             { fg = colors.orange,     bg = 'NONE' })           -- systemlist()
-  highlight(0, 'vimFuncExecute',                { fg = colors.orange,     bg = 'NONE' })           -- execute()
+  highlight(0, 'vimFuncSystem',                 { link = "Function" })           -- system()
+  highlight(0, 'vimFuncSystemlist',             { link = "Function" })           -- systemlist()
+  highlight(0, 'vimFuncExecute',                { link = "Function" })           -- execute()
 
   -- Feature Functions
-  highlight(0, 'vimFuncHas',                    { fg = colors.orange,     bg = 'NONE' })           -- has()
-  highlight(0, 'vimFuncExists',                 { fg = colors.orange,     bg = 'NONE' })           -- exists()
+  highlight(0, 'vimFuncHas',                    { link = "Function" })           -- has()
+  highlight(0, 'vimFuncExists',                 { link = "Function" })           -- exists()
 
   -- Cursor/Position Functions
-  highlight(0, 'vimFuncLine',                   { fg = colors.orange,     bg = 'NONE' })           -- line()
-  highlight(0, 'vimFuncCol',                    { fg = colors.orange,     bg = 'NONE' })           -- col()
-  highlight(0, 'vimFuncCursor',                 { fg = colors.orange,     bg = 'NONE' })           -- cursor()
-  highlight(0, 'vimFuncGetpos',                 { fg = colors.orange,     bg = 'NONE' })           -- getpos()
-  highlight(0, 'vimFuncSetpos',                 { fg = colors.orange,     bg = 'NONE' })           -- setpos()
-  highlight(0, 'vimFuncGetcurpos',              { fg = colors.orange,     bg = 'NONE' })           -- getcurpos()
-  highlight(0, 'vimFuncSearchpos',              { fg = colors.orange,     bg = 'NONE' })           -- searchpos()
+  highlight(0, 'vimFuncLine',                   { link = "Function" })           -- line()
+  highlight(0, 'vimFuncCol',                    { link = "Function" })           -- col()
+  highlight(0, 'vimFuncCursor',                 { link = "Function" })           -- cursor()
+  highlight(0, 'vimFuncGetpos',                 { link = "Function" })           -- getpos()
+  highlight(0, 'vimFuncSetpos',                 { link = "Function" })           -- setpos()
+  highlight(0, 'vimFuncGetcurpos',              { link = "Function" })           -- getcurpos()
+  highlight(0, 'vimFuncSearchpos',              { link = "Function" })           -- searchpos()
 
   -- Text Functions
-  highlight(0, 'vimFuncGetline',                { fg = colors.orange,     bg = 'NONE' })           -- getline()
-  highlight(0, 'vimFuncSetline',                { fg = colors.orange,     bg = 'NONE' })           -- setline()
-  highlight(0, 'vimFuncAppend',                 { fg = colors.orange,     bg = 'NONE' })           -- append()
-  highlight(0, 'vimFuncNextnonblank',           { fg = colors.orange,     bg = 'NONE' })           -- nextnonblank()
-  highlight(0, 'vimFuncPrevnonblank',           { fg = colors.orange,     bg = 'NONE' })           -- prevnonblank()
-  highlight(0, 'vimFuncIndent',                 { fg = colors.orange,     bg = 'NONE' })           -- indent()
+  highlight(0, 'vimFuncGetline',                { link = "Function" })           -- getline()
+  highlight(0, 'vimFuncSetline',                { link = "Function" })           -- setline()
+  highlight(0, 'vimFuncAppend',                 { link = "Function" })           -- append()
+  highlight(0, 'vimFuncNextnonblank',           { link = "Function" })           -- nextnonblank()
+  highlight(0, 'vimFuncPrevnonblank',           { link = "Function" })           -- prevnonblank()
+  highlight(0, 'vimFuncIndent',                 { link = "Function" })           -- indent()
 
   -- Input Functions
-  highlight(0, 'vimFuncInput',                  { fg = colors.orange,     bg = 'NONE' })           -- input()
-  highlight(0, 'vimFuncInputlist',              { fg = colors.orange,     bg = 'NONE' })           -- inputlist()
-  highlight(0, 'vimFuncConfirm',                { fg = colors.orange,     bg = 'NONE' })           -- confirm()
-  highlight(0, 'vimFuncGetchar',                { fg = colors.orange,     bg = 'NONE' })           -- getchar()
-  highlight(0, 'vimFuncGetcharmod',             { fg = colors.orange,     bg = 'NONE' })           -- getcharmod()
+  highlight(0, 'vimFuncInput',                  { link = "Function" })           -- input()
+  highlight(0, 'vimFuncInputlist',              { link = "Function" })           -- inputlist()
+  highlight(0, 'vimFuncConfirm',                { link = "Function" })           -- confirm()
+  highlight(0, 'vimFuncGetchar',                { link = "Function" })           -- getchar()
+  highlight(0, 'vimFuncGetcharmod',             { link = "Function" })           -- getcharmod()
 
   -- Window/Tab Functions
-  highlight(0, 'vimFuncWinwidth',               { fg = colors.orange,     bg = 'NONE' })           -- winwidth()
-  highlight(0, 'vimFuncWinheight',              { fg = colors.orange,     bg = 'NONE' })           -- winheight()
-  highlight(0, 'vimFuncGetwininfo',             { fg = colors.orange,     bg = 'NONE' })           -- getwininfo()
-  highlight(0, 'vimFuncGettabinfo',             { fg = colors.orange,     bg = 'NONE' })           -- gettabinfo()
+  highlight(0, 'vimFuncWinwidth',               { link = "Function" })           -- winwidth()
+  highlight(0, 'vimFuncWinheight',              { link = "Function" })           -- winheight()
+  highlight(0, 'vimFuncGetwininfo',             { link = "Function" })           -- getwininfo()
+  highlight(0, 'vimFuncGettabinfo',             { link = "Function" })           -- gettabinfo()
 
   -- Syntax/Highlight Functions
-  highlight(0, 'vimFuncSynID',                  { fg = colors.orange,     bg = 'NONE' })           -- synID()
-  highlight(0, 'vimFuncSynIDattr',              { fg = colors.orange,     bg = 'NONE' })           -- synIDattr()
-  highlight(0, 'vimFuncSynIDtrans',             { fg = colors.orange,     bg = 'NONE' })           -- synIDtrans()
-  highlight(0, 'vimFuncHlID',                   { fg = colors.orange,     bg = 'NONE' })           -- hlID()
-  highlight(0, 'vimFuncHlexists',               { fg = colors.orange,     bg = 'NONE' })           -- hlexists()
+  highlight(0, 'vimFuncSynID',                  { link = "Function" })           -- synID()
+  highlight(0, 'vimFuncSynIDattr',              { link = "Function" })           -- synIDattr()
+  highlight(0, 'vimFuncSynIDtrans',             { link = "Function" })           -- synIDtrans()
+  highlight(0, 'vimFuncHlID',                   { link = "Function" })           -- hlID()
+  highlight(0, 'vimFuncHlexists',               { link = "Function" })           -- hlexists()
 
   -- Timer Functions
-  highlight(0, 'vimFuncTimer_start',            { fg = colors.orange,     bg = 'NONE' })           -- timer_start()
-  highlight(0, 'vimFuncTimer_stop',             { fg = colors.orange,     bg = 'NONE' })           -- timer_stop()
+  highlight(0, 'vimFuncTimer_start',            { link = "Function" })           -- timer_start()
+  highlight(0, 'vimFuncTimer_stop',             { link = "Function" })           -- timer_stop()
 
   ---------------------------------------------------------------
   -- Plugin Support

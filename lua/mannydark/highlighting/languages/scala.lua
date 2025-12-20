@@ -16,10 +16,10 @@ scala.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords
-  highlight(0, 'scalaKeyword',          { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
-  highlight(0, 'scalaKeywordModifier',  { fg = colors.blue,       bg = 'NONE'            })  -- abstract, final, sealed, implicit, lazy, override
+  highlight(0, 'scalaKeyword',          { link = "Keyword" })  -- General keywords
+  highlight(0, 'scalaKeywordModifier',  { link = "Keyword" })  -- abstract, final, sealed, implicit, lazy, override
   highlight(0, 'scalaSpecial',          { fg = colors.blue,       bg = 'NONE'            })  -- return, throw
-  highlight(0, 'scalaConditional',      { fg = colors.blue,       bg = 'NONE'            })  -- if, else, match
+  highlight(0, 'scalaConditional',      { link = "Conditional" })  -- if, else, match
   highlight(0, 'scalaRepeat',           { fg = colors.blue,       bg = 'NONE'            })  -- for, while, do, yield
   highlight(0, 'scalaException',        { fg = colors.blue,       bg = 'NONE'            })  -- try, catch, finally, throw
   highlight(0, 'scalaInclude',          { fg = colors.blue,       bg = 'NONE'            })  -- import, package
@@ -30,9 +30,9 @@ scala.setupHighlighting = function()
   -- Definitions
   highlight(0, 'scalaDef',              { fg = colors.blue,       bg = 'NONE'            })  -- def
   highlight(0, 'scalaVal',              { fg = colors.blue,       bg = 'NONE'            })  -- val
-  highlight(0, 'scalaVar',              { fg = colors.blue,       bg = 'NONE'            })  -- var
+  highlight(0, 'scalaVar',              { link = "Variable" })  -- var
   highlight(0, 'scalaLazy',             { fg = colors.blue,       bg = 'NONE'            })  -- lazy
-  highlight(0, 'scalaType',             { fg = colors.blue,       bg = 'NONE'            })  -- type keyword
+  highlight(0, 'scalaType',             { link = "Type" })  -- type keyword
 
   -- Class/Object Definitions
   highlight(0, 'scalaClass',            { fg = colors.blue,       bg = 'NONE'            })  -- class
@@ -66,12 +66,12 @@ scala.setupHighlighting = function()
   highlight(0, 'scalaThis',             { fg = colors.blue,       bg = 'NONE'            })  -- this
   highlight(0, 'scalaSuper',            { fg = colors.blue,       bg = 'NONE'            })  -- super
   highlight(0, 'scalaNull',             { fg = colors.blue,       bg = 'NONE'            })  -- null
-  highlight(0, 'scalaBoolean',          { fg = colors.blue,       bg = 'NONE'            })  -- true, false
+  highlight(0, 'scalaBoolean',          { link = "Boolean" })  -- true, false
 
   -- Types
-  highlight(0, 'scalaTypeName',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
-  highlight(0, 'scalaTypeSpecializer',  { fg = colors.turquoise,  bg = 'NONE'            })  -- Type parameters
-  highlight(0, 'scalaBuiltinType',      { fg = colors.turquoise,  bg = 'NONE'            })  -- Int, String, Boolean, Double, Float, Long, Short, Byte, Char, Unit, Any, AnyVal, AnyRef, Nothing, Null
+  highlight(0, 'scalaTypeName',         { link = "Type" })  -- Type names
+  highlight(0, 'scalaTypeSpecializer',  { link = "Type" })  -- Type parameters
+  highlight(0, 'scalaBuiltinType',      { link = "Type" })  -- Int, String, Boolean, Double, Float, Long, Short, Byte, Char, Unit, Any, AnyVal, AnyRef, Nothing, Null
   highlight(0, 'scalaUpperBound',       { fg = colors.turquoise,  bg = 'NONE'            })  -- <: upper bound
   highlight(0, 'scalaLowerBound',       { fg = colors.turquoise,  bg = 'NONE'            })  -- >: lower bound
   highlight(0, 'scalaViewBound',        { fg = colors.turquoise,  bg = 'NONE'            })  -- <% view bound (deprecated)
@@ -83,9 +83,9 @@ scala.setupHighlighting = function()
   highlight(0, 'scalaCaseFollowing',    { fg = colors.turquoise,  bg = 'NONE'            })  -- Pattern in case
 
   -- Functions
-  highlight(0, 'scalaFunction',         { fg = colors.orange,     bg = 'NONE'            })  -- Function definitions
-  highlight(0, 'scalaFunctionCall',     { fg = colors.orange,     bg = 'NONE'            })  -- Function calls
-  highlight(0, 'scalaMethodCall',       { fg = colors.orange,     bg = 'NONE'            })  -- Method calls
+  highlight(0, 'scalaFunction',         { link = "Function" })  -- Function definitions
+  highlight(0, 'scalaFunctionCall',     { link = "Function" })  -- Function calls
+  highlight(0, 'scalaMethodCall',       { link = "Function" })  -- Method calls
 
   -- Variables and Parameters
   highlight(0, 'scalaIdentifier',       { fg = colors.purple,     bg = 'NONE'            })  -- Identifiers
@@ -98,20 +98,20 @@ scala.setupHighlighting = function()
   highlight(0, 'scalaAt',               { fg = colors.pink,       bg = 'NONE'            })  -- @ symbol
 
   -- Strings
-  highlight(0, 'scalaString',           { fg = colors.redLight,   bg = 'NONE'            })  -- "strings"
-  highlight(0, 'scalaMultiLineString',  { fg = colors.redLight,   bg = 'NONE'            })  -- """multiline"""
-  highlight(0, 'scalaStringEscape',     { fg = colors.pink,       bg = 'NONE'            })  -- \n, \t, etc.
+  highlight(0, 'scalaString',           { link = "String" })  -- "strings"
+  highlight(0, 'scalaMultiLineString',  { link = "String" })  -- """multiline"""
+  highlight(0, 'scalaStringEscape',     { link = "String" })  -- \n, \t, etc.
   highlight(0, 'scalaUnicodeEscape',    { fg = colors.pink,       bg = 'NONE'            })  -- \uXXXX
   highlight(0, 'scalaChar',             { fg = colors.redLight,   bg = 'NONE'            })  -- 'c' character literals
   highlight(0, 'scalaInterpolation',    { fg = colors.pink,       bg = 'NONE'            })  -- $var and ${expr} in interpolated strings
-  highlight(0, 'scalaInterpolationDelimiter', { fg = colors.pink, bg = 'NONE'            })  -- s, f, raw prefixes
+  highlight(0, 'scalaInterpolationDelimiter', { link = "Delimiter" })  -- s, f, raw prefixes
   highlight(0, 'scalaFInterpolation',   { fg = colors.pink,       bg = 'NONE'            })  -- f"..." format specifiers
 
   -- Symbols
   highlight(0, 'scalaSymbol',           { fg = colors.pink,       bg = 'NONE'            })  -- 'symbol (deprecated)
 
   -- Numbers
-  highlight(0, 'scalaNumber',           { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'scalaNumber',           { link = "Number" })  -- Numbers
   highlight(0, 'scalaInt',              { fg = colors.greenLight, bg = 'NONE'            })  -- Integers
   highlight(0, 'scalaLong',             { fg = colors.greenLight, bg = 'NONE'            })  -- Long (1L)
   highlight(0, 'scalaFloat',            { fg = colors.greenLight, bg = 'NONE'            })  -- Floats (1.0f)
@@ -119,7 +119,7 @@ scala.setupHighlighting = function()
   highlight(0, 'scalaHex',              { fg = colors.greenLight, bg = 'NONE'            })  -- 0x hex
 
   -- Operators
-  highlight(0, 'scalaOperator',         { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, 'scalaOperator',         { link = "Operator" })  -- Operators
   highlight(0, 'scalaArrow',            { fg = colors.white,      bg = 'NONE'            })  -- => -> arrows
   highlight(0, 'scalaDoubleArrow',      { fg = colors.white,      bg = 'NONE'            })  -- =>
   highlight(0, 'scalaSingleArrow',      { fg = colors.white,      bg = 'NONE'            })  -- ->
@@ -129,13 +129,13 @@ scala.setupHighlighting = function()
   highlight(0, 'scalaWildcard',         { fg = colors.gray,       bg = 'NONE'            })  -- _ wildcard
 
   -- Comments
-  highlight(0, 'scalaComment',          { fg = colors.red,        bg = 'NONE'            })  -- // and /* */ comments
-  highlight(0, 'scalaLineComment',      { fg = colors.red,        bg = 'NONE'            })  -- // comments
-  highlight(0, 'scalaBlockComment',     { fg = colors.red,        bg = 'NONE'            })  -- /* */ comments
+  highlight(0, 'scalaComment',          { link = "Comment" })  -- // and /* */ comments
+  highlight(0, 'scalaLineComment',      { link = "Comment" })  -- // comments
+  highlight(0, 'scalaBlockComment',     { link = "Comment" })  -- /* */ comments
   highlight(0, 'scalaTodo',             { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, etc.
 
   -- Scaladoc
-  highlight(0, 'scalaDocComment',       { fg = colors.red,        bg = 'NONE'            })  -- /** doc comments */
+  highlight(0, 'scalaDocComment',       { link = "Comment" })  -- /** doc comments */
   highlight(0, 'scalaDocTag',           { fg = colors.green,      bg = 'NONE'            })  -- @param, @return, @throws, etc.
   highlight(0, 'scalaDocTagParam',      { fg = colors.purple,     bg = 'NONE'            })  -- Parameter names in docs
 
@@ -144,60 +144,60 @@ scala.setupHighlighting = function()
   -- Treesitter Groups (@xxx.scala)
 
   -- Variables
-  highlight(0, '@variable.scala',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.scala',      { fg = colors.blue,      bg = 'NONE' })  -- this, super
-  highlight(0, '@variable.parameter.scala',    { fg = colors.purple,    bg = 'NONE' })  -- Function parameters
-  highlight(0, '@variable.member.scala',       { fg = colors.purple,    bg = 'NONE' })  -- Fields
+  highlight(0, '@variable.scala',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.scala',      { link = "Variable" })  -- this, super
+  highlight(0, '@variable.parameter.scala',    { link = "Variable" })  -- Function parameters
+  highlight(0, '@variable.member.scala',       { link = "Variable" })  -- Fields
 
   -- Constants
-  highlight(0, '@constant.scala',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.scala',      { fg = colors.blue,      bg = 'NONE' })  -- null, true, false
+  highlight(0, '@constant.scala',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.scala',      { link = "Constant" })  -- null, true, false
 
   -- Functions
-  highlight(0, '@function.scala',              { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.scala',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.method.scala',       { fg = colors.orange,    bg = 'NONE' })  -- Method definitions
-  highlight(0, '@function.method.call.scala',  { fg = colors.orange,    bg = 'NONE' })  -- Method calls
-  highlight(0, '@function.builtin.scala',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.scala',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.scala',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.method.scala',       { link = "Function" })  -- Method definitions
+  highlight(0, '@function.method.call.scala',  { link = "Function" })  -- Method calls
+  highlight(0, '@function.builtin.scala',      { link = "Function" })  -- Built-in functions
   highlight(0, '@constructor.scala',           { fg = colors.turquoise, bg = 'NONE' })  -- Class instantiation
 
   -- Types
-  highlight(0, '@type.scala',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.scala',          { fg = colors.turquoise, bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.scala',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
-  highlight(0, '@type.qualifier.scala',        { fg = colors.blue,      bg = 'NONE' })  -- Type qualifiers
+  highlight(0, '@type.scala',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.scala',          { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.scala',       { link = "Type" })  -- Type definitions
+  highlight(0, '@type.qualifier.scala',        { link = "Type" })  -- Type qualifiers
 
   -- Annotations
   highlight(0, '@attribute.scala',             { fg = colors.pink,      bg = 'NONE' })  -- @annotations
 
   -- Keywords
-  highlight(0, '@keyword.scala',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.scala',      { fg = colors.blue,      bg = 'NONE' })  -- def
-  highlight(0, '@keyword.type.scala',          { fg = colors.blue,      bg = 'NONE' })  -- class, trait, object, type
-  highlight(0, '@keyword.modifier.scala',      { fg = colors.blue,      bg = 'NONE' })  -- abstract, final, sealed, implicit, lazy, override
-  highlight(0, '@keyword.return.scala',        { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.import.scala',        { fg = colors.blue,      bg = 'NONE' })  -- import, package
-  highlight(0, '@keyword.repeat.scala',        { fg = colors.blue,      bg = 'NONE' })  -- for, while, do
-  highlight(0, '@keyword.conditional.scala',   { fg = colors.blue,      bg = 'NONE' })  -- if, else, match, case
-  highlight(0, '@keyword.exception.scala',     { fg = colors.blue,      bg = 'NONE' })  -- try, catch, finally, throw
-  highlight(0, '@keyword.operator.scala',      { fg = colors.blue,      bg = 'NONE' })  -- new
+  highlight(0, '@keyword.scala',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.scala',      { link = "Keyword" })  -- def
+  highlight(0, '@keyword.type.scala',          { link = "Keyword" })  -- class, trait, object, type
+  highlight(0, '@keyword.modifier.scala',      { link = "Keyword" })  -- abstract, final, sealed, implicit, lazy, override
+  highlight(0, '@keyword.return.scala',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.import.scala',        { link = "Keyword" })  -- import, package
+  highlight(0, '@keyword.repeat.scala',        { link = "Keyword" })  -- for, while, do
+  highlight(0, '@keyword.conditional.scala',   { link = "Conditional" })  -- if, else, match, case
+  highlight(0, '@keyword.exception.scala',     { link = "Keyword" })  -- try, catch, finally, throw
+  highlight(0, '@keyword.operator.scala',      { link = "Operator" })  -- new
 
   -- Strings
-  highlight(0, '@string.scala',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.scala',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.scala',        { fg = colors.pink,      bg = 'NONE' })  -- Interpolation
+  highlight(0, '@string.scala',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.scala',         { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.scala',        { link = "String" })  -- Interpolation
   highlight(0, '@character.scala',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
 
   -- Numbers
-  highlight(0, '@number.scala',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.scala',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.scala',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.scala',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.scala',               { fg = colors.blue,      bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.scala',               { link = "Boolean" })  -- true, false
 
   -- Comments
-  highlight(0, '@comment.scala',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.scala', { fg = colors.red,       bg = 'NONE' })  -- Scaladoc comments
+  highlight(0, '@comment.scala',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.scala', { link = "Comment" })  -- Scaladoc comments
 
   -- Modules
   highlight(0, '@module.scala',                { fg = colors.turquoise, bg = 'NONE' })  -- Package names
@@ -205,16 +205,16 @@ scala.setupHighlighting = function()
   highlight(0, '@property.scala',              { fg = colors.purple,    bg = 'NONE' })  -- Properties
 
   -- Operators and Punctuation
-  highlight(0, '@operator.scala',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.scala',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.scala',   { fg = colors.white,     bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.scala', { fg = colors.white,     bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.scala', { link = "Delimiter" })  -- , ; :
   highlight(0, '@punctuation.special.scala',   { fg = colors.pink,      bg = 'NONE' })  -- $ in interpolation
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.scala)
 
-  highlight(0, '@lsp.type.variable.scala',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.scala',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.scala',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.scala',      { fg = colors.purple,    bg = 'NONE' })  -- Fields
   highlight(0, '@lsp.type.function.scala',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
@@ -227,15 +227,15 @@ scala.setupHighlighting = function()
   highlight(0, '@lsp.type.type.scala',          { fg = colors.turquoise, bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.typeParameter.scala', { fg = colors.turquoise, bg = 'NONE' })  -- Type parameters
   highlight(0, '@lsp.type.namespace.scala',     { fg = colors.turquoise, bg = 'NONE' })  -- Packages
-  highlight(0, '@lsp.type.keyword.scala',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.scala',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.scala',      { fg = colors.blue,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.scala',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.scala',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.scala',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.scala',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.scala',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.scala',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.scala',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.scala',       { link = "Comment" })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.scala',    { fg = colors.purple,    bg = 'NONE' })  -- val variables
+  highlight(0, '@lsp.typemod.variable.readonly.scala',    { link = "Variable" })  -- val variables
   highlight(0, '@lsp.typemod.function.declaration.scala', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
   highlight(0, '@lsp.typemod.method.implicit.scala',      { fg = colors.orange,    bg = 'NONE' })  -- Implicit methods
   highlight(0, '@lsp.typemod.class.declaration.scala',    { fg = colors.turquoise, bg = 'NONE' })  -- Class declarations

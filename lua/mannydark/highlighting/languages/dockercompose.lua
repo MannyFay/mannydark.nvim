@@ -61,10 +61,10 @@ dockerCompose.setupHighlighting = function()
   -- Legacy dockercompose Groups
   -------------------------------------------------------------------------
 
-  highlight(0, 'dockercomposeComment',        { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
-  highlight(0, 'dockercomposeKeywords',       { fg = colors.blue,       bg = 'NONE'            })  -- Keywords
-  highlight(0, 'dockercomposeString',         { fg = colors.redLight,   bg = 'NONE'            })  -- Double-quoted strings
-  highlight(0, 'dockercomposeString1',        { fg = colors.redLight,   bg = 'NONE'            })  -- Single-quoted strings
+  highlight(0, 'dockercomposeComment',        { link = "Comment" })  -- Comments
+  highlight(0, 'dockercomposeKeywords',       { link = "Keyword" })  -- Keywords
+  highlight(0, 'dockercomposeString',         { link = "String" })  -- Double-quoted strings
+  highlight(0, 'dockercomposeString1',        { link = "String" })  -- Single-quoted strings
   highlight(0, 'dockercomposeTodo',           { fg = colors.pink,       bg = 'NONE', bold = true })  -- TODO comments
   highlight(0, 'dockercomposeEmail',          { fg = colors.turquoise,  bg = 'NONE', underline = true })  -- Email addresses
   highlight(0, 'dockercomposeUrl',            { fg = colors.turquoise,  bg = 'NONE', underline = true })  -- URLs
@@ -92,25 +92,25 @@ dockerCompose.setupHighlighting = function()
   highlight(0, 'yamlMappingKey',              { fg = colors.blue,       bg = 'NONE'            })  -- Mapping key
   highlight(0, 'yamlMappingKeyStart',         { fg = colors.white,      bg = 'NONE'            })  -- ? for explicit key
   highlight(0, 'yamlMappingMerge',            { fg = colors.pink,       bg = 'NONE'            })  -- << merge key
-  highlight(0, 'yamlKeyValueDelimiter',       { fg = colors.white,      bg = 'NONE'            })  -- : delimiter
+  highlight(0, 'yamlKeyValueDelimiter',       { link = "Delimiter" })  -- : delimiter
 
   -- Block Mappings
   highlight(0, 'yamlBlockMappingKey',         { fg = colors.blue,       bg = 'NONE'            })  -- Block mapping key
-  highlight(0, 'yamlBlockMappingKeyString',   { fg = colors.blue,       bg = 'NONE'            })  -- Block mapping key string
+  highlight(0, 'yamlBlockMappingKeyString',   { link = "String" })  -- Block mapping key string
   highlight(0, 'yamlBlockMappingMerge',       { fg = colors.pink,       bg = 'NONE'            })  -- << in block mapping
-  highlight(0, 'yamlBlockMappingDelimiter',   { fg = colors.white,      bg = 'NONE'            })  -- : in block mapping
+  highlight(0, 'yamlBlockMappingDelimiter',   { link = "Delimiter" })  -- : in block mapping
   highlight(0, 'yamlBlockMappingKeyStart',    { fg = colors.white,      bg = 'NONE'            })  -- ? in block mapping
   highlight(0, 'yamlBlockCollectionItemStart', { fg = colors.white,     bg = 'NONE'            })  -- - for list items
   highlight(0, 'yamlBlockNodeProperties',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Node properties in block
   highlight(0, 'yamlBlockScalarHeader',       { fg = colors.orange,     bg = 'NONE'            })  -- | or > scalar header
-  highlight(0, 'yamlBlockString',             { fg = colors.redLight,   bg = 'NONE'            })  -- Block scalar string
+  highlight(0, 'yamlBlockString',             { link = "String" })  -- Block scalar string
   highlight(0, 'yamlBlockNode',               { fg = colors.white,      bg = 'NONE'            })  -- Block node
 
   -- Flow Mappings
   highlight(0, 'yamlFlowMappingKey',          { fg = colors.blue,       bg = 'NONE'            })  -- Flow mapping key
   highlight(0, 'yamlFlowMappingKeyStart',     { fg = colors.white,      bg = 'NONE'            })  -- ? in flow mapping
   highlight(0, 'yamlFlowMappingMerge',        { fg = colors.pink,       bg = 'NONE'            })  -- << in flow mapping
-  highlight(0, 'yamlFlowMappingDelimiter',    { fg = colors.white,      bg = 'NONE'            })  -- : in flow mapping
+  highlight(0, 'yamlFlowMappingDelimiter',    { link = "Delimiter" })  -- : in flow mapping
   highlight(0, 'yamlFlowNodeProperties',      { fg = colors.turquoise,  bg = 'NONE'            })  -- Node properties in flow
   highlight(0, 'yamlFlowMapping',             { fg = colors.white,      bg = 'NONE'            })  -- Flow mapping { }
   highlight(0, 'yamlFlowCollection',          { fg = colors.white,      bg = 'NONE'            })  -- Flow collection [ ]
@@ -118,9 +118,9 @@ dockerCompose.setupHighlighting = function()
   highlight(0, 'yamlFlowIndicator',           { fg = colors.white,      bg = 'NONE'            })  -- { } [ ] ,
 
   -- Strings
-  highlight(0, 'yamlString',                  { fg = colors.redLight,   bg = 'NONE'            })  -- Generic string
-  highlight(0, 'yamlFlowString',              { fg = colors.redLight,   bg = 'NONE'            })  -- Flow string
-  highlight(0, 'yamlFlowStringDelimiter',     { fg = colors.redLight,   bg = 'NONE'            })  -- String delimiters
+  highlight(0, 'yamlString',                  { link = "String" })  -- Generic string
+  highlight(0, 'yamlFlowString',              { link = "String" })  -- Flow string
+  highlight(0, 'yamlFlowStringDelimiter',     { link = "Delimiter" })  -- String delimiters
   highlight(0, 'yamlPlainScalar',             { fg = colors.white,      bg = 'NONE'            })  -- Plain scalar (unquoted)
   highlight(0, 'yamlScalarWithSpecials',      { fg = colors.white,      bg = 'NONE'            })  -- Scalar with special chars
 
@@ -129,7 +129,7 @@ dockerCompose.setupHighlighting = function()
   highlight(0, 'yamlSingleEscape',            { fg = colors.pink,       bg = 'NONE'            })  -- '' escape in single-quoted
 
   -- Constants and Values
-  highlight(0, 'yamlConstant',                { fg = colors.turquoise,  bg = 'NONE'            })  -- Constants
+  highlight(0, 'yamlConstant',                { link = "Constant" })  -- Constants
   highlight(0, 'yamlBool',                    { fg = colors.turquoise,  bg = 'NONE'            })  -- true, false, yes, no, on, off
   highlight(0, 'yamlNull',                    { fg = colors.turquoise,  bg = 'NONE'            })  -- null, ~
 
@@ -144,7 +144,7 @@ dockerCompose.setupHighlighting = function()
   highlight(0, 'yamlAnchor',                  { fg = colors.purple,     bg = 'NONE'            })  -- &anchor
 
   -- Comments
-  highlight(0, 'yamlComment',                 { fg = colors.gray,       bg = 'NONE', italic = true })  -- # comment
+  highlight(0, 'yamlComment',                 { link = "Comment" })  -- # comment
   highlight(0, 'yamlTodo',                    { fg = colors.pink,       bg = 'NONE', bold = true })  -- TODO, FIXME, etc.
 
 
@@ -153,18 +153,18 @@ dockerCompose.setupHighlighting = function()
   -------------------------------------------------------------------------
 
   -- Boolean and Constants
-  highlight(0, '@boolean.yaml',               { fg = colors.turquoise,  bg = 'NONE'            })  -- true, false
-  highlight(0, '@constant.builtin.yaml',      { fg = colors.turquoise,  bg = 'NONE'            })  -- null, ~
+  highlight(0, '@boolean.yaml',               { link = "Boolean" })  -- true, false
+  highlight(0, '@constant.builtin.yaml',      { link = "Constant" })  -- null, ~
 
   -- Strings
-  highlight(0, '@string.yaml',                { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
-  highlight(0, '@string.escape.yaml',         { fg = colors.pink,       bg = 'NONE'            })  -- Escape sequences
+  highlight(0, '@string.yaml',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.yaml',         { link = "String" })  -- Escape sequences
 
   -- Numbers
-  highlight(0, '@number.yaml',                { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, '@number.yaml',                { link = "Number" })  -- Numbers
 
   -- Comments
-  highlight(0, '@comment.yaml',               { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
+  highlight(0, '@comment.yaml',               { link = "Comment" })  -- Comments
   highlight(0, '@spell.yaml',                 { link = '@comment.yaml'                         })  -- Spell check
 
   -- Labels and Keys
@@ -172,13 +172,12 @@ dockerCompose.setupHighlighting = function()
   highlight(0, '@property.yaml',              { fg = colors.blue,       bg = 'NONE'            })  -- Keys/properties
 
   -- Types and Directives
-  highlight(0, '@type.yaml',                  { fg = colors.turquoise,  bg = 'NONE'            })  -- Tags
-  highlight(0, '@keyword.directive.yaml',     { fg = colors.blue,       bg = 'NONE'            })  -- %YAML, %TAG
+  highlight(0, '@type.yaml',                  { link = "Type" })  -- Tags
+  highlight(0, '@keyword.directive.yaml',     { link = "Keyword" })  -- %YAML, %TAG
 
   -- Punctuation
-  highlight(0, '@punctuation.delimiter.yaml', { fg = colors.white,      bg = 'NONE'            })  -- : , -
+  highlight(0, '@punctuation.delimiter.yaml', { link = "Delimiter" })  -- : , -
   highlight(0, '@punctuation.bracket.yaml',   { fg = colors.white,      bg = 'NONE'            })  -- [ ] { }
-  highlight(0, '@punctuation.special.yaml',   { fg = colors.orange,     bg = 'NONE'            })  -- | > & *
 
 
   -------------------------------------------------------------------------
@@ -189,12 +188,12 @@ dockerCompose.setupHighlighting = function()
   -- But we provide docker-compose specific captures for future compatibility
 
   highlight(0, '@property.docker-compose',    { fg = colors.blue,       bg = 'NONE'            })  -- Keys
-  highlight(0, '@string.docker-compose',      { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
-  highlight(0, '@number.docker-compose',      { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
-  highlight(0, '@boolean.docker-compose',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Booleans
-  highlight(0, '@constant.builtin.docker-compose', { fg = colors.turquoise, bg = 'NONE'        })  -- null
-  highlight(0, '@comment.docker-compose',     { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
-  highlight(0, '@punctuation.delimiter.docker-compose', { fg = colors.white, bg = 'NONE'       })  -- Delimiters
+  highlight(0, '@string.docker-compose',      { link = "String" })  -- Strings
+  highlight(0, '@number.docker-compose',      { link = "Number" })  -- Numbers
+  highlight(0, '@boolean.docker-compose',     { link = "Boolean" })  -- Booleans
+  highlight(0, '@constant.builtin.docker-compose', { link = "Constant" })  -- null
+  highlight(0, '@comment.docker-compose',     { link = "Comment" })  -- Comments
+  highlight(0, '@punctuation.delimiter.docker-compose', { link = "Delimiter" })  -- Delimiters
   highlight(0, '@punctuation.bracket.docker-compose', { fg = colors.white, bg = 'NONE'         })  -- Brackets
   highlight(0, '@punctuation.special.docker-compose', { fg = colors.orange, bg = 'NONE'        })  -- Special chars
 
@@ -204,14 +203,14 @@ dockerCompose.setupHighlighting = function()
   -------------------------------------------------------------------------
 
   highlight(0, '@lsp.type.property.yaml',     { fg = colors.blue,       bg = 'NONE'            })  -- Properties/keys
-  highlight(0, '@lsp.type.string.yaml',       { fg = colors.redLight,   bg = 'NONE'            })  -- Strings
-  highlight(0, '@lsp.type.number.yaml',       { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
-  highlight(0, '@lsp.type.keyword.yaml',      { fg = colors.blue,       bg = 'NONE'            })  -- Keywords
-  highlight(0, '@lsp.type.comment.yaml',      { fg = colors.gray,       bg = 'NONE', italic = true })  -- Comments
+  highlight(0, '@lsp.type.string.yaml',       { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.yaml',       { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.yaml',      { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.yaml',      { link = "Comment" })  -- Comments
 
   highlight(0, '@lsp.type.property.dockercompose', { fg = colors.blue,  bg = 'NONE'            })  -- Properties
-  highlight(0, '@lsp.type.string.dockercompose', { fg = colors.redLight, bg = 'NONE'           })  -- Strings
-  highlight(0, '@lsp.type.number.dockercompose', { fg = colors.greenLight, bg = 'NONE'         })  -- Numbers
+  highlight(0, '@lsp.type.string.dockercompose', { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.dockercompose', { link = "Number" })  -- Numbers
 
 end
 

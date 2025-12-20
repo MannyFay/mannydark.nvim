@@ -29,17 +29,17 @@ haskell.setupHighlighting = function()
   highlight(0, 'hsImportModuleName',    { fg = colors.turquoise,  bg = 'NONE' })  -- Imported module names
   highlight(0, 'hsImportList',          { fg = colors.white,      bg = 'NONE' })  -- Import list
   highlight(0, 'haskellImport',         { fg = colors.turquoise,  bg = 'NONE' })  -- Import declarations
-  highlight(0, 'haskellImportKeywords', { fg = colors.blue,       bg = 'NONE' })  -- import, qualified, as, hiding
+  highlight(0, 'haskellImportKeywords', { link = "Keyword" })  -- import, qualified, as, hiding
 
   -- Foreign Imports
   highlight(0, 'haskellForeignImport',  { fg = colors.turquoise,  bg = 'NONE' })  -- Foreign import declarations
-  highlight(0, 'haskellForeignKeywords', { fg = colors.blue,      bg = 'NONE' })  -- foreign, import, export
+  highlight(0, 'haskellForeignKeywords', { link = "Keyword" })  -- foreign, import, export
 
   -- Keywords - Control Flow
-  highlight(0, 'hsConditional',         { fg = colors.blue,       bg = 'NONE' })  -- if, then, else
+  highlight(0, 'hsConditional',         { link = "Conditional" })  -- if, then, else
   highlight(0, 'hsStatement',           { fg = colors.blue,       bg = 'NONE' })  -- do, case, of, in, mdo, rec
-  highlight(0, 'haskellConditional',    { fg = colors.blue,       bg = 'NONE' })  -- if, then, else
-  highlight(0, 'haskellKeyword',        { fg = colors.blue,       bg = 'NONE' })  -- Generic keywords
+  highlight(0, 'haskellConditional',    { link = "Conditional" })  -- if, then, else
+  highlight(0, 'haskellKeyword',        { link = "Keyword" })  -- Generic keywords
 
   -- Keywords - Let/Where
   highlight(0, 'haskellLet',            { fg = colors.blue,       bg = 'NONE' })  -- let keyword
@@ -47,14 +47,14 @@ haskell.setupHighlighting = function()
 
   -- Keywords - Declarations
   highlight(0, 'hsStructure',           { fg = colors.blue,       bg = 'NONE' })  -- data, newtype, type, class, instance
-  highlight(0, 'hsTypedef',             { fg = colors.blue,       bg = 'NONE' })  -- type keyword
+  highlight(0, 'hsTypedef',             { link = "Type" })  -- type keyword
   highlight(0, 'hsNewtypedef',          { fg = colors.blue,       bg = 'NONE' })  -- newtype keyword
-  highlight(0, 'hsTypeFam',             { fg = colors.blue,       bg = 'NONE' })  -- type family keyword
-  highlight(0, 'haskellDeclKeyword',    { fg = colors.blue,       bg = 'NONE' })  -- data, newtype, type
+  highlight(0, 'hsTypeFam',             { link = "Type" })  -- type family keyword
+  highlight(0, 'haskellDeclKeyword',    { link = "Keyword" })  -- data, newtype, type
   highlight(0, 'haskellDecl',           { fg = colors.turquoise,  bg = 'NONE' })  -- Declaration regions
 
   -- Keywords - Deriving
-  highlight(0, 'haskellDeriveKeyword',  { fg = colors.blue,       bg = 'NONE' })  -- deriving keyword
+  highlight(0, 'haskellDeriveKeyword',  { link = "Keyword" })  -- deriving keyword
   highlight(0, 'haskellDerive',         { fg = colors.turquoise,  bg = 'NONE' })  -- Derived instances
   highlight(0, 'haskellDefault',        { fg = colors.blue,       bg = 'NONE' })  -- default keyword
 
@@ -75,19 +75,19 @@ haskell.setupHighlighting = function()
   highlight(0, 'haskellArrowSyntax',    { fg = colors.blue,       bg = 'NONE' })  -- proc, -<, >-, -<<, >>-
 
   -- Keywords - Pattern
-  highlight(0, 'haskellPatternKeyword', { fg = colors.blue,       bg = 'NONE' })  -- pattern keyword
+  highlight(0, 'haskellPatternKeyword', { link = "Keyword" })  -- pattern keyword
 
   -- Types
-  highlight(0, 'hsType',                { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, 'haskellType',           { fg = colors.turquoise,  bg = 'NONE' })  -- Type names (capitalized)
-  highlight(0, 'haskellTypeSig',        { fg = colors.turquoise,  bg = 'NONE' })  -- Type signatures
+  highlight(0, 'hsType',                { link = "Type" })  -- Type names
+  highlight(0, 'haskellType',           { link = "Type" })  -- Type names (capitalized)
+  highlight(0, 'haskellTypeSig',        { link = "Type" })  -- Type signatures
 
   -- Type Roles
-  highlight(0, 'haskellTypeRoles',      { fg = colors.blue,       bg = 'NONE' })  -- type role keyword
-  highlight(0, 'haskellTypeRoleBlock',  { fg = colors.turquoise,  bg = 'NONE' })  -- Role annotations
+  highlight(0, 'haskellTypeRoles',      { link = "Type" })  -- type role keyword
+  highlight(0, 'haskellTypeRoleBlock',  { link = "Type" })  -- Role annotations
 
   -- Associated Types
-  highlight(0, 'haskellAssocType',      { fg = colors.turquoise,  bg = 'NONE' })  -- Associated type definitions
+  highlight(0, 'haskellAssocType',      { link = "Type" })  -- Associated type definitions
 
   -- Built-in Types
   highlight(0, 'hsMaybe',               { fg = colors.turquoise,  bg = 'NONE' })  -- Maybe type
@@ -100,7 +100,7 @@ haskell.setupHighlighting = function()
   highlight(0, 'hsEnumConst',           { fg = colors.turquoise,  bg = 'NONE' })  -- Enum constructors
 
   -- Functions
-  highlight(0, 'hsFunction',            { fg = colors.orange,     bg = 'NONE' })  -- Function names
+  highlight(0, 'hsFunction',            { link = "Function" })  -- Function names
   highlight(0, 'hsVarSym',              { fg = colors.white,      bg = 'NONE' })  -- Symbolic variables (operators)
 
   -- Variables
@@ -112,18 +112,18 @@ haskell.setupHighlighting = function()
   highlight(0, 'haskellRecordField',    { fg = colors.orange,     bg = 'NONE' })  -- Record fields
 
   -- Booleans
-  highlight(0, 'hsBoolean',             { fg = colors.blue,       bg = 'NONE' })  -- True, False
-  highlight(0, 'haskellBoolean',        { fg = colors.blue,       bg = 'NONE' })  -- True, False
+  highlight(0, 'hsBoolean',             { link = "Boolean" })  -- True, False
+  highlight(0, 'haskellBoolean',        { link = "Boolean" })  -- True, False
 
   -- Numbers
-  highlight(0, 'hsNumber',              { fg = colors.greenLight, bg = 'NONE' })  -- Integer literals
+  highlight(0, 'hsNumber',              { link = "Number" })  -- Integer literals
   highlight(0, 'hsFloat',               { fg = colors.greenLight, bg = 'NONE' })  -- Float literals
-  highlight(0, 'haskellNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'haskellNumber',         { link = "Number" })  -- Numbers
   highlight(0, 'haskellFloat',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
 
   -- Strings
-  highlight(0, 'hsString',              { fg = colors.redLight,   bg = 'NONE' })  -- String literals
-  highlight(0, 'haskellString',         { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, 'hsString',              { link = "String" })  -- String literals
+  highlight(0, 'haskellString',         { link = "String" })  -- Strings
 
   -- Characters
   highlight(0, 'hsCharacter',           { fg = colors.redLight,   bg = 'NONE' })  -- Character literals
@@ -134,13 +134,13 @@ haskell.setupHighlighting = function()
   highlight(0, 'hsSpecialCharError',    { fg = colors.red,        bg = 'NONE' })  -- Invalid escape
 
   -- Operators
-  highlight(0, 'hsOperator',            { fg = colors.white,      bg = 'NONE' })  -- Operators
-  highlight(0, 'haskellOperators',      { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'hsOperator',            { link = "Operator" })  -- Operators
+  highlight(0, 'haskellOperators',      { link = "Operator" })  -- Operators
 
   -- Delimiters/Separators
-  highlight(0, 'hsDelimiter',           { fg = colors.white,      bg = 'NONE' })  -- Delimiters
+  highlight(0, 'hsDelimiter',           { link = "Delimiter" })  -- Delimiters
   highlight(0, 'haskellSeparator',      { fg = colors.white,      bg = 'NONE' })  -- Separators (,)
-  highlight(0, 'haskellDelimiter',      { fg = colors.white,      bg = 'NONE' })  -- Delimiters
+  highlight(0, 'haskellDelimiter',      { link = "Delimiter" })  -- Delimiters
 
   -- Brackets/Parens
   highlight(0, 'haskellParens',         { fg = colors.white,      bg = 'NONE' })  -- ( )
@@ -154,11 +154,11 @@ haskell.setupHighlighting = function()
   highlight(0, 'haskellBottom',         { fg = colors.red,        bg = 'NONE' })  -- undefined, error
 
   -- Comments
-  highlight(0, 'hsComment',             { fg = colors.red,        bg = 'NONE' })  -- General comments
-  highlight(0, 'hsLineComment',         { fg = colors.red,        bg = 'NONE' })  -- -- comments
-  highlight(0, 'hsBlockComment',        { fg = colors.red,        bg = 'NONE' })  -- {- -} comments
-  highlight(0, 'haskellLineComment',    { fg = colors.red,        bg = 'NONE' })  -- Line comments
-  highlight(0, 'haskellBlockComment',   { fg = colors.red,        bg = 'NONE' })  -- Block comments
+  highlight(0, 'hsComment',             { link = "Comment" })  -- General comments
+  highlight(0, 'hsLineComment',         { link = "Comment" })  -- -- comments
+  highlight(0, 'hsBlockComment',        { link = "Comment" })  -- {- -} comments
+  highlight(0, 'haskellLineComment',    { link = "Comment" })  -- Line comments
+  highlight(0, 'haskellBlockComment',   { link = "Comment" })  -- Block comments
   highlight(0, 'hsTodo',                { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
   highlight(0, 'haskellTodo',           { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
@@ -183,7 +183,7 @@ haskell.setupHighlighting = function()
   -- QuasiQuotes
   highlight(0, 'haskellQuote',          { fg = colors.pink,       bg = 'NONE' })  -- Quote syntax
   highlight(0, 'haskellQuoted',         { fg = colors.pink,       bg = 'NONE' })  -- Quoted expressions
-  highlight(0, 'haskellQuotedType',     { fg = colors.pink,       bg = 'NONE' })  -- Quoted types
+  highlight(0, 'haskellQuotedType',     { link = "Type" })  -- Quoted types
   highlight(0, 'haskellQuasiQuote',     { fg = colors.pink,       bg = 'NONE' })  -- [quoter| ... |]
   highlight(0, 'haskellQuasiQuoted',    { fg = colors.redLight,   bg = 'NONE' })  -- QuasiQuote content
 
@@ -209,7 +209,7 @@ haskell.setupHighlighting = function()
   highlight(0, 'haskellPatternGuard',   { fg = colors.white,      bg = 'NONE' })  -- Pattern guards
 
   -- Type Applications
-  highlight(0, 'haskellTypeApp',        { fg = colors.turquoise,  bg = 'NONE' })  -- @Type applications
+  highlight(0, 'haskellTypeApp',        { link = "Type" })  -- @Type applications
 
   -- Promoted Types (DataKinds)
   highlight(0, 'haskellPromoted',       { fg = colors.turquoise,  bg = 'NONE' })  -- 'Constructor, '[]
@@ -221,7 +221,7 @@ haskell.setupHighlighting = function()
   highlight(0, 'haskellConstraint',     { fg = colors.turquoise,  bg = 'NONE' })  -- Constraints
 
   -- Type Operators
-  highlight(0, 'haskellTypeOperator',   { fg = colors.white,      bg = 'NONE' })  -- Type-level operators
+  highlight(0, 'haskellTypeOperator',   { link = "Operator" })  -- Type-level operators
 
   -- Pattern Synonyms
   highlight(0, 'haskellPatternSynonym', { fg = colors.turquoise,  bg = 'NONE' })  -- pattern keyword
@@ -248,73 +248,73 @@ haskell.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Variables
-  highlight(0, '@variable.haskell',              { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.parameter.haskell',    { fg = colors.white,      bg = 'NONE' })  -- Function parameters
-  highlight(0, '@variable.member.haskell',       { fg = colors.orange,     bg = 'NONE' })  -- Record fields
+  highlight(0, '@variable.haskell',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.parameter.haskell',    { link = "Variable" })  -- Function parameters
+  highlight(0, '@variable.member.haskell',       { link = "Variable" })  -- Record fields
 
   -- Types
-  highlight(0, '@type.haskell',                  { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.haskell',          { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.haskell',       { fg = colors.turquoise,  bg = 'NONE' })  -- Type definitions
-  highlight(0, '@type.qualifier.haskell',        { fg = colors.turquoise,  bg = 'NONE' })  -- Module qualifiers
+  highlight(0, '@type.haskell',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.haskell',          { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.haskell',       { link = "Type" })  -- Type definitions
+  highlight(0, '@type.qualifier.haskell',        { link = "Type" })  -- Module qualifiers
 
   -- Constructors
   highlight(0, '@constructor.haskell',           { fg = colors.turquoise,  bg = 'NONE' })  -- Data constructors
 
   -- Functions
-  highlight(0, '@function.haskell',              { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.haskell',         { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.haskell',      { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.haskell',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.haskell',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.haskell',      { link = "Function" })  -- Built-in functions
 
   -- Keywords
-  highlight(0, '@keyword.haskell',               { fg = colors.blue,       bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.haskell',      { fg = colors.blue,       bg = 'NONE' })  -- where, let
-  highlight(0, '@keyword.operator.haskell',      { fg = colors.white,      bg = 'NONE' })  -- Operator keywords
-  highlight(0, '@keyword.return.haskell',        { fg = colors.blue,       bg = 'NONE' })  -- return (in do)
-  highlight(0, '@keyword.repeat.haskell',        { fg = colors.blue,       bg = 'NONE' })  -- Repetition (rarely used)
-  highlight(0, '@keyword.conditional.haskell',   { fg = colors.blue,       bg = 'NONE' })  -- if, then, else, case, of
-  highlight(0, '@keyword.import.haskell',        { fg = colors.blue,       bg = 'NONE' })  -- import, qualified, as, hiding
-  highlight(0, '@keyword.exception.haskell',     { fg = colors.blue,       bg = 'NONE' })  -- catch, throw
-  highlight(0, '@keyword.directive.haskell',     { fg = colors.pink,       bg = 'NONE' })  -- Pragmas
+  highlight(0, '@keyword.haskell',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.haskell',      { link = "Keyword" })  -- where, let
+  highlight(0, '@keyword.operator.haskell',      { link = "Operator" })  -- Operator keywords
+  highlight(0, '@keyword.return.haskell',        { link = "Keyword" })  -- return (in do)
+  highlight(0, '@keyword.repeat.haskell',        { link = "Keyword" })  -- Repetition (rarely used)
+  highlight(0, '@keyword.conditional.haskell',   { link = "Conditional" })  -- if, then, else, case, of
+  highlight(0, '@keyword.import.haskell',        { link = "Keyword" })  -- import, qualified, as, hiding
+  highlight(0, '@keyword.exception.haskell',     { link = "Keyword" })  -- catch, throw
+  highlight(0, '@keyword.directive.haskell',     { link = "Keyword" })  -- Pragmas
 
   -- Modules
   highlight(0, '@module.haskell',                { fg = colors.turquoise,  bg = 'NONE' })  -- Module names
   highlight(0, '@module.builtin.haskell',        { fg = colors.turquoise,  bg = 'NONE' })  -- Prelude, etc.
 
   -- Strings
-  highlight(0, '@string.haskell',                { fg = colors.redLight,   bg = 'NONE' })  -- String literals
-  highlight(0, '@string.escape.haskell',         { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.haskell',        { fg = colors.pink,       bg = 'NONE' })  -- Special strings
-  highlight(0, '@string.special.symbol.haskell', { fg = colors.turquoise,  bg = 'NONE' })  -- Symbolic names
+  highlight(0, '@string.haskell',                { link = "String" })  -- String literals
+  highlight(0, '@string.escape.haskell',         { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.haskell',        { link = "String" })  -- Special strings
+  highlight(0, '@string.special.symbol.haskell', { link = "String" })  -- Symbolic names
 
   -- Characters
   highlight(0, '@character.haskell',             { fg = colors.redLight,   bg = 'NONE' })  -- Character literals
   highlight(0, '@character.special.haskell',     { fg = colors.pink,       bg = 'NONE' })  -- Special chars
 
   -- Numbers
-  highlight(0, '@number.haskell',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.haskell',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.haskell',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.haskell',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.haskell',               { fg = colors.blue,       bg = 'NONE' })  -- True, False
+  highlight(0, '@boolean.haskell',               { link = "Boolean" })  -- True, False
 
   -- Operators
-  highlight(0, '@operator.haskell',              { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.haskell',              { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.haskell',   { fg = colors.white,      bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.haskell', { fg = colors.white,      bg = 'NONE' })  -- , ; ::
+  highlight(0, '@punctuation.delimiter.haskell', { link = "Delimiter" })  -- , ; ::
   highlight(0, '@punctuation.special.haskell',   { fg = colors.pink,       bg = 'NONE' })  -- @ (as-pattern), ' (promoted)
 
   -- Comments
-  highlight(0, '@comment.haskell',               { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.haskell', { fg = colors.red,        bg = 'NONE' })  -- Haddock comments
+  highlight(0, '@comment.haskell',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.haskell', { link = "Comment" })  -- Haddock comments
 
   -- Labels
   highlight(0, '@label.haskell',                 { fg = colors.pink,       bg = 'NONE' })  -- OverloadedLabels #label
 
   -- Debug
-  highlight(0, '@keyword.debug.haskell',         { fg = colors.red,        bg = 'NONE' })  -- trace, undefined
+  highlight(0, '@keyword.debug.haskell',         { link = "Keyword" })  -- trace, undefined
 
 
   ---------------------------------------------------------------------------
@@ -323,7 +323,7 @@ haskell.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Standard LSP Types
-  highlight(0, '@lsp.type.variable.haskell',     { fg = colors.white,      bg = 'NONE' })  -- TVariable
+  highlight(0, '@lsp.type.variable.haskell',     { link = "Variable" })  -- TVariable
   highlight(0, '@lsp.type.function.haskell',     { fg = colors.orange,     bg = 'NONE' })  -- TFunction
   highlight(0, '@lsp.type.parameter.haskell',    { fg = colors.white,      bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.type.haskell',         { fg = colors.turquoise,  bg = 'NONE' })  -- TTypeConstructor
@@ -334,11 +334,11 @@ haskell.setupHighlighting = function()
   highlight(0, '@lsp.type.method.haskell',       { fg = colors.orange,     bg = 'NONE' })  -- TClassMethod
   highlight(0, '@lsp.type.namespace.haskell',    { fg = colors.turquoise,  bg = 'NONE' })  -- TModule
   highlight(0, '@lsp.type.typeParameter.haskell', { fg = colors.purple,    bg = 'NONE' })  -- TTypeVariable
-  highlight(0, '@lsp.type.operator.haskell',     { fg = colors.white,      bg = 'NONE' })  -- TOperator
-  highlight(0, '@lsp.type.keyword.haskell',      { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.string.haskell',       { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.haskell',       { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.comment.haskell',      { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.operator.haskell',     { link = "Operator" })  -- TOperator
+  highlight(0, '@lsp.type.keyword.haskell',      { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.string.haskell',       { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.haskell',       { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.comment.haskell',      { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.decorator.haskell',    { fg = colors.pink,       bg = 'NONE' })  -- Pragmas
   highlight(0, '@lsp.type.macro.haskell',        { fg = colors.pink,       bg = 'NONE' })  -- Template Haskell
 
@@ -358,13 +358,13 @@ haskell.setupHighlighting = function()
   -- TModule -> namespace
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.haskell',    { fg = colors.pink,      bg = 'NONE' })  -- Constants
+  highlight(0, '@lsp.typemod.variable.readonly.haskell',    { link = "Variable" })  -- Constants
   highlight(0, '@lsp.typemod.function.declaration.haskell', { fg = colors.orange,    bg = 'NONE' })  -- Function defs
   highlight(0, '@lsp.typemod.class.declaration.haskell',    { fg = colors.turquoise, bg = 'NONE' })  -- Class defs
   highlight(0, '@lsp.typemod.type.declaration.haskell',     { fg = colors.turquoise, bg = 'NONE' })  -- Type defs
   highlight(0, '@lsp.typemod.function.defaultLibrary.haskell', { fg = colors.orange, bg = 'NONE' })  -- Prelude funcs
-  highlight(0, '@lsp.typemod.variable.global.haskell',      { fg = colors.white,     bg = 'NONE' })  -- Top-level bindings
-  highlight(0, '@lsp.typemod.variable.local.haskell',       { fg = colors.white,     bg = 'NONE' })  -- Local bindings
+  highlight(0, '@lsp.typemod.variable.global.haskell',      { link = "Variable" })  -- Top-level bindings
+  highlight(0, '@lsp.typemod.variable.local.haskell',       { link = "Variable" })  -- Local bindings
 
 
   ---------------------------------------------------------------------------
@@ -391,8 +391,8 @@ haskell.setupHighlighting = function()
   -- Literate Haskell
   ---------------------------------------------------------------------------
 
-  highlight(0, 'hsLiterateComment',     { fg = colors.red,        bg = 'NONE' })  -- Text in .lhs files
-  highlight(0, 'lhsComment',            { fg = colors.red,        bg = 'NONE' })  -- Literate comments
+  highlight(0, 'hsLiterateComment',     { link = "Comment" })  -- Text in .lhs files
+  highlight(0, 'lhsComment',            { link = "Comment" })  -- Literate comments
   highlight(0, 'lhsCodeBlock',          { fg = colors.white,      bg = 'NONE' })  -- Code blocks in .lhs
 end
 

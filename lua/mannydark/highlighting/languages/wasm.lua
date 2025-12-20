@@ -17,14 +17,14 @@ wasm.setupHighlighting = function()
 
   -- Module Structure Keywords
   highlight(0, 'watModule',           { fg = colors.blue,       bg = 'NONE'            })  -- module
-  highlight(0, 'watFunc',             { fg = colors.blue,       bg = 'NONE'            })  -- func
+  highlight(0, 'watFunc',             { link = "Function" })  -- func
   highlight(0, 'watParam',            { fg = colors.blue,       bg = 'NONE'            })  -- param
   highlight(0, 'watResult',           { fg = colors.blue,       bg = 'NONE'            })  -- result
   highlight(0, 'watLocal',            { fg = colors.blue,       bg = 'NONE'            })  -- local
   highlight(0, 'watGlobal',           { fg = colors.blue,       bg = 'NONE'            })  -- global
   highlight(0, 'watMemory',           { fg = colors.blue,       bg = 'NONE'            })  -- memory
   highlight(0, 'watTable',            { fg = colors.blue,       bg = 'NONE'            })  -- table
-  highlight(0, 'watType',             { fg = colors.turquoise,  bg = 'NONE'            })  -- type (type definitions)
+  highlight(0, 'watType',             { link = "Type" })  -- type (type definitions)
   highlight(0, 'watImport',           { fg = colors.blue,       bg = 'NONE'            })  -- import
   highlight(0, 'watExport',           { fg = colors.blue,       bg = 'NONE'            })  -- export
   highlight(0, 'watStart',            { fg = colors.blue,       bg = 'NONE'            })  -- start
@@ -36,7 +36,7 @@ wasm.setupHighlighting = function()
   highlight(0, 'watShared',           { fg = colors.blue,       bg = 'NONE'            })  -- shared (memory)
 
   -- Value Types
-  highlight(0, 'watValueType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- i32, i64, f32, f64
+  highlight(0, 'watValueType',        { link = "Type" })  -- i32, i64, f32, f64
   highlight(0, 'watI32',              { fg = colors.turquoise,  bg = 'NONE'            })  -- i32
   highlight(0, 'watI64',              { fg = colors.turquoise,  bg = 'NONE'            })  -- i64
   highlight(0, 'watF32',              { fg = colors.turquoise,  bg = 'NONE'            })  -- f32
@@ -44,8 +44,8 @@ wasm.setupHighlighting = function()
   highlight(0, 'watV128',             { fg = colors.turquoise,  bg = 'NONE'            })  -- v128 (SIMD)
 
   -- Reference Types
-  highlight(0, 'watRefType',          { fg = colors.turquoise,  bg = 'NONE'            })  -- funcref, externref
-  highlight(0, 'watFuncref',          { fg = colors.turquoise,  bg = 'NONE'            })  -- funcref
+  highlight(0, 'watRefType',          { link = "Type" })  -- funcref, externref
+  highlight(0, 'watFuncref',          { link = "Function" })  -- funcref
   highlight(0, 'watExternref',        { fg = colors.turquoise,  bg = 'NONE'            })  -- externref
   highlight(0, 'watAnyref',           { fg = colors.turquoise,  bg = 'NONE'            })  -- anyref
 
@@ -103,7 +103,7 @@ wasm.setupHighlighting = function()
 
   -- Numeric Instructions - Arithmetic
   highlight(0, 'watInstGeneral',      { fg = colors.orange,     bg = 'NONE'            })  -- General instructions
-  highlight(0, 'watInstWithType',     { fg = colors.orange,     bg = 'NONE'            })  -- Type-prefixed instructions
+  highlight(0, 'watInstWithType',     { link = "Type" })  -- Type-prefixed instructions
   highlight(0, 'watArithInst',        { fg = colors.orange,     bg = 'NONE'            })  -- Arithmetic instructions
   highlight(0, 'watAdd',              { fg = colors.orange,     bg = 'NONE'            })  -- *.add
   highlight(0, 'watSub',              { fg = colors.orange,     bg = 'NONE'            })  -- *.sub
@@ -171,7 +171,7 @@ wasm.setupHighlighting = function()
   highlight(0, 'watDot',              { fg = colors.orange,     bg = 'NONE'            })  -- i32x4.dot_i16x8_s
 
   -- SIMD Lane Types
-  highlight(0, 'watSimdType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- i8x16, i16x8, i32x4, i64x2, f32x4, f64x2
+  highlight(0, 'watSimdType',         { link = "Type" })  -- i8x16, i16x8, i32x4, i64x2, f32x4, f64x2
   highlight(0, 'watI8x16',            { fg = colors.turquoise,  bg = 'NONE'            })  -- i8x16
   highlight(0, 'watI16x8',            { fg = colors.turquoise,  bg = 'NONE'            })  -- i16x8
   highlight(0, 'watI32x4',            { fg = colors.turquoise,  bg = 'NONE'            })  -- i32x4
@@ -183,7 +183,7 @@ wasm.setupHighlighting = function()
   highlight(0, 'watRefInst',          { fg = colors.orange,     bg = 'NONE'            })  -- Reference instructions
   highlight(0, 'watRefNull',          { fg = colors.blue,       bg = 'NONE'            })  -- ref.null
   highlight(0, 'watRefIsNull',        { fg = colors.orange,     bg = 'NONE'            })  -- ref.is_null
-  highlight(0, 'watRefFunc',          { fg = colors.orange,     bg = 'NONE'            })  -- ref.func
+  highlight(0, 'watRefFunc',          { link = "Function" })  -- ref.func
 
   -- Atomic Instructions (Threads)
   highlight(0, 'watAtomicInst',       { fg = colors.orange,     bg = 'NONE'            })  -- Atomic instructions
@@ -196,28 +196,28 @@ wasm.setupHighlighting = function()
   highlight(0, 'watAtomicFence',      { fg = colors.orange,     bg = 'NONE'            })  -- atomic.fence
 
   -- Identifiers
-  highlight(0, 'watNamedVar',         { fg = colors.purple,     bg = 'NONE'            })  -- $identifier (named variables/labels)
-  highlight(0, 'watUnnamedVar',       { fg = colors.pink,       bg = 'NONE'            })  -- Numeric indices
+  highlight(0, 'watNamedVar',         { link = "Variable" })  -- $identifier (named variables/labels)
+  highlight(0, 'watUnnamedVar',       { link = "Variable" })  -- Numeric indices
   highlight(0, 'watIdentifier',       { fg = colors.purple,     bg = 'NONE'            })  -- General identifiers
   highlight(0, 'watLabel',            { fg = colors.purple,     bg = 'NONE'            })  -- Block/loop labels
 
   -- Literals
-  highlight(0, 'watNumber',           { fg = colors.greenLight, bg = 'NONE'            })  -- Integer numbers
+  highlight(0, 'watNumber',           { link = "Number" })  -- Integer numbers
   highlight(0, 'watFloat',            { fg = colors.greenLight, bg = 'NONE'            })  -- Float numbers
-  highlight(0, 'watHexNumber',        { fg = colors.greenLight, bg = 'NONE'            })  -- Hexadecimal (0x...)
+  highlight(0, 'watHexNumber',        { link = "Number" })  -- Hexadecimal (0x...)
   highlight(0, 'watInfinity',         { fg = colors.greenLight, bg = 'NONE'            })  -- inf
   highlight(0, 'watNan',              { fg = colors.greenLight, bg = 'NONE'            })  -- nan, nan:0x...
-  highlight(0, 'watString',           { fg = colors.redLight,   bg = 'NONE'            })  -- "string"
-  highlight(0, 'watStringSpecial',    { fg = colors.pink,       bg = 'NONE'            })  -- Escape sequences in strings
+  highlight(0, 'watString',           { link = "String" })  -- "string"
+  highlight(0, 'watStringSpecial',    { link = "String" })  -- Escape sequences in strings
   highlight(0, 'watEscapedUtf8',      { fg = colors.pink,       bg = 'NONE'            })  -- UTF-8 escapes
 
   -- Delimiters
-  highlight(0, 'watListDelimiter',    { fg = colors.white,      bg = 'NONE'            })  -- ( ) parentheses
+  highlight(0, 'watListDelimiter',    { link = "Delimiter" })  -- ( ) parentheses
   highlight(0, 'watParens',           { fg = colors.white,      bg = 'NONE'            })  -- Parentheses
   highlight(0, 'watList',             { fg = 'NONE',            bg = 'NONE'            })  -- S-expression list
 
   -- Operators
-  highlight(0, 'watOperator',         { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, 'watOperator',         { link = "Operator" })  -- Operators
   highlight(0, 'watDollar',           { fg = colors.purple,     bg = 'NONE'            })  -- $ prefix
 
   -- Instruction Suffixes
@@ -226,8 +226,8 @@ wasm.setupHighlighting = function()
   highlight(0, 'watUnsignedSuffix',   { fg = colors.pink,       bg = 'NONE'            })  -- _u (unsigned)
 
   -- Comments
-  highlight(0, 'watComment',          { fg = colors.red,        bg = 'NONE'            })  -- ;; line comments
-  highlight(0, 'watBlockComment',     { fg = colors.red,        bg = 'NONE'            })  -- (; block comments ;)
+  highlight(0, 'watComment',          { link = "Comment" })  -- ;; line comments
+  highlight(0, 'watBlockComment',     { link = "Comment" })  -- (; block comments ;)
   highlight(0, 'watTodo',             { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Parameter Instructions (conditional/param)
@@ -241,85 +241,85 @@ wasm.setupHighlighting = function()
   -- Treesitter Groups (@xxx.wat / @xxx.wast / @xxx.wasm)
 
   -- Variables
-  highlight(0, '@variable.wat',               { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.wast',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.wasm',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.wat',       { fg = colors.pink,      bg = 'NONE' })  -- Built-in variables
-  highlight(0, '@variable.builtin.wast',      { fg = colors.pink,      bg = 'NONE' })  -- Built-in variables
-  highlight(0, '@variable.parameter.wat',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
-  highlight(0, '@variable.parameter.wast',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
+  highlight(0, '@variable.wat',               { link = "Variable" })  -- Variables
+  highlight(0, '@variable.wast',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.wasm',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.wat',       { link = "Variable" })  -- Built-in variables
+  highlight(0, '@variable.builtin.wast',      { link = "Variable" })  -- Built-in variables
+  highlight(0, '@variable.parameter.wat',     { link = "Variable" })  -- Parameters
+  highlight(0, '@variable.parameter.wast',    { link = "Variable" })  -- Parameters
 
   -- Types
-  highlight(0, '@type.wat',                   { fg = colors.turquoise, bg = 'NONE' })  -- Types (i32, i64, f32, f64, v128)
-  highlight(0, '@type.wast',                  { fg = colors.turquoise, bg = 'NONE' })  -- Types
-  highlight(0, '@type.wasm',                  { fg = colors.turquoise, bg = 'NONE' })  -- Types
-  highlight(0, '@type.builtin.wat',           { fg = colors.turquoise, bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.builtin.wast',          { fg = colors.turquoise, bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.wat',        { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
-  highlight(0, '@type.definition.wast',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.wat',                   { link = "Type" })  -- Types (i32, i64, f32, f64, v128)
+  highlight(0, '@type.wast',                  { link = "Type" })  -- Types
+  highlight(0, '@type.wasm',                  { link = "Type" })  -- Types
+  highlight(0, '@type.builtin.wat',           { link = "Type" })  -- Built-in types
+  highlight(0, '@type.builtin.wast',          { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.wat',        { link = "Type" })  -- Type definitions
+  highlight(0, '@type.definition.wast',       { link = "Type" })  -- Type definitions
 
   -- Functions
-  highlight(0, '@function.wat',               { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@function.wast',              { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@function.wasm',              { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@function.call.wat',          { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.call.wast',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.wat',       { fg = colors.orange,    bg = 'NONE' })  -- Built-in instructions
-  highlight(0, '@function.builtin.wast',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in instructions
+  highlight(0, '@function.wat',               { link = "Function" })  -- Functions
+  highlight(0, '@function.wast',              { link = "Function" })  -- Functions
+  highlight(0, '@function.wasm',              { link = "Function" })  -- Functions
+  highlight(0, '@function.call.wat',          { link = "Function" })  -- Function calls
+  highlight(0, '@function.call.wast',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.wat',       { link = "Function" })  -- Built-in instructions
+  highlight(0, '@function.builtin.wast',      { link = "Function" })  -- Built-in instructions
 
   -- Keywords
-  highlight(0, '@keyword.wat',                { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.wast',               { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.wasm',               { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.function.wat',       { fg = colors.blue,      bg = 'NONE' })  -- func
-  highlight(0, '@keyword.function.wast',      { fg = colors.blue,      bg = 'NONE' })  -- func
-  highlight(0, '@keyword.import.wat',         { fg = colors.blue,      bg = 'NONE' })  -- import, export
-  highlight(0, '@keyword.import.wast',        { fg = colors.blue,      bg = 'NONE' })  -- import, export
-  highlight(0, '@keyword.return.wat',         { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.return.wast',        { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.repeat.wat',         { fg = colors.blue,      bg = 'NONE' })  -- loop, block
-  highlight(0, '@keyword.repeat.wast',        { fg = colors.blue,      bg = 'NONE' })  -- loop, block
-  highlight(0, '@keyword.conditional.wat',    { fg = colors.blue,      bg = 'NONE' })  -- if, else, br_if
-  highlight(0, '@keyword.conditional.wast',   { fg = colors.blue,      bg = 'NONE' })  -- if, else, br_if
-  highlight(0, '@keyword.modifier.wat',       { fg = colors.blue,      bg = 'NONE' })  -- mut
-  highlight(0, '@keyword.modifier.wast',      { fg = colors.blue,      bg = 'NONE' })  -- mut
+  highlight(0, '@keyword.wat',                { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.wast',               { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.wasm',               { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.function.wat',       { link = "Keyword" })  -- func
+  highlight(0, '@keyword.function.wast',      { link = "Keyword" })  -- func
+  highlight(0, '@keyword.import.wat',         { link = "Keyword" })  -- import, export
+  highlight(0, '@keyword.import.wast',        { link = "Keyword" })  -- import, export
+  highlight(0, '@keyword.return.wat',         { link = "Keyword" })  -- return
+  highlight(0, '@keyword.return.wast',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.repeat.wat',         { link = "Keyword" })  -- loop, block
+  highlight(0, '@keyword.repeat.wast',        { link = "Keyword" })  -- loop, block
+  highlight(0, '@keyword.conditional.wat',    { link = "Conditional" })  -- if, else, br_if
+  highlight(0, '@keyword.conditional.wast',   { link = "Conditional" })  -- if, else, br_if
+  highlight(0, '@keyword.modifier.wat',       { link = "Keyword" })  -- mut
+  highlight(0, '@keyword.modifier.wast',      { link = "Keyword" })  -- mut
 
   -- Labels
   highlight(0, '@label.wat',                  { fg = colors.purple,    bg = 'NONE' })  -- Block/loop labels
   highlight(0, '@label.wast',                 { fg = colors.purple,    bg = 'NONE' })  -- Block/loop labels
 
   -- Strings
-  highlight(0, '@string.wat',                 { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.wast',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.wasm',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.wat',          { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.escape.wast',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.wat',                 { link = "String" })  -- Strings
+  highlight(0, '@string.wast',                { link = "String" })  -- Strings
+  highlight(0, '@string.wasm',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.wat',          { link = "String" })  -- Escape sequences
+  highlight(0, '@string.escape.wast',         { link = "String" })  -- Escape sequences
 
   -- Numbers
-  highlight(0, '@number.wat',                 { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.wast',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.wasm',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.wat',           { fg = colors.greenLight, bg = 'NONE' })  -- Floats
-  highlight(0, '@number.float.wast',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.wat',                 { link = "Number" })  -- Numbers
+  highlight(0, '@number.wast',                { link = "Number" })  -- Numbers
+  highlight(0, '@number.wasm',                { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.wat',           { link = "Number" })  -- Floats
+  highlight(0, '@number.float.wast',          { link = "Number" })  -- Floats
 
   -- Constants
-  highlight(0, '@constant.wat',               { fg = colors.pink,      bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.wast',              { fg = colors.pink,      bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.wat',       { fg = colors.pink,      bg = 'NONE' })  -- inf, nan
-  highlight(0, '@constant.builtin.wast',      { fg = colors.pink,      bg = 'NONE' })  -- inf, nan
+  highlight(0, '@constant.wat',               { link = "Constant" })  -- Constants
+  highlight(0, '@constant.wast',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.wat',       { link = "Constant" })  -- inf, nan
+  highlight(0, '@constant.builtin.wast',      { link = "Constant" })  -- inf, nan
 
   -- Comments
-  highlight(0, '@comment.wat',                { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.wast',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.wasm',               { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.wat',                { link = "Comment" })  -- Comments
+  highlight(0, '@comment.wast',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.wasm',               { link = "Comment" })  -- Comments
 
   -- Operators and Punctuation
-  highlight(0, '@operator.wat',               { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@operator.wast',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.wat',               { link = "Operator" })  -- Operators
+  highlight(0, '@operator.wast',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.wat',    { fg = colors.white,     bg = 'NONE' })  -- ()
   highlight(0, '@punctuation.bracket.wast',   { fg = colors.white,     bg = 'NONE' })  -- ()
-  highlight(0, '@punctuation.delimiter.wat',  { fg = colors.white,     bg = 'NONE' })  -- Delimiters
-  highlight(0, '@punctuation.delimiter.wast', { fg = colors.white,     bg = 'NONE' })  -- Delimiters
+  highlight(0, '@punctuation.delimiter.wat',  { link = "Delimiter" })  -- Delimiters
+  highlight(0, '@punctuation.delimiter.wast', { link = "Delimiter" })  -- Delimiters
   highlight(0, '@punctuation.special.wat',    { fg = colors.purple,    bg = 'NONE' })  -- $ prefix
   highlight(0, '@punctuation.special.wast',   { fg = colors.purple,    bg = 'NONE' })  -- $ prefix
 
@@ -337,26 +337,26 @@ wasm.setupHighlighting = function()
   highlight(0, '@lsp.type.type.wasm',         { fg = colors.turquoise, bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.function.wat',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.function.wasm',     { fg = colors.orange,    bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.variable.wat',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@lsp.type.variable.wasm',     { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.wat',      { link = "Variable" })  -- Variables
+  highlight(0, '@lsp.type.variable.wasm',     { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.wat',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.parameter.wasm',    { fg = colors.purple,    bg = 'NONE' })  -- Parameters
-  highlight(0, '@lsp.type.keyword.wat',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.keyword.wasm',      { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.string.wat',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.string.wasm',       { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.wat',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.number.wasm',       { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.wat',       { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@lsp.type.comment.wasm',      { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.keyword.wat',       { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.keyword.wasm',      { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.string.wat',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.string.wasm',       { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.wat',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.number.wasm',       { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.wat',       { link = "Comment" })  -- Comments
+  highlight(0, '@lsp.type.comment.wasm',      { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.namespace.wat',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
   highlight(0, '@lsp.type.namespace.wasm',    { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
 
   -- LSP Modifiers
   highlight(0, '@lsp.typemod.function.declaration.wat',  { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
   highlight(0, '@lsp.typemod.function.declaration.wasm', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
-  highlight(0, '@lsp.typemod.variable.readonly.wat',     { fg = colors.pink,      bg = 'NONE' })  -- Immutable globals
-  highlight(0, '@lsp.typemod.variable.readonly.wasm',    { fg = colors.pink,      bg = 'NONE' })  -- Immutable globals
+  highlight(0, '@lsp.typemod.variable.readonly.wat',     { link = "Variable" })  -- Immutable globals
+  highlight(0, '@lsp.typemod.variable.readonly.wasm',    { link = "Variable" })  -- Immutable globals
 end
 
 return wasm

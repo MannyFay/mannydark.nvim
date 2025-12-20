@@ -16,10 +16,10 @@ fsharp.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords - Control Flow
-  highlight(0, 'fsharpKeyword',         { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
-  highlight(0, 'fsharpConditional',     { fg = colors.blue,       bg = 'NONE'            })  -- if, then, else, elif
+  highlight(0, 'fsharpKeyword',         { link = "Keyword" })  -- General keywords
+  highlight(0, 'fsharpConditional',     { link = "Conditional" })  -- if, then, else, elif
   highlight(0, 'fsharpMatch',           { fg = colors.blue,       bg = 'NONE'            })  -- match, with, when
-  highlight(0, 'fsharpFunction',        { fg = colors.blue,       bg = 'NONE'            })  -- function keyword
+  highlight(0, 'fsharpFunction',        { link = "Function" })  -- function keyword
 
   -- Keywords - Loops
   highlight(0, 'fsharpRepeat',          { fg = colors.blue,       bg = 'NONE'            })  -- for, while, do
@@ -43,7 +43,7 @@ fsharp.setupHighlighting = function()
   highlight(0, 'fsharpInline',          { fg = colors.blue,       bg = 'NONE'            })  -- inline
 
   -- Keywords - Type Definitions
-  highlight(0, 'fsharpType',            { fg = colors.blue,       bg = 'NONE'            })  -- type
+  highlight(0, 'fsharpType',            { link = "Type" })  -- type
   highlight(0, 'fsharpClass',           { fg = colors.blue,       bg = 'NONE'            })  -- class
   highlight(0, 'fsharpStruct',          { fg = colors.blue,       bg = 'NONE'            })  -- struct
   highlight(0, 'fsharpInterface',       { fg = colors.blue,       bg = 'NONE'            })  -- interface
@@ -109,32 +109,32 @@ fsharp.setupHighlighting = function()
   highlight(0, 'fsharpOpen',            { fg = colors.pink,       bg = 'NONE'            })  -- open
 
   -- Types
-  highlight(0, 'fsharpTypeName',        { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
-  highlight(0, 'fsharpBuiltinType',     { fg = colors.turquoise,  bg = 'NONE'            })  -- int, float, string, bool, etc.
-  highlight(0, 'fsharpIntType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- int, int32, int64, byte, etc.
-  highlight(0, 'fsharpFloatType',       { fg = colors.turquoise,  bg = 'NONE'            })  -- float, float32, double, decimal
-  highlight(0, 'fsharpBoolType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- bool
-  highlight(0, 'fsharpStringType',      { fg = colors.turquoise,  bg = 'NONE'            })  -- string
-  highlight(0, 'fsharpCharType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- char
-  highlight(0, 'fsharpUnitType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- unit
-  highlight(0, 'fsharpObjType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- obj
-  highlight(0, 'fsharpOptionType',      { fg = colors.turquoise,  bg = 'NONE'            })  -- option, Option
-  highlight(0, 'fsharpResultType',      { fg = colors.turquoise,  bg = 'NONE'            })  -- Result
-  highlight(0, 'fsharpListType',        { fg = colors.turquoise,  bg = 'NONE'            })  -- list, List
-  highlight(0, 'fsharpArrayType',       { fg = colors.turquoise,  bg = 'NONE'            })  -- array, Array
-  highlight(0, 'fsharpSeqType',         { fg = colors.turquoise,  bg = 'NONE'            })  -- seq, Seq
-  highlight(0, 'fsharpAsyncType',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Async, Task
-  highlight(0, 'fsharpGenericType',     { fg = colors.turquoise,  bg = 'NONE'            })  -- 'a, 'b generic type parameters
+  highlight(0, 'fsharpTypeName',        { link = "Type" })  -- Type names
+  highlight(0, 'fsharpBuiltinType',     { link = "Type" })  -- int, float, string, bool, etc.
+  highlight(0, 'fsharpIntType',         { link = "Type" })  -- int, int32, int64, byte, etc.
+  highlight(0, 'fsharpFloatType',       { link = "Type" })  -- float, float32, double, decimal
+  highlight(0, 'fsharpBoolType',        { link = "Type" })  -- bool
+  highlight(0, 'fsharpStringType',      { link = "String" })  -- string
+  highlight(0, 'fsharpCharType',        { link = "Type" })  -- char
+  highlight(0, 'fsharpUnitType',        { link = "Type" })  -- unit
+  highlight(0, 'fsharpObjType',         { link = "Type" })  -- obj
+  highlight(0, 'fsharpOptionType',      { link = "Type" })  -- option, Option
+  highlight(0, 'fsharpResultType',      { link = "Type" })  -- Result
+  highlight(0, 'fsharpListType',        { link = "Type" })  -- list, List
+  highlight(0, 'fsharpArrayType',       { link = "Type" })  -- array, Array
+  highlight(0, 'fsharpSeqType',         { link = "Type" })  -- seq, Seq
+  highlight(0, 'fsharpAsyncType',       { link = "Type" })  -- Async, Task
+  highlight(0, 'fsharpGenericType',     { link = "Type" })  -- 'a, 'b generic type parameters
 
   -- Discriminated Unions
   highlight(0, 'fsharpUnionCase',       { fg = colors.turquoise,  bg = 'NONE'            })  -- Union case names (Some, None, Ok, Error)
 
   -- Functions
-  highlight(0, 'fsharpFunctionDef',     { fg = colors.orange,     bg = 'NONE'            })  -- Function definitions
-  highlight(0, 'fsharpFunctionCall',    { fg = colors.orange,     bg = 'NONE'            })  -- Function calls
-  highlight(0, 'fsharpBuiltinFunc',     { fg = colors.orange,     bg = 'NONE'            })  -- printfn, sprintf, failwith, etc.
-  highlight(0, 'fsharpMethodDef',       { fg = colors.orange,     bg = 'NONE'            })  -- Method definitions
-  highlight(0, 'fsharpMethodCall',      { fg = colors.orange,     bg = 'NONE'            })  -- Method calls
+  highlight(0, 'fsharpFunctionDef',     { link = "Function" })  -- Function definitions
+  highlight(0, 'fsharpFunctionCall',    { link = "Function" })  -- Function calls
+  highlight(0, 'fsharpBuiltinFunc',     { link = "Function" })  -- printfn, sprintf, failwith, etc.
+  highlight(0, 'fsharpMethodDef',       { link = "Function" })  -- Method definitions
+  highlight(0, 'fsharpMethodCall',      { link = "Function" })  -- Method calls
   highlight(0, 'fsharpConstructor',     { fg = colors.orange,     bg = 'NONE'            })  -- Constructors
 
   -- Variables
@@ -150,23 +150,23 @@ fsharp.setupHighlighting = function()
   highlight(0, 'fsharpActivePattern',   { fg = colors.pink,       bg = 'NONE'            })  -- (|...|) active patterns
 
   -- Constants
-  highlight(0, 'fsharpConstant',        { fg = colors.purple,     bg = 'NONE'            })  -- Constants
-  highlight(0, 'fsharpBoolean',         { fg = colors.blue,       bg = 'NONE'            })  -- true, false
+  highlight(0, 'fsharpConstant',        { link = "Constant" })  -- Constants
+  highlight(0, 'fsharpBoolean',         { link = "Boolean" })  -- true, false
   highlight(0, 'fsharpNull',            { fg = colors.blue,       bg = 'NONE'            })  -- null
   highlight(0, 'fsharpUnit',            { fg = colors.blue,       bg = 'NONE'            })  -- ()
 
   -- Strings
-  highlight(0, 'fsharpString',          { fg = colors.redLight,   bg = 'NONE'            })  -- "strings"
-  highlight(0, 'fsharpVerbatimString',  { fg = colors.redLight,   bg = 'NONE'            })  -- @"verbatim"
-  highlight(0, 'fsharpTripleString',    { fg = colors.redLight,   bg = 'NONE'            })  -- """triple quoted"""
+  highlight(0, 'fsharpString',          { link = "String" })  -- "strings"
+  highlight(0, 'fsharpVerbatimString',  { link = "String" })  -- @"verbatim"
+  highlight(0, 'fsharpTripleString',    { link = "String" })  -- """triple quoted"""
   highlight(0, 'fsharpInterpolated',    { fg = colors.redLight,   bg = 'NONE'            })  -- $"interpolated {x}"
   highlight(0, 'fsharpInterpolation',   { fg = colors.pink,       bg = 'NONE'            })  -- {expression}
-  highlight(0, 'fsharpStringEscape',    { fg = colors.pink,       bg = 'NONE'            })  -- \n, \t, etc.
+  highlight(0, 'fsharpStringEscape',    { link = "String" })  -- \n, \t, etc.
   highlight(0, 'fsharpCharacter',       { fg = colors.redLight,   bg = 'NONE'            })  -- 'c'
   highlight(0, 'fsharpFormat',          { fg = colors.pink,       bg = 'NONE'            })  -- %d, %s, %A in printf
 
   -- Numbers
-  highlight(0, 'fsharpNumber',          { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'fsharpNumber',          { link = "Number" })  -- Numbers
   highlight(0, 'fsharpInteger',         { fg = colors.greenLight, bg = 'NONE'            })  -- Integer literals
   highlight(0, 'fsharpFloat',           { fg = colors.greenLight, bg = 'NONE'            })  -- Float literals
   highlight(0, 'fsharpHex',             { fg = colors.greenLight, bg = 'NONE'            })  -- 0xFF hex
@@ -175,7 +175,7 @@ fsharp.setupHighlighting = function()
   highlight(0, 'fsharpNumericSuffix',   { fg = colors.greenLight, bg = 'NONE'            })  -- L, UL, y, uy, s, us, etc.
 
   -- Operators - Standard
-  highlight(0, 'fsharpOperator',        { fg = colors.white,      bg = 'NONE'            })  -- + - * / % = < >
+  highlight(0, 'fsharpOperator',        { link = "Operator" })  -- + - * / % = < >
   highlight(0, 'fsharpArithmetic',      { fg = colors.white,      bg = 'NONE'            })  -- + - * / %
   highlight(0, 'fsharpComparison',      { fg = colors.white,      bg = 'NONE'            })  -- = <> < > <= >=
   highlight(0, 'fsharpLogical',         { fg = colors.white,      bg = 'NONE'            })  -- && || not
@@ -187,10 +187,10 @@ fsharp.setupHighlighting = function()
   highlight(0, 'fsharpComposeBackward', { fg = colors.white,      bg = 'NONE'            })  -- <<
 
   -- Operators - Type/Cast
-  highlight(0, 'fsharpTypeAnnotation',  { fg = colors.white,      bg = 'NONE'            })  -- : type annotation
+  highlight(0, 'fsharpTypeAnnotation',  { link = "Type" })  -- : type annotation
   highlight(0, 'fsharpUpcastOp',        { fg = colors.white,      bg = 'NONE'            })  -- :>
   highlight(0, 'fsharpDowncastOp',      { fg = colors.white,      bg = 'NONE'            })  -- :?>
-  highlight(0, 'fsharpTypeTest',        { fg = colors.white,      bg = 'NONE'            })  -- :?
+  highlight(0, 'fsharpTypeTest',        { link = "Type" })  -- :?
 
   -- Operators - Other
   highlight(0, 'fsharpArrow',           { fg = colors.white,      bg = 'NONE'            })  -- ->
@@ -214,10 +214,10 @@ fsharp.setupHighlighting = function()
   highlight(0, 'fsharpReference',       { fg = colors.pink,       bg = 'NONE'            })  -- #r
 
   -- Comments
-  highlight(0, 'fsharpComment',         { fg = colors.red,        bg = 'NONE'            })  -- // comments
-  highlight(0, 'fsharpLineComment',     { fg = colors.red,        bg = 'NONE'            })  -- // line comments
-  highlight(0, 'fsharpBlockComment',    { fg = colors.red,        bg = 'NONE'            })  -- (* *) block comments
-  highlight(0, 'fsharpDocComment',      { fg = colors.red,        bg = 'NONE'            })  -- /// XML doc comments
+  highlight(0, 'fsharpComment',         { link = "Comment" })  -- // comments
+  highlight(0, 'fsharpLineComment',     { link = "Comment" })  -- // line comments
+  highlight(0, 'fsharpBlockComment',    { link = "Comment" })  -- (* *) block comments
+  highlight(0, 'fsharpDocComment',      { link = "Comment" })  -- /// XML doc comments
   highlight(0, 'fsharpXmlTag',          { fg = colors.green,      bg = 'NONE'            })  -- <summary>, <param>
   highlight(0, 'fsharpTodo',            { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
@@ -233,28 +233,28 @@ fsharp.setupHighlighting = function()
   -- Treesitter Groups (@xxx.fsharp)
 
   -- Variables
-  highlight(0, '@variable.fsharp',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.fsharp',      { fg = colors.blue,      bg = 'NONE' })  -- this, base
-  highlight(0, '@variable.parameter.fsharp',    { fg = colors.purple,    bg = 'NONE' })  -- Function parameters
-  highlight(0, '@variable.parameter.builtin.fsharp', { fg = colors.blue, bg = 'NONE' })  -- __SOURCE_DIRECTORY__, etc.
-  highlight(0, '@variable.member.fsharp',       { fg = colors.purple,    bg = 'NONE' })  -- Fields
+  highlight(0, '@variable.fsharp',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.fsharp',      { link = "Variable" })  -- this, base
+  highlight(0, '@variable.parameter.fsharp',    { link = "Variable" })  -- Function parameters
+  highlight(0, '@variable.parameter.builtin.fsharp', { link = "Variable" })  -- __SOURCE_DIRECTORY__, etc.
+  highlight(0, '@variable.member.fsharp',       { link = "Variable" })  -- Fields
 
   -- Constants
-  highlight(0, '@constant.fsharp',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.fsharp',      { fg = colors.blue,      bg = 'NONE' })  -- true, false, null
-  highlight(0, '@constant.macro.fsharp',        { fg = colors.pink,      bg = 'NONE' })  -- Preprocessor symbols
+  highlight(0, '@constant.fsharp',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.fsharp',      { link = "Constant" })  -- true, false, null
+  highlight(0, '@constant.macro.fsharp',        { link = "Constant" })  -- Preprocessor symbols
 
   -- Functions
-  highlight(0, '@function.fsharp',              { fg = colors.orange,    bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.fsharp',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.fsharp',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.method.fsharp',       { fg = colors.orange,    bg = 'NONE' })  -- Method definitions
+  highlight(0, '@function.fsharp',              { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.fsharp',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.fsharp',      { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.method.fsharp',       { link = "Function" })  -- Method definitions
   highlight(0, '@constructor.fsharp',           { fg = colors.turquoise, bg = 'NONE' })  -- Union case constructors
 
   -- Types
-  highlight(0, '@type.fsharp',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.fsharp',          { fg = colors.turquoise, bg = 'NONE' })  -- int, string, bool, etc.
-  highlight(0, '@type.definition.fsharp',       { fg = colors.turquoise, bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.fsharp',                  { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.fsharp',          { link = "Type" })  -- int, string, bool, etc.
+  highlight(0, '@type.definition.fsharp',       { link = "Type" })  -- Type definitions
 
   -- Modules
   highlight(0, '@module.fsharp',                { fg = colors.turquoise, bg = 'NONE' })  -- Modules
@@ -264,49 +264,49 @@ fsharp.setupHighlighting = function()
   highlight(0, '@property.fsharp',              { fg = colors.purple,    bg = 'NONE' })  -- Properties/fields
 
   -- Keywords
-  highlight(0, '@keyword.fsharp',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.type.fsharp',          { fg = colors.blue,      bg = 'NONE' })  -- type, class, struct, interface
-  highlight(0, '@keyword.modifier.fsharp',      { fg = colors.blue,      bg = 'NONE' })  -- public, private, mutable
-  highlight(0, '@keyword.function.fsharp',      { fg = colors.blue,      bg = 'NONE' })  -- let, fun, function
-  highlight(0, '@keyword.operator.fsharp',      { fg = colors.blue,      bg = 'NONE' })  -- and, or, not
-  highlight(0, '@keyword.return.fsharp',        { fg = colors.blue,      bg = 'NONE' })  -- return, return!
-  highlight(0, '@keyword.repeat.fsharp',        { fg = colors.blue,      bg = 'NONE' })  -- for, while, do
-  highlight(0, '@keyword.conditional.fsharp',   { fg = colors.blue,      bg = 'NONE' })  -- if, then, else, elif, match
-  highlight(0, '@keyword.exception.fsharp',     { fg = colors.blue,      bg = 'NONE' })  -- try, with, finally, raise
-  highlight(0, '@keyword.import.fsharp',        { fg = colors.pink,      bg = 'NONE' })  -- open
-  highlight(0, '@keyword.directive.fsharp',     { fg = colors.pink,      bg = 'NONE' })  -- Preprocessor directives
+  highlight(0, '@keyword.fsharp',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.type.fsharp',          { link = "Keyword" })  -- type, class, struct, interface
+  highlight(0, '@keyword.modifier.fsharp',      { link = "Keyword" })  -- public, private, mutable
+  highlight(0, '@keyword.function.fsharp',      { link = "Keyword" })  -- let, fun, function
+  highlight(0, '@keyword.operator.fsharp',      { link = "Operator" })  -- and, or, not
+  highlight(0, '@keyword.return.fsharp',        { link = "Keyword" })  -- return, return!
+  highlight(0, '@keyword.repeat.fsharp',        { link = "Keyword" })  -- for, while, do
+  highlight(0, '@keyword.conditional.fsharp',   { link = "Conditional" })  -- if, then, else, elif, match
+  highlight(0, '@keyword.exception.fsharp',     { link = "Keyword" })  -- try, with, finally, raise
+  highlight(0, '@keyword.import.fsharp',        { link = "Keyword" })  -- open
+  highlight(0, '@keyword.directive.fsharp',     { link = "Keyword" })  -- Preprocessor directives
 
   -- Strings
-  highlight(0, '@string.fsharp',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.fsharp',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.fsharp',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.fsharp',         { link = "String" })  -- Escape sequences
   highlight(0, '@character.fsharp',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
   highlight(0, '@character.special.fsharp',     { fg = colors.pink,      bg = 'NONE' })  -- Escape chars
 
   -- Numbers
-  highlight(0, '@number.fsharp',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.fsharp',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.fsharp',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.fsharp',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.fsharp',               { fg = colors.blue,      bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.fsharp',               { link = "Boolean" })  -- true, false
 
   -- Comments
-  highlight(0, '@comment.fsharp',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.fsharp', { fg = colors.red,       bg = 'NONE' })  -- XML doc comments
+  highlight(0, '@comment.fsharp',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.fsharp', { link = "Comment" })  -- XML doc comments
 
   -- Attributes
   highlight(0, '@attribute.fsharp',             { fg = colors.pink,      bg = 'NONE' })  -- [<Attribute>]
 
   -- Operators and Punctuation
-  highlight(0, '@operator.fsharp',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.fsharp',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.fsharp',   { fg = colors.white,     bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.fsharp', { fg = colors.white,     bg = 'NONE' })  -- , ; |
+  highlight(0, '@punctuation.delimiter.fsharp', { link = "Delimiter" })  -- , ; |
   highlight(0, '@punctuation.special.fsharp',   { fg = colors.pink,      bg = 'NONE' })  -- # in directives, (| |)
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.fsharp)
 
-  highlight(0, '@lsp.type.variable.fsharp',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.fsharp',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.fsharp',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.fsharp',      { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.function.fsharp',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
@@ -320,14 +320,14 @@ fsharp.setupHighlighting = function()
   highlight(0, '@lsp.type.namespace.fsharp',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
   highlight(0, '@lsp.type.module.fsharp',        { fg = colors.turquoise, bg = 'NONE' })  -- Modules
   highlight(0, '@lsp.type.typeParameter.fsharp', { fg = colors.turquoise, bg = 'NONE' })  -- Generic type parameters
-  highlight(0, '@lsp.type.keyword.fsharp',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.operator.fsharp',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.fsharp',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.fsharp',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.fsharp',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.keyword.fsharp',       { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.operator.fsharp',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.fsharp',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.fsharp',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.fsharp',       { link = "Comment" })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.mutable.fsharp',  { fg = colors.purple,    bg = 'NONE' })  -- mutable variables
+  highlight(0, '@lsp.typemod.variable.mutable.fsharp',  { link = "Variable" })  -- mutable variables
   highlight(0, '@lsp.typemod.function.declaration.fsharp', { fg = colors.orange, bg = 'NONE' })  -- Function declarations
   highlight(0, '@lsp.typemod.type.declaration.fsharp', { fg = colors.turquoise, bg = 'NONE' })  -- Type declarations
   highlight(0, '@lsp.typemod.member.static.fsharp',    { fg = colors.orange,    bg = 'NONE' })  -- Static members

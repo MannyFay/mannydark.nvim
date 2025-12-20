@@ -16,7 +16,7 @@ perl.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords - Control Flow
-  highlight(0, 'perlConditional',      { fg = colors.blue,       bg = 'NONE'            })  -- if, elsif, unless, given, when, default, else
+  highlight(0, 'perlConditional',      { link = "Conditional" })  -- if, elsif, unless, given, when, default, else
   highlight(0, 'perlRepeat',           { fg = colors.blue,       bg = 'NONE'            })  -- while, for, foreach, do, until, continue
   highlight(0, 'perlLabel',            { fg = colors.blue,       bg = 'NONE'            })  -- Labels
   highlight(0, 'perlStatementControl', { fg = colors.blue,       bg = 'NONE'            })  -- return, last, next, redo, goto, break
@@ -28,7 +28,7 @@ perl.setupHighlighting = function()
   highlight(0, 'perlStatementStorage', { fg = colors.blue,       bg = 'NONE'            })  -- my, our, local, state
 
   -- Keywords - Operators
-  highlight(0, 'perlOperator',         { fg = colors.blue,       bg = 'NONE'            })  -- defined, undef, eq, ne, lt, le, gt, ge, cmp, not, and, or, xor, bless, ref
+  highlight(0, 'perlOperator',         { link = "Operator" })  -- defined, undef, eq, ne, lt, le, gt, ge, cmp, not, and, or, xor, bless, ref
 
   -- Keywords - Include
   highlight(0, 'perlStatementInclude', { fg = colors.pink,       bg = 'NONE'            })  -- require, import, unimport, use, no
@@ -43,8 +43,8 @@ perl.setupHighlighting = function()
   highlight(0, 'perlSubName',          { fg = colors.orange,     bg = 'NONE'            })  -- Subroutine name
   highlight(0, 'perlSubPrototype',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Prototype ($@%)
   highlight(0, 'perlSubAttributes',    { fg = colors.pink,       bg = 'NONE'            })  -- :lvalue, :method, etc.
-  highlight(0, 'perlFunction',         { fg = colors.orange,     bg = 'NONE'            })  -- Function names
-  highlight(0, 'perlMethod',           { fg = colors.orange,     bg = 'NONE'            })  -- Method calls
+  highlight(0, 'perlFunction',         { link = "Function" })  -- Function names
+  highlight(0, 'perlMethod',           { link = "Function" })  -- Method calls
 
   -- Built-in Functions - Scalar
   highlight(0, 'perlStatementScalar',  { fg = colors.orange,     bg = 'NONE'            })  -- chomp, chop, chr, crypt, index, rindex, lc, lcfirst, length, ord, pack, sprintf, substr, fc, uc, ucfirst
@@ -93,16 +93,16 @@ perl.setupHighlighting = function()
   highlight(0, 'perlStatementIndirObj',{ fg = colors.orange,     bg = 'NONE'            })  -- map, grep, sort, printf, say, system, exec (with indirect object)
 
   -- Variables - Sigils
-  highlight(0, 'perlVarPlain',         { fg = colors.purple,     bg = 'NONE'            })  -- $scalar
-  highlight(0, 'perlVarPlain2',        { fg = colors.purple,     bg = 'NONE'            })  -- @array, %hash
-  highlight(0, 'perlVarNotInMatches',  { fg = colors.purple,     bg = 'NONE'            })  -- Variables not in regex matches
-  highlight(0, 'perlVarSlash',         { fg = colors.purple,     bg = 'NONE'            })  -- Variables in regex
-  highlight(0, 'perlVarBlock',         { fg = colors.purple,     bg = 'NONE'            })  -- ${...} dereference
+  highlight(0, 'perlVarPlain',         { link = "Variable" })  -- $scalar
+  highlight(0, 'perlVarPlain2',        { link = "Variable" })  -- @array, %hash
+  highlight(0, 'perlVarNotInMatches',  { link = "Variable" })  -- Variables not in regex matches
+  highlight(0, 'perlVarSlash',         { link = "Variable" })  -- Variables in regex
+  highlight(0, 'perlVarBlock',         { link = "Variable" })  -- ${...} dereference
 
   -- Variables - Special/Built-in
-  highlight(0, 'perlVarSimpleMember',  { fg = colors.purple,     bg = 'NONE'            })  -- Hash/array members
-  highlight(0, 'perlVarSimpleMemberName', { fg = colors.purple,  bg = 'NONE'            })  -- Member names
-  highlight(0, 'perlSpecialString',    { fg = colors.pink,       bg = 'NONE'            })  -- Special variables like $_, @_, %ENV
+  highlight(0, 'perlVarSimpleMember',  { link = "Variable" })  -- Hash/array members
+  highlight(0, 'perlVarSimpleMemberName', { link = "Variable" })  -- Member names
+  highlight(0, 'perlSpecialString',    { link = "String" })  -- Special variables like $_, @_, %ENV
   highlight(0, 'perlSpecialMatch',     { fg = colors.pink,       bg = 'NONE'            })  -- $&, $`, $', $1, $2, etc.
   highlight(0, 'perlSpecialBEOM',      { fg = colors.pink,       bg = 'NONE'            })  -- $^, $~, etc.
 
@@ -110,33 +110,33 @@ perl.setupHighlighting = function()
   highlight(0, 'perlIdentifier',       { fg = colors.purple,     bg = 'NONE'            })  -- General identifiers
 
   -- Types/Classes
-  highlight(0, 'perlType',             { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
+  highlight(0, 'perlType',             { link = "Type" })  -- Type names
   highlight(0, 'perlPackage',          { fg = colors.turquoise,  bg = 'NONE'            })  -- Package names
-  highlight(0, 'perlFunctionName',     { fg = colors.orange,     bg = 'NONE'            })  -- Function names
+  highlight(0, 'perlFunctionName',     { link = "Function" })  -- Function names
 
   -- Strings
-  highlight(0, 'perlString',           { fg = colors.redLight,   bg = 'NONE'            })  -- "strings" and 'strings'
-  highlight(0, 'perlStringUnexpanded', { fg = colors.redLight,   bg = 'NONE'            })  -- 'literal strings' (no interpolation)
+  highlight(0, 'perlString',           { link = "String" })  -- "strings" and 'strings'
+  highlight(0, 'perlStringUnexpanded', { link = "String" })  -- 'literal strings' (no interpolation)
   highlight(0, 'perlQQ',               { fg = colors.redLight,   bg = 'NONE'            })  -- qq{...}
   highlight(0, 'perlQ',                { fg = colors.redLight,   bg = 'NONE'            })  -- q{...}
   highlight(0, 'perlHereDoc',          { fg = colors.redLight,   bg = 'NONE'            })  -- <<EOF heredocs
   highlight(0, 'perlIndentedHereDoc',  { fg = colors.redLight,   bg = 'NONE'            })  -- <<~EOF indented heredocs
 
   -- String Escapes
-  highlight(0, 'perlSpecialStringU',   { fg = colors.pink,       bg = 'NONE'            })  -- Unicode escapes
-  highlight(0, 'perlSpecialStringU2',  { fg = colors.pink,       bg = 'NONE'            })  -- Named Unicode escapes
+  highlight(0, 'perlSpecialStringU',   { link = "String" })  -- Unicode escapes
+  highlight(0, 'perlSpecialStringU2',  { link = "String" })  -- Named Unicode escapes
 
   -- Numbers
-  highlight(0, 'perlNumber',           { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'perlNumber',           { link = "Number" })  -- Numbers
   highlight(0, 'perlFloat',            { fg = colors.greenLight, bg = 'NONE'            })  -- Floating-point
 
   -- Regular Expressions
   highlight(0, 'perlMatch',            { fg = colors.redLight,   bg = 'NONE'            })  -- m// match
   highlight(0, 'perlMatchStartEnd',    { fg = colors.pink,       bg = 'NONE'            })  -- Regex delimiters
-  highlight(0, 'perlSubstitution',     { fg = colors.redLight,   bg = 'NONE'            })  -- s/// substitution
-  highlight(0, 'perlSubstitutionSQ',   { fg = colors.redLight,   bg = 'NONE'            })  -- s''' substitution (no interpolation)
-  highlight(0, 'perlSubstitutionGQQ',  { fg = colors.redLight,   bg = 'NONE'            })  -- s{}{} substitution
-  highlight(0, 'perlSubstitutionSlash',{ fg = colors.pink,       bg = 'NONE'            })  -- s/// delimiter
+  highlight(0, 'perlSubstitution',     { link = "Variable" })  -- s/// substitution
+  highlight(0, 'perlSubstitutionSQ',   { link = "Variable" })  -- s''' substitution (no interpolation)
+  highlight(0, 'perlSubstitutionGQQ',  { link = "Variable" })  -- s{}{} substitution
+  highlight(0, 'perlSubstitutionSlash',{ link = "Variable" })  -- s/// delimiter
   highlight(0, 'perlTranslation',      { fg = colors.redLight,   bg = 'NONE'            })  -- tr/// and y///
   highlight(0, 'perlTranslationGQ',    { fg = colors.redLight,   bg = 'NONE'            })  -- tr{}{} and y{}{}
 
@@ -149,7 +149,7 @@ perl.setupHighlighting = function()
   highlight(0, 'perlArrow',            { fg = colors.white,      bg = 'NONE'            })  -- -> arrow operator
   highlight(0, 'perlFatComma',         { fg = colors.white,      bg = 'NONE'            })  -- => fat comma
   highlight(0, 'perlRange',            { fg = colors.white,      bg = 'NONE'            })  -- .. and ... range
-  highlight(0, 'perlOperatorSymbol',   { fg = colors.white,      bg = 'NONE'            })  -- +, -, *, /, %, etc.
+  highlight(0, 'perlOperatorSymbol',   { link = "Operator" })  -- +, -, *, /, %, etc.
 
   -- Quote-like Operators
   highlight(0, 'perlQW',               { fg = colors.redLight,   bg = 'NONE'            })  -- qw(...) word list
@@ -160,13 +160,13 @@ perl.setupHighlighting = function()
   highlight(0, 'perlPOD',              { fg = colors.red,        bg = 'NONE'            })  -- POD documentation
   highlight(0, 'perlPODCommand',       { fg = colors.green,      bg = 'NONE'            })  -- =head1, =over, =item, etc.
   highlight(0, 'perlPODFormat',        { fg = colors.green,      bg = 'NONE'            })  -- B<>, I<>, C<>, L<>, etc.
-  highlight(0, 'podCommand',           { fg = colors.green,      bg = 'NONE'            })  -- POD commands
+  highlight(0, 'podCommand',           { link = "Function" })  -- POD commands
   highlight(0, 'podFormat',            { fg = colors.green,      bg = 'NONE'            })  -- POD formatting
   highlight(0, 'podVerbatimLine',      { fg = colors.redLight,   bg = 'NONE'            })  -- Verbatim code blocks
   highlight(0, 'podSpecial',           { fg = colors.pink,       bg = 'NONE'            })  -- Special POD elements
 
   -- Comments
-  highlight(0, 'perlComment',          { fg = colors.red,        bg = 'NONE'            })  -- # comments
+  highlight(0, 'perlComment',          { link = "Comment" })  -- # comments
   highlight(0, 'perlTodo',             { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Shebang
@@ -185,7 +185,7 @@ perl.setupHighlighting = function()
   highlight(0, 'perlFormatField',      { fg = colors.purple,     bg = 'NONE'            })  -- format fields
 
   -- Moose/Moo OOP
-  highlight(0, 'perlMooseKeyword',     { fg = colors.blue,       bg = 'NONE'            })  -- has, extends, with, before, after, around, override, augment
+  highlight(0, 'perlMooseKeyword',     { link = "Keyword" })  -- has, extends, with, before, after, around, override, augment
   highlight(0, 'perlMooseAttribute',   { fg = colors.purple,     bg = 'NONE'            })  -- is, isa, required, default, lazy, builder, etc.
 
   -- Error/Special
@@ -197,25 +197,25 @@ perl.setupHighlighting = function()
   -- Treesitter Groups (@xxx.perl)
 
   -- Variables
-  highlight(0, '@variable.perl',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.perl',      { fg = colors.pink,      bg = 'NONE' })  -- $_, @_, %ENV, STDIN, STDOUT, STDERR, ARGV
-  highlight(0, '@variable.parameter.perl',    { fg = colors.purple,    bg = 'NONE' })  -- Subroutine parameters
-  highlight(0, '@variable.member.perl',       { fg = colors.purple,    bg = 'NONE' })  -- Hash keys, array indices
+  highlight(0, '@variable.perl',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.perl',      { link = "Variable" })  -- $_, @_, %ENV, STDIN, STDOUT, STDERR, ARGV
+  highlight(0, '@variable.parameter.perl',    { link = "Variable" })  -- Subroutine parameters
+  highlight(0, '@variable.member.perl',       { link = "Variable" })  -- Hash keys, array indices
 
   -- Constants
-  highlight(0, '@constant.perl',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.perl',      { fg = colors.blue,      bg = 'NONE' })  -- __FILE__, __LINE__, __PACKAGE__
+  highlight(0, '@constant.perl',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.perl',      { link = "Constant" })  -- __FILE__, __LINE__, __PACKAGE__
 
   -- Functions
-  highlight(0, '@function.perl',              { fg = colors.orange,    bg = 'NONE' })  -- Subroutine definitions
-  highlight(0, '@function.call.perl',         { fg = colors.orange,    bg = 'NONE' })  -- Subroutine calls
-  highlight(0, '@function.builtin.perl',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions (map, grep, sort, print, etc.)
-  highlight(0, '@function.method.perl',       { fg = colors.orange,    bg = 'NONE' })  -- Method definitions
-  highlight(0, '@function.method.call.perl',  { fg = colors.orange,    bg = 'NONE' })  -- Method calls
+  highlight(0, '@function.perl',              { link = "Function" })  -- Subroutine definitions
+  highlight(0, '@function.call.perl',         { link = "Function" })  -- Subroutine calls
+  highlight(0, '@function.builtin.perl',      { link = "Function" })  -- Built-in functions (map, grep, sort, print, etc.)
+  highlight(0, '@function.method.perl',       { link = "Function" })  -- Method definitions
+  highlight(0, '@function.method.call.perl',  { link = "Function" })  -- Method calls
 
   -- Types
-  highlight(0, '@type.perl',                  { fg = colors.turquoise, bg = 'NONE' })  -- Package/class names
-  highlight(0, '@type.builtin.perl',          { fg = colors.turquoise, bg = 'NONE' })  -- Built-in types
+  highlight(0, '@type.perl',                  { link = "Type" })  -- Package/class names
+  highlight(0, '@type.builtin.perl',          { link = "Type" })  -- Built-in types
 
   -- Modules
   highlight(0, '@module.perl',                { fg = colors.turquoise, bg = 'NONE' })  -- Package names
@@ -227,48 +227,48 @@ perl.setupHighlighting = function()
   highlight(0, '@label.perl',                 { fg = colors.blue,      bg = 'NONE' })  -- Labels
 
   -- Keywords
-  highlight(0, '@keyword.perl',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.perl',      { fg = colors.blue,      bg = 'NONE' })  -- sub
-  highlight(0, '@keyword.operator.perl',      { fg = colors.blue,      bg = 'NONE' })  -- and, or, not, xor, eq, ne, lt, le, gt, ge, cmp, isa
-  highlight(0, '@keyword.return.perl',        { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.repeat.perl',        { fg = colors.blue,      bg = 'NONE' })  -- while, for, foreach, until, continue
-  highlight(0, '@keyword.conditional.perl',   { fg = colors.blue,      bg = 'NONE' })  -- if, elsif, unless, else, given, when, default
-  highlight(0, '@keyword.exception.perl',     { fg = colors.blue,      bg = 'NONE' })  -- try, catch, finally
-  highlight(0, '@keyword.import.perl',        { fg = colors.pink,      bg = 'NONE' })  -- use, no, require, package
-  highlight(0, '@keyword.coroutine.perl',     { fg = colors.blue,      bg = 'NONE' })  -- async, await
-  highlight(0, '@keyword.directive.perl',     { fg = colors.pink,      bg = 'NONE' })  -- Shebang and pragmas
+  highlight(0, '@keyword.perl',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.perl',      { link = "Keyword" })  -- sub
+  highlight(0, '@keyword.operator.perl',      { link = "Operator" })  -- and, or, not, xor, eq, ne, lt, le, gt, ge, cmp, isa
+  highlight(0, '@keyword.return.perl',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.repeat.perl',        { link = "Keyword" })  -- while, for, foreach, until, continue
+  highlight(0, '@keyword.conditional.perl',   { link = "Conditional" })  -- if, elsif, unless, else, given, when, default
+  highlight(0, '@keyword.exception.perl',     { link = "Keyword" })  -- try, catch, finally
+  highlight(0, '@keyword.import.perl',        { link = "Keyword" })  -- use, no, require, package
+  highlight(0, '@keyword.coroutine.perl',     { link = "Keyword" })  -- async, await
+  highlight(0, '@keyword.directive.perl',     { link = "Keyword" })  -- Shebang and pragmas
 
   -- Strings
-  highlight(0, '@string.perl',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.regexp.perl',         { fg = colors.redLight,  bg = 'NONE' })  -- Regular expressions
-  highlight(0, '@string.escape.perl',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.perl',        { fg = colors.redLight,  bg = 'NONE' })  -- Autoquoted barewords
-  highlight(0, '@string.special.symbol.perl', { fg = colors.redLight,  bg = 'NONE' })  -- __DATA__, __END__
+  highlight(0, '@string.perl',                { link = "String" })  -- Strings
+  highlight(0, '@string.regexp.perl',         { link = "String" })  -- Regular expressions
+  highlight(0, '@string.escape.perl',         { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.perl',        { link = "String" })  -- Autoquoted barewords
+  highlight(0, '@string.special.symbol.perl', { link = "String" })  -- __DATA__, __END__
   highlight(0, '@character.perl',             { fg = colors.redLight,  bg = 'NONE' })  -- Character literals
   highlight(0, '@character.special.perl',     { fg = colors.pink,      bg = 'NONE' })  -- Special characters
 
   -- Numbers
-  highlight(0, '@number.perl',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.perl',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.perl',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.perl',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.perl',               { fg = colors.blue,      bg = 'NONE' })  -- (Perl doesn't have true/false keywords)
+  highlight(0, '@boolean.perl',               { link = "Boolean" })  -- (Perl doesn't have true/false keywords)
 
   -- Comments
-  highlight(0, '@comment.perl',               { fg = colors.red,       bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.documentation.perl', { fg = colors.red,       bg = 'NONE' })  -- POD documentation
+  highlight(0, '@comment.perl',               { link = "Comment" })  -- Comments
+  highlight(0, '@comment.documentation.perl', { link = "Comment" })  -- POD documentation
 
   -- Operators and Punctuation
-  highlight(0, '@operator.perl',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.perl',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.perl',   { fg = colors.white,     bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.perl', { fg = colors.white,     bg = 'NONE' })  -- , ; : => ->
+  highlight(0, '@punctuation.delimiter.perl', { link = "Delimiter" })  -- , ; : => ->
   highlight(0, '@punctuation.special.perl',   { fg = colors.pink,      bg = 'NONE' })  -- $ @ % & * in variable contexts
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.perl)
 
-  highlight(0, '@lsp.type.variable.perl',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.perl',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.perl',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.perl',      { fg = colors.purple,    bg = 'NONE' })  -- Properties (hash keys)
   highlight(0, '@lsp.type.function.perl',      { fg = colors.orange,    bg = 'NONE' })  -- Subroutines
@@ -276,16 +276,16 @@ perl.setupHighlighting = function()
   highlight(0, '@lsp.type.type.perl',          { fg = colors.turquoise, bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.class.perl',         { fg = colors.turquoise, bg = 'NONE' })  -- Classes (packages)
   highlight(0, '@lsp.type.namespace.perl',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
-  highlight(0, '@lsp.type.keyword.perl',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.perl',       { link = "Keyword" })  -- Keywords
   highlight(0, '@lsp.type.modifier.perl',      { fg = colors.blue,      bg = 'NONE' })  -- Modifiers
-  highlight(0, '@lsp.type.operator.perl',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.perl',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
+  highlight(0, '@lsp.type.operator.perl',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.perl',        { link = "String" })  -- Strings
   highlight(0, '@lsp.type.regexp.perl',        { fg = colors.redLight,  bg = 'NONE' })  -- Regular expressions
-  highlight(0, '@lsp.type.number.perl',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.perl',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.number.perl',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.perl',       { link = "Comment" })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.perl',    { fg = colors.purple,    bg = 'NONE' })  -- Constants
+  highlight(0, '@lsp.typemod.variable.readonly.perl',    { link = "Variable" })  -- Constants
   highlight(0, '@lsp.typemod.function.declaration.perl', { fg = colors.orange,    bg = 'NONE' })  -- Subroutine declarations
   highlight(0, '@lsp.typemod.function.defaultLibrary.perl', { fg = colors.orange, bg = 'NONE' })  -- Built-in functions
   highlight(0, '@lsp.typemod.class.declaration.perl',    { fg = colors.turquoise, bg = 'NONE' })  -- Package declarations

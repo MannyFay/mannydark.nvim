@@ -32,21 +32,21 @@ lisp.setupHighlighting = function()
   highlight(0, 'lispKey',               { fg = colors.pink,       bg = 'NONE' })  -- :keywords
 
   -- Variables
-  highlight(0, 'lispVar',               { fg = colors.purple,     bg = 'NONE' })  -- Variables
+  highlight(0, 'lispVar',               { link = "Variable" })  -- Variables
 
   -- Functions
-  highlight(0, 'lispFunc',              { fg = colors.orange,     bg = 'NONE' })  -- Function names/calls
+  highlight(0, 'lispFunc',              { link = "Function" })  -- Function names/calls
 
   -- Declarations/Special Forms
   highlight(0, 'lispDecl',              { fg = colors.blue,       bg = 'NONE' })  -- defun, defvar, defmacro, let, lambda, etc.
 
   -- Numbers
-  highlight(0, 'lispNumber',            { fg = colors.greenLight, bg = 'NONE' })  -- Numbers (including ratios, complex)
+  highlight(0, 'lispNumber',            { link = "Number" })  -- Numbers (including ratios, complex)
 
   -- Strings
-  highlight(0, 'lispString',            { fg = colors.redLight,   bg = 'NONE' })  -- "strings"
-  highlight(0, 'lispInString',          { fg = colors.redLight,   bg = 'NONE' })  -- Inside strings
-  highlight(0, 'lispInStringString',    { fg = colors.redLight,   bg = 'NONE' })  -- Nested strings
+  highlight(0, 'lispString',            { link = "String" })  -- "strings"
+  highlight(0, 'lispInString',          { link = "String" })  -- Inside strings
+  highlight(0, 'lispInStringString',    { link = "String" })  -- Nested strings
 
   -- Escape Sequences
   highlight(0, 'lispEscapeSpecial',     { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
@@ -64,8 +64,8 @@ lisp.setupHighlighting = function()
   highlight(0, 'lispConcat',            { fg = colors.pink,       bg = 'NONE' })  -- ,@ (splice)
 
   -- Comments
-  highlight(0, 'lispComment',           { fg = colors.red,        bg = 'NONE' })  -- ; comments
-  highlight(0, 'lispCommentRegion',     { fg = colors.red,        bg = 'NONE' })  -- #| ... |# block comments
+  highlight(0, 'lispComment',           { link = "Comment" })  -- ; comments
+  highlight(0, 'lispCommentRegion',     { link = "Comment" })  -- #| ... |# block comments
   highlight(0, 'lispTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
   -- Leading Whitespace (for indentation)
@@ -137,24 +137,24 @@ lisp.setupHighlighting = function()
   -- Evaluation
   highlight(0, 'lispEval',              { fg = colors.blue,       bg = 'NONE' })  -- eval, eval-when
   highlight(0, 'lispQuote',             { fg = colors.blue,       bg = 'NONE' })  -- quote
-  highlight(0, 'lispFunction',          { fg = colors.blue,       bg = 'NONE' })  -- function, #'
+  highlight(0, 'lispFunction',          { link = "Function" })  -- function, #'
   highlight(0, 'lispApply',             { fg = colors.orange,     bg = 'NONE' })  -- apply, funcall
   highlight(0, 'lispSetq',              { fg = colors.blue,       bg = 'NONE' })  -- setq, setf, psetq, psetf
 
   -- Type/Class System
-  highlight(0, 'lispType',              { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
+  highlight(0, 'lispType',              { link = "Type" })  -- Type names
   highlight(0, 'lispClass',             { fg = colors.turquoise,  bg = 'NONE' })  -- Class names
   highlight(0, 'lispSlot',              { fg = colors.orange,     bg = 'NONE' })  -- Slot names
-  highlight(0, 'lispMethod',            { fg = colors.orange,     bg = 'NONE' })  -- Method names
+  highlight(0, 'lispMethod',            { link = "Function" })  -- Method names
   highlight(0, 'lispGeneric',           { fg = colors.orange,     bg = 'NONE' })  -- Generic function names
 
   -- Built-in Types
-  highlight(0, 'lispBuiltinType',       { fg = colors.turquoise,  bg = 'NONE' })  -- nil, t, list, cons, symbol, number, string, character, array, vector, hash-table, package, stream, function, class, condition, restart
+  highlight(0, 'lispBuiltinType',       { link = "Type" })  -- nil, t, list, cons, symbol, number, string, character, array, vector, hash-table, package, stream, function, class, condition, restart
 
   -- Booleans/Constants
-  highlight(0, 'lispBoolean',           { fg = colors.blue,       bg = 'NONE' })  -- t, nil
-  highlight(0, 'lispConstant',          { fg = colors.pink,       bg = 'NONE' })  -- *standard-input*, *standard-output*, etc.
-  highlight(0, 'lispSpecialVar',        { fg = colors.purple,     bg = 'NONE' })  -- *earmuff* variables
+  highlight(0, 'lispBoolean',           { link = "Boolean" })  -- t, nil
+  highlight(0, 'lispConstant',          { link = "Constant" })  -- *standard-input*, *standard-output*, etc.
+  highlight(0, 'lispSpecialVar',        { link = "Variable" })  -- *earmuff* variables
 
   -- Characters
   highlight(0, 'lispCharacter',         { fg = colors.redLight,   bg = 'NONE' })  -- #\a, #\newline, #\space
@@ -181,7 +181,7 @@ lisp.setupHighlighting = function()
   highlight(0, 'lispDeclaration',       { fg = colors.pink,       bg = 'NONE' })  -- type, ftype, inline, notinline, optimize, special, dynamic-extent, ignorable, ignore
 
   -- Common Functions
-  highlight(0, 'lispCoreFunc',          { fg = colors.orange,     bg = 'NONE' })  -- car, cdr, cons, list, append, mapcar, mapc, reduce, remove, find, position, sort, length, nth, elt, aref, gethash, print, format, read, write
+  highlight(0, 'lispCoreFunc',          { link = "Function" })  -- car, cdr, cons, list, append, mapcar, mapc, reduce, remove, find, position, sort, length, nth, elt, aref, gethash, print, format, read, write
 
 
   ---------------------------------------------------------------------------
@@ -189,70 +189,70 @@ lisp.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Variables
-  highlight(0, '@variable.commonlisp',          { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.lisp',                { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.parameter.commonlisp', { fg = colors.purple,    bg = 'NONE' })  -- Function parameters
-  highlight(0, '@variable.parameter.lisp',      { fg = colors.purple,     bg = 'NONE' })  -- Function parameters
-  highlight(0, '@variable.builtin.commonlisp',  { fg = colors.purple,     bg = 'NONE' })  -- *special* variables
-  highlight(0, '@variable.builtin.lisp',        { fg = colors.purple,     bg = 'NONE' })  -- *special* variables
+  highlight(0, '@variable.commonlisp',          { link = "Variable" })  -- Variables
+  highlight(0, '@variable.lisp',                { link = "Variable" })  -- Variables
+  highlight(0, '@variable.parameter.commonlisp', { link = "Variable" })  -- Function parameters
+  highlight(0, '@variable.parameter.lisp',      { link = "Variable" })  -- Function parameters
+  highlight(0, '@variable.builtin.commonlisp',  { link = "Variable" })  -- *special* variables
+  highlight(0, '@variable.builtin.lisp',        { link = "Variable" })  -- *special* variables
 
   -- Constants
-  highlight(0, '@constant.commonlisp',          { fg = colors.pink,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.lisp',                { fg = colors.pink,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.commonlisp',  { fg = colors.blue,       bg = 'NONE' })  -- t, nil
-  highlight(0, '@constant.builtin.lisp',        { fg = colors.blue,       bg = 'NONE' })  -- t, nil
+  highlight(0, '@constant.commonlisp',          { link = "Constant" })  -- Constants
+  highlight(0, '@constant.lisp',                { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.commonlisp',  { link = "Constant" })  -- t, nil
+  highlight(0, '@constant.builtin.lisp',        { link = "Constant" })  -- t, nil
 
   -- Booleans
-  highlight(0, '@boolean.commonlisp',           { fg = colors.blue,       bg = 'NONE' })  -- t, nil
-  highlight(0, '@boolean.lisp',                 { fg = colors.blue,       bg = 'NONE' })  -- t, nil
+  highlight(0, '@boolean.commonlisp',           { link = "Boolean" })  -- t, nil
+  highlight(0, '@boolean.lisp',                 { link = "Boolean" })  -- t, nil
 
   -- Numbers
-  highlight(0, '@number.commonlisp',            { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.lisp',                  { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, '@number.commonlisp',            { link = "Number" })  -- Numbers
+  highlight(0, '@number.lisp',                  { link = "Number" })  -- Numbers
 
   -- Strings
-  highlight(0, '@string.commonlisp',            { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.lisp',                  { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.commonlisp',     { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.escape.lisp',           { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.symbol.commonlisp', { fg = colors.pink,   bg = 'NONE' })  -- Symbols
-  highlight(0, '@string.special.symbol.lisp',   { fg = colors.pink,       bg = 'NONE' })  -- Symbols
+  highlight(0, '@string.commonlisp',            { link = "String" })  -- Strings
+  highlight(0, '@string.lisp',                  { link = "String" })  -- Strings
+  highlight(0, '@string.escape.commonlisp',     { link = "String" })  -- Escape sequences
+  highlight(0, '@string.escape.lisp',           { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.symbol.commonlisp', { link = "String" })  -- Symbols
+  highlight(0, '@string.special.symbol.lisp',   { link = "String" })  -- Symbols
 
   -- Characters
   highlight(0, '@character.commonlisp',         { fg = colors.redLight,   bg = 'NONE' })  -- #\char
   highlight(0, '@character.lisp',               { fg = colors.redLight,   bg = 'NONE' })  -- #\char
 
   -- Functions
-  highlight(0, '@function.commonlisp',          { fg = colors.orange,     bg = 'NONE' })  -- Function names
-  highlight(0, '@function.lisp',                { fg = colors.orange,     bg = 'NONE' })  -- Function names
-  highlight(0, '@function.builtin.commonlisp',  { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.builtin.lisp',        { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, '@function.macro.commonlisp',    { fg = colors.blue,       bg = 'NONE' })  -- Macros
-  highlight(0, '@function.macro.lisp',          { fg = colors.blue,       bg = 'NONE' })  -- Macros
+  highlight(0, '@function.commonlisp',          { link = "Function" })  -- Function names
+  highlight(0, '@function.lisp',                { link = "Function" })  -- Function names
+  highlight(0, '@function.builtin.commonlisp',  { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.builtin.lisp',        { link = "Function" })  -- Built-in functions
+  highlight(0, '@function.macro.commonlisp',    { link = "Function" })  -- Macros
+  highlight(0, '@function.macro.lisp',          { link = "Function" })  -- Macros
 
   -- Types
-  highlight(0, '@type.commonlisp',              { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, '@type.lisp',                    { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, '@type.builtin.commonlisp',      { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.builtin.lisp',            { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
+  highlight(0, '@type.commonlisp',              { link = "Type" })  -- Type names
+  highlight(0, '@type.lisp',                    { link = "Type" })  -- Type names
+  highlight(0, '@type.builtin.commonlisp',      { link = "Type" })  -- Built-in types
+  highlight(0, '@type.builtin.lisp',            { link = "Type" })  -- Built-in types
 
   -- Modules/Packages
   highlight(0, '@module.commonlisp',            { fg = colors.turquoise,  bg = 'NONE' })  -- Package names
   highlight(0, '@module.lisp',                  { fg = colors.turquoise,  bg = 'NONE' })  -- Package names
 
   -- Keywords
-  highlight(0, '@keyword.commonlisp',           { fg = colors.blue,       bg = 'NONE' })  -- Special forms
-  highlight(0, '@keyword.lisp',                 { fg = colors.blue,       bg = 'NONE' })  -- Special forms
-  highlight(0, '@keyword.function.commonlisp',  { fg = colors.blue,       bg = 'NONE' })  -- defun, lambda
-  highlight(0, '@keyword.function.lisp',        { fg = colors.blue,       bg = 'NONE' })  -- defun, lambda
-  highlight(0, '@keyword.conditional.commonlisp', { fg = colors.blue,     bg = 'NONE' })  -- if, when, unless, cond, case
-  highlight(0, '@keyword.conditional.lisp',     { fg = colors.blue,       bg = 'NONE' })  -- if, when, unless, cond, case
-  highlight(0, '@keyword.repeat.commonlisp',    { fg = colors.blue,       bg = 'NONE' })  -- loop, do, dolist, dotimes
-  highlight(0, '@keyword.repeat.lisp',          { fg = colors.blue,       bg = 'NONE' })  -- loop, do, dolist, dotimes
+  highlight(0, '@keyword.commonlisp',           { link = "Keyword" })  -- Special forms
+  highlight(0, '@keyword.lisp',                 { link = "Keyword" })  -- Special forms
+  highlight(0, '@keyword.function.commonlisp',  { link = "Keyword" })  -- defun, lambda
+  highlight(0, '@keyword.function.lisp',        { link = "Keyword" })  -- defun, lambda
+  highlight(0, '@keyword.conditional.commonlisp', { link = "Conditional" })  -- if, when, unless, cond, case
+  highlight(0, '@keyword.conditional.lisp',     { link = "Conditional" })  -- if, when, unless, cond, case
+  highlight(0, '@keyword.repeat.commonlisp',    { link = "Keyword" })  -- loop, do, dolist, dotimes
+  highlight(0, '@keyword.repeat.lisp',          { link = "Keyword" })  -- loop, do, dolist, dotimes
 
   -- Operators
-  highlight(0, '@operator.commonlisp',          { fg = colors.white,      bg = 'NONE' })  -- Operators
-  highlight(0, '@operator.lisp',                { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.commonlisp',          { link = "Operator" })  -- Operators
+  highlight(0, '@operator.lisp',                { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.commonlisp', { fg = colors.white,    bg = 'NONE' })  -- ()
@@ -261,16 +261,16 @@ lisp.setupHighlighting = function()
   highlight(0, '@punctuation.special.lisp',     { fg = colors.pink,       bg = 'NONE' })  -- ', `, ,, ,@, #', etc.
 
   -- Comments
-  highlight(0, '@comment.commonlisp',           { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, '@comment.lisp',                 { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.commonlisp',           { link = "Comment" })  -- Comments
+  highlight(0, '@comment.lisp',                 { link = "Comment" })  -- Comments
 
 
   ---------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.lisp / @lsp.type.xxx.commonlisp)
   ---------------------------------------------------------------------------
 
-  highlight(0, '@lsp.type.variable.lisp',       { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@lsp.type.variable.commonlisp', { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.lisp',       { link = "Variable" })
+  highlight(0, '@lsp.type.variable.commonlisp', { link = "Variable" })
   highlight(0, '@lsp.type.parameter.lisp',      { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.parameter.commonlisp', { fg = colors.purple,    bg = 'NONE' })
   highlight(0, '@lsp.type.function.lisp',       { fg = colors.orange,     bg = 'NONE' })
@@ -283,20 +283,20 @@ lisp.setupHighlighting = function()
   highlight(0, '@lsp.type.class.commonlisp',    { fg = colors.turquoise,  bg = 'NONE' })
   highlight(0, '@lsp.type.namespace.lisp',      { fg = colors.turquoise,  bg = 'NONE' })  -- Packages
   highlight(0, '@lsp.type.namespace.commonlisp', { fg = colors.turquoise, bg = 'NONE' })  -- Packages
-  highlight(0, '@lsp.type.keyword.lisp',        { fg = colors.pink,       bg = 'NONE' })  -- :keywords
-  highlight(0, '@lsp.type.keyword.commonlisp',  { fg = colors.pink,       bg = 'NONE' })  -- :keywords
-  highlight(0, '@lsp.type.string.lisp',         { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.string.commonlisp',   { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.lisp',         { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.number.commonlisp',   { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.lisp',        { fg = colors.red,        bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.commonlisp',  { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.lisp',        { link = "Keyword" })  -- :keywords
+  highlight(0, '@lsp.type.keyword.commonlisp',  { link = "Keyword" })  -- :keywords
+  highlight(0, '@lsp.type.string.lisp',         { link = "String" })
+  highlight(0, '@lsp.type.string.commonlisp',   { link = "String" })
+  highlight(0, '@lsp.type.number.lisp',         { link = "Number" })
+  highlight(0, '@lsp.type.number.commonlisp',   { link = "Number" })
+  highlight(0, '@lsp.type.comment.lisp',        { link = "Comment" })
+  highlight(0, '@lsp.type.comment.commonlisp',  { link = "Comment" })
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.lisp',       { fg = colors.pink,   bg = 'NONE' })
-  highlight(0, '@lsp.typemod.variable.readonly.commonlisp', { fg = colors.pink,   bg = 'NONE' })
-  highlight(0, '@lsp.typemod.variable.global.lisp',         { fg = colors.purple, bg = 'NONE' })  -- *special*
-  highlight(0, '@lsp.typemod.variable.global.commonlisp',   { fg = colors.purple, bg = 'NONE' })  -- *special*
+  highlight(0, '@lsp.typemod.variable.readonly.lisp',       { link = "Variable" })
+  highlight(0, '@lsp.typemod.variable.readonly.commonlisp', { link = "Variable" })
+  highlight(0, '@lsp.typemod.variable.global.lisp',         { link = "Variable" })  -- *special*
+  highlight(0, '@lsp.typemod.variable.global.commonlisp',   { link = "Variable" })  -- *special*
   highlight(0, '@lsp.typemod.function.declaration.lisp',    { fg = colors.orange, bg = 'NONE' })
   highlight(0, '@lsp.typemod.function.declaration.commonlisp', { fg = colors.orange, bg = 'NONE' })
 
@@ -305,34 +305,34 @@ lisp.setupHighlighting = function()
   -- Scheme Specific (also uses lisp.vim base)
   ---------------------------------------------------------------------------
 
-  highlight(0, 'schemeFunc',            { fg = colors.orange,     bg = 'NONE' })  -- Scheme functions
-  highlight(0, 'schemeKeyword',         { fg = colors.blue,       bg = 'NONE' })  -- define, lambda, let, if, cond, etc.
-  highlight(0, 'schemeVariable',        { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, 'schemeString',          { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, 'schemeNumber',          { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, 'schemeBoolean',         { fg = colors.blue,       bg = 'NONE' })  -- #t, #f
+  highlight(0, 'schemeFunc',            { link = "Function" })  -- Scheme functions
+  highlight(0, 'schemeKeyword',         { link = "Keyword" })  -- define, lambda, let, if, cond, etc.
+  highlight(0, 'schemeVariable',        { link = "Variable" })  -- Variables
+  highlight(0, 'schemeString',          { link = "String" })  -- Strings
+  highlight(0, 'schemeNumber',          { link = "Number" })  -- Numbers
+  highlight(0, 'schemeBoolean',         { link = "Boolean" })  -- #t, #f
   highlight(0, 'schemeCharacter',       { fg = colors.redLight,   bg = 'NONE' })  -- Characters
-  highlight(0, 'schemeComment',         { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, 'schemeComment',         { link = "Comment" })  -- Comments
   highlight(0, 'schemeQuote',           { fg = colors.pink,       bg = 'NONE' })  -- ', `, etc.
   highlight(0, 'schemeSyntax',          { fg = colors.blue,       bg = 'NONE' })  -- Syntax keywords
 
   -- Scheme Treesitter
-  highlight(0, '@variable.scheme',              { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@variable.builtin.scheme',      { fg = colors.purple,     bg = 'NONE' })
-  highlight(0, '@function.scheme',              { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@function.builtin.scheme',      { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@keyword.scheme',               { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@keyword.conditional.scheme',   { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@string.scheme',                { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@string.escape.scheme',         { fg = colors.pink,       bg = 'NONE' })
-  highlight(0, '@string.special.symbol.scheme', { fg = colors.pink,       bg = 'NONE' })
-  highlight(0, '@number.scheme',                { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@boolean.scheme',               { fg = colors.blue,       bg = 'NONE' })
+  highlight(0, '@variable.scheme',              { link = "Variable" })
+  highlight(0, '@variable.builtin.scheme',      { link = "Variable" })
+  highlight(0, '@function.scheme',              { link = "Function" })
+  highlight(0, '@function.builtin.scheme',      { link = "Function" })
+  highlight(0, '@keyword.scheme',               { link = "Keyword" })
+  highlight(0, '@keyword.conditional.scheme',   { link = "Conditional" })
+  highlight(0, '@string.scheme',                { link = "String" })
+  highlight(0, '@string.escape.scheme',         { link = "String" })
+  highlight(0, '@string.special.symbol.scheme', { link = "String" })
+  highlight(0, '@number.scheme',                { link = "Number" })
+  highlight(0, '@boolean.scheme',               { link = "Boolean" })
   highlight(0, '@character.scheme',             { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@comment.scheme',               { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@comment.scheme',               { link = "Comment" })
   highlight(0, '@punctuation.bracket.scheme',   { fg = colors.white,      bg = 'NONE' })
   highlight(0, '@module.scheme',                { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@operator.scheme',              { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@operator.scheme',              { link = "Operator" })
 
 
   ---------------------------------------------------------------------------
@@ -343,15 +343,15 @@ lisp.setupHighlighting = function()
   highlight(0, 'elispDefvar',           { fg = colors.blue,       bg = 'NONE' })  -- defvar, defconst, defcustom
   highlight(0, 'elispDefmacro',         { fg = colors.blue,       bg = 'NONE' })  -- defmacro
   highlight(0, 'elispLambda',           { fg = colors.blue,       bg = 'NONE' })  -- lambda
-  highlight(0, 'elispKeyword',          { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, 'elispFunc',             { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, 'elispBuiltin',          { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, 'elispVariable',         { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, 'elispSpecialVar',       { fg = colors.purple,     bg = 'NONE' })  -- Special variables
-  highlight(0, 'elispString',           { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, 'elispNumber',           { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, 'elispComment',          { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, 'elispDocstring',        { fg = colors.red,        bg = 'NONE' })  -- Docstrings
+  highlight(0, 'elispKeyword',          { link = "Keyword" })  -- Keywords
+  highlight(0, 'elispFunc',             { link = "Function" })  -- Functions
+  highlight(0, 'elispBuiltin',          { link = "Function" })  -- Built-in functions
+  highlight(0, 'elispVariable',         { link = "Variable" })  -- Variables
+  highlight(0, 'elispSpecialVar',       { link = "Variable" })  -- Special variables
+  highlight(0, 'elispString',           { link = "String" })  -- Strings
+  highlight(0, 'elispNumber',           { link = "Number" })  -- Numbers
+  highlight(0, 'elispComment',          { link = "Comment" })  -- Comments
+  highlight(0, 'elispDocstring',        { link = "String" })  -- Docstrings
   highlight(0, 'elispQuote',            { fg = colors.pink,       bg = 'NONE' })  -- Quoting
 
 

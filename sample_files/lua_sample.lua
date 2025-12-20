@@ -1,529 +1,800 @@
--------------------------------------------------------------------------------
--- Lua Sample File
--- Tests all highlight groups for the mannydark colorscheme
--------------------------------------------------------------------------------
+#!/usr/bin/env lua
+--- Comprehensive Lua language sample demonstrating all syntax features.
+-- Lua is a lightweight, high-level, multi-paradigm programming language
+-- designed primarily for embedded use in applications.
+--
+-- @module sample
+-- @author Sample Author
+-- @version 1.0.0
 
---[[
-  This is a multi-line comment (luaCommentLong)
-  Used to test long comment highlighting
-]]
+-- ============================================================================
+-- Module Setup
+-- ============================================================================
 
--- TODO: This should be bold red (Todo)
--- FIXME: This too (Todo)
--- NOTE: This should be highlighted (comment.note)
--- HACK: And this (comment.warning)
+local M = {}
 
+-- ============================================================================
+-- Constants
+-- ============================================================================
 
--------------------------------------------------------------------------------
--- Keywords & Statements
--------------------------------------------------------------------------------
+local MAX_BUFFER_SIZE = 1024
+local PI = 3.14159265358979323846
+local GREETING = "Hello, Lua!"
 
--- local keyword (luaLocal, @keyword)
-local my_variable = "test"
+-- Read-only table (using metatable)
+local Constants = setmetatable({
+    VERSION = "1.0.0",
+    AUTHOR = "Sample Author",
+}, {
+    __newindex = function()
+        error("Cannot modify constants")
+    end,
+    __metatable = false,
+})
 
--- function keyword (luaFunction, @keyword.function)
-local function my_function()
-  return true
-end
+-- ============================================================================
+-- Basic Types and Literals
+-- ============================================================================
 
--- Anonymous function
-local anonymous = function() end
+-- Nil
+local nil_value = nil
 
--- Conditional keywords (luaCond, @keyword.conditional)
-if my_variable then
-  -- then keyword
-  print("truthy")
-elseif my_variable == "test" then
-  -- elseif keyword
-  print("is test")
-else
-  -- else keyword
-  print("falsy")
-end  -- end keyword (luaEnd)
+-- Boolean
+local bool_true = true
+local bool_false = false
 
--- Loop keywords (luaRepeat, @keyword.repeat)
-for i = 1, 10 do
-  -- for, do keywords
-  if i > 5 then
-    break  -- break keyword (luaBreak)
-  end
-end
+-- Numbers
+local integer = 42
+local float = 3.14
+local negative = -42
+local hex = 0xDEADBEEF
+local scientific = 1.23e-4
+local large = 1e308
 
--- while loop
-while false do
-  -- while keyword
-end
-
--- repeat until loop
-repeat
-  -- repeat keyword
-until true  -- until keyword
-
--- return keyword (luaReturn, @keyword.return)
-local function returns_value()
-  return 42
-end
-
--- goto and labels (luaGoto, luaLabel, @label)
-::my_label::
--- goto my_label  -- uncomment to test goto
-
-
--------------------------------------------------------------------------------
--- Operators
--------------------------------------------------------------------------------
-
--- Word operators (luaOperator - blue, @keyword.operator)
-local a = true and false   -- and
-local b = true or false    -- or
-local c = not true         -- not
-
--- Symbol operators (luaSymbolOperator - white, @operator)
-local sum = 1 + 2          -- addition
-local diff = 5 - 3         -- subtraction
-local prod = 4 * 2         -- multiplication
-local quot = 8 / 2         -- division
-local mod = 10 % 3         -- modulo
-local pow = 2 ^ 8          -- exponentiation
-local floor_div = 7 // 2   -- floor division (Lua 5.3+)
-
--- Relational operators
-local eq = (1 == 1)        -- equal
-local neq = (1 ~= 2)       -- not equal (luaNotEqOperator)
-local lt = (1 < 2)         -- less than
-local gt = (2 > 1)         -- greater than
-local lte = (1 <= 1)       -- less than or equal
-local gte = (2 >= 2)       -- greater than or equal
-
--- String concatenation (luaConcatOperator)
-local greeting = "Hello" .. " " .. "World"
-
--- Length operator (luaLengthOperator)
-local len = #greeting
-
--- Bitwise operators (Lua 5.3+)
-local band = 5 & 3         -- bitwise and
-local bor = 5 | 3          -- bitwise or
-local bxor = 5 ~ 3         -- bitwise xor
-local bnot = ~5            -- bitwise not
-local lshift = 1 << 4      -- left shift
-local rshift = 16 >> 2     -- right shift
-
-
--------------------------------------------------------------------------------
 -- Strings
--------------------------------------------------------------------------------
-
--- Regular strings (luaString, @string)
-local single_quoted = 'single quotes'
-local double_quoted = "double quotes"
-
--- Escape sequences (luaStringSpecial, @string.escape)
-local with_escapes = "tab:\there\nnewline"
-local with_unicode = "unicode: \u{1F600}"
-local with_hex = "hex: \x41\x42\x43"
-
--- Long strings (luaStringLong)
+local single_quote = 'Hello'
+local double_quote = "Hello"
+local escaped = "Tab:\t Newline:\n Quote:\""
 local long_string = [[
-This is a long string.
-It can span multiple lines.
-No escape sequences: \n \t
+This is a long string
+that spans multiple lines
+without escape characters
 ]]
 
--- Long string with equals (for nesting)
-local nested_long = [==[
-This can contain [[brackets]]
+local long_string_level = [==[
+This is a level 2 long string
+with [[brackets]] inside
 ]==]
 
+-- Concatenation
+local concat = "Hello" .. ", " .. "World!"
+local with_number = "Value: " .. tostring(42)
 
--------------------------------------------------------------------------------
--- Numbers
--------------------------------------------------------------------------------
+-- ============================================================================
+-- Tables (Arrays, Dictionaries, Objects)
+-- ============================================================================
 
--- Integers (luaNumber, @number)
-local int = 42
-local negative = -17
-local big = 1000000
+-- Array-like table (1-indexed)
+local array = {1, 2, 3, 4, 5}
+local first = array[1]
+local length = #array
 
--- Floats (luaFloat, @number.float)
-local float = 3.14159
-local scientific = 6.022e23
-local small = 1.6e-19
-
--- Hexadecimal (luaHexNumber)
-local hex = 0xFF
-local hex_lower = 0xabcdef
-local hex_float = 0x1.5p10  -- hex float (Lua 5.3+)
-
-
--------------------------------------------------------------------------------
--- Booleans & Nil
--------------------------------------------------------------------------------
-
--- Booleans (luaBoolean, @boolean) - should be BLUE
-local is_true = true
-local is_false = false
-
--- Nil (luaNil, @constant.builtin)
-local nothing = nil
-
--- Boolean in conditions
-if true then
-  print("true is blue")
-end
-
-if false then
-  print("false is also blue")
-end
-
-
--------------------------------------------------------------------------------
--- Constants
--------------------------------------------------------------------------------
-
--- Global constants (luaConstant, @constant)
-local CONSTANT_VALUE = 100
-local MAX_SIZE = 1024
-local PI = 3.14159265359
-
-
--------------------------------------------------------------------------------
--- Functions
--------------------------------------------------------------------------------
-
--- Function definition (luaFuncName, @function)
-local function calculate_sum(a, b)
-  return a + b
-end
-
--- Function call (luaFuncCall, @function.call)
-local result = calculate_sum(10, 20)
-print(result)
-
--- Built-in functions (luaFunc, @function.builtin)
-print("Hello")
-type(result)
-tostring(42)
-tonumber("123")
-pairs({})
-ipairs({})
-next({})
-select(1, "a", "b", "c")
-rawget({}, "key")
-rawset({}, "key", "value")
-rawequal({}, {})
-pcall(function() end)
-xpcall(function() end, function() end)
-error("error message")
-assert(true, "assertion failed")
-collectgarbage()
-loadstring("return 1")
-loadfile("file.lua")
-dofile("file.lua")
-require("module")
-setmetatable({}, {})
-getmetatable({})
-
--- Method call syntax (@function.method.call)
-local str = "hello"
-local upper = str:upper()
-local sub = str:sub(1, 3)
-local find = str:find("ell")
-
--- Variadic functions
-local function variadic(...)
-  local args = {...}
-  return select("#", ...)
-end
-
--- Function with multiple returns
-local function multi_return()
-  return 1, 2, 3
-end
-
-local x, y, z = multi_return()
-
-
--------------------------------------------------------------------------------
--- Tables
--------------------------------------------------------------------------------
-
--- Table constructor (luaTableConstructor, @constructor)
-local empty_table = {}
-
--- Table with array part
-local array = { 1, 2, 3, 4, 5 }
-
--- Table with hash part (luaTableField, @property)
-local hash = {
-  name = "John",
-  age = 30,
-  active = true,
+-- Dictionary-like table
+local dict = {
+    name = "Alice",
+    age = 30,
+    email = "alice@example.com",
 }
+local name = dict.name
+local age = dict["age"]
 
 -- Mixed table
 local mixed = {
-  "array_element",
-  key = "value",
-  ["string-key"] = "with dashes",
-  [1] = "explicit index",
+    "first",                    -- [1]
+    "second",                   -- [2]
+    key = "value",
+    ["another-key"] = "another-value",
+    [true] = "boolean key",
+    [42] = "numeric key",
 }
 
 -- Nested tables
 local nested = {
-  inner = {
-    deep = {
-      value = 42
-    }
-  }
+    person = {
+        name = "Bob",
+        address = {
+            city = "New York",
+            zip = "10001",
+        },
+    },
+    items = {1, 2, 3},
 }
 
--- Table access
-local value = hash.name          -- dot notation
-local value2 = hash["age"]       -- bracket notation
-local deep = nested.inner.deep.value
+-- Access nested
+local city = nested.person.address.city
+local zip = nested.person.address["zip"]
 
--- Special tables (luaSpecialTable, @variable.builtin)
-local global_table = _G
-local env_table = _ENV
-local version = _VERSION
+-- Table operations
+table.insert(array, 6)
+table.insert(array, 1, 0)  -- Insert at beginning
+local removed = table.remove(array)
+local sorted = {5, 2, 8, 1, 9}
+table.sort(sorted)
+local reversed = {5, 4, 3, 2, 1}
+table.sort(reversed, function(a, b) return a > b end)
 
+-- ============================================================================
+-- Functions
+-- ============================================================================
 
--------------------------------------------------------------------------------
--- Metatables & Metamethods
--------------------------------------------------------------------------------
-
--- Metatable definition
-local mt = {
-  -- Metamethods (luaMetaMethod)
-  __index = function(t, k)
-    return "default"
-  end,
-
-  __newindex = function(t, k, v)
-    rawset(t, k, v)
-  end,
-
-  __call = function(t, ...)
-    return "called"
-  end,
-
-  __tostring = function(t)
-    return "MyObject"
-  end,
-
-  __add = function(a, b)
-    return a.value + b.value
-  end,
-
-  __sub = function(a, b) return a.value - b.value end,
-  __mul = function(a, b) return a.value * b.value end,
-  __div = function(a, b) return a.value / b.value end,
-  __mod = function(a, b) return a.value % b.value end,
-  __pow = function(a, b) return a.value ^ b.value end,
-  __unm = function(a) return -a.value end,
-  __concat = function(a, b) return tostring(a) .. tostring(b) end,
-  __len = function(a) return #a.items end,
-  __eq = function(a, b) return a.value == b.value end,
-  __lt = function(a, b) return a.value < b.value end,
-  __le = function(a, b) return a.value <= b.value end,
-  __gc = function(t) print("garbage collected") end,
-  __mode = "kv",
-  __metatable = "protected",
-}
-
-local obj = setmetatable({}, mt)
-
-
--------------------------------------------------------------------------------
--- Modules & Require
--------------------------------------------------------------------------------
-
--- Require (luaSpecialValue, @keyword.import)
-local json = require("json")
-local utils = require("my_project.utils")
-local sub_module = require("my_project.sub.module")
-
--- Module pattern
-local my_module = {}
-
-function my_module.public_function()
-  return "public"
+-- Basic function
+local function add(a, b)
+    return a + b
 end
+
+-- Function expression
+local multiply = function(a, b)
+    return a * b
+end
+
+-- Multiple return values
+local function divmod(a, b)
+    return math.floor(a / b), a % b
+end
+
+local quotient, remainder = divmod(17, 5)
+
+-- Variadic function
+local function sum(...)
+    local total = 0
+    for _, v in ipairs({...}) do
+        total = total + v
+    end
+    return total
+end
+
+-- Named arguments via table
+local function greet(opts)
+    opts = opts or {}
+    local name = opts.name or "World"
+    local greeting = opts.greeting or "Hello"
+    return greeting .. ", " .. name .. "!"
+end
+
+-- Recursive function
+local function factorial(n)
+    if n <= 1 then
+        return 1
+    else
+        return n * factorial(n - 1)
+    end
+end
+
+-- Tail-recursive
+local function factorial_tail(n, acc)
+    acc = acc or 1
+    if n <= 1 then
+        return acc
+    else
+        return factorial_tail(n - 1, n * acc)
+    end
+end
+
+-- Closures
+local function make_counter()
+    local count = 0
+    return function()
+        count = count + 1
+        return count
+    end
+end
+
+local function make_multiplier(factor)
+    return function(x)
+        return x * factor
+    end
+end
+
+-- Higher-order functions
+local function apply_twice(f, x)
+    return f(f(x))
+end
+
+local function map(tbl, f)
+    local result = {}
+    for i, v in ipairs(tbl) do
+        result[i] = f(v)
+    end
+    return result
+end
+
+local function filter(tbl, predicate)
+    local result = {}
+    for _, v in ipairs(tbl) do
+        if predicate(v) then
+            table.insert(result, v)
+        end
+    end
+    return result
+end
+
+local function reduce(tbl, f, initial)
+    local acc = initial
+    for _, v in ipairs(tbl) do
+        acc = f(acc, v)
+    end
+    return acc
+end
+
+-- ============================================================================
+-- Control Flow
+-- ============================================================================
+
+local function control_flow_examples()
+    local value = 42
+
+    -- if-then-else
+    if value > 0 then
+        print("Positive")
+    elseif value < 0 then
+        print("Negative")
+    else
+        print("Zero")
+    end
+
+    -- Ternary-like (using and/or)
+    local result = value > 0 and "positive" or "non-positive"
+
+    -- Numeric for loop
+    for i = 1, 10 do
+        print(i)
+    end
+
+    -- With step
+    for i = 10, 1, -1 do
+        print(i)
+    end
+
+    -- Generic for (ipairs for arrays)
+    local arr = {"a", "b", "c"}
+    for i, v in ipairs(arr) do
+        print(i, v)
+    end
+
+    -- Generic for (pairs for tables)
+    local tbl = {a = 1, b = 2, c = 3}
+    for k, v in pairs(tbl) do
+        print(k, v)
+    end
+
+    -- While loop
+    local counter = 0
+    while counter < 5 do
+        counter = counter + 1
+    end
+
+    -- Repeat-until
+    counter = 0
+    repeat
+        counter = counter + 1
+    until counter >= 5
+
+    -- Break
+    for i = 1, 100 do
+        if i > 10 then
+            break
+        end
+        print(i)
+    end
+
+    -- Goto (Lua 5.2+)
+    for i = 1, 10 do
+        for j = 1, 10 do
+            if i * j > 50 then
+                goto outer
+            end
+        end
+    end
+    ::outer::
+end
+
+-- ============================================================================
+-- Metatables and Metamethods
+-- ============================================================================
+
+-- Point class using metatables
+local Point = {}
+Point.__index = Point
+
+function Point.new(x, y, z)
+    local self = setmetatable({}, Point)
+    self.x = x or 0
+    self.y = y or 0
+    self.z = z or 0
+    return self
+end
+
+function Point:distance(other)
+    local dx = self.x - other.x
+    local dy = self.y - other.y
+    local dz = self.z - other.z
+    return math.sqrt(dx^2 + dy^2 + dz^2)
+end
+
+function Point:__add(other)
+    return Point.new(
+        self.x + other.x,
+        self.y + other.y,
+        self.z + other.z
+    )
+end
+
+function Point:__sub(other)
+    return Point.new(
+        self.x - other.x,
+        self.y - other.y,
+        self.z - other.z
+    )
+end
+
+function Point:__mul(scalar)
+    return Point.new(
+        self.x * scalar,
+        self.y * scalar,
+        self.z * scalar
+    )
+end
+
+function Point:__unm()
+    return Point.new(-self.x, -self.y, -self.z)
+end
+
+function Point:__eq(other)
+    return self.x == other.x and self.y == other.y and self.z == other.z
+end
+
+function Point:__lt(other)
+    local origin = Point.new(0, 0, 0)
+    return self:distance(origin) < other:distance(origin)
+end
+
+function Point:__tostring()
+    return string.format("Point(%g, %g, %g)", self.x, self.y, self.z)
+end
+
+function Point.origin()
+    return Point.new(0, 0, 0)
+end
+
+-- Shape class (abstract-like)
+local Shape = {}
+Shape.__index = Shape
+
+function Shape.new(name)
+    local self = setmetatable({}, Shape)
+    self.name = name or "Shape"
+    self.color = "black"
+    return self
+end
+
+function Shape:area()
+    error("Subclass must implement area()")
+end
+
+function Shape:perimeter()
+    error("Subclass must implement perimeter()")
+end
+
+function Shape:describe()
+    return string.format("%s: area=%.2f, perimeter=%.2f",
+        self.name, self:area(), self:perimeter())
+end
+
+function Shape:draw()
+    print("Drawing " .. self.name .. " in " .. self.color)
+end
+
+-- Circle class (inheritance)
+local Circle = setmetatable({}, {__index = Shape})
+Circle.__index = Circle
+
+function Circle.new(radius, color)
+    local self = setmetatable(Shape.new("Circle"), Circle)
+    self.radius = radius or 1
+    self.color = color or "black"
+    return self
+end
+
+function Circle:area()
+    return PI * self.radius^2
+end
+
+function Circle:perimeter()
+    return 2 * PI * self.radius
+end
+
+function Circle:draw()
+    Shape.draw(self)
+    print("  radius: " .. self.radius)
+end
+
+-- Rectangle class
+local Rectangle = setmetatable({}, {__index = Shape})
+Rectangle.__index = Rectangle
+
+function Rectangle.new(width, height, color)
+    local self = setmetatable(Shape.new("Rectangle"), Rectangle)
+    self.width = width or 1
+    self.height = height or 1
+    self.color = color or "black"
+    return self
+end
+
+function Rectangle:area()
+    return self.width * self.height
+end
+
+function Rectangle:perimeter()
+    return 2 * (self.width + self.height)
+end
+
+-- ============================================================================
+-- Proxy Tables
+-- ============================================================================
+
+local function create_readonly_table(tbl)
+    return setmetatable({}, {
+        __index = tbl,
+        __newindex = function()
+            error("Table is read-only")
+        end,
+        __pairs = function()
+            return pairs(tbl)
+        end,
+        __len = function()
+            return #tbl
+        end,
+    })
+end
+
+local function create_default_table(default)
+    return setmetatable({}, {
+        __index = function()
+            return default
+        end,
+    })
+end
+
+-- ============================================================================
+-- Coroutines
+-- ============================================================================
+
+local function coroutine_examples()
+    -- Producer-consumer pattern
+    local producer = coroutine.create(function()
+        for i = 1, 5 do
+            coroutine.yield(i)
+        end
+    end)
+
+    while coroutine.status(producer) ~= "dead" do
+        local _, value = coroutine.resume(producer)
+        if value then
+            print("Produced: " .. value)
+        end
+    end
+
+    -- Fibonacci generator
+    local function fib_generator()
+        local a, b = 0, 1
+        while true do
+            coroutine.yield(a)
+            a, b = b, a + b
+        end
+    end
+
+    local fib = coroutine.create(fib_generator)
+    local first_10 = {}
+    for i = 1, 10 do
+        local _, value = coroutine.resume(fib)
+        table.insert(first_10, value)
+    end
+    print("Fibonacci: " .. table.concat(first_10, ", "))
+
+    -- Coroutine wrapper
+    local wrapped = coroutine.wrap(function()
+        for i = 1, 3 do
+            coroutine.yield(i * 2)
+        end
+    end)
+
+    print(wrapped())  -- 2
+    print(wrapped())  -- 4
+    print(wrapped())  -- 6
+end
+
+-- ============================================================================
+-- Error Handling
+-- ============================================================================
+
+local function error_handling_examples()
+    -- pcall (protected call)
+    local status, result = pcall(function()
+        error("Something went wrong")
+    end)
+
+    if not status then
+        print("Error caught: " .. result)
+    end
+
+    -- xpcall with error handler
+    local function error_handler(err)
+        return "Handled: " .. tostring(err)
+    end
+
+    xpcall(function()
+        error("Another error")
+    end, error_handler)
+
+    -- assert
+    local function divide(a, b)
+        assert(b ~= 0, "Division by zero")
+        return a / b
+    end
+
+    local ok, res = pcall(divide, 10, 0)
+    if not ok then
+        print("Division failed: " .. res)
+    end
+
+    -- Custom error with traceback
+    local function traced_error(msg)
+        error(debug.traceback(msg, 2))
+    end
+end
+
+-- ============================================================================
+-- String Operations
+-- ============================================================================
+
+local function string_examples()
+    local str = "Hello, World!"
+
+    -- Length
+    local len = #str
+    local len2 = string.len(str)
+
+    -- Substring
+    local sub = string.sub(str, 1, 5)  -- "Hello"
+
+    -- Upper/lower
+    local upper = string.upper(str)
+    local lower = string.lower(str)
+
+    -- Find
+    local start, finish = string.find(str, "World")
+
+    -- Match (pattern matching)
+    local matched = string.match(str, "(%w+)")  -- "Hello"
+
+    -- Gmatch (iterator)
+    for word in string.gmatch(str, "%w+") do
+        print(word)
+    end
+
+    -- Gsub (replace)
+    local replaced = string.gsub(str, "World", "Lua")
+
+    -- Format
+    local formatted = string.format("Value: %d, Float: %.2f, String: %s",
+        42, 3.14, "test")
+
+    -- Rep (repeat)
+    local repeated = string.rep("-", 10)
+
+    -- Reverse
+    local reversed = string.reverse(str)
+
+    -- Byte and char
+    local byte = string.byte("A")
+    local char = string.char(65)
+
+    -- Pattern examples
+    local email = "user@example.com"
+    local user, domain = string.match(email, "(%w+)@(%w+%.%w+)")
+
+    print(formatted)
+end
+
+-- ============================================================================
+-- File I/O
+-- ============================================================================
+
+local function file_io_examples()
+    -- Write
+    local file = io.open("test.txt", "w")
+    if file then
+        file:write("Hello, File!\n")
+        file:write("Second line\n")
+        file:close()
+    end
+
+    -- Read all
+    file = io.open("test.txt", "r")
+    if file then
+        local content = file:read("*all")
+        print(content)
+        file:close()
+    end
+
+    -- Read line by line
+    file = io.open("test.txt", "r")
+    if file then
+        for line in file:lines() do
+            print("Line: " .. line)
+        end
+        file:close()
+    end
+
+    -- io.lines shortcut
+    for line in io.lines("test.txt") do
+        print(line)
+    end
+
+    -- Append
+    file = io.open("test.txt", "a")
+    if file then
+        file:write("Appended line\n")
+        file:close()
+    end
+
+    -- Delete
+    os.remove("test.txt")
+end
+
+-- ============================================================================
+-- Module Pattern
+-- ============================================================================
+
+-- Module definition
+local MyModule = {}
+
+MyModule.VERSION = "1.0.0"
+
+local private_data = "secret"
 
 local function private_function()
-  return "private"
+    return private_data
 end
 
-return my_module
+function MyModule.public_function()
+    return "Public: " .. private_function()
+end
 
+function MyModule.greet(name)
+    return "Hello, " .. name .. "!"
+end
 
--------------------------------------------------------------------------------
--- Error Handling
--------------------------------------------------------------------------------
+-- ============================================================================
+-- Main
+-- ============================================================================
 
--- Protected call
-local success, err = pcall(function()
-  error("something went wrong")
-end)
+-- Variable scoping
+local global_like = "accessible in file"
 
--- Extended protected call with error handler
-local success2, result = xpcall(
-  function()
-    return risky_operation()
-  end,
-  function(err)
-    return debug.traceback(err)
-  end
-)
+do
+    local block_scoped = "only in this block"
+    print(block_scoped)
+end
 
--- Assert
-assert(type(result) == "number", "Expected number")
+-- Main execution
+print(GREETING)
 
+-- Basic types
+print("Integer:", integer)
+print("Float:", float)
+print("String:", single_quote)
+print("Boolean:", bool_true)
+print("Nil:", nil_value)
 
--------------------------------------------------------------------------------
+-- Functions
+print("Add:", add(1, 2))
+print("Sum:", sum(1, 2, 3, 4, 5))
+print("Factorial:", factorial(5))
+
+local div, mod = divmod(17, 5)
+print("Divmod:", div, mod)
+
+-- Closures
+local counter = make_counter()
+print("Counter:", counter(), counter(), counter())
+
+local double = make_multiplier(2)
+local triple = make_multiplier(3)
+print("Double 5:", double(5))
+print("Triple 5:", triple(5))
+
+-- Higher-order
+print("Apply twice:", apply_twice(function(x) return x + 1 end, 5))
+
+local numbers = {1, 2, 3, 4, 5}
+local squared = map(numbers, function(x) return x * x end)
+print("Squared:", table.concat(squared, ", "))
+
+local evens = filter(numbers, function(x) return x % 2 == 0 end)
+print("Evens:", table.concat(evens, ", "))
+
+local total = reduce(numbers, function(a, b) return a + b end, 0)
+print("Total:", total)
+
+-- Control flow
+control_flow_examples()
+
+-- OOP
+local point = Point.new(1, 2, 3)
+print("Point:", point)
+print("Distance:", point:distance(Point.origin()))
+
+local point2 = Point.new(4, 5, 6)
+local sum_point = point + point2
+print("Sum:", sum_point)
+
+local circle = Circle.new(5, "blue")
+circle:draw()
+print("Area:", circle:area())
+
+local rect = Rectangle.new(4, 6)
+print(rect:describe())
+
 -- Coroutines
--------------------------------------------------------------------------------
+coroutine_examples()
 
--- Coroutine creation (@keyword.coroutine)
-local co = coroutine.create(function()
-  for i = 1, 10 do
-    coroutine.yield(i)
-  end
-end)
+-- Error handling
+error_handling_examples()
 
--- Coroutine operations
-coroutine.resume(co)
-coroutine.status(co)
-coroutine.running()
-coroutine.wrap(function() end)
+-- Strings
+string_examples()
 
+-- File I/O
+-- file_io_examples()  -- Uncomment to test
 
--------------------------------------------------------------------------------
--- String Patterns (Regex-like)
--------------------------------------------------------------------------------
+-- Module
+print("Module:", MyModule.public_function())
+print("Greet:", MyModule.greet("Lua"))
 
--- Pattern matching (@string.regexp)
-local pattern = "^%s*(%w+)%s*=%s*(.-)%s*$"
-local match = string.match("  key = value  ", pattern)
-local gmatch_iter = string.gmatch("a1b2c3", "%a%d")
-local gsub_result = string.gsub("hello", "l", "L")
-local find_pos = string.find("hello world", "world")
+-- Table operations
+local t = {3, 1, 4, 1, 5, 9, 2, 6}
+table.sort(t)
+print("Sorted:", table.concat(t, ", "))
 
+-- Math
+print("Pi:", math.pi)
+print("Sqrt:", math.sqrt(16))
+print("Sin:", math.sin(math.pi / 2))
+print("Random:", math.random(1, 100))
 
--------------------------------------------------------------------------------
--- OOP Pattern (Class-like)
--------------------------------------------------------------------------------
+-- OS
+print("Time:", os.time())
+print("Date:", os.date("%Y-%m-%d %H:%M:%S"))
+print("Clock:", os.clock())
 
--- Class definition using metatables
-local Animal = {}
-Animal.__index = Animal
+-- Type checking
+print("Type of 42:", type(42))
+print("Type of 'hello':", type("hello"))
+print("Type of table:", type({}))
+print("Type of function:", type(print))
 
-function Animal:new(name)
-  local instance = setmetatable({}, self)
-  instance.name = name
-  return instance
-end
+print("Program completed successfully!")
 
-function Animal:speak()
-  print(self.name .. " makes a sound")
-end
+-- Export module
+M.Point = Point
+M.Circle = Circle
+M.Rectangle = Rectangle
+M.add = add
+M.multiply = multiply
+M.factorial = factorial
+M.map = map
+M.filter = filter
+M.reduce = reduce
 
--- Inheritance
-local Dog = setmetatable({}, { __index = Animal })
-Dog.__index = Dog
-
-function Dog:new(name, breed)
-  local instance = Animal.new(self, name)
-  instance.breed = breed
-  return instance
-end
-
-function Dog:speak()
-  print(self.name .. " barks!")
-end
-
-local my_dog = Dog:new("Buddy", "Labrador")
-my_dog:speak()
-
-
--------------------------------------------------------------------------------
--- LuaDoc / EmmyLua Annotations (if supported)
--------------------------------------------------------------------------------
-
----@class Person
----@field name string The person's name
----@field age number The person's age
----@field active boolean Whether the person is active
-
----@param name string The name parameter
----@param age number The age parameter
----@return Person person The created person
-local function create_person(name, age)
-  return {
-    name = name,
-    age = age,
-    active = true,
-  }
-end
-
----@type string[]
-local string_array = { "a", "b", "c" }
-
----@type table<string, number>
-local string_to_number = {
-  one = 1,
-  two = 2,
-}
-
----@alias Callback fun(data: any): boolean
-
----@type Callback
-local my_callback = function(data)
-  return data ~= nil
-end
-
-
--------------------------------------------------------------------------------
--- Neovim Specific (if applicable)
--------------------------------------------------------------------------------
-
--- vim.* namespace (@module.builtin, @variable.builtin)
--- vim.api.nvim_* functions
--- vim.fn.* vimscript functions
--- vim.opt.* options
--- vim.keymap.set()
--- vim.cmd()
--- vim.notify()
-
--- Example (commented to avoid errors outside Neovim):
--- local bufnr = vim.api.nvim_get_current_buf()
--- local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
--- vim.opt.number = true
--- vim.keymap.set('n', '<leader>x', function() print("pressed") end)
-
-
--------------------------------------------------------------------------------
--- Punctuation & Delimiters
--------------------------------------------------------------------------------
-
--- Parentheses (luaParens, @punctuation.bracket)
-local grouped = (1 + 2) * 3
-
--- Braces (luaBraces, @punctuation.bracket)
-local tbl = { a = 1 }
-
--- Brackets (luaBrackets, @punctuation.bracket)
-local arr = tbl["a"]
-
--- Comma (luaComma, @punctuation.delimiter)
-local a1, b1, c1 = 1, 2, 3
-
--- Semicolon (luaSemiCol, @punctuation.delimiter)
-local x1 = 1; local y1 = 2;
-
--- Colon (method call)
-local s = "test":upper()
-
--- Dot (luaNoise, @punctuation.delimiter)
-local pi = math.pi
+return M

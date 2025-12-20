@@ -16,7 +16,7 @@ tcl.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords - Control Flow
-  highlight(0, 'tclConditional',       { fg = colors.blue,       bg = 'NONE'            })  -- if, then, else, elseif, switch
+  highlight(0, 'tclConditional',       { link = "Conditional" })  -- if, then, else, elseif, switch
   highlight(0, 'tclRepeat',            { fg = colors.blue,       bg = 'NONE'            })  -- while, for, foreach, break, continue
   highlight(0, 'tclLooping',           { fg = colors.blue,       bg = 'NONE'            })  -- Loop constructs
   highlight(0, 'tclLabel',             { fg = colors.blue,       bg = 'NONE'            })  -- default, case labels
@@ -30,13 +30,13 @@ tcl.setupHighlighting = function()
   highlight(0, 'tclProcName',          { fg = colors.orange,     bg = 'NONE'            })  -- Procedure names
 
   -- Keywords - General
-  highlight(0, 'tclKeyword',           { fg = colors.blue,       bg = 'NONE'            })  -- General keywords
+  highlight(0, 'tclKeyword',           { link = "Keyword" })  -- General keywords
   highlight(0, 'tclStatement',         { fg = colors.blue,       bg = 'NONE'            })  -- Statement keywords
   highlight(0, 'tclPrimary',           { fg = colors.blue,       bg = 'NONE'            })  -- Primary commands
 
   -- Built-in Commands - Core
-  highlight(0, 'tclCommand',           { fg = colors.orange,     bg = 'NONE'            })  -- Built-in commands
-  highlight(0, 'tcltkCommand',         { fg = colors.orange,     bg = 'NONE'            })  -- Tcl/Tk commands
+  highlight(0, 'tclCommand',           { link = "Function" })  -- Built-in commands
+  highlight(0, 'tcltkCommand',         { link = "Function" })  -- Tcl/Tk commands
   highlight(0, 'tcltkCommandColor',    { fg = colors.orange,     bg = 'NONE'            })  -- Command color
 
   -- Built-in Commands - Specific Categories
@@ -70,14 +70,14 @@ tcl.setupHighlighting = function()
   highlight(0, 'tclSet',               { fg = colors.orange,     bg = 'NONE'            })  -- set
   highlight(0, 'tclSocket',            { fg = colors.orange,     bg = 'NONE'            })  -- socket
   highlight(0, 'tclSource',            { fg = colors.orange,     bg = 'NONE'            })  -- source
-  highlight(0, 'tclString',            { fg = colors.orange,     bg = 'NONE'            })  -- string commands
-  highlight(0, 'tclSubst',             { fg = colors.orange,     bg = 'NONE'            })  -- subst
+  highlight(0, 'tclString',            { link = "String" })  -- string commands
+  highlight(0, 'tclSubst',             { link = "Variable" })  -- subst
   highlight(0, 'tclTrace',             { fg = colors.orange,     bg = 'NONE'            })  -- trace
   highlight(0, 'tclUnset',             { fg = colors.orange,     bg = 'NONE'            })  -- unset
   highlight(0, 'tclUpdate',            { fg = colors.orange,     bg = 'NONE'            })  -- update
   highlight(0, 'tclUplevel',           { fg = colors.orange,     bg = 'NONE'            })  -- uplevel
   highlight(0, 'tclUpvar',             { fg = colors.orange,     bg = 'NONE'            })  -- upvar
-  highlight(0, 'tclVariable',          { fg = colors.orange,     bg = 'NONE'            })  -- variable
+  highlight(0, 'tclVariable',          { link = "Variable" })  -- variable
   highlight(0, 'tclVwait',             { fg = colors.orange,     bg = 'NONE'            })  -- vwait
 
   -- Scope/Variable Keywords
@@ -89,11 +89,11 @@ tcl.setupHighlighting = function()
   highlight(0, 'tclMagicName',         { fg = colors.pink,       bg = 'NONE'            })  -- Magic namespace names
 
   -- TclOO Commands
-  highlight(0, 'ooKeyword',            { fg = colors.blue,       bg = 'NONE'            })  -- OO keywords
+  highlight(0, 'ooKeyword',            { link = "Keyword" })  -- OO keywords
   highlight(0, 'tclOOClass',           { fg = colors.blue,       bg = 'NONE'            })  -- oo::class, class
   highlight(0, 'tclOODefine',          { fg = colors.blue,       bg = 'NONE'            })  -- oo::define
   highlight(0, 'tclOOObjdefine',       { fg = colors.blue,       bg = 'NONE'            })  -- oo::objdefine
-  highlight(0, 'tclOOMethod',          { fg = colors.blue,       bg = 'NONE'            })  -- method
+  highlight(0, 'tclOOMethod',          { link = "Function" })  -- method
   highlight(0, 'tclOOConstructor',     { fg = colors.blue,       bg = 'NONE'            })  -- constructor
   highlight(0, 'tclOODestructor',      { fg = colors.blue,       bg = 'NONE'            })  -- destructor
   highlight(0, 'tclOOMixin',           { fg = colors.blue,       bg = 'NONE'            })  -- mixin
@@ -107,27 +107,27 @@ tcl.setupHighlighting = function()
   highlight(0, 'tcltkMaths',           { fg = colors.orange,     bg = 'NONE'            })  -- abs, acos, asin, atan, atan2, ceil, cos, cosh, double, exp, floor, fmod, hypot, int, log, log10, max, min, pow, rand, round, sin, sinh, sqrt, srand, tan, tanh, wide
 
   -- Variables
-  highlight(0, 'tclVarRef',            { fg = colors.purple,     bg = 'NONE'            })  -- $variable references
-  highlight(0, 'tclVar',               { fg = colors.purple,     bg = 'NONE'            })  -- Variable names
-  highlight(0, 'tclVarBrace',          { fg = colors.purple,     bg = 'NONE'            })  -- ${variable}
-  highlight(0, 'tclVarParen',          { fg = colors.purple,     bg = 'NONE'            })  -- $array(index)
+  highlight(0, 'tclVarRef',            { link = "Variable" })  -- $variable references
+  highlight(0, 'tclVar',               { link = "Variable" })  -- Variable names
+  highlight(0, 'tclVarBrace',          { link = "Variable" })  -- ${variable}
+  highlight(0, 'tclVarParen',          { link = "Variable" })  -- $array(index)
 
   -- Special Variables
-  highlight(0, 'tclVars',              { fg = colors.pink,       bg = 'NONE'            })  -- Built-in variables
-  highlight(0, 'tclSpecialVar',        { fg = colors.pink,       bg = 'NONE'            })  -- argc, argv, argv0, env, errorCode, errorInfo, etc.
+  highlight(0, 'tclVars',              { link = "Variable" })  -- Built-in variables
+  highlight(0, 'tclSpecialVar',        { link = "Variable" })  -- argc, argv, argv0, env, errorCode, errorInfo, etc.
   highlight(0, 'tclEnv',               { fg = colors.pink,       bg = 'NONE'            })  -- env array
   highlight(0, 'tclTclPlatform',       { fg = colors.pink,       bg = 'NONE'            })  -- tcl_platform array
 
   -- Types/Classes
-  highlight(0, 'tclType',              { fg = colors.turquoise,  bg = 'NONE'            })  -- Type names
+  highlight(0, 'tclType',              { link = "Type" })  -- Type names
   highlight(0, 'tclClassName',         { fg = colors.turquoise,  bg = 'NONE'            })  -- Class names
   highlight(0, 'tclNamespaceName',     { fg = colors.turquoise,  bg = 'NONE'            })  -- Namespace names
 
   -- Booleans
-  highlight(0, 'tclBoolean',           { fg = colors.blue,       bg = 'NONE'            })  -- true, false, on, off, yes, no
+  highlight(0, 'tclBoolean',           { link = "Boolean" })  -- true, false, on, off, yes, no
 
   -- Strings
-  highlight(0, 'tclStringLiteral',     { fg = colors.redLight,   bg = 'NONE'            })  -- "strings"
+  highlight(0, 'tclStringLiteral',     { link = "String" })  -- "strings"
   highlight(0, 'tclQuote',             { fg = colors.redLight,   bg = 'NONE'            })  -- Quoted strings
   highlight(0, 'tclBraces',            { fg = colors.redLight,   bg = 'NONE'            })  -- {braced strings}
 
@@ -136,14 +136,14 @@ tcl.setupHighlighting = function()
   highlight(0, 'tclEscape',            { fg = colors.pink,       bg = 'NONE'            })  -- \n, \t, \x, etc.
 
   -- Numbers
-  highlight(0, 'tclNumber',            { fg = colors.greenLight, bg = 'NONE'            })  -- Numbers
+  highlight(0, 'tclNumber',            { link = "Number" })  -- Numbers
   highlight(0, 'tclInteger',           { fg = colors.greenLight, bg = 'NONE'            })  -- Integers
   highlight(0, 'tclFloat',             { fg = colors.greenLight, bg = 'NONE'            })  -- Floating-point
   highlight(0, 'tclHex',               { fg = colors.greenLight, bg = 'NONE'            })  -- 0x hex
   highlight(0, 'tclOctal',             { fg = colors.greenLight, bg = 'NONE'            })  -- 0o octal
 
   -- Operators
-  highlight(0, 'tclOperator',          { fg = colors.white,      bg = 'NONE'            })  -- Operators
+  highlight(0, 'tclOperator',          { link = "Operator" })  -- Operators
   highlight(0, 'tclMathOp',            { fg = colors.white,      bg = 'NONE'            })  -- Math operators in expr
   highlight(0, 'tclCompareOp',         { fg = colors.white,      bg = 'NONE'            })  -- Comparison operators
   highlight(0, 'tclLogicalOp',         { fg = colors.white,      bg = 'NONE'            })  -- && || !
@@ -157,14 +157,14 @@ tcl.setupHighlighting = function()
   highlight(0, 'tclFlag',              { fg = colors.pink,       bg = 'NONE'            })  -- Flags
 
   -- Subcommand Options
-  highlight(0, 'tcltkStringSwitch',    { fg = colors.blue,       bg = 'NONE'            })  -- string subcommands
+  highlight(0, 'tcltkStringSwitch',    { link = "String" })  -- string subcommands
   highlight(0, 'tcltkArraySwitch',     { fg = colors.blue,       bg = 'NONE'            })  -- array subcommands
   highlight(0, 'tcltkLsortSwitch',     { fg = colors.blue,       bg = 'NONE'            })  -- lsort options
   highlight(0, 'tcltkPackSwitch',      { fg = colors.blue,       bg = 'NONE'            })  -- pack options
   highlight(0, 'tcltkNamespaceSwitch', { fg = colors.blue,       bg = 'NONE'            })  -- namespace subcommands
 
   -- Tk Widget Commands
-  highlight(0, 'tkKeyword',            { fg = colors.blue,       bg = 'NONE'            })  -- Tk keywords
+  highlight(0, 'tkKeyword',            { link = "Keyword" })  -- Tk keywords
   highlight(0, 'tkWidget',             { fg = colors.turquoise,  bg = 'NONE'            })  -- Widget names
   highlight(0, 'tkWidgetCommand',      { fg = colors.orange,     bg = 'NONE'            })  -- button, label, entry, canvas, frame, toplevel, etc.
   highlight(0, 'tkDialog',             { fg = colors.orange,     bg = 'NONE'            })  -- Dialog commands
@@ -183,86 +183,86 @@ tcl.setupHighlighting = function()
   highlight(0, 'tkBind',               { fg = colors.orange,     bg = 'NONE'            })  -- bind
 
   -- Comments
-  highlight(0, 'tclComment',           { fg = colors.red,        bg = 'NONE'            })  -- # comments
+  highlight(0, 'tclComment',           { link = "Comment" })  -- # comments
   highlight(0, 'tclTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Error
   highlight(0, 'tclError',             { fg = colors.red,        bg = 'NONE'            })  -- Errors
 
   -- Substitution
-  highlight(0, 'tclCmdSubst',          { fg = colors.purple,     bg = 'NONE'            })  -- [command substitution]
-  highlight(0, 'tclVarSubst',          { fg = colors.purple,     bg = 'NONE'            })  -- $variable substitution
-  highlight(0, 'tclBackslashSubst',    { fg = colors.pink,       bg = 'NONE'            })  -- Backslash substitution
+  highlight(0, 'tclCmdSubst',          { link = "Variable" })  -- [command substitution]
+  highlight(0, 'tclVarSubst',          { link = "Variable" })  -- $variable substitution
+  highlight(0, 'tclBackslashSubst',    { link = "Variable" })  -- Backslash substitution
 
 
   -----------------------------------------------------------------------------
   -- Treesitter Groups (@xxx.tcl)
 
   -- Variables
-  highlight(0, '@variable.tcl',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.tcl',      { fg = colors.pink,      bg = 'NONE' })  -- argc, argv, env, errorCode, errorInfo, etc.
-  highlight(0, '@variable.parameter.tcl',    { fg = colors.purple,    bg = 'NONE' })  -- Procedure parameters
+  highlight(0, '@variable.tcl',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.tcl',      { link = "Variable" })  -- argc, argv, env, errorCode, errorInfo, etc.
+  highlight(0, '@variable.parameter.tcl',    { link = "Variable" })  -- Procedure parameters
 
   -- Constants
-  highlight(0, '@constant.tcl',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.tcl',      { fg = colors.blue,      bg = 'NONE' })  -- true, false, yes, no, on, off
+  highlight(0, '@constant.tcl',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.tcl',      { link = "Constant" })  -- true, false, yes, no, on, off
 
   -- Functions
-  highlight(0, '@function.tcl',              { fg = colors.orange,    bg = 'NONE' })  -- Procedure definitions
-  highlight(0, '@function.call.tcl',         { fg = colors.orange,    bg = 'NONE' })  -- Procedure calls
-  highlight(0, '@function.builtin.tcl',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in commands (puts, gets, cd, exec, etc.)
-  highlight(0, '@function.method.tcl',       { fg = colors.orange,    bg = 'NONE' })  -- OO methods
-  highlight(0, '@function.method.call.tcl',  { fg = colors.orange,    bg = 'NONE' })  -- Method calls
+  highlight(0, '@function.tcl',              { link = "Function" })  -- Procedure definitions
+  highlight(0, '@function.call.tcl',         { link = "Function" })  -- Procedure calls
+  highlight(0, '@function.builtin.tcl',      { link = "Function" })  -- Built-in commands (puts, gets, cd, exec, etc.)
+  highlight(0, '@function.method.tcl',       { link = "Function" })  -- OO methods
+  highlight(0, '@function.method.call.tcl',  { link = "Function" })  -- Method calls
 
   -- Types
-  highlight(0, '@type.tcl',                  { fg = colors.turquoise, bg = 'NONE' })  -- Type/class names
-  highlight(0, '@type.builtin.tcl',          { fg = colors.turquoise, bg = 'NONE' })  -- Built-in types
+  highlight(0, '@type.tcl',                  { link = "Type" })  -- Type/class names
+  highlight(0, '@type.builtin.tcl',          { link = "Type" })  -- Built-in types
 
   -- Modules/Namespaces
   highlight(0, '@module.tcl',                { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
 
   -- Keywords
-  highlight(0, '@keyword.tcl',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords
-  highlight(0, '@keyword.function.tcl',      { fg = colors.blue,      bg = 'NONE' })  -- proc
-  highlight(0, '@keyword.type.tcl',          { fg = colors.blue,      bg = 'NONE' })  -- namespace, class declarations
-  highlight(0, '@keyword.operator.tcl',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@keyword.return.tcl',        { fg = colors.blue,      bg = 'NONE' })  -- return
-  highlight(0, '@keyword.repeat.tcl',        { fg = colors.blue,      bg = 'NONE' })  -- while, for, foreach
-  highlight(0, '@keyword.conditional.tcl',   { fg = colors.blue,      bg = 'NONE' })  -- if, else, elseif, switch
-  highlight(0, '@keyword.exception.tcl',     { fg = colors.blue,      bg = 'NONE' })  -- catch, try, throw, finally
-  highlight(0, '@keyword.import.tcl',        { fg = colors.pink,      bg = 'NONE' })  -- package require, source
-  highlight(0, '@keyword.coroutine.tcl',     { fg = colors.blue,      bg = 'NONE' })  -- coroutine, yield, yieldto
+  highlight(0, '@keyword.tcl',               { link = "Keyword" })  -- General keywords
+  highlight(0, '@keyword.function.tcl',      { link = "Keyword" })  -- proc
+  highlight(0, '@keyword.type.tcl',          { link = "Keyword" })  -- namespace, class declarations
+  highlight(0, '@keyword.operator.tcl',      { link = "Operator" })  -- Operators
+  highlight(0, '@keyword.return.tcl',        { link = "Keyword" })  -- return
+  highlight(0, '@keyword.repeat.tcl',        { link = "Keyword" })  -- while, for, foreach
+  highlight(0, '@keyword.conditional.tcl',   { link = "Conditional" })  -- if, else, elseif, switch
+  highlight(0, '@keyword.exception.tcl',     { link = "Keyword" })  -- catch, try, throw, finally
+  highlight(0, '@keyword.import.tcl',        { link = "Keyword" })  -- package require, source
+  highlight(0, '@keyword.coroutine.tcl',     { link = "Keyword" })  -- coroutine, yield, yieldto
 
   -- Labels
   highlight(0, '@label.tcl',                 { fg = colors.blue,      bg = 'NONE' })  -- Labels
 
   -- Strings
-  highlight(0, '@string.tcl',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.tcl',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.tcl',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.tcl',         { link = "String" })  -- Escape sequences
   highlight(0, '@character.tcl',             { fg = colors.redLight,  bg = 'NONE' })  -- Characters
   highlight(0, '@character.special.tcl',     { fg = colors.pink,      bg = 'NONE' })  -- Special characters
 
   -- Numbers
-  highlight(0, '@number.tcl',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.tcl',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.tcl',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.tcl',          { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.tcl',               { fg = colors.blue,      bg = 'NONE' })  -- true, false, yes, no, on, off
+  highlight(0, '@boolean.tcl',               { link = "Boolean" })  -- true, false, yes, no, on, off
 
   -- Comments
-  highlight(0, '@comment.tcl',               { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.tcl',               { link = "Comment" })  -- Comments
 
   -- Operators and Punctuation
-  highlight(0, '@operator.tcl',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.tcl',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.tcl',   { fg = colors.white,     bg = 'NONE' })  -- [], {}, ()
-  highlight(0, '@punctuation.delimiter.tcl', { fg = colors.white,     bg = 'NONE' })  -- ; :
+  highlight(0, '@punctuation.delimiter.tcl', { link = "Delimiter" })  -- ; :
   highlight(0, '@punctuation.special.tcl',   { fg = colors.pink,      bg = 'NONE' })  -- $ in variables, {*} expansion
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.tcl)
 
-  highlight(0, '@lsp.type.variable.tcl',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.tcl',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.tcl',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.tcl',      { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.function.tcl',      { fg = colors.orange,    bg = 'NONE' })  -- Procedures
@@ -270,14 +270,14 @@ tcl.setupHighlighting = function()
   highlight(0, '@lsp.type.type.tcl',          { fg = colors.turquoise, bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.class.tcl',         { fg = colors.turquoise, bg = 'NONE' })  -- Classes
   highlight(0, '@lsp.type.namespace.tcl',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
-  highlight(0, '@lsp.type.keyword.tcl',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.operator.tcl',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.tcl',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.tcl',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.tcl',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.keyword.tcl',       { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.operator.tcl',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.tcl',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.tcl',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.tcl',       { link = "Comment" })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.tcl',    { fg = colors.purple,    bg = 'NONE' })  -- Constants
+  highlight(0, '@lsp.typemod.variable.readonly.tcl',    { link = "Variable" })  -- Constants
   highlight(0, '@lsp.typemod.function.declaration.tcl', { fg = colors.orange,    bg = 'NONE' })  -- Procedure declarations
   highlight(0, '@lsp.typemod.function.defaultLibrary.tcl', { fg = colors.orange, bg = 'NONE' })  -- Built-in commands
   highlight(0, '@lsp.typemod.class.declaration.tcl',    { fg = colors.turquoise, bg = 'NONE' })  -- Class declarations

@@ -34,8 +34,8 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlProcedureName',   { fg = colors.orange,     bg = 'NONE' })  -- Procedure names
 
   -- Functions
-  highlight(0, 'plsqlFunctionKw',      { fg = colors.blue,       bg = 'NONE' })  -- FUNCTION keyword
-  highlight(0, 'plsqlFunctionName',    { fg = colors.orange,     bg = 'NONE' })  -- Function names
+  highlight(0, 'plsqlFunctionKw',      { link = "Function" })  -- FUNCTION keyword
+  highlight(0, 'plsqlFunctionName',    { link = "Function" })  -- Function names
   highlight(0, 'plsqlReturn',          { fg = colors.blue,       bg = 'NONE' })  -- RETURN keyword
 
   -- Parameters
@@ -104,7 +104,7 @@ plsql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   highlight(0, 'plsqlAttribute',       { fg = colors.pink,       bg = 'NONE' })  -- General attributes
-  highlight(0, 'plsqlTypeAttribute',   { fg = colors.pink,       bg = 'NONE' })  -- %TYPE
+  highlight(0, 'plsqlTypeAttribute',   { link = "Type" })  -- %TYPE
   highlight(0, 'plsqlRowtypeAttr',     { fg = colors.pink,       bg = 'NONE' })  -- %ROWTYPE
 
 
@@ -112,7 +112,7 @@ plsql.setupHighlighting = function()
   -- Control Flow - Conditional
   ---------------------------------------------------------------------------
 
-  highlight(0, 'plsqlConditional',     { fg = colors.blue,       bg = 'NONE' })  -- Conditional keywords
+  highlight(0, 'plsqlConditional',     { link = "Conditional" })  -- Conditional keywords
   highlight(0, 'plsqlIf',              { fg = colors.blue,       bg = 'NONE' })  -- IF
   highlight(0, 'plsqlThen',            { fg = colors.blue,       bg = 'NONE' })  -- THEN
   highlight(0, 'plsqlElse',            { fg = colors.blue,       bg = 'NONE' })  -- ELSE
@@ -160,7 +160,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlInvalidCursor',   { fg = colors.turquoise,  bg = 'NONE' })  -- INVALID_CURSOR
   highlight(0, 'plsqlCursorAlreadyOpen', { fg = colors.turquoise, bg = 'NONE' })  -- CURSOR_ALREADY_OPEN
   highlight(0, 'plsqlDupValOnIndex',   { fg = colors.turquoise,  bg = 'NONE' })  -- DUP_VAL_ON_INDEX
-  highlight(0, 'plsqlInvalidNumber',   { fg = colors.turquoise,  bg = 'NONE' })  -- INVALID_NUMBER
+  highlight(0, 'plsqlInvalidNumber',   { link = "Number" })  -- INVALID_NUMBER
   highlight(0, 'plsqlLoginDenied',     { fg = colors.turquoise,  bg = 'NONE' })  -- LOGIN_DENIED
   highlight(0, 'plsqlNotLoggedOn',     { fg = colors.turquoise,  bg = 'NONE' })  -- NOT_LOGGED_ON
   highlight(0, 'plsqlProgramError',    { fg = colors.turquoise,  bg = 'NONE' })  -- PROGRAM_ERROR
@@ -190,7 +190,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlStorage',         { fg = colors.turquoise,  bg = 'NONE' })  -- General data types
 
   -- Scalar Types - Numeric
-  highlight(0, 'plsqlNumber',          { fg = colors.turquoise,  bg = 'NONE' })  -- NUMBER
+  highlight(0, 'plsqlNumber',          { link = "Number" })  -- NUMBER
   highlight(0, 'plsqlInteger',         { fg = colors.turquoise,  bg = 'NONE' })  -- INTEGER, INT
   highlight(0, 'plsqlSmallint',        { fg = colors.turquoise,  bg = 'NONE' })  -- SMALLINT
   highlight(0, 'plsqlPls_integer',     { fg = colors.turquoise,  bg = 'NONE' })  -- PLS_INTEGER
@@ -213,7 +213,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlVarchar',         { fg = colors.turquoise,  bg = 'NONE' })  -- VARCHAR
   highlight(0, 'plsqlNchar',           { fg = colors.turquoise,  bg = 'NONE' })  -- NCHAR
   highlight(0, 'plsqlNvarchar2',       { fg = colors.turquoise,  bg = 'NONE' })  -- NVARCHAR2
-  highlight(0, 'plsqlString',          { fg = colors.turquoise,  bg = 'NONE' })  -- STRING type
+  highlight(0, 'plsqlString',          { link = "String" })  -- STRING type
   highlight(0, 'plsqlLong',            { fg = colors.turquoise,  bg = 'NONE' })  -- LONG
   highlight(0, 'plsqlRaw',             { fg = colors.turquoise,  bg = 'NONE' })  -- RAW
   highlight(0, 'plsqlLongRaw',         { fg = colors.turquoise,  bg = 'NONE' })  -- LONG RAW
@@ -230,7 +230,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlIntervalDS',      { fg = colors.turquoise,  bg = 'NONE' })  -- INTERVAL DAY TO SECOND
 
   -- Scalar Types - Boolean
-  highlight(0, 'plsqlBoolean',         { fg = colors.turquoise,  bg = 'NONE' })  -- BOOLEAN
+  highlight(0, 'plsqlBoolean',         { link = "Boolean" })  -- BOOLEAN
 
   -- LOB Types
   highlight(0, 'plsqlClob',            { fg = colors.turquoise,  bg = 'NONE' })  -- CLOB
@@ -249,8 +249,8 @@ plsql.setupHighlighting = function()
   -- Collection Types
   ---------------------------------------------------------------------------
 
-  highlight(0, 'plsqlType',            { fg = colors.blue,       bg = 'NONE' })  -- TYPE keyword
-  highlight(0, 'plsqlTypeName',        { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
+  highlight(0, 'plsqlType',            { link = "Type" })  -- TYPE keyword
+  highlight(0, 'plsqlTypeName',        { link = "Type" })  -- Type names
 
   -- Associative Arrays (Index-By Tables)
   highlight(0, 'plsqlTableOf',         { fg = colors.blue,       bg = 'NONE' })  -- TABLE OF
@@ -264,7 +264,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlVarrayOf',        { fg = colors.blue,       bg = 'NONE' })  -- VARRAY(...) OF
 
   -- Collection Methods
-  highlight(0, 'plsqlCollMethod',      { fg = colors.orange,     bg = 'NONE' })  -- Collection methods
+  highlight(0, 'plsqlCollMethod',      { link = "Function" })  -- Collection methods
   highlight(0, 'plsqlCount',           { fg = colors.orange,     bg = 'NONE' })  -- COUNT
   highlight(0, 'plsqlFirst',           { fg = colors.orange,     bg = 'NONE' })  -- FIRST
   highlight(0, 'plsqlLast',            { fg = colors.orange,     bg = 'NONE' })  -- LAST
@@ -385,65 +385,65 @@ plsql.setupHighlighting = function()
   -- Built-in Functions
   ---------------------------------------------------------------------------
 
-  highlight(0, 'plsqlFunction',        { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, 'plsqlFunction',        { link = "Function" })  -- Built-in functions
 
   -- Numeric Functions
-  highlight(0, 'plsqlFuncAbs',         { fg = colors.orange,     bg = 'NONE' })  -- ABS
-  highlight(0, 'plsqlFuncCeil',        { fg = colors.orange,     bg = 'NONE' })  -- CEIL
-  highlight(0, 'plsqlFuncFloor',       { fg = colors.orange,     bg = 'NONE' })  -- FLOOR
-  highlight(0, 'plsqlFuncRound',       { fg = colors.orange,     bg = 'NONE' })  -- ROUND
-  highlight(0, 'plsqlFuncTrunc',       { fg = colors.orange,     bg = 'NONE' })  -- TRUNC
-  highlight(0, 'plsqlFuncMod',         { fg = colors.orange,     bg = 'NONE' })  -- MOD
-  highlight(0, 'plsqlFuncPower',       { fg = colors.orange,     bg = 'NONE' })  -- POWER
-  highlight(0, 'plsqlFuncSqrt',        { fg = colors.orange,     bg = 'NONE' })  -- SQRT
-  highlight(0, 'plsqlFuncSign',        { fg = colors.orange,     bg = 'NONE' })  -- SIGN
+  highlight(0, 'plsqlFuncAbs',         { link = "Function" })  -- ABS
+  highlight(0, 'plsqlFuncCeil',        { link = "Function" })  -- CEIL
+  highlight(0, 'plsqlFuncFloor',       { link = "Function" })  -- FLOOR
+  highlight(0, 'plsqlFuncRound',       { link = "Function" })  -- ROUND
+  highlight(0, 'plsqlFuncTrunc',       { link = "Function" })  -- TRUNC
+  highlight(0, 'plsqlFuncMod',         { link = "Function" })  -- MOD
+  highlight(0, 'plsqlFuncPower',       { link = "Function" })  -- POWER
+  highlight(0, 'plsqlFuncSqrt',        { link = "Function" })  -- SQRT
+  highlight(0, 'plsqlFuncSign',        { link = "Function" })  -- SIGN
 
   -- String Functions
-  highlight(0, 'plsqlFuncConcat',      { fg = colors.orange,     bg = 'NONE' })  -- CONCAT
-  highlight(0, 'plsqlFuncSubstr',      { fg = colors.orange,     bg = 'NONE' })  -- SUBSTR
-  highlight(0, 'plsqlFuncLength',      { fg = colors.orange,     bg = 'NONE' })  -- LENGTH
-  highlight(0, 'plsqlFuncInstr',       { fg = colors.orange,     bg = 'NONE' })  -- INSTR
-  highlight(0, 'plsqlFuncReplace',     { fg = colors.orange,     bg = 'NONE' })  -- REPLACE
-  highlight(0, 'plsqlFuncTranslate',   { fg = colors.orange,     bg = 'NONE' })  -- TRANSLATE
-  highlight(0, 'plsqlFuncUpper',       { fg = colors.orange,     bg = 'NONE' })  -- UPPER
-  highlight(0, 'plsqlFuncLower',       { fg = colors.orange,     bg = 'NONE' })  -- LOWER
-  highlight(0, 'plsqlFuncInitcap',     { fg = colors.orange,     bg = 'NONE' })  -- INITCAP
-  highlight(0, 'plsqlFuncLtrim',       { fg = colors.orange,     bg = 'NONE' })  -- LTRIM
-  highlight(0, 'plsqlFuncRtrim',       { fg = colors.orange,     bg = 'NONE' })  -- RTRIM
-  highlight(0, 'plsqlFuncLpad',        { fg = colors.orange,     bg = 'NONE' })  -- LPAD
-  highlight(0, 'plsqlFuncRpad',        { fg = colors.orange,     bg = 'NONE' })  -- RPAD
+  highlight(0, 'plsqlFuncConcat',      { link = "Function" })  -- CONCAT
+  highlight(0, 'plsqlFuncSubstr',      { link = "Function" })  -- SUBSTR
+  highlight(0, 'plsqlFuncLength',      { link = "Function" })  -- LENGTH
+  highlight(0, 'plsqlFuncInstr',       { link = "Function" })  -- INSTR
+  highlight(0, 'plsqlFuncReplace',     { link = "Function" })  -- REPLACE
+  highlight(0, 'plsqlFuncTranslate',   { link = "Function" })  -- TRANSLATE
+  highlight(0, 'plsqlFuncUpper',       { link = "Function" })  -- UPPER
+  highlight(0, 'plsqlFuncLower',       { link = "Function" })  -- LOWER
+  highlight(0, 'plsqlFuncInitcap',     { link = "Function" })  -- INITCAP
+  highlight(0, 'plsqlFuncLtrim',       { link = "Function" })  -- LTRIM
+  highlight(0, 'plsqlFuncRtrim',       { link = "Function" })  -- RTRIM
+  highlight(0, 'plsqlFuncLpad',        { link = "Function" })  -- LPAD
+  highlight(0, 'plsqlFuncRpad',        { link = "Function" })  -- RPAD
 
   -- Date Functions
-  highlight(0, 'plsqlFuncSysdate',     { fg = colors.orange,     bg = 'NONE' })  -- SYSDATE
-  highlight(0, 'plsqlFuncSystimestamp', { fg = colors.orange,    bg = 'NONE' })  -- SYSTIMESTAMP
-  highlight(0, 'plsqlFuncCurrentDate', { fg = colors.orange,     bg = 'NONE' })  -- CURRENT_DATE
-  highlight(0, 'plsqlFuncAddMonths',   { fg = colors.orange,     bg = 'NONE' })  -- ADD_MONTHS
-  highlight(0, 'plsqlFuncMonthsBetween', { fg = colors.orange,   bg = 'NONE' })  -- MONTHS_BETWEEN
-  highlight(0, 'plsqlFuncLastDay',     { fg = colors.orange,     bg = 'NONE' })  -- LAST_DAY
-  highlight(0, 'plsqlFuncNextDay',     { fg = colors.orange,     bg = 'NONE' })  -- NEXT_DAY
-  highlight(0, 'plsqlFuncExtract',     { fg = colors.orange,     bg = 'NONE' })  -- EXTRACT
-  highlight(0, 'plsqlFuncToDate',      { fg = colors.orange,     bg = 'NONE' })  -- TO_DATE
-  highlight(0, 'plsqlFuncToTimestamp', { fg = colors.orange,     bg = 'NONE' })  -- TO_TIMESTAMP
+  highlight(0, 'plsqlFuncSysdate',     { link = "Function" })  -- SYSDATE
+  highlight(0, 'plsqlFuncSystimestamp', { link = "Function" })  -- SYSTIMESTAMP
+  highlight(0, 'plsqlFuncCurrentDate', { link = "Function" })  -- CURRENT_DATE
+  highlight(0, 'plsqlFuncAddMonths',   { link = "Function" })  -- ADD_MONTHS
+  highlight(0, 'plsqlFuncMonthsBetween', { link = "Function" })  -- MONTHS_BETWEEN
+  highlight(0, 'plsqlFuncLastDay',     { link = "Function" })  -- LAST_DAY
+  highlight(0, 'plsqlFuncNextDay',     { link = "Function" })  -- NEXT_DAY
+  highlight(0, 'plsqlFuncExtract',     { link = "Function" })  -- EXTRACT
+  highlight(0, 'plsqlFuncToDate',      { link = "Function" })  -- TO_DATE
+  highlight(0, 'plsqlFuncToTimestamp', { link = "Function" })  -- TO_TIMESTAMP
 
   -- Conversion Functions
-  highlight(0, 'plsqlFuncToChar',      { fg = colors.orange,     bg = 'NONE' })  -- TO_CHAR
-  highlight(0, 'plsqlFuncToNumber',    { fg = colors.orange,     bg = 'NONE' })  -- TO_NUMBER
-  highlight(0, 'plsqlFuncCast',        { fg = colors.orange,     bg = 'NONE' })  -- CAST
-  highlight(0, 'plsqlFuncConvert',     { fg = colors.orange,     bg = 'NONE' })  -- CONVERT
+  highlight(0, 'plsqlFuncToChar',      { link = "Function" })  -- TO_CHAR
+  highlight(0, 'plsqlFuncToNumber',    { link = "Number" })  -- TO_NUMBER
+  highlight(0, 'plsqlFuncCast',        { link = "Function" })  -- CAST
+  highlight(0, 'plsqlFuncConvert',     { link = "Function" })  -- CONVERT
 
   -- Null Functions
-  highlight(0, 'plsqlFuncNvl',         { fg = colors.orange,     bg = 'NONE' })  -- NVL
-  highlight(0, 'plsqlFuncNvl2',        { fg = colors.orange,     bg = 'NONE' })  -- NVL2
-  highlight(0, 'plsqlFuncCoalesce',    { fg = colors.orange,     bg = 'NONE' })  -- COALESCE
-  highlight(0, 'plsqlFuncNullif',      { fg = colors.orange,     bg = 'NONE' })  -- NULLIF
-  highlight(0, 'plsqlFuncDecode',      { fg = colors.orange,     bg = 'NONE' })  -- DECODE
+  highlight(0, 'plsqlFuncNvl',         { link = "Function" })  -- NVL
+  highlight(0, 'plsqlFuncNvl2',        { link = "Function" })  -- NVL2
+  highlight(0, 'plsqlFuncCoalesce',    { link = "Function" })  -- COALESCE
+  highlight(0, 'plsqlFuncNullif',      { link = "Function" })  -- NULLIF
+  highlight(0, 'plsqlFuncDecode',      { link = "Function" })  -- DECODE
 
   -- Aggregate Functions
-  highlight(0, 'plsqlFuncCount',       { fg = colors.orange,     bg = 'NONE' })  -- COUNT
-  highlight(0, 'plsqlFuncSum',         { fg = colors.orange,     bg = 'NONE' })  -- SUM
-  highlight(0, 'plsqlFuncAvg',         { fg = colors.orange,     bg = 'NONE' })  -- AVG
-  highlight(0, 'plsqlFuncMin',         { fg = colors.orange,     bg = 'NONE' })  -- MIN
-  highlight(0, 'plsqlFuncMax',         { fg = colors.orange,     bg = 'NONE' })  -- MAX
+  highlight(0, 'plsqlFuncCount',       { link = "Function" })  -- COUNT
+  highlight(0, 'plsqlFuncSum',         { link = "Function" })  -- SUM
+  highlight(0, 'plsqlFuncAvg',         { link = "Function" })  -- AVG
+  highlight(0, 'plsqlFuncMin',         { link = "Function" })  -- MIN
+  highlight(0, 'plsqlFuncMax',         { link = "Function" })  -- MAX
 
 
   ---------------------------------------------------------------------------
@@ -471,7 +471,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlDbmsSql',         { fg = colors.turquoise,  bg = 'NONE' })  -- DBMS_SQL
   highlight(0, 'plsqlOpenCursor',      { fg = colors.orange,     bg = 'NONE' })  -- OPEN_CURSOR
   highlight(0, 'plsqlParse',           { fg = colors.orange,     bg = 'NONE' })  -- PARSE
-  highlight(0, 'plsqlBindVariable',    { fg = colors.orange,     bg = 'NONE' })  -- BIND_VARIABLE
+  highlight(0, 'plsqlBindVariable',    { link = "Variable" })  -- BIND_VARIABLE
   highlight(0, 'plsqlExecuteDbms',     { fg = colors.orange,     bg = 'NONE' })  -- EXECUTE
 
   -- DBMS_LOB
@@ -507,16 +507,16 @@ plsql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- String Literals
-  highlight(0, 'plsqlStringLiteral',   { fg = colors.redLight,   bg = 'NONE' })  -- 'strings'
-  highlight(0, 'plsqlQStringLiteral',  { fg = colors.redLight,   bg = 'NONE' })  -- q'[strings]'
+  highlight(0, 'plsqlStringLiteral',   { link = "String" })  -- 'strings'
+  highlight(0, 'plsqlQStringLiteral',  { link = "String" })  -- q'[strings]'
 
   -- Numeric Literals
   highlight(0, 'plsqlIntLiteral',      { fg = colors.greenLight, bg = 'NONE' })  -- Integers
   highlight(0, 'plsqlFloatLiteral',    { fg = colors.greenLight, bg = 'NONE' })  -- Floats
-  highlight(0, 'plsqlNumbers',         { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'plsqlNumbers',         { link = "Number" })  -- Numbers
 
   -- Boolean Literals
-  highlight(0, 'plsqlBooleanLiteral',  { fg = colors.blue,       bg = 'NONE' })  -- TRUE, FALSE
+  highlight(0, 'plsqlBooleanLiteral',  { link = "Boolean" })  -- TRUE, FALSE
 
   -- NULL
   highlight(0, 'plsqlNull',            { fg = colors.pink,       bg = 'NONE' })  -- NULL
@@ -526,7 +526,7 @@ plsql.setupHighlighting = function()
   -- Operators
   ---------------------------------------------------------------------------
 
-  highlight(0, 'plsqlOperator',        { fg = colors.white,      bg = 'NONE' })  -- General operators
+  highlight(0, 'plsqlOperator',        { link = "Operator" })  -- General operators
 
   -- Assignment
   highlight(0, 'plsqlAssignment',      { fg = colors.white,      bg = 'NONE' })  -- :=
@@ -554,17 +554,17 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlIdentifier',      { fg = colors.white,      bg = 'NONE' })  -- General identifiers
   highlight(0, 'plsqlQuotedIdentifier', { fg = colors.white,     bg = 'NONE' })  -- "quoted_id"
   highlight(0, 'plsqlHostIdentifier',  { fg = colors.purple,     bg = 'NONE' })  -- :host_variable
-  highlight(0, 'plsqlBindVariable',    { fg = colors.purple,     bg = 'NONE' })  -- :bind
+  highlight(0, 'plsqlBindVariable',    { link = "Variable" })  -- :bind
 
 
   ---------------------------------------------------------------------------
   -- Comments
   ---------------------------------------------------------------------------
 
-  highlight(0, 'plsqlComment',         { fg = colors.red,        bg = 'NONE' })  -- /* */ comments
-  highlight(0, 'plsqlCommentL',        { fg = colors.red,        bg = 'NONE' })  -- -- line comments
-  highlight(0, 'plsqlCommentString',   { fg = colors.red,        bg = 'NONE' })  -- Strings in comments
-  highlight(0, 'plsqlComment2String',  { fg = colors.red,        bg = 'NONE' })  -- Strings in comments
+  highlight(0, 'plsqlComment',         { link = "Comment" })  -- /* */ comments
+  highlight(0, 'plsqlCommentL',        { link = "Comment" })  -- -- line comments
+  highlight(0, 'plsqlCommentString',   { link = "Comment" })  -- Strings in comments
+  highlight(0, 'plsqlComment2String',  { link = "Comment" })  -- Strings in comments
   highlight(0, 'plsqlTodo',            { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
 
@@ -587,7 +587,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlSqlPlusSet',      { fg = colors.pink,       bg = 'NONE' })  -- SET commands
   highlight(0, 'plsqlSqlPlusShow',     { fg = colors.pink,       bg = 'NONE' })  -- SHOW commands
   highlight(0, 'plsqlSqlPlusDefine',   { fg = colors.purple,     bg = 'NONE' })  -- &variable, &&variable
-  highlight(0, 'plsqlSqlPlusCommentL', { fg = colors.red,        bg = 'NONE' })  -- REM comments
+  highlight(0, 'plsqlSqlPlusCommentL', { link = "Comment" })  -- REM comments
   highlight(0, 'plsqlSqlPlusRunFile',  { fg = colors.pink,       bg = 'NONE' })  -- @script, @@script
   highlight(0, 'plsqlSqlPlusPrompt',   { fg = colors.pink,       bg = 'NONE' })  -- PROMPT
   highlight(0, 'plsqlSqlPlusSpool',    { fg = colors.pink,       bg = 'NONE' })  -- SPOOL
@@ -607,7 +607,7 @@ plsql.setupHighlighting = function()
   highlight(0, 'plsqlIllegalSpace',    { fg = colors.red,        bg = 'NONE' })  -- Illegal spaces
   highlight(0, 'plsqlErrInParen',      { fg = colors.red,        bg = 'NONE' })  -- Error in parens
   highlight(0, 'plsqlErrInBracket',    { fg = colors.red,        bg = 'NONE' })  -- Error in brackets
-  highlight(0, 'plsqlStringError',     { fg = colors.red,        bg = 'NONE' })  -- String errors
+  highlight(0, 'plsqlStringError',     { link = "String" })  -- String errors
 
 
   ---------------------------------------------------------------------------
@@ -615,46 +615,46 @@ plsql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Keywords
-  highlight(0, '@keyword.plsql',                 { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.function.plsql',        { fg = colors.blue,       bg = 'NONE' })  -- FUNCTION, PROCEDURE
-  highlight(0, '@keyword.operator.plsql',        { fg = colors.blue,       bg = 'NONE' })  -- AND, OR, NOT
-  highlight(0, '@keyword.conditional.plsql',     { fg = colors.blue,       bg = 'NONE' })  -- IF, ELSIF, ELSE
-  highlight(0, '@keyword.repeat.plsql',          { fg = colors.blue,       bg = 'NONE' })  -- LOOP, WHILE, FOR
-  highlight(0, '@keyword.exception.plsql',       { fg = colors.blue,       bg = 'NONE' })  -- EXCEPTION, RAISE
-  highlight(0, '@keyword.return.plsql',          { fg = colors.blue,       bg = 'NONE' })  -- RETURN
+  highlight(0, '@keyword.plsql',                 { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.function.plsql',        { link = "Keyword" })  -- FUNCTION, PROCEDURE
+  highlight(0, '@keyword.operator.plsql',        { link = "Operator" })  -- AND, OR, NOT
+  highlight(0, '@keyword.conditional.plsql',     { link = "Conditional" })  -- IF, ELSIF, ELSE
+  highlight(0, '@keyword.repeat.plsql',          { link = "Keyword" })  -- LOOP, WHILE, FOR
+  highlight(0, '@keyword.exception.plsql',       { link = "Keyword" })  -- EXCEPTION, RAISE
+  highlight(0, '@keyword.return.plsql',          { link = "Keyword" })  -- RETURN
 
   -- Variables
-  highlight(0, '@variable.plsql',                { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.parameter.plsql',      { fg = colors.white,      bg = 'NONE' })  -- Parameters
-  highlight(0, '@variable.member.plsql',         { fg = colors.orange,     bg = 'NONE' })  -- Record fields
+  highlight(0, '@variable.plsql',                { link = "Variable" })  -- Variables
+  highlight(0, '@variable.parameter.plsql',      { link = "Variable" })  -- Parameters
+  highlight(0, '@variable.member.plsql',         { link = "Variable" })  -- Record fields
 
   -- Types
-  highlight(0, '@type.plsql',                    { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@type.builtin.plsql',            { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
-  highlight(0, '@type.definition.plsql',         { fg = colors.turquoise,  bg = 'NONE' })  -- Type definitions
+  highlight(0, '@type.plsql',                    { link = "Type" })  -- Types
+  highlight(0, '@type.builtin.plsql',            { link = "Type" })  -- Built-in types
+  highlight(0, '@type.definition.plsql',         { link = "Type" })  -- Type definitions
 
   -- Functions
-  highlight(0, '@function.plsql',                { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@function.call.plsql',           { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.plsql',        { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.plsql',                { link = "Function" })  -- Functions
+  highlight(0, '@function.call.plsql',           { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.plsql',        { link = "Function" })  -- Built-in functions
 
   -- Modules/Packages
   highlight(0, '@module.plsql',                  { fg = colors.turquoise,  bg = 'NONE' })  -- Packages
 
   -- Literals
-  highlight(0, '@string.plsql',                  { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@number.plsql',                  { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.plsql',            { fg = colors.greenLight, bg = 'NONE' })  -- Floats
-  highlight(0, '@boolean.plsql',                 { fg = colors.blue,       bg = 'NONE' })  -- TRUE, FALSE
-  highlight(0, '@constant.builtin.plsql',        { fg = colors.pink,       bg = 'NONE' })  -- NULL
+  highlight(0, '@string.plsql',                  { link = "String" })  -- Strings
+  highlight(0, '@number.plsql',                  { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.plsql',            { link = "Number" })  -- Floats
+  highlight(0, '@boolean.plsql',                 { link = "Boolean" })  -- TRUE, FALSE
+  highlight(0, '@constant.builtin.plsql',        { link = "Constant" })  -- NULL
 
   -- Comments
-  highlight(0, '@comment.plsql',                 { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.plsql',                 { link = "Comment" })  -- Comments
 
   -- Operators & Punctuation
-  highlight(0, '@operator.plsql',                { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.plsql',                { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.plsql',     { fg = colors.white,      bg = 'NONE' })  -- ( )
-  highlight(0, '@punctuation.delimiter.plsql',   { fg = colors.white,      bg = 'NONE' })  -- ; , .
+  highlight(0, '@punctuation.delimiter.plsql',   { link = "Delimiter" })  -- ; , .
 
   -- Attributes
   highlight(0, '@attribute.plsql',               { fg = colors.pink,       bg = 'NONE' })  -- %TYPE, %ROWTYPE
@@ -664,17 +664,17 @@ plsql.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.plsql)
   ---------------------------------------------------------------------------
 
-  highlight(0, '@lsp.type.variable.plsql',       { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.plsql',       { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.plsql',       { fg = colors.orange,     bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.parameter.plsql',      { fg = colors.white,      bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.type.plsql',           { fg = colors.turquoise,  bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.class.plsql',          { fg = colors.turquoise,  bg = 'NONE' })  -- Packages
   highlight(0, '@lsp.type.property.plsql',       { fg = colors.orange,     bg = 'NONE' })  -- Record fields
   highlight(0, '@lsp.type.namespace.plsql',      { fg = colors.turquoise,  bg = 'NONE' })  -- Schemas
-  highlight(0, '@lsp.type.keyword.plsql',        { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.string.plsql',         { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.plsql',         { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.comment.plsql',        { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.keyword.plsql',        { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.string.plsql',         { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.plsql',         { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.comment.plsql',        { link = "Comment" })  -- Comments
 
 end
 

@@ -36,27 +36,27 @@ brainfuck.setupHighlighting = function()
   highlight(0, 'brainfuckLoop',         { fg = colors.turquoise,  bg = 'NONE'            })  -- [ ] loop brackets
 
   -- Comments (everything else)
-  highlight(0, 'brainfuckComment',      { fg = colors.gray,       bg = 'NONE'            })  -- Any non-command character
+  highlight(0, 'brainfuckComment',      { link = "Comment" })  -- Any non-command character
 
 
   -----------------------------------------------------------------------------
   -- Treesitter Groups (@xxx.brainfuck)
 
   -- Commands
-  highlight(0, '@keyword.brainfuck',              { fg = colors.blue,      bg = 'NONE' })  -- General commands
-  highlight(0, '@keyword.operator.brainfuck',     { fg = colors.blue,      bg = 'NONE' })  -- > < pointer
-  highlight(0, '@operator.brainfuck',             { fg = colors.greenLight, bg = 'NONE' }) -- + - value
+  highlight(0, '@keyword.brainfuck',              { link = "Keyword" })  -- General commands
+  highlight(0, '@keyword.operator.brainfuck',     { link = "Operator" })  -- > < pointer
+  highlight(0, '@operator.brainfuck',             { link = "Operator" }) -- + - value
 
   -- I/O
-  highlight(0, '@function.brainfuck',             { fg = colors.orange,    bg = 'NONE' })  -- . output
-  highlight(0, '@function.builtin.brainfuck',     { fg = colors.purple,    bg = 'NONE' })  -- , input
+  highlight(0, '@function.brainfuck',             { link = "Function" })  -- . output
+  highlight(0, '@function.builtin.brainfuck',     { link = "Function" })  -- , input
 
   -- Loops
   highlight(0, '@punctuation.bracket.brainfuck',  { fg = colors.turquoise, bg = 'NONE' })  -- [ ]
-  highlight(0, '@keyword.repeat.brainfuck',       { fg = colors.turquoise, bg = 'NONE' })  -- [ ] loops
+  highlight(0, '@keyword.repeat.brainfuck',       { link = "Keyword" })  -- [ ] loops
 
   -- Comments
-  highlight(0, '@comment.brainfuck',              { fg = colors.gray,      bg = 'NONE' })  -- Non-command characters
+  highlight(0, '@comment.brainfuck',              { link = "Comment" })  -- Non-command characters
 
 
   -----------------------------------------------------------------------------
@@ -71,7 +71,7 @@ brainfuck.setupHighlighting = function()
   highlight(0, 'bfInput',               { fg = colors.purple,     bg = 'NONE'            })  -- ,
   highlight(0, 'bfLoopOpen',            { fg = colors.turquoise,  bg = 'NONE'            })  -- [
   highlight(0, 'bfLoopClose',           { fg = colors.pink,       bg = 'NONE'            })  -- ]
-  highlight(0, 'bfComment',             { fg = colors.gray,       bg = 'NONE'            })  -- Everything else
+  highlight(0, 'bfComment',             { link = "Comment" })  -- Everything else
 end
 
 return brainfuck

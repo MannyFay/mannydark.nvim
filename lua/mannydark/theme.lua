@@ -129,6 +129,7 @@ theme.buildTheme = function()
   require('mannydark.highlighting.plugins.packer'            ).setupHighlighting()
   require('mannydark.highlighting.plugins.telescope'         ).setupHighlighting()
   require('mannydark.highlighting.plugins.treesitter'        ).setupHighlighting()
+  require('mannydark.highlighting.plugins.todocomments'      ).setupHighlighting()
   require('mannydark.highlighting.plugins.trouble'           ).setupHighlighting()
   require('mannydark.highlighting.plugins.whichkey'          ).setupHighlighting()
 

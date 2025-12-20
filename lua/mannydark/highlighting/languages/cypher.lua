@@ -17,7 +17,7 @@ cypher.setupHighlighting = function()
   -- Reading Clauses
   ---------------------------------------------------------------------------
 
-  highlight(0, 'cypherKeyword',        { fg = colors.blue,       bg = 'NONE' })  -- General keywords
+  highlight(0, 'cypherKeyword',        { link = "Keyword" })  -- General keywords
   highlight(0, 'cypherClause',         { fg = colors.blue,       bg = 'NONE' })  -- Clause keywords
 
   -- MATCH
@@ -130,7 +130,7 @@ cypher.setupHighlighting = function()
   -- Logical Operators
   ---------------------------------------------------------------------------
 
-  highlight(0, 'cypherOperator',       { fg = colors.blue,       bg = 'NONE' })  -- Logical operators
+  highlight(0, 'cypherOperator',       { link = "Operator" })  -- Logical operators
   highlight(0, 'cypherAnd',            { fg = colors.blue,       bg = 'NONE' })  -- AND
   highlight(0, 'cypherOr',             { fg = colors.blue,       bg = 'NONE' })  -- OR
   highlight(0, 'cypherNot',            { fg = colors.blue,       bg = 'NONE' })  -- NOT
@@ -188,7 +188,7 @@ cypher.setupHighlighting = function()
 
   highlight(0, 'cypherLabel',          { fg = colors.turquoise,  bg = 'NONE' })  -- :Label
   highlight(0, 'cypherLabelColon',     { fg = colors.white,      bg = 'NONE' })  -- : prefix
-  highlight(0, 'cypherRelType',        { fg = colors.turquoise,  bg = 'NONE' })  -- :RELATIONSHIP_TYPE
+  highlight(0, 'cypherRelType',        { link = "Type" })  -- :RELATIONSHIP_TYPE
   highlight(0, 'cypherMultiLabel',     { fg = colors.turquoise,  bg = 'NONE' })  -- :Label1:Label2
 
 
@@ -207,10 +207,10 @@ cypher.setupHighlighting = function()
   -- Variables
   ---------------------------------------------------------------------------
 
-  highlight(0, 'cypherVariable',       { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, 'cypherNodeVariable',   { fg = colors.white,      bg = 'NONE' })  -- Node variables
-  highlight(0, 'cypherRelVariable',    { fg = colors.white,      bg = 'NONE' })  -- Relationship variables
-  highlight(0, 'cypherPathVariable',   { fg = colors.white,      bg = 'NONE' })  -- Path variables
+  highlight(0, 'cypherVariable',       { link = "Variable" })  -- Variables
+  highlight(0, 'cypherNodeVariable',   { link = "Variable" })  -- Node variables
+  highlight(0, 'cypherRelVariable',    { link = "Variable" })  -- Relationship variables
+  highlight(0, 'cypherPathVariable',   { link = "Variable" })  -- Path variables
 
 
   ---------------------------------------------------------------------------
@@ -226,11 +226,11 @@ cypher.setupHighlighting = function()
   -- Built-in Functions
   ---------------------------------------------------------------------------
 
-  highlight(0, 'cypherFunction',       { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, 'cypherFunctionCall',   { fg = colors.orange,     bg = 'NONE' })  -- Function calls
+  highlight(0, 'cypherFunction',       { link = "Function" })  -- Functions
+  highlight(0, 'cypherFunctionCall',   { link = "Function" })  -- Function calls
 
   -- Aggregation Functions
-  highlight(0, 'cypherAggFunc',        { fg = colors.orange,     bg = 'NONE' })  -- Aggregation functions
+  highlight(0, 'cypherAggFunc',        { link = "Function" })  -- Aggregation functions
   highlight(0, 'cypherCount',          { fg = colors.orange,     bg = 'NONE' })  -- count()
   highlight(0, 'cypherSum',            { fg = colors.orange,     bg = 'NONE' })  -- sum()
   highlight(0, 'cypherAvg',            { fg = colors.orange,     bg = 'NONE' })  -- avg()
@@ -241,10 +241,10 @@ cypher.setupHighlighting = function()
   highlight(0, 'cypherPercentile',     { fg = colors.orange,     bg = 'NONE' })  -- percentileCont(), percentileDisc()
 
   -- Scalar Functions
-  highlight(0, 'cypherScalarFunc',     { fg = colors.orange,     bg = 'NONE' })  -- Scalar functions
+  highlight(0, 'cypherScalarFunc',     { link = "Function" })  -- Scalar functions
   highlight(0, 'cypherSize',           { fg = colors.orange,     bg = 'NONE' })  -- size()
   highlight(0, 'cypherLength',         { fg = colors.orange,     bg = 'NONE' })  -- length()
-  highlight(0, 'cypherType',           { fg = colors.orange,     bg = 'NONE' })  -- type()
+  highlight(0, 'cypherType',           { link = "Type" })  -- type()
   highlight(0, 'cypherId',             { fg = colors.orange,     bg = 'NONE' })  -- id()
   highlight(0, 'cypherElementId',      { fg = colors.orange,     bg = 'NONE' })  -- elementId()
   highlight(0, 'cypherLabels',         { fg = colors.orange,     bg = 'NONE' })  -- labels()
@@ -260,20 +260,20 @@ cypher.setupHighlighting = function()
   highlight(0, 'cypherTail',           { fg = colors.orange,     bg = 'NONE' })  -- tail()
 
   -- String Functions
-  highlight(0, 'cypherStringFunc',     { fg = colors.orange,     bg = 'NONE' })  -- String functions
-  highlight(0, 'cypherToString',       { fg = colors.orange,     bg = 'NONE' })  -- toString()
+  highlight(0, 'cypherStringFunc',     { link = "String" })  -- String functions
+  highlight(0, 'cypherToString',       { link = "String" })  -- toString()
   highlight(0, 'cypherToUpper',        { fg = colors.orange,     bg = 'NONE' })  -- toUpper()
   highlight(0, 'cypherToLower',        { fg = colors.orange,     bg = 'NONE' })  -- toLower()
   highlight(0, 'cypherTrim',           { fg = colors.orange,     bg = 'NONE' })  -- trim(), ltrim(), rtrim()
   highlight(0, 'cypherReplace',        { fg = colors.orange,     bg = 'NONE' })  -- replace()
-  highlight(0, 'cypherSubstring',      { fg = colors.orange,     bg = 'NONE' })  -- substring()
+  highlight(0, 'cypherSubstring',      { link = "String" })  -- substring()
   highlight(0, 'cypherSplit',          { fg = colors.orange,     bg = 'NONE' })  -- split()
   highlight(0, 'cypherReverse',        { fg = colors.orange,     bg = 'NONE' })  -- reverse()
   highlight(0, 'cypherLeft',           { fg = colors.orange,     bg = 'NONE' })  -- left()
   highlight(0, 'cypherRight',          { fg = colors.orange,     bg = 'NONE' })  -- right()
 
   -- Math Functions
-  highlight(0, 'cypherMathFunc',       { fg = colors.orange,     bg = 'NONE' })  -- Math functions
+  highlight(0, 'cypherMathFunc',       { link = "Function" })  -- Math functions
   highlight(0, 'cypherAbs',            { fg = colors.orange,     bg = 'NONE' })  -- abs()
   highlight(0, 'cypherCeil',           { fg = colors.orange,     bg = 'NONE' })  -- ceil()
   highlight(0, 'cypherFloor',          { fg = colors.orange,     bg = 'NONE' })  -- floor()
@@ -287,22 +287,22 @@ cypher.setupHighlighting = function()
   highlight(0, 'cypherSin',            { fg = colors.orange,     bg = 'NONE' })  -- sin(), cos(), tan(), etc.
 
   -- List Functions
-  highlight(0, 'cypherListFunc',       { fg = colors.orange,     bg = 'NONE' })  -- List functions
+  highlight(0, 'cypherListFunc',       { link = "Function" })  -- List functions
   highlight(0, 'cypherRange',          { fg = colors.orange,     bg = 'NONE' })  -- range()
-  highlight(0, 'cypherReduceFunc',     { fg = colors.orange,     bg = 'NONE' })  -- reduce()
+  highlight(0, 'cypherReduceFunc',     { link = "Function" })  -- reduce()
   highlight(0, 'cypherFilter',         { fg = colors.orange,     bg = 'NONE' })  -- filter() (deprecated)
   highlight(0, 'cypherExtract',        { fg = colors.orange,     bg = 'NONE' })  -- extract() (deprecated)
 
   -- Predicate Functions
-  highlight(0, 'cypherPredicateFunc',  { fg = colors.orange,     bg = 'NONE' })  -- Predicate functions
+  highlight(0, 'cypherPredicateFunc',  { link = "Function" })  -- Predicate functions
   highlight(0, 'cypherAll',            { fg = colors.orange,     bg = 'NONE' })  -- all()
   highlight(0, 'cypherAny',            { fg = colors.orange,     bg = 'NONE' })  -- any()
   highlight(0, 'cypherNone',           { fg = colors.orange,     bg = 'NONE' })  -- none()
   highlight(0, 'cypherSingle',         { fg = colors.orange,     bg = 'NONE' })  -- single()
-  highlight(0, 'cypherExistsFunc',     { fg = colors.orange,     bg = 'NONE' })  -- exists()
+  highlight(0, 'cypherExistsFunc',     { link = "Function" })  -- exists()
 
   -- Temporal Functions
-  highlight(0, 'cypherTemporalFunc',   { fg = colors.orange,     bg = 'NONE' })  -- Temporal functions
+  highlight(0, 'cypherTemporalFunc',   { link = "Function" })  -- Temporal functions
   highlight(0, 'cypherDate',           { fg = colors.orange,     bg = 'NONE' })  -- date()
   highlight(0, 'cypherDatetime',       { fg = colors.orange,     bg = 'NONE' })  -- datetime()
   highlight(0, 'cypherLocalDatetime',  { fg = colors.orange,     bg = 'NONE' })  -- localdatetime()
@@ -311,7 +311,7 @@ cypher.setupHighlighting = function()
   highlight(0, 'cypherDuration',       { fg = colors.orange,     bg = 'NONE' })  -- duration()
 
   -- Spatial Functions
-  highlight(0, 'cypherSpatialFunc',    { fg = colors.orange,     bg = 'NONE' })  -- Spatial functions
+  highlight(0, 'cypherSpatialFunc',    { link = "Function" })  -- Spatial functions
   highlight(0, 'cypherPoint',          { fg = colors.orange,     bg = 'NONE' })  -- point()
   highlight(0, 'cypherDistance',       { fg = colors.orange,     bg = 'NONE' })  -- distance()
 
@@ -320,20 +320,20 @@ cypher.setupHighlighting = function()
   -- Data Types
   ---------------------------------------------------------------------------
 
-  highlight(0, 'cypherType',           { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, 'cypherTypeString',     { fg = colors.turquoise,  bg = 'NONE' })  -- STRING
-  highlight(0, 'cypherTypeInteger',    { fg = colors.turquoise,  bg = 'NONE' })  -- INTEGER
-  highlight(0, 'cypherTypeFloat',      { fg = colors.turquoise,  bg = 'NONE' })  -- FLOAT
-  highlight(0, 'cypherTypeBoolean',    { fg = colors.turquoise,  bg = 'NONE' })  -- BOOLEAN
-  highlight(0, 'cypherTypeDate',       { fg = colors.turquoise,  bg = 'NONE' })  -- DATE
-  highlight(0, 'cypherTypeDatetime',   { fg = colors.turquoise,  bg = 'NONE' })  -- DATETIME
-  highlight(0, 'cypherTypeDuration',   { fg = colors.turquoise,  bg = 'NONE' })  -- DURATION
-  highlight(0, 'cypherTypePoint',      { fg = colors.turquoise,  bg = 'NONE' })  -- POINT
-  highlight(0, 'cypherTypeList',       { fg = colors.turquoise,  bg = 'NONE' })  -- LIST
-  highlight(0, 'cypherTypeMap',        { fg = colors.turquoise,  bg = 'NONE' })  -- MAP
-  highlight(0, 'cypherTypeNode',       { fg = colors.turquoise,  bg = 'NONE' })  -- NODE
-  highlight(0, 'cypherTypeRelationship', { fg = colors.turquoise, bg = 'NONE' })  -- RELATIONSHIP
-  highlight(0, 'cypherTypePath',       { fg = colors.turquoise,  bg = 'NONE' })  -- PATH
+  highlight(0, 'cypherType',           { link = "Type" })  -- Type names
+  highlight(0, 'cypherTypeString',     { link = "String" })  -- STRING
+  highlight(0, 'cypherTypeInteger',    { link = "Type" })  -- INTEGER
+  highlight(0, 'cypherTypeFloat',      { link = "Type" })  -- FLOAT
+  highlight(0, 'cypherTypeBoolean',    { link = "Boolean" })  -- BOOLEAN
+  highlight(0, 'cypherTypeDate',       { link = "Type" })  -- DATE
+  highlight(0, 'cypherTypeDatetime',   { link = "Type" })  -- DATETIME
+  highlight(0, 'cypherTypeDuration',   { link = "Type" })  -- DURATION
+  highlight(0, 'cypherTypePoint',      { link = "Type" })  -- POINT
+  highlight(0, 'cypherTypeList',       { link = "Type" })  -- LIST
+  highlight(0, 'cypherTypeMap',        { link = "Type" })  -- MAP
+  highlight(0, 'cypherTypeNode',       { link = "Type" })  -- NODE
+  highlight(0, 'cypherTypeRelationship', { link = "Type" })  -- RELATIONSHIP
+  highlight(0, 'cypherTypePath',       { link = "Type" })  -- PATH
 
 
   ---------------------------------------------------------------------------
@@ -341,19 +341,19 @@ cypher.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Strings
-  highlight(0, 'cypherString',         { fg = colors.redLight,   bg = 'NONE' })  -- 'string' or "string"
-  highlight(0, 'cypherStringContent',  { fg = colors.redLight,   bg = 'NONE' })  -- String content
+  highlight(0, 'cypherString',         { link = "String" })  -- 'string' or "string"
+  highlight(0, 'cypherStringContent',  { link = "String" })  -- String content
   highlight(0, 'cypherEscape',         { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences \n, \t
 
   -- Numbers
-  highlight(0, 'cypherNumber',         { fg = colors.greenLight, bg = 'NONE' })  -- Numeric literals
+  highlight(0, 'cypherNumber',         { link = "Number" })  -- Numeric literals
   highlight(0, 'cypherInteger',        { fg = colors.greenLight, bg = 'NONE' })  -- Integer literals
   highlight(0, 'cypherFloat',          { fg = colors.greenLight, bg = 'NONE' })  -- Float literals
   highlight(0, 'cypherHex',            { fg = colors.greenLight, bg = 'NONE' })  -- Hex numbers 0x...
   highlight(0, 'cypherOctal',          { fg = colors.greenLight, bg = 'NONE' })  -- Octal numbers 0o...
 
   -- Booleans
-  highlight(0, 'cypherBoolean',        { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'cypherBoolean',        { link = "Boolean" })  -- true, false
   highlight(0, 'cypherTrue',           { fg = colors.blue,       bg = 'NONE' })  -- true
   highlight(0, 'cypherFalse',          { fg = colors.blue,       bg = 'NONE' })  -- false
 
@@ -365,9 +365,9 @@ cypher.setupHighlighting = function()
   -- Comments
   ---------------------------------------------------------------------------
 
-  highlight(0, 'cypherComment',        { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, 'cypherLineComment',    { fg = colors.red,        bg = 'NONE' })  -- // line comment
-  highlight(0, 'cypherBlockComment',   { fg = colors.red,        bg = 'NONE' })  -- /* block comment */
+  highlight(0, 'cypherComment',        { link = "Comment" })  -- Comments
+  highlight(0, 'cypherLineComment',    { link = "Comment" })  -- // line comment
+  highlight(0, 'cypherBlockComment',   { link = "Comment" })  -- /* block comment */
   highlight(0, 'cypherTodo',           { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
 
@@ -459,7 +459,7 @@ cypher.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   highlight(0, 'cypherApoc',           { fg = colors.turquoise,  bg = 'NONE' })  -- apoc namespace
-  highlight(0, 'cypherApocFunction',   { fg = colors.orange,     bg = 'NONE' })  -- apoc.* functions
+  highlight(0, 'cypherApocFunction',   { link = "Function" })  -- apoc.* functions
   highlight(0, 'cypherApocProcedure',  { fg = colors.orange,     bg = 'NONE' })  -- apoc.* procedures
 
 
@@ -468,47 +468,47 @@ cypher.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Keywords
-  highlight(0, '@keyword.cypher',                { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.operator.cypher',       { fg = colors.blue,       bg = 'NONE' })  -- AND, OR, NOT
-  highlight(0, '@keyword.conditional.cypher',    { fg = colors.blue,       bg = 'NONE' })  -- CASE, WHEN
-  highlight(0, '@keyword.return.cypher',         { fg = colors.blue,       bg = 'NONE' })  -- RETURN
+  highlight(0, '@keyword.cypher',                { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.operator.cypher',       { link = "Operator" })  -- AND, OR, NOT
+  highlight(0, '@keyword.conditional.cypher',    { link = "Conditional" })  -- CASE, WHEN
+  highlight(0, '@keyword.return.cypher',         { link = "Keyword" })  -- RETURN
 
   -- Variables
-  highlight(0, '@variable.cypher',               { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.parameter.cypher',     { fg = colors.purple,     bg = 'NONE' })  -- $parameters
+  highlight(0, '@variable.cypher',               { link = "Variable" })  -- Variables
+  highlight(0, '@variable.parameter.cypher',     { link = "Variable" })  -- $parameters
 
   -- Types
-  highlight(0, '@type.cypher',                   { fg = colors.turquoise,  bg = 'NONE' })  -- Types/Labels
+  highlight(0, '@type.cypher',                   { link = "Type" })  -- Types/Labels
 
   -- Functions
-  highlight(0, '@function.cypher',               { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@function.call.cypher',          { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.cypher',       { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.cypher',               { link = "Function" })  -- Functions
+  highlight(0, '@function.call.cypher',          { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.cypher',       { link = "Function" })  -- Built-in functions
 
   -- Properties
   highlight(0, '@property.cypher',               { fg = colors.orange,     bg = 'NONE' })  -- Properties
 
   -- Strings
-  highlight(0, '@string.cypher',                 { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.cypher',          { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.cypher',                 { link = "String" })  -- Strings
+  highlight(0, '@string.escape.cypher',          { link = "String" })  -- Escape sequences
 
   -- Numbers
-  highlight(0, '@number.cypher',                 { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.cypher',           { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.cypher',                 { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.cypher',           { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.cypher',                { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.cypher',                { link = "Boolean" })  -- true, false
 
   -- Constants
-  highlight(0, '@constant.builtin.cypher',       { fg = colors.pink,       bg = 'NONE' })  -- null
+  highlight(0, '@constant.builtin.cypher',       { link = "Constant" })  -- null
 
   -- Comments
-  highlight(0, '@comment.cypher',                { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.cypher',                { link = "Comment" })  -- Comments
 
   -- Operators & Punctuation
-  highlight(0, '@operator.cypher',               { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.cypher',               { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.cypher',    { fg = colors.white,      bg = 'NONE' })  -- ( ) [ ] { }
-  highlight(0, '@punctuation.delimiter.cypher',  { fg = colors.white,      bg = 'NONE' })  -- , ; :
+  highlight(0, '@punctuation.delimiter.cypher',  { link = "Delimiter" })  -- , ; :
   highlight(0, '@punctuation.special.cypher',    { fg = colors.white,      bg = 'NONE' })  -- -> <- --
 
 
@@ -516,15 +516,15 @@ cypher.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.cypher)
   ---------------------------------------------------------------------------
 
-  highlight(0, '@lsp.type.variable.cypher',      { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.cypher',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.cypher',      { fg = colors.orange,     bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.parameter.cypher',     { fg = colors.purple,     bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.type.cypher',          { fg = colors.turquoise,  bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.property.cypher',      { fg = colors.orange,     bg = 'NONE' })  -- Properties
-  highlight(0, '@lsp.type.keyword.cypher',       { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.string.cypher',        { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.cypher',        { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.comment.cypher',       { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.keyword.cypher',       { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.string.cypher',        { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.cypher',        { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.comment.cypher',       { link = "Comment" })  -- Comments
 
 end
 

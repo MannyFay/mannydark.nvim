@@ -23,26 +23,26 @@ racket.setupHighlighting = function()
   highlight(0, 'racketSyntax',            { fg = colors.blue,       bg = 'NONE' })  -- Special forms and keywords
 
   -- Functions
-  highlight(0, 'racketFunc',              { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, 'racketFunc',              { link = "Function" })  -- Built-in functions
 
   -- Extension Syntax
   highlight(0, 'racketExtSyntax',         { fg = colors.pink,       bg = 'NONE' })  -- #:keyword arguments
-  highlight(0, 'racketExtFunc',           { fg = colors.orange,     bg = 'NONE' })  -- Extension functions
+  highlight(0, 'racketExtFunc',           { link = "Function" })  -- Extension functions
 
   -- Strings
-  highlight(0, 'racketString',            { fg = colors.redLight,   bg = 'NONE' })  -- "strings"
-  highlight(0, 'racketStringEscape',      { fg = colors.pink,       bg = 'NONE' })  -- Valid escape sequences
-  highlight(0, 'racketStringEscapeError', { fg = colors.red,        bg = 'NONE' })  -- Invalid escape sequences
-  highlight(0, 'racketUStringEscape',     { fg = colors.pink,       bg = 'NONE' })  -- Unicode escapes
-  highlight(0, 'racketHereString',        { fg = colors.redLight,   bg = 'NONE' })  -- #<< here-strings
+  highlight(0, 'racketString',            { link = "String" })  -- "strings"
+  highlight(0, 'racketStringEscape',      { link = "String" })  -- Valid escape sequences
+  highlight(0, 'racketStringEscapeError', { link = "String" })  -- Invalid escape sequences
+  highlight(0, 'racketUStringEscape',     { link = "String" })  -- Unicode escapes
+  highlight(0, 'racketHereString',        { link = "String" })  -- #<< here-strings
 
   -- Numbers
-  highlight(0, 'racketNumber',            { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, 'racketNumberError',       { fg = colors.red,        bg = 'NONE' })  -- Malformed numbers
-  highlight(0, 'racketContainedNumberError', { fg = colors.red,     bg = 'NONE' })  -- Invalid digits
+  highlight(0, 'racketNumber',            { link = "Number" })  -- Numbers
+  highlight(0, 'racketNumberError',       { link = "Number" })  -- Malformed numbers
+  highlight(0, 'racketContainedNumberError', { link = "Number" })  -- Invalid digits
 
   -- Booleans
-  highlight(0, 'racketBoolean',           { fg = colors.blue,       bg = 'NONE' })  -- #t, #f, #true, #false
+  highlight(0, 'racketBoolean',           { link = "Boolean" })  -- #t, #f, #true, #false
 
   -- Characters
   highlight(0, 'racketChar',              { fg = colors.redLight,   bg = 'NONE' })  -- #\char
@@ -51,13 +51,13 @@ racket.setupHighlighting = function()
   highlight(0, 'racketParen',             { fg = colors.white,      bg = 'NONE' })  -- (), [], {}
 
   -- Delimiters
-  highlight(0, 'racketDelimiter',         { fg = colors.white,      bg = 'NONE' })  -- Dot delimiter
+  highlight(0, 'racketDelimiter',         { link = "Delimiter" })  -- Dot delimiter
 
   -- Structures
   highlight(0, 'racketStruc',             { fg = colors.pink,       bg = 'NONE' })  -- #(...) vectors, #s(...) structs
 
   -- Constants
-  highlight(0, 'racketConstant',          { fg = colors.pink,       bg = 'NONE' })  -- *name*, <name>
+  highlight(0, 'racketConstant',          { link = "Constant" })  -- *name*, <name>
 
   -- Quote/Quasiquote
   highlight(0, 'racketQuote',             { fg = colors.pink,       bg = 'NONE' })  -- ', #', `
@@ -71,9 +71,9 @@ racket.setupHighlighting = function()
   highlight(0, 'racketRegexp',            { fg = colors.redLight,   bg = 'NONE' })  -- Regex content
 
   -- Comments
-  highlight(0, 'racketComment',           { fg = colors.red,        bg = 'NONE' })  -- ; comments
-  highlight(0, 'racketMultilineComment',  { fg = colors.red,        bg = 'NONE' })  -- #| ... |# block comments
-  highlight(0, 'racketFormComment',       { fg = colors.gray,       bg = 'NONE' })  -- #; form comments
+  highlight(0, 'racketComment',           { link = "Comment" })  -- ; comments
+  highlight(0, 'racketMultilineComment',  { link = "Comment" })  -- #| ... |# block comments
+  highlight(0, 'racketFormComment',       { link = "Comment" })  -- #; form comments
   highlight(0, 'racketSharpBang',         { fg = colors.green,      bg = 'NONE' })  -- #! shebang, #lang
   highlight(0, 'racketTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO
   highlight(0, 'racketNote',              { fg = colors.blue,       bg = 'NONE', bold = true })  -- NOTE
@@ -262,7 +262,7 @@ racket.setupHighlighting = function()
   highlight(0, 'racketError',             { fg = colors.blue,       bg = 'NONE' })  -- error
 
   -- Exception Types
-  highlight(0, 'racketExnType',           { fg = colors.turquoise,  bg = 'NONE' })  -- exn, exn:fail, exn:fail:contract, exn:fail:syntax, exn:fail:read, exn:fail:filesystem, exn:fail:network, exn:break
+  highlight(0, 'racketExnType',           { link = "Type" })  -- exn, exn:fail, exn:fail:contract, exn:fail:syntax, exn:fail:read, exn:fail:filesystem, exn:fail:network, exn:break
 
 
   ---------------------------------------------------------------------------
@@ -317,13 +317,13 @@ racket.setupHighlighting = function()
   -- Typed Racket
   ---------------------------------------------------------------------------
 
-  highlight(0, 'racketTyped',             { fg = colors.pink,       bg = 'NONE' })  -- :, :type, ann, inst, row-inst
-  highlight(0, 'racketTypeAnnotation',    { fg = colors.turquoise,  bg = 'NONE' })  -- Type annotations
-  highlight(0, 'racketDefineType',        { fg = colors.blue,       bg = 'NONE' })  -- define-type
-  highlight(0, 'racketTypedLambda',       { fg = colors.blue,       bg = 'NONE' })  -- lambda:, λ:
-  highlight(0, 'racketTypedDefine',       { fg = colors.blue,       bg = 'NONE' })  -- define:
-  highlight(0, 'racketTypedLet',          { fg = colors.blue,       bg = 'NONE' })  -- let:, let*:, letrec:
-  highlight(0, 'racketTypedStruct',       { fg = colors.blue,       bg = 'NONE' })  -- struct:
+  highlight(0, 'racketTyped',             { link = "Type" })  -- :, :type, ann, inst, row-inst
+  highlight(0, 'racketTypeAnnotation',    { link = "Type" })  -- Type annotations
+  highlight(0, 'racketDefineType',        { link = "Type" })  -- define-type
+  highlight(0, 'racketTypedLambda',       { link = "Type" })  -- lambda:, λ:
+  highlight(0, 'racketTypedDefine',       { link = "Type" })  -- define:
+  highlight(0, 'racketTypedLet',          { link = "Type" })  -- let:, let*:, letrec:
+  highlight(0, 'racketTypedStruct',       { link = "Type" })  -- struct:
   highlight(0, 'racketCast',              { fg = colors.blue,       bg = 'NONE' })  -- cast, assert
 
 
@@ -332,7 +332,7 @@ racket.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   highlight(0, 'scribbleAt',              { fg = colors.pink,       bg = 'NONE' })  -- @ syntax
-  highlight(0, 'scribbleKeyword',         { fg = colors.blue,       bg = 'NONE' })  -- @title, @section, @subsection, @defproc, @defform, @racket, @racketblock
+  highlight(0, 'scribbleKeyword',         { link = "Keyword" })  -- @title, @section, @subsection, @defproc, @defform, @racket, @racketblock
   highlight(0, 'scribbleText',            { fg = colors.white,      bg = 'NONE' })  -- Text content
 
 
@@ -341,63 +341,63 @@ racket.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Variables
-  highlight(0, '@variable.racket',              { fg = colors.white,      bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.parameter.racket',    { fg = colors.purple,     bg = 'NONE' })  -- Parameters
-  highlight(0, '@variable.builtin.racket',      { fg = colors.purple,     bg = 'NONE' })  -- Language names, special vars
+  highlight(0, '@variable.racket',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.parameter.racket',    { link = "Variable" })  -- Parameters
+  highlight(0, '@variable.builtin.racket',      { link = "Variable" })  -- Language names, special vars
 
   -- Constants
-  highlight(0, '@constant.racket',              { fg = colors.pink,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.racket',      { fg = colors.blue,       bg = 'NONE' })  -- #t, #f
+  highlight(0, '@constant.racket',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.racket',      { link = "Constant" })  -- #t, #f
 
   -- Booleans
-  highlight(0, '@boolean.racket',               { fg = colors.blue,       bg = 'NONE' })  -- #t, #f, #true, #false
+  highlight(0, '@boolean.racket',               { link = "Boolean" })  -- #t, #f, #true, #false
 
   -- Numbers
-  highlight(0, '@number.racket',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.racket',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.racket',                { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.racket',          { link = "Number" })  -- Floats
 
   -- Strings
-  highlight(0, '@string.racket',                { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.racket',         { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.regexp.racket',         { fg = colors.redLight,   bg = 'NONE' })  -- Regular expressions
-  highlight(0, '@string.special.symbol.racket', { fg = colors.pink,       bg = 'NONE' })  -- Symbols, keywords
+  highlight(0, '@string.racket',                { link = "String" })  -- Strings
+  highlight(0, '@string.escape.racket',         { link = "String" })  -- Escape sequences
+  highlight(0, '@string.regexp.racket',         { link = "String" })  -- Regular expressions
+  highlight(0, '@string.special.symbol.racket', { link = "String" })  -- Symbols, keywords
 
   -- Characters
   highlight(0, '@character.racket',             { fg = colors.redLight,   bg = 'NONE' })  -- #\char
   highlight(0, '@character.special.racket',     { fg = colors.pink,       bg = 'NONE' })  -- #\newline, #\space
 
   -- Functions
-  highlight(0, '@function.racket',              { fg = colors.orange,     bg = 'NONE' })  -- Function definitions/calls
-  highlight(0, '@function.call.racket',         { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.racket',      { fg = colors.orange,     bg = 'NONE' })  -- Built-in procedures
-  highlight(0, '@function.macro.racket',        { fg = colors.blue,       bg = 'NONE' })  -- Macros
+  highlight(0, '@function.racket',              { link = "Function" })  -- Function definitions/calls
+  highlight(0, '@function.call.racket',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.racket',      { link = "Function" })  -- Built-in procedures
+  highlight(0, '@function.macro.racket',        { link = "Function" })  -- Macros
 
   -- Keywords
-  highlight(0, '@keyword.racket',               { fg = colors.blue,       bg = 'NONE' })  -- Special forms
-  highlight(0, '@keyword.function.racket',      { fg = colors.blue,       bg = 'NONE' })  -- define, lambda
-  highlight(0, '@keyword.conditional.racket',   { fg = colors.blue,       bg = 'NONE' })  -- if, cond, case, when, unless
-  highlight(0, '@keyword.repeat.racket',        { fg = colors.blue,       bg = 'NONE' })  -- for, for/list, do
-  highlight(0, '@keyword.import.racket',        { fg = colors.pink,       bg = 'NONE' })  -- require
-  highlight(0, '@keyword.export.racket',        { fg = colors.pink,       bg = 'NONE' })  -- provide
-  highlight(0, '@keyword.exception.racket',     { fg = colors.blue,       bg = 'NONE' })  -- with-handlers, raise
+  highlight(0, '@keyword.racket',               { link = "Keyword" })  -- Special forms
+  highlight(0, '@keyword.function.racket',      { link = "Keyword" })  -- define, lambda
+  highlight(0, '@keyword.conditional.racket',   { link = "Conditional" })  -- if, cond, case, when, unless
+  highlight(0, '@keyword.repeat.racket',        { link = "Keyword" })  -- for, for/list, do
+  highlight(0, '@keyword.import.racket',        { link = "Keyword" })  -- require
+  highlight(0, '@keyword.export.racket',        { link = "Keyword" })  -- provide
+  highlight(0, '@keyword.exception.racket',     { link = "Keyword" })  -- with-handlers, raise
 
   -- Modules
   highlight(0, '@module.racket',                { fg = colors.turquoise,  bg = 'NONE' })  -- Module names
 
   -- Types
-  highlight(0, '@type.racket',                  { fg = colors.turquoise,  bg = 'NONE' })  -- Types (Typed Racket)
-  highlight(0, '@type.builtin.racket',          { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
+  highlight(0, '@type.racket',                  { link = "Type" })  -- Types (Typed Racket)
+  highlight(0, '@type.builtin.racket',          { link = "Type" })  -- Built-in types
 
   -- Operators
-  highlight(0, '@operator.racket',              { fg = colors.white,      bg = 'NONE' })  -- +, -, *, /, =, <, >, etc.
+  highlight(0, '@operator.racket',              { link = "Operator" })  -- +, -, *, /, =, <, >, etc.
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.racket',   { fg = colors.white,      bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.racket', { fg = colors.white,      bg = 'NONE' })  -- Delimiters
+  highlight(0, '@punctuation.delimiter.racket', { link = "Delimiter" })  -- Delimiters
   highlight(0, '@punctuation.special.racket',   { fg = colors.pink,       bg = 'NONE' })  -- ', `, ,, ,@, #, @
 
   -- Comments
-  highlight(0, '@comment.racket',               { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.racket',               { link = "Comment" })  -- Comments
 
   -- Attributes
   highlight(0, '@attribute.racket',             { fg = colors.pink,       bg = 'NONE' })  -- #:keyword attributes
@@ -407,20 +407,20 @@ racket.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.racket)
   ---------------------------------------------------------------------------
 
-  highlight(0, '@lsp.type.variable.racket',     { fg = colors.white,      bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.racket',     { link = "Variable" })
   highlight(0, '@lsp.type.parameter.racket',    { fg = colors.purple,     bg = 'NONE' })
   highlight(0, '@lsp.type.function.racket',     { fg = colors.orange,     bg = 'NONE' })
   highlight(0, '@lsp.type.macro.racket',        { fg = colors.blue,       bg = 'NONE' })
   highlight(0, '@lsp.type.type.racket',         { fg = colors.turquoise,  bg = 'NONE' })
   highlight(0, '@lsp.type.class.racket',        { fg = colors.turquoise,  bg = 'NONE' })
   highlight(0, '@lsp.type.namespace.racket',    { fg = colors.turquoise,  bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.racket',      { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.string.racket',       { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.racket',       { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.racket',      { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.racket',      { link = "Keyword" })
+  highlight(0, '@lsp.type.string.racket',       { link = "String" })
+  highlight(0, '@lsp.type.number.racket',       { link = "Number" })
+  highlight(0, '@lsp.type.comment.racket',      { link = "Comment" })
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.racket',    { fg = colors.pink,   bg = 'NONE' })
+  highlight(0, '@lsp.typemod.variable.readonly.racket',    { link = "Variable" })
   highlight(0, '@lsp.typemod.function.declaration.racket', { fg = colors.orange, bg = 'NONE' })
   highlight(0, '@lsp.typemod.function.defaultLibrary.racket', { fg = colors.orange, bg = 'NONE' })
 

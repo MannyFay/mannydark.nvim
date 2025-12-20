@@ -15,7 +15,7 @@
 
 # Plain scalars (unquoted)
 plain_string: Hello World
-plain_with_special: Hello: World
+# plain_with_special: Hello: World
 
 # Single-quoted (no escape sequences except '')
 single_quoted: 'Hello ''World'''

@@ -16,7 +16,7 @@ awk.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keywords - Control Flow
-  highlight(0, 'awkConditional',       { fg = colors.blue,       bg = 'NONE'            })  -- if, else
+  highlight(0, 'awkConditional',       { link = "Conditional" })  -- if, else
   highlight(0, 'awkRepeat',            { fg = colors.blue,       bg = 'NONE'            })  -- while, for, do
 
   -- Keywords - Statements
@@ -26,50 +26,50 @@ awk.setupHighlighting = function()
   highlight(0, 'awkPatterns',          { fg = colors.pink,       bg = 'NONE'            })  -- BEGIN, END, BEGINFILE, ENDFILE
 
   -- Function Definition
-  highlight(0, 'awkFuncDef',           { fg = colors.blue,       bg = 'NONE'            })  -- function, func
-  highlight(0, 'awkFuncName',          { fg = colors.orange,     bg = 'NONE'            })  -- User-defined function names
+  highlight(0, 'awkFuncDef',           { link = "Function" })  -- function, func
+  highlight(0, 'awkFuncName',          { link = "Function" })  -- User-defined function names
 
   -- Built-in Functions - Numeric
-  highlight(0, 'awkFunction',          { fg = colors.orange,     bg = 'NONE'            })  -- All built-in functions
-  highlight(0, 'awkNumericFunc',       { fg = colors.orange,     bg = 'NONE'            })  -- atan2, cos, exp, int, log, rand, sin, sqrt, srand
+  highlight(0, 'awkFunction',          { link = "Function" })  -- All built-in functions
+  highlight(0, 'awkNumericFunc',       { link = "Function" })  -- atan2, cos, exp, int, log, rand, sin, sqrt, srand
 
   -- Built-in Functions - String
-  highlight(0, 'awkStringFunc',        { fg = colors.orange,     bg = 'NONE'            })  -- gsub, index, length, match, split, sprintf, sub, substr, tolower, toupper, gensub, patsplit, strtonum, asort, asorti
+  highlight(0, 'awkStringFunc',        { link = "String" })  -- gsub, index, length, match, split, sprintf, sub, substr, tolower, toupper, gensub, patsplit, strtonum, asort, asorti
 
   -- Built-in Functions - I/O
-  highlight(0, 'awkIOFunc',            { fg = colors.orange,     bg = 'NONE'            })  -- close, fflush, getline, print, printf, system
+  highlight(0, 'awkIOFunc',            { link = "Function" })  -- close, fflush, getline, print, printf, system
 
   -- Built-in Functions - Time (GAWK)
-  highlight(0, 'awkTimeFunc',          { fg = colors.orange,     bg = 'NONE'            })  -- mktime, strftime, systime
+  highlight(0, 'awkTimeFunc',          { link = "Function" })  -- mktime, strftime, systime
 
   -- Built-in Functions - Bitwise (GAWK)
-  highlight(0, 'awkBitFunc',           { fg = colors.orange,     bg = 'NONE'            })  -- and, compl, lshift, or, rshift, xor
+  highlight(0, 'awkBitFunc',           { link = "Function" })  -- and, compl, lshift, or, rshift, xor
 
   -- Built-in Functions - Type (GAWK)
-  highlight(0, 'awkTypeFunc',          { fg = colors.orange,     bg = 'NONE'            })  -- isarray, typeof
+  highlight(0, 'awkTypeFunc',          { link = "Type" })  -- isarray, typeof
 
   -- Built-in Functions - I18N (GAWK)
-  highlight(0, 'awkI18nFunc',          { fg = colors.orange,     bg = 'NONE'            })  -- bindtextdomain, dcgettext, dcngettext
+  highlight(0, 'awkI18nFunc',          { link = "Function" })  -- bindtextdomain, dcgettext, dcngettext
 
   -- Variables - Built-in (Modifiable)
-  highlight(0, 'awkVariables',         { fg = colors.pink,       bg = 'NONE'            })  -- All built-in variables
+  highlight(0, 'awkVariables',         { link = "Variable" })  -- All built-in variables
   highlight(0, 'awkFieldSep',          { fg = colors.pink,       bg = 'NONE'            })  -- FS, RS, OFS, ORS
   highlight(0, 'awkOutputFormat',      { fg = colors.pink,       bg = 'NONE'            })  -- OFMT, CONVFMT
-  highlight(0, 'awkMiscVar',           { fg = colors.pink,       bg = 'NONE'            })  -- SUBSEP, BINMODE, FIELDWIDTHS, FPAT, IGNORECASE, LINT, PREC, ROUNDMODE, TEXTDOMAIN
+  highlight(0, 'awkMiscVar',           { link = "Variable" })  -- SUBSEP, BINMODE, FIELDWIDTHS, FPAT, IGNORECASE, LINT, PREC, ROUNDMODE, TEXTDOMAIN
 
   -- Variables - Built-in (Auto-set/Read-only)
-  highlight(0, 'awkAutoVar',           { fg = colors.pink,       bg = 'NONE'            })  -- NR, NF, FNR, FILENAME, ARGC, ARGV, ARGIND, ENVIRON, ERRNO, RLENGTH, RSTART, RT, FUNCTAB, PROCINFO, SYMTAB
+  highlight(0, 'awkAutoVar',           { link = "Variable" })  -- NR, NF, FNR, FILENAME, ARGC, ARGV, ARGIND, ENVIRON, ERRNO, RLENGTH, RSTART, RT, FUNCTAB, PROCINFO, SYMTAB
 
   -- Variables - Field References
-  highlight(0, 'awkFieldVars',         { fg = colors.purple,     bg = 'NONE'            })  -- $0, $1, $2, ... $NF
+  highlight(0, 'awkFieldVars',         { link = "Variable" })  -- $0, $1, $2, ... $NF
 
   -- Variables - User-defined
   highlight(0, 'awkIdentifier',        { fg = colors.purple,     bg = 'NONE'            })  -- User variables
-  highlight(0, 'awkVar',               { fg = colors.purple,     bg = 'NONE'            })  -- Variable names
-  highlight(0, 'awkArrayVar',          { fg = colors.purple,     bg = 'NONE'            })  -- Array variables
+  highlight(0, 'awkVar',               { link = "Variable" })  -- Variable names
+  highlight(0, 'awkArrayVar',          { link = "Variable" })  -- Array variables
 
   -- Strings
-  highlight(0, 'awkString',            { fg = colors.redLight,   bg = 'NONE'            })  -- "strings"
+  highlight(0, 'awkString',            { link = "String" })  -- "strings"
 
   -- String Escapes
   highlight(0, 'awkSpecialCharacter',  { fg = colors.pink,       bg = 'NONE'            })  -- \n, \t, \r, \\, \", etc.
@@ -82,13 +82,13 @@ awk.setupHighlighting = function()
   highlight(0, 'awkRegExpSpecial',     { fg = colors.pink,       bg = 'NONE'            })  -- Special regex characters
 
   -- Numbers
-  highlight(0, 'awkNumber',            { fg = colors.greenLight, bg = 'NONE'            })  -- Integers
+  highlight(0, 'awkNumber',            { link = "Number" })  -- Integers
   highlight(0, 'awkFloat',             { fg = colors.greenLight, bg = 'NONE'            })  -- Floating-point numbers
   highlight(0, 'awkHex',               { fg = colors.greenLight, bg = 'NONE'            })  -- 0x hex numbers
   highlight(0, 'awkOctal',             { fg = colors.greenLight, bg = 'NONE'            })  -- Octal numbers
 
   -- Operators - Arithmetic
-  highlight(0, 'awkOperator',          { fg = colors.white,      bg = 'NONE'            })  -- All operators
+  highlight(0, 'awkOperator',          { link = "Operator" })  -- All operators
   highlight(0, 'awkArithOp',           { fg = colors.white,      bg = 'NONE'            })  -- + - * / % ^
 
   -- Operators - Assignment
@@ -138,7 +138,7 @@ awk.setupHighlighting = function()
   highlight(0, 'awkLineSkip',          { fg = colors.pink,       bg = 'NONE'            })  -- \ at end of line
 
   -- Comments
-  highlight(0, 'awkComment',           { fg = colors.red,        bg = 'NONE'            })  -- # comments
+  highlight(0, 'awkComment',           { link = "Comment" })  -- # comments
   highlight(0, 'awkTodo',              { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX
 
   -- Error
@@ -149,21 +149,21 @@ awk.setupHighlighting = function()
   -- Treesitter Groups (@xxx.awk)
 
   -- Variables
-  highlight(0, '@variable.awk',              { fg = colors.purple,    bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.awk',      { fg = colors.pink,      bg = 'NONE' })  -- FS, RS, OFS, ORS, OFMT, CONVFMT, SUBSEP (modifiable)
-  highlight(0, '@variable.parameter.awk',    { fg = colors.purple,    bg = 'NONE' })  -- Function parameters
+  highlight(0, '@variable.awk',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.awk',      { link = "Variable" })  -- FS, RS, OFS, ORS, OFMT, CONVFMT, SUBSEP (modifiable)
+  highlight(0, '@variable.parameter.awk',    { link = "Variable" })  -- Function parameters
 
   -- Constants
-  highlight(0, '@constant.awk',              { fg = colors.purple,    bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.awk',      { fg = colors.pink,      bg = 'NONE' })  -- NR, NF, FNR, FILENAME, ARGC, ARGV, etc. (auto-set)
+  highlight(0, '@constant.awk',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.awk',      { link = "Constant" })  -- NR, NF, FNR, FILENAME, ARGC, ARGV, etc. (auto-set)
 
   -- Functions
-  highlight(0, '@function.awk',              { fg = colors.orange,    bg = 'NONE' })  -- User-defined functions
-  highlight(0, '@function.call.awk',         { fg = colors.orange,    bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.awk',      { fg = colors.orange,    bg = 'NONE' })  -- Built-in functions (print, printf, substr, split, etc.)
+  highlight(0, '@function.awk',              { link = "Function" })  -- User-defined functions
+  highlight(0, '@function.call.awk',         { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.awk',      { link = "Function" })  -- Built-in functions (print, printf, substr, split, etc.)
 
   -- Types
-  highlight(0, '@type.awk',                  { fg = colors.turquoise, bg = 'NONE' })  -- Types
+  highlight(0, '@type.awk',                  { link = "Type" })  -- Types
 
   -- Modules
   highlight(0, '@module.awk',                { fg = colors.turquoise, bg = 'NONE' })  -- Namespace-qualified names
@@ -172,54 +172,54 @@ awk.setupHighlighting = function()
   highlight(0, '@label.awk',                 { fg = colors.pink,      bg = 'NONE' })  -- BEGIN, END, BEGINFILE, ENDFILE
 
   -- Keywords
-  highlight(0, '@keyword.awk',               { fg = colors.blue,      bg = 'NONE' })  -- General keywords (delete, in)
-  highlight(0, '@keyword.function.awk',      { fg = colors.blue,      bg = 'NONE' })  -- function, func
-  highlight(0, '@keyword.operator.awk',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@keyword.return.awk',        { fg = colors.blue,      bg = 'NONE' })  -- return, exit
-  highlight(0, '@keyword.repeat.awk',        { fg = colors.blue,      bg = 'NONE' })  -- while, for, do, in
-  highlight(0, '@keyword.conditional.awk',   { fg = colors.blue,      bg = 'NONE' })  -- if, else, switch, case, default
-  highlight(0, '@keyword.import.awk',        { fg = colors.pink,      bg = 'NONE' })  -- @include, @load
-  highlight(0, '@keyword.directive.awk',     { fg = colors.pink,      bg = 'NONE' })  -- @namespace
+  highlight(0, '@keyword.awk',               { link = "Keyword" })  -- General keywords (delete, in)
+  highlight(0, '@keyword.function.awk',      { link = "Keyword" })  -- function, func
+  highlight(0, '@keyword.operator.awk',      { link = "Operator" })  -- Operators
+  highlight(0, '@keyword.return.awk',        { link = "Keyword" })  -- return, exit
+  highlight(0, '@keyword.repeat.awk',        { link = "Keyword" })  -- while, for, do, in
+  highlight(0, '@keyword.conditional.awk',   { link = "Conditional" })  -- if, else, switch, case, default
+  highlight(0, '@keyword.import.awk',        { link = "Keyword" })  -- @include, @load
+  highlight(0, '@keyword.directive.awk',     { link = "Keyword" })  -- @namespace
 
   -- Strings
-  highlight(0, '@string.awk',                { fg = colors.redLight,  bg = 'NONE' })  -- Strings
-  highlight(0, '@string.regexp.awk',         { fg = colors.redLight,  bg = 'NONE' })  -- Regular expressions
-  highlight(0, '@string.escape.awk',         { fg = colors.pink,      bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.awk',                { link = "String" })  -- Strings
+  highlight(0, '@string.regexp.awk',         { link = "String" })  -- Regular expressions
+  highlight(0, '@string.escape.awk',         { link = "String" })  -- Escape sequences
   highlight(0, '@character.awk',             { fg = colors.redLight,  bg = 'NONE' })  -- Characters
   highlight(0, '@character.special.awk',     { fg = colors.pink,      bg = 'NONE' })  -- Special characters
 
   -- Numbers
-  highlight(0, '@number.awk',                { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.awk',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.awk',                { link = "Number" })  -- Integers
+  highlight(0, '@number.float.awk',          { link = "Number" })  -- Floats
 
   -- Comments
-  highlight(0, '@comment.awk',               { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.awk',               { link = "Comment" })  -- Comments
 
   -- Operators and Punctuation
-  highlight(0, '@operator.awk',              { fg = colors.white,     bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.awk',              { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.awk',   { fg = colors.white,     bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.awk', { fg = colors.white,     bg = 'NONE' })  -- ; , : $ / @
+  highlight(0, '@punctuation.delimiter.awk', { link = "Delimiter" })  -- ; , : $ / @
   highlight(0, '@punctuation.special.awk',   { fg = colors.pink,      bg = 'NONE' })  -- $ (field reference)
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.awk)
 
-  highlight(0, '@lsp.type.variable.awk',      { fg = colors.purple,    bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.awk',      { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.awk',     { fg = colors.purple,    bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.awk',      { fg = colors.purple,    bg = 'NONE' })  -- Properties
   highlight(0, '@lsp.type.function.awk',      { fg = colors.orange,    bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.type.awk',          { fg = colors.turquoise, bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.namespace.awk',     { fg = colors.turquoise, bg = 'NONE' })  -- Namespaces
-  highlight(0, '@lsp.type.keyword.awk',       { fg = colors.blue,      bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.operator.awk',      { fg = colors.white,     bg = 'NONE' })  -- Operators
-  highlight(0, '@lsp.type.string.awk',        { fg = colors.redLight,  bg = 'NONE' })  -- Strings
+  highlight(0, '@lsp.type.keyword.awk',       { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.operator.awk',      { link = "Operator" })  -- Operators
+  highlight(0, '@lsp.type.string.awk',        { link = "String" })  -- Strings
   highlight(0, '@lsp.type.regexp.awk',        { fg = colors.redLight,  bg = 'NONE' })  -- Regular expressions
-  highlight(0, '@lsp.type.number.awk',        { fg = colors.greenLight, bg = 'NONE' }) -- Numbers
-  highlight(0, '@lsp.type.comment.awk',       { fg = colors.red,       bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.number.awk',        { link = "Number" }) -- Numbers
+  highlight(0, '@lsp.type.comment.awk',       { link = "Comment" })  -- Comments
 
   -- LSP Modifiers
-  highlight(0, '@lsp.typemod.variable.readonly.awk',    { fg = colors.pink,      bg = 'NONE' })  -- Built-in auto-set variables
+  highlight(0, '@lsp.typemod.variable.readonly.awk',    { link = "Variable" })  -- Built-in auto-set variables
   highlight(0, '@lsp.typemod.function.declaration.awk', { fg = colors.orange,    bg = 'NONE' })  -- Function declarations
   highlight(0, '@lsp.typemod.function.defaultLibrary.awk', { fg = colors.orange, bg = 'NONE' })  -- Built-in functions
 end

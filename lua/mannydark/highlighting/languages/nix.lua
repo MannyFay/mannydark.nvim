@@ -16,33 +16,33 @@ nix.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Comments
-  highlight(0, 'nixComment',               { fg = colors.red,        bg = 'NONE' })  -- # comments
-  highlight(0, 'nixLineComment',           { fg = colors.red,        bg = 'NONE' })  -- # single line
-  highlight(0, 'nixBlockComment',          { fg = colors.red,        bg = 'NONE' })  -- /* block */
+  highlight(0, 'nixComment',               { link = "Comment" })  -- # comments
+  highlight(0, 'nixLineComment',           { link = "Comment" })  -- # single line
+  highlight(0, 'nixBlockComment',          { link = "Comment" })  -- /* block */
   highlight(0, 'nixTodo',                  { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
   -- Keywords
-  highlight(0, 'nixKeyword',               { fg = colors.pink,       bg = 'NONE' })  -- General keywords
-  highlight(0, 'nixLetExprKeyword',        { fg = colors.pink,       bg = 'NONE' })  -- let, in
+  highlight(0, 'nixKeyword',               { link = "Keyword" })  -- General keywords
+  highlight(0, 'nixLetExprKeyword',        { link = "Keyword" })  -- let, in
   highlight(0, 'nixLet',                   { fg = colors.pink,       bg = 'NONE' })  -- let
   highlight(0, 'nixIn',                    { fg = colors.pink,       bg = 'NONE' })  -- in
-  highlight(0, 'nixWithExprKeyword',       { fg = colors.pink,       bg = 'NONE' })  -- with
+  highlight(0, 'nixWithExprKeyword',       { link = "Keyword" })  -- with
   highlight(0, 'nixWith',                  { fg = colors.pink,       bg = 'NONE' })  -- with
   highlight(0, 'nixInherit',               { fg = colors.pink,       bg = 'NONE' })  -- inherit
-  highlight(0, 'nixRecKeyword',            { fg = colors.pink,       bg = 'NONE' })  -- rec
+  highlight(0, 'nixRecKeyword',            { link = "Keyword" })  -- rec
   highlight(0, 'nixRec',                   { fg = colors.pink,       bg = 'NONE' })  -- rec
-  highlight(0, 'nixAssertKeyword',         { fg = colors.pink,       bg = 'NONE' })  -- assert
+  highlight(0, 'nixAssertKeyword',         { link = "Keyword" })  -- assert
   highlight(0, 'nixAssert',                { fg = colors.pink,       bg = 'NONE' })  -- assert
-  highlight(0, 'nixOrKeyword',             { fg = colors.pink,       bg = 'NONE' })  -- or (default value)
+  highlight(0, 'nixOrKeyword',             { link = "Keyword" })  -- or (default value)
 
   -- Conditional
-  highlight(0, 'nixIfExprKeyword',         { fg = colors.pink,       bg = 'NONE' })  -- if, then, else
+  highlight(0, 'nixIfExprKeyword',         { link = "Keyword" })  -- if, then, else
   highlight(0, 'nixIf',                    { fg = colors.pink,       bg = 'NONE' })  -- if
   highlight(0, 'nixThen',                  { fg = colors.pink,       bg = 'NONE' })  -- then
   highlight(0, 'nixElse',                  { fg = colors.pink,       bg = 'NONE' })  -- else
 
   -- Boolean and Null
-  highlight(0, 'nixBoolean',               { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'nixBoolean',               { link = "Boolean" })  -- true, false
   highlight(0, 'nixTrue',                  { fg = colors.blue,       bg = 'NONE' })  -- true
   highlight(0, 'nixFalse',                 { fg = colors.blue,       bg = 'NONE' })  -- false
   highlight(0, 'nixNull',                  { fg = colors.blue,       bg = 'NONE' })  -- null
@@ -52,22 +52,22 @@ nix.setupHighlighting = function()
   highlight(0, 'nixFloat',                 { fg = colors.greenLight, bg = 'NONE' })  -- Floats
 
   -- Strings
-  highlight(0, 'nixString',                { fg = colors.redLight,   bg = 'NONE' })  -- Multi-line ''...''
-  highlight(0, 'nixSimpleString',          { fg = colors.redLight,   bg = 'NONE' })  -- Double-quoted "..."
-  highlight(0, 'nixStringDelimiter',       { fg = colors.redLight,   bg = 'NONE' })  -- String delimiters
+  highlight(0, 'nixString',                { link = "String" })  -- Multi-line ''...''
+  highlight(0, 'nixSimpleString',          { link = "String" })  -- Double-quoted "..."
+  highlight(0, 'nixStringDelimiter',       { link = "Delimiter" })  -- String delimiters
 
   -- Escape Sequences
-  highlight(0, 'nixStringSpecial',         { fg = colors.pink,       bg = 'NONE' })  -- Escapes in ''...''
-  highlight(0, 'nixSimpleStringSpecial',   { fg = colors.pink,       bg = 'NONE' })  -- Escapes in "..."
+  highlight(0, 'nixStringSpecial',         { link = "String" })  -- Escapes in ''...''
+  highlight(0, 'nixSimpleStringSpecial',   { link = "String" })  -- Escapes in "..."
   highlight(0, 'nixEscape',                { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, \\, etc.
 
   -- Invalid Escapes
-  highlight(0, 'nixInvalidStringEscape',       { fg = colors.red, bg = 'NONE', undercurl = true })
-  highlight(0, 'nixInvalidSimpleStringEscape', { fg = colors.red, bg = 'NONE', undercurl = true })
+  highlight(0, 'nixInvalidStringEscape',       { link = "String" })
+  highlight(0, 'nixInvalidSimpleStringEscape', { link = "String" })
 
   -- Interpolation
   highlight(0, 'nixInterpolation',         { fg = colors.purple,     bg = 'NONE' })  -- ${...} content
-  highlight(0, 'nixInterpolationDelimiter',{ fg = colors.pink,       bg = 'NONE' })  -- ${ and }
+  highlight(0, 'nixInterpolationDelimiter',{ link = "Delimiter" })  -- ${ and }
   highlight(0, 'nixInterpolationParam',    { fg = colors.white,      bg = 'NONE' })  -- Variable in ${}
   highlight(0, 'nixAntiquotation',         { fg = colors.purple,     bg = 'NONE' })  -- Antiquotation
 
@@ -76,34 +76,34 @@ nix.setupHighlighting = function()
   highlight(0, 'nixHomePath',              { fg = colors.turquoise,  bg = 'NONE' })  -- ~/path
   highlight(0, 'nixSearchPath',            { fg = colors.turquoise,  bg = 'NONE' })  -- <nixpkgs>
   highlight(0, 'nixSearchPathRef',         { fg = colors.turquoise,  bg = 'NONE' })  -- Search path reference
-  highlight(0, 'nixPathDelimiter',         { fg = colors.pink,       bg = 'NONE' })  -- < > in paths
+  highlight(0, 'nixPathDelimiter',         { link = "Delimiter" })  -- < > in paths
 
   -- URIs
   highlight(0, 'nixURI',                   { fg = colors.turquoise,  bg = 'NONE' })  -- https://...
 
   -- Identifiers and Attributes
   highlight(0, 'nixIdentifier',            { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, 'nixVariable',              { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, 'nixVariable',              { link = "Variable" })  -- Variables
   highlight(0, 'nixAttribute',             { fg = colors.blue,       bg = 'NONE' })  -- Attribute names
   highlight(0, 'nixAttributePath',         { fg = colors.blue,       bg = 'NONE' })  -- Attribute paths
   highlight(0, 'nixAttributeDot',          { fg = colors.white,      bg = 'NONE' })  -- . in attr access
 
   -- Functions
-  highlight(0, 'nixFunction',              { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, 'nixFunctionCall',          { fg = colors.orange,     bg = 'NONE' })  -- Function calls
+  highlight(0, 'nixFunction',              { link = "Function" })  -- Function definitions
+  highlight(0, 'nixFunctionCall',          { link = "Function" })  -- Function calls
   highlight(0, 'nixLambda',                { fg = colors.pink,       bg = 'NONE' })  -- : in lambda
 
   -- Function Arguments
   highlight(0, 'nixArgumentDefinition',    { fg = colors.purple,     bg = 'NONE' })  -- Parameter names
-  highlight(0, 'nixSimpleFunctionArgument',{ fg = colors.purple,     bg = 'NONE' })  -- Simple args (x:)
+  highlight(0, 'nixSimpleFunctionArgument',{ link = "Function" })  -- Simple args (x:)
   highlight(0, 'nixFormalArgument',        { fg = colors.purple,     bg = 'NONE' })  -- Formal args ({x, y}:)
   highlight(0, 'nixArgumentSeparator',     { fg = colors.white,      bg = 'NONE' })  -- , between args
   highlight(0, 'nixArgumentEllipsis',      { fg = colors.pink,       bg = 'NONE' })  -- ...
-  highlight(0, 'nixArgOperator',           { fg = colors.pink,       bg = 'NONE' })  -- @ binding
+  highlight(0, 'nixArgOperator',           { link = "Operator" })  -- @ binding
   highlight(0, 'nixDefaultArg',            { fg = colors.white,      bg = 'NONE' })  -- ? default value
 
   -- Operators
-  highlight(0, 'nixOperator',              { fg = colors.white,      bg = 'NONE' })  -- General operators
+  highlight(0, 'nixOperator',              { link = "Operator" })  -- General operators
 
   -- Arithmetic Operators
   highlight(0, 'nixArithmeticOp',          { fg = colors.white,      bg = 'NONE' })  -- + - * /
@@ -136,7 +136,7 @@ nix.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Built-in Functions
 
-  highlight(0, 'nixBuiltin',               { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, 'nixBuiltin',               { link = "Function" })  -- Built-in functions
   highlight(0, 'nixSimpleBuiltin',         { fg = colors.orange,     bg = 'NONE' })  -- Non-namespaced builtins
   highlight(0, 'nixNamespacedBuiltin',     { fg = colors.orange,     bg = 'NONE' })  -- builtins.* functions
 
@@ -153,13 +153,13 @@ nix.setupHighlighting = function()
   highlight(0, 'nixIsAttrs',               { fg = colors.orange,     bg = 'NONE' })  -- isAttrs
   highlight(0, 'nixIsBool',                { fg = colors.orange,     bg = 'NONE' })  -- isBool
   highlight(0, 'nixIsFloat',               { fg = colors.orange,     bg = 'NONE' })  -- isFloat
-  highlight(0, 'nixIsFunction',            { fg = colors.orange,     bg = 'NONE' })  -- isFunction
+  highlight(0, 'nixIsFunction',            { link = "Function" })  -- isFunction
   highlight(0, 'nixIsInt',                 { fg = colors.orange,     bg = 'NONE' })  -- isInt
   highlight(0, 'nixIsList',                { fg = colors.orange,     bg = 'NONE' })  -- isList
   highlight(0, 'nixIsNull',                { fg = colors.orange,     bg = 'NONE' })  -- isNull
   highlight(0, 'nixIsPath',                { fg = colors.orange,     bg = 'NONE' })  -- isPath
-  highlight(0, 'nixIsString',              { fg = colors.orange,     bg = 'NONE' })  -- isString
-  highlight(0, 'nixTypeOf',                { fg = colors.orange,     bg = 'NONE' })  -- typeOf
+  highlight(0, 'nixIsString',              { link = "String" })  -- isString
+  highlight(0, 'nixTypeOf',                { link = "Type" })  -- typeOf
 
   -- Arithmetic
   highlight(0, 'nixAdd',                   { fg = colors.orange,     bg = 'NONE' })  -- add
@@ -206,20 +206,20 @@ nix.setupHighlighting = function()
   highlight(0, 'nixZipAttrsWith',          { fg = colors.orange,     bg = 'NONE' })  -- zipAttrsWith
 
   -- String Functions
-  highlight(0, 'nixStringLength',          { fg = colors.orange,     bg = 'NONE' })  -- stringLength
-  highlight(0, 'nixSubstring',             { fg = colors.orange,     bg = 'NONE' })  -- substring
+  highlight(0, 'nixStringLength',          { link = "String" })  -- stringLength
+  highlight(0, 'nixSubstring',             { link = "String" })  -- substring
   highlight(0, 'nixSplit',                 { fg = colors.orange,     bg = 'NONE' })  -- split
   highlight(0, 'nixMatch',                 { fg = colors.orange,     bg = 'NONE' })  -- match
-  highlight(0, 'nixReplaceStrings',        { fg = colors.orange,     bg = 'NONE' })  -- replaceStrings
-  highlight(0, 'nixConcatStringsSep',      { fg = colors.orange,     bg = 'NONE' })  -- concatStringsSep
+  highlight(0, 'nixReplaceStrings',        { link = "String" })  -- replaceStrings
+  highlight(0, 'nixConcatStringsSep',      { link = "String" })  -- concatStringsSep
   highlight(0, 'nixBaseNameOf',            { fg = colors.orange,     bg = 'NONE' })  -- baseNameOf
   highlight(0, 'nixDirOf',                 { fg = colors.orange,     bg = 'NONE' })  -- dirOf
-  highlight(0, 'nixToString',              { fg = colors.orange,     bg = 'NONE' })  -- toString
+  highlight(0, 'nixToString',              { link = "String" })  -- toString
 
   -- File/Path Functions
   highlight(0, 'nixReadFile',              { fg = colors.orange,     bg = 'NONE' })  -- readFile
   highlight(0, 'nixReadDir',               { fg = colors.orange,     bg = 'NONE' })  -- readDir
-  highlight(0, 'nixReadFileType',          { fg = colors.orange,     bg = 'NONE' })  -- readFileType
+  highlight(0, 'nixReadFileType',          { link = "Type" })  -- readFileType
   highlight(0, 'nixPathExists',            { fg = colors.orange,     bg = 'NONE' })  -- pathExists
   highlight(0, 'nixToFile',                { fg = colors.orange,     bg = 'NONE' })  -- toFile
   highlight(0, 'nixFilterSource',          { fg = colors.orange,     bg = 'NONE' })  -- filterSource
@@ -240,7 +240,7 @@ nix.setupHighlighting = function()
   highlight(0, 'nixFromTOML',              { fg = colors.orange,     bg = 'NONE' })  -- fromTOML
 
   -- Hash/Crypto
-  highlight(0, 'nixHashString',            { fg = colors.orange,     bg = 'NONE' })  -- hashString
+  highlight(0, 'nixHashString',            { link = "String" })  -- hashString
   highlight(0, 'nixHashFile',              { fg = colors.orange,     bg = 'NONE' })  -- hashFile
 
   -- Evaluation Control
@@ -255,7 +255,7 @@ nix.setupHighlighting = function()
   highlight(0, 'nixSplitVersion',          { fg = colors.orange,     bg = 'NONE' })  -- splitVersion
 
   -- Other
-  highlight(0, 'nixFunctionArgs',          { fg = colors.orange,     bg = 'NONE' })  -- functionArgs
+  highlight(0, 'nixFunctionArgs',          { link = "Function" })  -- functionArgs
   highlight(0, 'nixGenericClosure',        { fg = colors.orange,     bg = 'NONE' })  -- genericClosure
   highlight(0, 'nixGetEnv',                { fg = colors.orange,     bg = 'NONE' })  -- getEnv
   highlight(0, 'nixPlaceholder',           { fg = colors.orange,     bg = 'NONE' })  -- placeholder
@@ -265,7 +265,7 @@ nix.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Built-in Constants
 
-  highlight(0, 'nixBuiltinConstant',       { fg = colors.purple,     bg = 'NONE' })  -- Built-in constants
+  highlight(0, 'nixBuiltinConstant',       { link = "Constant" })  -- Built-in constants
   highlight(0, 'nixBuiltins',              { fg = colors.purple,     bg = 'NONE' })  -- builtins
   highlight(0, 'nixNixVersion',            { fg = colors.purple,     bg = 'NONE' })  -- nixVersion
   highlight(0, 'nixLangVersion',           { fg = colors.purple,     bg = 'NONE' })  -- langVersion
@@ -279,63 +279,63 @@ nix.setupHighlighting = function()
   -- Treesitter Groups (@xxx.nix)
 
   -- Comments
-  highlight(0, '@comment.nix',                 { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.nix',                 { link = "Comment" })  -- Comments
 
   -- Keywords
-  highlight(0, '@keyword.nix',                 { fg = colors.pink,       bg = 'NONE' })  -- assert, in, inherit, let, rec, with
-  highlight(0, '@keyword.conditional.nix',     { fg = colors.pink,       bg = 'NONE' })  -- if, then, else
-  highlight(0, '@keyword.operator.nix',        { fg = colors.pink,       bg = 'NONE' })  -- or
-  highlight(0, '@keyword.import.nix',          { fg = colors.pink,       bg = 'NONE' })  -- import
-  highlight(0, '@keyword.exception.nix',       { fg = colors.orange,     bg = 'NONE' })  -- abort, throw
+  highlight(0, '@keyword.nix',                 { link = "Keyword" })  -- assert, in, inherit, let, rec, with
+  highlight(0, '@keyword.conditional.nix',     { link = "Conditional" })  -- if, then, else
+  highlight(0, '@keyword.operator.nix',        { link = "Operator" })  -- or
+  highlight(0, '@keyword.import.nix',          { link = "Keyword" })  -- import
+  highlight(0, '@keyword.exception.nix',       { link = "Keyword" })  -- abort, throw
 
   -- Variables
-  highlight(0, '@variable.nix',                { fg = colors.white,      bg = 'NONE' })  -- General identifiers
-  highlight(0, '@variable.parameter.nix',      { fg = colors.purple,     bg = 'NONE' })  -- Function parameters
-  highlight(0, '@variable.parameter.builtin.nix', { fg = colors.pink,    bg = 'NONE' })  -- ...
-  highlight(0, '@variable.member.nix',         { fg = colors.blue,       bg = 'NONE' })  -- Attribute access
+  highlight(0, '@variable.nix',                { link = "Variable" })  -- General identifiers
+  highlight(0, '@variable.parameter.nix',      { link = "Variable" })  -- Function parameters
+  highlight(0, '@variable.parameter.builtin.nix', { link = "Variable" })  -- ...
+  highlight(0, '@variable.member.nix',         { link = "Variable" })  -- Attribute access
 
   -- Functions
-  highlight(0, '@function.nix',                { fg = colors.orange,     bg = 'NONE' })  -- Function definitions
-  highlight(0, '@function.call.nix',           { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.nix',        { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.nix',                { link = "Function" })  -- Function definitions
+  highlight(0, '@function.call.nix',           { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.nix',        { link = "Function" })  -- Built-in functions
 
   -- Strings
-  highlight(0, '@string.nix',                  { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@string.escape.nix',           { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
-  highlight(0, '@string.special.path.nix',     { fg = colors.turquoise,  bg = 'NONE' })  -- Paths
-  highlight(0, '@string.special.url.nix',      { fg = colors.turquoise,  bg = 'NONE' })  -- URIs
+  highlight(0, '@string.nix',                  { link = "String" })  -- Strings
+  highlight(0, '@string.escape.nix',           { link = "String" })  -- Escape sequences
+  highlight(0, '@string.special.path.nix',     { link = "String" })  -- Paths
+  highlight(0, '@string.special.url.nix',      { link = "String" })  -- URIs
 
   -- Numbers
-  highlight(0, '@number.nix',                  { fg = colors.greenLight, bg = 'NONE' })  -- Integers
-  highlight(0, '@number.float.nix',            { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.nix',                  { link = "Number" })  -- Integers
+  highlight(0, '@number.float.nix',            { link = "Number" })  -- Floats
 
   -- Booleans
-  highlight(0, '@boolean.nix',                 { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, '@boolean.nix',                 { link = "Boolean" })  -- true, false
 
   -- Constants
-  highlight(0, '@constant.nix',                { fg = colors.blue,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.nix',        { fg = colors.purple,     bg = 'NONE' })  -- null, builtins, nixVersion
+  highlight(0, '@constant.nix',                { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.nix',        { link = "Constant" })  -- null, builtins, nixVersion
 
   -- Operators
-  highlight(0, '@operator.nix',                { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.nix',                { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.nix',     { fg = colors.white,      bg = 'NONE' })  -- (), [], {}
-  highlight(0, '@punctuation.delimiter.nix',   { fg = colors.white,      bg = 'NONE' })  -- . ; : ,
+  highlight(0, '@punctuation.delimiter.nix',   { link = "Delimiter" })  -- . ; : ,
   highlight(0, '@punctuation.special.nix',     { fg = colors.pink,       bg = 'NONE' })  -- ${ }
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.nix)
 
-  highlight(0, '@lsp.type.variable.nix',       { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.nix',       { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.nix',      { fg = colors.purple,     bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.nix',       { fg = colors.blue,       bg = 'NONE' })  -- Attributes
   highlight(0, '@lsp.type.function.nix',       { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.string.nix',         { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.nix',         { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.nix',        { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.nix',        { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.nix',         { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.nix',         { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.nix',        { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.nix',        { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.namespace.nix',      { fg = colors.turquoise,  bg = 'NONE' })  -- Namespaces
 
 
@@ -371,28 +371,28 @@ nix.setupHighlighting = function()
   highlight(0, 'nixpkgsLibGenAttrs',       { fg = colors.orange,     bg = 'NONE' })  -- lib.genAttrs
   highlight(0, 'nixpkgsLibOptional',       { fg = colors.orange,     bg = 'NONE' })  -- lib.optional
   highlight(0, 'nixpkgsLibOptionals',      { fg = colors.orange,     bg = 'NONE' })  -- lib.optionals
-  highlight(0, 'nixpkgsLibOptionalString', { fg = colors.orange,     bg = 'NONE' })  -- lib.optionalString
+  highlight(0, 'nixpkgsLibOptionalString', { link = "String" })  -- lib.optionalString
   highlight(0, 'nixpkgsLibOptionalAttrs',  { fg = colors.orange,     bg = 'NONE' })  -- lib.optionalAttrs
-  highlight(0, 'nixpkgsLibConcatStrings',  { fg = colors.orange,     bg = 'NONE' })  -- lib.concatStrings
-  highlight(0, 'nixpkgsLibConcatMapStrings', { fg = colors.orange,   bg = 'NONE' })  -- lib.concatMapStrings
+  highlight(0, 'nixpkgsLibConcatStrings',  { link = "String" })  -- lib.concatStrings
+  highlight(0, 'nixpkgsLibConcatMapStrings', { link = "String" })  -- lib.concatMapStrings
   highlight(0, 'nixpkgsLibFlatten',        { fg = colors.orange,     bg = 'NONE' })  -- lib.flatten
   highlight(0, 'nixpkgsLibUnique',         { fg = colors.orange,     bg = 'NONE' })  -- lib.unique
 
   -- Types (for NixOS modules)
-  highlight(0, 'nixpkgsTypes',             { fg = colors.turquoise,  bg = 'NONE' })  -- types
-  highlight(0, 'nixpkgsTypesStr',          { fg = colors.turquoise,  bg = 'NONE' })  -- types.str
-  highlight(0, 'nixpkgsTypesInt',          { fg = colors.turquoise,  bg = 'NONE' })  -- types.int
-  highlight(0, 'nixpkgsTypesBool',         { fg = colors.turquoise,  bg = 'NONE' })  -- types.bool
-  highlight(0, 'nixpkgsTypesPath',         { fg = colors.turquoise,  bg = 'NONE' })  -- types.path
-  highlight(0, 'nixpkgsTypesAttrs',        { fg = colors.turquoise,  bg = 'NONE' })  -- types.attrs
-  highlight(0, 'nixpkgsTypesListOf',       { fg = colors.turquoise,  bg = 'NONE' })  -- types.listOf
-  highlight(0, 'nixpkgsTypesAttrsOf',      { fg = colors.turquoise,  bg = 'NONE' })  -- types.attrsOf
-  highlight(0, 'nixpkgsTypesEnum',         { fg = colors.turquoise,  bg = 'NONE' })  -- types.enum
-  highlight(0, 'nixpkgsTypesNullOr',       { fg = colors.turquoise,  bg = 'NONE' })  -- types.nullOr
-  highlight(0, 'nixpkgsTypesEither',       { fg = colors.turquoise,  bg = 'NONE' })  -- types.either
-  highlight(0, 'nixpkgsTypesOneOf',        { fg = colors.turquoise,  bg = 'NONE' })  -- types.oneOf
-  highlight(0, 'nixpkgsTypesSubmodule',    { fg = colors.turquoise,  bg = 'NONE' })  -- types.submodule
-  highlight(0, 'nixpkgsTypesPackage',      { fg = colors.turquoise,  bg = 'NONE' })  -- types.package
+  highlight(0, 'nixpkgsTypes',             { link = "Type" })  -- types
+  highlight(0, 'nixpkgsTypesStr',          { link = "Type" })  -- types.str
+  highlight(0, 'nixpkgsTypesInt',          { link = "Type" })  -- types.int
+  highlight(0, 'nixpkgsTypesBool',         { link = "Type" })  -- types.bool
+  highlight(0, 'nixpkgsTypesPath',         { link = "Type" })  -- types.path
+  highlight(0, 'nixpkgsTypesAttrs',        { link = "Type" })  -- types.attrs
+  highlight(0, 'nixpkgsTypesListOf',       { link = "Type" })  -- types.listOf
+  highlight(0, 'nixpkgsTypesAttrsOf',      { link = "Type" })  -- types.attrsOf
+  highlight(0, 'nixpkgsTypesEnum',         { link = "Type" })  -- types.enum
+  highlight(0, 'nixpkgsTypesNullOr',       { link = "Type" })  -- types.nullOr
+  highlight(0, 'nixpkgsTypesEither',       { link = "Type" })  -- types.either
+  highlight(0, 'nixpkgsTypesOneOf',        { link = "Type" })  -- types.oneOf
+  highlight(0, 'nixpkgsTypesSubmodule',    { link = "Type" })  -- types.submodule
+  highlight(0, 'nixpkgsTypesPackage',      { link = "Type" })  -- types.package
 
 
   -----------------------------------------------------------------------------

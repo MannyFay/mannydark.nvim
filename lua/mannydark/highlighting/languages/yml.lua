@@ -16,21 +16,21 @@ yml.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Keys
-  highlight(0, 'yamlBlockMappingKey',       { fg = colors.blue,       bg = 'NONE' })  -- Unquoted mapping keys
-  highlight(0, 'yamlBlockMappingKeyString', { fg = colors.blue,       bg = 'NONE' })  -- Quoted mapping keys
+  highlight(0, 'yamlBlockMappingKey',       { link = "Special" })  -- Unquoted mapping keys
+  highlight(0, 'yamlBlockMappingKeyString', { link = "String" })  -- Quoted mapping keys
   highlight(0, 'yamlFlowMappingKey',        { fg = colors.blue,       bg = 'NONE' })  -- Flow context mapping keys
   highlight(0, 'yamlMappingKeyStart',       { fg = colors.white,      bg = 'NONE' })  -- Explicit key indicator (?)
 
   -- Values / Scalars
   highlight(0, 'yamlPlainScalar',           { fg = colors.white,      bg = 'NONE' })  -- Unquoted scalar values
   highlight(0, 'yamlBlockScalar',           { fg = colors.redLight,   bg = 'NONE' })  -- Block scalar content
-  highlight(0, 'yamlBlockString',           { fg = colors.redLight,   bg = 'NONE' })  -- Multi-line block strings
+  highlight(0, 'yamlBlockString',           { link = "String" })  -- Multi-line block strings
   highlight(0, 'yamlBlockScalarHeader',     { fg = colors.white,      bg = 'NONE' })  -- Block scalar indicators (|, >)
 
   -- Strings
-  highlight(0, 'yamlString',                { fg = colors.redLight,   bg = 'NONE' })  -- General strings
-  highlight(0, 'yamlFlowString',            { fg = colors.redLight,   bg = 'NONE' })  -- Double/single quoted strings
-  highlight(0, 'yamlFlowStringDelimiter',   { fg = colors.redLight,   bg = 'NONE' })  -- Quote boundaries
+  highlight(0, 'yamlString',                { link = "String" })  -- General strings
+  highlight(0, 'yamlFlowString',            { link = "String" })  -- Double/single quoted strings
+  highlight(0, 'yamlFlowStringDelimiter',   { link = "Delimiter" })  -- Quote boundaries
 
   -- Escape Sequences
   highlight(0, 'yamlEscape',                { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences \n, \t, etc.
@@ -47,7 +47,7 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlNull',                  { fg = colors.blue,       bg = 'NONE' })  -- null, Null, NULL, ~
 
   -- Constants
-  highlight(0, 'yamlConstant',              { fg = colors.blue,       bg = 'NONE' })  -- Built-in constants
+  highlight(0, 'yamlConstant',              { link = "Constant" })  -- Built-in constants
 
   -- Timestamp
   highlight(0, 'yamlTimestamp',             { fg = colors.greenLight, bg = 'NONE' })  -- ISO 8601 timestamps
@@ -81,71 +81,71 @@ yml.setupHighlighting = function()
   highlight(0, 'yamlFlowCollection',        { fg = colors.white,      bg = 'NONE' })  -- Commas in flow collections
   highlight(0, 'yamlFlowMapping',           { fg = colors.white,      bg = 'NONE' })  -- Brace-enclosed mappings {}
   highlight(0, 'yamlFlowIndicator',         { fg = colors.white,      bg = 'NONE' })  -- Flow syntax characters [], {}
-  highlight(0, 'yamlFlowMappingDelimiter',  { fg = colors.white,      bg = 'NONE' })  -- Flow mapping colons
+  highlight(0, 'yamlFlowMappingDelimiter',  { link = "Delimiter" })  -- Flow mapping colons
 
   -- Block Collections
   highlight(0, 'yamlBlockCollectionItemStart', { fg = colors.white,   bg = 'NONE' })  -- List indicator (-)
 
   -- Delimiters
-  highlight(0, 'yamlKeyValueDelimiter',     { fg = colors.white,      bg = 'NONE' })  -- Colon between key and value
-  highlight(0, 'yamlBlockMappingDelimiter', { fg = colors.white,      bg = 'NONE' })  -- Block mapping colons
+  highlight(0, 'yamlKeyValueDelimiter',     { link = "Delimiter" })  -- Colon between key and value
+  highlight(0, 'yamlBlockMappingDelimiter', { link = "Delimiter" })  -- Block mapping colons
 
   -- Comments
-  highlight(0, 'yamlComment',               { fg = colors.red,        bg = 'NONE' })  -- # comments
-  highlight(0, 'yamlTodo',                  { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME, XXX, NOTE
+  highlight(0, 'yamlComment',               { link = "Comment" })  -- # comments
+  highlight(0, 'yamlTodo',                  { link = "Todo"})  -- TODO, FIXME, XXX, NOTE
 
 
   -----------------------------------------------------------------------------
   -- Treesitter Groups (@xxx.yaml)
 
   -- Properties (Keys)
-  highlight(0, '@property.yaml',            { fg = colors.blue,       bg = 'NONE' })  -- Mapping keys
+  highlight(0, '@property.yaml',            { link = "Variable"})  -- Mapping keys
 
   -- Strings
-  highlight(0, '@string.yaml',              { fg = colors.redLight,   bg = 'NONE' })  -- Quoted and block strings
-  highlight(0, '@string.escape.yaml',       { fg = colors.pink,       bg = 'NONE' })  -- Escape sequences
+  highlight(0, '@string.yaml',              { link = "String" })  -- Quoted and block strings
+  highlight(0, '@string.escape.yaml',       { link = "String" })  -- Escape sequences
 
   -- Numbers
-  highlight(0, '@number.yaml',              { fg = colors.greenLight, bg = 'NONE' })  -- Integer and float scalars
-  highlight(0, '@number.float.yaml',        { fg = colors.greenLight, bg = 'NONE' })  -- Float numbers
+  highlight(0, '@number.yaml',              { link = "Number" })  -- Integer and float scalars
+  highlight(0, '@number.float.yaml',        { link = "Number" })  -- Float numbers
 
   -- Booleans
-  highlight(0, '@boolean.yaml',             { fg = colors.blue,       bg = 'NONE' })  -- true, false, yes, no
+  highlight(0, '@boolean.yaml',             { link = "Boolean" })  -- true, false, yes, no
 
   -- Constants
-  highlight(0, '@constant.yaml',            { fg = colors.blue,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.yaml',    { fg = colors.blue,       bg = 'NONE' })  -- null, ~
+  highlight(0, '@constant.yaml',            { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.yaml',    { link = "Constant" })  -- null, ~
 
   -- Labels (Anchors/Aliases)
-  highlight(0, '@label.yaml',               { fg = colors.pink,       bg = 'NONE' })  -- Anchor and alias names
+  highlight(0, '@label.yaml',               { link = "Type"})  -- Anchor and alias names
 
   -- Types (Tags)
-  highlight(0, '@type.yaml',                { fg = colors.turquoise,  bg = 'NONE' })  -- Tags (!tag)
+  highlight(0, '@type.yaml',                { link = "Type" })  -- Tags (!tag)
 
   -- Keywords/Directives
-  highlight(0, '@keyword.yaml',             { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.directive.yaml',   { fg = colors.pink,       bg = 'NONE' })  -- %YAML, %TAG directives
+  highlight(0, '@keyword.yaml',             { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.directive.yaml',   { link = "Keyword" })  -- %YAML, %TAG directives
 
   -- Comments
-  highlight(0, '@comment.yaml',             { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.yaml',             { link = "Comment" })  -- Comments
 
   -- Punctuation
-  highlight(0, '@punctuation.delimiter.yaml', { fg = colors.white,    bg = 'NONE' })  -- , - : etc.
+  highlight(0, '@punctuation.delimiter.yaml', { link = "Delimiter" })  -- , - : etc.
   highlight(0, '@punctuation.bracket.yaml', { fg = colors.white,      bg = 'NONE' })  -- [], {}
-  highlight(0, '@punctuation.special.yaml', { fg = colors.pink,       bg = 'NONE' })  -- *, &, ---, ...
+  highlight(0, '@punctuation.special.yaml', { link = "Keyword"})  -- *, &, ---, ...
 
   -- Variables (for interpolation in some YAML variants)
-  highlight(0, '@variable.yaml',            { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@variable.yaml',            { link = "Variable" })  -- Variables
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.yaml)
 
   highlight(0, '@lsp.type.property.yaml',   { fg = colors.blue,       bg = 'NONE' })  -- Keys
-  highlight(0, '@lsp.type.string.yaml',     { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.yaml',     { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.yaml',    { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.yaml',    { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.yaml',     { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.yaml',     { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.yaml',    { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.yaml',    { link = "Comment" })  -- Comments
 
 
   -----------------------------------------------------------------------------
@@ -179,20 +179,20 @@ yml.setupHighlighting = function()
   -- Common YAML Usage Patterns
 
   -- Environment Variables (in Docker/K8s YAML)
-  highlight(0, 'yamlEnvVar',                { fg = colors.purple,     bg = 'NONE' })  -- ${VAR}, $VAR
+  highlight(0, 'yamlEnvVar',                { link = "Variable" })  -- ${VAR}, $VAR
 
   -- Template Variables (Helm, Ansible, etc.)
-  highlight(0, 'yamlTemplateVar',           { fg = colors.purple,     bg = 'NONE' })  -- {{ variable }}
-  highlight(0, 'yamlTemplateDelim',         { fg = colors.pink,       bg = 'NONE' })  -- {{ and }}
+  highlight(0, 'yamlTemplateVar',           { link = "Variable" })  -- {{ variable }}
+  highlight(0, 'yamlTemplateDelim',         { link = "Delimiter" })  -- {{ and }}
 
   -- Jinja2 (Ansible)
   highlight(0, 'yamlJinja',                 { fg = colors.purple,     bg = 'NONE' })  -- Jinja expressions
-  highlight(0, 'yamlJinjaDelim',            { fg = colors.pink,       bg = 'NONE' })  -- {% %}, {{ }}
+  highlight(0, 'yamlJinjaDelim',            { link = "Delimiter" })  -- {% %}, {{ }}
   highlight(0, 'yamlJinjaFilter',           { fg = colors.orange,     bg = 'NONE' })  -- | filter
 
   -- Helm Templates
   highlight(0, 'yamlHelmTemplate',          { fg = colors.purple,     bg = 'NONE' })  -- .Values, .Release
-  highlight(0, 'yamlHelmFunction',          { fg = colors.orange,     bg = 'NONE' })  -- include, toYaml, etc.
+  highlight(0, 'yamlHelmFunction',          { link = "Function" })  -- include, toYaml, etc.
 
 
   -----------------------------------------------------------------------------
@@ -227,7 +227,7 @@ yml.setupHighlighting = function()
 
   highlight(0, 'yamlCIStage',               { fg = colors.turquoise,  bg = 'NONE' })  -- Stage names
   highlight(0, 'yamlCIScript',              { fg = colors.redLight,   bg = 'NONE' })  -- Script content
-  highlight(0, 'yamlCIVariable',            { fg = colors.purple,     bg = 'NONE' })  -- CI/CD variables
+  highlight(0, 'yamlCIVariable',            { link = "Variable" })  -- CI/CD variables
 end
 
 return yml

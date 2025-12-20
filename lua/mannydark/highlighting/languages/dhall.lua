@@ -17,14 +17,14 @@ dhall.setupHighlighting = function()
   -- Vim Syntax Groups (legacy)
 
   -- Comments
-  highlight(0, 'dhallComment',             { fg = colors.red,        bg = 'NONE' })  -- -- single line
-  highlight(0, 'dhallLineComment',         { fg = colors.red,        bg = 'NONE' })  -- -- comment
-  highlight(0, 'dhallBlockComment',        { fg = colors.red,        bg = 'NONE' })  -- {- block -}
-  highlight(0, 'dhallMultilineComment',    { fg = colors.red,        bg = 'NONE' })  -- {- ... -}
+  highlight(0, 'dhallComment',             { link = "Comment" })  -- -- single line
+  highlight(0, 'dhallLineComment',         { link = "Comment" })  -- -- comment
+  highlight(0, 'dhallBlockComment',        { link = "Comment" })  -- {- block -}
+  highlight(0, 'dhallMultilineComment',    { link = "Comment" })  -- {- ... -}
   highlight(0, 'dhallTodo',                { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
   -- Keywords
-  highlight(0, 'dhallKeyword',             { fg = colors.pink,       bg = 'NONE' })  -- let, in, etc.
+  highlight(0, 'dhallKeyword',             { link = "Keyword" })  -- let, in, etc.
   highlight(0, 'dhallLet',                 { fg = colors.pink,       bg = 'NONE' })  -- let
   highlight(0, 'dhallIn',                  { fg = colors.pink,       bg = 'NONE' })  -- in
   highlight(0, 'dhallAssert',              { fg = colors.pink,       bg = 'NONE' })  -- assert
@@ -37,7 +37,7 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallMissing',             { fg = colors.pink,       bg = 'NONE' })  -- missing
 
   -- Conditional
-  highlight(0, 'dhallConditional',         { fg = colors.pink,       bg = 'NONE' })  -- if, then, else
+  highlight(0, 'dhallConditional',         { link = "Conditional" })  -- if, then, else
   highlight(0, 'dhallIf',                  { fg = colors.pink,       bg = 'NONE' })  -- if
   highlight(0, 'dhallThen',                { fg = colors.pink,       bg = 'NONE' })  -- then
   highlight(0, 'dhallElse',                { fg = colors.pink,       bg = 'NONE' })  -- else
@@ -48,8 +48,8 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallArrow',               { fg = colors.pink,       bg = 'NONE' })  -- ->, →
 
   -- Built-in Types
-  highlight(0, 'dhallType',                { fg = colors.turquoise,  bg = 'NONE' })  -- Type names
-  highlight(0, 'dhallBuiltinType',         { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
+  highlight(0, 'dhallType',                { link = "Type" })  -- Type names
+  highlight(0, 'dhallBuiltinType',         { link = "Type" })  -- Built-in types
   highlight(0, 'dhallBool',                { fg = colors.turquoise,  bg = 'NONE' })  -- Bool type
   highlight(0, 'dhallNatural',             { fg = colors.turquoise,  bg = 'NONE' })  -- Natural type
   highlight(0, 'dhallInteger',             { fg = colors.turquoise,  bg = 'NONE' })  -- Integer type
@@ -63,12 +63,12 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallBytes',               { fg = colors.turquoise,  bg = 'NONE' })  -- Bytes type
 
   -- Type Universe
-  highlight(0, 'dhallTypeKeyword',         { fg = colors.turquoise,  bg = 'NONE' })  -- Type
+  highlight(0, 'dhallTypeKeyword',         { link = "Keyword" })  -- Type
   highlight(0, 'dhallKind',                { fg = colors.turquoise,  bg = 'NONE' })  -- Kind
   highlight(0, 'dhallSort',                { fg = colors.turquoise,  bg = 'NONE' })  -- Sort
 
   -- Boolean Constants
-  highlight(0, 'dhallBoolean',             { fg = colors.blue,       bg = 'NONE' })  -- True, False
+  highlight(0, 'dhallBoolean',             { link = "Boolean" })  -- True, False
   highlight(0, 'dhallTrue',                { fg = colors.blue,       bg = 'NONE' })  -- True
   highlight(0, 'dhallFalse',               { fg = colors.blue,       bg = 'NONE' })  -- False
 
@@ -77,22 +77,22 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallNone',                { fg = colors.blue,       bg = 'NONE' })  -- None
 
   -- Numbers
-  highlight(0, 'dhallNumber',              { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'dhallNumber',              { link = "Number" })  -- Numbers
   highlight(0, 'dhallNaturalLit',          { fg = colors.greenLight, bg = 'NONE' })  -- 42, 0xFF, 0b1010
   highlight(0, 'dhallIntegerLit',          { fg = colors.greenLight, bg = 'NONE' })  -- +5, -3
   highlight(0, 'dhallDoubleLit',           { fg = colors.greenLight, bg = 'NONE' })  -- 3.14, 1e6
-  highlight(0, 'dhallHexNumber',           { fg = colors.greenLight, bg = 'NONE' })  -- 0xFF
-  highlight(0, 'dhallBinaryNumber',        { fg = colors.greenLight, bg = 'NONE' })  -- 0b1010
+  highlight(0, 'dhallHexNumber',           { link = "Number" })  -- 0xFF
+  highlight(0, 'dhallBinaryNumber',        { link = "Number" })  -- 0b1010
 
   -- Strings
-  highlight(0, 'dhallString',              { fg = colors.redLight,   bg = 'NONE' })  -- "string"
-  highlight(0, 'dhallStringDouble',        { fg = colors.redLight,   bg = 'NONE' })  -- "double quoted"
-  highlight(0, 'dhallStringMultiline',     { fg = colors.redLight,   bg = 'NONE' })  -- ''multi-line''
+  highlight(0, 'dhallString',              { link = "String" })  -- "string"
+  highlight(0, 'dhallStringDouble',        { link = "String" })  -- "double quoted"
+  highlight(0, 'dhallStringMultiline',     { link = "String" })  -- ''multi-line''
   highlight(0, 'dhallTextLiteral',         { fg = colors.redLight,   bg = 'NONE' })  -- Text content
 
   -- String Interpolation
   highlight(0, 'dhallInterpolation',       { fg = colors.purple,     bg = 'NONE' })  -- ${...}
-  highlight(0, 'dhallInterpDelim',         { fg = colors.pink,       bg = 'NONE' })  -- ${ and }
+  highlight(0, 'dhallInterpDelim',         { link = "Delimiter" })  -- ${ and }
 
   -- Escape Sequences
   highlight(0, 'dhallEscape',              { fg = colors.pink,       bg = 'NONE' })  -- \n, \t, \\, etc.
@@ -101,7 +101,7 @@ dhall.setupHighlighting = function()
   -- Labels and Identifiers
   highlight(0, 'dhallLabel',               { fg = colors.white,      bg = 'NONE' })  -- Variable names
   highlight(0, 'dhallIdentifier',          { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, 'dhallVariable',            { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, 'dhallVariable',            { link = "Variable" })  -- Variables
 
   -- Record Fields
   highlight(0, 'dhallField',               { fg = colors.blue,       bg = 'NONE' })  -- Field names
@@ -117,7 +117,7 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallAlternative',         { fg = colors.turquoise,  bg = 'NONE' })  -- Union alternatives
 
   -- Operators
-  highlight(0, 'dhallOperator',            { fg = colors.white,      bg = 'NONE' })  -- General operators
+  highlight(0, 'dhallOperator',            { link = "Operator" })  -- General operators
 
   -- Arithmetic Operators
   highlight(0, 'dhallArithmeticOp',        { fg = colors.white,      bg = 'NONE' })  -- +, *
@@ -134,7 +134,7 @@ dhall.setupHighlighting = function()
   -- Record Operators
   highlight(0, 'dhallRecordMerge',         { fg = colors.pink,       bg = 'NONE' })  -- /\ ∧ (recursive merge)
   highlight(0, 'dhallRecordOverride',      { fg = colors.pink,       bg = 'NONE' })  -- // ⫽ (prefer right)
-  highlight(0, 'dhallRecordTypeMerge',     { fg = colors.pink,       bg = 'NONE' })  -- //\ ⩓ (type merge)
+  highlight(0, 'dhallRecordTypeMerge',     { link = "Type" })  -- //\ ⩓ (type merge)
   highlight(0, 'dhallRecordComplete',      { fg = colors.pink,       bg = 'NONE' })  -- :: (auto-complete)
 
   -- Assert Operators
@@ -144,7 +144,7 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallImportAlt',           { fg = colors.pink,       bg = 'NONE' })  -- ? (fallback)
 
   -- Type Annotation
-  highlight(0, 'dhallTypeAnnotation',      { fg = colors.white,      bg = 'NONE' })  -- : in type annotations
+  highlight(0, 'dhallTypeAnnotation',      { link = "Type" })  -- : in type annotations
 
   -- Delimiters and Punctuation
   highlight(0, 'dhallParens',              { fg = colors.white,      bg = 'NONE' })  -- ( )
@@ -164,8 +164,8 @@ dhall.setupHighlighting = function()
   -- Built-in Functions
 
   -- Natural Functions
-  highlight(0, 'dhallBuiltinFunc',         { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
-  highlight(0, 'dhallNaturalFunc',         { fg = colors.orange,     bg = 'NONE' })  -- Natural/* functions
+  highlight(0, 'dhallBuiltinFunc',         { link = "Function" })  -- Built-in functions
+  highlight(0, 'dhallNaturalFunc',         { link = "Function" })  -- Natural/* functions
   highlight(0, 'dhallNaturalBuild',        { fg = colors.orange,     bg = 'NONE' })  -- Natural/build
   highlight(0, 'dhallNaturalFold',         { fg = colors.orange,     bg = 'NONE' })  -- Natural/fold
   highlight(0, 'dhallNaturalIsZero',       { fg = colors.orange,     bg = 'NONE' })  -- Natural/isZero
@@ -176,23 +176,23 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallNaturalSubtract',     { fg = colors.orange,     bg = 'NONE' })  -- Natural/subtract
 
   -- Integer Functions
-  highlight(0, 'dhallIntegerFunc',         { fg = colors.orange,     bg = 'NONE' })  -- Integer/* functions
+  highlight(0, 'dhallIntegerFunc',         { link = "Function" })  -- Integer/* functions
   highlight(0, 'dhallIntegerClamp',        { fg = colors.orange,     bg = 'NONE' })  -- Integer/clamp
   highlight(0, 'dhallIntegerNegate',       { fg = colors.orange,     bg = 'NONE' })  -- Integer/negate
   highlight(0, 'dhallIntegerShow',         { fg = colors.orange,     bg = 'NONE' })  -- Integer/show
   highlight(0, 'dhallIntegerToDouble',     { fg = colors.orange,     bg = 'NONE' })  -- Integer/toDouble
 
   -- Double Functions
-  highlight(0, 'dhallDoubleFunc',          { fg = colors.orange,     bg = 'NONE' })  -- Double/* functions
+  highlight(0, 'dhallDoubleFunc',          { link = "Function" })  -- Double/* functions
   highlight(0, 'dhallDoubleShow',          { fg = colors.orange,     bg = 'NONE' })  -- Double/show
 
   -- Text Functions
-  highlight(0, 'dhallTextFunc',            { fg = colors.orange,     bg = 'NONE' })  -- Text/* functions
+  highlight(0, 'dhallTextFunc',            { link = "Function" })  -- Text/* functions
   highlight(0, 'dhallTextShow',            { fg = colors.orange,     bg = 'NONE' })  -- Text/show
   highlight(0, 'dhallTextReplace',         { fg = colors.orange,     bg = 'NONE' })  -- Text/replace
 
   -- List Functions
-  highlight(0, 'dhallListFunc',            { fg = colors.orange,     bg = 'NONE' })  -- List/* functions
+  highlight(0, 'dhallListFunc',            { link = "Function" })  -- List/* functions
   highlight(0, 'dhallListBuild',           { fg = colors.orange,     bg = 'NONE' })  -- List/build
   highlight(0, 'dhallListFold',            { fg = colors.orange,     bg = 'NONE' })  -- List/fold
   highlight(0, 'dhallListLength',          { fg = colors.orange,     bg = 'NONE' })  -- List/length
@@ -202,11 +202,11 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallListReverse',         { fg = colors.orange,     bg = 'NONE' })  -- List/reverse
 
   -- Date/Time Functions
-  highlight(0, 'dhallDateFunc',            { fg = colors.orange,     bg = 'NONE' })  -- Date/* functions
+  highlight(0, 'dhallDateFunc',            { link = "Function" })  -- Date/* functions
   highlight(0, 'dhallDateShow',            { fg = colors.orange,     bg = 'NONE' })  -- Date/show
-  highlight(0, 'dhallTimeFunc',            { fg = colors.orange,     bg = 'NONE' })  -- Time/* functions
+  highlight(0, 'dhallTimeFunc',            { link = "Function" })  -- Time/* functions
   highlight(0, 'dhallTimeShow',            { fg = colors.orange,     bg = 'NONE' })  -- Time/show
-  highlight(0, 'dhallTimeZoneFunc',        { fg = colors.orange,     bg = 'NONE' })  -- TimeZone/* functions
+  highlight(0, 'dhallTimeZoneFunc',        { link = "Function" })  -- TimeZone/* functions
   highlight(0, 'dhallTimeZoneShow',        { fg = colors.orange,     bg = 'NONE' })  -- TimeZone/show
 
 
@@ -244,65 +244,65 @@ dhall.setupHighlighting = function()
   -- Treesitter Groups (@xxx.dhall)
 
   -- Comments
-  highlight(0, '@comment.dhall',               { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.dhall',               { link = "Comment" })  -- Comments
 
   -- Keywords
-  highlight(0, '@keyword.dhall',               { fg = colors.pink,       bg = 'NONE' })  -- let, in, assert
-  highlight(0, '@keyword.operator.dhall',      { fg = colors.pink,       bg = 'NONE' })  -- using, as, with
-  highlight(0, '@keyword.conditional.dhall',   { fg = colors.pink,       bg = 'NONE' })  -- if, then, else
-  highlight(0, '@keyword.import.dhall',        { fg = colors.pink,       bg = 'NONE' })  -- missing
+  highlight(0, '@keyword.dhall',               { link = "Keyword" })  -- let, in, assert
+  highlight(0, '@keyword.operator.dhall',      { link = "Operator" })  -- using, as, with
+  highlight(0, '@keyword.conditional.dhall',   { link = "Conditional" })  -- if, then, else
+  highlight(0, '@keyword.import.dhall',        { link = "Keyword" })  -- missing
 
   -- Types
-  highlight(0, '@type.dhall',                  { fg = colors.turquoise,  bg = 'NONE' })  -- Type labels, import modifiers
-  highlight(0, '@type.builtin.dhall',          { fg = colors.turquoise,  bg = 'NONE' })  -- Bool, Natural, List, etc.
+  highlight(0, '@type.dhall',                  { link = "Type" })  -- Type labels, import modifiers
+  highlight(0, '@type.builtin.dhall',          { link = "Type" })  -- Bool, Natural, List, etc.
 
   -- Variables
-  highlight(0, '@variable.dhall',              { fg = colors.white,      bg = 'NONE' })  -- Identifiers
-  highlight(0, '@variable.parameter.dhall',    { fg = colors.purple,     bg = 'NONE' })  -- Lambda parameters
-  highlight(0, '@variable.member.dhall',       { fg = colors.blue,       bg = 'NONE' })  -- Record/selector members
+  highlight(0, '@variable.dhall',              { link = "Variable" })  -- Identifiers
+  highlight(0, '@variable.parameter.dhall',    { link = "Variable" })  -- Lambda parameters
+  highlight(0, '@variable.member.dhall',       { link = "Variable" })  -- Record/selector members
 
   -- Functions
-  highlight(0, '@function.dhall',              { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@function.builtin.dhall',      { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.dhall',              { link = "Function" })  -- Functions
+  highlight(0, '@function.builtin.dhall',      { link = "Function" })  -- Built-in functions
 
   -- Strings
-  highlight(0, '@string.dhall',                { fg = colors.redLight,   bg = 'NONE' })  -- Text literals
-  highlight(0, '@string.escape.dhall',         { fg = colors.pink,       bg = 'NONE' })  -- Escaped quotes
-  highlight(0, '@string.special.dhall',        { fg = colors.purple,     bg = 'NONE' })  -- env:, hash
-  highlight(0, '@string.special.path.dhall',   { fg = colors.redLight,   bg = 'NONE' })  -- File paths
-  highlight(0, '@string.special.url.dhall',    { fg = colors.turquoise,  bg = 'NONE' })  -- HTTP imports
+  highlight(0, '@string.dhall',                { link = "String" })  -- Text literals
+  highlight(0, '@string.escape.dhall',         { link = "String" })  -- Escaped quotes
+  highlight(0, '@string.special.dhall',        { link = "String" })  -- env:, hash
+  highlight(0, '@string.special.path.dhall',   { link = "String" })  -- File paths
+  highlight(0, '@string.special.url.dhall',    { link = "String" })  -- HTTP imports
 
   -- Numbers
-  highlight(0, '@number.dhall',                { fg = colors.greenLight, bg = 'NONE' })  -- Natural, Integer
-  highlight(0, '@number.float.dhall',          { fg = colors.greenLight, bg = 'NONE' })  -- Double
+  highlight(0, '@number.dhall',                { link = "Number" })  -- Natural, Integer
+  highlight(0, '@number.float.dhall',          { link = "Number" })  -- Double
 
   -- Booleans
-  highlight(0, '@boolean.dhall',               { fg = colors.blue,       bg = 'NONE' })  -- True, False
+  highlight(0, '@boolean.dhall',               { link = "Boolean" })  -- True, False
 
   -- Constants
-  highlight(0, '@constant.dhall',              { fg = colors.blue,       bg = 'NONE' })  -- Constants
-  highlight(0, '@constant.builtin.dhall',      { fg = colors.blue,       bg = 'NONE' })  -- None
+  highlight(0, '@constant.dhall',              { link = "Constant" })  -- Constants
+  highlight(0, '@constant.builtin.dhall',      { link = "Constant" })  -- None
 
   -- Operators
-  highlight(0, '@operator.dhall',              { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.dhall',              { link = "Operator" })  -- Operators
 
   -- Punctuation
   highlight(0, '@punctuation.bracket.dhall',   { fg = colors.white,      bg = 'NONE' })  -- {}, [], (), <>
-  highlight(0, '@punctuation.delimiter.dhall', { fg = colors.white,      bg = 'NONE' })  -- , | .
+  highlight(0, '@punctuation.delimiter.dhall', { link = "Delimiter" })  -- , | .
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.dhall)
 
   highlight(0, '@lsp.type.type.dhall',         { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@lsp.type.variable.dhall',     { fg = colors.white,      bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.dhall',     { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.parameter.dhall',    { fg = colors.purple,     bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.property.dhall',     { fg = colors.blue,       bg = 'NONE' })  -- Fields
   highlight(0, '@lsp.type.function.dhall',     { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@lsp.type.string.dhall',       { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@lsp.type.number.dhall',       { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@lsp.type.keyword.dhall',      { fg = colors.pink,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@lsp.type.comment.dhall',      { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@lsp.type.string.dhall',       { link = "String" })  -- Strings
+  highlight(0, '@lsp.type.number.dhall',       { link = "Number" })  -- Numbers
+  highlight(0, '@lsp.type.keyword.dhall',      { link = "Keyword" })  -- Keywords
+  highlight(0, '@lsp.type.comment.dhall',      { link = "Comment" })  -- Comments
   highlight(0, '@lsp.type.namespace.dhall',    { fg = colors.turquoise,  bg = 'NONE' })  -- Namespaces
 
 
@@ -314,7 +314,7 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallUnicodeArrow',        { fg = colors.pink,       bg = 'NONE' })  -- →
   highlight(0, 'dhallUnicodeMerge',        { fg = colors.pink,       bg = 'NONE' })  -- ∧
   highlight(0, 'dhallUnicodePrefer',       { fg = colors.pink,       bg = 'NONE' })  -- ⫽
-  highlight(0, 'dhallUnicodeTypeMerge',    { fg = colors.pink,       bg = 'NONE' })  -- ⩓
+  highlight(0, 'dhallUnicodeTypeMerge',    { link = "Type" })  -- ⩓
   highlight(0, 'dhallUnicodeEquiv',        { fg = colors.pink,       bg = 'NONE' })  -- ≡
 
 
@@ -322,7 +322,7 @@ dhall.setupHighlighting = function()
   -- Prelude (Standard Library)
 
   highlight(0, 'dhallPrelude',             { fg = colors.purple,     bg = 'NONE' })  -- Prelude
-  highlight(0, 'dhallPreludeFunc',         { fg = colors.orange,     bg = 'NONE' })  -- Prelude functions
+  highlight(0, 'dhallPreludeFunc',         { link = "Function" })  -- Prelude functions
 
   -- Prelude/Bool
   highlight(0, 'dhallPreludeBool',         { fg = colors.orange,     bg = 'NONE' })  -- Bool functions
@@ -374,9 +374,9 @@ dhall.setupHighlighting = function()
   highlight(0, 'dhallTextDefault',         { fg = colors.orange,     bg = 'NONE' })  -- Text/default
 
   -- Prelude/Function
-  highlight(0, 'dhallPreludeFunction',     { fg = colors.orange,     bg = 'NONE' })  -- Function functions
-  highlight(0, 'dhallFunctionCompose',     { fg = colors.orange,     bg = 'NONE' })  -- Function/compose
-  highlight(0, 'dhallFunctionIdentity',    { fg = colors.orange,     bg = 'NONE' })  -- Function/identity
+  highlight(0, 'dhallPreludeFunction',     { link = "Function" })  -- Function functions
+  highlight(0, 'dhallFunctionCompose',     { link = "Function" })  -- Function/compose
+  highlight(0, 'dhallFunctionIdentity',    { link = "Function" })  -- Function/identity
 
   -- Prelude/JSON
   highlight(0, 'dhallPreludeJSON',         { fg = colors.orange,     bg = 'NONE' })  -- JSON rendering
@@ -384,7 +384,7 @@ dhall.setupHighlighting = function()
 
   -- Prelude/Map
   highlight(0, 'dhallPreludeMap',          { fg = colors.orange,     bg = 'NONE' })  -- Map type and functions
-  highlight(0, 'dhallMapType',             { fg = colors.turquoise,  bg = 'NONE' })  -- Map type
+  highlight(0, 'dhallMapType',             { link = "Type" })  -- Map type
   highlight(0, 'dhallMapEntry',            { fg = colors.turquoise,  bg = 'NONE' })  -- Map.Entry
 
 
@@ -407,7 +407,7 @@ dhall.setupHighlighting = function()
   -- Error Highlighting
 
   highlight(0, 'dhallSyntaxError',         { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Syntax errors
-  highlight(0, 'dhallTypeError',           { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Type errors
+  highlight(0, 'dhallTypeError',           { link = "Type" })  -- Type errors
   highlight(0, 'dhallImportError',         { fg = colors.red,        bg = 'NONE', undercurl = true })  -- Import errors
 end
 

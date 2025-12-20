@@ -16,7 +16,7 @@ logo.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Procedure Definition
 
-  highlight(0, 'logoKeyword',             { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, 'logoKeyword',             { link = "Keyword" })  -- Keywords
   highlight(0, 'logoTo',                  { fg = colors.blue,       bg = 'NONE' })  -- to (procedure definition)
   highlight(0, 'logoEnd',                 { fg = colors.blue,       bg = 'NONE' })  -- end (procedure end)
   highlight(0, 'logoDefine',              { fg = colors.blue,       bg = 'NONE' })  -- define
@@ -210,8 +210,8 @@ logo.setupHighlighting = function()
   highlight(0, 'logoNotequalp',           { fg = colors.orange,     bg = 'NONE' })  -- notequalp
   highlight(0, 'logoBeforep',             { fg = colors.orange,     bg = 'NONE' })  -- beforep
   highlight(0, 'logoMemberp',             { fg = colors.orange,     bg = 'NONE' })  -- memberp
-  highlight(0, 'logoSubstringp',          { fg = colors.orange,     bg = 'NONE' })  -- substringp
-  highlight(0, 'logoNumberp',             { fg = colors.orange,     bg = 'NONE' })  -- numberp
+  highlight(0, 'logoSubstringp',          { link = "String" })  -- substringp
+  highlight(0, 'logoNumberp',             { link = "Number" })  -- numberp
 
 
   -----------------------------------------------------------------------------
@@ -306,8 +306,8 @@ logo.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Variables
 
-  highlight(0, 'logoVariable',            { fg = colors.purple,     bg = 'NONE' })  -- Variables
-  highlight(0, 'logoVariableRef',         { fg = colors.purple,     bg = 'NONE' })  -- :variable reference
+  highlight(0, 'logoVariable',            { link = "Variable" })  -- Variables
+  highlight(0, 'logoVariableRef',         { link = "Variable" })  -- :variable reference
   highlight(0, 'logoMake',                { fg = colors.blue,       bg = 'NONE' })  -- make
   highlight(0, 'logoName',                { fg = colors.blue,       bg = 'NONE' })  -- name
   highlight(0, 'logoLocal',               { fg = colors.blue,       bg = 'NONE' })  -- local
@@ -331,7 +331,7 @@ logo.setupHighlighting = function()
 
   highlight(0, 'logoIO',                  { fg = colors.orange,     bg = 'NONE' })  -- I/O
   highlight(0, 'logoPrint',               { fg = colors.orange,     bg = 'NONE' })  -- print (pr)
-  highlight(0, 'logoType',                { fg = colors.orange,     bg = 'NONE' })  -- type
+  highlight(0, 'logoType',                { link = "Type" })  -- type
   highlight(0, 'logoShow',                { fg = colors.orange,     bg = 'NONE' })  -- show
   highlight(0, 'logoReadlist',            { fg = colors.orange,     bg = 'NONE' })  -- readlist (rl)
   highlight(0, 'logoReadword',            { fg = colors.orange,     bg = 'NONE' })  -- readword (rw)
@@ -502,24 +502,24 @@ logo.setupHighlighting = function()
   -- Literals
 
   -- Numbers
-  highlight(0, 'logoNumber',              { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
+  highlight(0, 'logoNumber',              { link = "Number" })  -- Numbers
   highlight(0, 'logoFloat',               { fg = colors.greenLight, bg = 'NONE' })  -- Floats
 
   -- Strings/Words
-  highlight(0, 'logoString',              { fg = colors.redLight,   bg = 'NONE' })  -- "string
+  highlight(0, 'logoString',              { link = "String" })  -- "string
   highlight(0, 'logoQuotedWord',          { fg = colors.redLight,   bg = 'NONE' })  -- "word
 
   -- Lists
   highlight(0, 'logoListLiteral',         { fg = colors.white,      bg = 'NONE' })  -- [list]
 
   -- Boolean
-  highlight(0, 'logoBoolean',             { fg = colors.blue,       bg = 'NONE' })  -- true, false
+  highlight(0, 'logoBoolean',             { link = "Boolean" })  -- true, false
 
 
   -----------------------------------------------------------------------------
   -- Operators
 
-  highlight(0, 'logoOperator',            { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, 'logoOperator',            { link = "Operator" })  -- Operators
   highlight(0, 'logoArithOp',             { fg = colors.white,      bg = 'NONE' })  -- + - * /
   highlight(0, 'logoCompareOp',           { fg = colors.white,      bg = 'NONE' })  -- < > = <= >=
   highlight(0, 'logoAssignOp',            { fg = colors.white,      bg = 'NONE' })  -- Assignment
@@ -528,7 +528,7 @@ logo.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Delimiters
 
-  highlight(0, 'logoDelimiter',           { fg = colors.white,      bg = 'NONE' })  -- Delimiters
+  highlight(0, 'logoDelimiter',           { link = "Delimiter" })  -- Delimiters
   highlight(0, 'logoBracket',             { fg = colors.white,      bg = 'NONE' })  -- [ ]
   highlight(0, 'logoParenthesis',         { fg = colors.white,      bg = 'NONE' })  -- ( )
 
@@ -545,61 +545,61 @@ logo.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Comments
 
-  highlight(0, 'logoComment',             { fg = colors.red,        bg = 'NONE' })  -- ; comments
+  highlight(0, 'logoComment',             { link = "Comment" })  -- ; comments
   highlight(0, 'logoTodo',                { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO
 
 
   -----------------------------------------------------------------------------
   -- Special Variables
 
-  highlight(0, 'logoSpecialVar',          { fg = colors.purple,     bg = 'NONE' })  -- Special variables
+  highlight(0, 'logoSpecialVar',          { link = "Variable" })  -- Special variables
   highlight(0, 'logoRepcount',            { fg = colors.purple,     bg = 'NONE' })  -- repcount
 
 
   -----------------------------------------------------------------------------
   -- Treesitter Groups
 
-  highlight(0, '@keyword.logo',               { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.function.logo',      { fg = colors.blue,       bg = 'NONE' })  -- to, end
-  highlight(0, '@keyword.return.logo',        { fg = colors.blue,       bg = 'NONE' })  -- output, stop
-  highlight(0, '@keyword.repeat.logo',        { fg = colors.blue,       bg = 'NONE' })  -- repeat, forever
-  highlight(0, '@keyword.conditional.logo',   { fg = colors.blue,       bg = 'NONE' })  -- if, ifelse
+  highlight(0, '@keyword.logo',               { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.function.logo',      { link = "Keyword" })  -- to, end
+  highlight(0, '@keyword.return.logo',        { link = "Keyword" })  -- output, stop
+  highlight(0, '@keyword.repeat.logo',        { link = "Keyword" })  -- repeat, forever
+  highlight(0, '@keyword.conditional.logo',   { link = "Conditional" })  -- if, ifelse
 
-  highlight(0, '@function.logo',              { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@function.builtin.logo',      { fg = colors.orange,     bg = 'NONE' })  -- Built-in primitives
-  highlight(0, '@function.call.logo',         { fg = colors.orange,     bg = 'NONE' })  -- Function calls
+  highlight(0, '@function.logo',              { link = "Function" })  -- Functions
+  highlight(0, '@function.builtin.logo',      { link = "Function" })  -- Built-in primitives
+  highlight(0, '@function.call.logo',         { link = "Function" })  -- Function calls
 
-  highlight(0, '@function.turtle.logo',       { fg = colors.pink,       bg = 'NONE' })  -- Turtle commands
+  highlight(0, '@function.turtle.logo',       { link = "Function" })  -- Turtle commands
 
-  highlight(0, '@variable.logo',              { fg = colors.purple,     bg = 'NONE' })  -- Variables
-  highlight(0, '@variable.builtin.logo',      { fg = colors.purple,     bg = 'NONE' })  -- Built-in variables
+  highlight(0, '@variable.logo',              { link = "Variable" })  -- Variables
+  highlight(0, '@variable.builtin.logo',      { link = "Variable" })  -- Built-in variables
 
-  highlight(0, '@constant.logo',              { fg = colors.purple,     bg = 'NONE' })  -- Constants
+  highlight(0, '@constant.logo',              { link = "Constant" })  -- Constants
 
-  highlight(0, '@number.logo',                { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@number.float.logo',          { fg = colors.greenLight, bg = 'NONE' })  -- Floats
+  highlight(0, '@number.logo',                { link = "Number" })  -- Numbers
+  highlight(0, '@number.float.logo',          { link = "Number" })  -- Floats
 
-  highlight(0, '@string.logo',                { fg = colors.redLight,   bg = 'NONE' })  -- Strings
+  highlight(0, '@string.logo',                { link = "String" })  -- Strings
 
-  highlight(0, '@operator.logo',              { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.logo',              { link = "Operator" })  -- Operators
 
   highlight(0, '@punctuation.bracket.logo',   { fg = colors.white,      bg = 'NONE' })  -- [ ] ( )
-  highlight(0, '@punctuation.delimiter.logo', { fg = colors.white,      bg = 'NONE' })  -- Delimiters
+  highlight(0, '@punctuation.delimiter.logo', { link = "Delimiter" })  -- Delimiters
   highlight(0, '@punctuation.special.logo',   { fg = colors.pink,       bg = 'NONE' })  -- : "
 
-  highlight(0, '@comment.logo',               { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.logo',               { link = "Comment" })  -- Comments
 
 
   -----------------------------------------------------------------------------
   -- LSP Semantic Tokens
 
-  highlight(0, '@lsp.type.variable.logo',     { fg = colors.purple,     bg = 'NONE' })
+  highlight(0, '@lsp.type.variable.logo',     { link = "Variable" })
   highlight(0, '@lsp.type.function.logo',     { fg = colors.orange,     bg = 'NONE' })
-  highlight(0, '@lsp.type.keyword.logo',      { fg = colors.blue,       bg = 'NONE' })
-  highlight(0, '@lsp.type.operator.logo',     { fg = colors.white,      bg = 'NONE' })
-  highlight(0, '@lsp.type.string.logo',       { fg = colors.redLight,   bg = 'NONE' })
-  highlight(0, '@lsp.type.number.logo',       { fg = colors.greenLight, bg = 'NONE' })
-  highlight(0, '@lsp.type.comment.logo',      { fg = colors.red,        bg = 'NONE' })
+  highlight(0, '@lsp.type.keyword.logo',      { link = "Keyword" })
+  highlight(0, '@lsp.type.operator.logo',     { link = "Operator" })
+  highlight(0, '@lsp.type.string.logo',       { link = "String" })
+  highlight(0, '@lsp.type.number.logo',       { link = "Number" })
+  highlight(0, '@lsp.type.comment.logo',      { link = "Comment" })
 
 end
 

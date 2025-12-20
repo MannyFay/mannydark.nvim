@@ -146,34 +146,34 @@ malbolge.setupHighlighting = function()
 
   highlight(0, 'malbolgeWhitespace',           { fg = 'NONE',            bg = 'NONE'            })  -- Ignored whitespace
   highlight(0, 'malbolgeNewline',              { fg = 'NONE',            bg = 'NONE'            })  -- Ignored newline
-  highlight(0, 'malbolgeComment',              { fg = colors.red,        bg = 'NONE'            })  -- Comment (if supported)
+  highlight(0, 'malbolgeComment',              { link = "Comment" })  -- Comment (if supported)
 
 
   -----------------------------------------------------------------------------
   -- Treesitter Groups (@xxx.malbolge)
 
   -- Instructions
-  highlight(0, '@keyword.malbolge',                    { fg = colors.blue,       bg = 'NONE' })  -- General instruction
-  highlight(0, '@keyword.control.malbolge',            { fg = colors.turquoise,  bg = 'NONE' })  -- Jump instruction
-  highlight(0, '@keyword.operator.malbolge',           { fg = colors.pink,       bg = 'NONE' })  -- Crazy operation
-  highlight(0, '@keyword.return.malbolge',             { fg = colors.red,        bg = 'NONE', bold = true })  -- Halt
+  highlight(0, '@keyword.malbolge',                    { link = "Keyword" })  -- General instruction
+  highlight(0, '@keyword.control.malbolge',            { link = "Keyword" })  -- Jump instruction
+  highlight(0, '@keyword.operator.malbolge',           { link = "Operator" })  -- Crazy operation
+  highlight(0, '@keyword.return.malbolge',             { link = "Keyword" })  -- Halt
 
   -- I/O
-  highlight(0, '@function.malbolge',                   { fg = colors.orange,     bg = 'NONE' })  -- Output
-  highlight(0, '@function.builtin.malbolge',           { fg = colors.purple,     bg = 'NONE' })  -- Input
+  highlight(0, '@function.malbolge',                   { link = "Function" })  -- Output
+  highlight(0, '@function.builtin.malbolge',           { link = "Function" })  -- Input
 
   -- Data Operations
-  highlight(0, '@operator.malbolge',                   { fg = colors.green,      bg = 'NONE' })  -- Rotate
-  highlight(0, '@variable.malbolge',                   { fg = colors.blue,       bg = 'NONE' })  -- Data pointer ops
+  highlight(0, '@operator.malbolge',                   { link = "Operator" })  -- Rotate
+  highlight(0, '@variable.malbolge',                   { link = "Variable" })  -- Data pointer ops
 
   -- Numbers
-  highlight(0, '@number.malbolge',                     { fg = colors.greenLight, bg = 'NONE' })  -- Ternary numbers
+  highlight(0, '@number.malbolge',                     { link = "Number" })  -- Ternary numbers
 
   -- NOP
-  highlight(0, '@comment.malbolge',                    { fg = colors.gray,       bg = 'NONE' })  -- NOP / unused
+  highlight(0, '@comment.malbolge',                    { link = "Comment" })  -- NOP / unused
 
   -- Registers
-  highlight(0, '@variable.builtin.malbolge',           { fg = colors.purple,     bg = 'NONE', bold = true })  -- Registers
+  highlight(0, '@variable.builtin.malbolge',           { link = "Variable" })  -- Registers
 
 
   -----------------------------------------------------------------------------
@@ -205,7 +205,7 @@ malbolge.setupHighlighting = function()
   highlight(0, 'hellCrazy',                    { fg = colors.pink,       bg = 'NONE', bold = true })  -- j - crazy
   highlight(0, 'hellNop',                      { fg = colors.gray,       bg = 'NONE'            })  -- p - NOP
   highlight(0, 'hellHalt',                     { fg = colors.red,        bg = 'NONE', bold = true })  -- o - halt
-  highlight(0, 'hellComment',                  { fg = colors.red,        bg = 'NONE'            })  -- Comment
+  highlight(0, 'hellComment',                  { link = "Comment" })  -- Comment
   highlight(0, 'hellLabel',                    { fg = colors.yellow,     bg = 'NONE', bold = true })  -- Label
 
 
@@ -231,10 +231,10 @@ malbolge.setupHighlighting = function()
   -- LSP Semantic Tokens (@lsp.type.xxx.malbolge)
 
   highlight(0, '@lsp.type.function.malbolge',          { fg = colors.orange,     bg = 'NONE' })  -- I/O function
-  highlight(0, '@lsp.type.keyword.malbolge',           { fg = colors.blue,       bg = 'NONE' })  -- Instruction
-  highlight(0, '@lsp.type.operator.malbolge',          { fg = colors.pink,       bg = 'NONE' })  -- Operations
-  highlight(0, '@lsp.type.variable.malbolge',          { fg = colors.purple,     bg = 'NONE' })  -- Register
-  highlight(0, '@lsp.type.number.malbolge',            { fg = colors.greenLight, bg = 'NONE' })  -- Number
+  highlight(0, '@lsp.type.keyword.malbolge',           { link = "Keyword" })  -- Instruction
+  highlight(0, '@lsp.type.operator.malbolge',          { link = "Operator" })  -- Operations
+  highlight(0, '@lsp.type.variable.malbolge',          { link = "Variable" })  -- Register
+  highlight(0, '@lsp.type.number.malbolge',            { link = "Number" })  -- Number
 
 
   -----------------------------------------------------------------------------
@@ -264,7 +264,7 @@ malbolge.setupHighlighting = function()
   highlight(0, 'malRegister',          { link = 'malbolgeRegister'        })
   highlight(0, 'malMemory',            { link = 'malbolgeMemory'          })
   highlight(0, 'malTrit',              { link = 'malbolgeTrit'            })
-  highlight(0, 'malComment',           { link = 'malbolgeComment'         })
+  highlight(0, 'malComment',           { link = "Comment" })
 end
 
 return malbolge

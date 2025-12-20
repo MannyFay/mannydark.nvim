@@ -17,7 +17,7 @@ tsql.setupHighlighting = function()
   -- T-SQL Specific Keywords
   ---------------------------------------------------------------------------
 
-  highlight(0, 'tsqlKeyword',          { fg = colors.blue,       bg = 'NONE' })  -- T-SQL keywords
+  highlight(0, 'tsqlKeyword',          { link = "Keyword" })  -- T-SQL keywords
   highlight(0, 'tsqlGo',               { fg = colors.blue,       bg = 'NONE', bold = true })  -- GO batch separator
   highlight(0, 'tsqlUse',              { fg = colors.blue,       bg = 'NONE' })  -- USE database
   highlight(0, 'tsqlExec',             { fg = colors.blue,       bg = 'NONE' })  -- EXEC, EXECUTE
@@ -30,11 +30,11 @@ tsql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Local Variables
-  highlight(0, 'tsqlVariable',         { fg = colors.purple,     bg = 'NONE' })  -- @variable
-  highlight(0, 'tsqlLocalVariable',    { fg = colors.purple,     bg = 'NONE' })  -- @local_var
+  highlight(0, 'tsqlVariable',         { link = "Variable" })  -- @variable
+  highlight(0, 'tsqlLocalVariable',    { link = "Variable" })  -- @local_var
 
   -- System Variables (@@)
-  highlight(0, 'tsqlGlobalVariable',   { fg = colors.purple,     bg = 'NONE' })  -- @@system_variable
+  highlight(0, 'tsqlGlobalVariable',   { link = "Variable" })  -- @@system_variable
   highlight(0, 'tsqlRowcount',         { fg = colors.purple,     bg = 'NONE' })  -- @@ROWCOUNT
   highlight(0, 'tsqlError',            { fg = colors.purple,     bg = 'NONE' })  -- @@ERROR
   highlight(0, 'tsqlIdentity',         { fg = colors.purple,     bg = 'NONE' })  -- @@IDENTITY
@@ -52,7 +52,7 @@ tsql.setupHighlighting = function()
 
   highlight(0, 'tsqlTempTable',        { fg = colors.turquoise,  bg = 'NONE' })  -- #temp_table
   highlight(0, 'tsqlGlobalTempTable',  { fg = colors.turquoise,  bg = 'NONE' })  -- ##global_temp_table
-  highlight(0, 'tsqlTableVariable',    { fg = colors.turquoise,  bg = 'NONE' })  -- @table_variable
+  highlight(0, 'tsqlTableVariable',    { link = "Variable" })  -- @table_variable
 
 
   ---------------------------------------------------------------------------
@@ -144,13 +144,13 @@ tsql.setupHighlighting = function()
   highlight(0, 'tsqlView',             { fg = colors.blue,       bg = 'NONE' })  -- VIEW
   highlight(0, 'tsqlIndex',            { fg = colors.blue,       bg = 'NONE' })  -- INDEX
   highlight(0, 'tsqlProcedure',        { fg = colors.blue,       bg = 'NONE' })  -- PROCEDURE, PROC
-  highlight(0, 'tsqlFunction',         { fg = colors.blue,       bg = 'NONE' })  -- FUNCTION
+  highlight(0, 'tsqlFunction',         { link = "Function" })  -- FUNCTION
   highlight(0, 'tsqlTrigger',          { fg = colors.blue,       bg = 'NONE' })  -- TRIGGER
   highlight(0, 'tsqlSchema',           { fg = colors.blue,       bg = 'NONE' })  -- SCHEMA
   highlight(0, 'tsqlDatabase',         { fg = colors.blue,       bg = 'NONE' })  -- DATABASE
   highlight(0, 'tsqlSequence',         { fg = colors.blue,       bg = 'NONE' })  -- SEQUENCE
   highlight(0, 'tsqlSynonym',          { fg = colors.blue,       bg = 'NONE' })  -- SYNONYM
-  highlight(0, 'tsqlType',             { fg = colors.blue,       bg = 'NONE' })  -- TYPE
+  highlight(0, 'tsqlType',             { link = "Type" })  -- TYPE
 
 
   ---------------------------------------------------------------------------
@@ -159,7 +159,7 @@ tsql.setupHighlighting = function()
 
   highlight(0, 'tsqlProc',             { fg = colors.blue,       bg = 'NONE' })  -- PROC keyword
   highlight(0, 'tsqlProcName',         { fg = colors.orange,     bg = 'NONE' })  -- Procedure name
-  highlight(0, 'tsqlFuncName',         { fg = colors.orange,     bg = 'NONE' })  -- Function name
+  highlight(0, 'tsqlFuncName',         { link = "Function" })  -- Function name
   highlight(0, 'tsqlReturns',          { fg = colors.blue,       bg = 'NONE' })  -- RETURNS
   highlight(0, 'tsqlReturn',           { fg = colors.blue,       bg = 'NONE' })  -- RETURN
   highlight(0, 'tsqlBegin',            { fg = colors.blue,       bg = 'NONE' })  -- BEGIN
@@ -217,7 +217,7 @@ tsql.setupHighlighting = function()
   highlight(0, 'tsqlRaiserror',        { fg = colors.blue,       bg = 'NONE' })  -- RAISERROR
 
   -- Error Functions
-  highlight(0, 'tsqlErrorNumber',      { fg = colors.orange,     bg = 'NONE' })  -- ERROR_NUMBER()
+  highlight(0, 'tsqlErrorNumber',      { link = "Number" })  -- ERROR_NUMBER()
   highlight(0, 'tsqlErrorMessage',     { fg = colors.orange,     bg = 'NONE' })  -- ERROR_MESSAGE()
   highlight(0, 'tsqlErrorSeverity',    { fg = colors.orange,     bg = 'NONE' })  -- ERROR_SEVERITY()
   highlight(0, 'tsqlErrorState',       { fg = colors.orange,     bg = 'NONE' })  -- ERROR_STATE()
@@ -272,7 +272,7 @@ tsql.setupHighlighting = function()
   -- Operators
   ---------------------------------------------------------------------------
 
-  highlight(0, 'tsqlOperator',         { fg = colors.blue,       bg = 'NONE' })  -- Logical operators
+  highlight(0, 'tsqlOperator',         { link = "Operator" })  -- Logical operators
   highlight(0, 'tsqlAnd',              { fg = colors.blue,       bg = 'NONE' })  -- AND
   highlight(0, 'tsqlOr',               { fg = colors.blue,       bg = 'NONE' })  -- OR
   highlight(0, 'tsqlNot',              { fg = colors.blue,       bg = 'NONE' })  -- NOT
@@ -322,7 +322,7 @@ tsql.setupHighlighting = function()
   -- Data Types
   ---------------------------------------------------------------------------
 
-  highlight(0, 'tsqlDataType',         { fg = colors.turquoise,  bg = 'NONE' })  -- Data types
+  highlight(0, 'tsqlDataType',         { link = "Type" })  -- Data types
 
   -- Exact Numerics
   highlight(0, 'tsqlBigint',           { fg = colors.turquoise,  bg = 'NONE' })  -- BIGINT
@@ -383,7 +383,7 @@ tsql.setupHighlighting = function()
   -- Built-in Functions
   ---------------------------------------------------------------------------
 
-  highlight(0, 'tsqlBuiltinFunc',      { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, 'tsqlBuiltinFunc',      { link = "Function" })  -- Built-in functions
 
   -- Aggregate Functions
   highlight(0, 'tsqlCount',            { fg = colors.orange,     bg = 'NONE' })  -- COUNT
@@ -392,7 +392,7 @@ tsql.setupHighlighting = function()
   highlight(0, 'tsqlAvg',              { fg = colors.orange,     bg = 'NONE' })  -- AVG
   highlight(0, 'tsqlMin',              { fg = colors.orange,     bg = 'NONE' })  -- MIN
   highlight(0, 'tsqlMax',              { fg = colors.orange,     bg = 'NONE' })  -- MAX
-  highlight(0, 'tsqlStringAgg',        { fg = colors.orange,     bg = 'NONE' })  -- STRING_AGG
+  highlight(0, 'tsqlStringAgg',        { link = "String" })  -- STRING_AGG
   highlight(0, 'tsqlGrouping',         { fg = colors.orange,     bg = 'NONE' })  -- GROUPING
   highlight(0, 'tsqlGroupingSets',     { fg = colors.orange,     bg = 'NONE' })  -- GROUPING SETS
   highlight(0, 'tsqlRollup',           { fg = colors.orange,     bg = 'NONE' })  -- ROLLUP
@@ -401,7 +401,7 @@ tsql.setupHighlighting = function()
   -- String Functions
   highlight(0, 'tsqlLen',              { fg = colors.orange,     bg = 'NONE' })  -- LEN
   highlight(0, 'tsqlDatalength',       { fg = colors.orange,     bg = 'NONE' })  -- DATALENGTH
-  highlight(0, 'tsqlSubstring',        { fg = colors.orange,     bg = 'NONE' })  -- SUBSTRING
+  highlight(0, 'tsqlSubstring',        { link = "String" })  -- SUBSTRING
   highlight(0, 'tsqlLeft',             { fg = colors.orange,     bg = 'NONE' })  -- LEFT
   highlight(0, 'tsqlRight',            { fg = colors.orange,     bg = 'NONE' })  -- RIGHT
   highlight(0, 'tsqlCharindex',        { fg = colors.orange,     bg = 'NONE' })  -- CHARINDEX
@@ -413,15 +413,15 @@ tsql.setupHighlighting = function()
   highlight(0, 'tsqlLower',            { fg = colors.orange,     bg = 'NONE' })  -- LOWER
   highlight(0, 'tsqlLtrim',            { fg = colors.orange,     bg = 'NONE' })  -- LTRIM
   highlight(0, 'tsqlRtrim',            { fg = colors.orange,     bg = 'NONE' })  -- RTRIM
-  highlight(0, 'tsqlTrimFunc',         { fg = colors.orange,     bg = 'NONE' })  -- TRIM
+  highlight(0, 'tsqlTrimFunc',         { link = "Function" })  -- TRIM
   highlight(0, 'tsqlConcat',           { fg = colors.orange,     bg = 'NONE' })  -- CONCAT
   highlight(0, 'tsqlFormat',           { fg = colors.orange,     bg = 'NONE' })  -- FORMAT
   highlight(0, 'tsqlReplicate',        { fg = colors.orange,     bg = 'NONE' })  -- REPLICATE
   highlight(0, 'tsqlSpace',            { fg = colors.orange,     bg = 'NONE' })  -- SPACE
   highlight(0, 'tsqlStr',              { fg = colors.orange,     bg = 'NONE' })  -- STR
   highlight(0, 'tsqlTranslate',        { fg = colors.orange,     bg = 'NONE' })  -- TRANSLATE
-  highlight(0, 'tsqlStringEscape',     { fg = colors.orange,     bg = 'NONE' })  -- STRING_ESCAPE
-  highlight(0, 'tsqlStringSplit',      { fg = colors.orange,     bg = 'NONE' })  -- STRING_SPLIT
+  highlight(0, 'tsqlStringEscape',     { link = "String" })  -- STRING_ESCAPE
+  highlight(0, 'tsqlStringSplit',      { link = "String" })  -- STRING_SPLIT
 
   -- Date/Time Functions
   highlight(0, 'tsqlGetdate',          { fg = colors.orange,     bg = 'NONE' })  -- GETDATE
@@ -476,7 +476,7 @@ tsql.setupHighlighting = function()
   highlight(0, 'tsqlLog',              { fg = colors.orange,     bg = 'NONE' })  -- LOG, LOG10
 
   -- Ranking/Window Functions
-  highlight(0, 'tsqlRowNumber',        { fg = colors.orange,     bg = 'NONE' })  -- ROW_NUMBER
+  highlight(0, 'tsqlRowNumber',        { link = "Number" })  -- ROW_NUMBER
   highlight(0, 'tsqlRank',             { fg = colors.orange,     bg = 'NONE' })  -- RANK
   highlight(0, 'tsqlDenseRank',        { fg = colors.orange,     bg = 'NONE' })  -- DENSE_RANK
   highlight(0, 'tsqlNtile',            { fg = colors.orange,     bg = 'NONE' })  -- NTILE
@@ -572,24 +572,24 @@ tsql.setupHighlighting = function()
   ---------------------------------------------------------------------------
 
   -- Strings
-  highlight(0, 'tsqlString',           { fg = colors.redLight,   bg = 'NONE' })  -- 'string'
-  highlight(0, 'tsqlNString',          { fg = colors.redLight,   bg = 'NONE' })  -- N'unicode string'
+  highlight(0, 'tsqlString',           { link = "String" })  -- 'string'
+  highlight(0, 'tsqlNString',          { link = "String" })  -- N'unicode string'
 
   -- Numbers
-  highlight(0, 'tsqlNumber',           { fg = colors.greenLight, bg = 'NONE' })  -- Numeric literals
+  highlight(0, 'tsqlNumber',           { link = "Number" })  -- Numeric literals
   highlight(0, 'tsqlHex',              { fg = colors.greenLight, bg = 'NONE' })  -- 0x hex literals
 
   -- Booleans
-  highlight(0, 'tsqlBoolean',          { fg = colors.blue,       bg = 'NONE' })  -- TRUE, FALSE (in context)
+  highlight(0, 'tsqlBoolean',          { link = "Boolean" })  -- TRUE, FALSE (in context)
 
 
   ---------------------------------------------------------------------------
   -- Comments
   ---------------------------------------------------------------------------
 
-  highlight(0, 'tsqlComment',          { fg = colors.red,        bg = 'NONE' })  -- Comments
-  highlight(0, 'tsqlLineComment',      { fg = colors.red,        bg = 'NONE' })  -- -- line comment
-  highlight(0, 'tsqlBlockComment',     { fg = colors.red,        bg = 'NONE' })  -- /* */ block comment
+  highlight(0, 'tsqlComment',          { link = "Comment" })  -- Comments
+  highlight(0, 'tsqlLineComment',      { link = "Comment" })  -- -- line comment
+  highlight(0, 'tsqlBlockComment',     { link = "Comment" })  -- /* */ block comment
   highlight(0, 'tsqlTodo',             { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO, FIXME
 
 
@@ -619,49 +619,49 @@ tsql.setupHighlighting = function()
   -- Treesitter Groups (@xxx.tsql / @xxx.sql)
   ---------------------------------------------------------------------------
 
-  highlight(0, '@keyword.tsql',                  { fg = colors.blue,       bg = 'NONE' })  -- Keywords
-  highlight(0, '@keyword.operator.tsql',         { fg = colors.blue,       bg = 'NONE' })  -- AND, OR, NOT
-  highlight(0, '@keyword.conditional.tsql',      { fg = colors.blue,       bg = 'NONE' })  -- IF, ELSE, CASE
-  highlight(0, '@keyword.repeat.tsql',           { fg = colors.blue,       bg = 'NONE' })  -- WHILE
-  highlight(0, '@keyword.exception.tsql',        { fg = colors.blue,       bg = 'NONE' })  -- TRY, CATCH
-  highlight(0, '@keyword.return.tsql',           { fg = colors.blue,       bg = 'NONE' })  -- RETURN
+  highlight(0, '@keyword.tsql',                  { link = "Keyword" })  -- Keywords
+  highlight(0, '@keyword.operator.tsql',         { link = "Operator" })  -- AND, OR, NOT
+  highlight(0, '@keyword.conditional.tsql',      { link = "Conditional" })  -- IF, ELSE, CASE
+  highlight(0, '@keyword.repeat.tsql',           { link = "Keyword" })  -- WHILE
+  highlight(0, '@keyword.exception.tsql',        { link = "Keyword" })  -- TRY, CATCH
+  highlight(0, '@keyword.return.tsql',           { link = "Keyword" })  -- RETURN
 
-  highlight(0, '@variable.tsql',                 { fg = colors.purple,     bg = 'NONE' })  -- @variables
-  highlight(0, '@variable.builtin.tsql',         { fg = colors.purple,     bg = 'NONE' })  -- @@system_vars
-  highlight(0, '@variable.parameter.tsql',       { fg = colors.purple,     bg = 'NONE' })  -- Parameters
+  highlight(0, '@variable.tsql',                 { link = "Variable" })  -- @variables
+  highlight(0, '@variable.builtin.tsql',         { link = "Variable" })  -- @@system_vars
+  highlight(0, '@variable.parameter.tsql',       { link = "Variable" })  -- Parameters
 
-  highlight(0, '@type.tsql',                     { fg = colors.turquoise,  bg = 'NONE' })  -- Types
-  highlight(0, '@type.builtin.tsql',             { fg = colors.turquoise,  bg = 'NONE' })  -- Built-in types
+  highlight(0, '@type.tsql',                     { link = "Type" })  -- Types
+  highlight(0, '@type.builtin.tsql',             { link = "Type" })  -- Built-in types
 
-  highlight(0, '@function.tsql',                 { fg = colors.orange,     bg = 'NONE' })  -- Functions
-  highlight(0, '@function.call.tsql',            { fg = colors.orange,     bg = 'NONE' })  -- Function calls
-  highlight(0, '@function.builtin.tsql',         { fg = colors.orange,     bg = 'NONE' })  -- Built-in functions
+  highlight(0, '@function.tsql',                 { link = "Function" })  -- Functions
+  highlight(0, '@function.call.tsql',            { link = "Function" })  -- Function calls
+  highlight(0, '@function.builtin.tsql',         { link = "Function" })  -- Built-in functions
 
-  highlight(0, '@string.tsql',                   { fg = colors.redLight,   bg = 'NONE' })  -- Strings
-  highlight(0, '@number.tsql',                   { fg = colors.greenLight, bg = 'NONE' })  -- Numbers
-  highlight(0, '@boolean.tsql',                  { fg = colors.blue,       bg = 'NONE' })  -- Booleans
+  highlight(0, '@string.tsql',                   { link = "String" })  -- Strings
+  highlight(0, '@number.tsql',                   { link = "Number" })  -- Numbers
+  highlight(0, '@boolean.tsql',                  { link = "Boolean" })  -- Booleans
 
-  highlight(0, '@comment.tsql',                  { fg = colors.red,        bg = 'NONE' })  -- Comments
+  highlight(0, '@comment.tsql',                  { link = "Comment" })  -- Comments
 
-  highlight(0, '@operator.tsql',                 { fg = colors.white,      bg = 'NONE' })  -- Operators
+  highlight(0, '@operator.tsql',                 { link = "Operator" })  -- Operators
   highlight(0, '@punctuation.bracket.tsql',      { fg = colors.white,      bg = 'NONE' })  -- ( ) [ ]
-  highlight(0, '@punctuation.delimiter.tsql',    { fg = colors.white,      bg = 'NONE' })  -- ; , .
+  highlight(0, '@punctuation.delimiter.tsql',    { link = "Delimiter" })  -- ; , .
 
-  highlight(0, '@constant.builtin.tsql',         { fg = colors.pink,       bg = 'NONE' })  -- NULL
+  highlight(0, '@constant.builtin.tsql',         { link = "Constant" })  -- NULL
 
 
   ---------------------------------------------------------------------------
   -- LSP Semantic Tokens (@lsp.type.xxx.sql)
   ---------------------------------------------------------------------------
 
-  highlight(0, '@lsp.type.variable.sql',         { fg = colors.purple,     bg = 'NONE' })  -- Variables
+  highlight(0, '@lsp.type.variable.sql',         { link = "Variable" })  -- Variables
   highlight(0, '@lsp.type.function.sql',         { fg = colors.orange,     bg = 'NONE' })  -- Functions
   highlight(0, '@lsp.type.parameter.sql',        { fg = colors.purple,     bg = 'NONE' })  -- Parameters
   highlight(0, '@lsp.type.type.sql',             { fg = colors.turquoise,  bg = 'NONE' })  -- Types
   highlight(0, '@lsp.type.class.sql',            { fg = colors.turquoise,  bg = 'NONE' })  -- Tables
   highlight(0, '@lsp.type.property.sql',         { fg = colors.white,      bg = 'NONE' })  -- Columns
   highlight(0, '@lsp.type.namespace.sql',        { fg = colors.turquoise,  bg = 'NONE' })  -- Schemas
-  highlight(0, '@lsp.type.keyword.sql',          { fg = colors.blue,       bg = 'NONE' })  -- Keywords
+  highlight(0, '@lsp.type.keyword.sql',          { link = "Keyword" })  -- Keywords
 
 end
 
