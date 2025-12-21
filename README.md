@@ -1,4 +1,6 @@
-# Mannydark
+# Mannydark - Under Construction
+
+Take a look on [`develop` branch](https://github.com/MannyFay/mannydark.nvim/tree/develop)
 
 A dark colorscheme for Neovim written in Lua.
 
