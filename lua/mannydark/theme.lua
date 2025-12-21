@@ -10,6 +10,7 @@ theme.buildTheme = function()
   require("mannydark.highlighting.languages.languagedefaults").setupHighlighting()
 
   -- Core Languages (commonly used):
+  require("mannydark.highlighting.languages.ada"             ).setupHighlighting()
   require("mannydark.highlighting.languages.bash"            ).setupHighlighting()
   require("mannydark.highlighting.languages.css"             ).setupHighlighting()
   require("mannydark.highlighting.languages.html"            ).setupHighlighting()
@@ -28,7 +29,6 @@ theme.buildTheme = function()
   require("mannydark.highlighting.languages.zsh"             ).setupHighlighting()
 
   -- Uncomment languages as needed (commented out to avoid E849: Too many highlight groups):
-  -- require("mannydark.highlighting.languages.ada"           ).setupHighlighting()
   -- require("mannydark.highlighting.languages.awk"           ).setupHighlighting()
   -- require("mannydark.highlighting.languages.assembly"      ).setupHighlighting()
   -- require("mannydark.highlighting.languages.batch"         ).setupHighlighting()

@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
--- Mannydark Color Palette (Light Theme)
+-- Mannydark Color Palette (Bright Theme)
 -------------------------------------------------------------------------------
 
 local colors = {
   ------------------------------------------------------------------------------
-  -- Base Colors (inverted for light theme)
+  -- Base Colors (inverted for bright theme)
 
   black      = "#FEFEFE",  -- Main background (white)
   white      = "#404040",  -- Main foreground text (dark gray)
@@ -21,9 +21,6 @@ local colors = {
 
   -- Keywords, control flow (darker blue)
   blue       = "#569CD6",
-
-  -- LSP references, subtle blue backgrounds
-  blueLight  = "#D6E4FF",
 
   -- Links, references
   blueLink   = "#1A5FB4",

@@ -13,7 +13,6 @@
 -- green      = DiagnosticOk             | MannydarkGreen
 -- greenLight = Number                   | MannydarkGreenLight
 -- blue       = Label                    | MannydarkBlue
--- blueLight  = -              (bg)      | MannydarkBlueLight (bg)
 -- blueLink   = Underlined               | MannydarkBlueLink
 -- purple     = Constant                 | MannydarkPurple
 -- pink       = PreProc                  | MannydarkPink
@@ -38,7 +37,6 @@ languageDefaults.setupHighlighting = function()
 
   highlight(0, "MannydarkFgBlack",      { fg = colors.black, bg = "NONE" }     )
   highlight(0, "MannydarkFgBlue",       { fg = colors.blue, bg = "NONE" }      )
-  -- highlight(0, "MannydarkBlueLight",  { fg = colors.blueLight,  bg = "NONE" })
   highlight(0, "MannydarkFgBlueLink",   { fg = colors.blueLink, bg = "NONE" }  )
   highlight(0, "MannydarkFgGray",       { fg = colors.gray, bg = "NONE" }      )
   highlight(0, "MannydarkFgGrayDark",   { fg = colors.grayDark, bg = "NONE" }  )
@@ -174,8 +172,8 @@ end
   highlight(0, "@constant.macro",              { link = "Constant" })  -- Preprocessor constants
 
   -- Modules/Namespaces
-  highlight(0, "@module",                      { fg = colors.white,      bg = "NONE" })  -- Modules/namespaces
-  highlight(0, "@module.builtin",              { fg = colors.purple,     bg = "NONE" })  -- Built-in modules
+  highlight(0, "@module",                      { link = "Type"     })  -- Modules/namespaces
+  highlight(0, "@module.builtin",              { link = "Type"     })  -- Built-in modules
 
   -- Labels
   highlight(0, "@label",                       { link = "Keyword" })  -- Labels (goto, etc.)
@@ -218,7 +216,7 @@ end
   highlight(0, "@function",                    { link = "Function" })  -- Function definitions
   highlight(0, "@function.builtin",            { link = "Function" })  -- Built-in functions
   highlight(0, "@function.call",               { link = "Function" })  -- Function calls
-  highlight(0, "@function.macro",              { fg = colors.pink,       bg = "NONE" })  -- Macro functions
+  highlight(0, "@function.macro",              { link = "Function" })  -- Macro functions
   highlight(0, "@function.method",             { link = "Function" })  -- Method definitions
   highlight(0, "@function.method.call",        { link = "Function" })  -- Method calls
 
@@ -311,9 +309,9 @@ end
   -----------------------------------------------------------------------------
   -- LSP Reference Highlighting
 
-  highlight(0, "LspReferenceText",             { fg = "NONE",            bg = colors.blueLight })  -- References
-  highlight(0, "LspReferenceRead",             { fg = "NONE",            bg = colors.blueLight })  -- Read references
-  highlight(0, "LspReferenceWrite",            { fg = "NONE",            bg = colors.blueLight })  -- Write references
+  highlight(0, "LspReferenceText",             { fg = "NONE",            bg = colors.blue })  -- References
+  highlight(0, "LspReferenceRead",             { fg = "NONE",            bg = colors.blue })  -- Read references
+  highlight(0, "LspReferenceWrite",            { fg = "NONE",            bg = colors.blue })  -- Write references
 
 
   -----------------------------------------------------------------------------

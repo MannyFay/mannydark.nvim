@@ -1,5 +1,6 @@
 -------------------------------------------------------------------------------
--- Mannydark Color Palette (Dark Theme)
+-- Mannydark Color Palette (Red-Green Colorblind Friendly)
+-- Optimized for Deuteranopia and Protanopia (red-green color blindness)
 -------------------------------------------------------------------------------
 
 local colors = {
@@ -17,7 +18,8 @@ local colors = {
   grayLight  = "#404040",  -- Borders, subtle dividers
 
   ------------------------------------------------------------------------------
-  -- Syntax Highlighting
+  -- Syntax Highlighting (colorblind-friendly palette)
+  -- Avoids red/green confusion by using blue/orange/yellow/purple
 
   -- Keywords, control flow
   blue       = "#569CD6",
@@ -25,11 +27,11 @@ local colors = {
   -- Links, references
   blueLink   = "#287BDE",
 
-  -- Success states, git added
-  green      = "#4FA544",
+  -- Success states, git added (blue instead of green)
+  green      = "#3498DB",
 
-  -- Numbers, numeric literals
-  greenLight = "#A5C25C",
+  -- Numbers, numeric literals (yellow instead of green)
+  greenLight = "#F1C40F",
 
   -- Functions, method names
   orange     = "#E8BF6A",
@@ -37,17 +39,17 @@ local colors = {
   -- Warning backgrounds, subtle highlights
   orangeDark = "#3E372A",
 
-  -- Special keywords, decorators
-  pink       = "#ED3276",
+  -- Special keywords, decorators (magenta instead of pink)
+  pink       = "#9B59B6",
 
   -- Variables, parameters
   purple     = "#C064C7",
 
-  -- Comments (mannydark signature red comments)
-  red        = "#FF0000",
+  -- Comments (orange instead of red for better visibility)
+  red        = "#E67E22",
 
   -- Error backgrounds, diff removed backgrounds
-  redDark    = "#553939",
+  redDark    = "#4A3728",
 
   -- Strings
   redLight   = "#CE9178",
@@ -75,4 +77,3 @@ local colors = {
 }
 
 return colors
-

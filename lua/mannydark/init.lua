@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Mannydark Colorscheme
--- A dark (and light) colorscheme for Neovim
+-- A dark, bright, and colorblind-friendly colorscheme for Neovim
 -------------------------------------------------------------------------------
 
 ---@class MannydarkStyles
@@ -12,7 +12,7 @@
 ---@field types? table Style for types
 
 ---@class MannydarkConfig
----@field style string Theme style: "dark" | "light"
+---@field style string Theme style: "dark" | "bright" | "red-green"
 ---@field transparent boolean Enable transparent background
 ---@field dim_inactive boolean Dim inactive windows
 ---@field terminal_colors boolean Apply colors to terminal
@@ -52,7 +52,7 @@ end
 
 ---@type MannydarkConfig
 M.config = {
-  style = "dark",            -- "dark" | "light"
+  style = "dark",            -- "dark" | "bright" | "red-green"
   transparent = false,       -- Transparent background
   dim_inactive = false,      -- Dim inactive windows
   terminal_colors = true,    -- Apply colors to :terminal
@@ -83,8 +83,10 @@ local function load_colors()
 
   -- Load the appropriate palette
   local palette
-  if style == "light" then
-    palette = require("mannydark.palette_light")
+  if style == "bright" then
+    palette = require("mannydark.palette_bright")
+  elseif style == "red-green" then
+    palette = require("mannydark.palette_redgreen")
   else
     palette = require("mannydark.palette")
   end
@@ -242,7 +244,7 @@ M.setup = function(opts)
   vim.o.termguicolors = true
 
   -- Set background based on style BEFORE clearing (Neovim uses this for hi clear behavior)
-  if M.config.style == "light" then
+  if M.config.style == "bright" then
     vim.o.background = "light"
   else
     vim.o.background = "dark"
@@ -260,7 +262,12 @@ M.setup = function(opts)
   end
 
   -- Set the colorscheme name
-  vim.g.colors_name = M.config.style == "light" and "mannybright" or "mannydark"
+  local style_names = {
+    dark = "mannydark",
+    bright = "mannybright",
+    ["red-green"] = "mannydark-rg",
+  }
+  vim.g.colors_name = style_names[M.config.style] or "mannydark"
 
   -- Apply Normal highlight IMMEDIATELY after clearing to prevent default colorscheme flash
   -- This is critical for Neovim 0.10+ where hi clear loads the default colorscheme
@@ -318,13 +325,15 @@ M.get_colors = function()
   return M.colors or load_colors()
 end
 
---- Switch between dark and light style
----@param style? string "dark" | "light" | nil (toggles if nil)
+--- Switch between styles
+---@param style? string "dark" | "bright" | "red-green" | nil (cycles if nil)
 M.toggle = function(style)
   if style then
     M.config.style = style
   else
-    M.config.style = M.config.style == "dark" and "light" or "dark"
+    -- Cycle through: dark -> bright -> red-green -> dark
+    local cycle = { dark = "bright", bright = "red-green", ["red-green"] = "dark" }
+    M.config.style = cycle[M.config.style] or "dark"
   end
 
   -- setup() handles all cache clearing now
@@ -385,7 +394,7 @@ M.dev_mode = function()
 
       -- Only reload if mannydark colorscheme is active
       local current = vim.g.colors_name
-      if not current or (current ~= "mannydark" and current ~= "mannybright") then
+      if not current or not current:match("^manny") then
         return
       end
 
@@ -472,7 +481,7 @@ local function create_commands()
     M.debug()
   end, { desc = "Show mannydark debug info" })
 
-  -- :MannydarkToggle [dark|light] - Toggle or set style
+  -- :MannydarkToggle [dark|bright|red-green] - Toggle or set style
   vim.api.nvim_create_user_command("MannydarkToggle", function(opts)
     if opts.args and opts.args ~= "" then
       M.toggle(opts.args)
@@ -480,10 +489,10 @@ local function create_commands()
       M.toggle()
     end
   end, {
-    desc = "Toggle mannydark dark/light",
+    desc = "Toggle mannydark style (dark/bright/red-green)",
     nargs = "?",
     complete = function()
-      return { "dark", "light" }
+      return { "dark", "bright", "red-green" }
     end,
   })
 end
