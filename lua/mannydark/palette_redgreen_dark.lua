@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- Mannydark Color Palette (Red-Green Colorblind Friendly)
+-- Mannydark Color Palette (Red-Green Colorblind Friendly - Dark)
 -- Optimized for Deuteranopia and Protanopia (red-green color blindness)
 -------------------------------------------------------------------------------
 
@@ -23,6 +23,9 @@ local colors = {
 
   -- Keywords, control flow
   blue       = "#569CD6",
+
+  -- LSP references, subtle blue backgrounds
+  blueLight  = "#2D3E50",
 
   -- Links, references
   blueLink   = "#287BDE",

@@ -16,7 +16,7 @@ config = function()
     -- Set the theme style you like.
     -- This is the initial style every time you start Neovim.
     -- While using the editor, you can change it with :MannydarkToggle <style>
-    style = "dark",  -- dark | bright | red-green
+    style = "dark",  -- dark | bright | red-green-dark | red-green-bright
 
     -- UI options you can change (true = enable, false = disable):
     transparent     = false,  -- Transparent background.
@@ -114,11 +114,11 @@ config = function()
 
 
       -------------------------------------------------------------------------
-      -- Red-Green Colorblind Friendly Theme
+      -- Red-Green Colorblind Friendly Theme (Dark)
       -- Optimized for Deuteranopia and Protanopia
       -------------------------------------------------------------------------
 
-      elseif style == "red-green" then
+      elseif style == "red-green-dark" then
 
         -- Base
         colors.black       = "#191B1C"   -- Main background.
@@ -131,12 +131,13 @@ config = function()
 
         -- Syntax (avoids red/green confusion)
         colors.blue        = "#569CD6"   -- Keywords, control flow.
+        colors.blueLight   = "#2D3E50"   -- LSP references (background).
         colors.blueLink    = "#287BDE"   -- Links, references.
-        colors.green       = "#3498DB"   -- Success, Git added, doc block comments (blue instead of green).
+        colors.green       = "#3498DB"   -- Success, Git added (blue instead of green).
         colors.greenLight  = "#F1C40F"   -- Numbers (yellow instead of green).
         colors.orange      = "#E8BF6A"   -- Functions, methods, etc.
         colors.orangeDark  = "#3E372A"   -- Warning backgrounds.
-        colors.pink        = "#9B59B6"   -- Decorators, special keywords, escape sequences (purple instead of pink).
+        colors.pink        = "#9B59B6"   -- Decorators (purple instead of pink).
         colors.purple      = "#C064C7"   -- Variables, parameters, constants, properties, etc.
         colors.red         = "#E67E22"   -- Comments (orange instead of red).
         colors.redDark     = "#4A3728"   -- Error backgrounds.
@@ -149,6 +150,45 @@ config = function()
         colors.selection   = "#264F78"   -- Selection background.
         colors.search      = "#613315"   -- Search highlight.
         colors.matchParen  = "#0D3A58"   -- Matching brackets.
+
+
+      -------------------------------------------------------------------------
+      -- Red-Green Colorblind Friendly Theme (Bright)
+      -- Optimized for Deuteranopia and Protanopia - Light background
+      -------------------------------------------------------------------------
+
+      elseif style == "red-green-bright" then
+
+        -- Base
+        colors.black       = "#FEFEFE"   -- Main background (white).
+        colors.white       = "#404040"   -- Main foreground (text, operators, etc.).
+
+        -- Grays
+        colors.gray        = "#A0A1A7"   -- Muted text, line numbers, etc.
+        colors.grayDark    = "#F0F0F0"   -- Secondary backgrounds, vertical lines, etc.
+        colors.grayLight   = "#D3D3D3"   -- Borders, dividers, etc.
+
+        -- Syntax (avoids red/green confusion, higher contrast for light bg)
+        colors.blue        = "#0550AE"   -- Keywords, control flow.
+        colors.blueLight   = "#D6E4FF"   -- LSP references (background).
+        colors.blueLink    = "#1A5FB4"   -- Links, references.
+        colors.green       = "#0969DA"   -- Success, Git added (blue instead of green).
+        colors.greenLight  = "#9A6700"   -- Numbers (darker gold for light bg).
+        colors.orange      = "#B35900"   -- Functions, methods, etc.
+        colors.orangeDark  = "#FFF3CD"   -- Warning backgrounds.
+        colors.pink        = "#7C3AED"   -- Decorators (purple).
+        colors.purple      = "#8250DF"   -- Variables, parameters, constants, properties, etc.
+        colors.red         = "#BC4C00"   -- Comments (burnt orange).
+        colors.redDark     = "#FFE5E5"   -- Error backgrounds.
+        colors.redLight    = "#A04000"   -- Strings.
+        colors.turquoise   = "#0E7C6B"   -- Types, classes, namespaces, etc.
+        colors.yellow      = "#7C6400"   -- Warnings, deprecated.
+
+        -- UI
+        colors.cursorLine  = "#F5F5F5"   -- Current line highlight.
+        colors.selection   = "#ADD6FF"   -- Selection background.
+        colors.search      = "#FFECB3"   -- Search highlight.
+        colors.matchParen  = "#B4D7FF"   -- Matching brackets.
 
       end
     end,
@@ -517,7 +557,7 @@ You can set your own key mappings to use the available commands.
 Add the following to your Neovim configuration (e.g., `init.lua` or your plugin config):
 
 ```lua
--- Toggle between theme styles (dark -> bright -> red-green -> dark):
+-- Toggle between theme styles (dark -> bright -> red-green-dark -> red-green-bright -> dark):
 vim.keymap.set("n", "<leader>ut", "<cmd>MannydarkToggle<cr>", { desc = "Toggle Mannydark theme style" })
 
 -- Reload the colorscheme after changes:
@@ -526,8 +566,13 @@ vim.keymap.set("n", "<leader>ur", "<cmd>MannydarkReload<cr>", { desc = "Reload M
 
 ### Available Commands
 
-| Command            | Description                                       |
-|--------------------|---------------------------------------------------|
-| `:MannydarkToggle` | Toggle between dark, bright, and red-green style. |
-| `:MannydarkReload` | Reload the colorscheme after changes.             |
+| Command                             | Description                                    |
+|-------------------------------------|------------------------------------------------|
+| `:MannydarkToggle`                  | Cycle through all 4 styles.                    |
+| `:MannydarkToggle dark`             | Switch to dark style.                          |
+| `:MannydarkToggle bright`           | Switch to bright style.                        |
+| `:MannydarkToggle red-green-dark`   | Switch to colorblind-friendly dark style.      |
+| `:MannydarkToggle red-green-bright` | Switch to colorblind-friendly bright style.    |
+| `:MannydarkReload`                  | Reload the colorscheme after changes.          |
+| `:MannydarkDebug`                   | Show debug information.                        |
 

@@ -78,7 +78,7 @@ Add these keybindings to quickly reload and test your changes:
 -- Reload the colorscheme after changes:
 vim.keymap.set("n", "<leader>ur", "<cmd>MannydarkReload<cr>", { desc = "Reload Mannydark colorscheme" })
 
--- Toggle between theme styles (dark -> bright -> red-green -> dark):
+-- Toggle between theme styles (dark -> bright -> red-green-dark -> red-green-bright -> dark):
 vim.keymap.set("n", "<leader>ut", "<cmd>MannydarkToggle<cr>", { desc = "Toggle Mannydark theme style" })
 
 -- Toggle dev mode (auto-reload on save):
@@ -100,10 +100,16 @@ end, { desc = "Toggle Mannydark dev mode" })
 
 ## Available Development Commands
 
-| Command            | Description                                       |
-|--------------------|---------------------------------------------------|
-| `:MannydarkReload` | Reload the colorscheme after changes.             |
-| `:MannydarkToggle` | Toggle between dark, bright, and red-green style. |
+| Command                             | Description                                 |
+|-------------------------------------|---------------------------------------------|
+| `:MannydarkReload`                  | Reload the colorscheme after changes.       |
+| `:MannydarkToggle`                  | Cycle through all 4 styles.                 |
+| `:MannydarkToggle dark`             | Switch to dark style.                       |
+| `:MannydarkToggle bright`           | Switch to bright style.                     |
+| `:MannydarkToggle red-green-dark`   | Switch to colorblind-friendly dark style.   |
+| `:MannydarkToggle red-green-bright` | Switch to colorblind-friendly bright style. |
+| `:MannydarkDebug`                   | Show debug information.                     |
+| `:MannydarkDevMode`                 | Toggle dev mode (auto-reload on save).      |
 
 ---
 

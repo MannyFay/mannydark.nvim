@@ -1,26 +1,29 @@
 # Mannydark
 
-Dark Quiet Theme
-(can be bright too...)
-for Neovim!
+A quiet, accessible colorscheme for Neovim.
 
-This colorscheme is designed for long coding sessions, reducing eye strain with a balanced dark palette.
+Available in **4 styles**:
+- `dark` – Dark background
+- `bright` – Light background
+- `red-green-dark` – Colorblind-friendly (dark)
+- `red-green-bright` – Colorblind-friendly (light)
+
+Designed for long coding sessions, reducing eye strain with balanced palettes.
 
 ---
 
 <br>
 
 ## Drive
-Lots of colorschemes are very beautiful, but too overstimulating for long coding
-sessions (too me) what makes it hard to focus. Mannydark is designed to be easy on the eyes.
 
-I will try to create a dark and a bright theme for people who have vision
-problems such as color blindness or red-green deficiency.
+Many colorschemes are beautiful but overstimulating for long coding sessions, making it hard to focus. Mannydark is designed to be easy on the eyes.
 
-Also I want to try to add syntax highlighting for languages that are not supported by Neovim or Treesitter
-by default (e.g. Brainfuck).
+This colorscheme includes themes for people with red-green color blindness (Deuteranopia/Protanopia), available in both dark and light variants.
 
-It has to be accessible for everybody, no matter what kind of language people code in!
+It also adds syntax highlighting for languages not supported by Neovim or Treesitter by default (e.g. Brainfuck).
+
+Accessible for everybody, no matter what language you code in or how you see
+colors!
 
 ---
 
@@ -76,13 +79,15 @@ use({
 
 ## Commands
 
-| Command                      | Action                    |
-|------------------------------|---------------------------|
-| `:MannydarkReload`           | Reload Scheme.            |
-| `:MannydarkToggle red-green` | Change style (red-green). |
-| `:MannydarkToggle bright`    | Change style (bright).    |
-| `:MannydarkToggle dark`      | Change style (dark).      |
-| `:MannydarkDebug`            | Show debug information.   |
+| Command                            | Action                              |
+|------------------------------------|-------------------------------------|
+| `:MannydarkToggle`                 | Cycle through all styles.           |
+| `:MannydarkToggle dark`            | Switch to dark style.               |
+| `:MannydarkToggle bright`          | Switch to bright style.             |
+| `:MannydarkToggle red-green-dark`  | Switch to colorblind-friendly dark. |
+| `:MannydarkToggle red-green-bright`| Switch to colorblind-friendly light.|
+| `:MannydarkReload`                 | Reload the colorscheme.             |
+| `:MannydarkDebug`                  | Show debug information.             |
 
 ---
 
