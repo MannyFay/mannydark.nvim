@@ -1,45 +1,24 @@
 # Mannydark
 
-A dark colorscheme for Neovim written in Lua.
+Dark Quiet Theme
+(can be bright too...)
+for Neovim!
 
-  | Keybinding | Funktion                             |
-  |------------|--------------------------------------|
-  | <leader>ut | Toggle dark/light                    |
-  | <leader>ur | Reload colorscheme (für Entwicklung) |
+This colorscheme is designed for long coding sessions, reducing eye strain with a balanced dark palette.
 
-## Features
+---
 
-- Dark theme optimized for long coding sessions
-- Treesitter support with modern capture names (Neovim 0.9+)
-- LSP semantic token highlighting
-- Terminal colors for embedded terminal
-- Lualine theme included
-- Configurable options (transparent background, italic comments, dim inactive windows)
-
-## Supported Plugins
-
-- Treesitter
-- LSP Diagnostics
-- Telescope
-- nvim-tree
-- nvim-cmp
-- Gitsigns
-- Neogit
-- Fugitive
-- Lualine
-- Mason
-- Lazy.nvim
-- Which-key
-- Hop
-- Diffview
-- nvim-notify
-- Copilot
+<br>
 
 ## Requirements
 
 - Neovim >= 0.8.0
 - `termguicolors` enabled
 - A terminal with true color support
+
+---
+
+<br>
 
 ## Installation
 
@@ -69,6 +48,10 @@ use({
 })
 ```
 
+---
+
+<br>
+
 ## Configuration
 
 The setup function accepts the following options:
@@ -80,6 +63,61 @@ require('mannydark').setup({
   dim_inactive = false,    -- Dim inactive windows.
 })
 ```
+
+---
+
+<br>
+
+
+
+
+
+  | Keybinding | Funktion                             |
+  |------------|--------------------------------------|
+  | <leader>ut | Toggle dark/light                    |
+  | <leader>ur | Reload colorscheme (while development) |
+
+
+  | Command | Funktion                             |
+  |------------|--------------------------------------|
+  | :MannydarkReload | Reload Scheme (while development)                 |
+  | <leader>ur | Reload colorscheme (für |
+
+
+
+## Features
+
+- Dark theme optimized for long coding sessions
+- Treesitter support with modern capture names (Neovim 0.9+)
+- LSP semantic token highlighting
+- Terminal colors for embedded terminal
+- Lualine theme included
+- Configurable options (transparent background, italic comments, dim inactive windows)
+
+## Supported Languages
+
+- Brainfuck
+
+## Supported Plugins
+
+- Treesitter
+- LSP Diagnostics
+- Telescope
+- nvim-tree
+- nvim-cmp
+- Gitsigns
+- Neogit
+- Fugitive
+- Lualine
+- Mason
+- Lazy.nvim
+- Which-key
+- Hop
+- Diffview
+- nvim-notify
+- Copilot
+
+
 
 ### Options
 

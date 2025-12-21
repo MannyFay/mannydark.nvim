@@ -6,76 +6,76 @@ local colors = {
   ------------------------------------------------------------------------------
   -- Base Colors (inverted for light theme)
 
-  black      = '#FEFEFE',  -- Main background (white)
-  white      = '#404040',  -- Main foreground text (dark gray)
+  black      = "#FEFEFE",  -- Main background (white)
+  white      = "#404040",  -- Main foreground text (dark gray)
 
   ------------------------------------------------------------------------------
   -- Grays (adjusted for light background)
 
-  gray       = '#A0A1A7',  -- Muted text, line numbers, inactive elements
-  grayDark   = '#F0F0F0',  -- Secondary backgrounds (sidebars, panels)
-  grayLight  = '#D3D3D3',  -- Borders, subtle dividers
+  gray       = "#A0A1A7",  -- Muted text, line numbers, inactive elements
+  grayDark   = "#F0F0F0",  -- Secondary backgrounds (sidebars, panels)
+  grayLight  = "#D3D3D3",  -- Borders, subtle dividers
 
   ------------------------------------------------------------------------------
   -- Syntax Highlighting (adjusted for readability on light background)
 
   -- Keywords, control flow (darker blue)
-  blue       = '#569CD6',
+  blue       = "#569CD6",
 
   -- LSP references, subtle blue backgrounds
-  blueLight  = '#D6E4FF',
+  blueLight  = "#D6E4FF",
 
   -- Links, references
-  blueLink   = '#1A5FB4',
+  blueLink   = "#1A5FB4",
 
   -- Success states, git added
-  green      = '#2E8B57',
+  green      = "#2E8B57",
 
   -- Numbers, numeric literals
-  -- greenLight = '#50A14F',
-  greenLight = '#A5C25C',
+  -- greenLight = "#50A14F",
+  greenLight = "#A5C25C",
 
   -- Functions, method names
-  orange     = '#E8BF6A',
+  orange     = "#E8BF6A",
 
   -- Warning backgrounds, subtle highlights
-  orangeDark = '#FFF3CD',
+  orangeDark = "#FFF3CD",
 
   -- Special keywords, decorators
-  pink       = '#D63384',
+  pink       = "#D63384",
 
   -- Variables, parameters
-  purple     = '#C064C7',
+  purple     = "#C064C7",
 
   -- Comments (mannydark signature red comments)
-  red        = '#FF0000',
+  red        = "#FF0000",
 
   -- Error backgrounds, diff removed backgrounds
-  redDark    = '#FFE5E5',
+  redDark    = "#FFE5E5",
 
   -- Strings
-  redLight   = '#CE9178',
+  redLight   = "#CE9178",
 
   -- Types, classes, interfaces
-  turquoise  = '#0997B3',
+  turquoise  = "#0997B3",
 
   -- Warnings, deprecated
-  yellow     = '#B8860B',
+  yellow     = "#B8860B",
 
   ------------------------------------------------------------------------------
   -- Additional UI Colors
 
   -- Cursor line, current line highlight
-  cursorLine = '#F5F5F5',
+  cursorLine = "#F5F5F5",
 
   -- Selection background
-  selection  = '#ADD6FF',
+  selection  = "#ADD6FF",
 
   -- Search highlight
-  search     = '#FFECB3',
+  search     = "#FFECB3",
 
   -- Matching brackets
-  matchParen = '#B4D7FF',
+  matchParen = "#B4D7FF",
 }
 
 return colors

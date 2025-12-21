@@ -52,7 +52,7 @@ local scientific = 1.23e-4
 local large = 1e308
 
 -- Strings
-local single_quote = 'Hello'
+local single_quote = "Hello"
 local double_quote = "Hello"
 local escaped = "Tab:\t Newline:\n Quote:\""
 local long_string = [[
@@ -780,7 +780,7 @@ print("Clock:", os.clock())
 
 -- Type checking
 print("Type of 42:", type(42))
-print("Type of 'hello':", type("hello"))
+print("Type of "hello":", type("hello"))
 print("Type of table:", type({}))
 print("Type of function:", type(print))
 

@@ -1,10 +1,10 @@
 -- Mannybright colorscheme (light variant)
 -- This file allows using :colorscheme mannybright
 
-local mannydark = require('mannydark')
+local mannydark = require("mannydark")
 
--- Preserve existing user config, only ensure style is 'light'
-mannydark.setup(vim.tbl_deep_extend('force', mannydark.config, { style = 'light' }))
+-- Preserve existing user config, only ensure style is "light"
+mannydark.setup(vim.tbl_deep_extend("force", mannydark.config, { style = "light" }))
 
 -- Auto-enable dev mode in multiple scenarios:
 -- 1. When CWD is the colorscheme directory
@@ -13,13 +13,13 @@ mannydark.setup(vim.tbl_deep_extend('force', mannydark.config, { style = 'light'
 local function should_enable_dev_mode()
   -- Check CWD
   local cwd = vim.fn.getcwd()
-  if cwd:match('mannydark') then
+  if cwd:match("mannydark") then
     return true
   end
 
   -- Check current buffer path
-  local bufpath = vim.fn.expand('%:p')
-  if bufpath:match('mannydark') then
+  local bufpath = vim.fn.expand("%:p")
+  if bufpath:match("mannydark") then
     return true
   end
 
