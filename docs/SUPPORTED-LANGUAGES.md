@@ -11,6 +11,7 @@ If there is the need for one that is not listed here, please open an issue or a 
 - Lua
 - Markdown
 - TypeScript
+- XML
 
 ### TODO/Refine
 - Ada
