@@ -258,21 +258,21 @@ end
   highlight(0, "@comment.note",                { fg = colors.turquoise,  bg = "NONE", bold = true })  -- NOTE, INFO, XXX
 
   -- Markup (Markdown, etc.)
-  highlight(0, "@markup.strong",               { link = "Normal"})  -- **bold**
-  highlight(0, "@markup.italic",               { link = "Normal" })  -- *italic*
-  highlight(0, "@markup.strikethrough",        { fg = colors.gray,       bg = "NONE", strikethrough = true })  -- ~~strike~~
-  highlight(0, "@markup.underline",            { link = "Normal", underline = true })  -- Underlined
-  highlight(0, "@markup.heading",              { link = "Normal" })  -- Headings
-  highlight(0, "@markup.heading.1",            { link = "Normal" })  -- # H1
-  highlight(0, "@markup.heading.2",            { link = "Normal" })  -- ## H2
-  highlight(0, "@markup.heading.3",            { link = "Normal" })  -- ### H3
-  highlight(0, "@markup.heading.4",            { link = "Normal" })  -- #### H4
-  highlight(0, "@markup.heading.5",            { link = "Normal" })  -- ##### H5
-  highlight(0, "@markup.heading.6",            { link = "Normal" })  -- ###### H6
+  highlight(0, "@markup.strong",               { fg = colors.white,      bg = "NONE" })  -- **bold**
+  highlight(0, "@markup.italic",               { fg = colors.white,      bg = "NONE" })  -- *italic*
+  highlight(0, "@markup.strikethrough",        { fg = colors.white,      bg = "NONE" })  -- ~~strike~~
+  highlight(0, "@markup.underline",            { fg = colors.white,      bg = "NONE" })  -- Underlined
+  highlight(0, "@markup.heading",              { fg = colors.white,      bg = "NONE" })  -- Headings
+  highlight(0, "@markup.heading.1",            { fg = colors.white,      bg = "NONE" })  -- # H1
+  highlight(0, "@markup.heading.2",            { fg = colors.white,      bg = "NONE" })  -- ## H2
+  highlight(0, "@markup.heading.3",            { fg = colors.white,      bg = "NONE" })  -- ### H3
+  highlight(0, "@markup.heading.4",            { fg = colors.white,      bg = "NONE" })  -- #### H4
+  highlight(0, "@markup.heading.5",            { fg = colors.white,      bg = "NONE" })  -- ##### H5
+  highlight(0, "@markup.heading.6",            { fg = colors.white,      bg = "NONE" })  -- ###### H6
   highlight(0, "@markup.quote",                { fg = colors.gray,       bg = "NONE", italic = true })  -- > blockquote
   highlight(0, "@markup.math",                 { fg = colors.greenLight, bg = "NONE" })  -- Math environments
   highlight(0, "@markup.link",                 { link = "MannydarkFgBlueLink", underline = true })  -- Links
-  highlight(0, "@markup.link.label",           { link = "Normal" })  -- [label]
+  highlight(0, "@markup.link.label",           { link = "MannydarkFgWhite" })  -- [label]
   highlight(0, "@markup.link.url",             { link = "MannydarkFgBlueLink",   bg = "NONE" })  -- (url)
   highlight(0, "@markup.raw",                  { fg = colors.redLight,   bg = "NONE" })  -- `inline code`
   highlight(0, "@markup.raw.block",            { link = "Keyword" })  -- Code blocks
@@ -397,8 +397,8 @@ end
   -----------------------------------------------------------------------------
   -- Additional Text Objects (for plugins and special cases)
 
-  highlight(0, "@text",                        { link = "Normal" })  -- Text content
-  highlight(0, "@text.strong",                 { link = "Normal", bold = true })
+  highlight(0, "@text",                        { link = "MannydarkFgWhite" })  -- Text content
+  highlight(0, "@text.strong",                 { fg = colors.white,      bg = "NONE", bold = true })
   highlight(0, "@text.emphasis",               { fg = colors.white,      bg = "NONE", italic = true })
   highlight(0, "@text.underline",              { fg = colors.white,      bg = "NONE", underline = true })
   highlight(0, "@text.strike",                 { fg = colors.gray,       bg = "NONE", strikethrough = true })

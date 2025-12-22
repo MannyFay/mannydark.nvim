@@ -266,8 +266,8 @@ react.setupHighlighting = function()
 
 
   -- Operators
-  highlight(0, "@operator.jsx",               { link = "Normal" })  -- Operators
-  highlight(0, "@operator.tsx",               { link = "Normal" })  -- Operators
+  highlight(0, "@operator.jsx",               { link = "Operator" })  -- Operators
+  highlight(0, "@operator.tsx",               { link = "Operator" })  -- Operators
 
 
   -----------------------------------------------------------------------------
