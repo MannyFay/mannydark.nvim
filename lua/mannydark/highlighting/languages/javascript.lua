@@ -3,7 +3,7 @@
 -- Highlighting for .js, .mjs, .cjs files.
 -------------------------------------------------------------------------------
 
-local colors    = require("mannydark.palette")
+-- local colors    = require("mannydark.palette")
 local highlight = vim.api.nvim_set_hl
 local javascript = {}
 
