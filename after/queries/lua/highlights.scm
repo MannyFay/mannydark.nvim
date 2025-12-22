@@ -1,3 +1,3 @@
 ; extends
-; Prioritize bracket highlighting over Normal
-(["(" ")" "[" "]" "{" "}"] @punctuation.bracket (#set! priority 150))
+; Prioritize bracket highlighting over Normal, but below diagnostics
+(["(" ")" "[" "]" "{" "}"] @punctuation.bracket (#set! priority 110))

@@ -30,10 +30,27 @@ nvimTree.setupHighlighting = function()
   highlight(0, "NvimTreeGitDirty",                  { link = "Ignore" }                           )
   highlight(0, "NvimTreeGitStaged",                 { fg = colors.orange, bg = "NONE" }           )
   highlight(0, "NvimTreeGitMerge",                  { fg = colors.orange, bg = "NONE" }           )
-  highlight(0, "NvimTreeLspDiagnosticsError",       { link = "Comment" }                          )  -- Error icon.
-  highlight(0, "NvimTreeLspDiagnosticsWarning",     { fg = colors.orange, bg = "NONE" }           )  -- Warning icon.
-  highlight(0, "NvimTreeLspDiagnosticsInformation", { fg = colors.gray, bg = "NONE" }             )  -- Information icon.
-  highlight(0, "NvimTreeLspDiagnosticsHint",        { fg = colors.green, bg = "NONE" }            )  -- Hint icon.
+  -- Legacy diagnostic groups (for older nvim-tree versions)
+  highlight(0, "NvimTreeLspDiagnosticsError",       { link = "DiagnosticError" })
+  highlight(0, "NvimTreeLspDiagnosticsWarning",     { link = "DiagnosticWarn" })
+  highlight(0, "NvimTreeLspDiagnosticsInformation", { link = "DiagnosticInfo" })
+  highlight(0, "NvimTreeLspDiagnosticsHint",        { link = "DiagnosticHint" })
+
+  -- Current diagnostic groups (nvim-tree 1.0+)
+  highlight(0, "NvimTreeDiagnosticErrorHL",         { link = "DiagnosticError" })
+  highlight(0, "NvimTreeDiagnosticWarnHL",          { link = "DiagnosticWarn" })
+  highlight(0, "NvimTreeDiagnosticInfoHL",          { link = "DiagnosticInfo" })
+  highlight(0, "NvimTreeDiagnosticHintHL",          { link = "DiagnosticHint" })
+
+  highlight(0, "NvimTreeDiagnosticErrorIcon",       { link = "DiagnosticError" })
+  highlight(0, "NvimTreeDiagnosticWarnIcon",        { link = "DiagnosticWarn" })
+  highlight(0, "NvimTreeDiagnosticInfoIcon",        { link = "DiagnosticInfo" })
+  highlight(0, "NvimTreeDiagnosticHintIcon",        { link = "DiagnosticHint" })
+
+  highlight(0, "NvimTreeDiagnosticErrorFolderHL",   { link = "DiagnosticError" })
+  highlight(0, "NvimTreeDiagnosticWarnFolderHL",    { link = "DiagnosticWarn" })
+  highlight(0, "NvimTreeDiagnosticInfoFolderHL",    { link = "DiagnosticInfo" })
+  highlight(0, "NvimTreeDiagnosticHintFolderHL",    { link = "DiagnosticHint" })
   highlight(0, "NvimTreeFileIgnored",               { link = "Ignore" }                           )
   highlight(0, "NvimTreeFileDeleted",               { fg = colors.gray, bg = "NONE" }             )
   highlight(0, "nvimtreefilerenamed",               { fg = colors.red, bg = "NONE" }              )

@@ -34,7 +34,7 @@ environment.setupHighlighting = function()
     highlight(0, "Question", { fg = colors.green, bg = "NONE" })                                 -- Questions that Neovim asks the user.
     highlight(0, "NormalFloat", { fg = colors.white, bg = colors.grayDark })                     -- Neovims regular floating window.
     highlight(0, "FloatBorder", { fg = colors.grayDark, bg = colors.grayDark })                  -- Border of Neovims regular floating window.
-    highlight(0, "Whitespace", { fg = colors.grayDark, bg = "NONE" })                            -- Whitespace chars (listchars). Subtle to not break ibl.
+    highlight(0, "Whitespace", { fg = colors.black, bg = "NONE" })                               -- Whitespace chars (listchars). Invisible to avoid grid pattern.
     highlight(0, "PmenuSbar", { fg = colors.grayDark, bg = colors.grayDark })                    -- Scroll bar background in context menus.
     highlight(0, "PmenuThumb", { fg = colors.gray, bg = colors.gray })                           -- Scroll bar in context menus.
     highlight(0, "MsgSeparator", { fg = "NONE", bg = colors.black })                             -- Separator line above messages under status line.

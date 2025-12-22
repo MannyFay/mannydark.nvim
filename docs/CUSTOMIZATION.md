@@ -576,3 +576,154 @@ vim.keymap.set("n", "<leader>ur", "<cmd>MannydarkReload<cr>", { desc = "Reload M
 | `:MannydarkReload`                  | Reload the colorscheme after changes.          |
 | `:MannydarkDebug`                   | Show debug information.                        |
 
+---
+
+<br>
+
+## Recommended Diagnostic Configuration
+
+For the best experience with mannydark's diagnostic colors, we recommend the following
+configuration in your LSP setup. This ensures clean, focused diagnostic display where
+only the most severe diagnostic is shown per line (errors before warnings before hints).
+
+```lua
+-------------------------------------------------------------------------------
+-- Custom underline: only show most severe diagnostic per line
+-- Uses autocmd instead of handler override for reliability
+local underline_ns = vim.api.nvim_create_namespace("diag_underline_severity")
+local underline_hl = {
+  [vim.diagnostic.severity.ERROR] = "DiagnosticUnderlineError",
+  [vim.diagnostic.severity.WARN] = "DiagnosticUnderlineWarn",
+  [vim.diagnostic.severity.INFO] = "DiagnosticUnderlineInfo",
+  [vim.diagnostic.severity.HINT] = "DiagnosticUnderlineHint",
+}
+
+local function apply_severity_underlines(bufnr)
+  bufnr = bufnr or vim.api.nvim_get_current_buf()
+  if not vim.api.nvim_buf_is_valid(bufnr) then return end
+
+  vim.api.nvim_buf_clear_namespace(bufnr, underline_ns, 0, -1)
+
+  local diagnostics = vim.diagnostic.get(bufnr)
+  if #diagnostics == 0 then return end
+
+  -- Find most severe per line
+  local line_severity = {}
+  for _, d in ipairs(diagnostics) do
+    local lnum = d.lnum
+    if not line_severity[lnum] or d.severity < line_severity[lnum] then
+      line_severity[lnum] = d.severity
+    end
+  end
+
+  -- Apply underlines only for most severe per line
+  for _, d in ipairs(diagnostics) do
+    if d.severity == line_severity[d.lnum] then
+      local hl = underline_hl[d.severity]
+      if hl then
+        local lnum = d.lnum
+        local col = d.col or 0
+        local end_lnum = d.end_lnum or lnum
+        local end_col = d.end_col
+
+        -- Get line length for bounds checking
+        local line = vim.api.nvim_buf_get_lines(bufnr, lnum, lnum + 1, false)[1]
+        local line_len = line and #line or 0
+
+        -- Ensure valid range (handle zero-width and invalid ranges)
+        if not end_col or end_col <= col then
+          end_col = math.min(col + 10, line_len)
+          if end_col <= col then
+            end_col = line_len  -- Highlight to end of line
+          end
+        end
+
+        -- Clamp to line bounds
+        col = math.min(col, line_len)
+        end_col = math.min(end_col, line_len)
+
+        if end_col > col then
+          pcall(vim.api.nvim_buf_set_extmark, bufnr, underline_ns, lnum, col, {
+            end_line = end_lnum,
+            end_col = end_col,
+            hl_group = hl,
+            priority = 150,
+            strict = false,
+          })
+        end
+      end
+    end
+  end
+end
+
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+  group = vim.api.nvim_create_augroup("DiagnosticUnderlineSeverity", { clear = true }),
+  callback = function(args)
+    apply_severity_underlines(args.buf)
+  end,
+})
+
+-------------------------------------------------------------------------------
+-- Diagnostic configuration
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN]  = "󰀦 ",
+      [vim.diagnostic.severity.HINT]  = " ",
+      [vim.diagnostic.severity.INFO]  = " ",
+    },
+  },
+  virtual_text = {
+    spacing = 4,
+    prefix = "■",  -- Ensures prefix uses same color as message
+    -- Only show the most severe diagnostic per line
+    format = function(diagnostic)
+      local bufnr = vim.api.nvim_get_current_buf()
+      local line_diags = vim.diagnostic.get(bufnr, { lnum = diagnostic.lnum })
+
+      -- Find most severe (lowest number = most severe)
+      local min_severity = diagnostic.severity
+      for _, d in ipairs(line_diags) do
+        if d.severity < min_severity then
+          min_severity = d.severity
+        end
+      end
+
+      -- Only show if this is the most severe
+      if diagnostic.severity == min_severity then
+        return diagnostic.message
+      end
+      return nil
+    end,
+  },
+  underline = false,  -- Disabled: using custom autocmd above
+  update_in_insert = false,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = true,
+    header = "",
+    prefix = "",
+  },
+})
+```
+
+### Why This Configuration?
+
+- **Custom underline autocmd**: Uses `DiagnosticChanged` event to apply underlines manually.
+  Only the most severe diagnostic per line gets underlined. Error → Warning → Info → Hint
+  priority. Once you fix an error, the warning appears. This prevents the two-color issue.
+
+- **`prefix = "■"`**: When prefix is a string (not a function), it uses the same highlight
+  as the message text. This prevents the two-color issue where prefix and message have
+  different colors.
+
+- **`format` function**: Shows only the most severe diagnostic virtual text per line.
+  Same priority logic as underlines: Error → Warning → Info → Hint.
+
+- **`severity_sort = true`**: Ensures errors always appear before warnings in lists and
+  floating windows.
+

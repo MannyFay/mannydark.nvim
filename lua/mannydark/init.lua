@@ -371,11 +371,38 @@ M.reload = function()
     end
   end
 
+  -- Clear treesitter query cache for languages with custom queries in after/queries/
+  -- This ensures .scm file changes take effect without restart
+  if vim.treesitter and vim.treesitter.query then
+    local langs_with_custom_queries = { "lua", "ada", "javascript" }
+    for _, lang in ipairs(langs_with_custom_queries) do
+      -- Neovim 0.9+: invalidate() clears the query cache for a language
+      if vim.treesitter.query.invalidate then
+        pcall(vim.treesitter.query.invalidate, lang)
+      end
+    end
+  end
+
   -- Re-require mannydark (fresh module)
   local ok, mannydark = pcall(require, "mannydark")
   if ok then
     -- setup() will automatically use vim.g.mannydark_user_config
     mannydark.setup()
+
+    -- Force re-highlighting of all buffers to apply new treesitter queries
+    for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.api.nvim_buf_is_loaded(bufnr) and vim.bo[bufnr].buftype == "" then
+        local ft = vim.bo[bufnr].filetype
+        if ft and ft ~= "" then
+          -- Trigger treesitter re-attach by toggling the highlighter
+          pcall(function()
+            vim.treesitter.stop(bufnr)
+            vim.treesitter.start(bufnr)
+          end)
+        end
+      end
+    end
+
     return true
   else
     vim.notify("Mannydark reload failed: " .. tostring(mannydark), vim.log.levels.ERROR)
