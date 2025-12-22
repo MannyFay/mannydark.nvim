@@ -142,7 +142,7 @@ languageDefaults.applyLspSemanticHighlights = function()
   -- LSP Semantic Token Modifiers (@lsp.mod.xxx)
 
   highlight(0, "@lsp.mod.abstract",       { fg = "NONE", bg = "NONE", italic = true }       )  -- Abstract
-  highlight(0, "@lsp.mod.async",          { fg = "NONE", bg = "NONE", italic = true }       )  -- Async
+  highlight(0, "@lsp.mod.async",          { fg = "NONE", bg = "NONE" }                      )  -- Async
   highlight(0, "@lsp.mod.declaration",    { fg = "NONE", bg = "NONE" }                      )  -- Declarations
   highlight(0, "@lsp.mod.defaultLibrary", { fg = "NONE", bg = "NONE" }                      )  -- Standard library
   highlight(0, "@lsp.mod.definition",     { fg = "NONE", bg = "NONE" }                      )  -- Definitions
@@ -150,7 +150,7 @@ languageDefaults.applyLspSemanticHighlights = function()
   highlight(0, "@lsp.mod.documentation",  { fg = "NONE", bg = "NONE" }                      )  -- Documentation
   highlight(0, "@lsp.mod.modification",   { fg = "NONE", bg = "NONE" }                      )  -- Modifications
   highlight(0, "@lsp.mod.readonly",       { fg = "NONE", bg = "NONE" }                      )  -- Readonly
-  highlight(0, "@lsp.mod.static",         { fg = "NONE", bg = "NONE", italic = true }       )  -- Static
+  highlight(0, "@lsp.mod.static",         { fg = "NONE", bg = "NONE" }                      )  -- Static
 end
 
 

@@ -12,7 +12,7 @@ local javascript = {}
 -- Settings
 
 javascript.setupHighlighting = function()
-
+  highlight(0, "@character.special.javascript", { link = "MannydarkFgWhite" })
 end
 
 return javascript
