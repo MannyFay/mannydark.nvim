@@ -281,9 +281,9 @@ end
   highlight(0, "@markup.list.unchecked",       { link = "Delimiter" })  -- [ ] unchecked
 
   -- Diff
-  highlight(0, "@diff.plus",                   { link = "MannydarkGreen" })  -- Added lines
-  highlight(0, "@diff.minus",                  { link = "MannydarkRed"   })  -- Removed lines
-  highlight(0, "@diff.delta",                  { link = "MannydarkRed"   })  -- Changed lines
+  highlight(0, "@diff.plus",                   { link = "MannydarkFgGreen" })  -- Added lines
+  highlight(0, "@diff.minus",                  { link = "MannydarkFgRed"   })  -- Removed lines
+  highlight(0, "@diff.delta",                  { link = "MannydarkFgRed"   })  -- Changed lines
 
   -- Tags (HTML, XML, JSX)
   highlight(0, "@tag",                         { link = "Tag" })  -- Tag names

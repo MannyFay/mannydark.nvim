@@ -34,21 +34,19 @@ import sys
 import threading
 import time
 import typing
-from collections import defaultdict, namedtuple, deque, Counter
-from collections.abc import Callable, Iterator, Generator, Sequence, Mapping
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+from collections import Counter, defaultdict, deque, namedtuple
+from collections.abc import Callable, Generator, Iterator, Mapping, Sequence
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from dataclasses import dataclass, field
-from datetime import datetime, date, timedelta
+from datetime import date, datetime, timedelta
 from decimal import Decimal
 from fractions import Fraction
-from functools import wraps, lru_cache, partial, reduce
-from io import StringIO, BytesIO
+from functools import lru_cache, partial, reduce, wraps
+from io import BytesIO, StringIO
 from pathlib import Path
-from typing import (
-    Any, ClassVar, Final, Generic, Literal, Optional, Protocol,
-    TypeAlias, TypeVar, Union, overload, runtime_checkable,
-    Self, TypedDict, Annotated, ParamSpec, Concatenate
-)
+from typing import (Annotated, Any, ClassVar, Concatenate, Final, Generic,
+                    Literal, Optional, ParamSpec, Protocol, Self, TypeAlias,
+                    TypedDict, TypeVar, Union, overload, runtime_checkable)
 
 # Type variables
 T = TypeVar('T')
@@ -426,8 +424,8 @@ class Timer:
 @contextlib.contextmanager
 def temporary_directory() -> Generator[Path, None, None]:
     """Context manager for temporary directory."""
-    import tempfile
     import shutil
+    import tempfile
 
     path = Path(tempfile.mkdtemp())
     try:
