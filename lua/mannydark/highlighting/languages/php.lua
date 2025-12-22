@@ -11,6 +11,8 @@ local php       = {}
 -- Settings
 
 php.setupHighlighting = function()
+  -- highlight(0, "@punctuation.bracket.php", { link = "Error"})  -- Errors
+
 
 end
 
