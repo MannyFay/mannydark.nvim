@@ -12,7 +12,7 @@ local jsonnet   = {}
 -- Settings
 
 jsonnet.setupHighlighting = function()
-
+  highlight(0, "@comment.documentation.jsonnet", { link = "MannydarkFgGreen" })  -- Doc blocks (/** ... */ or ///)
 end
 
 return jsonnet

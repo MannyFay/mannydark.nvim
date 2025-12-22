@@ -11,9 +11,7 @@ local php       = {}
 -- Settings
 
 php.setupHighlighting = function()
-  -- highlight(0, "@punctuation.bracket.php", { link = "Error"})  -- Errors
-
-
+  highlight(0, "@comment.documentation.php", { link = "MannydarkFgGreen" })  -- Doc blocks (/** ... */)
 end
 
 return php
