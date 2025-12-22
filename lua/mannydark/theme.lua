@@ -33,7 +33,7 @@ theme.buildTheme = function()
   -- require("mannydark.highlighting.languages.assembly"      ).setupHighlighting()
   -- require("mannydark.highlighting.languages.batch"         ).setupHighlighting()
   require("mannydark.highlighting.languages.brainfuck"        ).setup()  -- Includes filetype + syntax
-  -- require("mannydark.highlighting.languages.c"             ).setupHighlighting()
+  require("mannydark.highlighting.languages.c"                ).setupHighlighting()
   -- require("mannydark.highlighting.languages.clojure"       ).setupHighlighting()
   -- require("mannydark.highlighting.languages.csharp"        ).setupHighlighting()
   -- require("mannydark.highlighting.languages.cobol"         ).setupHighlighting()
