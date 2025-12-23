@@ -1,42 +1,45 @@
 # Mannydark - Under Construction
 
-Take a look on [`develop` branch](https://github.com/MannyFay/mannydark.nvim/tree/develop)
+Take a look on `develop` branch.
 
-A dark colorscheme for Neovim written in Lua.
+A quiet, accessible colorscheme for Neovim.
 
-## Features
+Available in **4 styles**:
+- `dark` – Dark background
+- `bright` – Light background
+- `red-green-dark` – Colorblind-friendly (dark)
+- `red-green-bright` – Colorblind-friendly (light)
 
-- Dark theme optimized for long coding sessions
-- Treesitter support with modern capture names (Neovim 0.9+)
-- LSP semantic token highlighting
-- Terminal colors for embedded terminal
-- Lualine theme included
-- Configurable options (transparent background, italic comments, dim inactive windows)
+Designed for long coding sessions, reducing eye strain with balanced palettes.
 
-## Supported Plugins
+---
 
-- Treesitter
-- LSP Diagnostics
-- Telescope
-- nvim-tree
-- nvim-cmp
-- Gitsigns
-- Neogit
-- Fugitive
-- Lualine
-- Mason
-- Lazy.nvim
-- Which-key
-- Hop
-- Diffview
-- nvim-notify
-- Copilot
+<br>
+
+## Drive
+
+Many colorschemes are beautiful but overstimulating for long coding sessions, making it hard to focus. Mannydark is designed to be easy on the eyes.
+
+This colorscheme includes themes for people with red-green color blindness (Deuteranopia/Protanopia), available in both dark and light variants.
+
+It also adds syntax highlighting for languages not supported by Neovim or Treesitter by default (e.g. Brainfuck).
+
+Accessible for everybody, no matter what language you code in or how you see
+colors!
+
+---
+
+<br>
 
 ## Requirements
 
 - Neovim >= 0.8.0
 - `termguicolors` enabled
 - A terminal with true color support
+
+---
+
+<br>
 
 ## Installation
 
@@ -48,7 +51,10 @@ A dark colorscheme for Neovim written in Lua.
   lazy = false,
   priority = 1000,
   config = function()
-    require('mannydark').setup({})
+    local colorscheme = require('mannydark')
+
+    colorscheme.setup({ })
+
     vim.cmd.colorscheme('mannydark')
   end,
 }
@@ -60,34 +66,36 @@ A dark colorscheme for Neovim written in Lua.
 use({
   'MannyFay/mannydark.nvim',
   config = function()
-    require('mannydark').setup({})
+    local colorscheme = require('mannydark')
+
+    colorscheme.setup({ })
+
     vim.cmd.colorscheme('mannydark')
   end,
 })
 ```
 
-## Configuration
+---
 
-The setup function accepts the following options:
+<br>
 
-```lua
-require('mannydark').setup({
-  transparent = false,     -- Enable transparent background.
-  italic_comments = true,  -- Render comments in italic.
-  dim_inactive = false,    -- Dim inactive windows.
-})
-```
+## Commands
 
-### Options
+| Command                            | Action                              |
+|------------------------------------|-------------------------------------|
+| `:MannydarkToggle`                 | Cycle through all styles.           |
+| `:MannydarkToggle dark`            | Switch to dark style.               |
+| `:MannydarkToggle bright`          | Switch to bright style.             |
+| `:MannydarkToggle red-green-dark`  | Switch to colorblind-friendly dark. |
+| `:MannydarkToggle red-green-bright`| Switch to colorblind-friendly light.|
+| `:MannydarkReload`                 | Reload the colorscheme.             |
+| `:MannydarkDebug`                  | Show debug information.             |
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `transparent` | boolean | `false` | Removes background color for transparent terminals. |
-| `italic_comments` | boolean | `true` | Displays comments in italic style. |
-| `dim_inactive` | boolean | `false` | Dims inactive split windows. |
+---
+
+<br>
 
 ## Lualine
-
 The colorscheme includes a Lualine theme. To use it:
 
 ```lua
@@ -98,51 +106,14 @@ require('lualine').setup({
 })
 ```
 
-## Customization
+---
 
-### Changing Colors
+<br>
 
-Edit the color palette in `lua/mannydark/palette.lua`:
+## Further Documentation
+- [Customization](/docs/CUSTOMIZATION.md)
+- [Supported Languages](/docs/SUPPORTED-LANGUAGES.md)
+- [Supported Plugins](/docs/SUPPORTED-PLUGINS.md)
+- [Development](/docs/DEVELOPMENT.md)
+- [Troubleshooting](/docs/TROUBLESHOOTING.md)
 
-```lua
-local colors = {
-  black      = '#191B1C',
-  blue       = '#569CD6',
-  -- ...
-}
-```
-
-### Finding Highlight Groups
-
-To find the highlight group under your cursor, use the `:Inspect` command (Neovim 0.9+).
-
-For older versions:
-
-```vim
-:echo synIDattr(synID(line("."), col("."), 1), "name")
-```
-
-### File Structure
-
-```
-mannydark.nvim/
-├── colors/
-│   └── mannydark.vim           -- Entry point
-├── lua/
-│   ├── mannydark/
-│   │   ├── init.lua            -- Setup and configuration
-│   │   ├── palette.lua         -- Color definitions
-│   │   ├── theme.lua           -- Theme builder
-│   │   └── highlighting/
-│   │       ├── editor/         -- Editor UI highlights
-│   │       ├── languages/      -- Language-specific highlights
-│   │       └── plugins/        -- Plugin highlights
-│   └── lualine/
-│       └── themes/
-│           └── mannydark.lua   -- Lualine theme
-└── README.md
-```
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.

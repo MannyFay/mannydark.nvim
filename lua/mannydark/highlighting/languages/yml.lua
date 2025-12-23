@@ -1,59 +1,48 @@
 -------------------------------------------------------------------------------
--- YML
+-- YAML Files
+-- Highlighting for .yml and .yaml files.
 -------------------------------------------------------------------------------
 
-local colors    = require('mannydark.palette')
+-- local colors    = require("mannydark.palette")
 local highlight = vim.api.nvim_set_hl
-local yml      = {}
+local yml       = {}
 
 
---------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Settings
 
 yml.setupHighlighting = function()
-  highlight(0, 'yamlKeyValueDelimiter',        { fg = colors.white,      bg = 'NONE' })  -- Colon between key and value.
-  highlight(0, 'yamlPlainScalar',              { fg = colors.white,      bg = 'NONE' })  -- Name of containers.
-  highlight(0, 'yamlBlockMappingKey',          { fg = colors.blue,       bg = 'NONE' })  -- Name of services.
-  highlight(0, 'yamlTodo',                     { fg = colors.red,        bg = 'NONE', bold = true })  -- TODO comments.
-  highlight(0, 'yamlComment',                  { fg = colors.red,        bg = 'NONE' })  -- Comments.
-  highlight(0, 'yamlInteger',                  { fg = colors.greenLight, bg = 'NONE' })  -- Integer numbers.
-  highlight(0, 'yamlBlockCollectionItemStart', { fg = colors.white,      bg = 'NONE' })  -- Hyphens of list items.
-  highlight(0, 'yamlFlowString',               { fg = colors.redLight,   bg = 'NONE' })  -- Content of strings in brackets [].
-  highlight(0, 'yamlFlowIndicator',            { fg = colors.white,      bg = 'NONE' })  -- Brackets [] of flow strings.
-  highlight(0, 'yamlFlowStringDelimiter',      { fg = colors.redLight,   bg = 'NONE' })  -- Quotes of flow strings.
-  highlight(0, 'yamlFlowCollection',           { fg = colors.white,      bg = 'NONE' })  -- Commas of flow collections.
-  highlight(0, 'yamlDocumentStart',            { fg = colors.blue,       bg = 'NONE' })  -- Three dashes at the beginning of a document.
-  highlight(0, 'yamlBool',                     { fg = colors.blue,       bg = 'NONE' })  -- Boolean values.
-  highlight(0, 'yamlFloat',                    { fg = colors.greenLight, bg = 'NONE' })  -- Float numbers.
-  highlight(0, 'yamlEscape',                   { fg = colors.white,      bg = 'NONE' })  -- Escape characters.
-  highlight(0, 'yamlFlowMapping',              { fg = colors.blue,       bg = 'NONE' })  -- Content between curly brackets {}.
-  highlight(0, 'yamlNodeTag',                  { fg = colors.white,      bg = 'NONE' })  -- Operator of tags.
-  highlight(0, 'yamlFlowMappingKey',           { fg = colors.white,      bg = 'NONE' })  -- 'http' in a web address, for example.
-  highlight(0, 'yamlAnchor',                   { fg = colors.white,      bg = 'NONE' })  -- Operators like && in keys.
-  highlight(0, 'yamlBlockScalarHeader',        { fg = colors.white,      bg = 'NONE' })  -- Operators like >.
+  highlight(0, "@punctuation.special.yaml", { link = "Keyword" })      -- ---
+  highlight(0, "@string.special.yaml",      { link = "MannydarkFgGreen" })  -- Terminal commands (run:, command:)
 
-  ----------------------- Not used by now:
-  highlight(0, 'yamlTSField',                  { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlTAGDirective',             { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlYAMLDirective',            { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlReservedDirective',        { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlDirective',                { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlTagHandle',                { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlTagPrefix',                { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlYAMLVersion',              { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlSingleEscape',             { fg = colors.pink, bg = colors.greenLight })
+  -- GitHub Actions template expressions (${{ ... }}) - purple via extmarks
+  local ns = vim.api.nvim_create_namespace("mannydark_yaml_templates")
 
-  highlight(0, 'yamlNull',                     { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlFlowMappingMerge',         { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlTimestamp',                { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlMappingKeyStart',          { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlBlockMappingMerge',        { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlAlias',                    { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlDocumentEnd',              { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlDirectiveName',            { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlString',                   { fg = colors.pink, bg = colors.greenLight })
-  highlight(0, 'yamlConstant',                 { fg = colors.pink, bg = colors.greenLight })
+  local function highlight_templates(bufnr)
+    vim.api.nvim_buf_clear_namespace(bufnr, ns, 0, -1)
+    local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+    for lnum, line in ipairs(lines) do
+      local start_pos = 1
+      while true do
+        local s, e = line:find("%${{.-}}", start_pos)
+        if not s then break end
+        vim.api.nvim_buf_set_extmark(bufnr, ns, lnum - 1, s - 1, {
+          end_col = e,
+          hl_group = "MannydarkFgRedLight",
+          priority = 300,  -- Higher than treesitter (100-200)
+        })
+        start_pos = e + 1
+      end
+    end
+  end
+
+  vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged", "TextChangedI" }, {
+    group = vim.api.nvim_create_augroup("MannydarkYamlTemplates", { clear = true }),
+    pattern = { "*.yaml", "*.yml" },
+    callback = function(args)
+      highlight_templates(args.buf)
+    end,
+  })
 end
 
 return yml
-

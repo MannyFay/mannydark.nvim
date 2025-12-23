@@ -1,4 +1,4 @@
-local colors = require('mannydark.palette')
+local colors = require("mannydark.palette")
 
 return {
   normal = {

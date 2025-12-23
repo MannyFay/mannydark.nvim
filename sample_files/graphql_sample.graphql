@@ -1,0 +1,718 @@
+# ==============================================================================
+# Comprehensive GraphQL Sample - Syntax Highlighting Demonstration
+# ==============================================================================
+
+# This file demonstrates all major GraphQL language features
+# for syntax highlighting purposes.
+
+# ==============================================================================
+# Comments
+# ==============================================================================
+
+# Single line comment
+
+# Multiple
+# line
+# comments
+
+# ==============================================================================
+# Schema Definition
+# ==============================================================================
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+# ==============================================================================
+# Scalar Types
+# ==============================================================================
+
+# Built-in scalars: Int, Float, String, Boolean, ID
+
+# Custom scalar types
+scalar DateTime
+scalar Date
+scalar Time
+scalar JSON
+scalar UUID
+scalar Email
+scalar URL
+scalar Upload
+scalar BigInt
+scalar Decimal
+
+# ==============================================================================
+# Enum Types
+# ==============================================================================
+
+enum Status {
+  ACTIVE
+  INACTIVE
+  PENDING
+  ARCHIVED
+}
+
+enum Role {
+  ADMIN
+  MODERATOR
+  USER
+  GUEST
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+# ==============================================================================
+# Interface Types
+# ==============================================================================
+
+interface Node {
+  id: ID!
+}
+
+interface Timestamps {
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+interface Auditable {
+  createdBy: User
+  updatedBy: User
+}
+
+interface Connection {
+  pageInfo: PageInfo!
+  edges: [Edge!]!
+  totalCount: Int!
+}
+
+interface Edge {
+  cursor: String!
+  node: Node!
+}
+
+# ==============================================================================
+# Union Types
+# ==============================================================================
+
+union SearchResult = User | Post | Comment | Tag
+union NotificationTarget = User | Team | Channel
+union MediaItem = Image | Video | Audio | Document
+
+# ==============================================================================
+# Object Types
+# ==============================================================================
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type User implements Node & Timestamps & Auditable {
+  id: ID!
+  email: Email!
+  username: String!
+  firstName: String
+  lastName: String
+  fullName: String
+  avatar: URL
+  bio: String
+  role: Role!
+  status: Status!
+  posts(first: Int, after: String, last: Int, before: String): PostConnection!
+  comments: [Comment!]!
+  followers: [User!]!
+  following: [User!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User
+  updatedBy: User
+}
+
+type Post implements Node & Timestamps {
+  id: ID!
+  title: String!
+  slug: String!
+  content: String!
+  excerpt: String
+  author: User!
+  tags: [Tag!]!
+  comments(first: Int, after: String): CommentConnection!
+  likes: Int!
+  views: Int!
+  published: Boolean!
+  publishedAt: DateTime
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Comment implements Node & Timestamps {
+  id: ID!
+  content: String!
+  author: User!
+  post: Post!
+  parent: Comment
+  replies: [Comment!]!
+  likes: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Tag implements Node {
+  id: ID!
+  name: String!
+  slug: String!
+  description: String
+  posts(first: Int, after: String): PostConnection!
+  postCount: Int!
+}
+
+type Image {
+  id: ID!
+  url: URL!
+  alt: String
+  width: Int!
+  height: Int!
+  size: Int!
+  mimeType: String!
+}
+
+type Video {
+  id: ID!
+  url: URL!
+  title: String
+  duration: Int!
+  thumbnail: Image
+}
+
+type Audio {
+  id: ID!
+  url: URL!
+  title: String
+  duration: Int!
+}
+
+type Document {
+  id: ID!
+  url: URL!
+  title: String!
+  size: Int!
+  mimeType: String!
+}
+
+# ==============================================================================
+# Connection Types (Relay-style Pagination)
+# ==============================================================================
+
+type UserConnection implements Connection {
+  pageInfo: PageInfo!
+  edges: [UserEdge!]!
+  totalCount: Int!
+}
+
+type UserEdge implements Edge {
+  cursor: String!
+  node: User!
+}
+
+type PostConnection implements Connection {
+  pageInfo: PageInfo!
+  edges: [PostEdge!]!
+  totalCount: Int!
+}
+
+type PostEdge implements Edge {
+  cursor: String!
+  node: Post!
+}
+
+type CommentConnection {
+  pageInfo: PageInfo!
+  edges: [CommentEdge!]!
+  totalCount: Int!
+}
+
+type CommentEdge {
+  cursor: String!
+  node: Comment!
+}
+
+# ==============================================================================
+# Input Types
+# ==============================================================================
+
+input CreateUserInput {
+  email: Email!
+  username: String!
+  password: String!
+  firstName: String
+  lastName: String
+  bio: String
+  role: Role = USER
+}
+
+input UpdateUserInput {
+  email: Email
+  username: String
+  firstName: String
+  lastName: String
+  bio: String
+  avatar: Upload
+}
+
+input CreatePostInput {
+  title: String!
+  content: String!
+  excerpt: String
+  tags: [ID!]
+  published: Boolean = false
+}
+
+input UpdatePostInput {
+  title: String
+  content: String
+  excerpt: String
+  tags: [ID!]
+  published: Boolean
+}
+
+input PostFilterInput {
+  authorId: ID
+  tags: [ID!]
+  status: Status
+  published: Boolean
+  search: String
+  dateFrom: DateTime
+  dateTo: DateTime
+}
+
+input PostOrderByInput {
+  field: PostOrderField!
+  direction: SortOrder! = DESC
+}
+
+enum PostOrderField {
+  CREATED_AT
+  UPDATED_AT
+  TITLE
+  VIEWS
+  LIKES
+}
+
+input PaginationInput {
+  first: Int
+  after: String
+  last: Int
+  before: String
+}
+
+input CreateCommentInput {
+  postId: ID!
+  parentId: ID
+  content: String!
+}
+
+# ==============================================================================
+# Query Type
+# ==============================================================================
+
+type Query {
+  # Node interface
+  node(id: ID!): Node
+
+  # User queries
+  me: User
+  user(id: ID!): User
+  userByUsername(username: String!): User
+  userByEmail(email: Email!): User
+  users(
+    first: Int
+    after: String
+    last: Int
+    before: String
+    filter: UserFilterInput
+    orderBy: UserOrderByInput
+  ): UserConnection!
+
+  # Post queries
+  post(id: ID!): Post
+  postBySlug(slug: String!): Post
+  posts(
+    first: Int
+    after: String
+    last: Int
+    before: String
+    filter: PostFilterInput
+    orderBy: PostOrderByInput
+  ): PostConnection!
+  featuredPosts(limit: Int = 5): [Post!]!
+  trendingPosts(limit: Int = 10, timeframe: Timeframe = WEEK): [Post!]!
+
+  # Comment queries
+  comment(id: ID!): Comment
+  comments(postId: ID!, first: Int, after: String): CommentConnection!
+
+  # Tag queries
+  tag(id: ID!): Tag
+  tagBySlug(slug: String!): Tag
+  tags(first: Int, after: String): TagConnection!
+  popularTags(limit: Int = 10): [Tag!]!
+
+  # Search
+  search(query: String!, types: [SearchType!], first: Int): SearchResultConnection!
+
+  # Analytics
+  stats: Stats!
+}
+
+enum Timeframe {
+  DAY
+  WEEK
+  MONTH
+  YEAR
+  ALL_TIME
+}
+
+enum SearchType {
+  USER
+  POST
+  COMMENT
+  TAG
+}
+
+input UserFilterInput {
+  role: Role
+  status: Status
+  search: String
+}
+
+input UserOrderByInput {
+  field: UserOrderField!
+  direction: SortOrder! = ASC
+}
+
+enum UserOrderField {
+  CREATED_AT
+  USERNAME
+  EMAIL
+}
+
+type TagConnection {
+  pageInfo: PageInfo!
+  edges: [TagEdge!]!
+  totalCount: Int!
+}
+
+type TagEdge {
+  cursor: String!
+  node: Tag!
+}
+
+type SearchResultConnection {
+  pageInfo: PageInfo!
+  edges: [SearchResultEdge!]!
+  totalCount: Int!
+}
+
+type SearchResultEdge {
+  cursor: String!
+  node: SearchResult!
+  score: Float!
+}
+
+type Stats {
+  userCount: Int!
+  postCount: Int!
+  commentCount: Int!
+  activeUsers: Int!
+}
+
+# ==============================================================================
+# Mutation Type
+# ==============================================================================
+
+type Mutation {
+  # Authentication
+  signUp(input: CreateUserInput!): AuthPayload!
+  signIn(email: Email!, password: String!): AuthPayload!
+  signOut: Boolean!
+  refreshToken(token: String!): AuthPayload!
+  forgotPassword(email: Email!): Boolean!
+  resetPassword(token: String!, password: String!): AuthPayload!
+  changePassword(currentPassword: String!, newPassword: String!): Boolean!
+
+  # User mutations
+  updateProfile(input: UpdateUserInput!): User!
+  updateAvatar(file: Upload!): User!
+  deleteAccount(password: String!): Boolean!
+  followUser(userId: ID!): User!
+  unfollowUser(userId: ID!): User!
+
+  # Post mutations
+  createPost(input: CreatePostInput!): Post!
+  updatePost(id: ID!, input: UpdatePostInput!): Post!
+  deletePost(id: ID!): Boolean!
+  publishPost(id: ID!): Post!
+  unpublishPost(id: ID!): Post!
+  likePost(id: ID!): Post!
+  unlikePost(id: ID!): Post!
+
+  # Comment mutations
+  createComment(input: CreateCommentInput!): Comment!
+  updateComment(id: ID!, content: String!): Comment!
+  deleteComment(id: ID!): Boolean!
+  likeComment(id: ID!): Comment!
+  unlikeComment(id: ID!): Comment!
+
+  # Tag mutations
+  createTag(name: String!, description: String): Tag!
+  updateTag(id: ID!, name: String, description: String): Tag!
+  deleteTag(id: ID!): Boolean!
+
+  # File uploads
+  uploadFile(file: Upload!): File!
+  uploadFiles(files: [Upload!]!): [File!]!
+  deleteFile(id: ID!): Boolean!
+}
+
+type AuthPayload {
+  token: String!
+  refreshToken: String!
+  user: User!
+  expiresAt: DateTime!
+}
+
+type File {
+  id: ID!
+  filename: String!
+  mimetype: String!
+  encoding: String!
+  url: URL!
+  size: Int!
+}
+
+# ==============================================================================
+# Subscription Type
+# ==============================================================================
+
+type Subscription {
+  # Post subscriptions
+  postCreated: Post!
+  postUpdated(id: ID): Post!
+  postDeleted: ID!
+  postLiked(id: ID!): Post!
+
+  # Comment subscriptions
+  commentAdded(postId: ID!): Comment!
+  commentUpdated(postId: ID!): Comment!
+  commentDeleted(postId: ID!): ID!
+
+  # User subscriptions
+  userStatusChanged(userId: ID!): User!
+  newFollower: User!
+
+  # Notifications
+  notification: Notification!
+
+  # Real-time updates
+  onlineUsers: [User!]!
+  typingIndicator(channelId: ID!): TypingIndicator!
+}
+
+type Notification {
+  id: ID!
+  type: NotificationType!
+  message: String!
+  target: NotificationTarget!
+  read: Boolean!
+  createdAt: DateTime!
+}
+
+enum NotificationType {
+  NEW_FOLLOWER
+  NEW_COMMENT
+  POST_LIKED
+  MENTION
+  SYSTEM
+}
+
+type TypingIndicator {
+  user: User!
+  isTyping: Boolean!
+}
+
+type Team {
+  id: ID!
+  name: String!
+  members: [User!]!
+}
+
+type Channel {
+  id: ID!
+  name: String!
+  members: [User!]!
+}
+
+# ==============================================================================
+# Directives
+# ==============================================================================
+
+# Built-in directives: @deprecated, @skip, @include
+
+directive @deprecated(
+  reason: String = "No longer supported"
+) on FIELD_DEFINITION | ENUM_VALUE | ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+directive @skip(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+directive @include(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+# Custom directives
+directive @auth(
+  requires: Role = USER
+) on FIELD_DEFINITION | OBJECT
+
+directive @rateLimit(
+  limit: Int!
+  duration: Int!
+) on FIELD_DEFINITION
+
+directive @cacheControl(
+  maxAge: Int
+  scope: CacheControlScope
+) on FIELD_DEFINITION | OBJECT | INTERFACE
+
+directive @constraint(
+  minLength: Int
+  maxLength: Int
+  pattern: String
+  min: Int
+  max: Int
+  format: String
+) on INPUT_FIELD_DEFINITION | ARGUMENT_DEFINITION
+
+directive @complexity(
+  value: Int!
+  multipliers: [String!]
+) on FIELD_DEFINITION
+
+directive @external on FIELD_DEFINITION
+directive @requires(fields: String!) on FIELD_DEFINITION
+directive @provides(fields: String!) on FIELD_DEFINITION
+directive @key(fields: String!) on OBJECT | INTERFACE
+directive @extends on OBJECT | INTERFACE
+
+# ==============================================================================
+# Example Queries
+# ==============================================================================
+
+# Query with variables
+# query GetUser($id: ID!) {
+#   user(id: $id) {
+#     id
+#     username
+#     email
+#     fullName
+#     role
+#     status
+#     createdAt
+#   }
+# }
+
+# Query with fragments
+# query GetPostsWithAuthor($first: Int, $after: String) {
+#   posts(first: $first, after: $after) {
+#     edges {
+#       node {
+#         ...PostDetails
+#         author {
+#           ...UserBasic
+#         }
+#       }
+#     }
+#     pageInfo {
+#       ...PageInfoFields
+#     }
+#   }
+# }
+
+# fragment PostDetails on Post {
+#   id
+#   title
+#   slug
+#   excerpt
+#   createdAt
+#   likes
+#   views
+# }
+
+# fragment UserBasic on User {
+#   id
+#   username
+#   fullName
+#   avatar
+# }
+
+# fragment PageInfoFields on PageInfo {
+#   hasNextPage
+#   hasPreviousPage
+#   startCursor
+#   endCursor
+# }
+
+# Mutation example
+# mutation CreatePost($input: CreatePostInput!) {
+#   createPost(input: $input) {
+#     id
+#     title
+#     slug
+#     published
+#   }
+# }
+
+# Subscription example
+# subscription OnNewComment($postId: ID!) {
+#   commentAdded(postId: $postId) {
+#     id
+#     content
+#     author {
+#       username
+#     }
+#     createdAt
+#   }
+# }
+
+# Inline fragments for unions
+# query Search($query: String!) {
+#   search(query: $query, first: 10) {
+#     edges {
+#       node {
+#         ... on User {
+#           id
+#           username
+#           fullName
+#         }
+#         ... on Post {
+#           id
+#           title
+#           excerpt
+#         }
+#         ... on Comment {
+#           id
+#           content
+#         }
+#       }
+#     }
+#   }
+# }

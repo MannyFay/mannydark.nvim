@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<?custom-pi parameter="value"?>
+<!--
+  ==============================================================================
+  Comprehensive XML Sample - Syntax Highlighting Demonstration
+  ==============================================================================
+
+  This file demonstrates all major XML language features
+  for syntax highlighting purposes.
+-->
+
+<!DOCTYPE catalog SYSTEM "catalog.dtd" [
+  <!-- Internal DTD subset -->
+  <!ENTITY company "Example Corporation">
+  <!ENTITY copyright "© 2024 &company;">
+  <!ENTITY % common "name, description, version">
+  <!ELEMENT catalog (product*, category*)>
+  <!ELEMENT product (name, description?, price, sku)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT sku (#PCDATA)>
+  <!ATTLIST product
+    id ID #REQUIRED
+    status (active|inactive|discontinued) "active"
+    featured CDATA #IMPLIED
+  >
+  <!NOTATION gif SYSTEM "image/gif">
+  <!ENTITY logo SYSTEM "logo.gif" NDATA gif>
+]>
+
+<!-- Root element with namespace declarations -->
+<catalog
+  xmlns="http://example.com/catalog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:custom="http://example.com/custom"
+  xsi:schemaLocation="http://example.com/catalog catalog.xsd"
+  version="1.0"
+  updated="2024-01-15T12:00:00Z"
+>
+
+  <!-- Metadata section -->
+  <metadata>
+    <dc:title>Product Catalog</dc:title>
+    <dc:creator>Sample Author</dc:creator>
+    <dc:date>2024-01-15</dc:date>
+    <dc:description>A comprehensive product catalog demonstrating XML features</dc:description>
+    <dc:rights>&copyright;</dc:rights>
+  </metadata>
+
+  <!-- Configuration section with various attribute types -->
+  <configuration
+    id="config-001"
+    enabled="true"
+    priority="1"
+    xml:lang="en"
+    xml:space="preserve"
+  >
+    <setting name="debug" value="false" type="boolean"/>
+    <setting name="timeout" value="30000" type="integer"/>
+    <setting name="api-url" value="https://api.example.com" type="uri"/>
+    <setting name="max-connections" value="100" type="integer">
+      <constraint min="1" max="1000"/>
+    </setting>
+  </configuration>
+
+  <!-- Products section -->
+  <products count="5">
+
+    <!-- Product with all features -->
+    <product id="PROD-001" status="active" featured="true">
+      <name>Premium Widget</name>
+      <description>
+        <![CDATA[
+          This is a <premium> product with special characters:
+          & ampersand, < less than, > greater than, " quotes, ' apostrophe.
+          No escaping needed inside CDATA!
+        ]]>
+      </description>
+      <price currency="USD" discount="10%">99.99</price>
+      <sku>WID-001-PRE</sku>
+      <categories>
+        <category ref="CAT-001"/>
+        <category ref="CAT-003"/>
+      </categories>
+      <attributes>
+        <attribute name="color" value="blue"/>
+        <attribute name="size" value="medium"/>
+        <attribute name="weight" value="1.5kg"/>
+      </attributes>
+      <inventory>
+        <stock location="warehouse-a">150</stock>
+        <stock location="warehouse-b">75</stock>
+        <reorder-point>50</reorder-point>
+      </inventory>
+      <images>
+        <image type="primary" src="products/widget-001.jpg" alt="Premium Widget"/>
+        <image type="thumbnail" src="products/widget-001-thumb.jpg" alt="Thumbnail"/>
+      </images>
+      <reviews>
+        <review rating="5" date="2024-01-10">
+          <author>Alice</author>
+          <title>Excellent product!</title>
+          <content>This widget exceeded my expectations.</content>
+        </review>
+        <review rating="4" date="2024-01-08">
+          <author>Bob</author>
+          <title>Good value</title>
+          <content>Works well for the price.</content>
+        </review>
+      </reviews>
+      <custom:metadata>
+        <custom:field name="manufacturer">WidgetCo</custom:field>
+        <custom:field name="warranty">2 years</custom:field>
+      </custom:metadata>
+    </product>
+
+    <product id="PROD-002" status="active">
+      <name>Standard Gadget</name>
+      <description>A reliable everyday gadget.</description>
+      <price currency="USD">49.99</price>
+      <sku>GAD-002-STD</sku>
+      <categories>
+        <category ref="CAT-002"/>
+      </categories>
+    </product>
+
+    <product id="PROD-003" status="inactive">
+      <name>Legacy Device</name>
+      <description>An older model, still available for support.</description>
+      <price currency="USD">29.99</price>
+      <sku>DEV-003-LEG</sku>
+      <categories>
+        <category ref="CAT-002"/>
+      </categories>
+      <discontinued-date>2023-12-31</discontinued-date>
+    </product>
+
+    <!-- Product with special characters escaped -->
+    <product id="PROD-004" status="active">
+      <name>Deluxe &amp; Premium Set</name>
+      <description>Includes items A &lt; B &gt; C with &quot;special&quot; &apos;characters&apos;</description>
+      <price currency="EUR">149.99</price>
+      <sku>SET-004-DLX</sku>
+    </product>
+
+    <!-- Product with numeric character references -->
+    <product id="PROD-005" status="active">
+      <name>International &#x4E2D;&#x6587; Product</name>
+      <description>Product with unicode: &#169; &#174; &#8482; &#x2022;</description>
+      <price currency="JPY">10000</price>
+      <sku>INT-005-UNI</sku>
+    </product>
+
+  </products>
+
+  <!-- Categories section -->
+  <categories>
+    <category id="CAT-001" parent="">
+      <name>Electronics</name>
+      <description>Electronic devices and accessories</description>
+      <icon>electronics.svg</icon>
+    </category>
+    <category id="CAT-002" parent="CAT-001">
+      <name>Gadgets</name>
+      <description>Smart gadgets and wearables</description>
+      <icon>gadgets.svg</icon>
+    </category>
+    <category id="CAT-003" parent="CAT-001">
+      <name>Premium</name>
+      <description>High-end premium products</description>
+      <icon>premium.svg</icon>
+    </category>
+  </categories>
+
+  <!-- Users section with mixed content -->
+  <users>
+    <user id="USR-001" role="admin" active="true">
+      <name>
+        <first>Alice</first>
+        <last>Johnson</last>
+      </name>
+      <email>alice@example.com</email>
+      <phone type="mobile">+1-555-0101</phone>
+      <phone type="work">+1-555-0102</phone>
+      <address type="home">
+        <street>123 Main St</street>
+        <city>Springfield</city>
+        <state>IL</state>
+        <zip>62701</zip>
+        <country code="US">United States</country>
+      </address>
+      <permissions>
+        <permission>read</permission>
+        <permission>write</permission>
+        <permission>delete</permission>
+        <permission>admin</permission>
+      </permissions>
+      <preferences>
+        <preference key="theme">dark</preference>
+        <preference key="language">en-US</preference>
+        <preference key="notifications">true</preference>
+      </preferences>
+      <created>2023-01-15T08:30:00Z</created>
+      <last-login>2024-01-15T10:00:00Z</last-login>
+    </user>
+
+    <user id="USR-002" role="user" active="true">
+      <name>
+        <first>Bob</first>
+        <last>Smith</last>
+      </name>
+      <email>bob@example.com</email>
+      <bio xml:space="preserve">
+        Software developer with 10+ years of experience.
+        Specializing in XML and web technologies.
+      </bio>
+    </user>
+  </users>
+
+  <!-- Orders section with complex nested structure -->
+  <orders>
+    <order id="ORD-001" status="completed" date="2024-01-10">
+      <customer ref="USR-001"/>
+      <items>
+        <item product-ref="PROD-001" quantity="2">
+          <unit-price>99.99</unit-price>
+          <total>199.98</total>
+        </item>
+        <item product-ref="PROD-002" quantity="1">
+          <unit-price>49.99</unit-price>
+          <total>49.99</total>
+        </item>
+      </items>
+      <shipping method="express">
+        <address>
+          <street>123 Main St</street>
+          <city>Springfield</city>
+          <state>IL</state>
+          <zip>62701</zip>
+          <country>US</country>
+        </address>
+        <cost>15.00</cost>
+        <tracking>1Z999AA10123456784</tracking>
+      </shipping>
+      <payment method="credit-card">
+        <amount>264.97</amount>
+        <tax>12.50</tax>
+        <total>277.47</total>
+        <transaction-id>TXN-123456</transaction-id>
+      </payment>
+      <notes>
+        <note author="system" timestamp="2024-01-10T14:30:00Z">
+          Order created
+        </note>
+        <note author="system" timestamp="2024-01-10T15:00:00Z">
+          Payment confirmed
+        </note>
+        <note author="system" timestamp="2024-01-11T09:00:00Z">
+          Order shipped
+        </note>
+      </notes>
+    </order>
+  </orders>
+
+  <!-- XInclude example (commented) -->
+  <!--
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="additional-data.xml"
+    xpointer="xpointer(/data/items/*)">
+    <xi:fallback>
+      <error>XInclude failed</error>
+    </xi:fallback>
+  </xi:include>
+  -->
+
+  <!-- Empty elements -->
+  <empty-element/>
+  <empty-with-attrs id="empty" type="placeholder"/>
+
+  <!-- Self-closing tags with content indication -->
+  <item-count value="0"/>
+  <separator/>
+  <break/>
+
+  <!-- Whitespace handling examples -->
+  <whitespace-examples>
+    <preserve xml:space="preserve">
+      Whitespace    is    preserved    here.
+      Including     line      breaks.
+    </preserve>
+    <default xml:space="default">
+      Whitespace is normalized here.
+    </default>
+    <mixed>Some <emphasis>inline</emphasis> elements with <strong>mixed</strong> content.</mixed>
+  </whitespace-examples>
+
+  <!-- Namespace examples -->
+  <namespaced-section>
+    <custom:element custom:attribute="value">
+      Prefixed content
+    </custom:element>
+    <local xmlns="http://example.com/local">
+      Content in local default namespace
+    </local>
+    <undeclare xmlns="">
+      Content with undeclared namespace
+    </undeclare>
+  </namespaced-section>
+
+  <!-- Comment with special content -->
+  <!--
+    Multi-line comment with various content:
+    - Lists
+    - <tags> (not parsed)
+    - &entities; (not expanded)
+    - Special characters: < > & " '
+  -->
+
+  <!-- Footer with entity reference -->
+  <footer>
+    <copyright>&copyright;</copyright>
+    <generated>2024-01-15T12:00:00Z</generated>
+    <version>1.0.0</version>
+  </footer>
+
+</catalog>

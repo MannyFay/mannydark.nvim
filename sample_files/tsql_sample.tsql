@@ -1,0 +1,1426 @@
+-- ==============================================================================
+-- Comprehensive T-SQL Sample - Syntax Highlighting Demonstration
+-- ==============================================================================
+
+-- This file demonstrates all major Microsoft SQL Server T-SQL language features
+-- for syntax highlighting purposes.
+
+-- ==============================================================================
+-- Comments
+-- ==============================================================================
+
+-- Single line comment
+/* Multi-line
+   comment */
+
+/* Nested /* comments */ are not supported in T-SQL */
+
+-- ==============================================================================
+-- Database and Schema Operations
+-- ==============================================================================
+
+-- Create database
+CREATE DATABASE SampleDB
+ON PRIMARY (
+    NAME = 'SampleDB_Data',
+    FILENAME = 'C:\SQLData\SampleDB.mdf',
+    SIZE = 100MB,
+    MAXSIZE = 1GB,
+    FILEGROWTH = 10MB
+)
+LOG ON (
+    NAME = 'SampleDB_Log',
+    FILENAME = 'C:\SQLData\SampleDB.ldf',
+    SIZE = 50MB,
+    MAXSIZE = 500MB,
+    FILEGROWTH = 5MB
+);
+GO
+
+-- Use database
+USE SampleDB;
+GO
+
+-- Create schema
+CREATE SCHEMA Sales AUTHORIZATION dbo;
+GO
+
+CREATE SCHEMA HR AUTHORIZATION dbo;
+GO
+
+-- ==============================================================================
+-- Table Creation with All Data Types
+-- ==============================================================================
+
+CREATE TABLE dbo.Users (
+    -- Identity and primary key
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    UserGUID UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL,
+
+    -- String types
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    Email VARCHAR(255) NOT NULL,
+    PasswordHash CHAR(64) NOT NULL,
+    Bio NVARCHAR(MAX),
+    ShortCode CHAR(6),
+    Notes TEXT,  -- Deprecated, use VARCHAR(MAX)
+    UnicodeNotes NTEXT,  -- Deprecated, use NVARCHAR(MAX)
+
+    -- Numeric types
+    Age TINYINT CHECK (Age >= 0 AND Age <= 150),
+    Score SMALLINT DEFAULT 0,
+    Points INT DEFAULT 0,
+    BigNumber BIGINT,
+    Balance DECIMAL(15, 2) DEFAULT 0.00,
+    Rate NUMERIC(10, 4),
+    SmallMoney SMALLMONEY,
+    LargeMoney MONEY,
+    FloatValue FLOAT(53),
+    RealValue REAL,
+
+    -- Boolean (BIT)
+    IsActive BIT DEFAULT 1,
+    IsVerified BIT DEFAULT 0,
+
+    -- Date/Time types
+    BirthDate DATE,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME2(7),
+    LastLogin DATETIMEOFFSET,
+    LoginTime TIME(7),
+    SmallDateTime SMALLDATETIME,
+
+    -- Binary types
+    Avatar VARBINARY(MAX),
+    Thumbnail BINARY(100),
+    ProfileImage IMAGE,  -- Deprecated
+
+    -- XML type
+    Preferences XML,
+
+    -- Spatial types
+    Location GEOGRAPHY,
+    Area GEOMETRY,
+
+    -- Hierarchical data
+    OrgNode HIERARCHYID,
+
+    -- JSON (stored as NVARCHAR)
+    Metadata NVARCHAR(MAX),
+
+    -- Rowversion for concurrency
+    RowVersion ROWVERSION,
+
+    -- Computed column
+    FullName AS (Username + ' (' + Email + ')'),
+
+    -- Constraints
+    CONSTRAINT CK_Users_Email CHECK (Email LIKE '%@%.%'),
+    CONSTRAINT UQ_Users_Email UNIQUE (Email)
+);
+GO
+
+-- Table with foreign keys and relationships
+CREATE TABLE dbo.Orders (
+    OrderID INT IDENTITY(1,1) PRIMARY KEY CLUSTERED,
+    UserID INT NOT NULL,
+    ProductID INT NOT NULL,
+    Quantity INT NOT NULL DEFAULT 1 CHECK (Quantity > 0),
+    UnitPrice DECIMAL(10, 2) NOT NULL,
+    TotalAmount AS (Quantity * UnitPrice) PERSISTED,
+    Status VARCHAR(20) DEFAULT 'pending',
+    OrderDate DATETIME2 DEFAULT SYSDATETIME(),
+    ShippedDate DATETIME2 NULL,
+    Notes NVARCHAR(500),
+
+    CONSTRAINT FK_Orders_Users FOREIGN KEY (UserID)
+        REFERENCES dbo.Users(UserID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+
+    CONSTRAINT FK_Orders_Products FOREIGN KEY (ProductID)
+        REFERENCES dbo.Products(ProductID)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
+
+    CONSTRAINT CK_Orders_Status CHECK (Status IN ('pending', 'processing', 'shipped', 'delivered', 'cancelled'))
+);
+GO
+
+-- Temporal table (system-versioned)
+CREATE TABLE dbo.Employees (
+    EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Department NVARCHAR(50),
+    Salary DECIMAL(12, 2),
+    ValidFrom DATETIME2 GENERATED ALWAYS AS ROW START NOT NULL,
+    ValidTo DATETIME2 GENERATED ALWAYS AS ROW END NOT NULL,
+    PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo)
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.EmployeesHistory));
+GO
+
+-- Memory-optimized table
+CREATE TABLE dbo.SessionCache (
+    SessionID NVARCHAR(128) NOT NULL PRIMARY KEY NONCLUSTERED HASH WITH (BUCKET_COUNT = 1000000),
+    UserID INT NOT NULL,
+    Data NVARCHAR(MAX),
+    ExpiresAt DATETIME2 NOT NULL,
+
+    INDEX IX_SessionCache_UserID NONCLUSTERED (UserID)
+)
+WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA);
+GO
+
+-- Partitioned table
+CREATE PARTITION FUNCTION PF_OrderDate (DATETIME2)
+AS RANGE RIGHT FOR VALUES ('2023-01-01', '2024-01-01', '2025-01-01');
+GO
+
+CREATE PARTITION SCHEME PS_OrderDate
+AS PARTITION PF_OrderDate ALL TO ([PRIMARY]);
+GO
+
+CREATE TABLE dbo.OrdersPartitioned (
+    OrderID INT IDENTITY(1,1),
+    OrderDate DATETIME2 NOT NULL,
+    Amount DECIMAL(10, 2),
+    CONSTRAINT PK_OrdersPartitioned PRIMARY KEY (OrderID, OrderDate)
+) ON PS_OrderDate(OrderDate);
+GO
+
+-- ==============================================================================
+-- Indexes
+-- ==============================================================================
+
+-- Clustered index
+CREATE CLUSTERED INDEX IX_Products_CategoryID ON dbo.Products(CategoryID);
+
+-- Non-clustered index
+CREATE NONCLUSTERED INDEX IX_Users_Email ON dbo.Users(Email);
+
+-- Unique index
+CREATE UNIQUE INDEX IX_Users_Username ON dbo.Users(Username);
+
+-- Composite index
+CREATE INDEX IX_Orders_User_Date ON dbo.Orders(UserID, OrderDate DESC);
+
+-- Covering index with included columns
+CREATE INDEX IX_Orders_Covering ON dbo.Orders(UserID)
+INCLUDE (OrderDate, Status, TotalAmount);
+
+-- Filtered index
+CREATE INDEX IX_Users_Active ON dbo.Users(Username) WHERE IsActive = 1;
+
+-- Columnstore index
+CREATE NONCLUSTERED COLUMNSTORE INDEX IX_Orders_Columnstore
+ON dbo.Orders(UserID, ProductID, Quantity, TotalAmount, OrderDate);
+
+-- Full-text index
+CREATE FULLTEXT CATALOG FTC_Sample AS DEFAULT;
+
+CREATE FULLTEXT INDEX ON dbo.Users(Bio, Notes)
+KEY INDEX PK_Users ON FTC_Sample
+WITH CHANGE_TRACKING AUTO;
+
+-- Spatial index
+CREATE SPATIAL INDEX IX_Users_Location ON dbo.Users(Location)
+USING GEOGRAPHY_GRID;
+
+-- XML index
+CREATE PRIMARY XML INDEX IX_Users_Preferences ON dbo.Users(Preferences);
+
+-- Drop index
+DROP INDEX IF EXISTS IX_Users_Email ON dbo.Users;
+GO
+
+-- ==============================================================================
+-- Views
+-- ==============================================================================
+
+-- Simple view
+CREATE VIEW dbo.vw_ActiveUsers
+AS
+SELECT UserID, Username, Email, CreatedAt
+FROM dbo.Users
+WHERE IsActive = 1;
+GO
+
+-- View with schema binding
+CREATE VIEW dbo.vw_UserStats
+WITH SCHEMABINDING
+AS
+SELECT
+    UserID,
+    COUNT_BIG(*) AS OrderCount,
+    SUM(TotalAmount) AS TotalSpent
+FROM dbo.Orders
+GROUP BY UserID;
+GO
+
+-- Indexed view
+CREATE UNIQUE CLUSTERED INDEX IX_vw_UserStats ON dbo.vw_UserStats(UserID);
+GO
+
+-- View with check option
+CREATE VIEW dbo.vw_PendingOrders
+AS
+SELECT * FROM dbo.Orders WHERE Status = 'pending'
+WITH CHECK OPTION;
+GO
+
+-- ==============================================================================
+-- Data Manipulation (DML)
+-- ==============================================================================
+
+-- INSERT statements
+INSERT INTO dbo.Users (Username, Email, PasswordHash)
+VALUES ('alice', 'alice@example.com', HASHBYTES('SHA2_256', 'password'));
+
+INSERT INTO dbo.Users (Username, Email, PasswordHash, IsActive)
+VALUES
+    ('bob', 'bob@example.com', 'hash1', 1),
+    ('charlie', 'charlie@example.com', 'hash2', 1),
+    ('diana', 'diana@example.com', 'hash3', 0);
+
+-- INSERT with OUTPUT
+INSERT INTO dbo.Users (Username, Email, PasswordHash)
+OUTPUT inserted.UserID, inserted.Username, inserted.CreatedAt
+VALUES ('eve', 'eve@example.com', 'hash4');
+
+-- INSERT from SELECT
+INSERT INTO dbo.UsersBackup (UserID, Username, Email, ArchivedAt)
+SELECT UserID, Username, Email, GETDATE()
+FROM dbo.Users
+WHERE IsActive = 0;
+
+-- INSERT with DEFAULT VALUES
+INSERT INTO dbo.AuditLog DEFAULT VALUES;
+
+-- UPDATE statements
+UPDATE dbo.Users
+SET IsVerified = 1
+WHERE Email LIKE '%@verified.com';
+
+UPDATE dbo.Users
+SET
+    Balance = Balance + 100.00,
+    UpdatedAt = SYSDATETIME()
+WHERE UserID = 1;
+
+-- UPDATE with OUTPUT
+UPDATE dbo.Users
+SET Balance = Balance * 1.1
+OUTPUT
+    deleted.UserID,
+    deleted.Balance AS OldBalance,
+    inserted.Balance AS NewBalance
+WHERE IsActive = 1;
+
+-- UPDATE with JOIN
+UPDATE o
+SET o.Status = 'cancelled'
+FROM dbo.Orders o
+INNER JOIN dbo.Users u ON o.UserID = u.UserID
+WHERE u.IsActive = 0 AND o.Status = 'pending';
+
+-- UPDATE with CTE
+WITH TopCustomers AS (
+    SELECT TOP 10 UserID FROM dbo.Orders GROUP BY UserID ORDER BY SUM(TotalAmount) DESC
+)
+UPDATE u
+SET u.IsVerified = 1
+FROM dbo.Users u
+INNER JOIN TopCustomers tc ON u.UserID = tc.UserID;
+
+-- DELETE statements
+DELETE FROM dbo.Users WHERE UserID = 1;
+
+DELETE TOP (100) FROM dbo.TempData;
+
+-- DELETE with OUTPUT
+DELETE FROM dbo.Orders
+OUTPUT deleted.*
+WHERE OrderDate < DATEADD(YEAR, -5, GETDATE());
+
+-- DELETE with JOIN
+DELETE o
+FROM dbo.Orders o
+INNER JOIN dbo.Users u ON o.UserID = u.UserID
+WHERE u.Username = 'deleted_user';
+
+-- TRUNCATE
+TRUNCATE TABLE dbo.TempData;
+
+-- MERGE statement
+MERGE dbo.TargetTable AS target
+USING dbo.SourceTable AS source
+ON target.ID = source.ID
+WHEN MATCHED AND source.IsDeleted = 1 THEN
+    DELETE
+WHEN MATCHED THEN
+    UPDATE SET
+        target.Value = source.Value,
+        target.UpdatedAt = GETDATE()
+WHEN NOT MATCHED BY TARGET THEN
+    INSERT (ID, Value, CreatedAt)
+    VALUES (source.ID, source.Value, GETDATE())
+WHEN NOT MATCHED BY SOURCE THEN
+    DELETE
+OUTPUT $action, inserted.*, deleted.*;
+GO
+
+-- ==============================================================================
+-- SELECT Statements
+-- ==============================================================================
+
+-- Basic SELECT
+SELECT * FROM dbo.Users;
+SELECT UserID, Username, Email FROM dbo.Users;
+
+-- TOP and OFFSET-FETCH
+SELECT TOP 10 * FROM dbo.Users ORDER BY CreatedAt DESC;
+SELECT TOP 10 PERCENT * FROM dbo.Users;
+SELECT TOP 10 WITH TIES * FROM dbo.Users ORDER BY Balance DESC;
+
+SELECT * FROM dbo.Users
+ORDER BY CreatedAt DESC
+OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY;
+
+-- DISTINCT
+SELECT DISTINCT Status FROM dbo.Orders;
+
+-- Aliases
+SELECT
+    u.UserID AS [User ID],
+    u.Username AS [User Name],
+    o.TotalAmount AS Amount
+FROM dbo.Users AS u
+JOIN dbo.Orders AS o ON u.UserID = o.UserID;
+
+-- WHERE clause
+SELECT * FROM dbo.Users WHERE Age BETWEEN 18 AND 65;
+SELECT * FROM dbo.Users WHERE Username IN ('alice', 'bob', 'charlie');
+SELECT * FROM dbo.Users WHERE Email LIKE '%@gmail.com';
+SELECT * FROM dbo.Users WHERE Bio IS NOT NULL;
+SELECT * FROM dbo.Users WHERE Age >= 21 AND IsActive = 1;
+SELECT * FROM dbo.Users WHERE Username LIKE 'admin[_]%' ESCAPE '\';
+
+-- Pattern matching
+SELECT * FROM dbo.Users WHERE Username LIKE '[A-Z]%';  -- Starts with letter
+SELECT * FROM dbo.Users WHERE Username LIKE '[^0-9]%';  -- Not starting with digit
+SELECT * FROM dbo.Users WHERE Username LIKE '%[!@#$%]%';  -- Contains special char
+
+-- ==============================================================================
+-- JOINs
+-- ==============================================================================
+
+-- INNER JOIN
+SELECT u.Username, o.OrderID, o.TotalAmount
+FROM dbo.Users u
+INNER JOIN dbo.Orders o ON u.UserID = o.UserID;
+
+-- LEFT/RIGHT JOIN
+SELECT u.Username, o.OrderID
+FROM dbo.Users u
+LEFT OUTER JOIN dbo.Orders o ON u.UserID = o.UserID;
+
+SELECT u.Username, o.OrderID
+FROM dbo.Users u
+RIGHT JOIN dbo.Orders o ON u.UserID = o.UserID;
+
+-- FULL OUTER JOIN
+SELECT u.Username, o.OrderID
+FROM dbo.Users u
+FULL OUTER JOIN dbo.Orders o ON u.UserID = o.UserID;
+
+-- CROSS JOIN
+SELECT u.Username, p.ProductName
+FROM dbo.Users u
+CROSS JOIN dbo.Products p;
+
+-- CROSS APPLY and OUTER APPLY
+SELECT u.Username, recent.*
+FROM dbo.Users u
+CROSS APPLY (
+    SELECT TOP 3 OrderID, TotalAmount, OrderDate
+    FROM dbo.Orders o
+    WHERE o.UserID = u.UserID
+    ORDER BY OrderDate DESC
+) recent;
+
+SELECT u.Username, recent.*
+FROM dbo.Users u
+OUTER APPLY (
+    SELECT TOP 3 OrderID, TotalAmount, OrderDate
+    FROM dbo.Orders o
+    WHERE o.UserID = u.UserID
+    ORDER BY OrderDate DESC
+) recent;
+
+-- ==============================================================================
+-- Aggregation and Grouping
+-- ==============================================================================
+
+-- Aggregate functions
+SELECT
+    COUNT(*) AS TotalUsers,
+    COUNT(DISTINCT Status) AS UniqueStatuses,
+    SUM(Balance) AS TotalBalance,
+    AVG(Balance) AS AvgBalance,
+    MIN(Balance) AS MinBalance,
+    MAX(Balance) AS MaxBalance,
+    STDEV(Balance) AS StdDev,
+    VAR(Balance) AS Variance,
+    STRING_AGG(Username, ', ') AS AllUsernames
+FROM dbo.Users;
+
+-- GROUP BY
+SELECT
+    Status,
+    COUNT(*) AS Count,
+    SUM(TotalAmount) AS Revenue
+FROM dbo.Orders
+GROUP BY Status;
+
+-- GROUP BY with ROLLUP
+SELECT
+    COALESCE(Category, 'Total') AS Category,
+    COALESCE(SubCategory, 'Subtotal') AS SubCategory,
+    SUM(Amount) AS Total
+FROM dbo.Sales
+GROUP BY ROLLUP (Category, SubCategory);
+
+-- GROUP BY with CUBE
+SELECT
+    Category,
+    Region,
+    SUM(Amount) AS Total
+FROM dbo.Sales
+GROUP BY CUBE (Category, Region);
+
+-- GROUP BY with GROUPING SETS
+SELECT
+    Category,
+    Region,
+    SUM(Amount) AS Total,
+    GROUPING(Category) AS IsGroupedCategory,
+    GROUPING(Region) AS IsGroupedRegion
+FROM dbo.Sales
+GROUP BY GROUPING SETS (
+    (Category, Region),
+    (Category),
+    (Region),
+    ()
+);
+
+-- HAVING
+SELECT
+    UserID,
+    COUNT(*) AS OrderCount,
+    SUM(TotalAmount) AS TotalSpent
+FROM dbo.Orders
+GROUP BY UserID
+HAVING COUNT(*) > 5 AND SUM(TotalAmount) > 1000;
+
+-- ==============================================================================
+-- Window Functions
+-- ==============================================================================
+
+-- Row numbering
+SELECT
+    Username,
+    Balance,
+    ROW_NUMBER() OVER (ORDER BY Balance DESC) AS RowNum,
+    RANK() OVER (ORDER BY Balance DESC) AS Rank,
+    DENSE_RANK() OVER (ORDER BY Balance DESC) AS DenseRank,
+    NTILE(4) OVER (ORDER BY Balance DESC) AS Quartile,
+    PERCENT_RANK() OVER (ORDER BY Balance DESC) AS PercentRank,
+    CUME_DIST() OVER (ORDER BY Balance DESC) AS CumeDist
+FROM dbo.Users;
+
+-- Partition by
+SELECT
+    Category,
+    ProductName,
+    Price,
+    ROW_NUMBER() OVER (PARTITION BY Category ORDER BY Price DESC) AS CategoryRank,
+    AVG(Price) OVER (PARTITION BY Category) AS CategoryAvg,
+    Price - AVG(Price) OVER (PARTITION BY Category) AS DiffFromAvg
+FROM dbo.Products;
+
+-- Frame specification
+SELECT
+    OrderDate,
+    TotalAmount,
+    SUM(TotalAmount) OVER (ORDER BY OrderDate ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS RunningTotal,
+    AVG(TotalAmount) OVER (ORDER BY OrderDate ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS MovingAvg7Day,
+    SUM(TotalAmount) OVER (ORDER BY OrderDate ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING) AS SurroundingSum
+FROM dbo.Orders;
+
+-- LAG and LEAD
+SELECT
+    OrderDate,
+    TotalAmount,
+    LAG(TotalAmount, 1, 0) OVER (ORDER BY OrderDate) AS PrevAmount,
+    LEAD(TotalAmount, 1, 0) OVER (ORDER BY OrderDate) AS NextAmount,
+    FIRST_VALUE(TotalAmount) OVER (PARTITION BY UserID ORDER BY OrderDate) AS FirstOrder,
+    LAST_VALUE(TotalAmount) OVER (PARTITION BY UserID ORDER BY OrderDate
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS LastOrder
+FROM dbo.Orders;
+
+-- ==============================================================================
+-- Common Table Expressions (CTE)
+-- ==============================================================================
+
+-- Simple CTE
+WITH ActiveUsers AS (
+    SELECT * FROM dbo.Users WHERE IsActive = 1
+),
+UserOrders AS (
+    SELECT
+        au.UserID,
+        au.Username,
+        COUNT(o.OrderID) AS OrderCount
+    FROM ActiveUsers au
+    LEFT JOIN dbo.Orders o ON au.UserID = o.UserID
+    GROUP BY au.UserID, au.Username
+)
+SELECT * FROM UserOrders WHERE OrderCount > 0;
+
+-- Recursive CTE
+WITH OrgChart AS (
+    -- Anchor member
+    SELECT
+        EmployeeID,
+        Name,
+        ManagerID,
+        0 AS Level,
+        CAST(Name AS NVARCHAR(MAX)) AS Path
+    FROM dbo.Employees
+    WHERE ManagerID IS NULL
+
+    UNION ALL
+
+    -- Recursive member
+    SELECT
+        e.EmployeeID,
+        e.Name,
+        e.ManagerID,
+        oc.Level + 1,
+        oc.Path + ' > ' + e.Name
+    FROM dbo.Employees e
+    INNER JOIN OrgChart oc ON e.ManagerID = oc.EmployeeID
+)
+SELECT * FROM OrgChart
+OPTION (MAXRECURSION 100);
+
+-- ==============================================================================
+-- Subqueries
+-- ==============================================================================
+
+-- Scalar subquery
+SELECT
+    Username,
+    Balance,
+    (SELECT AVG(Balance) FROM dbo.Users) AS AvgBalance,
+    Balance - (SELECT AVG(Balance) FROM dbo.Users) AS DiffFromAvg
+FROM dbo.Users;
+
+-- Correlated subquery
+SELECT
+    u.Username,
+    (SELECT MAX(o.TotalAmount) FROM dbo.Orders o WHERE o.UserID = u.UserID) AS MaxOrder
+FROM dbo.Users u;
+
+-- EXISTS
+SELECT * FROM dbo.Users u
+WHERE EXISTS (
+    SELECT 1 FROM dbo.Orders o WHERE o.UserID = u.UserID
+);
+
+-- IN subquery
+SELECT * FROM dbo.Products
+WHERE CategoryID IN (SELECT CategoryID FROM dbo.Categories WHERE IsActive = 1);
+
+-- ==============================================================================
+-- Set Operations
+-- ==============================================================================
+
+-- UNION
+SELECT Username, Email FROM dbo.Users
+UNION
+SELECT Name, ContactEmail FROM dbo.Customers;
+
+-- UNION ALL
+SELECT ProductID FROM dbo.Orders2023
+UNION ALL
+SELECT ProductID FROM dbo.Orders2024;
+
+-- INTERSECT
+SELECT UserID FROM dbo.PremiumUsers
+INTERSECT
+SELECT UserID FROM dbo.ActiveUsers;
+
+-- EXCEPT
+SELECT UserID FROM dbo.AllUsers
+EXCEPT
+SELECT UserID FROM dbo.BannedUsers;
+
+-- ==============================================================================
+-- CASE Expression
+-- ==============================================================================
+
+SELECT
+    Username,
+    Balance,
+    -- Simple CASE
+    CASE Status
+        WHEN 'active' THEN 'Active'
+        WHEN 'inactive' THEN 'Inactive'
+        ELSE 'Unknown'
+    END AS StatusLabel,
+
+    -- Searched CASE
+    CASE
+        WHEN Balance > 10000 THEN 'Premium'
+        WHEN Balance > 1000 THEN 'Standard'
+        WHEN Balance > 0 THEN 'Basic'
+        ELSE 'Inactive'
+    END AS Tier,
+
+    -- IIF function
+    IIF(IsActive = 1, 'Yes', 'No') AS IsActiveText,
+
+    -- CHOOSE function
+    CHOOSE(MONTH(CreatedAt), 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+           'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec') AS CreatedMonth
+FROM dbo.Users;
+
+-- ==============================================================================
+-- NULL Handling
+-- ==============================================================================
+
+SELECT
+    ISNULL(Bio, 'No bio') AS Bio,
+    COALESCE(Bio, Notes, 'No info') AS Info,
+    NULLIF(Balance, 0) AS NonZeroBalance,
+    IIF(Bio IS NULL, 'Missing', 'Present') AS BioStatus
+FROM dbo.Users;
+
+-- ==============================================================================
+-- String Functions
+-- ==============================================================================
+
+SELECT
+    -- Concatenation
+    CONCAT('Hello', ' ', 'World') AS Concatenated,
+    CONCAT_WS(', ', 'a', 'b', 'c') AS ConcatWithSep,
+    'Hello' + ' ' + 'World' AS PlusConcat,
+
+    -- Length and position
+    LEN('Hello') AS Len,
+    DATALENGTH('Hello') AS DataLength,
+    CHARINDEX('World', 'Hello World') AS Position,
+    PATINDEX('%[0-9]%', 'abc123') AS PatternIndex,
+
+    -- Case conversion
+    UPPER('hello') AS Upper,
+    LOWER('HELLO') AS Lower,
+
+    -- Trimming and padding
+    TRIM('  hello  ') AS Trimmed,
+    LTRIM('  hello') AS LeftTrimmed,
+    RTRIM('hello  ') AS RightTrimmed,
+    LEFT('Hello', 3) AS LeftChars,
+    RIGHT('Hello', 3) AS RightChars,
+
+    -- Substring
+    SUBSTRING('Hello World', 1, 5) AS Substring,
+    STUFF('Hello World', 7, 5, 'SQL') AS Stuffed,
+
+    -- Replace and replicate
+    REPLACE('Hello World', 'World', 'SQL') AS Replaced,
+    REPLICATE('ab', 3) AS Replicated,
+    REVERSE('Hello') AS Reversed,
+
+    -- Formatting
+    FORMAT(12345.6789, 'N2') AS Formatted,
+    FORMAT(GETDATE(), 'yyyy-MM-dd') AS FormattedDate,
+
+    -- String splitting
+    STRING_SPLIT('a,b,c', ',') AS Split,
+
+    -- Unicode
+    UNICODE('A') AS UnicodeValue,
+    NCHAR(65) AS FromUnicode,
+    ASCII('A') AS AsciiValue,
+    CHAR(65) AS FromAscii;
+
+-- ==============================================================================
+-- Date/Time Functions
+-- ==============================================================================
+
+SELECT
+    -- Current date/time
+    GETDATE() AS GetDate,
+    GETUTCDATE() AS GetUtcDate,
+    SYSDATETIME() AS SysDateTime,
+    SYSUTCDATETIME() AS SysUtcDateTime,
+    SYSDATETIMEOFFSET() AS SysDateTimeOffset,
+    CURRENT_TIMESTAMP AS CurrentTimestamp,
+
+    -- Date parts
+    YEAR(GETDATE()) AS Year,
+    MONTH(GETDATE()) AS Month,
+    DAY(GETDATE()) AS Day,
+    DATEPART(QUARTER, GETDATE()) AS Quarter,
+    DATEPART(WEEK, GETDATE()) AS Week,
+    DATEPART(DAYOFYEAR, GETDATE()) AS DayOfYear,
+    DATENAME(WEEKDAY, GETDATE()) AS WeekdayName,
+    DATENAME(MONTH, GETDATE()) AS MonthName,
+
+    -- Date arithmetic
+    DATEADD(DAY, 7, GETDATE()) AS PlusWeek,
+    DATEADD(MONTH, -1, GETDATE()) AS MinusMonth,
+    DATEDIFF(DAY, '2024-01-01', GETDATE()) AS DaysDiff,
+    DATEDIFF_BIG(SECOND, '2000-01-01', GETDATE()) AS SecondsDiff,
+
+    -- Date construction
+    DATEFROMPARTS(2024, 1, 15) AS DateFromParts,
+    DATETIME2FROMPARTS(2024, 1, 15, 12, 30, 0, 0, 7) AS DateTime2FromParts,
+    DATETIMEFROMPARTS(2024, 1, 15, 12, 30, 0, 0) AS DateTimeFromParts,
+
+    -- Date formatting
+    FORMAT(GETDATE(), 'yyyy-MM-dd HH:mm:ss') AS Formatted,
+    CONVERT(VARCHAR, GETDATE(), 120) AS Converted,
+    CAST(GETDATE() AS DATE) AS CastToDate,
+
+    -- End of month
+    EOMONTH(GETDATE()) AS EndOfMonth,
+    EOMONTH(GETDATE(), 2) AS EndOfMonth2MonthsAhead,
+
+    -- Date validation
+    ISDATE('2024-01-15') AS IsValidDate,
+    TRY_CAST('invalid' AS DATE) AS TryCastDate,
+    TRY_CONVERT(DATE, 'invalid') AS TryConvertDate;
+
+-- ==============================================================================
+-- JSON Operations
+-- ==============================================================================
+
+DECLARE @json NVARCHAR(MAX) = N'{
+    "name": "Alice",
+    "age": 30,
+    "email": "alice@example.com",
+    "tags": ["admin", "user"],
+    "address": {
+        "city": "Seattle",
+        "state": "WA"
+    }
+}';
+
+SELECT
+    -- Query JSON
+    JSON_VALUE(@json, '$.name') AS Name,
+    JSON_VALUE(@json, '$.age') AS Age,
+    JSON_VALUE(@json, '$.address.city') AS City,
+    JSON_QUERY(@json, '$.tags') AS Tags,
+    JSON_QUERY(@json, '$.address') AS Address,
+
+    -- Check JSON validity
+    ISJSON(@json) AS IsValidJson,
+
+    -- Modify JSON
+    JSON_MODIFY(@json, '$.age', 31) AS UpdatedAge,
+    JSON_MODIFY(@json, '$.phone', '555-0100') AS AddedPhone,
+    JSON_MODIFY(@json, '$.email', NULL) AS RemovedEmail;
+
+-- Parse JSON array
+SELECT *
+FROM OPENJSON(@json, '$.tags') AS tags;
+
+-- Parse JSON with schema
+SELECT *
+FROM OPENJSON(@json)
+WITH (
+    Name NVARCHAR(100) '$.name',
+    Age INT '$.age',
+    City NVARCHAR(100) '$.address.city',
+    Tags NVARCHAR(MAX) '$.tags' AS JSON
+);
+
+-- Build JSON
+SELECT
+    UserID,
+    Username,
+    Email
+FROM dbo.Users
+FOR JSON PATH, ROOT('users');
+
+SELECT
+    UserID,
+    Username,
+    Email
+FROM dbo.Users
+FOR JSON AUTO;
+
+-- ==============================================================================
+-- XML Operations
+-- ==============================================================================
+
+DECLARE @xml XML = N'<users>
+    <user id="1" active="true">
+        <name>Alice</name>
+        <email>alice@example.com</email>
+    </user>
+    <user id="2" active="false">
+        <name>Bob</name>
+        <email>bob@example.com</email>
+    </user>
+</users>';
+
+SELECT
+    -- Query XML
+    @xml.value('(/users/user/name)[1]', 'NVARCHAR(100)') AS FirstName,
+    @xml.value('(/users/user/@id)[1]', 'INT') AS FirstId,
+    @xml.query('/users/user[1]') AS FirstUser,
+    @xml.exist('/users/user[@active="true"]') AS HasActiveUser;
+
+-- Shred XML
+SELECT
+    User.value('@id', 'INT') AS UserID,
+    User.value('@active', 'BIT') AS IsActive,
+    User.value('(name)[1]', 'NVARCHAR(100)') AS Name,
+    User.value('(email)[1]', 'NVARCHAR(255)') AS Email
+FROM @xml.nodes('/users/user') AS T(User);
+
+-- Modify XML
+SET @xml.modify('replace value of (/users/user/name/text())[1] with "Alice Smith"');
+SET @xml.modify('insert <phone>555-0100</phone> into (/users/user)[1]');
+SET @xml.modify('delete /users/user[@active="false"]');
+
+-- Build XML
+SELECT
+    UserID AS [@id],
+    Username AS [name],
+    Email AS [email]
+FROM dbo.Users
+FOR XML PATH('user'), ROOT('users');
+
+-- ==============================================================================
+-- Stored Procedures
+-- ==============================================================================
+
+CREATE OR ALTER PROCEDURE dbo.sp_GetUserOrders
+    @UserID INT,
+    @Status VARCHAR(20) = NULL,
+    @TotalAmount DECIMAL(12, 2) OUTPUT,
+    @OrderCount INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Input validation
+        IF @UserID IS NULL
+        BEGIN
+            RAISERROR('UserID cannot be NULL', 16, 1);
+            RETURN -1;
+        END
+
+        -- Get orders
+        SELECT
+            o.OrderID,
+            o.OrderDate,
+            o.TotalAmount,
+            o.Status
+        FROM dbo.Orders o
+        WHERE o.UserID = @UserID
+          AND (@Status IS NULL OR o.Status = @Status)
+        ORDER BY o.OrderDate DESC;
+
+        -- Calculate totals
+        SELECT
+            @TotalAmount = SUM(TotalAmount),
+            @OrderCount = COUNT(*)
+        FROM dbo.Orders
+        WHERE UserID = @UserID
+          AND (@Status IS NULL OR Status = @Status);
+
+        RETURN 0;
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+        DECLARE @ErrorState INT = ERROR_STATE();
+
+        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+        RETURN -1;
+    END CATCH
+END;
+GO
+
+-- Execute stored procedure
+DECLARE @Total DECIMAL(12, 2), @Count INT;
+EXEC dbo.sp_GetUserOrders
+    @UserID = 1,
+    @Status = 'delivered',
+    @TotalAmount = @Total OUTPUT,
+    @OrderCount = @Count OUTPUT;
+
+SELECT @Total AS TotalAmount, @Count AS OrderCount;
+GO
+
+-- Procedure with table-valued parameter
+CREATE TYPE dbo.OrderItemType AS TABLE (
+    ProductID INT,
+    Quantity INT,
+    UnitPrice DECIMAL(10, 2)
+);
+GO
+
+CREATE OR ALTER PROCEDURE dbo.sp_CreateOrder
+    @UserID INT,
+    @Items dbo.OrderItemType READONLY
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+
+    BEGIN TRANSACTION;
+
+    DECLARE @OrderID INT;
+
+    INSERT INTO dbo.Orders (UserID, Status, OrderDate)
+    VALUES (@UserID, 'pending', SYSDATETIME());
+
+    SET @OrderID = SCOPE_IDENTITY();
+
+    INSERT INTO dbo.OrderItems (OrderID, ProductID, Quantity, UnitPrice)
+    SELECT @OrderID, ProductID, Quantity, UnitPrice
+    FROM @Items;
+
+    UPDATE dbo.Orders
+    SET TotalAmount = (SELECT SUM(Quantity * UnitPrice) FROM dbo.OrderItems WHERE OrderID = @OrderID)
+    WHERE OrderID = @OrderID;
+
+    COMMIT TRANSACTION;
+
+    SELECT @OrderID AS OrderID;
+END;
+GO
+
+-- ==============================================================================
+-- Functions
+-- ==============================================================================
+
+-- Scalar function
+CREATE OR ALTER FUNCTION dbo.fn_CalculateTax
+(
+    @Amount DECIMAL(12, 2),
+    @Rate DECIMAL(5, 4) = 0.0875
+)
+RETURNS DECIMAL(12, 2)
+WITH SCHEMABINDING
+AS
+BEGIN
+    RETURN @Amount * @Rate;
+END;
+GO
+
+-- Inline table-valued function
+CREATE OR ALTER FUNCTION dbo.fn_GetUserOrders
+(
+    @UserID INT
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT
+        o.OrderID,
+        o.OrderDate,
+        o.TotalAmount,
+        o.Status
+    FROM dbo.Orders o
+    WHERE o.UserID = @UserID
+);
+GO
+
+-- Multi-statement table-valued function
+CREATE OR ALTER FUNCTION dbo.fn_GetOrderSummary
+(
+    @StartDate DATE,
+    @EndDate DATE
+)
+RETURNS @Results TABLE
+(
+    OrderDate DATE,
+    OrderCount INT,
+    TotalRevenue DECIMAL(15, 2),
+    AvgOrderValue DECIMAL(12, 2)
+)
+AS
+BEGIN
+    INSERT INTO @Results
+    SELECT
+        CAST(OrderDate AS DATE),
+        COUNT(*),
+        SUM(TotalAmount),
+        AVG(TotalAmount)
+    FROM dbo.Orders
+    WHERE OrderDate BETWEEN @StartDate AND @EndDate
+    GROUP BY CAST(OrderDate AS DATE);
+
+    RETURN;
+END;
+GO
+
+-- Using functions
+SELECT dbo.fn_CalculateTax(100.00, 0.10) AS Tax;
+
+SELECT * FROM dbo.fn_GetUserOrders(1);
+
+SELECT * FROM dbo.fn_GetOrderSummary('2024-01-01', '2024-12-31');
+
+-- ==============================================================================
+-- Triggers
+-- ==============================================================================
+
+-- DML Trigger
+CREATE OR ALTER TRIGGER dbo.tr_Users_Audit
+ON dbo.Users
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM inserted) AND EXISTS (SELECT 1 FROM deleted)
+    BEGIN
+        -- UPDATE
+        INSERT INTO dbo.AuditLog (TableName, Operation, OldValues, NewValues, ModifiedAt)
+        SELECT
+            'Users',
+            'UPDATE',
+            (SELECT d.* FOR JSON PATH, WITHOUT_ARRAY_WRAPPER),
+            (SELECT i.* FOR JSON PATH, WITHOUT_ARRAY_WRAPPER),
+            SYSDATETIME()
+        FROM deleted d
+        INNER JOIN inserted i ON d.UserID = i.UserID;
+    END
+    ELSE IF EXISTS (SELECT 1 FROM inserted)
+    BEGIN
+        -- INSERT
+        INSERT INTO dbo.AuditLog (TableName, Operation, NewValues, ModifiedAt)
+        SELECT
+            'Users',
+            'INSERT',
+            (SELECT * FOR JSON PATH, WITHOUT_ARRAY_WRAPPER),
+            SYSDATETIME()
+        FROM inserted;
+    END
+    ELSE IF EXISTS (SELECT 1 FROM deleted)
+    BEGIN
+        -- DELETE
+        INSERT INTO dbo.AuditLog (TableName, Operation, OldValues, ModifiedAt)
+        SELECT
+            'Users',
+            'DELETE',
+            (SELECT * FOR JSON PATH, WITHOUT_ARRAY_WRAPPER),
+            SYSDATETIME()
+        FROM deleted;
+    END
+END;
+GO
+
+-- DDL Trigger
+CREATE TRIGGER trg_DDL_Audit
+ON DATABASE
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO dbo.DDLAuditLog (
+        EventType,
+        ObjectName,
+        ObjectType,
+        SQLCommand,
+        LoginName,
+        EventDate
+    )
+    SELECT
+        EVENTDATA().value('(/EVENT_INSTANCE/EventType)[1]', 'NVARCHAR(100)'),
+        EVENTDATA().value('(/EVENT_INSTANCE/ObjectName)[1]', 'NVARCHAR(256)'),
+        EVENTDATA().value('(/EVENT_INSTANCE/ObjectType)[1]', 'NVARCHAR(100)'),
+        EVENTDATA().value('(/EVENT_INSTANCE/TSQLCommand)[1]', 'NVARCHAR(MAX)'),
+        EVENTDATA().value('(/EVENT_INSTANCE/LoginName)[1]', 'NVARCHAR(256)'),
+        GETDATE();
+END;
+GO
+
+-- INSTEAD OF Trigger
+CREATE TRIGGER dbo.tr_vw_Users_Insert
+ON dbo.vw_ActiveUsers
+INSTEAD OF INSERT
+AS
+BEGIN
+    INSERT INTO dbo.Users (Username, Email, PasswordHash, IsActive)
+    SELECT Username, Email, 'default_hash', 1
+    FROM inserted;
+END;
+GO
+
+-- ==============================================================================
+-- Transactions and Error Handling
+-- ==============================================================================
+
+BEGIN TRY
+    BEGIN TRANSACTION;
+
+    -- Operations
+    UPDATE dbo.Users SET Balance = Balance - 100 WHERE UserID = 1;
+    UPDATE dbo.Users SET Balance = Balance + 100 WHERE UserID = 2;
+
+    -- Savepoint
+    SAVE TRANSACTION BeforeOrder;
+
+    INSERT INTO dbo.Orders (UserID, ProductID, Quantity, UnitPrice)
+    VALUES (1, 1, 1, 99.99);
+
+    -- Check condition and rollback to savepoint if needed
+    IF @@ROWCOUNT = 0
+    BEGIN
+        ROLLBACK TRANSACTION BeforeOrder;
+        RAISERROR('Order insertion failed', 16, 1);
+    END
+
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    IF @@TRANCOUNT > 0
+        ROLLBACK TRANSACTION;
+
+    -- Error information
+    DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+    DECLARE @ErrorNumber INT = ERROR_NUMBER();
+    DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+    DECLARE @ErrorState INT = ERROR_STATE();
+    DECLARE @ErrorLine INT = ERROR_LINE();
+    DECLARE @ErrorProcedure NVARCHAR(200) = ERROR_PROCEDURE();
+
+    -- Log error
+    INSERT INTO dbo.ErrorLog (
+        ErrorNumber, ErrorSeverity, ErrorState, ErrorProcedure,
+        ErrorLine, ErrorMessage, ErrorDate
+    )
+    VALUES (
+        @ErrorNumber, @ErrorSeverity, @ErrorState, @ErrorProcedure,
+        @ErrorLine, @ErrorMessage, GETDATE()
+    );
+
+    -- Re-throw error
+    THROW;
+END CATCH;
+GO
+
+-- ==============================================================================
+-- Security
+-- ==============================================================================
+
+-- Create login and user
+CREATE LOGIN AppLogin WITH PASSWORD = 'StrongP@ssw0rd!';
+CREATE USER AppUser FOR LOGIN AppLogin;
+
+-- Create role
+CREATE ROLE db_app_users;
+
+-- Grant permissions
+GRANT SELECT, INSERT, UPDATE ON dbo.Users TO db_app_users;
+GRANT EXECUTE ON dbo.sp_GetUserOrders TO db_app_users;
+GRANT SELECT ON SCHEMA::Sales TO db_app_users;
+
+-- Deny permissions
+DENY DELETE ON dbo.Users TO db_app_users;
+
+-- Add user to role
+ALTER ROLE db_app_users ADD MEMBER AppUser;
+
+-- Row-level security
+CREATE FUNCTION dbo.fn_SecurityPredicate (@UserID INT)
+RETURNS TABLE
+WITH SCHEMABINDING
+AS
+RETURN SELECT 1 AS result
+WHERE @UserID = CAST(SESSION_CONTEXT(N'UserID') AS INT)
+   OR IS_MEMBER('db_owner') = 1;
+GO
+
+CREATE SECURITY POLICY dbo.UserDataPolicy
+ADD FILTER PREDICATE dbo.fn_SecurityPredicate(UserID) ON dbo.Orders,
+ADD BLOCK PREDICATE dbo.fn_SecurityPredicate(UserID) ON dbo.Orders
+WITH (STATE = ON);
+GO
+
+-- Dynamic data masking
+ALTER TABLE dbo.Users
+ALTER COLUMN Email ADD MASKED WITH (FUNCTION = 'email()');
+
+ALTER TABLE dbo.Users
+ALTER COLUMN PasswordHash ADD MASKED WITH (FUNCTION = 'default()');
+
+-- ==============================================================================
+-- Performance and Optimization
+-- ==============================================================================
+
+-- Query hints
+SELECT * FROM dbo.Users WITH (NOLOCK);
+SELECT * FROM dbo.Users WITH (READPAST);
+SELECT * FROM dbo.Users WITH (FORCESEEK);
+SELECT * FROM dbo.Users WITH (FORCESCAN);
+SELECT * FROM dbo.Orders WITH (INDEX(IX_Orders_UserID));
+
+-- Option hints
+SELECT * FROM dbo.Users
+OPTION (MAXDOP 4);
+
+SELECT * FROM dbo.Users
+OPTION (RECOMPILE);
+
+SELECT * FROM dbo.Users u
+JOIN dbo.Orders o ON u.UserID = o.UserID
+OPTION (HASH JOIN);
+
+SELECT * FROM dbo.Users u
+JOIN dbo.Orders o ON u.UserID = o.UserID
+OPTION (MERGE JOIN);
+
+SELECT * FROM dbo.Users u
+JOIN dbo.Orders o ON u.UserID = o.UserID
+OPTION (LOOP JOIN);
+
+-- Execution plan
+SET SHOWPLAN_TEXT ON;
+SET SHOWPLAN_XML ON;
+SET STATISTICS IO ON;
+SET STATISTICS TIME ON;
+SET STATISTICS PROFILE ON;
+
+-- Query store
+ALTER DATABASE SampleDB SET QUERY_STORE = ON;
+
+SELECT * FROM sys.query_store_query;
+SELECT * FROM sys.query_store_plan;
+SELECT * FROM sys.query_store_runtime_stats;
+
+-- ==============================================================================
+-- Cursor
+-- ==============================================================================
+
+DECLARE @UserID INT, @Username NVARCHAR(50);
+
+DECLARE user_cursor CURSOR LOCAL FAST_FORWARD
+FOR SELECT UserID, Username FROM dbo.Users WHERE IsActive = 1;
+
+OPEN user_cursor;
+
+FETCH NEXT FROM user_cursor INTO @UserID, @Username;
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    PRINT 'Processing user: ' + @Username;
+    -- Process each user
+    FETCH NEXT FROM user_cursor INTO @UserID, @Username;
+END;
+
+CLOSE user_cursor;
+DEALLOCATE user_cursor;
+GO
+
+-- ==============================================================================
+-- Dynamic SQL
+-- ==============================================================================
+
+DECLARE @SQL NVARCHAR(MAX);
+DECLARE @TableName NVARCHAR(128) = 'Users';
+DECLARE @Count INT;
+
+-- Simple dynamic SQL
+SET @SQL = N'SELECT COUNT(*) FROM dbo.' + QUOTENAME(@TableName);
+EXEC sp_executesql @SQL;
+
+-- Parameterized dynamic SQL
+SET @SQL = N'SELECT @CountOut = COUNT(*) FROM dbo.Users WHERE IsActive = @Active';
+EXEC sp_executesql @SQL,
+    N'@Active BIT, @CountOut INT OUTPUT',
+    @Active = 1,
+    @CountOut = @Count OUTPUT;
+
+SELECT @Count AS ActiveUserCount;
+GO
+
+-- ==============================================================================
+-- WAITFOR and Flow Control
+-- ==============================================================================
+
+-- Wait for time
+WAITFOR DELAY '00:00:05';  -- Wait 5 seconds
+
+-- Wait until specific time
+WAITFOR TIME '23:00:00';  -- Wait until 11 PM
+
+-- Control flow
+DECLARE @Counter INT = 0;
+
+WHILE @Counter < 10
+BEGIN
+    SET @Counter = @Counter + 1;
+
+    IF @Counter = 5
+        CONTINUE;
+
+    IF @Counter = 8
+        BREAK;
+
+    PRINT @Counter;
+END;
+
+-- GOTO
+GOTO SkipSection;
+
+PRINT 'This will be skipped';
+
+SkipSection:
+PRINT 'Continuing here';
+GO
+
+-- ==============================================================================
+-- System Functions and Variables
+-- ==============================================================================
+
+SELECT
+    @@VERSION AS Version,
+    @@SERVERNAME AS ServerName,
+    @@SERVICENAME AS ServiceName,
+    @@SPID AS SessionID,
+    @@IDENTITY AS LastIdentity,
+    SCOPE_IDENTITY() AS ScopeIdentity,
+    @@ROWCOUNT AS RowCount,
+    @@TRANCOUNT AS TransactionCount,
+    @@ERROR AS LastError,
+    SYSTEM_USER AS SystemUser,
+    USER_NAME() AS UserName,
+    DB_NAME() AS DatabaseName,
+    OBJECT_NAME(OBJECT_ID('dbo.Users')) AS TableName,
+    NEWID() AS NewGuid,
+    NEWSEQUENTIALID() AS SequentialGuid;
+
+-- Session context
+EXEC sp_set_session_context @key = N'UserID', @value = 1;
+SELECT SESSION_CONTEXT(N'UserID') AS CurrentUserID;
+GO
+
+-- ==============================================================================
+-- End of T-SQL Sample
+-- ==============================================================================

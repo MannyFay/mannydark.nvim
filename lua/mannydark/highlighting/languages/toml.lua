@@ -1,26 +1,18 @@
 -------------------------------------------------------------------------------
--- Toml Highlighting
+-- TOML Files
+-- Highlighting for .toml files.
 -------------------------------------------------------------------------------
 
-
--------------------------------------------------------------------------------
--- Variables
-
-local colors    = require("mannydark.palette")
+-- local colors    = require("mannydark.palette")
 local highlight = vim.api.nvim_set_hl
 local toml      = {}
 
 
 -------------------------------------------------------------------------------
--- Highlighting
+-- Settings
 
 toml.setupHighlighting = function()
-  highlight(0, "@string.special.toml", { fg = colors.redLight, bg = "NONE" })  -- Strings without quotes.
-
-
-  ----------------------- Not used by now:
-
+  highlight(0, "@string.special.toml", { link = "String" })
 end
 
 return toml
-

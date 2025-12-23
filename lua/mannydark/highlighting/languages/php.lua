@@ -1,97 +1,18 @@
 -------------------------------------------------------------------------------
--- PHP Programming Language
+-- PHP
 -------------------------------------------------------------------------------
 
-local colors = require("mannydark.palette")
+-- local colors    = require("mannydark.palette")
 local highlight = vim.api.nvim_set_hl
-local php = {}
+local php       = {}
 
---------------------------------------------------------------
+
+-------------------------------------------------------------------------------
 -- Settings
 
 php.setupHighlighting = function()
-	highlight(0, "phpTodo", { fg = colors.red, bg = "NONE", bold = true }) -- TODO comments.
-	highlight(0, "phpComment", { fg = colors.red, bg = "NONE" })
-	highlight(0, "phpRegion", { fg = colors.turquoise, bg = "NONE", underline = false })
-	highlight(0, "phpInclude", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpClass", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpClasses", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpFunction", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpType", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpKeyword", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpVarSelector", { fg = colors.purple, bg = "NONE" })
-	highlight(0, "phpIdentifier", { fg = colors.purple, bg = "NONE" })
-	highlight(0, "phpMethod", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpMethodsVar", { fg = colors.purple, bg = "NONE" })
-	highlight(0, "phpMemberSelector", { fg = colors.white, bg = "NONE" })
-	highlight(0, "phpStorageClass", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpDefine", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpSpecialFunction", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpParent", { fg = colors.white, bg = "NONE" })
-	highlight(0, "phpSuperglobals", { fg = colors.purple, bg = "NONE" })
-	highlight(0, "phpMagicConstants", { fg = colors.purple, bg = "NONE" })
-	highlight(0, "phpServerVars", { fg = colors.red, bg = colors.green })
-	highlight(0, "phpConstants", { fg = colors.purple, bg = "NONE" })
-	highlight(0, "phpFunctions", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpDocComment", { fg = colors.green, bg = "NONE" })
-	highlight(0, "phpStringDouble", { fg = colors.redLight, bg = "NONE" })
-	highlight(0, "phpStringSingle", { fg = colors.redLight, bg = "NONE" })
-	highlight(0, "phpStatement", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpNullValue", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpOperator", { fg = colors.white, bg = "NONE" })
-	highlight(0, "phpMethods", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpSplatOperator", { fg = colors.white, bg = "NONE" }) -- Three dots before variables and functions.
-	highlight(0, "phpIdentifierSimply", { fg = colors.orange, bg = colors.red })
-	highlight(0, "phpSpecialChar", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpBacktick", { fg = colors.green, bg = "NONE" }) -- Shell command inside of backticks.
-	highlight(0, "phpStrEsc", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpIdentifierComplex", { fg = colors.red, bg = colors.blue })
-	highlight(0, "phpBoolean", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpNumber", { fg = colors.greenLight, bg = "NONE" })
-	highlight(0, "phpOctalError", { fg = colors.purple, bg = colors.red })
-	highlight(0, "phpHereDoc", { fg = colors.redLight, bg = "NONE" })
-	highlight(0, "phpCommentStar", { fg = colors.green, bg = "NONE" })
-	highlight(0, "phpCommentTitle", { fg = colors.green, bg = "NONE" })
-	highlight(0, "phpDocTags", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpDocParam", { fg = colors.green, bg = "NONE" })
-	highlight(0, "phpDocIdentifier", { fg = colors.purple, bg = "NONE" })
-	highlight(0, "phpDocNamespaceSeparator", { fg = colors.white, bg = "NONE" })
-	highlight(0, "phpStringDelimiter", { fg = colors.redLight, bg = "NONE" })
-	highlight(0, "phpNowDoc", { fg = colors.green, bg = colors.blue })
-	highlight(0, "phpStaticClasses", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpClassNamespaceSeparator", { fg = colors.purple, bg = colors.orange })
-	highlight(0, "phpClassExtends", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpClassImplements", { fg = colors.turquoise, bg = "NONE" }) -- Class names after implements keyword.
-	highlight(0, "phpClassDelimiter", { fg = colors.purple, bg = colors.white })
-	highlight(0, "phpUseNamespaceSeparator", { fg = colors.white, bg = "NONE" })
-	highlight(0, "phpUseFunction", { fg = colors.turquoise, bg = colors.red })
-	highlight(0, "phpUseClass", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpUseKeyword", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpUseAlias", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpYieldFromKeyword", { fg = colors.blue, bg = "NONE" })
-	highlight(0, "phpStructure", { fg = colors.blue, bg = "NONE" }) -- Structure keywords like if, else, while, class, namespace, etc.
-	highlight(0, "phpException", { fg = colors.turquoise, bg = colors.blue })
-	highlight(0, "phpParentError", { fg = colors.redLight, bg = colors.greenLight })
-	highlight(0, "phpFoldIfContainer", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpFoldWhile", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpFoldDoWhile", { fg = colors.redLight, bg = "NONE" })
-	highlight(0, "phpFoldFor", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpFoldForeach", { fg = colors.red, bg = "NONE" })
-	highlight(0, "phpFoldTryContainer", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpFoldSwitch", { fg = colors.green, bg = "NONE" })
-	highlight(0, "phpFoldFunction", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpFoldClass", { fg = colors.redLight, bg = "NONE" })
-	highlight(0, "phpFoldInterface", { fg = colors.red, bg = "NONE" })
-	highlight(0, "phpFoldHtmlInside", { fg = colors.turquoise, bg = "NONE" })
-	highlight(0, "phpSCKeyword", { fg = colors.green, bg = "NONE" })
-	highlight(0, "phpFCKeyword", { fg = colors.red, bg = "NONE" })
-	highlight(0, "phpFoldCatch", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpFoldFinally", { fg = colors.red, bg = "NONE" })
-	highlight(0, "phpFoldElseIf", { fg = colors.green, bg = "NONE" })
-	highlight(0, "phpFoldElse", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpFoldCase", { fg = colors.red, bg = "NONE" })
-	highlight(0, "phpFoldDefault", { fg = colors.orange, bg = "NONE" })
-	highlight(0, "phpBackslashSequences", { fg = colors.green, bg = "NONE" })
+  highlight(0, "@comment.documentation.php", { link = "MannydarkFgGreen" })  -- Doc blocks (/** ... */)
+  highlight(0, "@type.builtin.php",          { link = "Keyword"          })  -- int, string, etc.
 end
 
 return php
