@@ -15,7 +15,7 @@
 /* Multi-line
    block comment */
 
-/*
+/**
  * Javadoc-style
  * multi-line comment
  */

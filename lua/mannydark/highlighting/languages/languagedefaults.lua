@@ -181,7 +181,7 @@ end
   -- Strings
   highlight(0, "@string",                      { link = "String" })  -- String literals
   highlight(0, "@string.documentation",        { link = "String" })  -- Docstrings
-  highlight(0, "@string.regexp",               { link = "Function"})  -- Regular expressions
+  highlight(0, "@string.regexp",               { link = "String"})  -- Regular expressions (patterns in strings)
   highlight(0, "@string.escape",               { link = "Special"})  -- Escape sequences
   highlight(0, "@string.special",              { link = "Special"})  -- Special strings
   highlight(0, "@string.special.symbol",       { fg = colors.purple,     bg = "NONE" })  -- Symbols/atoms
