@@ -383,24 +383,36 @@ M.reload = function()
     end
   end
 
+  -- Collect buffers that need treesitter refresh BEFORE clearing modules
+  local buffers_to_refresh = {}
+  for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(bufnr) and vim.bo[bufnr].buftype == "" then
+      local ft = vim.bo[bufnr].filetype
+      if ft and ft ~= "" then
+        -- Stop treesitter and invalidate parser
+        pcall(function()
+          vim.treesitter.stop(bufnr)
+          local parser = vim.treesitter.get_parser(bufnr)
+          if parser then
+            parser:invalidate(true)
+          end
+        end)
+        table.insert(buffers_to_refresh, bufnr)
+      end
+    end
+  end
+
   -- Re-require mannydark (fresh module)
   local ok, mannydark = pcall(require, "mannydark")
   if ok then
     -- setup() will automatically use vim.g.mannydark_user_config
     mannydark.setup()
 
-    -- Force re-highlighting of all buffers to apply new treesitter queries
-    for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
-      if vim.api.nvim_buf_is_loaded(bufnr) and vim.bo[bufnr].buftype == "" then
-        local ft = vim.bo[bufnr].filetype
-        if ft and ft ~= "" then
-          -- Trigger treesitter re-attach by toggling the highlighter
-          pcall(function()
-            vim.treesitter.stop(bufnr)
-            vim.treesitter.start(bufnr)
-          end)
-        end
-      end
+    -- Restart treesitter on all collected buffers
+    for _, bufnr in ipairs(buffers_to_refresh) do
+      pcall(function()
+        vim.treesitter.start(bufnr)
+      end)
     end
 
     return true

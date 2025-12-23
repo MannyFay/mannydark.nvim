@@ -1,5 +1,10 @@
 ; extends
 
+; Doc blocks (/** ... */) - green
+((comment) @comment.documentation
+  (#lua-match? @comment.documentation "^/%*%*")
+  (#set! priority 200))
+
 ; Override ID selectors to use turquoise (Type) instead of purple (Constant)
 ((id_name) @type (#set! priority 200))
 
