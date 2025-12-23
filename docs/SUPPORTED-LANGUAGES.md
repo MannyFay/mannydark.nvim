@@ -20,6 +20,9 @@ If there is the need for one that is not listed here, please open an issue or a 
 - XML
 - YAML
 
+## Frameworks
+- React
+
 ### TODO/Refine
 - Ada
 - Assembly
