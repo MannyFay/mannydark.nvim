@@ -12,7 +12,7 @@ local cpp     = {}
 -- Settings
 
 cpp.setupHighlighting = function()
-
+  highlight(0, "@comment.documentation.cpp", { link = "MannydarkFgGreen" })  -- Doc blocks (/** ... */ or ///)
 end
 
 return cpp
