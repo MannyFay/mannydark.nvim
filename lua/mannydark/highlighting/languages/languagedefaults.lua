@@ -288,7 +288,7 @@ end
   -- Tags (HTML, XML, JSX)
   highlight(0, "@tag",                         { link = "Tag" })  -- Tag names
   highlight(0, "@tag.builtin",                 { link = "Tag" })  -- Built-in tags
-  highlight(0, "@tag.attribute",               { link = "Type" })  -- Tag attributes
+  highlight(0, "@tag.attribute",               { link = "Variable" })  -- Tag attributes
   highlight(0, "@tag.delimiter",               { link = "Ignore" })  -- < > </ />
 
   -- Spell (no color override - let underlying syntax colors show through)

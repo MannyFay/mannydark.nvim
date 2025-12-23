@@ -1,6 +1,7 @@
 ; extends
 
-; JSX tag delimiters - gray (higher priority)
+; JSX tag delimiters - gray
+; JavaScript/JSX uses jsx_element nodes (NOT simple literals!)
 (jsx_element
   open_tag: (jsx_opening_element
     ["<" ">"] @tag.delimiter)
