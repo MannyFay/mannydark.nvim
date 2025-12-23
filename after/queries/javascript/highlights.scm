@@ -16,8 +16,11 @@
   ["<" "/>"] @tag.delimiter
   (#set! priority 200))
 
-; null as keyword (blue) instead of constant
+; null, undefined as keyword (blue)
 ((null) @keyword
+  (#set! priority 200))
+
+((undefined) @keyword
   (#set! priority 200))
 
 ; Built-in types (Object, Array, String, etc.) - turquoise

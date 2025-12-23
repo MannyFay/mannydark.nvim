@@ -15,13 +15,23 @@
   ["<" "/>"] @tag.delimiter
   (#set! priority 200))
 
-; null as keyword (blue) instead of constant
-((null) @keyword
+; bigint type as keyword (blue)
+((_) @keyword
+  (#eq? @keyword "bigint")
   (#set! priority 200))
 
-; Built-in types (Object, Array, String, etc.) - turquoise
-((identifier) @type.builtin
-  (#any-of? @type.builtin "Object" "Array" "String" "Number" "Boolean" "Function" "Symbol" "BigInt" "Map" "Set" "WeakMap" "WeakSet" "Promise" "Date" "RegExp" "Error" "JSON" "Math" "Intl" "Proxy" "Reflect")
+; null, undefined as keyword (blue)
+((_) @keyword
+  (#eq? @keyword "null")
+  (#set! priority 200))
+
+((_) @keyword
+  (#eq? @keyword "undefined")
+  (#set! priority 200))
+
+; Error as type (turquoise) - override the blue @type.builtin
+((identifier) @type
+  (#eq? @type "Error")
   (#set! priority 200))
 
 ; JSX component names (capitalized) - turquoise

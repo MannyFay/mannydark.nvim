@@ -13,6 +13,7 @@ local typescript = {}
 
 typescript.setupHighlighting = function()
   highlight(0, "@comment.documentation.typescript", { link = "MannydarkFgGreen" })  -- Doc Blocks.
+  highlight(0, "@type.builtin.typescript", { link = "Keyword" })
 end
 
 return typescript
