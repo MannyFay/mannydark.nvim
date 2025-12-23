@@ -57,6 +57,19 @@ environment.setupHighlighting = function()
     highlight(0, "DiffDelete", { fg = colors.red, bg = colors.redDark })                        -- Deleted lines.
     highlight(0, "DiffText",   { fg = colors.white, bg = colors.orange, bold = true })          -- Changed text within a line.
 
+    -- Git Conflict Markers (<<<<<<<, =======, >>>>>>>)
+    highlight(0, "ConflictMarkerBegin",     { fg = colors.red, bg = "NONE", underline = true }) -- <<<<<<< HEAD
+    highlight(0, "ConflictMarkerOurs",      { fg = colors.red, bg = "NONE", underline = true }) -- Our changes
+    highlight(0, "ConflictMarkerSeparator", { fg = colors.red, bg = "NONE", underline = true }) -- =======
+    highlight(0, "ConflictMarkerTheirs",    { fg = colors.red, bg = "NONE", underline = true }) -- Their changes
+    highlight(0, "ConflictMarkerEnd",       { fg = colors.red, bg = "NONE", underline = true }) -- >>>>>>> branch
+    highlight(0, "ConflictMarkerCommonAncestorsHunk", { fg = colors.red, bg = "NONE", underline = true })
+
+    -- Treesitter diff captures
+    highlight(0, "@diff.plus",  { fg = colors.green, bg = "NONE" })
+    highlight(0, "@diff.minus", { fg = colors.red, bg = "NONE" })
+    highlight(0, "@diff.delta", { fg = colors.orange, bg = "NONE" })
+
     -- Window bar (Neovim 0.8+)
     highlight(0, "WinBar",     { fg = colors.white, bg = "NONE", bold = true })                 -- Window bar (active).
     highlight(0, "WinBarNC",   { fg = colors.gray, bg = "NONE" })                               -- Window bar (inactive).
