@@ -1,5 +1,9 @@
 ; extends
 
+; HTML tag names (h1, p, div, etc.) - keyword blue
+((tag_name) @tag.mannydark
+  (#set! priority 200))
+
 ; Override strikethrough - disable spell checking which may add underline
 ((element
   (start_tag

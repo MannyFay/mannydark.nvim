@@ -68,29 +68,29 @@ laravelBlade.setupHighlighting = function()
   -----------------------------------------------------------------------------
   -- Authentication Directives
 
-  highlight(0, "bladeAuth",            { fg = colors.purple,     bg = "NONE"            })  -- @auth
-  highlight(0, "bladeEndauth",         { fg = colors.purple,     bg = "NONE"            })  -- @endauth
-  highlight(0, "bladeGuest",           { fg = colors.purple,     bg = "NONE"            })  -- @guest
-  highlight(0, "bladeEndguest",        { fg = colors.purple,     bg = "NONE"            })  -- @endguest
+  highlight(0, "bladeAuth",            { fg = colors.blue,       bg = "NONE"            })  -- @auth
+  highlight(0, "bladeEndauth",         { fg = colors.blue,       bg = "NONE"            })  -- @endauth
+  highlight(0, "bladeGuest",           { fg = colors.blue,       bg = "NONE"            })  -- @guest
+  highlight(0, "bladeEndguest",        { fg = colors.blue,       bg = "NONE"            })  -- @endguest
 
   -- Authorization
-  highlight(0, "bladeCan",             { fg = colors.purple,     bg = "NONE"            })  -- @can
-  highlight(0, "bladeEndcan",          { fg = colors.purple,     bg = "NONE"            })  -- @endcan
-  highlight(0, "bladeCannot",          { fg = colors.purple,     bg = "NONE"            })  -- @cannot
-  highlight(0, "bladeEndcannot",       { fg = colors.purple,     bg = "NONE"            })  -- @endcannot
-  highlight(0, "bladeCanany",          { fg = colors.purple,     bg = "NONE"            })  -- @canany
-  highlight(0, "bladeEndcanany",       { fg = colors.purple,     bg = "NONE"            })  -- @endcanany
-  highlight(0, "bladeElsecan",         { fg = colors.purple,     bg = "NONE"            })  -- @elsecan
-  highlight(0, "bladeElsecannot",      { fg = colors.purple,     bg = "NONE"            })  -- @elsecannot
+  highlight(0, "bladeCan",             { fg = colors.blue,       bg = "NONE"            })  -- @can
+  highlight(0, "bladeEndcan",          { fg = colors.blue,       bg = "NONE"            })  -- @endcan
+  highlight(0, "bladeCannot",          { fg = colors.blue,       bg = "NONE"            })  -- @cannot
+  highlight(0, "bladeEndcannot",       { fg = colors.blue,       bg = "NONE"            })  -- @endcannot
+  highlight(0, "bladeCanany",          { fg = colors.blue,       bg = "NONE"            })  -- @canany
+  highlight(0, "bladeEndcanany",       { fg = colors.blue,       bg = "NONE"            })  -- @endcanany
+  highlight(0, "bladeElsecan",         { fg = colors.blue,       bg = "NONE"            })  -- @elsecan
+  highlight(0, "bladeElsecannot",      { fg = colors.blue,       bg = "NONE"            })  -- @elsecannot
 
 
   -----------------------------------------------------------------------------
   -- Environment Directives
 
-  highlight(0, "bladeProduction",      { fg = colors.orange,     bg = "NONE"            })  -- @production
-  highlight(0, "bladeEndproduction",   { fg = colors.orange,     bg = "NONE"            })  -- @endproduction
-  highlight(0, "bladeEnv",             { fg = colors.orange,     bg = "NONE"            })  -- @env
-  highlight(0, "bladeEndenv",          { fg = colors.orange,     bg = "NONE"            })  -- @endenv
+  highlight(0, "bladeProduction",      { fg = colors.blue,       bg = "NONE"            })  -- @production
+  highlight(0, "bladeEndproduction",   { fg = colors.blue,       bg = "NONE"            })  -- @endproduction
+  highlight(0, "bladeEnv",             { fg = colors.blue,       bg = "NONE"            })  -- @env
+  highlight(0, "bladeEndenv",          { fg = colors.blue,       bg = "NONE"            })  -- @endenv
 
 
   -----------------------------------------------------------------------------
@@ -113,8 +113,8 @@ laravelBlade.setupHighlighting = function()
   highlight(0, "bladeEndwhile",        { fg = colors.blue,       bg = "NONE"            })  -- @endwhile
 
   -- Loop Control
-  highlight(0, "bladeContinue",        { fg = colors.pink,       bg = "NONE"            })  -- @continue
-  highlight(0, "bladeBreak",           { fg = colors.pink,       bg = "NONE"            })  -- @break
+  highlight(0, "bladeContinue",        { fg = colors.blue,       bg = "NONE"            })  -- @continue
+  highlight(0, "bladeBreak",           { fg = colors.blue,       bg = "NONE"            })  -- @break
 
   -- Loop Variable
   highlight(0, "bladeLoopVar",         { fg = colors.purple,     bg = "NONE"            })  -- $loop
@@ -124,93 +124,93 @@ laravelBlade.setupHighlighting = function()
   -- Template Inheritance Directives
 
   -- Extends/Layouts
-  highlight(0, "bladeExtends",         { fg = colors.turquoise,  bg = "NONE", bold = true })  -- @extends
+  highlight(0, "bladeExtends",         { fg = colors.blue,       bg = "NONE"            })  -- @extends
 
   -- Sections
-  highlight(0, "bladeSection",         { fg = colors.turquoise,  bg = "NONE"            })  -- @section
-  highlight(0, "bladeEndsection",      { fg = colors.turquoise,  bg = "NONE"            })  -- @endsection
-  highlight(0, "bladeShow",            { fg = colors.turquoise,  bg = "NONE"            })  -- @show
-  highlight(0, "bladeStop",            { fg = colors.turquoise,  bg = "NONE"            })  -- @stop
-  highlight(0, "bladeAppend",          { fg = colors.turquoise,  bg = "NONE"            })  -- @append
-  highlight(0, "bladeOverwrite",       { fg = colors.turquoise,  bg = "NONE"            })  -- @overwrite
+  highlight(0, "bladeSection",         { fg = colors.blue,       bg = "NONE"            })  -- @section
+  highlight(0, "bladeEndsection",      { fg = colors.blue,       bg = "NONE"            })  -- @endsection
+  highlight(0, "bladeShow",            { fg = colors.blue,       bg = "NONE"            })  -- @show
+  highlight(0, "bladeStop",            { fg = colors.blue,       bg = "NONE"            })  -- @stop
+  highlight(0, "bladeAppend",          { fg = colors.blue,       bg = "NONE"            })  -- @append
+  highlight(0, "bladeOverwrite",       { fg = colors.blue,       bg = "NONE"            })  -- @overwrite
 
   -- Yield
-  highlight(0, "bladeYield",           { fg = colors.turquoise,  bg = "NONE"            })  -- @yield
-  highlight(0, "bladeParent",          { fg = colors.turquoise,  bg = "NONE"            })  -- @parent
+  highlight(0, "bladeYield",           { fg = colors.blue,       bg = "NONE"            })  -- @yield
+  highlight(0, "bladeParent",          { fg = colors.blue,       bg = "NONE"            })  -- @parent
 
   -- HasSection
-  highlight(0, "bladeHasSection",      { fg = colors.turquoise,  bg = "NONE"            })  -- @hasSection
-  highlight(0, "bladeSectionMissing",  { fg = colors.turquoise,  bg = "NONE"            })  -- @sectionMissing
+  highlight(0, "bladeHasSection",      { fg = colors.blue,       bg = "NONE"            })  -- @hasSection
+  highlight(0, "bladeSectionMissing",  { fg = colors.blue,       bg = "NONE"            })  -- @sectionMissing
 
 
   -----------------------------------------------------------------------------
   -- Stack Directives
 
-  highlight(0, "bladeStack",           { fg = colors.turquoise,  bg = "NONE"            })  -- @stack
-  highlight(0, "bladePush",            { fg = colors.turquoise,  bg = "NONE"            })  -- @push
-  highlight(0, "bladeEndpush",         { fg = colors.turquoise,  bg = "NONE"            })  -- @endpush
-  highlight(0, "bladePushIf",          { fg = colors.turquoise,  bg = "NONE"            })  -- @pushIf
-  highlight(0, "bladeEndPushIf",       { fg = colors.turquoise,  bg = "NONE"            })  -- @endPushIf
-  highlight(0, "bladePrepend",         { fg = colors.turquoise,  bg = "NONE"            })  -- @prepend
-  highlight(0, "bladeEndprepend",      { fg = colors.turquoise,  bg = "NONE"            })  -- @endprepend
-  highlight(0, "bladePushOnce",        { fg = colors.turquoise,  bg = "NONE"            })  -- @pushOnce
-  highlight(0, "bladeEndPushOnce",     { fg = colors.turquoise,  bg = "NONE"            })  -- @endPushOnce
-  highlight(0, "bladePrependOnce",     { fg = colors.turquoise,  bg = "NONE"            })  -- @prependOnce
-  highlight(0, "bladeEndPrependOnce",  { fg = colors.turquoise,  bg = "NONE"            })  -- @endPrependOnce
-  highlight(0, "bladeHasstack",        { fg = colors.turquoise,  bg = "NONE"            })  -- @hasstack
+  highlight(0, "bladeStack",           { fg = colors.blue,       bg = "NONE"            })  -- @stack
+  highlight(0, "bladePush",            { fg = colors.blue,       bg = "NONE"            })  -- @push
+  highlight(0, "bladeEndpush",         { fg = colors.blue,       bg = "NONE"            })  -- @endpush
+  highlight(0, "bladePushIf",          { fg = colors.blue,       bg = "NONE"            })  -- @pushIf
+  highlight(0, "bladeEndPushIf",       { fg = colors.blue,       bg = "NONE"            })  -- @endPushIf
+  highlight(0, "bladePrepend",         { fg = colors.blue,       bg = "NONE"            })  -- @prepend
+  highlight(0, "bladeEndprepend",      { fg = colors.blue,       bg = "NONE"            })  -- @endprepend
+  highlight(0, "bladePushOnce",        { fg = colors.blue,       bg = "NONE"            })  -- @pushOnce
+  highlight(0, "bladeEndPushOnce",     { fg = colors.blue,       bg = "NONE"            })  -- @endPushOnce
+  highlight(0, "bladePrependOnce",     { fg = colors.blue,       bg = "NONE"            })  -- @prependOnce
+  highlight(0, "bladeEndPrependOnce",  { fg = colors.blue,       bg = "NONE"            })  -- @endPrependOnce
+  highlight(0, "bladeHasstack",        { fg = colors.blue,       bg = "NONE"            })  -- @hasstack
 
 
   -----------------------------------------------------------------------------
   -- Include Directives
 
-  highlight(0, "bladeInclude",         { fg = colors.orange,     bg = "NONE"            })  -- @include
-  highlight(0, "bladeIncludeIf",       { fg = colors.orange,     bg = "NONE"            })  -- @includeIf
-  highlight(0, "bladeIncludeWhen",     { fg = colors.orange,     bg = "NONE"            })  -- @includeWhen
-  highlight(0, "bladeIncludeUnless",   { fg = colors.orange,     bg = "NONE"            })  -- @includeUnless
-  highlight(0, "bladeIncludeFirst",    { fg = colors.orange,     bg = "NONE"            })  -- @includeFirst
-  highlight(0, "bladeEach",            { fg = colors.orange,     bg = "NONE"            })  -- @each
+  highlight(0, "bladeInclude",         { fg = colors.blue,       bg = "NONE"            })  -- @include
+  highlight(0, "bladeIncludeIf",       { fg = colors.blue,       bg = "NONE"            })  -- @includeIf
+  highlight(0, "bladeIncludeWhen",     { fg = colors.blue,       bg = "NONE"            })  -- @includeWhen
+  highlight(0, "bladeIncludeUnless",   { fg = colors.blue,       bg = "NONE"            })  -- @includeUnless
+  highlight(0, "bladeIncludeFirst",    { fg = colors.blue,       bg = "NONE"            })  -- @includeFirst
+  highlight(0, "bladeEach",            { fg = colors.blue,       bg = "NONE"            })  -- @each
 
 
   -----------------------------------------------------------------------------
   -- Component Directives
 
-  highlight(0, "bladeComponent",       { fg = colors.green,      bg = "NONE"            })  -- @component
-  highlight(0, "bladeEndcomponent",    { fg = colors.green,      bg = "NONE"            })  -- @endcomponent
-  highlight(0, "bladeSlot",            { fg = colors.green,      bg = "NONE"            })  -- @slot
-  highlight(0, "bladeEndslot",         { fg = colors.green,      bg = "NONE"            })  -- @endslot
-  highlight(0, "bladeProps",           { fg = colors.green,      bg = "NONE"            })  -- @props
-  highlight(0, "bladeAware",           { fg = colors.green,      bg = "NONE"            })  -- @aware
+  highlight(0, "bladeComponent",       { fg = colors.blue,       bg = "NONE"            })  -- @component
+  highlight(0, "bladeEndcomponent",    { fg = colors.blue,       bg = "NONE"            })  -- @endcomponent
+  highlight(0, "bladeSlot",            { fg = colors.blue,       bg = "NONE"            })  -- @slot
+  highlight(0, "bladeEndslot",         { fg = colors.blue,       bg = "NONE"            })  -- @endslot
+  highlight(0, "bladeProps",           { fg = colors.blue,       bg = "NONE"            })  -- @props
+  highlight(0, "bladeAware",           { fg = colors.blue,       bg = "NONE"            })  -- @aware
 
 
   -----------------------------------------------------------------------------
   -- Form Directives
 
-  highlight(0, "bladeCsrf",            { fg = colors.pink,       bg = "NONE", bold = true })  -- @csrf
-  highlight(0, "bladeMethod",          { fg = colors.pink,       bg = "NONE"            })  -- @method
-  highlight(0, "bladeError",           { fg = colors.pink,       bg = "NONE"            })  -- @error
-  highlight(0, "bladeEnderror",        { fg = colors.pink,       bg = "NONE"            })  -- @enderror
-  highlight(0, "bladeOld",             { fg = colors.pink,       bg = "NONE"            })  -- old()
+  highlight(0, "bladeCsrf",            { fg = colors.blue,       bg = "NONE"            })  -- @csrf
+  highlight(0, "bladeMethod",          { fg = colors.blue,       bg = "NONE"            })  -- @method
+  highlight(0, "bladeError",           { fg = colors.blue,       bg = "NONE"            })  -- @error
+  highlight(0, "bladeEnderror",        { fg = colors.blue,       bg = "NONE"            })  -- @enderror
+  highlight(0, "bladeOld",             { fg = colors.blue,       bg = "NONE"            })  -- old()
 
 
   -----------------------------------------------------------------------------
   -- HTML Attribute Directives
 
-  highlight(0, "bladeClass",           { fg = colors.turquoise,  bg = "NONE"            })  -- @class
-  highlight(0, "bladeStyle",           { fg = colors.turquoise,  bg = "NONE"            })  -- @style
-  highlight(0, "bladeChecked",         { fg = colors.turquoise,  bg = "NONE"            })  -- @checked
-  highlight(0, "bladeSelected",        { fg = colors.turquoise,  bg = "NONE"            })  -- @selected
-  highlight(0, "bladeDisabled",        { fg = colors.turquoise,  bg = "NONE"            })  -- @disabled
-  highlight(0, "bladeReadonly",        { fg = colors.turquoise,  bg = "NONE"            })  -- @readonly
-  highlight(0, "bladeRequired",        { fg = colors.turquoise,  bg = "NONE"            })  -- @required
+  highlight(0, "bladeClass",           { fg = colors.blue,       bg = "NONE"            })  -- @class
+  highlight(0, "bladeStyle",           { fg = colors.blue,       bg = "NONE"            })  -- @style
+  highlight(0, "bladeChecked",         { fg = colors.blue,       bg = "NONE"            })  -- @checked
+  highlight(0, "bladeSelected",        { fg = colors.blue,       bg = "NONE"            })  -- @selected
+  highlight(0, "bladeDisabled",        { fg = colors.blue,       bg = "NONE"            })  -- @disabled
+  highlight(0, "bladeReadonly",        { fg = colors.blue,       bg = "NONE"            })  -- @readonly
+  highlight(0, "bladeRequired",        { fg = colors.blue,       bg = "NONE"            })  -- @required
 
 
   -----------------------------------------------------------------------------
   -- Session/Context Directives
 
-  highlight(0, "bladeSession",         { fg = colors.purple,     bg = "NONE"            })  -- @session
-  highlight(0, "bladeEndsession",      { fg = colors.purple,     bg = "NONE"            })  -- @endsession
-  highlight(0, "bladeContext",         { fg = colors.purple,     bg = "NONE"            })  -- @context
-  highlight(0, "bladeEndcontext",      { fg = colors.purple,     bg = "NONE"            })  -- @endcontext
+  highlight(0, "bladeSession",         { fg = colors.blue,       bg = "NONE"            })  -- @session
+  highlight(0, "bladeEndsession",      { fg = colors.blue,       bg = "NONE"            })  -- @endsession
+  highlight(0, "bladeContext",         { fg = colors.blue,       bg = "NONE"            })  -- @context
+  highlight(0, "bladeEndcontext",      { fg = colors.blue,       bg = "NONE"            })  -- @endcontext
 
 
   -----------------------------------------------------------------------------
@@ -221,13 +221,13 @@ laravelBlade.setupHighlighting = function()
   highlight(0, "bladeEndonce",         { fg = colors.blue,       bg = "NONE"            })  -- @endonce
 
   -- Verbatim
-  highlight(0, "bladeVerbatim",        { fg = colors.gray,       bg = "NONE"            })  -- @verbatim
-  highlight(0, "bladeEndverbatim",     { fg = colors.gray,       bg = "NONE"            })  -- @endverbatim
+  highlight(0, "bladeVerbatim",        { fg = colors.blue,       bg = "NONE"            })  -- @verbatim
+  highlight(0, "bladeEndverbatim",     { fg = colors.blue,       bg = "NONE"            })  -- @endverbatim
 
   -- Fragment
-  highlight(0, "bladeFragment",        { fg = colors.orange,     bg = "NONE"            })  -- @fragment
-  highlight(0, "bladeEndfragment",     { fg = colors.orange,     bg = "NONE"            })  -- @endfragment
-  highlight(0, "bladeFragmentIf",      { fg = colors.orange,     bg = "NONE"            })  -- @fragmentIf
+  highlight(0, "bladeFragment",        { fg = colors.blue,       bg = "NONE"            })  -- @fragment
+  highlight(0, "bladeEndfragment",     { fg = colors.blue,       bg = "NONE"            })  -- @endfragment
+  highlight(0, "bladeFragmentIf",      { fg = colors.blue,       bg = "NONE"            })  -- @fragmentIf
 
   -- PHP/Raw Code
   highlight(0, "bladePhp",             { fg = colors.blue,       bg = "NONE"            })  -- @php
@@ -235,45 +235,45 @@ laravelBlade.setupHighlighting = function()
   highlight(0, "bladeUse",             { fg = colors.blue,       bg = "NONE"            })  -- @use
 
   -- Service Injection
-  highlight(0, "bladeInject",          { fg = colors.purple,     bg = "NONE"            })  -- @inject
+  highlight(0, "bladeInject",          { fg = colors.blue,       bg = "NONE"            })  -- @inject
 
   -- JSON
-  highlight(0, "bladeJson",            { fg = colors.orange,     bg = "NONE"            })  -- @json
+  highlight(0, "bladeJson",            { fg = colors.blue,       bg = "NONE"            })  -- @json
 
   -- JS
-  highlight(0, "bladeJs",              { fg = colors.orange,     bg = "NONE"            })  -- @js
+  highlight(0, "bladeJs",              { fg = colors.blue,       bg = "NONE"            })  -- @js
 
   -- Lang/Translation
-  highlight(0, "bladeLang",            { fg = colors.purple,     bg = "NONE"            })  -- @lang
-  highlight(0, "bladeChoice",          { fg = colors.purple,     bg = "NONE"            })  -- @choice
+  highlight(0, "bladeLang",            { fg = colors.blue,       bg = "NONE"            })  -- @lang
+  highlight(0, "bladeChoice",          { fg = colors.blue,       bg = "NONE"            })  -- @choice
 
 
   -----------------------------------------------------------------------------
   -- Livewire Directives
 
-  highlight(0, "bladeLivewire",        { fg = colors.pink,       bg = "NONE", bold = true })  -- @livewire
-  highlight(0, "bladeLivewireStyles",  { fg = colors.pink,       bg = "NONE"            })  -- @livewireStyles
-  highlight(0, "bladeLivewireScripts", { fg = colors.pink,       bg = "NONE"            })  -- @livewireScripts
-  highlight(0, "bladeThis",            { fg = colors.pink,       bg = "NONE"            })  -- @this
-  highlight(0, "bladeEntangle",        { fg = colors.pink,       bg = "NONE"            })  -- @entangle
-  highlight(0, "bladePersist",         { fg = colors.pink,       bg = "NONE"            })  -- @persist
-  highlight(0, "bladeEndpersist",      { fg = colors.pink,       bg = "NONE"            })  -- @endpersist
-  highlight(0, "bladeTeleport",        { fg = colors.pink,       bg = "NONE"            })  -- @teleport
-  highlight(0, "bladeEndteleport",     { fg = colors.pink,       bg = "NONE"            })  -- @endteleport
+  highlight(0, "bladeLivewire",        { fg = colors.blue,       bg = "NONE"            })  -- @livewire
+  highlight(0, "bladeLivewireStyles",  { fg = colors.blue,       bg = "NONE"            })  -- @livewireStyles
+  highlight(0, "bladeLivewireScripts", { fg = colors.blue,       bg = "NONE"            })  -- @livewireScripts
+  highlight(0, "bladeThis",            { fg = colors.blue,       bg = "NONE"            })  -- @this
+  highlight(0, "bladeEntangle",        { fg = colors.blue,       bg = "NONE"            })  -- @entangle
+  highlight(0, "bladePersist",         { fg = colors.blue,       bg = "NONE"            })  -- @persist
+  highlight(0, "bladeEndpersist",      { fg = colors.blue,       bg = "NONE"            })  -- @endpersist
+  highlight(0, "bladeTeleport",        { fg = colors.blue,       bg = "NONE"            })  -- @teleport
+  highlight(0, "bladeEndteleport",     { fg = colors.blue,       bg = "NONE"            })  -- @endteleport
 
 
   -----------------------------------------------------------------------------
   -- Inertia Directives
 
-  highlight(0, "bladeInertia",         { fg = colors.turquoise,  bg = "NONE"            })  -- @inertia
-  highlight(0, "bladeInertiaHead",     { fg = colors.turquoise,  bg = "NONE"            })  -- @inertiaHead
+  highlight(0, "bladeInertia",         { fg = colors.blue,       bg = "NONE"            })  -- @inertia
+  highlight(0, "bladeInertiaHead",     { fg = colors.blue,       bg = "NONE"            })  -- @inertiaHead
 
 
   -----------------------------------------------------------------------------
   -- Vite/Asset Directives
 
-  highlight(0, "bladeVite",            { fg = colors.green,      bg = "NONE"            })  -- @vite
-  highlight(0, "bladeViteReactRefresh", { fg = colors.green,     bg = "NONE"            })  -- @viteReactRefresh
+  highlight(0, "bladeVite",            { fg = colors.blue,       bg = "NONE"            })  -- @vite
+  highlight(0, "bladeViteReactRefresh", { fg = colors.blue,      bg = "NONE"            })  -- @viteReactRefresh
 
 
   -----------------------------------------------------------------------------
@@ -304,8 +304,8 @@ laravelBlade.setupHighlighting = function()
   highlight(0, "@keyword.directive.blade",     { fg = colors.blue,       bg = "NONE" })  -- @directive
   highlight(0, "@keyword.conditional.blade",   { fg = colors.blue,       bg = "NONE" })  -- @if, @unless
   highlight(0, "@keyword.repeat.blade",        { fg = colors.blue,       bg = "NONE" })  -- @for, @foreach
-  highlight(0, "@keyword.import.blade",        { fg = colors.orange,     bg = "NONE" })  -- @include, @extends
-  highlight(0, "@keyword.function.blade",      { fg = colors.green,      bg = "NONE" })  -- @component
+  highlight(0, "@keyword.import.blade",        { fg = colors.blue,       bg = "NONE" })  -- @include, @extends
+  highlight(0, "@keyword.function.blade",      { fg = colors.blue,       bg = "NONE" })  -- @component
 
   -- Tags
   highlight(0, "@tag.blade",                   { fg = colors.green,      bg = "NONE" })  -- x-component tags
@@ -376,6 +376,140 @@ laravelBlade.setupHighlighting = function()
 
   highlight(0, "bladePhpBlock",        { link = "bladePhpRegion" })
   highlight(0, "bladePhpInline",       { link = "bladePhpRegion" })
+
+
+  -----------------------------------------------------------------------------
+  -- Extmarks for escaped Blade/Vue templates
+
+  local ns = vim.api.nvim_create_namespace("mannydark_blade_vue")
+
+  local function highlight_js_expression(bufnr, lnum, content, start_col)
+    -- Split by dots and highlight each part as purple
+    local parts = {}
+    for part in content:gmatch("[^%.]+") do
+      table.insert(parts, part)
+    end
+
+    local line = vim.api.nvim_buf_get_lines(bufnr, lnum, lnum + 1, false)[1]
+    local current_col = start_col
+
+    for _, part in ipairs(parts) do
+      local part_trimmed = part:match("^%s*(.-)%s*$")
+      if #part_trimmed > 0 then
+        local part_start = line:find(part_trimmed, current_col + 1, true)
+        if part_start then
+          vim.api.nvim_buf_set_extmark(bufnr, ns, lnum, part_start - 1, {
+            end_col = part_start - 1 + #part_trimmed,
+            hl_group = "MannydarkFgPurple",
+            priority = 300,
+          })
+          current_col = part_start + #part_trimmed
+        end
+      end
+    end
+  end
+
+  local function highlight_vue_templates(bufnr)
+    vim.api.nvim_buf_clear_namespace(bufnr, ns, 0, -1)
+    local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+    local in_verbatim = false
+
+    for lnum, line in ipairs(lines) do
+      -- Track @verbatim blocks
+      if line:match("@verbatim") then
+        in_verbatim = true
+      elseif line:match("@endverbatim") then
+        in_verbatim = false
+      end
+
+      -- Pattern 1: @{{ ... }} (escaped blade for Vue/JS) - anywhere
+      local start_pos = 1
+      while true do
+        local s, e, content = line:find("@{{%s*(.-)%s*}}", start_pos)
+        if not s then break end
+        highlight_js_expression(bufnr, lnum - 1, content, s + 2)
+        start_pos = e + 1
+      end
+
+      -- Pattern 2: {{ ... }} inside @verbatim blocks (React/Vue)
+      if in_verbatim then
+        start_pos = 1
+        while true do
+          local s, e, content = line:find("{{%s*(.-)%s*}}", start_pos)
+          if not s then break end
+          -- Skip if it's actually @{{ (already handled above)
+          if s == 1 or line:sub(s - 1, s - 1) ~= "@" then
+            highlight_js_expression(bufnr, lnum - 1, content, s + 1)
+          end
+          start_pos = e + 1
+        end
+      end
+
+      -- Pattern 3: "as" keyword in @foreach, @forelse, @for (e.g., @foreach($users as $user))
+      local as_start, as_end = line:find("%s+as%s+")
+      if as_start and line:match("@for") then
+        -- Find the actual "as" position
+        local as_pos = line:find("as", as_start)
+        if as_pos then
+          vim.api.nvim_buf_set_extmark(bufnr, ns, lnum - 1, as_pos - 1, {
+            end_col = as_pos + 1,
+            hl_group = "Keyword",
+            priority = 300,
+          })
+        end
+      end
+
+      -- Pattern 4: Blade component tags (<x-..., </x-...) - keyword blue
+      local pos = 1
+      while true do
+        local s, e = line:find("</?x%-[%w%-]+", pos)
+        if not s then break end
+        vim.api.nvim_buf_set_extmark(bufnr, ns, lnum - 1, s - 1, {
+          end_col = e,
+          hl_group = "Keyword",
+          priority = 500,
+        })
+        pos = e + 1
+      end
+
+      -- Pattern 5: Member access ($var->property) - property name should be purple
+      pos = 1
+      while true do
+        local s, e, prop = line:find("%->([%w_]+)", pos)
+        if not s then break end
+        -- s is position of '-', property starts at s+2
+        vim.api.nvim_buf_set_extmark(bufnr, ns, lnum - 1, s + 1, {
+          end_col = e,
+          hl_group = "MannydarkFgPurple",
+          priority = 500,
+        })
+        pos = e + 1
+      end
+
+      -- Pattern 6: Boolean literals (true, false) - keyword blue
+      for _, bool in ipairs({ "true", "false" }) do
+        pos = 1
+        while true do
+          local s, e = line:find("%f[%w]" .. bool .. "%f[%W]", pos)
+          if not s then break end
+          vim.api.nvim_buf_set_extmark(bufnr, ns, lnum - 1, s - 1, {
+            end_col = e,
+            hl_group = "Keyword",
+            priority = 500,
+          })
+          pos = e + 1
+        end
+      end
+    end
+  end
+
+  vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged", "TextChangedI" }, {
+    group = vim.api.nvim_create_augroup("MannydarkBladeVue", { clear = true }),
+    pattern = { "*.blade.php" },
+    callback = function(args)
+      highlight_vue_templates(args.buf)
+    end,
+  })
 end
 
 return laravelBlade

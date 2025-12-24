@@ -374,7 +374,7 @@ M.reload = function()
   -- Clear treesitter query cache for languages with custom queries in after/queries/
   -- This ensures .scm file changes take effect without restart
   if vim.treesitter and vim.treesitter.query then
-    local langs_with_custom_queries = { "lua", "ada", "javascript", "tsx", "typescript", "css", "html", "html_tags", "php", "jsonnet", "c_sharp", "c", "cpp", "yaml", "bash" }
+    local langs_with_custom_queries = { "lua", "ada", "javascript", "tsx", "typescript", "css", "html", "html_tags", "php", "php_only", "jsonnet", "c_sharp", "c", "cpp", "yaml", "bash", "blade" }
     for _, lang in ipairs(langs_with_custom_queries) do
       -- Neovim 0.9+: invalidate() clears the query cache for a language
       if vim.treesitter.query.invalidate then

@@ -91,6 +91,16 @@ nvimTree.setupHighlighting = function()
   highlight(0, "NvimTreeGitIgnoredIcon",     { link = "Ignore" })  -- Icon before ignored Git files.
   highlight(0, "NvimTreeGitFolderIgnoredHL", { link = "Ignore" })  -- Text label of ignored Git files.
 
+  -- Staged:
+  highlight(0, "NvimTreeGitStagedIcon",      { link = "MannydarkFgOrange" })  -- Icon before staged Git files.
+  highlight(0, "NvimTreeGitFileStagedHL",    { link = "MannydarkFgOrange" })  -- Text label of staged Git files.
+  highlight(0, "NvimTreeGitFolderStagedHL",  { link = "MannydarkFgOrange" })  -- Text label of staged Git directories.
+
+  -- Merge/Conflict:
+  highlight(0, "NvimTreeGitMergeIcon",       { link = "MannydarkFgOrange" })  -- Icon before merge conflict files.
+  highlight(0, "NvimTreeGitFileMergeHL",     { link = "MannydarkFgOrange" })  -- Text label of merge conflict files.
+  highlight(0, "NvimTreeGitFolderMergeHL",   { link = "MannydarkFgOrange" })  -- Text label of merge conflict directories.
+
 
 
 
