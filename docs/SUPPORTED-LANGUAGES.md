@@ -16,6 +16,7 @@ If there is the need for one that is not listed here, please open an issue or a 
 - Lua
 - Markdown
 - PHP
+- Python
 - SQL
 - Toml
 - TypeScript
