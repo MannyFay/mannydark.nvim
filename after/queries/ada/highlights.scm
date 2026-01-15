@@ -21,6 +21,10 @@
 (subtype_declaration
   (identifier) @type.definition)
 
+; Private type declarations - e.g., type Stack is private;
+(private_type_declaration
+  (identifier) @type.definition)
+
 ; Exception declarations - e.g., My_Error : exception;
 (exception_declaration
   (identifier) @type.definition)
