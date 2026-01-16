@@ -11,12 +11,12 @@ local markdown  = {}
 -- Settings
 
 markdown.setupHighlighting = function()
-  highlight(0, "@markup.heading.1.markdown", { link = "Keyword" })
-  highlight(0, "@markup.heading.2.markdown", { link = "Keyword" })
-  highlight(0, "@markup.heading.3.markdown", { link = "Keyword" })
-  highlight(0, "@markup.heading.4.markdown", { link = "Keyword" })
-  highlight(0, "@markup.heading.5.markdown", { link = "Keyword" })
-  highlight(0, "@markup.heading.6.markdown", { link = "Keyword" })
+  highlight(0, "@markup.heading.1.markdown", { fg = colors.purple, bold = true })
+  highlight(0, "@markup.heading.2.markdown", { fg = colors.blue, bold = true })
+  highlight(0, "@markup.heading.3.markdown", { fg = colors.blue, bold = true })
+  highlight(0, "@markup.heading.4.markdown", { fg = colors.blue, bold = true })
+  highlight(0, "@markup.heading.5.markdown", { fg = colors.blue, bold = true })
+  highlight(0, "@markup.heading.6.markdown", { fg = colors.blue, bold = true })
   highlight(0, "@conceal.markdown_inline", { link = "Keyword" })
   highlight(0, "@lsp.type.class.markdown", { link = "MannydarkFgWhite" })
   highlight(0, "@markup.link.markdown_inline", { link = "Keyword" })
