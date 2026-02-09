@@ -15,12 +15,12 @@ render_markdown.setupHighlighting = function()
   ------------------------------------------------------------------------------
   -- Headings (foreground/icons)
 
-  highlight(0, "RenderMarkdownH1", { fg = colors.purple, bold = true })
-  highlight(0, "RenderMarkdownH2", { fg = colors.blue, bold = true })
-  highlight(0, "RenderMarkdownH3", { fg = colors.blue, bold = true })
-  highlight(0, "RenderMarkdownH4", { fg = colors.blue, bold = true })
-  highlight(0, "RenderMarkdownH5", { fg = colors.blue, bold = true })
-  highlight(0, "RenderMarkdownH6", { fg = colors.blue, bold = true })
+  highlight(0, "RenderMarkdownH1", { fg = colors.purple })
+  highlight(0, "RenderMarkdownH2", { fg = colors.blue })
+  highlight(0, "RenderMarkdownH3", { fg = colors.blue })
+  highlight(0, "RenderMarkdownH4", { fg = colors.blue })
+  highlight(0, "RenderMarkdownH5", { fg = colors.blue })
+  highlight(0, "RenderMarkdownH6", { fg = colors.blue })
 
   ------------------------------------------------------------------------------
   -- Heading backgrounds (transparent)
