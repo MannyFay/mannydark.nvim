@@ -20,7 +20,7 @@
 -- white      = Operator                 | MannydarkWhite
 -- gray       = Ignore                   | MannydarkGray
 -- grayLight  = NonText                  | MannydarkGrayLight
--- grayLight  = ColorColumn  (bg)        | MannydarkGrayLight (bg)
+-- grayDark   = ColorColumn  (bg)        | MannydarkGrayDark (bg)
 -- black      = Normal       (bg)        | MannydarkBlack (bg)
 
 local colors           = require("mannydark.palette")
@@ -60,7 +60,7 @@ languageDefaults.setupHighlighting = function()
   highlight(0, "Bold",           { fg = "NONE", bg = "NONE", bold = true }         )
   highlight(0, "Boolean",        { link = "MannydarkFgBlue" }                      )  -- true, false
   highlight(0, "Character",      { link = "MannydarkFgRedLight" }             )  -- Character literals "c"
-  highlight(0, "ColorColumn",    { fg = "NONE", bg = colors.grayLight }            )  -- ColorColumn (grayLight bg)
+  highlight(0, "ColorColumn",    { fg = "NONE", bg = colors.grayDark }             )  -- ColorColumn (grayDark bg)
   highlight(0, "Comment",        { link = "MannydarkFgRed" }                       )  -- Any comment
   highlight(0, "Conceal",        { link = "MannydarkFgGray" }                 )  -- Concealed (folded) text.
   highlight(0, "Conditional",    { link = "MannydarkFgBlue" }                      )  -- if, then, else, switch
